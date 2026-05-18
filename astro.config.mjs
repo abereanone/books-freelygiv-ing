@@ -2,5 +2,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   output: 'static',
-  site: process.env.SITE_URL ?? 'http://localhost:4321',
+  site: process.env.SITE_URL ?? 'https://books.freelygiv.ing',
 });
