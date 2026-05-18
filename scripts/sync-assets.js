@@ -7,7 +7,7 @@ import { join, extname, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_SRC  = join(__dirname, '../../books-data/data/src');
+const DATA_SRC  = join(__dirname, '../data/src');
 const PUBLIC    = join(__dirname, '../public');
 
 const IMAGE_EXTS = new Set(['.webp', '.jpg', '.jpeg', '.png']);

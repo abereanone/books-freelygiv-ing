@@ -5,7 +5,7 @@ import YAML from 'yaml';
 // process.cwd() = project root (C:\code\books\books) in both dev and build.
 // Using it here rather than import.meta.url because Vite transforms the latter
 // to a bundled virtual path during astro build, breaking relative resolution.
-const DATA_SRC = join(process.cwd(), '../books-data/data/src');
+const DATA_SRC = join(process.cwd(), 'data/src');
 
 function listPersonSlugs() {
   if (!existsSync(DATA_SRC)) return [];

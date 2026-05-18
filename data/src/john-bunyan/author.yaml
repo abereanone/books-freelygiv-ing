@@ -1,0 +1,15 @@
+- firstName: "John"
+  lastName: "Bunyan"
+  slug: "john-bunyan"
+  photo: "/static/images/authors/john-bunyan/john-bunyan.jpg"
+  description: >
+    John Bunyan (1628–1688) was an English writer and Baptist preacher, born in Elstow, near
+    Bedford. Of humble origins, he served in the Parliamentary army during the English Civil War
+    before taking up his father's trade as a tinker. After joining a Baptist congregation in
+    Bedford, he became a powerful preacher, earning the informal title "Bishop Bunyan." Following
+    the Restoration, he was imprisoned for twelve years for refusing to stop preaching without a
+    license. During his captivity he studied scripture and began writing. His great allegorical
+    work, The Pilgrim's Progress, was published in 1678 and became one of the most widely read
+    books in the English language. He died in 1688 after riding through a rainstorm on a journey
+    to reconcile a father and son.
+  donateUrl: ""

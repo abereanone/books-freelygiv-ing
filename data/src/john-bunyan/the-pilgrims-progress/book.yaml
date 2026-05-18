@@ -1,0 +1,27 @@
+- title: "The Pilgrim's Progress"
+  sortTitle: "Pilgrim's Progress"
+  authors:
+    - slug: john-bunyan
+      firstName: John
+      lastName: Bunyan
+  year: 1678
+  tags:
+    - classic
+  contributors:
+    []
+  description: >
+    From this world to that which is to come; delivered under the similitude of a dream. The Pilgrim's Progress is an allegory of the Christian life, following the journey of a man named Christian from the City of Destruction to the Celestial City.
+  license: CC0
+  path: /static/books/john-bunyan/the-pilgrims-progress
+  cover: cover.jpg
+  mediaTypes:
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: "/static/books/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.epub"
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: "/static/books/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.pdf"
