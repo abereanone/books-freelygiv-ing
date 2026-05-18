@@ -1,0 +1,15 @@
+- firstName: Jonathan
+  lastName: Edwards
+  slug: jonathan-edwards
+  photo: "/static/images/authors/jonathan-edwards/jonathan-edwards.jpg"
+  description: >
+    Jonathan Edwards (1703–1758) was an American theologian and philosopher, regarded as the most
+    influential religious thinker of colonial America. He entered Yale College at thirteen and was
+    ordained minister at Northampton, Massachusetts in 1727. His preaching helped ignite the Great
+    Awakening of 1739–1740, and his sermon Sinners in the Hands of an Angry God became one of the
+    most famous in American history. His treatise on the Freedom of the Will remains a landmark of
+    Reformed theology. Dismissed from his Northampton congregation in 1750 over a communion
+    dispute, he served as a missionary to the Housatonic Indians before being appointed president
+    of the College of New Jersey (now Princeton), where he died shortly after of complications
+    from a smallpox inoculation.
+  donateUrl: ""

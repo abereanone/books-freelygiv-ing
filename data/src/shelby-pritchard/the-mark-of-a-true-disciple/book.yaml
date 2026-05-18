@@ -1,0 +1,44 @@
+- title: "The Mark of a True Disciple"
+  sortTitle: "Mark of a True Disciple"
+  authors:
+    - slug: shelby-pritchard
+      firstName: Shelby
+      lastName: Pritchard
+  year: 2024
+  tags:
+    - modern
+  description: >
+    The Gospel of Mark is the shortest and often the most neglected Gospel account. In this collection of lessons, originally given to a group of wonderful teens, Shelby and Elisabeth Pritchard bring out some of the incredible life-changing truths to be found in this fascinating account of the life and work of Jesus Christ, the Son of God, the Savior of humanity.
+
+
+    This collection of 24 lessons highlights and explains the main idea of each section (pericope) of Scripture by clearly communicating the context of each passage, outlining it, and then proceeding with the lightly edited lesson on that unit. Each lesson is full of explanation, illustration, and application that will help bring out the incredible wonders of God's Word. Biblically grounded and unflinchingly dedicated to the truth and relevance of the Bible, we hope these lessons serve you well.
+
+
+    Feel free to enjoy them in personal study, use this as a basis for a 6-month series, or consult it from time to time while writing your own works. Our only prayer is that this collection aids others in understanding who God is, what he has accomplished for us, and his mission for our lives.
+
+
+    To God be the glory!
+  license: CC0
+  path: /static/books/shelby-pritchard/the-mark-of-a-true-disciple
+  cover: cover.jpg
+  mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/shelby-pritchard-and-elisabeth-pritchard/the-mark-of-a-true-disciple/paperback/product-q6zqvmg.html?q=&page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: "/static/books/shelby-pritchard/the-mark-of-a-true-disciple/the-mark-of-a-true-disciple.epub"
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: "/static/books/shelby-pritchard/the-mark-of-a-true-disciple/the-mark-of-a-true-disciple.pdf"
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: "/static/books/shelby-pritchard/the-mark-of-a-true-disciple/print-ready.zip"

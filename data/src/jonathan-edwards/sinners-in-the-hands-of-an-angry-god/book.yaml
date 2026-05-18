@@ -1,0 +1,34 @@
+- title: Sinners in the Hands of an Angry God
+  sortTitle: Sinners in the Hands of an Angry God
+  authors:
+    - slug: jonathan-edwards
+      firstName: Jonathan
+      lastName: Edwards
+  year: 1741
+  tags:
+    - classic
+  contributors:
+    - courtney-hicks
+  description: >
+    "Their foot shall slide in due time." - Deuteronomy 32:35.
+
+    The sword of divine justice is every moment brandished over their heads, and it is nothing but the hand of arbitrary mercy, and God's mere will, that holds it back.
+  license: CC0
+  path: /static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god
+  cover: cover.jpg
+  mediaTypes:
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: "/static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.epub"
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: "/static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.pdf"
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: "/static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/print-ready.zip"

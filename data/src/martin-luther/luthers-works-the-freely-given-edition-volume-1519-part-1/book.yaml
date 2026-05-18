@@ -1,0 +1,25 @@
+- title: "Luther's Works: The Freely Given Edition. Volume 1519, Part 1"
+  sortTitle: "Luther's Works: The Freely Given Edition. Volume 1519, Part 1"
+  authors:
+    - slug: martin-luther
+      firstName: Martin
+      lastName: Luther
+  year: 1519
+  tags:
+    - classic
+  description: |
+    The Freely Given Edition of Luther's Works is a new public domain collection of the Reformer's writings. The inaugural volume is dedicated to a deeper understanding of The Fourteen of Consolation (1519) and answers new questions of influence, timing, and language by its thorough introduction and notes. It is the hope of the editor that this edition's open licensing will allow for the flourishing of both the Christian faith and Lutheran scholarship, and that it may work towards ending the spiritual famine of the global Church caused by the compromise of ministry through reciprocity.
+  license: CC0
+  path: /static/books/martin-luther/luthers-works-the-freely-given-edition-volume-1519-part-1
+  cover: cover.jpg
+  mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/martin-luther-and-luke-smith/luthers-works-the-freely-given-edition-volume-1519-part-1/paperback/product-nvj4kz8.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: "/static/books/martin-luther/luthers-works-the-freely-given-edition-volume-1519-part-1/luthers-works-the-freely-given-edition-volume-1519-part-1.pdf"

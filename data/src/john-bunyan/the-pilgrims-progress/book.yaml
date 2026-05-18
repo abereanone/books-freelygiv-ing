@@ -1,5 +1,5 @@
-- title: "The Pilgrim's Progress"
-  sortTitle: "Pilgrim's Progress"
+- title: The Pilgrim's Progress
+  sortTitle: Pilgrim's Progress
   authors:
     - slug: john-bunyan
       firstName: John
@@ -8,13 +8,17 @@
   tags:
     - classic
   contributors:
-    []
-  description: >
-    From this world to that which is to come; delivered under the similitude of a dream. The Pilgrim's Progress is an allegory of the Christian life, following the journey of a man named Christian from the City of Destruction to the Celestial City.
+    - courtney-hicks
+  description: From this world to that which is to come; delivered under the similitude of a dream.
   license: CC0
   path: /static/books/john-bunyan/the-pilgrims-progress
   cover: cover.jpg
   mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/john-bunyan/the-pilgrims-progress/paperback/product-45y62qy.html
     - type: eBook
       label: eBook
       sources:
@@ -25,3 +29,9 @@
       sources:
         - name: Download
           url: "/static/books/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.pdf"
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: "/static/books/john-bunyan/the-pilgrims-progress/print-ready.zip"
+
