@@ -1,35 +1,34 @@
-# books.freely.giving
+# books-site
 
-Website for [books.freely.giving](https://books.freely.giving) — a library of freely given books.
-
-## Development
-
-```bash
-cd src
-npm install
-npm run dev
-```
-
-The site will be served at `http://localhost:8080`.
+Personal book library site built with Astro 6. Reads book and author data from the sibling `books-data/` repo.
 
 ## Structure
 
-- `src/` — Eleventy project
-  - `pages/` — templates and data
-  - `static/` — CSS, JS, images, and book files
-  - `library/` — git submodule ([freely-given-books-data](https://github.com/freely-given-books/freely-given-books-data))
-
-## Building
-
-```bash
-cd src
-npm run build
+```
+books/          ← this repo (site code)
+books-data/     ← sibling repo (YAML data + book files)
 ```
 
-Output is written to `src/_site/`.
+## Dev
 
-## Deployment
+```bash
+npm install
+npm run dev       # syncs assets from books-data, then starts dev server
+```
 
-Pushing a git tag triggers the GitHub Actions workflow, which builds the site and publishes a tarball to the GitHub release.
+## Adding a book
 
-Set the `SITE_URL` repository variable in GitHub (Settings → Secrets and variables → Actions → Variables) to control the site URL used in the build.
+```bash
+cd ../books-data
+node add-book.js
+```
+
+## Build
+
+```bash
+npm run build     # output → dist/
+```
+
+## Deploy
+
+Cloudflare Pages — set `SITE_URL` environment variable to the production domain.
