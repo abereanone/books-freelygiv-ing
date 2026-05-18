@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import BookItem from '../components/BookItem.astro';
+import { getBooks, getBookAuthorPairs } from '../lib/data.js';
+
+const books          = getBooks().sort((a, b) => a.sortTitle.localeCompare(b.sortTitle));
+const bookAuthorPairs = getBookAuthorPairs();
+
+const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
+---
+
+<Base title="Library" ogTitle="Library" ogDescription="Browse the full collection of freely given books.">
+  <h1>Library</h1>
+
+  <div class="tag-filter mb-3" id="tagFilter">
+    <div class="dropdown">
+      <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="tagDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        Filter by tag
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="tagDropdown">
+        {allTags.map(tag => (
+          <li>
+            <label class="dropdown-item d-flex align-items-center gap-2">
+              <input type="checkbox" class="form-check-input mt-0 tag-checkbox" value={tag} />
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            </label>
+          </li>
+        ))}
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+          <button class="dropdown-item text-body-secondary tag-clear-btn" type="button">Clear filters</button>
+        </li>
+      </ul>
+    </div>
+    <span class="text-body-secondary ms-2 tag-filter-summary" id="tagFilterSummary"></span>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="libraryTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="title-tab" data-bs-toggle="tab" data-bs-target="#by-title" type="button" role="tab" aria-controls="by-title" aria-selected="true">By Title</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="author-tab" data-bs-toggle="tab" data-bs-target="#by-author" type="button" role="tab" aria-controls="by-author" aria-selected="false">By Author</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="libraryTabContent">
+    <!-- By Title -->
+    <div class="tab-pane fade show active" id="by-title" role="tabpanel" aria-labelledby="title-tab">
+      <div class="list-group">
+        {(() => {
+          let currentLetter = '';
+          return books.map(book => {
+            const letter = book.sortTitle?.[0]?.toUpperCase() ?? '#';
+            const heading = letter !== currentLetter ? (currentLetter = letter, letter) : null;
+            return (
+              <>
+                {heading && (
+                  <div class="list-group-item bg-body-secondary library-letter-heading">
+                    <strong><em>{heading}</em></strong>
+                  </div>
+                )}
+                <BookItem book={book} />
+              </>
+            );
+          });
+        })()}
+      </div>
+    </div>
+
+    <!-- By Author (includes contributors) -->
+    <div class="tab-pane fade" id="by-author" role="tabpanel" aria-labelledby="author-tab">
+      <div class="list-group">
+        {(() => {
+          let currentLetter = '';
+          return bookAuthorPairs.map(({ book, person }) => {
+            const letter = person.lastName?.[0]?.toUpperCase() ?? '#';
+            const heading = letter !== currentLetter ? (currentLetter = letter, letter) : null;
+            return (
+              <>
+                {heading && (
+                  <div class="list-group-item bg-body-secondary library-letter-heading">
+                    <strong><em>{heading}</em></strong>
+                  </div>
+                )}
+                <BookItem book={book} />
+              </>
+            );
+          });
+        })()}
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes  = document.querySelectorAll('.tag-checkbox');
+    const clearBtn    = document.querySelector('.tag-clear-btn');
+    const summary     = document.getElementById('tagFilterSummary');
+    const bookItems   = document.querySelectorAll('[data-tags]');
+    const headings    = document.querySelectorAll('.library-letter-heading');
+    const dropdownBtn = document.getElementById('tagDropdown');
+
+    function getSelected() {
+      return [...checkboxes].filter(cb => (cb as HTMLInputElement).checked).map(cb => (cb as HTMLInputElement).value);
+    }
+
+    function applyFilter() {
+      const selected = getSelected();
+      if (selected.length === 0) {
+        summary.textContent = '';
+        dropdownBtn.textContent = 'Filter by tag';
+      } else {
+        summary.textContent = selected.map(t => t[0].toUpperCase() + t.slice(1)).join(', ');
+        dropdownBtn.textContent = `Filtering (${selected.length})`;
+      }
+      bookItems.forEach(item => {
+        if (selected.length === 0) {
+          (item as HTMLElement).style.display = '';
+        } else {
+          const tags = item.getAttribute('data-tags')?.split(',') ?? [];
+          (item as HTMLElement).style.display = selected.some(s => tags.includes(s)) ? '' : 'none';
+        }
+      });
+      headings.forEach(heading => {
+        let next = heading.nextElementSibling;
+        let hasVisible = false;
+        while (next && !next.classList.contains('library-letter-heading')) {
+          if (next.hasAttribute('data-tags') && (next as HTMLElement).style.display !== 'none') {
+            hasVisible = true; break;
+          }
+          next = next.nextElementSibling;
+        }
+        (heading as HTMLElement).style.display = hasVisible ? '' : 'none';
+      });
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
+    clearBtn?.addEventListener('click', () => { checkboxes.forEach(cb => (cb as HTMLInputElement).checked = false); applyFilter(); });
+  });
+</script>

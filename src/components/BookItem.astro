@@ -1,0 +1,41 @@
+---
+import { authorNames, bookSlugFromPath } from '../lib/data.js';
+
+interface Props {
+  book: any;
+}
+
+const { book } = Astro.props;
+const authorSlug = book.authors?.[0]?.slug;
+const bookSlug   = bookSlugFromPath(book.path);
+const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
+const tags       = (book.tags || []).join(',');
+---
+
+<a href={href} class="list-group-item list-group-item-action card-hover text-decoration-none" data-tags={tags}>
+  <div class="row g-0">
+    <div class="col-auto">
+      <img
+        src={`${book.path}/${book.cover}`}
+        class="rounded me-3"
+        style="max-height: 150px"
+        alt={`${book.title} cover`}
+      />
+    </div>
+    <div class="col">
+      <h5 class="mb-1">
+        {book.title}
+        {(book.tags || []).map((tag: string) => (
+          <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
+        ))}
+      </h5>
+      {book.authors?.[0] && <p class="mb-1">{authorNames(book.authors)}</p>}
+      {book.year && <small class="text-body-secondary">{book.year}</small>}
+      {book.description && (
+        <p class="book-description-preview text-body-secondary mb-0 mt-1">
+          {book.description.split(' ').slice(0, 25).join(' ')}…
+        </p>
+      )}
+    </div>
+  </div>
+</a>

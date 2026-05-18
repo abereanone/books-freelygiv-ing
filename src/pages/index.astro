@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+
+const navItems = [
+  { title: 'Authors',      path: '/authors',      description: 'Explore the authors whose works are featured on this site.', icon: 'people' },
+  { title: 'Contributors', path: '/contributors', description: 'Meet the people who have contributed to this site.',           icon: 'people' },
+  { title: 'Library',      path: '/library',      description: 'Browse the full collection of freely given books.',           icon: 'book'   },
+  { title: 'About',        path: '/about',        description: 'Learn more about this project and its mission.',              icon: 'info-circle' },
+  { title: 'Contact',      path: '/contact',      description: 'Get in touch with questions or suggestions.',                 icon: 'envelope'    },
+];
+---
+
+<Base>
+  <div class="text-center py-4 mb-4">
+    <h1 class="display-4 fw-bold mb-3">Freely Given Books</h1>
+    <p class="lead mx-auto" style="max-width: 640px;">
+      Wisdom from the Holy Spirit is something freely given to believers (1 Cor. 2:12). Likewise, Jesus
+      told us that we should freely give, just as we have freely received (Matt. 10:8). It is my desire
+      to pick up this command from our Christ and freely give to the body of Christ, just as I have
+      freely received.
+    </p>
+    <p class="mx-auto text-body-secondary" style="max-width: 640px;">
+      The books on this website are a blend of books that I have formatted from the original sources
+      into a readable ebook, as well as offer printed copies of the books, at-cost. The ebooks are free
+      of charge and I make no royalty off of the printed copies. My desire is to make these books as
+      easy to access as I possibly can for the body of Christ, that we may grow together, that our love
+      may abound in knowledge and all discernment. (Phil. 1:9, 2 Pet. 3:18, Col. 1:10).
+    </p>
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 g-4 mb-4">
+    {navItems.map(item => (
+      <div class="col">
+        <a href={item.path} class="card h-100 text-decoration-none border-0 shadow-sm card-hover">
+          <div class="card-body text-center p-4">
+            {item.icon === 'people' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi mb-3 text-primary" viewBox="0 0 16 16">
+                <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+              </svg>
+            )}
+            {item.icon === 'book' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi mb-3 text-primary" viewBox="0 0 16 16">
+                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+              </svg>
+            )}
+            {item.icon === 'info-circle' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi mb-3 text-primary" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+              </svg>
+            )}
+            {item.icon === 'envelope' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi mb-3 text-primary" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+            )}
+            <h5 class="card-title">{item.title}</h5>
+            <p class="card-text text-body-secondary mb-0">{item.description}</p>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+</Base>

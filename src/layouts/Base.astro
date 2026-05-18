@@ -1,0 +1,110 @@
+---
+interface Props {
+  title?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+}
+
+const SITE_TITLE = 'Freely Given Books';
+const SITE_URL   = Astro.site?.toString().replace(/\/$/, '') ?? '';
+
+const {
+  title,
+  ogTitle,
+  ogDescription,
+  ogImage = `${SITE_URL}/static/images/fgbooks-og.jpeg`,
+  ogType,
+} = Astro.props;
+
+const navItems = [
+  { title: 'Authors',      path: '/authors',      },
+  { title: 'Contributors', path: '/contributors', },
+  { title: 'Library',      path: '/library',      },
+  { title: 'About',        path: '/about',        },
+  { title: 'Contact',      path: '/contact',      },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-bs-theme', saved);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {ogDescription && <meta name="description" content={ogDescription} />}
+    <title>{title ? `${title} - ${SITE_TITLE}` : SITE_TITLE}</title>
+
+    {ogTitle       && <meta property="og:title"       content={ogTitle} />}
+    {ogDescription && <meta property="og:description" content={ogDescription} />}
+    <meta property="og:image"     content={ogImage} />
+    {ogImage       && <meta property="og:image:alt"   content={`${ogTitle} cover`} />}
+    {ogType        && <meta property="og:type"        content={ogType} />}
+    <meta property="og:site_name" content={SITE_TITLE} />
+
+    <meta name="twitter:card"  content="summary_large_image" />
+    {ogTitle       && <meta name="twitter:title"       content={ogTitle} />}
+    {ogDescription && <meta name="twitter:description" content={ogDescription} />}
+    <meta name="twitter:image" content={ogImage} />
+
+    <link href="/css/normalize.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/custom.css"        rel="stylesheet" />
+    <link href="/css/colorToggle.css"   rel="stylesheet" />
+    <script src="/js/bootstrap.bundle.min.js" is:inline></script>
+    <script type="module" crossorigin src="https://collection.fetch.bible/enhance.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md border-bottom mb-4">
+      <div class="container">
+        <a href="/" class="navbar-brand text-yellow">
+          <h2 class="fs-4 mb-0">{SITE_TITLE}</h2>
+        </a>
+        <div class="d-flex align-items-center gap-2 d-md-none">
+          <button class="btn btn-sm" id="themeBtnMobile">
+            <img src="/static/images/light-mode.svg" alt="Toggle theme" />
+          </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-2 pt-3 pb-2 py-md-0">
+            {navItems.map(item => (
+              <li class="nav-item">
+                <a href={item.path} class="nav-link d-md-none px-2 py-2">{item.title}</a>
+                <a href={item.path} class="btn btn-outline-primary btn-sm d-none d-md-inline-block">{item.title}</a>
+              </li>
+            ))}
+          </ul>
+          <button class="btn btn-sm d-none d-md-flex align-items-center ms-2" id="themeBtn">
+            <img src="/static/images/light-mode.svg" alt="Toggle theme" />
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-0 col-lg-2"></div>
+        <div class="col-12 col-lg-8">
+          <slot />
+        </div>
+        <div class="col-0 col-lg-2"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <p class="text-center text-body-secondary">{SITE_TITLE}</p>
+      </footer>
+    </div>
+  </body>
+  <script src="/js/themeToggle.js" is:inline></script>
+</html>

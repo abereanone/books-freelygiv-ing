@@ -1,0 +1,14 @@
+{
+  "name": "books-site",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-assets.js",
+    "dev": "node scripts/sync-assets.js && astro dev",
+    "build": "node scripts/sync-assets.js && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^6.2.1",
+    "yaml": "^2.8.1"
+  }
+}

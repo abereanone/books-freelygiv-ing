@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import BookItem from '../../components/BookItem.astro';
+import { getAuthors, getBooks, linkify, newlineToBr } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return getAuthors().map(author => ({ params: { slug: author.slug }, props: { author } }));
+}
+
+const { author } = Astro.props;
+
+const books = getBooks()
+  .filter(book => {
+    const authorSlugs = (book.authors || []).map((a: any) => a.slug);
+    return authorSlugs.includes(author.slug) || (book.contributors || []).includes(author.slug);
+  })
+  .sort((a: any, b: any) => a.sortTitle.localeCompare(b.sortTitle));
+
+const fullName = `${author.firstName} ${author.lastName}`;
+const descHtml = newlineToBr(linkify(author.description ?? ''));
+---
+
+<Base title={fullName} ogTitle={fullName} ogDescription={author.description}>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/authors">Authors</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{fullName}</li>
+    </ol>
+  </nav>
+
+  <div class="mb-4">
+    {author.photo && (
+      <img src={author.photo} class="rounded mb-3" style="max-width: 200px;" alt={fullName} />
+    )}
+    <h1>{fullName}</h1>
+    {author.description && <p class="lead" set:html={descHtml} />}
+    {author.donateUrl && (
+      <a href={author.donateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+    )}
+  </div>
+
+  <h2 class="mb-3">Books</h2>
+  <div class="list-group">
+    {books.map((book: any) => <BookItem book={book} />)}
+  </div>
+</Base>
