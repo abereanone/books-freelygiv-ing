@@ -1,0 +1,52 @@
+---
+pagination:
+  data: authors
+  size: 1
+  alias: author
+permalink: "/authors/{{ author.slug }}/"
+layout: base.liquid
+eleventyComputed:
+  title: "{{ author.firstName }} {{ author.lastName }}"
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/authors">Authors</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ author.firstName }} {{ author.lastName }}</li>
+  </ol>
+</nav>
+
+<div class="mb-4">
+  {% if author.photo != "" %}
+  <img
+    src="{{ author.photo }}"
+    class="rounded mb-3"
+    style="max-width: 200px;"
+    alt="{{ author.firstName }} {{ author.lastName }}"
+  />
+  {% endif %}
+
+  <h1>{{ author.firstName }} {{ author.lastName }}</h1>
+
+  {% if author.description != "" %}
+  <p class="lead">{{ author.description | linkify | newline_to_br }}</p>
+  {% endif %}
+
+  {% if author.donateUrl != "" %}
+  <a href="{{ author.donateUrl }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+  {% endif %}
+</div>
+
+<h2 class="mb-3">Books</h2>
+
+{% assign sortedBooks = books | sort: 'sortTitle' %}
+
+<div class="list-group">
+  {% for book in sortedBooks %}
+    {% assign slugs = book.authors | map: "slug" %}
+    {% if slugs contains author.slug %}
+      {% include 'book-item.liquid', book: book %}
+    {% endif %}
+  {% endfor %}
+</div>

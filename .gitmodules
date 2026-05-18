@@ -1,0 +1,4 @@
+﻿[submodule "src/library"]
+	path = src/library
+	url = https://github.com/freely-given-books/freely-given-books-data.git
+

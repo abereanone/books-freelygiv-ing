@@ -1,0 +1,15 @@
+- firstName: Charles
+  lastName: Spurgeon
+  slug: charles-spurgeon
+  photo: "/static/images/authors/charles-spurgeon/charles-spurgeon.jpg"
+  description: >
+    Charles Haddon Spurgeon (1834–1892) was an English Baptist preacher, born at Kelvedon, Essex.
+    He joined the Baptist communion in 1851 and quickly gained recognition for his preaching,
+    becoming pastor of New Park Street Chapel in Southwark in 1853. His congregations soon
+    overflowed every venue, and at twenty-two he addressed twenty-four thousand people at the
+    Crystal Palace. The Metropolitan Tabernacle, seating six thousand, was built for his ministry
+    and opened in 1861. His sermons, published weekly and eventually filling some fifty volumes,
+    made him one of the most widely read preachers in the English-speaking world. He also
+    established the Pastors' College, an orphanage at Stockwell, and edited The Sword and the
+    Trowel magazine. He died at Mentone, France, in 1892.
+  donateUrl: ""

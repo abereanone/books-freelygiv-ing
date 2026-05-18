@@ -1,0 +1,54 @@
+- title: The Glorious Feast of the Gospel
+  sortTitle: Glorious Feast of the Gospel
+  authors:
+    - slug: richard-sibbes
+      firstName: Richard
+      lastName: Sibbes
+  year: 1650
+  tags:
+    - classic
+  contributors:
+    - courtney-hicks
+  description: >
+    Christ's gracious invitation and royal entertainment of believers. Wherein amongst other things these comfortable doctrines are handles:
+
+
+    1. The marriage feast between Christ and the Church.
+
+    2. The vaile of Ignorance and Unbelief removed.
+
+    3. Christ's conquest over death.
+
+    4. The wiping away of tears from the faces of God's people.
+
+    5. The taking away of their reproaches.
+
+    6. The precious promises of God, and their certain performance.
+
+    7. The Divine Authority of the Holy Scriptures.
+
+    8. The duty and comfort of waiting upon God.
+  license: CC0
+  path: /static/books/richard-sibbes/the-glorious-feast-of-the-gospel
+  cover: cover.jpg
+  mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/richard-sibbes/the-glorious-feast-of-the-gospel/paperback/product-w4ywv7q.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: "/static/books/richard-sibbes/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.epub"
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: "/static/books/richard-sibbes/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.pdf"
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: "/static/books/richard-sibbes/the-glorious-feast-of-the-gospel/print-ready.zip"

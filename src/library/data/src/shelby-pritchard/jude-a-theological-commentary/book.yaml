@@ -1,0 +1,38 @@
+- title: "Jude: A Theological Commentary"
+  sortTitle: "Jude: A Theological Commentary"
+  authors:
+    - slug: shelby-pritchard
+      firstName: Shelby
+      lastName: Pritchard
+  year: 2025
+  tags:
+    - modern
+  description: >
+    The Epistle of Jude was written to a church infiltrated by compromisers, false teachers, and corrupt influencers. In that critical hour, Jude called upon dramatic and now somewhat forgotten stories of God's judgment to challenge his church to fear the Lord and turn from their sin back to God's eternal and unfailing love.
+
+
+    In this theological commentary, we explore the themes, structure, and history behind the book as we seek to draw out the eternal truths that God has given us here. Made primarily for teachers and pastors, these insights are still accessible to others, making it a perfect resource for all Christians serious about studying their faith.
+  license: CC0
+  path: /static/books/shelby-pritchard/jude-a-theological-commentary
+  cover: cover.jpg
+  mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/shelby-pritchard/jude-a-theological-commentary/paperback/product-95egn9k.html?q=shelby+pritchard&page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: "/static/books/shelby-pritchard/jude-a-theological-commentary/jude-a-theological-commentary.epub"
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: "/static/books/shelby-pritchard/jude-a-theological-commentary/jude-a-theological-commentary.pdf"
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: "/static/books/shelby-pritchard/jude-a-theological-commentary/print-ready.zip"

@@ -1,0 +1,103 @@
+.form-control-dark {
+  border-color: var(--bs-gray);
+}
+
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+
+#toctitle {
+  font-size: 200%;
+  padding-bottom: 20px
+}
+
+.sectlevel1 {
+  padding-bottom: 20px;
+}
+
+:root {
+  --my-yellow-text: #b8860b;
+}
+
+[data-bs-theme="dark"] {
+  --my-yellow-text: #ffd54f;
+}
+
+.text-yellow {
+  color: var(--my-yellow-text);
+}
+
+.card-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.library-letter-heading {
+  font-size: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.book-description-preview {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.tag-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag-filter-summary {
+  font-size: 0.85rem;
+}
+
+.tag-filter .dropdown-item {
+  cursor: pointer;
+}
+
+.tag-badge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  vertical-align: middle;
+  text-transform: capitalize;
+}
+
+.tag-classic {
+  background-color: #7b5e3c;
+  color: #fff;
+}
+
+.tag-modern {
+  background-color: #2a7a4b;
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    border-top: 1px solid var(--bs-border-color);
+    margin-top: 0.5rem;
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: 1.1rem;
+  }
+}
