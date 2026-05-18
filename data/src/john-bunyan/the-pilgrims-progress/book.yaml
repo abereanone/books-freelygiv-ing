@@ -23,15 +23,15 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.epub"
+          url: "https://files.books.freelygiv.ing/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.pdf"
+          url: "https://files.books.freelygiv.ing/john-bunyan/the-pilgrims-progress/the-pilgrims-progress.pdf"
     - type: printReady
       label: Print Ready
       sources:
         - name: Download
-          url: "/static/books/john-bunyan/the-pilgrims-progress/print-ready.zip"
+          url: "https://files.books.freelygiv.ing/john-bunyan/the-pilgrims-progress/print-ready.zip"
 

@@ -21,14 +21,14 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.epub"
+          url: "https://files.books.freelygiv.ing/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.pdf"
+          url: "https://files.books.freelygiv.ing/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.pdf"
     - type: printReady
       label: Print Ready
       sources:
         - name: Download
-          url: "/static/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/print-ready.zip"
+          url: "https://files.books.freelygiv.ing/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/print-ready.zip"

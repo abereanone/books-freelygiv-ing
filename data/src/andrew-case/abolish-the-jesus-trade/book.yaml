@@ -36,7 +36,7 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/andrew-case/abolish-the-jesus-trade/abolish-the-jesus-trade.epub"
+          url: "https://files.books.freelygiv.ing/andrew-case/abolish-the-jesus-trade/abolish-the-jesus-trade.epub"
         - name: Kindle
           url: https://mybook.to/jUnlDm0
         - name: AppleBooks
@@ -45,7 +45,7 @@
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/andrew-case/abolish-the-jesus-trade/abolish-the-jesus-trade.pdf"
+          url: "https://files.books.freelygiv.ing/andrew-case/abolish-the-jesus-trade/abolish-the-jesus-trade.pdf"
     - type: audiobook
       label: Audiobook
       sources:

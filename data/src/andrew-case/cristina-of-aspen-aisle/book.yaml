@@ -11,10 +11,10 @@
     One day, Will Millhouse, an ordinary, lonesome bachelor, encounters a young girl who claims to be his daughter from the future. Should he believe her? Cristina of Aspen Aisle is a mystery, a frontier adventure, and a love story that reminds us of the echoing beauty and joy all around us, if we are willing to see with new eyes.
 
 
-    "It's exactly the kind of book I would love to read but is impossible to find. I suppose I feel…giddy, agape, aglow, awakened to fresh awareness 'that I too am a man in love.' It has all the freshness of a first novel but none of the flaws. I'm in awe of the mastery of plot, suspense, timing, tone: all such delicate matters yet handled with perfect pitch. Case has really learned well from L.M. Montgomery, and indeed improved upon her in that his writing is so brilliantly and unabashedly God-struck. And the clarity of the prose: all the way through there's nary a misstep in sentence structure, rhythm, dialogue, etc. The writing never gets in the way of itself, and this alone is no small feat."
+    "It's exactly the kind of book I would love to read but is impossible to find. I suppose I feelâ€¦giddy, agape, aglow, awakened to fresh awareness 'that I too am a man in love.' It has all the freshness of a first novel but none of the flaws. I'm in awe of the mastery of plot, suspense, timing, tone: all such delicate matters yet handled with perfect pitch. Case has really learned well from L.M. Montgomery, and indeed improved upon her in that his writing is so brilliantly and unabashedly God-struck. And the clarity of the prose: all the way through there's nary a misstep in sentence structure, rhythm, dialogue, etc. The writing never gets in the way of itself, and this alone is no small feat."
 
 
-    —MIKE MASON | Best-selling author of The Mystery of Marriage and 21 Candles
+    â€”MIKE MASON | Best-selling author of The Mystery of Marriage and 21 Candles
   license: CC0
   path: /static/books/andrew-case/cristina-of-aspen-aisle
   cover: cover.jpg
@@ -28,4 +28,4 @@
       label: eBook
       sources:
         - name: Download (mobi)
-          url: "/static/books/andrew-case/cristina-of-aspen-aisle/cristina-of-aspen-aisle.mobi"
+          url: "https://files.books.freelygiv.ing/andrew-case/cristina-of-aspen-aisle/cristina-of-aspen-aisle.mobi"

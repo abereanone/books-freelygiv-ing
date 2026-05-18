@@ -11,7 +11,7 @@
     This is a book to help us pray the Word together before a real God. It's intended to make our prayers sing the melody of Scripture. Our modern world constantly sits in ambush against prayer, pushing it out of our lives, distracting us with pettiness and cisterns that hold no water. Praying the Bible Together is designed to help us fight to do what is at once one of the simplest and most magnificent acts that anyone can perform on earth or in heaven. The Bible is our faithful guide to a life of deep, soul-satisfying communion with our Father. Use this book to pray at home with the family, with your spouse, with your small group, with your church; wherever believers are gathered together, this book can enrich their time praying together on any occasion. Rather than a book about prayer, this book is simply a book of prayers that use God's own words and not our own.
 
 
-    As Tim Keller writes: "Our prayers should arise out of immersion in the Scripture. We should 'plunge ourselves into the sea' of God's language, the Bible. We should listen, study, think, reflect, and ponder the Scriptures until there is an answering response in our hearts and minds. It may be one of shame or of joy or of confusion or of appeal— but that response to God's speech is then truly prayer and should be given to God."
+    As Tim Keller writes: "Our prayers should arise out of immersion in the Scripture. We should 'plunge ourselves into the sea' of God's language, the Bible. We should listen, study, think, reflect, and ponder the Scriptures until there is an answering response in our hearts and minds. It may be one of shame or of joy or of confusion or of appealâ€” but that response to God's speech is then truly prayer and should be given to God."
   license: CC0
   path: /static/books/andrew-case/praying-the-bible-together
   cover: cover.jpg
@@ -25,9 +25,9 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/andrew-case/praying-the-bible-together/praying-the-bible-together.epub"
+          url: "https://files.books.freelygiv.ing/andrew-case/praying-the-bible-together/praying-the-bible-together.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/andrew-case/praying-the-bible-together/praying-the-bible-together.pdf"
+          url: "https://files.books.freelygiv.ing/andrew-case/praying-the-bible-together/praying-the-bible-together.pdf"

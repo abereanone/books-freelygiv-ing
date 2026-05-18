@@ -8,6 +8,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
     "astro": "^6.2.1",
     "yaml": "^2.8.1"
   }

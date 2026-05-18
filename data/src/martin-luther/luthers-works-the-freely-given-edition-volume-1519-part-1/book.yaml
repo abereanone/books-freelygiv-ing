@@ -22,4 +22,4 @@
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/martin-luther/luthers-works-the-freely-given-edition-volume-1519-part-1/luthers-works-the-freely-given-edition-volume-1519-part-1.pdf"
+          url: "https://files.books.freelygiv.ing/martin-luther/luthers-works-the-freely-given-edition-volume-1519-part-1/luthers-works-the-freely-given-edition-volume-1519-part-1.pdf"

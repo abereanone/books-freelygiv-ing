@@ -67,9 +67,12 @@ function buildAuthorYaml({ firstName, lastName, slug, photoExt, description, don
 
 // ── book YAML ─────────────────────────────────────────────────────────────────
 
+const R2_BASE = 'https://files.books.freelygiv.ing';
+
 function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year, tag, description, license, contributors, formats }) {
   const bookSlug = toSlug(title);
-  const basePath = `/static/books/${authorSlug}/${bookSlug}`;
+  const sitePath = `/static/books/${authorSlug}/${bookSlug}`;
+  const r2Path   = `${R2_BASE}/${authorSlug}/${bookSlug}`;
 
   const contributorsYaml = contributors.length > 0
     ? contributors.map(c => `    - ${c}`).join('\n')
@@ -82,7 +85,7 @@ function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year
       label: eBook
       sources:
         - name: Download
-          url: "${basePath}/${bookSlug}.epub"`);
+          url: "${r2Path}/${bookSlug}.epub"`);
   }
 
   if (formats.includes('PDF')) {
@@ -90,17 +93,15 @@ function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year
       label: PDF
       sources:
         - name: Download
-          url: "${basePath}/${bookSlug}.pdf"`);
+          url: "${r2Path}/${bookSlug}.pdf"`);
   }
 
   if (formats.includes('Print/Amazon')) {
-    let amazonUrl = '';
-    // URL will be filled in manually — placeholder left empty
     mediaTypeEntries.push(`    - type: printBook
       label: Book
       sources:
         - name: Amazon
-          url: "${amazonUrl}"`);
+          url: ""`);
   }
 
   if (formats.includes('Print-Ready ZIP')) {
@@ -108,8 +109,11 @@ function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year
       label: Print Ready
       sources:
         - name: Download
-          url: "${basePath}/print-ready.zip"`);
+          url: "${r2Path}/print-ready.zip"`);
   }
+
+  // sitePath is used only for the cover image (served from Cloudflare Pages)
+  const basePath = sitePath;
 
   return `- title: "${title}"
   sortTitle: "${sortTitle}"

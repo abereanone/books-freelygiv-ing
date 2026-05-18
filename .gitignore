@@ -4,3 +4,4 @@ node_modules
 dist
 .helix
 *.tar.gz
+.env

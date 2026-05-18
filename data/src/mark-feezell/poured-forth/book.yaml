@@ -22,9 +22,9 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/mark-feezell/poured-forth/poured-forth.epub"
+          url: "https://files.books.freelygiv.ing/mark-feezell/poured-forth/poured-forth.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/mark-feezell/poured-forth/poured-forth.pdf"
+          url: "https://files.books.freelygiv.ing/mark-feezell/poured-forth/poured-forth.pdf"

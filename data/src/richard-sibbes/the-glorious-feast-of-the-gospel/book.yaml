@@ -41,14 +41,14 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/richard-sibbes/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.epub"
+          url: "https://files.books.freelygiv.ing/richard-sibbes/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/richard-sibbes/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.pdf"
+          url: "https://files.books.freelygiv.ing/richard-sibbes/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.pdf"
     - type: printReady
       label: Print Ready
       sources:
         - name: Download
-          url: "/static/books/richard-sibbes/the-glorious-feast-of-the-gospel/print-ready.zip"
+          url: "https://files.books.freelygiv.ing/richard-sibbes/the-glorious-feast-of-the-gospel/print-ready.zip"

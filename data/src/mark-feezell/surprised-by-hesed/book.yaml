@@ -22,12 +22,12 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/mark-feezell/surprised-by-hesed/surprised-by-hesed.epub"
+          url: "https://files.books.freelygiv.ing/mark-feezell/surprised-by-hesed/surprised-by-hesed.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/mark-feezell/surprised-by-hesed/surprised-by-hesed.pdf"
+          url: "https://files.books.freelygiv.ing/mark-feezell/surprised-by-hesed/surprised-by-hesed.pdf"
     - type: audiobook
       label: Audiobook
       sources:

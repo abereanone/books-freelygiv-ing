@@ -54,13 +54,18 @@ for (const personSlug of readdirSync(DATA_SRC)) {
     }
   }
 
-  // Copy each book's content folder
+  // Copy only cover images from each book's content folder.
+  // epub/pdf/zip files are served from R2, not the site.
   for (const bookSlug of readdirSync(personDir)) {
     const contentDir = join(personDir, bookSlug, 'content');
     if (existsSync(contentDir)) {
       const destDir = join(PUBLIC, 'static', 'books', personSlug, bookSlug);
-      syncDir(contentDir, destDir);
-      copied++;
+      for (const file of readdirSync(contentDir)) {
+        if (IMAGE_EXTS.has(extname(file).toLowerCase())) {
+          copyFile(join(contentDir, file), join(destDir, file));
+          copied++;
+        }
+      }
     }
   }
 }

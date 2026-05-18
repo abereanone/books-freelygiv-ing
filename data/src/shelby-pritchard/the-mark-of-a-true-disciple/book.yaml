@@ -31,14 +31,14 @@
       label: eBook
       sources:
         - name: Download
-          url: "/static/books/shelby-pritchard/the-mark-of-a-true-disciple/the-mark-of-a-true-disciple.epub"
+          url: "https://files.books.freelygiv.ing/shelby-pritchard/the-mark-of-a-true-disciple/the-mark-of-a-true-disciple.epub"
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: "/static/books/shelby-pritchard/the-mark-of-a-true-disciple/the-mark-of-a-true-disciple.pdf"
+          url: "https://files.books.freelygiv.ing/shelby-pritchard/the-mark-of-a-true-disciple/the-mark-of-a-true-disciple.pdf"
     - type: printReady
       label: Print Ready
       sources:
         - name: Download
-          url: "/static/books/shelby-pritchard/the-mark-of-a-true-disciple/print-ready.zip"
+          url: "https://files.books.freelygiv.ing/shelby-pritchard/the-mark-of-a-true-disciple/print-ready.zip"
