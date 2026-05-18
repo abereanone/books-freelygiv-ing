@@ -4,4 +4,10 @@ node_modules
 dist
 .helix
 *.tar.gz
+*.epub
+*.pdf
+*.zip
+*.mobi
 .env
+*.py
+*.bat

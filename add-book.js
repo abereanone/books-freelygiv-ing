@@ -69,7 +69,7 @@ function buildAuthorYaml({ firstName, lastName, slug, photoExt, description, don
 
 const R2_BASE = 'https://files.books.freelygiv.ing';
 
-function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year, tag, description, license, contributors, formats }) {
+function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year, pages, tag, description, license, contributors, formats }) {
   const bookSlug = toSlug(title);
   const sitePath = `/static/books/${authorSlug}/${bookSlug}`;
   const r2Path   = `${R2_BASE}/${authorSlug}/${bookSlug}`;
@@ -121,7 +121,7 @@ function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year
     - slug: ${authorSlug}
       firstName: ${firstName}
       lastName: ${lastName}
-  year: ${year}
+  year: ${year}${pages ? `\n  pages: ${pages}` : ''}
   tags:
     - ${tag}
   contributors:
@@ -174,6 +174,8 @@ async function main() {
   console.log(`  → slug: ${bookSlug}`);
 
   const year        = await ask('Year published');
+  const pagesInput  = await ask('Page count (blank to skip)', '');
+  const pages       = pagesInput ? parseInt(pagesInput, 10) : null;
   const tagChoice   = await ask('Tag (classic / modern)', 'classic');
   const tag         = tagChoice === 'modern' ? 'modern' : 'classic';
   const license     = await ask('License', 'CC0');
@@ -195,7 +197,7 @@ async function main() {
   ensureDir(contentDir);
   writeFileSync(bookFile, buildBookYaml({
     title, sortTitle, authorSlug, firstName, lastName,
-    year, tag, description, license, contributors, formats
+    year, pages, tag, description, license, contributors, formats
   }));
 
   console.log(`\n✅  Done!\n`);

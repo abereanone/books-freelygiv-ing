@@ -30,7 +30,11 @@ const tags       = (book.tags || []).join(',');
         ))}
       </h5>
       {book.authors?.[0] && <p class="mb-1">{authorNames(book.authors)}</p>}
-      {book.year && <small class="text-body-secondary">{book.year}</small>}
+      {book.year && (
+        <small class="text-body-secondary">
+          {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
+        </small>
+      )}
       {book.description && (
         <p class="book-description-preview text-body-secondary mb-0 mt-1">
           {book.description.split(' ').slice(0, 25).join(' ')}…
