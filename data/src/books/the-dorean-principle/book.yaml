@@ -16,6 +16,11 @@
   path: /static/books/the-dorean-principle
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: https://thedoreanprinciple.org/
     - type: printBook
       label: Book
       sources:
