@@ -3,10 +3,23 @@ import Base from '../layouts/Base.astro';
 import BookItem from '../components/BookItem.astro';
 import { getBooks, getBookAuthorPairs } from '../lib/data.js';
 
-const books          = getBooks().sort((a, b) => a.sortTitle.localeCompare(b.sortTitle));
+const books = getBooks().sort((a, b) => a.sortTitle.localeCompare(b.sortTitle));
 const bookAuthorPairs = getBookAuthorPairs();
 
 const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
+
+function groupByLetter<T>(items: T[], getLetter: (item: T) => string): { letter: string; items: T[] }[] {
+  const map = new Map<string, T[]>();
+  for (const item of items) {
+    const letter = getLetter(item) || '#';
+    if (!map.has(letter)) map.set(letter, []);
+    map.get(letter)!.push(item);
+  }
+  return [...map.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([letter, items]) => ({ letter, items }));
+}
+
+const byTitle  = groupByLetter(books, b => b.sortTitle?.[0]?.toUpperCase() ?? '#');
+const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?.[0]?.toUpperCase() ?? '#');
 ---
 
 <Base title="Library" ogTitle="Library" ogDescription="Browse the full collection of freely given books.">
@@ -47,48 +60,38 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
   <div class="tab-content" id="libraryTabContent">
     <!-- By Title -->
     <div class="tab-pane fade show active" id="by-title" role="tabpanel" aria-labelledby="title-tab">
-      <div class="list-group">
-        {(() => {
-          let currentLetter = '';
-          return books.map(book => {
-            const letter = book.sortTitle?.[0]?.toUpperCase() ?? '#';
-            const heading = letter !== currentLetter ? (currentLetter = letter, letter) : null;
-            return (
-              <>
-                {heading && (
-                  <div class="list-group-item bg-body-secondary library-letter-heading">
-                    <strong><em>{heading}</em></strong>
-                  </div>
-                )}
-                <BookItem book={book} />
-              </>
-            );
-          });
-        })()}
-      </div>
+      {byTitle.map(({ letter, items }) => (
+        <div class="letter-section mb-4" data-letter={letter}>
+          <h5 class="library-letter-heading bg-body-secondary rounded px-3 py-1 mb-3">
+            <em>{letter}</em>
+          </h5>
+          <div class="row row-cols-1 row-cols-md-2 g-3">
+            {items.map((book: any) => (
+              <div class="col">
+                <BookItem book={book} grid showAuthors />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
 
     <!-- By Author (includes contributors) -->
     <div class="tab-pane fade" id="by-author" role="tabpanel" aria-labelledby="author-tab">
-      <div class="list-group">
-        {(() => {
-          let currentLetter = '';
-          return bookAuthorPairs.map(({ book, person }) => {
-            const letter = person.lastName?.[0]?.toUpperCase() ?? '#';
-            const heading = letter !== currentLetter ? (currentLetter = letter, letter) : null;
-            return (
-              <>
-                {heading && (
-                  <div class="list-group-item bg-body-secondary library-letter-heading">
-                    <strong><em>{heading}</em></strong>
-                  </div>
-                )}
-                <BookItem book={book} />
-              </>
-            );
-          });
-        })()}
-      </div>
+      {byAuthor.map(({ letter, items }) => (
+        <div class="letter-section mb-4" data-letter={letter}>
+          <h5 class="library-letter-heading bg-body-secondary rounded px-3 py-1 mb-3">
+            <em>{letter}</em>
+          </h5>
+          <div class="row row-cols-1 row-cols-md-2 g-3">
+            {items.map(({ book }: any) => (
+              <div class="col">
+                <BookItem book={book} grid showAuthors />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </Base>
@@ -98,45 +101,46 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
     const checkboxes  = document.querySelectorAll('.tag-checkbox');
     const clearBtn    = document.querySelector('.tag-clear-btn');
     const summary     = document.getElementById('tagFilterSummary');
-    const bookItems   = document.querySelectorAll('[data-tags]');
-    const headings    = document.querySelectorAll('.library-letter-heading');
     const dropdownBtn = document.getElementById('tagDropdown');
 
-    function getSelected() {
+    function getSelected(): string[] {
       return [...checkboxes].filter(cb => (cb as HTMLInputElement).checked).map(cb => (cb as HTMLInputElement).value);
     }
 
     function applyFilter() {
       const selected = getSelected();
+
       if (selected.length === 0) {
-        summary.textContent = '';
-        dropdownBtn.textContent = 'Filter by tag';
+        summary!.textContent = '';
+        dropdownBtn!.textContent = 'Filter by tag';
       } else {
-        summary.textContent = selected.map(t => t[0].toUpperCase() + t.slice(1)).join(', ');
-        dropdownBtn.textContent = `Filtering (${selected.length})`;
+        summary!.textContent = selected.map(t => t[0].toUpperCase() + t.slice(1)).join(', ');
+        dropdownBtn!.textContent = `Filtering (${selected.length})`;
       }
-      bookItems.forEach(item => {
-        if (selected.length === 0) {
-          (item as HTMLElement).style.display = '';
-        } else {
-          const tags = item.getAttribute('data-tags')?.split(',') ?? [];
-          (item as HTMLElement).style.display = selected.some(s => tags.includes(s)) ? '' : 'none';
-        }
-      });
-      headings.forEach(heading => {
-        let next = heading.nextElementSibling;
+
+      document.querySelectorAll('.letter-section').forEach(section => {
+        const bookItems = section.querySelectorAll('[data-tags]');
         let hasVisible = false;
-        while (next && !next.classList.contains('library-letter-heading')) {
-          if (next.hasAttribute('data-tags') && (next as HTMLElement).style.display !== 'none') {
-            hasVisible = true; break;
+        bookItems.forEach(item => {
+          const el = item as HTMLElement;
+          if (selected.length === 0) {
+            el.closest('.col')!.removeAttribute('style');
+            hasVisible = true;
+          } else {
+            const tags = el.getAttribute('data-tags')?.split(',') ?? [];
+            const visible = selected.some(s => tags.includes(s));
+            (el.closest('.col') as HTMLElement).style.display = visible ? '' : 'none';
+            if (visible) hasVisible = true;
           }
-          next = next.nextElementSibling;
-        }
-        (heading as HTMLElement).style.display = hasVisible ? '' : 'none';
+        });
+        (section as HTMLElement).style.display = hasVisible ? '' : 'none';
       });
     }
 
     checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
-    clearBtn?.addEventListener('click', () => { checkboxes.forEach(cb => (cb as HTMLInputElement).checked = false); applyFilter(); });
+    clearBtn?.addEventListener('click', () => {
+      checkboxes.forEach(cb => (cb as HTMLInputElement).checked = false);
+      applyFilter();
+    });
   });
 </script>

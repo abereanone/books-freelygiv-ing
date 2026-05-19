@@ -4,56 +4,94 @@ import { bookSlugFromPath } from '../lib/data.js';
 interface Props {
   book: any;
   compact?: boolean;
+  grid?: boolean;
+  showAuthors?: boolean;
 }
 
-const { book, compact = false } = Astro.props;
+const { book, compact = false, grid = false, showAuthors = false } = Astro.props;
 const authorSlug = book.authors?.[0]?.slug;
 const bookSlug   = bookSlugFromPath(book.path);
 const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
 const tags       = (book.tags || []).join(',');
 ---
 
-<a href={href} class="list-group-item list-group-item-action card-hover text-decoration-none" data-tags={tags}>
-  <div class="row g-0">
-    <div class="col-auto">
+{grid ? (
+  <div class="book-grid-item card card-hover position-relative" data-tags={tags}>
+    <div style="display:flex;align-items:center;gap:0.75rem;padding:0.5rem;">
       <img
         src={`${book.path}/${book.cover}`}
-        class="rounded me-3"
-        style={compact ? "max-height: 80px" : "max-height: 150px"}
+        class="rounded flex-shrink-0"
+        style="max-height:80px;width:auto;"
         alt={`${book.title} cover`}
       />
-    </div>
-    <div class="col">
-      <h5 class="mb-1">
-        {book.title}
-        {(book.tags || []).map((tag: string) => (
-          <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
-        ))}
-      </h5>
-      {!compact && book.authors?.[0] && (
-        <p class="mb-1">
-          {book.authors.map((author: any, i: number) => (
-            <>
-              {i > 0 && ', '}
-              <a
-                href={`/authors/${author.slug}/`}
-                class="text-reset"
-                onclick="event.stopPropagation()"
-              >{author.firstName} {author.lastName}</a>
-            </>
+      <div>
+        <h6 class="mb-1 lh-sm">
+          <a href={href} class="stretched-link text-decoration-none text-reset">{book.title}</a>
+          {(book.tags || []).map((tag: string) => (
+            <span class={`badge tag-badge tag-${tag} ms-1`}>{tag}</span>
           ))}
-        </p>
-      )}
-      {book.year && (
-        <small class="text-body-secondary">
-          {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
-        </small>
-      )}
-      {!compact && book.description && (
-        <p class="book-description-preview text-body-secondary mb-0 mt-1">
-          {book.description.split(' ').slice(0, 25).join(' ')}…
-        </p>
-      )}
+        </h6>
+        {showAuthors && book.authors?.[0] && (
+          <div class="text-body-secondary small mb-1" style="position:relative;z-index:2;">
+            {book.authors.map((author: any, i: number) => (
+              <>
+                {i > 0 && ', '}
+                <a href={`/authors/${author.slug}/`} class="text-reset">{author.lastName}, {author.firstName}</a>
+              </>
+            ))}
+          </div>
+        )}
+        {book.year && (
+          <small class="text-body-secondary">
+            {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
+          </small>
+        )}
+      </div>
     </div>
   </div>
-</a>
+) : (
+  <a href={href} class="list-group-item list-group-item-action card-hover text-decoration-none" data-tags={tags}>
+    <div class="row g-0">
+      <div class="col-auto">
+        <img
+          src={`${book.path}/${book.cover}`}
+          class="rounded me-3"
+          style={compact ? "max-height: 80px" : "max-height: 150px"}
+          alt={`${book.title} cover`}
+        />
+      </div>
+      <div class="col">
+        <h5 class="mb-1">
+          {book.title}
+          {(book.tags || []).map((tag: string) => (
+            <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
+          ))}
+        </h5>
+        {(!compact || showAuthors) && book.authors?.[0] && (
+          <p class="mb-1">
+            {book.authors.map((author: any, i: number) => (
+              <>
+                {i > 0 && ', '}
+                <a
+                  href={`/authors/${author.slug}/`}
+                  class="text-reset"
+                  onclick="event.stopPropagation()"
+                >{author.firstName} {author.lastName}</a>
+              </>
+            ))}
+          </p>
+        )}
+        {book.year && (
+          <small class="text-body-secondary">
+            {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
+          </small>
+        )}
+        {!compact && book.description && (
+          <p class="book-description-preview text-body-secondary mb-0 mt-1">
+            {book.description.split(' ').slice(0, 25).join(' ')}…
+          </p>
+        )}
+      </div>
+    </div>
+  </a>
+)}
