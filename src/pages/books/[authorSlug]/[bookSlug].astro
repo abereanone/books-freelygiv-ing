@@ -16,6 +16,16 @@ const { book } = Astro.props;
 const descHtml  = newlineToBr(linkify(book.description ?? ''));
 const siteUrl   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogImage   = `${siteUrl}${book.path}/${book.cover}`;
+
+const btnClass: Record<string, string> = {
+  htmlBook:   'btn-success',
+  pdfBook:    'btn-danger',
+  eBook:      'btn-primary',
+  mobi:       'btn-info',
+  printBook:  'btn-warning',
+  printReady: 'btn-secondary',
+  audiobook:  'btn-secondary',
+};
 ---
 
 <Base
@@ -89,7 +99,7 @@ const ogImage   = `${siteUrl}${book.path}/${book.cover}`;
             {(book.mediaTypes || []).map((item: any) =>
               (item.sources || []).map((source: any) => (
                 <a
-                  class="btn btn-primary"
+                  class={`btn ${btnClass[item.type] ?? 'btn-primary'}`}
                   href={source.url}
                   target="_blank" rel="noopener noreferrer"
                 >
