@@ -6,53 +6,83 @@ import YAML from 'yaml';
 // Using it here rather than import.meta.url because Vite transforms the latter
 // to a bundled virtual path during astro build, breaking relative resolution.
 const DATA_SRC = join(process.cwd(), 'data/src');
+const BOOKS_SRC = join(DATA_SRC, 'books');
 
 function listPersonSlugs() {
   if (!existsSync(DATA_SRC)) return [];
-  return readdirSync(DATA_SRC).filter(s => statSync(join(DATA_SRC, s)).isDirectory());
+  return readdirSync(DATA_SRC).filter(s => s !== 'books' && statSync(join(DATA_SRC, s)).isDirectory());
+}
+
+function readYamlArray(file) {
+  const parsed = YAML.parse(readFileSync(file, 'utf8'));
+  return Array.isArray(parsed) ? parsed : [];
 }
 
 export function getAuthors() {
   return listPersonSlugs().flatMap(slug => {
     const f = join(DATA_SRC, slug, 'author.yaml');
-    return existsSync(f) ? YAML.parse(readFileSync(f, 'utf8')) : [];
+    return existsSync(f) ? readYamlArray(f) : [];
   });
 }
 
 export function getContributors() {
   return listPersonSlugs().flatMap(slug => {
     const f = join(DATA_SRC, slug, 'contributor.yaml');
-    return existsSync(f) ? YAML.parse(readFileSync(f, 'utf8')) : [];
+    return existsSync(f) ? readYamlArray(f) : [];
   });
 }
 
-export function getBooks() {
-  return listPersonSlugs().flatMap(personSlug => {
+function personBySlug(people) {
+  return Object.fromEntries(people.map(person => [person.slug, person]));
+}
+
+function normalizeAuthorRef(ref, authorsBySlug) {
+  if (typeof ref === 'string') return authorsBySlug[ref] ?? { slug: ref, firstName: ref, lastName: '' };
+  if (ref?.slug) return authorsBySlug[ref.slug] ?? ref;
+  return ref;
+}
+
+function getBookDirs() {
+  const dirs = [];
+
+  if (existsSync(BOOKS_SRC)) {
+    for (const bookSlug of readdirSync(BOOKS_SRC)) {
+      const bookDir = join(BOOKS_SRC, bookSlug);
+      if (statSync(bookDir).isDirectory()) dirs.push({ bookSlug, bookDir });
+    }
+  }
+
+  for (const personSlug of listPersonSlugs()) {
     const personDir = join(DATA_SRC, personSlug);
-    return readdirSync(personDir)
-      .filter(entry => statSync(join(personDir, entry)).isDirectory())
-      .flatMap(bookSlug => {
-        const f = join(personDir, bookSlug, 'book.yaml');
-        return existsSync(f) ? YAML.parse(readFileSync(f, 'utf8')) : [];
-      });
+    for (const entry of readdirSync(personDir)) {
+      const bookDir = join(personDir, entry);
+      if (statSync(bookDir).isDirectory() && existsSync(join(bookDir, 'book.yaml'))) {
+        dirs.push({ bookSlug: entry, bookDir });
+      }
+    }
+  }
+
+  return dirs;
+}
+
+export function getBooks() {
+  const authorsBySlug = personBySlug(getAuthors());
+
+  return getBookDirs().flatMap(({ bookSlug, bookDir }) => {
+    const f = join(bookDir, 'book.yaml');
+    return existsSync(f)
+      ? readYamlArray(f).map(book => ({
+        ...book,
+        path: book.path ?? `/static/books/${bookSlug}`,
+        authors: (book.authors || []).map(author => normalizeAuthorRef(author, authorsBySlug)).filter(Boolean),
+      }))
+      : [];
   });
 }
 
 /** One {book, person} pair per primary author and per contributor. Pre-sorted by lastName. */
 export function getBookAuthorPairs() {
-  const allPeople = {};
-  for (const slug of listPersonSlugs()) {
-    const dir = join(DATA_SRC, slug);
-    const f = existsSync(join(dir, 'author.yaml'))
-      ? join(dir, 'author.yaml')
-      : existsSync(join(dir, 'contributor.yaml'))
-        ? join(dir, 'contributor.yaml')
-        : null;
-    if (f) {
-      const data = YAML.parse(readFileSync(f, 'utf8'));
-      if (Array.isArray(data) && data[0]) allPeople[data[0].slug] = data[0];
-    }
-  }
+  const allPeople = personBySlug([...getAuthors(), ...getContributors()]);
 
   const pairs = [];
   const seen = new Set();
@@ -91,7 +121,19 @@ export function newlineToBr(text) {
   return text.replace(/\n/g, '<br>\n');
 }
 
-/** Extract the book slug from its data path (/static/books/author/book → book) */
+export function personPhotos(person, limit = 2) {
+  const photos = Array.isArray(person?.photos)
+    ? person.photos
+    : person?.photos
+      ? [person.photos]
+      : person?.photo
+        ? [person.photo]
+        : [];
+
+  return photos.filter(Boolean).slice(0, limit);
+}
+
+/** Extract the book slug from its data path (/static/books/book → book) */
 export function bookSlugFromPath(path) {
   return path.split('/').pop();
 }

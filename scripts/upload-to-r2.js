@@ -24,6 +24,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_SRC  = join(__dirname, '../data/src');
+const BOOKS_SRC = join(DATA_SRC, 'books');
 
 // Load .env file if present
 try {
@@ -80,36 +81,39 @@ async function main() {
   let uploaded = 0;
   let skipped  = 0;
 
-  for (const personSlug of readdirSync(DATA_SRC)) {
-    const personDir = join(DATA_SRC, personSlug);
-    if (!statSync(personDir).isDirectory()) continue;
+  if (!existsSync(BOOKS_SRC)) {
+    console.error(`Books directory not found: ${BOOKS_SRC}`);
+    process.exit(1);
+  }
 
-    for (const bookSlug of readdirSync(personDir)) {
-      const contentDir = join(personDir, bookSlug, 'content');
-      if (!existsSync(contentDir)) continue;
+  for (const bookSlug of readdirSync(BOOKS_SRC)) {
+    const bookDir = join(BOOKS_SRC, bookSlug);
+    if (!statSync(bookDir).isDirectory()) continue;
 
-      for (const file of readdirSync(contentDir)) {
-        if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
+    const contentDir = join(bookDir, 'content');
+    if (!existsSync(contentDir)) continue;
 
-        const key      = `${personSlug}/${bookSlug}/${file}`;
-        const filePath = join(contentDir, file);
+    for (const file of readdirSync(contentDir)) {
+      if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
 
-        if (await fileExistsInR2(key)) {
-          console.log(`  skip  ${key}`);
-          skipped++;
-          continue;
-        }
+      const key      = `${bookSlug}/${file}`;
+      const filePath = join(contentDir, file);
 
-        const body = readFileSync(filePath);
-        await s3.send(new PutObjectCommand({
-          Bucket:      R2_BUCKET,
-          Key:         key,
-          Body:        body,
-          ContentType: mimeType(file),
-        }));
-        console.log(`  upload  ${key}`);
-        uploaded++;
+      if (await fileExistsInR2(key)) {
+        console.log(`  skip  ${key}`);
+        skipped++;
+        continue;
       }
+
+      const body = readFileSync(filePath);
+      await s3.send(new PutObjectCommand({
+        Bucket:      R2_BUCKET,
+        Key:         key,
+        Body:        body,
+        ContentType: mimeType(file),
+      }));
+      console.log(`  upload  ${key}`);
+      uploaded++;
     }
   }
 

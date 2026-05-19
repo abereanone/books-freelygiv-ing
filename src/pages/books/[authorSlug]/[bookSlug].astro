@@ -63,7 +63,12 @@ const ogImage   = `${siteUrl}${book.path}/${book.cover}`;
           {book.authors?.[0] && (
             <p class="lead mb-2">
               <strong>Author{book.authors.length > 1 ? 's' : ''}:</strong>{' '}
-              {authorNames(book.authors)}
+              {book.authors.map((author: any, i: number) => (
+                <>
+                  {i > 0 && ', '}
+                  <a href={`/authors/${author.slug}/`}>{author.firstName} {author.lastName}</a>
+                </>
+              ))}
             </p>
           )}
           {book.year && <p class="mb-2"><strong>Year:</strong> {book.year}</p>}
@@ -86,7 +91,7 @@ const ogImage   = `${siteUrl}${book.path}/${book.cover}`;
                 <a
                   class="btn btn-primary"
                   href={source.url}
-                  {...(item.type === 'printBook' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  target="_blank" rel="noopener noreferrer"
                 >
                   {item.type === 'printBook' && (
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-book me-2" viewBox="0 0 16 16">

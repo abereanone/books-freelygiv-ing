@@ -11,3 +11,8 @@ dist
 .env
 *.py
 *.bat
+dist-check
+upload-to-r2.js
+public/static/books/
+public/static/images/authors/
+public/static/images/contributors/

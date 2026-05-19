@@ -1,5 +1,5 @@
 ---
-import { authorNames, bookSlugFromPath } from '../lib/data.js';
+import { bookSlugFromPath } from '../lib/data.js';
 
 interface Props {
   book: any;
@@ -29,7 +29,20 @@ const tags       = (book.tags || []).join(',');
           <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
         ))}
       </h5>
-      {book.authors?.[0] && <p class="mb-1">{authorNames(book.authors)}</p>}
+      {book.authors?.[0] && (
+        <p class="mb-1">
+          {book.authors.map((author: any, i: number) => (
+            <>
+              {i > 0 && ', '}
+              <a
+                href={`/authors/${author.slug}/`}
+                class="text-reset"
+                onclick="event.stopPropagation()"
+              >{author.firstName} {author.lastName}</a>
+            </>
+          ))}
+        </p>
+      )}
       {book.year && (
         <small class="text-body-secondary">
           {book.year}{book.pages ? ` · ${book.pages} pages` : ''}

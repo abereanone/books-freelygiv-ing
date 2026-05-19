@@ -1,0 +1,9 @@
+- firstName: Michael
+  lastName: Coughlin
+  slug: michael-coughlin
+  photo: "/static/images/contributors/michael-coughlin/michael-coughlin.jpg"
+  description: >
+    Michael has worked in IT since 1998. His love for development and for Christianity converge nicely in the creation of apps for the Church to use.
+
+    “I want to make things that the church can use to edify saints, help them in their walk with God, and serve one another.” 
+  donateUrl: "https://www.zeffy.com/en-US/donation-form/2f6bd789-aeeb-4ab7-83e3-4ca5a5345599"

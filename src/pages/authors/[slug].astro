@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
-import { getAuthors, getBooks, linkify, newlineToBr } from '../../lib/data.js';
+import { getAuthors, getBooks, linkify, newlineToBr, personPhotos } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return getAuthors().map(author => ({ params: { slug: author.slug }, props: { author } }));
@@ -18,6 +18,7 @@ const books = getBooks()
 
 const fullName = `${author.firstName} ${author.lastName}`;
 const descHtml = newlineToBr(linkify(author.description ?? ''));
+const photos = personPhotos(author);
 ---
 
 <Base title={fullName} ogTitle={fullName} ogDescription={author.description}>
@@ -30,8 +31,17 @@ const descHtml = newlineToBr(linkify(author.description ?? ''));
   </nav>
 
   <div class="mb-4">
-    {author.photo && (
-      <img src={author.photo} class="rounded mb-3" style="max-width: 200px;" alt={fullName} />
+    {photos.length > 0 && (
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        {photos.map((photo: string, index: number) => (
+          <img
+            src={photo}
+            class="rounded"
+            style="width: 200px; max-width: 100%; aspect-ratio: 1; object-fit: cover;"
+            alt={photos.length === 1 ? fullName : `${fullName} photo ${index + 1}`}
+          />
+        ))}
+      </div>
     )}
     <h1>{fullName}</h1>
     {author.description && <p class="lead" set:html={descHtml} />}

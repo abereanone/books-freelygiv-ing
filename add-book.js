@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_SRC = join(__dirname, 'data', 'src');
+const BOOKS_SRC = join(DATA_SRC, 'books');
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -69,10 +70,12 @@ function buildAuthorYaml({ firstName, lastName, slug, photoExt, description, don
 
 const R2_BASE = 'https://files.books.freelygiv.ing';
 
-function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year, pages, tag, description, license, contributors, formats }) {
+function buildBookYaml({ title, sortTitle, authorSlugs, year, pages, tag, description, license, contributors, formats }) {
   const bookSlug = toSlug(title);
-  const sitePath = `/static/books/${authorSlug}/${bookSlug}`;
-  const r2Path   = `${R2_BASE}/${authorSlug}/${bookSlug}`;
+  const sitePath = `/static/books/${bookSlug}`;
+  const r2Path   = `${R2_BASE}/${bookSlug}`;
+
+  const authorsYaml = authorSlugs.map(slug => `    - ${slug}`).join('\n');
 
   const contributorsYaml = contributors.length > 0
     ? contributors.map(c => `    - ${c}`).join('\n')
@@ -118,9 +121,7 @@ function buildBookYaml({ title, sortTitle, authorSlug, firstName, lastName, year
   return `- title: "${title}"
   sortTitle: "${sortTitle}"
   authors:
-    - slug: ${authorSlug}
-      firstName: ${firstName}
-      lastName: ${lastName}
+${authorsYaml}
   year: ${year}${pages ? `\n  pages: ${pages}` : ''}
   tags:
     - ${tag}
@@ -141,6 +142,7 @@ ${mediaTypeEntries.join('\n')}
 async function main() {
   console.log('\n📚  Add a book to books-data\n');
   ensureDir(DATA_SRC);
+  ensureDir(BOOKS_SRC);
 
   // ── author ──
   console.log('── Author ───────────────────────────────');
@@ -152,6 +154,7 @@ async function main() {
   const authorDir  = join(DATA_SRC, authorSlug);
   const authorFile = join(authorDir, 'author.yaml');
   let authorExists = existsSync(authorFile);
+  let photoExt = 'jpg';
 
   if (authorExists) {
     console.log(`  ✓ Author folder already exists — skipping author.yaml creation.`);
@@ -160,11 +163,17 @@ async function main() {
     console.log('\n  (Leave bio blank to edit the YAML file manually afterward)');
     const description = await ask('Bio / description (one paragraph)');
     const donateUrl   = await ask('Donate URL (optional)', '');
-    const photoExt    = await ask('Photo file extension', 'jpg');
+    photoExt = await ask('Photo file extension', 'jpg');
 
     writeFileSync(authorFile, buildAuthorYaml({ firstName, lastName, slug: authorSlug, photoExt, description, donateUrl }));
     console.log(`  ✓ Written: ${authorFile}`);
   }
+
+  const extraAuthorInput = await ask('Additional author slugs (comma-separated, or blank)', '');
+  const authorSlugs = [
+    authorSlug,
+    ...(extraAuthorInput ? extraAuthorInput.split(',').map(s => s.trim()).filter(Boolean) : []),
+  ];
 
   // ── book ──
   console.log('\n── Book ─────────────────────────────────');
@@ -190,13 +199,13 @@ async function main() {
   const formats = await askMultiChoice('Which formats exist?', availableFormats);
 
   // ── write files ──
-  const bookDir     = join(authorDir, bookSlug);
+  const bookDir     = join(BOOKS_SRC, bookSlug);
   const contentDir  = join(bookDir, 'content');
   const bookFile    = join(bookDir, 'book.yaml');
 
   ensureDir(contentDir);
   writeFileSync(bookFile, buildBookYaml({
-    title, sortTitle, authorSlug, firstName, lastName,
+    title, sortTitle, authorSlugs,
     year, pages, tag, description, license, contributors, formats
   }));
 
@@ -210,8 +219,7 @@ async function main() {
   if (formats.includes('Print-Ready ZIP')) console.log(`  content/print-ready.zip`);
   if (formats.includes('Print/Amazon'))  console.log(`\n  ⚠  Update the Amazon URL in:\n     ${bookFile}`);
   if (!authorExists) {
-    const ext = 'jpg';
-    console.log(`\n  Also copy author photo to:\n     ${join(authorDir, `${authorSlug}.${ext}`)}`);
+    console.log(`\n  Also copy author photo to:\n     ${join(authorDir, `${authorSlug}.${photoExt}`)}`);
   }
   console.log('');
 

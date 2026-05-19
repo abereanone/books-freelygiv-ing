@@ -8,6 +8,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_SRC  = join(__dirname, '../data/src');
+const BOOKS_SRC = join(DATA_SRC, 'books');
 const PUBLIC    = join(__dirname, '../public');
 
 const IMAGE_EXTS = new Set(['.webp', '.jpg', '.jpeg', '.png']);
@@ -39,6 +40,8 @@ if (!existsSync(DATA_SRC)) {
 let copied = 0;
 
 for (const personSlug of readdirSync(DATA_SRC)) {
+  if (personSlug === 'books') continue;
+
   const personDir = join(DATA_SRC, personSlug);
   if (!statSync(personDir).isDirectory()) continue;
 
@@ -54,17 +57,23 @@ for (const personSlug of readdirSync(DATA_SRC)) {
     }
   }
 
-  // Copy only cover images from each book's content folder.
-  // epub/pdf/zip files are served from R2, not the site.
-  for (const bookSlug of readdirSync(personDir)) {
-    const contentDir = join(personDir, bookSlug, 'content');
-    if (existsSync(contentDir)) {
-      const destDir = join(PUBLIC, 'static', 'books', personSlug, bookSlug);
-      for (const file of readdirSync(contentDir)) {
-        if (IMAGE_EXTS.has(extname(file).toLowerCase())) {
-          copyFile(join(contentDir, file), join(destDir, file));
-          copied++;
-        }
+}
+
+// Copy only cover images from each book's content folder.
+// epub/pdf/zip files are served from R2, not the site.
+if (existsSync(BOOKS_SRC)) {
+  for (const bookSlug of readdirSync(BOOKS_SRC)) {
+    const bookDir = join(BOOKS_SRC, bookSlug);
+    if (!statSync(bookDir).isDirectory()) continue;
+
+    const contentDir = join(bookDir, 'content');
+    if (!existsSync(contentDir)) continue;
+
+    const destDir = join(PUBLIC, 'static', 'books', bookSlug);
+    for (const file of readdirSync(contentDir)) {
+      if (IMAGE_EXTS.has(extname(file).toLowerCase())) {
+        copyFile(join(contentDir, file), join(destDir, file));
+        copied++;
       }
     }
   }

@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getAuthors } from '../../lib/data.js';
+import { getAuthors, personPhotos } from '../../lib/data.js';
 
 const authors = getAuthors().sort((a, b) => a.lastName.localeCompare(b.lastName));
 ---
@@ -16,22 +16,25 @@ const authors = getAuthors().sort((a, b) => a.lastName.localeCompare(b.lastName)
   <h1>Authors</h1>
 
   <div class="row row-cols-2 row-cols-md-3 g-3">
-    {authors.map(author => (
-      <div class="col">
-        <a href={`/authors/${author.slug}/`} class="card h-100 text-decoration-none text-center">
-          {author.photo && (
-            <img
-              src={author.photo}
-              class="card-img-top p-3 rounded-circle"
-              style="aspect-ratio: 1; object-fit: cover;"
-              alt={`${author.firstName} ${author.lastName}`}
-            />
-          )}
-          <div class="card-body">
-            <h5 class="card-title">{author.firstName} {author.lastName}</h5>
-          </div>
-        </a>
-      </div>
-    ))}
+    {authors.map(author => {
+      const photo = personPhotos(author, 1)[0];
+      return (
+        <div class="col">
+          <a href={`/authors/${author.slug}/`} class="card h-100 text-decoration-none text-center">
+            {photo && (
+              <img
+                src={photo}
+                class="card-img-top p-3 rounded-circle"
+                style="aspect-ratio: 1; object-fit: cover;"
+                alt={`${author.firstName} ${author.lastName}`}
+              />
+            )}
+            <div class="card-body">
+              <h5 class="card-title">{author.firstName} {author.lastName}</h5>
+            </div>
+          </a>
+        </div>
+      );
+    })}
   </div>
 </Base>

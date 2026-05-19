@@ -1,0 +1,32 @@
+- title: Our Sin, His Mercy
+  sortTitle: Our Sin, His Mercy
+  authors:
+    - joe-conkle
+  year: 2025
+  pages: 141
+  tags:
+    - modern
+  contributors: []
+  description: |
+    This book is written to honor God by calling His people to a deeper awareness of their sin and a greater joy in the mercy of Christ. Corporate confession is not a means of regaining forgiveness (for the penalty has been paid once for all by Jesus) but a reminder of who we are apart from Him, what He has done for us, and how we must remain humble before our holy God. It is a time to repent, renounce sin, and rest in the assurance of pardon through Christ.
+
+    It is also written with the hope of encouraging and equipping men to lead both in the home and in the church. By using these confessions to guide their families in devotion, men will grow in faithfulness and spiritual maturity. And by stepping into the pulpit to present these confessions of sin, they will grow in reverence, humility, and confidence in the Word of God, preparing them for greater leadership in support of their local church.
+  license: CC0
+  path: /static/books/our-sin-his-mercy
+  cover: cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/joe-conkle/OurSinHisMercy.pdf
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: "https://www.lulu.com/shop/joseph-conkle-and-marv-plementosh-and-michael-coughlin/our-sin-his-mercy/paperback/product-q68vvdn.html"
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/joe-conkle/OurSinHisMercy_print_ready.zip

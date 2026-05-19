@@ -1,0 +1,11 @@
+- firstName: "Joe"
+  lastName: "Conkle"
+  slug: "joe-conkle"
+  photos:
+    - "/static/images/authors/joe-conkle/joseph-conkle.jpg"
+    - "/static/images/authors/joe-conkle/joseph-conkle2.jpg"
+  description: >
+    Joe Conkle is a lifelong Ohio resident who currently lives in Perrysville. After a career as a corrections officer, he continues to serve his community and Christ's church in a variety of ways.
+
+    Joe and his wife have been married for over 40 years, and they have three children and five grandchildren. Since 2019, he has served as an elder at Providence Church in Mansfield, Ohio, an independent Reformed church holding to the 1689 London Baptist Confession of Faith. He also serves on the board of directors for Ashland Christian Health Center.
+  donateUrl: ""

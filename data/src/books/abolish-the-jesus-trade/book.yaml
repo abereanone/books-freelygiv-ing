@@ -1,0 +1,46 @@
+- title: Abolish the Jesus Trade
+  sortTitle: Abolish the Jesus Trade
+  authors:
+    - andrew-case
+    - conley-owens
+    - jon-here
+  year: 2025
+  pages: 377
+  tags:
+    - modern
+  description: |
+    [For a free copy of this book with free shipping, please visit: https://sellingjesus.org/book ]
+    Years ago Randy Alcorn observed, "In the Christian community today there is more blindness, rationalization, and unclear thinking about money than anything else." Abolish the Jesus Trade aims to help reverse this assessment. The Church is currently marked by underdeveloped thinking about Scripture's teaching on money and ministry. The sale of the sacred has been normalized, not by prosperity preachers, but by conservative evangelicals. Busy building paywalls, we have torn down the sincerity of the Body of Christ.
+    Conley Owens, Jon Here, and Andrew Case present this collection of articles that seek to exalt the radical generosity of God's heart, confront the commercialization of Christianity, and promote the biblical teaching that ministry should be supported but never sold. We are living in a time like the antebellum United States, where the majority of ministers regularly defended the slave trade from the pulpit, just as they defend the Jesus trade today. This calls for repentance, reform, and a return to Scripture's primacy over economic expediency.
+  license: CC0
+  path: /static/books/abolish-the-jesus-trade
+  cover: cover.jpg
+  mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Free
+          url: https://sellingjesus.org/book#get-a-printed-copy
+        - name: Lulu
+          url: https://www.lulu.com/shop/andrew-case-and-conley-owens-and-jon-here/abolish-the-jesus-trade/paperback/product-w4yjnj8.html?page=1&pageSize=4
+        - name: Amazon
+          url: https://www.amazon.com/dp/B0FKNGWMGP
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/abolish-the-jesus-trade/abolish-the-jesus-trade.epub
+        - name: Kindle
+          url: https://mybook.to/jUnlDm0
+        - name: AppleBooks
+          url: https://books.apple.com/us/book/abolish-the-jesus-trade-spread-the-joy-of-freely-giving/id6749104733
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/abolish-the-jesus-trade/abolish-the-jesus-trade.pdf
+    - type: audiobook
+      label: Audiobook
+      sources:
+        - name: Podcast
+          url: https://sellingjesus.org/podcast

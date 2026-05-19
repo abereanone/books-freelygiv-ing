@@ -1,0 +1,29 @@
+- title: Poured Forth
+  sortTitle: Poured Forth
+  authors:
+    - mark-feezell
+  year: 2025
+  pages: 85
+  tags:
+    - modern
+  description: |
+    Are you a Christian who creates, a pastor or author of Bible studies, or an academic who expands the boundaries of biblical knowledge? How far will your gifts reach? How will you steward them? Will your work matter a century from now? Poured Forth lays out a compelling vision of what it means to unconditionally commit your work to the Lord.
+  license: CC0
+  path: /static/books/poured-forth
+  cover: cover.jpg
+  mediaTypes:
+    - type: printBook
+      label: Book
+      sources:
+        - name: Amazon
+          url: https://www.amazon.com/dp/B0FQBT2DMH/
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/poured-forth/poured-forth.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/poured-forth/poured-forth.pdf
