@@ -11,7 +11,7 @@ const DATA_SRC  = join(__dirname, '../data/src');
 const BOOKS_SRC = join(DATA_SRC, 'books');
 const PUBLIC    = join(__dirname, '../public');
 
-const IMAGE_EXTS = new Set(['.webp', '.jpg', '.jpeg', '.png']);
+const IMAGE_EXTS = new Set(['.webp', '.jpg', '.jpeg', '.png', '.html']);
 
 function copyFile(src, dest) {
   mkdirSync(dirname(dest), { recursive: true });

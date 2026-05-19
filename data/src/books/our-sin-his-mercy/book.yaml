@@ -19,7 +19,7 @@
       label: Read Online
       sources:
         - name: Read
-          url: https://files.books.freelygiv.ing/our-sin-his-mercy/our-sin-his-mercy.html
+          url: /static/books/our-sin-his-mercy/our-sin-his-mercy.html
     - type: pdfBook
       label: PDF
       sources:

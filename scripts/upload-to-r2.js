@@ -80,6 +80,7 @@ function mimeType(filename) {
   if (ext === '.pdf')  return 'application/pdf';
   if (ext === '.zip')  return 'application/zip';
   if (ext === '.mobi') return 'application/x-mobipocket-ebook';
+  if (ext === '.html') return 'text/html';
   return 'application/octet-stream';
 }
 
