@@ -8,6 +8,20 @@ const bookAuthorPairs = getBookAuthorPairs();
 
 const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
 
+const typeConfig: Record<string, { label: string; cls: string }> = {
+  htmlBook:   { label: 'Read Online', cls: 'btn-success' },
+  pdfBook:    { label: 'PDF',         cls: 'btn-danger'  },
+  eBook:      { label: 'eBook',       cls: 'btn-primary' },
+  mobi:       { label: 'Mobi',        cls: 'btn-info'    },
+  printBook:  { label: 'Print',       cls: 'btn-warning' },
+  printReady: { label: 'Print Ready', cls: 'btn-secondary'},
+  audiobook:  { label: 'Audiobook',   cls: 'btn-secondary'},
+};
+
+const allTypes = [...new Set(books.flatMap(b => (b.mediaTypes || []).map((m: any) => m.type)))]
+  .filter(t => typeConfig[t])
+  .sort((a, b) => Object.keys(typeConfig).indexOf(a) - Object.keys(typeConfig).indexOf(b));
+
 function groupByLetter<T>(items: T[], getLetter: (item: T) => string): { letter: string; items: T[] }[] {
   const map = new Map<string, T[]>();
   for (const item of items) {
@@ -24,6 +38,20 @@ const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?
 
 <Base title="Library" ogTitle="Library" ogDescription="Browse the full collection of freely given books.">
   <h1>Library</h1>
+
+  <div class="d-flex flex-wrap gap-2 mb-2" id="typeFilter">
+    {allTypes.map(type => (
+      <button
+        class={`btn btn-sm ${typeConfig[type].cls} type-filter-btn`}
+        data-type={type}
+        type="button"
+      >{typeConfig[type].label}</button>
+    ))}
+  </div>
+  <p class="text-body-secondary small mb-3" id="typeFilterStatus" style="display:none;">
+    Showing only books available as: <strong id="typeFilterLabel"></strong> &mdash;
+    <button class="btn btn-link btn-sm p-0 text-body-secondary type-clear-btn" type="button">show all</button>
+  </p>
 
   <div class="tag-filter mb-3" id="tagFilter">
     <div class="dropdown">
@@ -98,24 +126,47 @@ const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const checkboxes  = document.querySelectorAll('.tag-checkbox');
-    const clearBtn    = document.querySelector('.tag-clear-btn');
-    const summary     = document.getElementById('tagFilterSummary');
-    const dropdownBtn = document.getElementById('tagDropdown');
+    const checkboxes   = document.querySelectorAll('.tag-checkbox');
+    const clearBtn     = document.querySelector('.tag-clear-btn');
+    const summary      = document.getElementById('tagFilterSummary');
+    const dropdownBtn  = document.getElementById('tagDropdown');
+    const typeButtons    = document.querySelectorAll('.type-filter-btn');
+    const typeStatus     = document.getElementById('typeFilterStatus') as HTMLElement;
+    const typeLabel      = document.getElementById('typeFilterLabel') as HTMLElement;
+    const typeClearBtns  = document.querySelectorAll('.type-clear-btn');
 
-    function getSelected(): string[] {
+    let activeType: string | null = null;
+
+    function getSelectedTags(): string[] {
       return [...checkboxes].filter(cb => (cb as HTMLInputElement).checked).map(cb => (cb as HTMLInputElement).value);
     }
 
-    function applyFilter() {
-      const selected = getSelected();
+    function setActiveType(type: string | null) {
+      activeType = type;
+      typeButtons.forEach(btn => {
+        const el = btn as HTMLElement;
+        const isActive = el.dataset.type === type;
+        btn.classList.toggle('type-btn-active', isActive);
+        (btn as HTMLElement).style.opacity = type === null || isActive ? '1' : '0.35';
+      });
+      if (type) {
+        const label = (document.querySelector(`.type-filter-btn[data-type="${type}"]`) as HTMLElement)?.textContent?.trim() ?? type;
+        typeLabel.textContent = label;
+        typeStatus.style.display = '';
+      } else {
+        typeStatus.style.display = 'none';
+      }
+    }
 
-      if (selected.length === 0) {
+    function applyFilter() {
+      const selectedTags = getSelectedTags();
+
+      if (selectedTags.length === 0) {
         summary!.textContent = '';
         dropdownBtn!.textContent = 'Filter by tag';
       } else {
-        summary!.textContent = selected.map(t => t[0].toUpperCase() + t.slice(1)).join(', ');
-        dropdownBtn!.textContent = `Filtering (${selected.length})`;
+        summary!.textContent = selectedTags.map(t => t[0].toUpperCase() + t.slice(1)).join(', ');
+        dropdownBtn!.textContent = `Filtering (${selectedTags.length})`;
       }
 
       document.querySelectorAll('.letter-section').forEach(section => {
@@ -123,24 +174,38 @@ const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?
         let hasVisible = false;
         bookItems.forEach(item => {
           const el = item as HTMLElement;
-          if (selected.length === 0) {
-            el.closest('.col')!.removeAttribute('style');
-            hasVisible = true;
-          } else {
-            const tags = el.getAttribute('data-tags')?.split(',') ?? [];
-            const visible = selected.some(s => tags.includes(s));
-            (el.closest('.col') as HTMLElement).style.display = visible ? '' : 'none';
-            if (visible) hasVisible = true;
-          }
+          const col = el.closest('.col') as HTMLElement;
+          const tags  = el.getAttribute('data-tags')?.split(',').filter(Boolean) ?? [];
+          const types = el.getAttribute('data-types')?.split(',').filter(Boolean) ?? [];
+
+          const tagOk  = selectedTags.length === 0 || selectedTags.some(t => tags.includes(t));
+          const typeOk = activeType === null || types.includes(activeType);
+
+          const visible = tagOk && typeOk;
+          col.style.display = visible ? '' : 'none';
+          if (visible) hasVisible = true;
         });
         (section as HTMLElement).style.display = hasVisible ? '' : 'none';
       });
     }
 
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = (btn as HTMLElement).dataset.type!;
+        setActiveType(activeType === type ? null : type);
+        applyFilter();
+      });
+    });
+
     checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
     clearBtn?.addEventListener('click', () => {
       checkboxes.forEach(cb => (cb as HTMLInputElement).checked = false);
+      setActiveType(null);
       applyFilter();
     });
+    typeClearBtns.forEach(btn => btn.addEventListener('click', () => {
+      setActiveType(null);
+      applyFilter();
+    }));
   });
 </script>

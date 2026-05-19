@@ -20,6 +20,7 @@
         - name: Amazon
           url: https://www.amazon.com/God-Spoke-Story-Bible-Today/dp/B0F8JH8HM9
     - type: eBook
+      label: eBook
       sources:
         - name: Download
           url: /static/books/god-spoke/god-spoke.epub

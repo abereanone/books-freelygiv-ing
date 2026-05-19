@@ -91,6 +91,15 @@
   color: #fff;
 }
 
+.type-btn-active {
+  outline: 3px solid gold;
+  outline-offset: 2px;
+}
+
+.btn-warning.type-btn-active {
+  outline-color: #fff;
+}
+
 @media (max-width: 767.98px) {
   .navbar-collapse {
     border-top: 1px solid var(--bs-border-color);

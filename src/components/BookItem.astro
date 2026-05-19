@@ -13,10 +13,11 @@ const authorSlug = book.authors?.[0]?.slug;
 const bookSlug   = bookSlugFromPath(book.path);
 const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
 const tags       = (book.tags || []).join(',');
+const types      = (book.mediaTypes || []).map((m: any) => m.type).join(',');
 ---
 
 {grid ? (
-  <div class="book-grid-item card card-hover position-relative" data-tags={tags}>
+  <div class="book-grid-item card card-hover position-relative" data-tags={tags} data-types={types}>
     <div style="display:flex;align-items:center;gap:0.75rem;padding:0.5rem;">
       <img
         src={`${book.path}/${book.cover}`}
