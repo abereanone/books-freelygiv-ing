@@ -22,9 +22,17 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
 import { join, extname, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_SRC  = join(__dirname, '../data/src');
-const BOOKS_SRC = join(DATA_SRC, 'books');
+const __dirname  = dirname(fileURLToPath(import.meta.url));
+const DATA_SRC   = join(__dirname, '../data/src');
+const BOOKS_SRC  = join(DATA_SRC, 'books');
+const LEGACY_SRC = join(__dirname, '../freely-given-books-data/data/src');
+
+// Files in freely-given-books-data/data/src/joe-conkle/ that need renaming
+const LEGACY_FLAT = [
+  { src: 'joe-conkle/OurSinHisMercy.pdf',           key: 'our-sin-his-mercy/our-sin-his-mercy.pdf' },
+  { src: 'joe-conkle/OurSinHisMercy_print_ready.zip', key: 'our-sin-his-mercy/print-ready.zip' },
+  { src: 'joe-conkle/book.html',                     key: 'our-sin-his-mercy/our-sin-his-mercy.html' },
+];
 
 // Load .env file if present
 try {
@@ -55,7 +63,7 @@ const s3 = new S3Client({
   credentials: { accessKeyId: R2_ACCESS_KEY_ID, secretAccessKey: R2_SECRET_KEY },
 });
 
-const BOOK_EXTS = new Set(['.epub', '.pdf', '.zip', '.mobi']);
+const BOOK_EXTS = new Set(['.epub', '.pdf', '.zip', '.mobi', '.html']);
 
 async function fileExistsInR2(key) {
   try {
@@ -81,40 +89,101 @@ async function main() {
   let uploaded = 0;
   let skipped  = 0;
 
-  if (!existsSync(BOOKS_SRC)) {
-    console.error(`Books directory not found: ${BOOKS_SRC}`);
-    process.exit(1);
+  // Scan data/src/books/<book-slug>/content/ (primary, ongoing)
+  if (existsSync(BOOKS_SRC)) {
+    for (const bookSlug of readdirSync(BOOKS_SRC)) {
+      const bookDir = join(BOOKS_SRC, bookSlug);
+      if (!statSync(bookDir).isDirectory()) continue;
+
+      const contentDir = join(bookDir, 'content');
+      if (!existsSync(contentDir)) continue;
+
+      for (const file of readdirSync(contentDir)) {
+        if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
+
+        const key      = `${bookSlug}/${file}`;
+        const filePath = join(contentDir, file);
+
+        if (await fileExistsInR2(key)) {
+          console.log(`  skip  ${key}`);
+          skipped++;
+          continue;
+        }
+
+        const body = readFileSync(filePath);
+        await s3.send(new PutObjectCommand({
+          Bucket:      R2_BUCKET,
+          Key:         key,
+          Body:        body,
+          ContentType: mimeType(file),
+        }));
+        console.log(`  upload  ${key}`);
+        uploaded++;
+      }
+    }
   }
 
-  for (const bookSlug of readdirSync(BOOKS_SRC)) {
-    const bookDir = join(BOOKS_SRC, bookSlug);
-    if (!statSync(bookDir).isDirectory()) continue;
+  // Scan freely-given-books-data/data/src/<author-slug>/<book-slug>/content/ (legacy structure)
+  if (existsSync(LEGACY_SRC)) {
+    for (const authorSlug of readdirSync(LEGACY_SRC)) {
+      const authorDir = join(LEGACY_SRC, authorSlug);
+      if (!statSync(authorDir).isDirectory()) continue;
 
-    const contentDir = join(bookDir, 'content');
-    if (!existsSync(contentDir)) continue;
+      for (const bookSlug of readdirSync(authorDir)) {
+        const bookDir    = join(authorDir, bookSlug);
+        if (!statSync(bookDir).isDirectory()) continue;
+        const contentDir = join(bookDir, 'content');
+        if (!existsSync(contentDir)) continue;
 
-    for (const file of readdirSync(contentDir)) {
-      if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
+        for (const file of readdirSync(contentDir)) {
+          if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
 
-      const key      = `${bookSlug}/${file}`;
-      const filePath = join(contentDir, file);
+          const key      = `${bookSlug}/${file}`;
+          const filePath = join(contentDir, file);
 
-      if (await fileExistsInR2(key)) {
-        console.log(`  skip  ${key}`);
-        skipped++;
-        continue;
+          if (await fileExistsInR2(key)) {
+            console.log(`  skip  ${key}`);
+            skipped++;
+            continue;
+          }
+
+          const body = readFileSync(filePath);
+          await s3.send(new PutObjectCommand({
+            Bucket:      R2_BUCKET,
+            Key:         key,
+            Body:        body,
+            ContentType: mimeType(file),
+          }));
+          console.log(`  upload  ${key}`);
+          uploaded++;
+        }
       }
-
-      const body = readFileSync(filePath);
-      await s3.send(new PutObjectCommand({
-        Bucket:      R2_BUCKET,
-        Key:         key,
-        Body:        body,
-        ContentType: mimeType(file),
-      }));
-      console.log(`  upload  ${key}`);
-      uploaded++;
     }
+  }
+
+  // Upload flat legacy files (our-sin-his-mercy from joe-conkle/)
+  for (const { src, key } of LEGACY_FLAT) {
+    const filePath = join(LEGACY_SRC, src);
+    if (!existsSync(filePath)) {
+      console.log(`  missing  ${src} (skipping)`);
+      continue;
+    }
+
+    if (await fileExistsInR2(key)) {
+      console.log(`  skip  ${key}`);
+      skipped++;
+      continue;
+    }
+
+    const body = readFileSync(filePath);
+    await s3.send(new PutObjectCommand({
+      Bucket:      R2_BUCKET,
+      Key:         key,
+      Body:        body,
+      ContentType: mimeType(key),
+    }));
+    console.log(`  upload  ${key}`);
+    uploaded++;
   }
 
   console.log(`\nDone — ${uploaded} uploaded, ${skipped} already existed.\n`);

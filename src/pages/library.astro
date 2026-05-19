@@ -47,7 +47,7 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
   <div class="tab-content" id="libraryTabContent">
     <!-- By Title -->
     <div class="tab-pane fade show active" id="by-title" role="tabpanel" aria-labelledby="title-tab">
-      <div class="row g-3">
+      <div class="list-group">
         {(() => {
           let currentLetter = '';
           return books.map(book => {
@@ -56,15 +56,11 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
             return (
               <>
                 {heading && (
-                  <div class="col-12 library-letter-heading">
-                    <div class="bg-body-secondary px-3 py-1 rounded">
-                      <strong><em>{heading}</em></strong>
-                    </div>
+                  <div class="list-group-item bg-body-secondary library-letter-heading">
+                    <strong><em>{heading}</em></strong>
                   </div>
                 )}
-                <div class="col-12 col-md-6 book-col" data-tags={(book.tags || []).join(',')}>
-                  <BookItem book={book} card />
-                </div>
+                <BookItem book={book} />
               </>
             );
           });
@@ -74,7 +70,7 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
 
     <!-- By Author (includes contributors) -->
     <div class="tab-pane fade" id="by-author" role="tabpanel" aria-labelledby="author-tab">
-      <div class="row g-3">
+      <div class="list-group">
         {(() => {
           let currentLetter = '';
           return bookAuthorPairs.map(({ book, person }) => {
@@ -83,15 +79,11 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
             return (
               <>
                 {heading && (
-                  <div class="col-12 library-letter-heading">
-                    <div class="bg-body-secondary px-3 py-1 rounded">
-                      <strong><em>{heading}</em></strong>
-                    </div>
+                  <div class="list-group-item bg-body-secondary library-letter-heading">
+                    <strong><em>{heading}</em></strong>
                   </div>
                 )}
-                <div class="col-12 col-md-6 book-col" data-tags={(book.tags || []).join(',')}>
-                  <BookItem book={book} card />
-                </div>
+                <BookItem book={book} />
               </>
             );
           });
@@ -106,7 +98,7 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
     const checkboxes  = document.querySelectorAll('.tag-checkbox');
     const clearBtn    = document.querySelector('.tag-clear-btn');
     const summary     = document.getElementById('tagFilterSummary');
-    const bookCols    = document.querySelectorAll('.book-col');
+    const bookItems   = document.querySelectorAll('[data-tags]');
     const headings    = document.querySelectorAll('.library-letter-heading');
     const dropdownBtn = document.getElementById('tagDropdown');
 
@@ -123,19 +115,19 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
         summary.textContent = selected.map(t => t[0].toUpperCase() + t.slice(1)).join(', ');
         dropdownBtn.textContent = `Filtering (${selected.length})`;
       }
-      bookCols.forEach(col => {
+      bookItems.forEach(item => {
         if (selected.length === 0) {
-          (col as HTMLElement).style.display = '';
+          (item as HTMLElement).style.display = '';
         } else {
-          const tags = col.getAttribute('data-tags')?.split(',').filter(Boolean) ?? [];
-          (col as HTMLElement).style.display = selected.some(s => tags.includes(s)) ? '' : 'none';
+          const tags = item.getAttribute('data-tags')?.split(',') ?? [];
+          (item as HTMLElement).style.display = selected.some(s => tags.includes(s)) ? '' : 'none';
         }
       });
       headings.forEach(heading => {
         let next = heading.nextElementSibling;
         let hasVisible = false;
         while (next && !next.classList.contains('library-letter-heading')) {
-          if (next.classList.contains('book-col') && (next as HTMLElement).style.display !== 'none') {
+          if (next.hasAttribute('data-tags') && (next as HTMLElement).style.display !== 'none') {
             hasVisible = true; break;
           }
           next = next.nextElementSibling;
@@ -146,6 +138,5 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
 
     checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
     clearBtn?.addEventListener('click', () => { checkboxes.forEach(cb => (cb as HTMLInputElement).checked = false); applyFilter(); });
-
   });
 </script>

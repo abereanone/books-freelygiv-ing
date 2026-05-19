@@ -4,105 +4,56 @@ import { bookSlugFromPath } from '../lib/data.js';
 interface Props {
   book: any;
   compact?: boolean;
-  card?: boolean;
 }
 
-const { book, compact = false, card = false } = Astro.props;
+const { book, compact = false } = Astro.props;
 const authorSlug = book.authors?.[0]?.slug;
 const bookSlug   = bookSlugFromPath(book.path);
 const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
 const tags       = (book.tags || []).join(',');
-const descWords  = card ? 50 : 25;
 ---
 
-{card ? (
-  <a href={href} class="card h-100 card-hover text-decoration-none" data-tags={tags}>
-    <div class="row g-0">
-      <div class="col-auto">
-        <img
-          src={`${book.path}/${book.cover}`}
-          class="rounded-start"
-          style="width: 100px; max-height: 170px; object-fit: cover; object-position: top; display: block;"
-          alt={`${book.title} cover`}
-        />
-      </div>
-      <div class="col p-3 d-flex flex-column">
-        <h5 class="mb-1">
-          {book.title}
-          {(book.tags || []).map((tag: string) => (
-            <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
-          ))}
-        </h5>
-        {book.authors?.[0] && (
-          <p class="mb-1 small">
-            {book.authors.map((author: any, i: number) => (
-              <>
-                {i > 0 && ', '}
-                <a
-                  href={`/authors/${author.slug}/`}
-                  class="text-reset"
-                  onclick="event.stopPropagation()"
-                >{author.firstName} {author.lastName}</a>
-              </>
-            ))}
-          </p>
-        )}
-        {book.year && (
-          <small class="text-body-secondary">
-            {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
-          </small>
-        )}
-        {book.description && (
-          <p class="book-description-preview text-body-secondary mb-0 mt-2 small flex-grow-1">
-            {book.description.split(' ').slice(0, descWords).join(' ')}…
-          </p>
-        )}
-      </div>
+<a href={href} class="list-group-item list-group-item-action card-hover text-decoration-none" data-tags={tags}>
+  <div class="row g-0">
+    <div class="col-auto">
+      <img
+        src={`${book.path}/${book.cover}`}
+        class="rounded me-3"
+        style={compact ? "max-height: 80px" : "max-height: 150px"}
+        alt={`${book.title} cover`}
+      />
     </div>
-  </a>
-) : (
-  <a href={href} class="list-group-item list-group-item-action card-hover text-decoration-none" data-tags={tags}>
-    <div class="row g-0">
-      <div class="col-auto">
-        <img
-          src={`${book.path}/${book.cover}`}
-          class="rounded me-3"
-          style={compact ? "max-height: 80px" : "max-height: 150px"}
-          alt={`${book.title} cover`}
-        />
-      </div>
-      <div class="col">
-        <h5 class="mb-1">
-          {book.title}
-          {(book.tags || []).map((tag: string) => (
-            <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
+    <div class="col">
+      <h5 class="mb-1">
+        {book.title}
+        {(book.tags || []).map((tag: string) => (
+          <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
+        ))}
+      </h5>
+      {!compact && book.authors?.[0] && (
+        <p class="mb-1">
+          {book.authors.map((author: any, i: number) => (
+            <>
+              {i > 0 && ', '}
+              <a
+                href={`/authors/${author.slug}/`}
+                class="text-reset"
+                onclick="event.stopPropagation()"
+              >{author.firstName} {author.lastName}</a>
+            </>
           ))}
-        </h5>
-        {!compact && book.authors?.[0] && (
-          <p class="mb-1">
-            {book.authors.map((author: any, i: number) => (
-              <>
-                {i > 0 && ', '}
-                <a
-                  href={`/authors/${author.slug}/`}
-                  class="text-reset"
-                  onclick="event.stopPropagation()"
-                >{author.firstName} {author.lastName}</a>
-              </>
-            ))}
-          </p>
-        )}
-        {book.year && (
-          <small class="text-body-secondary">
-            {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
-          </small>
-        )}
-        {!compact && book.description && (
-          <p class="book-description-preview text-body-secondary mb-0 mt-1">
-            {book.description.split(' ').slice(0, descWords).join(' ')}…
-          </p>
-        )}
-      </div>
+        </p>
+      )}
+      {book.year && (
+        <small class="text-body-secondary">
+          {book.year}{book.pages ? ` · ${book.pages} pages` : ''}
+        </small>
+      )}
+      {!compact && book.description && (
+        <p class="book-description-preview text-body-secondary mb-0 mt-1">
+          {book.description.split(' ').slice(0, 25).join(' ')}…
+        </p>
+      )}
     </div>
-  </a>
-)}
+  </div>
+</a>

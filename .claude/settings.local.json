@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/upload-to-r2.js)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:4321/library)",
+      "Bash(git -C /c/code/books-freelygiv-ing diff --stat)",
+      "Bash(git -C /c/code/books-freelygiv-ing status --short)",
+      "Bash(git -C /c/code/books-freelygiv-ing add data/src/books/our-sin-his-mercy/book.yaml scripts/upload-to-r2.js src/components/BookItem.astro src/layouts/Base.astro src/pages/authors/[slug].astro \"src/pages/books/[authorSlug]/[bookSlug].astro\" src/pages/library.astro data/src/books/our-sin-his-mercy/content/cover.jpg CLAUDE.md)"
+    ]
+  }
+}
