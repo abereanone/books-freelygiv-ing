@@ -15,11 +15,16 @@
   path: /static/books/our-sin-his-mercy
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy/our-sin-his-mercy.html
     - type: pdfBook
       label: PDF
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/joe-conkle/OurSinHisMercy.pdf
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy/our-sin-his-mercy.pdf
     - type: printBook
       label: Book
       sources:
@@ -29,4 +34,4 @@
       label: Print Ready
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/joe-conkle/OurSinHisMercy_print_ready.zip
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy/print-ready.zip

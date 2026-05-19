@@ -51,7 +51,11 @@ const photos = personPhotos(author);
   </div>
 
   <h2 class="mb-3">Books</h2>
-  <div class="list-group">
-    {books.map((book: any) => <BookItem book={book} />)}
+  <div class="row g-3">
+    {books.map((book: any) => (
+      <div class="col-12 col-md-6">
+        <BookItem book={book} card />
+      </div>
+    ))}
   </div>
 </Base>
