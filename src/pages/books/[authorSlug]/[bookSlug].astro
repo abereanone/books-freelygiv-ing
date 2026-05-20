@@ -55,46 +55,48 @@ const btnClass: Record<string, string> = {
   </nav>
 
   <article class="book-page">
-    <div class="row mb-4">
-      <div class="col-md-4 mb-3 d-flex justify-content-center justify-content-md-start align-items-start">
-        <div class="shadow rounded" style="display: inline-block; max-width: 250px; line-height: 0;">
-          <img
-            src={`${book.path}/${book.cover}`}
-            class="rounded"
-            style="width: 100%; height: auto; display: block;"
-            alt={`${book.title} cover`}
-          />
-        </div>
-      </div>
-      <div class="col-md-8">
-        <h1 class="mb-3">{book.title}</h1>
-
-        <div class="book-metadata mb-4">
-          {book.authors?.[0] && (
-            <p class="lead mb-2">
-              <strong>Author{book.authors.length > 1 ? 's' : ''}:</strong>{' '}
-              {book.authors.map((author: any, i: number) => (
-                <>
-                  {i > 0 && ', '}
-                  <a href={`/authors/${author.slug}/`}>{author.firstName} {author.lastName}</a>
-                </>
-              ))}
-            </p>
-          )}
-          {book.year && <p class="mb-2"><strong>Year:</strong> {book.year}</p>}
-          {book.pages && <p class="mb-2"><strong>Pages:</strong> {book.pages}</p>}
-          <p class="mb-2"><strong>License:</strong> {book.license}</p>
-        </div>
-
-        {book.description && (
-          <div class="book-description mb-4">
-            <h3>Description</h3>
-            <p set:html={descHtml} />
+    <div class="mb-4 clearfix">
+      {book.cover && (
+        <div class="float-md-start me-md-4 mb-3 text-center text-md-start">
+          <div class="shadow rounded" style="display: inline-block; max-width: 220px; line-height: 0;">
+            <img
+              src={`${book.path}/${book.cover}`}
+              class="rounded"
+              style="width: 100%; height: auto; display: block;"
+              alt={`${book.title} cover`}
+            />
           </div>
-        )}
+        </div>
+      )}
 
-        <div class="book-formats">
-          <h3 class="mb-3">Available Formats</h3>
+      <h1 class="mb-3">{book.title}</h1>
+
+      <div class="book-metadata mb-4">
+        {book.authors?.[0] && (
+          <p class="lead mb-2">
+            <strong>Author{book.authors.length > 1 ? 's' : ''}:</strong>{' '}
+            {book.authors.map((author: any, i: number) => (
+              <>
+                {i > 0 && ', '}
+                <a href={`/authors/${author.slug}/`}>{author.firstName} {author.lastName}</a>
+              </>
+            ))}
+          </p>
+        )}
+        {book.year && <p class="mb-2"><strong>Year:</strong> {book.year}</p>}
+        {book.pages && <p class="mb-2"><strong>Pages:</strong> {book.pages}</p>}
+        <p class="mb-2"><strong>License:</strong> {book.license}</p>
+      </div>
+
+      {book.description && (
+        <div class="book-description mb-4">
+          <h3>Description</h3>
+          <div set:html={descHtml} />
+        </div>
+      )}
+
+      <div class="book-formats">
+        <h3 class="mb-3">Available Formats</h3>
           <div class="d-grid gap-2 d-md-flex flex-wrap">
             {(book.mediaTypes || []).map((item: any) =>
               (item.sources || []).map((source: any) => (
@@ -152,18 +154,15 @@ const btnClass: Record<string, string> = {
             )}
           </div>
         </div>
-      </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col">
-        <a href="/library" class="btn btn-outline-secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left me-2" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-          </svg>
-          Back to Library
-        </a>
-      </div>
+    <div class="mt-5">
+      <a href="/library" class="btn btn-outline-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left me-2" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+        </svg>
+        Back to Library
+      </a>
     </div>
   </article>
 </Base>
