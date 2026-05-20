@@ -41,7 +41,11 @@ const descHtml = newlineToBr(linkify(contributor.description ?? ''));
   </div>
 
   <h2 class="mb-3">Books Added</h2>
-  <div class="list-group">
-    {books.map((book: any) => <BookItem book={book} />)}
+  <div class="row row-cols-1 row-cols-md-2 g-3">
+    {books.map((book: any) => (
+      <div class="col">
+        <BookItem book={book} grid />
+      </div>
+    ))}
   </div>
 </Base>
