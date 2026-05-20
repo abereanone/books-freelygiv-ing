@@ -118,7 +118,15 @@ export function linkify(text) {
 
 export function newlineToBr(text) {
   if (!text) return text;
-  return text.replace(/\n/g, '<br>\n');
+  // > folded scalar: paragraphs separated by \n (within-para breaks become spaces)
+  // | literal scalar: paragraphs separated by \n\n (within-para breaks are \n)
+  const separator = text.includes('\n\n') ? /\n\n+/ : /\n/;
+  return text
+    .split(separator)
+    .map(para => para.trim().replace(/\n/g, ' '))
+    .filter(para => para.length > 0)
+    .map(para => `<p>${para}</p>`)
+    .join('\n');
 }
 
 export function personPhotos(person, limit = 2) {

@@ -26,10 +26,12 @@
 
 :root {
   --my-yellow-text: #b8860b;
+  --my-bible-ref: #b03a55;
 }
 
 [data-bs-theme="dark"] {
   --my-yellow-text: #ffd54f;
+  --my-bible-ref: #d4677e;
 }
 
 .text-yellow {
@@ -98,6 +100,25 @@
 
 .btn-warning.type-btn-active {
   outline-color: #fff;
+}
+
+/* Bible reference tooltips (enhance.js) */
+.fb-enhancer-link {
+  background-color: transparent !important;
+  text-decoration: underline dashed !important;
+  text-decoration-color: var(--my-bible-ref) !important;
+  text-underline-offset: 3px;
+}
+
+.fb-enhancer-hover {
+  background: var(--bs-body-bg) !important;
+  border: 1px solid var(--bs-border-color) !important;
+  border-radius: var(--bs-border-radius-lg) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  color: var(--bs-body-color) !important;
+  padding: 0.75rem !important;
 }
 
 @media (max-width: 767.98px) {

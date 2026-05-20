@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
-import { getContributors, getBooks, linkify, newlineToBr } from '../../lib/data.js';
+import { getContributors, getBooks, linkify, newlineToBr, personPhotos } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return getContributors().map(contributor => ({
@@ -18,6 +18,7 @@ const books = getBooks()
 
 const fullName = `${contributor.firstName} ${contributor.lastName}`;
 const descHtml = newlineToBr(linkify(contributor.description ?? ''));
+const photos = personPhotos(contributor);
 ---
 
 <Base title={fullName} ogTitle={fullName} ogDescription={contributor.description}>
@@ -29,14 +30,23 @@ const descHtml = newlineToBr(linkify(contributor.description ?? ''));
     </ol>
   </nav>
 
-  <div class="mb-4">
-    {contributor.photo && (
-      <img src={contributor.photo} class="rounded mb-3" style="max-width: 200px;" alt={fullName} />
+  <div class="mb-4 clearfix">
+    {photos.length > 0 && (
+      <div class="float-md-end ms-md-4 mb-3 text-center text-md-start">
+        {photos.map((photo: string, index: number) => (
+          <img
+            src={photo}
+            class="rounded"
+            style="width: 180px; max-width: 100%; aspect-ratio: 1; object-fit: cover;"
+            alt={photos.length === 1 ? fullName : `${fullName} photo ${index + 1}`}
+          />
+        ))}
+      </div>
     )}
     <h1>{fullName}</h1>
-    {contributor.description && <p class="lead" set:html={descHtml} />}
+    {contributor.description && <div set:html={descHtml} />}
     {contributor.donateUrl && (
-      <a href={contributor.donateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+      <a href={contributor.donateUrl} class="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Donate</a>
     )}
   </div>
 

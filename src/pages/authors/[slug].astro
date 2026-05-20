@@ -30,23 +30,23 @@ const photos = personPhotos(author);
     </ol>
   </nav>
 
-  <div class="mb-4">
+  <div class="mb-4 clearfix">
     {photos.length > 0 && (
-      <div class="d-flex flex-wrap gap-3 mb-3">
+      <div class="float-md-end ms-md-4 mb-3 text-center text-md-start">
         {photos.map((photo: string, index: number) => (
           <img
             src={photo}
             class="rounded"
-            style="width: 200px; max-width: 100%; aspect-ratio: 1; object-fit: cover;"
+            style="width: 180px; max-width: 100%; aspect-ratio: 1; object-fit: cover;"
             alt={photos.length === 1 ? fullName : `${fullName} photo ${index + 1}`}
           />
         ))}
       </div>
     )}
     <h1>{fullName}</h1>
-    {author.description && <p class="lead" set:html={descHtml} />}
+    {author.description && <div set:html={descHtml} />}
     {author.donateUrl && (
-      <a href={author.donateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+      <a href={author.donateUrl} class="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Donate</a>
     )}
   </div>
 
