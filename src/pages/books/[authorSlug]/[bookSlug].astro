@@ -69,24 +69,26 @@ const btnClass: Record<string, string> = {
         </div>
       )}
 
-      <h1 class="mb-3">{book.title}</h1>
-
-      <div class="book-metadata mb-4">
+      <h1 class="mb-1">
+        {book.title}
         {book.authors?.[0] && (
-          <p class="lead mb-2">
-            <strong>Author{book.authors.length > 1 ? 's' : ''}:</strong>{' '}
-            {book.authors.map((author: any, i: number) => (
+          <span class="fs-5 fw-normal text-body-secondary ms-2">by {book.authors.map((author: any, i: number) => (
               <>
                 {i > 0 && ', '}
                 <a href={`/authors/${author.slug}/`}>{author.firstName} {author.lastName}</a>
               </>
             ))}
-          </p>
+          </span>
         )}
-        {book.year && <p class="mb-2"><strong>Year:</strong> {book.year}</p>}
-        {book.pages && <p class="mb-2"><strong>Pages:</strong> {book.pages}</p>}
-        <p class="mb-2"><strong>License:</strong> {book.license}</p>
-      </div>
+      </h1>
+
+      <p class="text-body-secondary mb-3">
+        {[
+          book.year,
+          book.pages && `${book.pages} pages`,
+          book.license,
+        ].filter(Boolean).join(' · ')}
+      </p>
 
       {book.description && (
         <div class="book-description mb-4">

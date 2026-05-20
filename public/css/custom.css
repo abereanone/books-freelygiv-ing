@@ -32,6 +32,30 @@
 [data-bs-theme="dark"] {
   --my-yellow-text: #ffd54f;
   --my-bible-ref: #d4677e;
+  --bs-primary: #5badff;
+  --bs-primary-rgb: 91, 173, 255;
+  --bs-link-color: #5badff;
+  --bs-link-color-rgb: 91, 173, 255;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  --bs-btn-bg: #5badff;
+  --bs-btn-border-color: #5badff;
+  --bs-btn-hover-bg: #3d9aff;
+  --bs-btn-hover-border-color: #3d9aff;
+  --bs-btn-color: #000;
+  --bs-btn-hover-color: #000;
+}
+
+[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #5badff;
+  --bs-btn-border-color: #5badff;
+  --bs-btn-hover-bg: #5badff;
+  --bs-btn-hover-border-color: #5badff;
+  --bs-btn-hover-color: #000;
+  --bs-btn-active-bg: #5badff;
+  --bs-btn-active-border-color: #5badff;
+  --bs-btn-active-color: #000;
 }
 
 .text-yellow {
