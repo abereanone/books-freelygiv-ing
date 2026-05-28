@@ -14,6 +14,11 @@
   path: /static/books/all-of-grace
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/all-of-grace/all-of-grace.html
     - type: printBook
       label: Book
       sources:

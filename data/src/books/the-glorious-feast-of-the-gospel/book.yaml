@@ -23,6 +23,11 @@
   path: /static/books/the-glorious-feast-of-the-gospel
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.html
     - type: printBook
       label: Book
       sources:

@@ -13,6 +13,11 @@
   path: /static/books/the-pilgrims-progress
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-pilgrims-progress/the-pilgrims-progress.html
     - type: printBook
       label: Book
       sources:

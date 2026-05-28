@@ -1,0 +1,41 @@
+- title: The Anatomy of Simon Magus
+  sortTitle: Anatomy of Simon Magus
+  authors:
+    - conley-owens
+  year: 2026
+  pages: 124
+  tags:
+    - classic
+  contributors:
+    - courtney-hicks
+  description: |
+    A modernized edition of a 1700 Anglican treatise on simony. The Anatomy of Simon Magus examines the buying and selling of ecclesiastical office and its consequences for the church.
+  license: CC0
+  path: /static/books/the-anatomy-of-simon-magus
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-anatomy-of-simon-magus/the-anatomy-of-simon-magus.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/anonymous-and-conley-owens-and-courtney-hicks/the-anatomy-of-simon-magus/paperback/product-gjpymn4.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-anatomy-of-simon-magus/the-anatomy-of-simon-magus.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-anatomy-of-simon-magus/the-anatomy-of-simon-magus.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-anatomy-of-simon-magus/print-ready.zip
