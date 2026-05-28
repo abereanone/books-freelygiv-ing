@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath } from '../../../lib/data.js';
+import { getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, personName } from '../../../lib/data.js';
 
 export function getStaticPaths() {
   return getBooks().map((book: any) => ({
@@ -43,7 +43,7 @@ const btnClass: Record<string, string> = {
           <li class="breadcrumb-item"><a href="/authors">Authors</a></li>
           {book.authors.map((author: any) => (
             <li class="breadcrumb-item">
-              <a href={`/authors/${author.slug}/`}>{author.firstName} {author.lastName}</a>
+              <a href={`/authors/${author.slug}/`}>{personName(author)}</a>
             </li>
           ))}
         </>
@@ -73,10 +73,7 @@ const btnClass: Record<string, string> = {
         {book.title}
         {book.authors?.[0] && (
           <span class="fs-5 fw-normal text-body-secondary ms-2">by {book.authors.map((author: any, i: number) => (
-              <>
-                {i > 0 && ', '}
-                <a href={`/authors/${author.slug}/`}>{author.firstName} {author.lastName}</a>
-              </>
+              <span>{i > 0 ? ', ' : ''}<a href={`/authors/${author.slug}/`}>{personName(author)}</a></span>
             ))}
           </span>
         )}

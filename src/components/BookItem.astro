@@ -1,5 +1,5 @@
 ---
-import { bookSlugFromPath } from '../lib/data.js';
+import { bookSlugFromPath, personName } from '../lib/data.js';
 
 interface Props {
   book: any;
@@ -14,6 +14,7 @@ const bookSlug   = bookSlugFromPath(book.path);
 const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
 const tags       = (book.tags || []).join(',');
 const types      = (book.mediaTypes || []).map((m: any) => m.type).join(',');
+const personListName = (person: any) => person.lastName ? `${person.lastName}, ${person.firstName}`.trim() : personName(person);
 ---
 
 {grid ? (
@@ -35,10 +36,7 @@ const types      = (book.mediaTypes || []).map((m: any) => m.type).join(',');
         {showAuthors && book.authors?.[0] && (
           <div class="text-body-secondary small mb-1" style="position:relative;z-index:2;">
             {book.authors.map((author: any, i: number) => (
-              <>
-                {i > 0 && ', '}
-                <a href={`/authors/${author.slug}/`} class="text-reset">{author.lastName}, {author.firstName}</a>
-              </>
+              <span>{i > 0 ? ', ' : ''}<a href={`/authors/${author.slug}/`} class="text-reset">{personListName(author)}</a></span>
             ))}
           </div>
         )}
@@ -71,14 +69,11 @@ const types      = (book.mediaTypes || []).map((m: any) => m.type).join(',');
         {(!compact || showAuthors) && book.authors?.[0] && (
           <p class="mb-1">
             {book.authors.map((author: any, i: number) => (
-              <>
-                {i > 0 && ', '}
-                <a
-                  href={`/authors/${author.slug}/`}
-                  class="text-reset"
-                  onclick="event.stopPropagation()"
-                >{author.firstName} {author.lastName}</a>
-              </>
+              <span>{i > 0 ? ', ' : ''}<a
+                href={`/authors/${author.slug}/`}
+                class="text-reset"
+                onclick="event.stopPropagation()"
+              >{personName(author)}</a></span>
             ))}
           </p>
         )}

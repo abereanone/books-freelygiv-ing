@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getContributors } from '../../lib/data.js';
+import { getContributors, personName } from '../../lib/data.js';
 
 const contributors = getContributors().sort((a, b) => a.lastName.localeCompare(b.lastName));
 ---
@@ -24,11 +24,11 @@ const contributors = getContributors().sort((a, b) => a.lastName.localeCompare(b
               src={contributor.photo}
               class="card-img-top p-3 rounded-circle"
               style="aspect-ratio: 1; object-fit: cover;"
-              alt={`${contributor.firstName} ${contributor.lastName}`}
+              alt={personName(contributor)}
             />
           )}
           <div class="card-body">
-            <h5 class="card-title">{contributor.firstName} {contributor.lastName}</h5>
+            <h5 class="card-title">{personName(contributor)}</h5>
           </div>
         </a>
       </div>

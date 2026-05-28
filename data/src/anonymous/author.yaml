@@ -1,0 +1,7 @@
+- firstName: Anonymous
+  lastName: ""
+  slug: anonymous
+  photo: "/static/images/authors/anonymous/anonymous.png"
+  description: >
+    Anonymous represents works whose human author is unknown or deliberately unnamed. The image here is symbolic: a candlelit study, a hidden face, and a manuscript preserved for readers who know the work before they know the writer.
+  donateUrl: ""

@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
-import { getAuthors, getBooks, linkify, newlineToBr, personPhotos } from '../../lib/data.js';
+import { getAuthors, getBooks, linkify, newlineToBr, personName, personPhotos } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return getAuthors().map(author => ({ params: { slug: author.slug }, props: { author } }));
@@ -16,7 +16,7 @@ const books = getBooks()
   })
   .sort((a: any, b: any) => a.sortTitle.localeCompare(b.sortTitle));
 
-const fullName = `${author.firstName} ${author.lastName}`;
+const fullName = personName(author);
 const descHtml = newlineToBr(linkify(author.description ?? ''));
 const photos = personPhotos(author);
 ---

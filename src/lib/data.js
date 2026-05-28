@@ -108,7 +108,11 @@ export function getBookAuthorPairs() {
 
 export function authorNames(authors) {
   if (!authors?.length) return '';
-  return authors.map(a => `${a.firstName} ${a.lastName}`).join(', ');
+  return authors.map(personName).join(', ');
+}
+
+export function personName(person) {
+  return [person?.firstName, person?.lastName].filter(Boolean).join(' ').trim();
 }
 
 export function linkify(text) {
