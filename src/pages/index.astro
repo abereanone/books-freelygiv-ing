@@ -6,6 +6,7 @@ const navItems = [
   { title: 'Library',      path: '/library',      description: 'Browse the full collection of freely given books.',           icon: 'book'   },
   { title: 'About',        path: '/about',        description: 'Learn more about this project and its mission.',              icon: 'info-circle' },
   { title: 'Contact',      path: '/contact',      description: 'Get in touch with questions or suggestions.',                 icon: 'envelope'    },
+  { title: 'Recently Added', path: '/recently-added', description: 'See the newest additions to the library.',                 icon: 'clock' },
   { title: 'Contributors', path: '/contributors', description: 'Meet the people who have contributed to this site.',           icon: 'people' },
 ];
 ---
@@ -56,6 +57,12 @@ const navItems = [
             {item.icon === 'envelope' && (
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+            )}
+            {item.icon === 'clock' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 1 .5.5v3.25l2.25 1.35a.5.5 0 1 1-.5.86l-2.5-1.5A.5.5 0 0 1 7.5 7.5V4a.5.5 0 0 1 .5-.5"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m0-1A7 7 0 1 1 8 1a7 7 0 0 1 0 14"/>
               </svg>
             )}
             <h6 class="card-title mb-1">{item.title}</h6>

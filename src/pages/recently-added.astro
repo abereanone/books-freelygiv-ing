@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import BookItem from '../components/BookItem.astro';
+import { getBooks } from '../lib/data.js';
+
+function dateValue(date: any): number {
+  if (!date) return 0;
+  if (date instanceof Date) return date.getTime();
+  return new Date(`${date}T00:00:00`).getTime() || 0;
+}
+
+const books = getBooks()
+  .filter((book: any) => book.addedDate)
+  .sort((a: any, b: any) => dateValue(b.addedDate) - dateValue(a.addedDate))
+  .slice(0, 10);
+---
+
+<Base title="Recently Added" ogTitle="Recently Added" ogDescription="The newest additions to Freely Given Books.">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Recently Added</li>
+    </ol>
+  </nav>
+
+  <h1>Recently Added</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 g-3">
+    {books.map((book: any) => (
+      <div class="col">
+        <BookItem book={book} grid showAuthors />
+      </div>
+    ))}
+  </div>
+</Base>
