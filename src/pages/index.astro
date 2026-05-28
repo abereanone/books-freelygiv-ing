@@ -1,5 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import { bookSlugFromPath, getBooks } from '../lib/data.js';
+
+const randomBookUrls = getBooks()
+  .filter((book: any) => book.authors?.[0]?.slug)
+  .map((book: any) => `/books/${book.authors[0].slug}/${bookSlugFromPath(book.path)}/`);
 
 const navItems = [
   { title: 'Authors',      path: '/authors',      description: 'Explore the authors whose works are featured on this site.', icon: 'people' },
@@ -31,6 +36,17 @@ const navItems = [
       easy to access as we can for the body of Christ, that we may grow together and that our love
       may abound in knowledge and all discernment. (Phil. 1:9, 2 Pet. 3:18, Col. 1:10).
     </p>
+  </div>
+
+  <div class="text-center mb-4">
+    <a
+      id="randomBookLink"
+      href="/library"
+      class="fs-3 fw-bold text-primary text-decoration-none"
+      data-book-urls={JSON.stringify(randomBookUrls)}
+    >
+      SHOW ME A RANDOM BOOK
+    </a>
   </div>
 
   <div class="row row-cols-1 row-cols-sm-2 g-4 mb-4">
@@ -73,3 +89,14 @@ const navItems = [
     ))}
   </div>
 </Base>
+
+<script>
+  document.getElementById('randomBookLink')?.addEventListener('click', event => {
+    const link = event.currentTarget as HTMLAnchorElement;
+    const bookUrls = JSON.parse(link.dataset.bookUrls || '[]');
+    if (!bookUrls.length) return;
+
+    event.preventDefault();
+    window.location.href = bookUrls[Math.floor(Math.random() * bookUrls.length)];
+  });
+</script>
