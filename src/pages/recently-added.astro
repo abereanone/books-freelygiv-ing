@@ -28,7 +28,7 @@ const books = getBooks()
   <div class="row row-cols-1 row-cols-md-2 g-3">
     {books.map((book: any) => (
       <div class="col">
-        <BookItem book={book} grid showAuthors />
+        <BookItem book={book} grid showAuthors showAddedDateTooltip />
       </div>
     ))}
   </div>

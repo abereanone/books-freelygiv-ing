@@ -6,19 +6,26 @@ interface Props {
   compact?: boolean;
   grid?: boolean;
   showAuthors?: boolean;
+  showAddedDateTooltip?: boolean;
 }
 
-const { book, compact = false, grid = false, showAuthors = false } = Astro.props;
+const { book, compact = false, grid = false, showAuthors = false, showAddedDateTooltip = false } = Astro.props;
 const authorSlug = book.authors?.[0]?.slug;
 const bookSlug   = bookSlugFromPath(book.path);
 const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
 const tags       = (book.tags || []).join(',');
 const types      = (book.mediaTypes || []).map((m: any) => m.type).join(',');
 const personListName = (person: any) => person.lastName ? `${person.lastName}, ${person.firstName}`.trim() : personName(person);
+const addedDate = book.addedDate instanceof Date
+  ? book.addedDate.toISOString().slice(0, 10)
+  : book.addedDate;
+const addedDateTooltip = showAddedDateTooltip && addedDate
+  ? `Updated ${String(addedDate).replaceAll('-', '/')}`
+  : undefined;
 ---
 
 {grid ? (
-  <div class="book-grid-item card card-hover position-relative" data-tags={tags} data-types={types}>
+  <div class="book-grid-item card card-hover position-relative" data-tags={tags} data-types={types} title={addedDateTooltip}>
     <div style="display:flex;align-items:center;gap:0.75rem;padding:0.5rem;">
       <img
         src={`${book.path}/${book.cover}`}
