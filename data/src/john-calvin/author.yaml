@@ -1,0 +1,11 @@
+- firstName: "John"
+  lastName: "Calvin"
+  slug: "john-calvin"
+  photo: "/static/images/authors/john-calvin/john-calvin.jpg"
+  description: >
+    John Calvin (1509-1564) was a French theologian, pastor, and reformer whose work shaped
+    the Reformed tradition. After studying law and embracing the Protestant Reformation, he
+    ministered chiefly in Geneva, where he preached, taught, and helped order the city's church
+    life. His most influential work, Institutes of the Christian Religion, became one of the
+    defining theological texts of the Reformation.
+  donateUrl: ""

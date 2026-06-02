@@ -1,0 +1,22 @@
+- title: "Institutes of the Christian Religion (Part 2)"
+  sortTitle: "Institutes of the Christian Religion (Part 2)"
+  authors:
+    - john-calvin
+  year: 1559
+  addedDate: 2026-06-02
+  pages: 1329
+  tags:
+    - classic
+  contributors:
+    []
+  description: |
+    The second part of John Calvin's Institutes of the Christian Religion in the public-domain Henry Beveridge translation, continuing Calvin's systematic exposition of Christian doctrine.
+  license: Public Domain
+  path: /static/books/institutes-of-the-christian-religion-part-2
+  cover: cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/calvin/Institutes%20Book%20Two%20PDF.pdf

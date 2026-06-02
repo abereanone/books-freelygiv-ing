@@ -1,0 +1,12 @@
+- firstName: "St."
+  lastName: "Augustine"
+  slug: "augustine"
+  photo: "/static/images/authors/augustine/augustine.jpg"
+  description: >
+    St. Augustine of Hippo (354-430) was a North African bishop, theologian, and philosopher
+    whose writings shaped Western Christian thought. Born in Thagaste, he taught rhetoric
+    before his conversion to Christianity and baptism by Ambrose of Milan in 387. He later
+    became bishop of Hippo Regius, where he preached, wrote, and defended Christian doctrine
+    during the late Roman period. His major works include Confessions, The City of God, On
+    Christian Doctrine, and extensive sermons and expositions on Scripture.
+  donateUrl: ""

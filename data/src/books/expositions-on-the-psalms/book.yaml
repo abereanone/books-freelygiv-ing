@@ -1,0 +1,22 @@
+- title: "Expositions on the Psalms"
+  sortTitle: "Expositions on the Psalms"
+  authors:
+    - augustine
+  year: 2007
+  addedDate: 2026-06-02
+  pages: 1185
+  tags:
+    - classic
+  contributors:
+    []
+  description: |
+    A public-domain digital edition of St. Augustine's expositions on the Psalms, gathering his extended theological and pastoral reflections on the Psalter.
+  license: Public Domain
+  path: /static/books/expositions-on-the-psalms
+  cover: cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/expositions-on-the-psalms/expositions-on-the-psalms.pdf
