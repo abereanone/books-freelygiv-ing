@@ -1,0 +1,31 @@
+- title: The Doctrine of the Law and Grace Unfolded
+  sortTitle: Doctrine of the Law and Grace Unfolded
+  authors:
+    - john-bunyan
+  year: 1659
+  addedDate: 2026-06-02
+  pages: 260
+  tags:
+    - classic
+  contributors: []
+  description: |
+    Written just before Bunyan's twelve-year imprisonment in Bedford jail, this is his most extended theological work — a careful, searching exposition of the two covenants: the Covenant of Works and the Covenant of Grace. Bunyan opens Romans 6:14 ("For ye are not under the law, but under grace") and works through the nature of the law, what it means to be under it, and who the blessed souls are who have been brought into the freedom of grace through Christ. Characteristically plain-spoken and saturated with scripture, this book shows Bunyan not merely as a storyteller but as a serious, capable theologian whose pastoral heart never departs from the practical application of doctrine.
+  license: Public Domain
+  path: /static/books/doctrine-of-law-and-grace
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/doctrine-of-law-and-grace/doctrine-of-law-and-grace.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/doctrine-of-law-and-grace/doctrine-of-law-and-grace.pdf
+    - type: mobi
+      label: Mobi
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/doctrine-of-law-and-grace/doctrine-of-law-and-grace.mobi

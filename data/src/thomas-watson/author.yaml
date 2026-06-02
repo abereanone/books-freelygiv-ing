@@ -1,0 +1,15 @@
+- firstName: Thomas
+  lastName: Watson
+  slug: thomas-watson
+  photo: "/static/images/authors/thomas-watson/thomas-watson.jpg"
+  description: >
+    Thomas Watson (c. 1620–1686) was a Puritan minister and prolific author, born in England
+    and educated at Emmanuel College, Cambridge. He served as rector of St. Stephen's Walbrook
+    in London until 1662, when he was ejected from his pulpit following the Act of Uniformity.
+
+    Despite persecution and imprisonment for his nonconformist convictions, Watson continued
+    to preach and write. His works are distinguished by their rich scriptural content,
+    vivid illustrations, and warm pastoral tone. Among his best-known writings are
+    A Body of Divinity, The Lord's Prayer, The Ten Commandments, and The Godly Man's Picture.
+    He is remembered as one of the most readable and devotionally rich of the Puritan writers.
+  donateUrl: ""

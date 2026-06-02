@@ -1,0 +1,31 @@
+- title: "The Godly Man's Picture"
+  sortTitle: "Godly Man's Picture"
+  authors:
+    - thomas-watson
+  year: 1666
+  addedDate: 2026-06-02
+  pages: 230
+  tags:
+    - classic
+  contributors: []
+  description: |
+    Thomas Watson draws the portrait of a true Christian with a scripture-pencil, describing in vivid, memorable strokes the marks of a man who is going to heaven. In twenty-four characteristics — from the man who is deeply humbled for sin to the man who makes God his chief joy — Watson provides both a mirror for self-examination and a map toward genuine godliness. The writing is Puritan at its best: theologically exact, practically urgent, and full of warm illustrations. Whether used for self-examination, devotional reading, or pulpit preparation, this book has shaped the piety of English-speaking Christians for three and a half centuries.
+  license: Public Domain
+  path: /static/books/the-godly-mans-picture
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-godly-mans-picture/the-godly-mans-picture.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-godly-mans-picture/the-godly-mans-picture.pdf
+    - type: mobi
+      label: Mobi
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-godly-mans-picture/the-godly-mans-picture.mobi

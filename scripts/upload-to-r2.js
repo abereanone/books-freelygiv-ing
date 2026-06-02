@@ -17,33 +17,47 @@
  * To force re-upload a file, delete it from R2 first.
  */
 
-import { S3Client, PutObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
-import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
-import { join, extname, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import {
+  S3Client,
+  PutObjectCommand,
+  HeadObjectCommand,
+} from "@aws-sdk/client-s3";
+import { readFileSync, readdirSync, existsSync, statSync } from "fs";
+import { join, extname, dirname } from "path";
+import { fileURLToPath } from "url";
 
-const __dirname  = dirname(fileURLToPath(import.meta.url));
-const DATA_SRC   = join(__dirname, '../data/src');
-const BOOKS_SRC  = join(DATA_SRC, 'books');
-const LEGACY_SRC = join(__dirname, '../freely-given-books-data/data/src');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const DATA_SRC = join(__dirname, "../data/src");
+const BOOKS_SRC = join(DATA_SRC, "books");
+const LEGACY_SRC = join(__dirname, "../freely-given-books-data/data/src");
 
 // Files in freely-given-books-data/data/src/joe-conkle/ that need renaming
 const LEGACY_FLAT = [
-  { src: 'joe-conkle/OurSinHisMercy.pdf',           key: 'our-sin-his-mercy/our-sin-his-mercy.pdf' },
-  { src: 'joe-conkle/OurSinHisMercy_print_ready.zip', key: 'our-sin-his-mercy/print-ready.zip' },
-  { src: 'joe-conkle/book.html',                     key: 'our-sin-his-mercy/our-sin-his-mercy.html' },
+  {
+    src: "joe-conkle/OurSinHisMercy.pdf",
+    key: "our-sin-his-mercy/our-sin-his-mercy.pdf",
+  },
+  {
+    src: "joe-conkle/OurSinHisMercy_print_ready.zip",
+    key: "our-sin-his-mercy/print-ready.zip",
+  },
+  {
+    src: "joe-conkle/book.html",
+    key: "our-sin-his-mercy/our-sin-his-mercy.html",
+  },
 ];
 
 // Load .env file if present
 try {
-  const env = readFileSync(join(__dirname, '../.env'), 'utf8');
-  for (const line of env.split('\n')) {
-    const [key, ...rest] = line.split('=');
-    if (key && rest.length) process.env[key.trim()] = rest.join('=').trim();
+  const env = readFileSync(join(__dirname, "../.env"), "utf8");
+  for (const line of env.split("\n")) {
+    const [key, ...rest] = line.split("=");
+    if (key && rest.length) process.env[key.trim()] = rest.join("=").trim();
   }
 } catch {}
 
-const { R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_KEY, R2_BUCKET } = process.env;
+const { R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_KEY, R2_BUCKET } =
+  process.env;
 
 if (!R2_ACCOUNT_ID || !R2_ACCESS_KEY_ID || !R2_SECRET_KEY || !R2_BUCKET) {
   console.error(`
@@ -58,12 +72,15 @@ Missing required environment variables. Create a .env file in the project root:
 }
 
 const s3 = new S3Client({
-  region: 'auto',
+  region: "auto",
   endpoint: `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
-  credentials: { accessKeyId: R2_ACCESS_KEY_ID, secretAccessKey: R2_SECRET_KEY },
+  credentials: {
+    accessKeyId: R2_ACCESS_KEY_ID,
+    secretAccessKey: R2_SECRET_KEY,
+  },
 });
 
-const BOOK_EXTS = new Set(['.epub', '.pdf', '.zip', '.mobi', '.html']);
+const BOOK_EXTS = new Set([".epub", ".pdf", ".zip", ".mobi", ".html"]);
 
 async function fileExistsInR2(key) {
   try {
@@ -76,19 +93,19 @@ async function fileExistsInR2(key) {
 
 function mimeType(filename) {
   const ext = extname(filename).toLowerCase();
-  if (ext === '.epub') return 'application/epub+zip';
-  if (ext === '.pdf')  return 'application/pdf';
-  if (ext === '.zip')  return 'application/zip';
-  if (ext === '.mobi') return 'application/x-mobipocket-ebook';
-  if (ext === '.html') return 'text/html';
-  return 'application/octet-stream';
+  if (ext === ".epub") return "application/epub+zip";
+  if (ext === ".pdf") return "application/pdf";
+  if (ext === ".zip") return "application/zip";
+  if (ext === ".mobi") return "application/x-mobipocket-ebook";
+  if (ext === ".html") return "text/html";
+  return "application/octet-stream";
 }
 
 async function main() {
   console.log(`\nUploading book files to R2 bucket: ${R2_BUCKET}\n`);
 
   let uploaded = 0;
-  let skipped  = 0;
+  let skipped = 0;
 
   // Scan data/src/books/<book-slug>/content/ (primary, ongoing)
   if (existsSync(BOOKS_SRC)) {
@@ -96,13 +113,13 @@ async function main() {
       const bookDir = join(BOOKS_SRC, bookSlug);
       if (!statSync(bookDir).isDirectory()) continue;
 
-      const contentDir = join(bookDir, 'content');
+      const contentDir = join(bookDir, "content");
       if (!existsSync(contentDir)) continue;
 
       for (const file of readdirSync(contentDir)) {
         if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
 
-        const key      = `${bookSlug}/${file}`;
+        const key = `${bookSlug}/${file}`;
         const filePath = join(contentDir, file);
 
         if (await fileExistsInR2(key)) {
@@ -112,12 +129,14 @@ async function main() {
         }
 
         const body = readFileSync(filePath);
-        await s3.send(new PutObjectCommand({
-          Bucket:      R2_BUCKET,
-          Key:         key,
-          Body:        body,
-          ContentType: mimeType(file),
-        }));
+        await s3.send(
+          new PutObjectCommand({
+            Bucket: R2_BUCKET,
+            Key: key,
+            Body: body,
+            ContentType: mimeType(file),
+          }),
+        );
         console.log(`  upload  ${key}`);
         uploaded++;
       }
@@ -131,15 +150,15 @@ async function main() {
       if (!statSync(authorDir).isDirectory()) continue;
 
       for (const bookSlug of readdirSync(authorDir)) {
-        const bookDir    = join(authorDir, bookSlug);
+        const bookDir = join(authorDir, bookSlug);
         if (!statSync(bookDir).isDirectory()) continue;
-        const contentDir = join(bookDir, 'content');
+        const contentDir = join(bookDir, "content");
         if (!existsSync(contentDir)) continue;
 
         for (const file of readdirSync(contentDir)) {
           if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
 
-          const key      = `${bookSlug}/${file}`;
+          const key = `${bookSlug}/${file}`;
           const filePath = join(contentDir, file);
 
           if (await fileExistsInR2(key)) {
@@ -149,12 +168,14 @@ async function main() {
           }
 
           const body = readFileSync(filePath);
-          await s3.send(new PutObjectCommand({
-            Bucket:      R2_BUCKET,
-            Key:         key,
-            Body:        body,
-            ContentType: mimeType(file),
-          }));
+          await s3.send(
+            new PutObjectCommand({
+              Bucket: R2_BUCKET,
+              Key: key,
+              Body: body,
+              ContentType: mimeType(file),
+            }),
+          );
           console.log(`  upload  ${key}`);
           uploaded++;
         }
@@ -177,12 +198,14 @@ async function main() {
     }
 
     const body = readFileSync(filePath);
-    await s3.send(new PutObjectCommand({
-      Bucket:      R2_BUCKET,
-      Key:         key,
-      Body:        body,
-      ContentType: mimeType(key),
-    }));
+    await s3.send(
+      new PutObjectCommand({
+        Bucket: R2_BUCKET,
+        Key: key,
+        Body: body,
+        ContentType: mimeType(key),
+      }),
+    );
     console.log(`  upload  ${key}`);
     uploaded++;
   }
@@ -190,4 +213,7 @@ async function main() {
   console.log(`\nDone — ${uploaded} uploaded, ${skipped} already existed.\n`);
 }
 
-main().catch(err => { console.error(err); process.exit(1); });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

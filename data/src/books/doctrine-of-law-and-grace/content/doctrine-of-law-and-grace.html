@@ -1,0 +1,2560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- fgbooks:css:start -->
+    <style>
+      /* Reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 18px;
+      }
+
+      body {
+        background-color: #faf6ef;
+        color: #2a1f14;
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.75;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 5rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        font-variant: small-caps;
+        letter-spacing: 0.08em;
+        text-align: center;
+        color: #4a2c10;
+        margin: 3.5rem 0 1.5rem;
+        padding: 0.6rem 0;
+        border-top: 2px solid #c8a97e;
+        border-bottom: 2px solid #c8a97e;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-variant: small-caps;
+        letter-spacing: 0.14em;
+        text-align: center;
+        color: #5a3a1a;
+        margin: 3rem 0 1.25rem;
+      }
+
+      p {
+        margin: 0 0 0.8em;
+        text-align: justify;
+        hyphens: auto;
+      }
+
+      h2 + p,
+      h3 + p {
+        text-indent: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 2rem auto;
+      }
+
+      /* Centered callout divs (e.g. "NOW OR NEVER") */
+      div[style*="text-align: center"],
+      div[style*="text-align:center"] {
+        text-align: center !important;
+        margin: 1.5em 0;
+        font-variant: small-caps;
+        letter-spacing: 0.06em;
+        color: #4a2c10;
+      }
+
+      a {
+        color: #7a3e1a;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: #c8a97e;
+        transition: color 0.15s;
+      }
+      a:hover {
+        color: #a05010;
+      }
+
+      sup {
+        font-size: 0.7em;
+        line-height: 0;
+        vertical-align: super;
+      }
+
+      ol {
+        padding-left: 2em;
+        margin: 1em 0 1em 1em;
+      }
+      li {
+        margin-bottom: 0.4em;
+      }
+      li > p {
+        margin: 0;
+      }
+
+      section[role="doc-endnotes"] {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #c8a97e;
+        font-size: 0.82rem;
+        color: #5a4535;
+        line-height: 1.55;
+      }
+      section[role="doc-endnotes"] li {
+        margin-bottom: 0.6em;
+      }
+
+      /* ── Floating TOC ──────────────────────────────────────────────────── */
+      #toc-toggle {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #4a2c10;
+        color: #faf6ef;
+        border: none;
+        border-radius: 2rem;
+        padding: 0.65rem 1.1rem;
+        font-family: Georgia, serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      #toc-toggle:hover {
+        background: #7a3e1a;
+        transform: translateY(-2px);
+      }
+
+      #toc-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1001;
+      }
+
+      #toc-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(320px, 88vw);
+        background: #fdf9f3;
+        border-left: 2px solid #c8a97e;
+        padding: 1.5rem 1.5rem 2rem;
+        overflow-y: auto;
+        z-index: 1002;
+        transform: translateX(100%);
+        transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 0.05rem;
+      }
+      #toc-panel.open {
+        transform: translateX(0);
+      }
+      #toc-overlay.open {
+        display: block;
+      }
+
+      #toc-close {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        line-height: 1;
+        color: #5a3a1a;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 0.5rem;
+      }
+      #toc-close:hover {
+        color: #a05010;
+      }
+
+      #toc-panel > h2 {
+        font-size: 1rem;
+        font-variant: small-caps;
+        letter-spacing: 0.12em;
+        color: #4a2c10;
+        margin: 0 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #c8a97e;
+        border-top: none;
+        text-align: left;
+      }
+
+      #toc-panel a {
+        display: block;
+        color: #2a1f14;
+        text-decoration: none;
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        transition: color 0.15s;
+      }
+      #toc-panel a:hover {
+        color: #a05010;
+      }
+      #toc-panel a.toc-sub {
+        padding-left: 1rem;
+        font-size: 0.83rem;
+        color: #4a3020;
+      }
+      #toc-panel a.toc-sub:hover {
+        color: #a05010;
+      }
+    </style>
+    <!-- fgbooks:css:end -->
+    <title>The Doctrine of the Law and Grace Unfolded</title>
+  </head>
+  <body>
+    <h1>The Doctrine of the Law and Grace Unfolded</h1>
+    <p
+      style="
+        text-align: center;
+        font-style: italic;
+        color: #5a3a1a;
+        margin-bottom: 3rem;
+      "
+    >
+      John Bunyan
+    </p>
+    <h2 id="part-one">Part One: The Covenant of Works</h2>
+
+    <h3 id="p1c1">Part One — Chapter 1</h3>
+    <p>
+      "FOR YE ARE NOT UNDER THE LAW, BUT UNDER GRACE" (Rom 6:14). [THE WORDS OF
+      THE TEXT OPENED, AND THE DOCTRINES LAID DOWN.] n the three former
+      chapters, the Apostle is pleading for the salvation of sinners by grace
+      without the works of the law, to the end he might confirm the saints, and
+      also that he might win over all those that did oppose the truth of this
+      doctrine, or else leave them the more without excuse; and that he might so
+      do, he taketh in hand, first, to show the state of all men naturally, or
+      as they come into the world by generation, saying, in the Third Chapter,
+      "There is none righteous, no, not one; there is none that understandeth;
+      there is none that doeth good," etc. As if he had said, It seems there is
+      a generation of men that think to be saved by the righteousness of the
+      law; but let me tell them that they are much deceived, in that they have
+      already sinned against the law; for by the disobedience of one, many, yea
+      all, were brought into a state of condemnation (Rom 5:12-20). Now, in the
+      Sixth Chapter he doth, as if he had turned him round to the brethren, and
+      said, My brethren, you see now that it is clear and evident that it is
+      freely by the grace of Christ that we do inherit eternal life. And again,
+      for your comfort, my brethren, let me tell you that your condition is
+      wondrous safe, in that you are under grace; for, saith he, "Sin shall not
+      have dominion over you"; that is, neither the damning power, neither the
+      filthy power, so as to destroy your souls: "For ye are not under the law";
+      that is, you are not under that that will damn you for sin; "but" you are
+      "under grace," or stand thus in relation to God, that though you have
+      sinned, yet you shall be pardoned. "For ye are not under the law, but
+      under grace." If any should ask what is the meaning of the word "under," I
+      answer, it signifieth, you are not held, kept, or shut up by it so as to
+      appear before God under that administration, and none but that; or thus,
+      you are not now bound by the authority of the law to fulfill it and obey
+      it, so as to have no salvation without you so do; or thus, if you
+      transgress against any one tittle of it, you by the power of it must be
+      condemned. No, no, for you are not so under it; that is, not thus under
+      the law. Again, "For ye are not under the law." What is meant by this word
+      "law"? The word "law," in Scripture, may be taken more ways than one, as
+      might be largely cleared. There is the law of faith, the law of sin, the
+      law of men, the law of works, otherwise called the Covenant of Works, or
+      the first or old covenant. "In that He saith a new covenant," which is the
+      grace of God, or commonly called the Covenant of Grace, "He hath made the
+      first old," that is, the Covenant of Works, or the law (Heb 8:13). I say,
+      therefore, the word "law" and the word "grace," in this Sixth of the
+      Romans, do hold forth the two covenants which all men are under; that is,
+      either the one or the other. "For ye are not under the law"—that is, you
+      to whom I do now write these words, who are and have been effectually
+      brought into the faith of Jesus, you are not under the law, or under the
+      Covenant of Works. He doth not, therefore, apply these words to all, but
+      to some, when he saith, "But ye"; mark, ye, ye believers, ye converted
+      persons, ye saints, ye that have been born. (YE) "for ye are not under the
+      law," implying others are that are in their natural state, that have not
+      been brought in to the Covenant of Grace by faith in Jesus Christ. The
+      words, therefore, being thus understood, there is discovered these two
+      truths in them—DOCTRINE FIRST. That there are some in Gospel times that
+      are under the Covenant of Works. DOCTRINE SECOND. That there is never a
+      believer under the law, as it is the Covenant of Works, but under grace
+      through Christ. "For ye," you believers, you converted persons, ye "are
+      not under the law but under grace"; or, for you are delivered and brought
+      into or under the Covenant of Grace. DOCTRINE FIRST. For the first, THAT
+      THERE ARE SOME THAT ARE UNDER THE LAW, OR UNDER THE COVENANT OF WORKS,
+      see, I pray you, that Scripture in the Third of the Romans, where the
+      Apostle, speaking before of sins against the law, and of the denunciations
+      thereof against those that are in that condition, he saith, "What things
+      soever the law saith, it saith to them who are under the law"; mark, "it
+      saith to them who are under the law, that every mouth may be stopped, and
+      all the world become guilty before God" (Rom 3:19). That is, all those
+      that are under the law as a Covenant of Works, that are yet in their sins,
+      and unconverted, as I told you before. Again he saith, "But if ye be led
+      by the Spirit, ye are not under the law" (Gal 5:18). Implying again, that
+      those which are for sinning against the law, or the works of the law,
+      either as it is the old covenant, these are under the law, and not under
+      the Covenant of Grace. Again he saith, "For as many as are of the works of
+      the law are under the curse" (Gal 3:10). That is, they that are under the
+      law are under the curse; for mark, they that are under the Covenant of
+      Grace are not under the curse. Now, there are but two covenants,
+      therefore, it must needs be that they that are under the curse are under
+      the law, seeing those that are under the other covenant are not under the
+      curse, but under the blessing. "So, then, they which be of faith are
+      blessed with faithful Abraham," but the rest are under the law (Gal 3:9).
+      Now I shall proceed to what I do intend to speak unto. FIRST. I shall show
+      you what the Covenant of Works, or the law, is, and when it was first
+      given, together with the nature of it. SECOND. I shall show you what it is
+      to be under the law, or Covenant of Works, and the miserable state of all
+      those that are under it. THIRD. I shall show you who they are that are
+      under this covenant, or law. FOURTH. I shall show you how far a man may go
+      and yet be under this covenant, or law.
+    </p>
+
+    <h2 id="part-two">Part Two: The Covenant of Grace</h2>
+
+    <h3 id="p2c1">Part Two — Chapter 1</h3>
+    <p>
+      [DOCTRINE SECOND.] he second doctrine now to be spoken to is, TO SHOW THAT
+      THE PEOPLE OF GOD ARE NOT UNDER THE LAW BUT UNDER GRACE—"For ye are not
+      under the law, but under grace" (Rom 6:14). You may well remember that
+      from these words I did observe these two great truths of the Lord—FIRST,
+      That there are some in Gospel times that are under the law, or Covenant of
+      Works. SECOND, That there is never a believer under the law, or Covenant
+      of Works, but under grace. I have spoken something to the former of these
+      truths—to wit, that there are some under the law, together with who they
+      are, and what their condition is, that are under it. Now I am to speak to
+      the second, and to show you who they are, and what their condition is,
+      that are under that [Covenant of Grace]. But before I come to that, I
+      shall speak a few words to show you what the word "grace" in this place
+      signifies; [I touched upon this in the first doctrine] for the word
+      "grace" in the Scripture referreth sometimes to favour with men (Gen
+      33:10; 39:4; 50:4). Sometimes to holy qualifications of saints (2 Cor
+      8:7). And sometimes to hold forth the condescension of Christ in coming
+      down from the glory which He had with His Father before the world was, to
+      be made of no reputation, and a servant to men (2 Cor 8:9; Phil 2:7).
+      Again: sometimes it is taken for the free, rich, and unchangeable love of
+      God to man, through Jesus Christ, that for our cause and sakes did make
+      Himself poor; and so it is to be understood in these words, "For ye are
+      not under the law," to be cursed, and damned, and sent headlong to Hell,
+      "but" you are "under grace," to be saved, to be pardoned, to be preserved,
+      "and kept by the mighty power of God, through faith," which alone is the
+      gift of grace, "unto eternal glory." This one Scripture alone proves the
+      same—"For by grace are ye saved" (Eph 2:8), by free grace, by rich grace,
+      by unchangeable grace. And you are saved from the curse of the law; from
+      the power, guilt, and filth of sin; from the power, malice, madness, and
+      rage of the devil; from the wishes, curses, and desires of wicked men;
+      from the hot, scalding, flaming, fiery furnace of Hell; from being
+      arraigned as malefactors, convinced, judged, condemned, and fettered with
+      the chains of our sins to the devils to all eternity; and all this freely,
+      freely by His grace (Rom 3:24) by rich grace unchangeable grace; for,
+      saith He, "I am the LORD, I change not: therefore ye sons of Jacob are not
+      consumed" (Mal 3:6). This is grace indeed. The word "grace," therefore, in
+      this Scripture (Rom 6:14) is to be understood of the free love of God in
+      Christ to sinners, by virtue of the new covenant, in delivering them from
+      the power of sin, from the curse and condemning power of the old covenant,
+      from the destroying nature of sin, by its continual workings; as is all
+      evident if you read with understanding the words as they lie—"For," saith
+      he, "sin shall not have dominion over you," or, it shall not domineer,
+      reign, or destroy you, though you have transgressed against the Covenant
+      of Works, the law; and the reason is rendered in these words, "For ye are
+      not under the law"—that is, under that which accuseth, chargeth,
+      condemneth and brings execution on the soul for sin,—"but under grace";
+      that is, under that which frees you, forgives you, keeps you, and
+      justifies you from all your sins, adversaries, or whatever may come in to
+      lay anything to your charge to damn you. For that is truly called grace in
+      this sense that doth set a man free from all his sins, deliver him from
+      all the curses of the law, and what else can be laid to His charge,
+      freely, without any foresight in God to look at what good will be done by
+      the party that hath offended; and also that doth keep the soul by the same
+      power through faith—which also is his own proper gift—unto eternal glory.
+      Again; that it is a pardon not conditional, but freely given, consider,
+      first, it is set in opposition to works—"Ye are not under the law."
+      Secondly, The promise that is made to them (saying, "Sin shall not have
+      dominion over you") doth not run with any condition as on their part to be
+      done; but merely and alone because they were under, or because they had
+      the grace of God extended to them. "Sin shall not have dominion over you:
+      for," mark the reason, "ye are not under the law, but under grace." The
+      words being thus opened, and the truth thus laid down, HOW THERE IS NEVER
+      A BELIEVER UNDER THE COVENANT OF WORKS, BUT UNDER GRACE, the free, rich,
+      unchangeable love of God, it remaineth that, in the first place, we prove
+      the doctrine, and after that proceed. THE DOCTRINE PROVED. Now in the
+      doctrine there are two things to be considered and proved—FIRST, That
+      believers are under grace. SECONDLY, Not under the law as a Covenant of
+      Works; for so you must understand me. For these two we need go no further
+      than the very words themselves; the first part of the words proves the
+      first part of the doctrine, "Ye are not under the law"; the second part
+      proves the other, "but" ye are "under grace." But besides these, consider
+      with me a few things for the demonstrating of these truths, as, First.
+      They are not under the law, because their sins are pardoned, which could
+      not be if they were dealt withal according to the law, and their being
+      under it; for the law alloweth of no repentance, but accuseth, curseth and
+      condemneth every one that is under it—"Cursed is every one that continueth
+      not in all things which are written in the Book of the Law to do them"
+      (Gal 3:10). But, I say, believers having their sins forgiven them, it is
+      because they are under another, even a new covenant—"Behold, the days
+      come, saith the LORD, when I will make a new covenant with them."—"For I
+      will be merciful to their unrighteousness, and their sins and their
+      iniquities will I remember no more" (Heb 8:12). Second. They are not under
+      the law, because their sins and iniquities are not only forgiven, but they
+      are forgiven them freely. They that stand in the first covenant, and
+      continue there, are to have never a sin forgiven them unless they can give
+      God a complete satisfaction; for the law calls for it at their hands,
+      saying, "Pay me that thou owest." O! but when God deals with His saints by
+      the Covenant of Grace it is not so; for it is said, "And when" He saw
+      "they had nothing to pay, He frankly" and freely "forgave them" all—"I
+      will heal their backsliding; I will love them freely."—I will blot "out
+      thy transgressions for Mine own sake," etc. (Luke 7:42; Hosea 14:4; Isa
+      43:25). Third. The saints are not under the law, because the righteousness
+      that they stand justified before God in is not their own actual
+      righteousness by the law, but by imputation, and is really the
+      righteousness of Another—namely, of God in Christ (2 Cor 5:21; Phil 3:9).
+      "Even the righteousness of God, which is by faith of Jesus Christ unto all
+      and upon all," that is, imputed to "them that believe" (Rom 3:22). But if
+      they were under the old covenant, the Covenant of Works, then their
+      righteousness must be their own, [But it is impossible that the
+      righteousness of man by the law should save him.] or no forgiveness of
+      sins— "If thou doest well, shalt thou not be accepted?" but if thou
+      transgress, "sin lieth at the door," saith the law (Gen 4:7). Fourth. In a
+      word, whatsoever they do receive, whether it be conversion to God; whether
+      it be pardon of sin; whether it be faith or hope; whether it be
+      righteousness; whether it be strength" whether it be the Spirit, or the
+      fruits thereof; whether it be victory over sin, death, or Hell; whether it
+      be Heaven, everlasting life, and glory inexpressible; or whatsoever it be,
+      it comes to them freely, God having no first eye to what they would do, or
+      should do, for the obtaining of the same. But to take this in pieces—1. In
+      a word, are they converted? God finds them first, for, saith He, "I am
+      found of them that sought Me not" (Isa 65:1). 2. Have they pardon of sin?
+      They have that also freely,—"I will heal their backsliding, I will love
+      them freely" (Hosea 14:4). 3. Have they faith? It is the gift of God in
+      Christ Jesus, and He is not only the Author, that is, the beginner
+      thereof, but He doth also perfect the same (Heb 12:2). 4. Have they hope?
+      It is God that is the first cause thereof—"Remember the word unto Thy
+      servant, upon which Thou hast caused me to hope" (Psa 119:49). 5. Have
+      they righteousness? It is the free gift of God (Rom 5:17). Have they
+      strength to do the work of God in their generations, or any other thing
+      that God would have them do? That also is a free gift from the Lord, for
+      without Him we neither do nor can do anything (John 15:5). 7. Have we
+      comfort, or consolation? We have it not for what we have done, but from
+      God through Christ; for He is the God of all comforts and consolation (2
+      Cor 1:3-7). 8. Have we the Spirit, or the fruits thereof? it is the gift
+      of the Father—"how much more shall your heavenly Father give the Holy
+      Spirit to them that ask Him (Luke 11:13)? "Thou has wrought all our works
+      in us" (Isa 26:12). And so, I say, whether it be victory over sin, death,
+      Hell, or the devil, it is given us by the victory of Christ—"But thanks be
+      to God which giveth us the victory through our Lord Jesus Christ" (1 Cor
+      15:57; Rom 7:24,25). Heaven and glory it is also the gift of Him who
+      giveth us richly all things to enjoy (Matt 25:34). So that these things,
+      if they be duly and soberly considered, will give satisfaction in this
+      thing. I might have added many more for the clearing of these things; as
+      1. When God came to man to convert him, He found him a dead man (Eph
+      2:1,2). He found him an enemy to God, Christ, and the salvation of his own
+      soul; He found him wallowing in all manner of wickedness; He found him
+      taking pleasure therein; with all delight and greediness. 2. He was fain
+      to quicken him by putting His Spirit into him, and to translate him by the
+      mighty operation thereof. He was fain to reveal Christ Jesus unto him, man
+      being altogether senseless and ignorant of this blessed Jesus (Matt
+      11:25,27; 1 Cor 2:7-10). 4. He was fain to break the snare of the devil,
+      and to let poor man, poor bound and fettered man, out of the chains of the
+      enemy.
+    </p>
+
+    <h3 id="p2c2">Part Two — Chapter 2</h3>
+    <p>
+      [THE NEW COVENANT FREE AND UNCHANGEABLE, WHO ARE UNDER IT, AND THEIR
+      PRIVILEGES.] ow we are to proceed, and the things that we are to treat
+      upon in the second place are these—First. [Besides the reasons already
+      given.] Why is it a free and unchangeable grace? SECOND. Who they are that
+      are actually brought into His free and unchangeable Covenant of Grace, and
+      how they are brought in? THIRD. What are the privileges of those that are
+      actually brought into this free and glorious grace of the glorious God of
+      Heaven and glory? [THE NEW COVENANT FREE AND UNCHANGEABLE BECAUSE MADE
+      WITH CHRIST.] FIRST. WHY IT IS A FREE AND UNCHANGEABLE GRACE. And for the
+      opening of this we must consider, first, How and through Whom this grace
+      doth come to be, first, free to us, and, secondly, unchangeable? This
+      grace is free to us through conditions in Another—that is, by way of
+      covenant or bargain; for this grace comes by way of covenant or bargain to
+      us, yet made with Another for us. First. That it comes by way of covenant,
+      contract, or bargain, though not personally with us, be pleased to
+      consider these Scriptures, where it is said, "I have made a covenant with
+      My Chosen: I have sworn unto David [The word David in this place
+      signifieth Christ, as also in these Scriptures—(Eze 34:23,24; 37:24,25).]
+      My servant" (Psa 89:3). "And as for Thee also, by the blood of Thy
+      covenant," speaking of Christ, "I have sent forth Thy prisoners out of the
+      pit wherein is no water," (Zech 9:9-11). Again; "Ye have sold yourselves
+      for nought; and ye shall be redeemed without money" (Isa 52:3). Blessed be
+      the Lord," therefore, saith Zacharias, "for He hath visited and" also
+      "redeemed His people, and hath raised up an horn of salvation for us in
+      the house of His servant David; as He spake by the mouth of His holy
+      Prophets, which have been since the world began; that we should be saved
+      from our enemies, and from the hands of all that hate us; to perform the
+      mercy promised to our fathers, and to remember His holy covenant," or
+      bargain (Luke 1:68-72). [I might give you more Scriptures; but pray
+      consider the second thing.] And if any should be offended with the
+      plainness of these words, as some poor souls may be through ignorance, let
+      them be pleased to read soberly Isaiah 49:1-12, and there they may see
+      that it runs as plain a bargain as if two would be making of a bargain
+      between themselves, and concluding upon several conditions on both sides.
+      But more of this hereafter. Now, Second. This covenant, I say, was made
+      with One, not with many, and also confirmed in the conditions of it with
+      One, not with several. First, that the covenant was made with One (Gal
+      3:16). "Now to Abraham and his Seed were the promises made. He saith not,
+      And to seeds, as of many; but as of one, And to thy Seed, which is Christ"
+      (Verse 17). "And this, I say, that the covenant that was confirmed before
+      of God, in Christ," etc. The covenant was made with the Seed of Abraham;
+      not the seeds, but the Seed, which is the Lord Jesus Christ, our Head and
+      Undertaker in the things concerning the covenant. Third. The condition was
+      made with One, and also accomplished by Him alone, and not by several; yet
+      in the nature, and for the everlasting deliverance of many; even by one
+      man Jesus Christ, as it is clear from Romans 5:15-17, etc., and in
+      Zechariah 9:11, the Lord saith to Christ, "And as for Thee"—mark, "As for
+      Thee also, by the blood of Thy covenant," or as for Thee whose covenant
+      was by blood; that is, the condition of the covenant was, that Thou
+      shouldst spill Thy blood; which having been done in the account of God,
+      saith He, I according to My condition have let go the prisoners, or sent
+      them "out of the pit wherein is no water." Those Scriptures in Galatians
+      3:16,17 that are above cited, are notably to our purpose; Verse 16 saith
+      it was made with Christ, Verse 17 saith it was also confirmed in or with
+      God in Him. Pray read with understanding. "Now," saith Paul, "the promises
+      were not made unto seeds, as of many; but as of one, And to thy Seed,
+      which is Christ." . . . . "The law, which was four hundred and thirty
+      years after, cannot disannul, that it should make the promise of none
+      effect." Not that the covenant was made with Abraham and Christ together,
+      as two persons that were the undertakers of the same; the promise was made
+      with, or to, Abraham afterwards; but the covenant with Christ before.
+      [Neither Abraham nor the fathers able to undertake the accomplishment of
+      this covenant.] Further, that the covenant was not personally made with
+      Abraham, no, nor with any of the fathers, neither so as that they were the
+      persons that should stand engaged to be the accomplishers thereof, either
+      in whole or in part; which is very clear. First. Because this covenant was
+      not made with God and the creature; not with another poor Adam, that only
+      stood upon the strength of natural abilities; but this covenant was made
+      with the second Person, with the Eternal Word of God; with Him that was
+      everyways as holy, as pure, as infinite, as powerful, and as everlasting
+      as God (Prov 8:22-31; Isa 9:6; Zech 13:7; Phil 2:6; Heb 1; Rev 1:11-17;
+      22:13,17). Second. This covenant or bargain was made in deed and in truth
+      before man was in being. O! God thought of the salvation of man before
+      there was any transgression of man; for then, I say, and not since then,
+      was the Covenant of Grace made with the Undertaker thereof; for all the
+      other sayings are to show unto us that glorious plot and contrivance that
+      was concluded on before time between the Father and the Son, which may
+      very well be concluded on for a truth from the Word of God, if you
+      consider, 1. That the Scripture doth declare that the price was agreed on
+      by the Son before time; 2. The promise was made to Him by the Father that
+      He should have His bargain before time; 3. The choice, and who they were
+      that should be saved was made before time, even before the world began. 1.
+      For the first, That the price was agreed upon before the world began.
+      Consider the word which speaketh of the price that was paid for sinners,
+      even the precious blood of Christ; it saith of Him, "Who verily was
+      foreordained before the foundation of the world, but was manifest in these
+      last times for you, who by Him do believe," etc. (1 Peter 1:20,21). Mark,
+      it was foreordained or concluded on between the Father and the Son before
+      the world began. 2. The promise from God to the Son was also made in the
+      same manner, as it is clear where the Apostle saith with comfort to his
+      soul, that he had "hope of eternal life, which God, that cannot lie,
+      promised before the world began," (Titus 1:2) which could be to none but
+      the Mediator of the new covenant, because there was none else to whom it
+      should be made but He. 3. The choice was also made then, even before man
+      had a being in this world, as it is evident where he saith, "Blessed be
+      the God and Father of our Lord Jesus Christ, who hath blessed us with all
+      spiritual blessings in heavenly places IN Christ: according as He hath
+      chosen us in Him before the foundation of the world, that we should be
+      holy and without blame before Him in love" (Eph 1:3,4). [Did I think this
+      would meet with any opposition, I should be in this more large.] Nay, did
+      I look upon it here to be necessary, I should show you very largely and
+      clearly that God did not only make the covenant with Christ before the
+      world began, and the conditions thereof, but I could also show you that
+      the very saints' qualifications, as part of the covenant, was then
+      concluded on by the Father and the Son according to these Scriptures,
+      which, it may be, I may touch upon further anon (Eph 1:3,4; 2:10; Rom
+      8:28). But, Third. This covenant was not made with any of the fathers,
+      neither in whole nor in part, as the undertakers thereof; for then it must
+      be also concluded that they are co-partners with Christ in our salvation,
+      and so that Christ is not Mediator alone; but this would be blasphemy for
+      any once to surmise. And therefore, by the way, when thou readest of the
+      new covenant in Scripture as though it was made with Adam, Noah, Abraham,
+      or David, thou art to consider thus with thyself—1. That God spake to them
+      in such a way for to show or signify unto us how He did make the covenant
+      that He did make with Christ before the world began, they being types of
+      Him. 2. That He thereby might let them understand that He was the same
+      then as He is now, and now as He was then; and that then it was resolved
+      on between His Son and HIM, that in after ages His Son should in their
+      natures, from their loins, and for their sins, be born of a woman, hanged
+      on the Cross, etc., for them: for all along you may see that when He
+      speaketh to them of the new covenant, He mentions their seed—their
+      seed—still aiming at Christ; Christ, the Seed of the woman, was to break
+      the serpent's head (Gen 3:15; 17; Psa 89:36). Now to Abraham and his Seed
+      was the promise made; his Seed shall endure for ever, and His throne as
+      the days of Heaven, etc.; still pointing at Christ. And, 3. To stir up
+      their faith and expectations to be constant unto the end in waiting for
+      that which He and His Son had concluded on before time, and what He had
+      since the conclusion declared unto the world by the Prophets. 4. It
+      appeareth that the heart of God was much delighted therein also, as is
+      evident, in that He was always in every age declaring of that unto them
+      which before He had prepared for them. O this good God of Heaven!
+      Objection: But you will say, perhaps, the Scriptures say plainly that the
+      new covenant was and is made with believers, saying, "The days come, saith
+      the Lord, that I will make a new covenant with the house of Israel, and
+      with the house of Judah; not according to the covenant that I made with
+      their fathers in the day when I led them out of the land of Egypt," etc.
+      (Heb 8:8-10). So that it doth not run with Christ alone, but with
+      believers also—I will make a new covenant with the house of Israel and
+      Judah, etc. (Jer 31:33). Answer first: It cannot be meant that the new
+      covenant was made with Christ, and the house of Israel and Judah as the
+      undertakers thereof; for so it was made with Christ alone, which is clear,
+      in that it was made long before the house of Israel and Judah had a being,
+      as I showed before. But, Answer second: These words here are spoken,
+      first, to show rather the end of the ceremonies than the beginning or rise
+      of the new covenant. Mind a little; the Apostle is labouring to beat the
+      Jews, to whom he wrote this Epistle, off of the ceremonies of the law, of
+      the priests, altar, offerings, temple, etc., and to bring them to the
+      right understanding of the thing and things that they held forth, which
+      were to come, and to put an end to those. If you do but understand the
+      Epistle to the Hebrews, it is a discourse that showeth that the Son of God
+      being come, there is an end put to the ceremonies; for they were to
+      continue so long and no longer—"It," saith the Apostle, "stood in meats
+      and drinks, and divers washings, and carnal ordinances imposed on them
+      until the time of reformation"; that is, until Christ did come. "But
+      Christ being come an high priest of good things to come," etc., puts an
+      end to the things and ordinances of the Levitical priesthood. Read the
+      7th, 8th, 9th, and 10th Chapters of Hebrews, and you will find this true.
+      So, then, when He saith, "The days come in which I make a new covenant,"
+      it is rather to be meant a changing of the administration, taking away the
+      type, the shadow, the ceremonies from the house of Israel and Judah, and
+      relieving by the birth of Christ, and the death of Christ, and the
+      offering of the body of Him whom the shadows and types did point out to be
+      indeed He whom God the Father had given for a ransom by covenant for the
+      souls of the saints; and also to manifest the truth of that covenant which
+      was made between the Father and the Son before the world began; for though
+      the new covenant was made before the world began, and also every one in
+      all ages was saved by the virtue of that covenant, yet that covenant was
+      never so clearly made manifest as at the coming, death, and resurrection
+      of Christ; and therefore, saith the Scripture, "He hath brought life and
+      immortality to light through the Gospel." "Who hath saved us, and called
+      us with an holy calling" not according to" the "works" of righteousness
+      which we have done, "but according to His own purpose and grace, which was
+      given us in Christ Jesus before the world began," there is the covenant,
+      but it was "made MANIFEST by the APPEARING of our Saviour Jesus Christ,
+      who hath abolished death, and brought life and immortality to LIGHT
+      through the Gospel" (2 Tim 1:9,10). Therefore, I say, these words are
+      therefore to discover that the time was come to change the dispensation,
+      to take away the type, and bring in the substance, and so manifesting that
+      more clearly which before lay hid in dark sayings and figures. And this is
+      usual with God to speak in this manner. Again; if at any time you do find
+      in Scripture that the Covenant of Works is spoken of as the first covenant
+      that was manifested, and so before the second covenant, yet you must
+      understand that it was so only as to manifestation—that is, it was first
+      given to man, yet not made before that which was made with Christ; and
+      indeed it was requisite that it should be given or made known first, that
+      thereby there might be a way made for the second, by its discovering of
+      sin, and the sad state that man was in after the Fall by reason of that.
+      And again, that the other might be made the more welcome to the sons of
+      men. Yet the second Adam was before the first, and also the second
+      covenant before the first. This is a riddle]. And in this did Christ in
+      time most gloriously answer Adam, who was the figure of Christ, as well as
+      of other things. Romans 5. For, Was the first covenant made with the first
+      Adam? so was the second covenant made with the second; for these are and
+      were the two great public persons, or representators of the whole world,
+      as to the first and second covenants; and therefore you find God speaking
+      on this wise in Scripture concerning the new covenant—"My covenant shall
+      stand fast with HIM." "My mercy will I keep for HIM for evermore," saith
+      God: "My covenant shall stand fast with HIM" (Psa 89:28,34,35); this HIM
+      is Christ, if you compare this with Luke 1:32, "My covenant will I not
+      break"—namely, that which was made with HIM—"nor alter the thing that is
+      gone out of My mouth. Once I have sworn by My holiness that I will not lie
+      unto David," [David here is to be understood Christ.] to whom this was
+      spoken figuratively in the Person of Christ; for that was God's usual way
+      to speak of the glorious things of the Gospel in the time of the Law, as I
+      said before.
+    </p>
+
+    <h3 id="p2c3">Part Two — Chapter 3</h3>
+    <p>
+      THE CONDITIONS OF THE NEW COVENANT. he conditions also were concluded on
+      and agreed to be fulfilled by Him: as it is clear, if you understand His
+      saying in the 12th of John, at the 27th verse, where He foretelleth His
+      death, and saith, "Now is My soul troubled; and what shall I say? Father,
+      save Me from this hour: but for this cause came I" into the world "unto
+      this hour"; as if He had said, My business is now not to shrink from My
+      sufferings that are coming upon Me; for these are the things that are a
+      great part of the conditions contracted in the covenant which stands
+      between My Father and Me; therefore I shall not pray that this might be
+      absolutely removed from Me; For, "for this cause came I" into the world;
+      even this was the very terms of the covenant. By this you may see, "we are
+      under grace." Now in a covenant there are these three things to be
+      considered—First. What it is that is covenanted for. Second. The
+      conditions upon which the persons who are concerned in it do agree. Third.
+      If the conditions on both sides be not according to the agreement
+      fulfilled, then the covenant standeth not, but is made void. And this new
+      covenant in these particulars is very exactly fulfilled and made out in
+      Christ. First. The thing or things covenanted for was the salvation of
+      man, but made good in Christ—"The Son of Man is come to seek and to save
+      that which was lost. The Son of Man did not come to destroy men's lives,
+      but to save them. I gave My life a ransom for many. And this is the will,"
+      or covenant, "of Him that sent Me, that of all which He hath given Me, I
+      should lose nothing, but should raise it up again at the last day" (John
+      6:39). Second. As touching the conditions agreed on, they ran thus— 1. On
+      the Mediator's side, that He should come into the world; and then on the
+      Father's side, that He should give Him a body. This was one of the
+      glorious conditions between the Father and Christ; "Wherefore, when He
+      cometh into the world, He saith, Sacrifice and offering Thou wouldest
+      not"—that is, the old covenant must not stand, but give way to another
+      sacrifice which Thou hast prepared, which is the giving up My Manhood to
+      the strokes of Thy justice—"for a body Thou hast prepared Me" (Heb 10:5).
+      This doth prove us under grace. 2. On the Mediator's side, that He should
+      be put to death; and on God the Father's side, that He should raise Him up
+      again; this was concluded on also to be done between God the Father and
+      His Son Jesus Christ. On Christ's side, that He should die to give the
+      justice of His Father satisfaction, and so to take away the curse that was
+      due to us, wretched sinners, by reason of our transgressions; and that God
+      His Father, being every ways fully and completely satisfied, should by His
+      mighty power revive and raise Him up again. He hath "brought again— our
+      Lord Jesus"; that is, from death to life, through the virtue or effectual
+      satisfaction that He received from the blood that was shed according to
+      the terms "of the Everlasting Covenant" (Heb 13:20). 3. On the Mediator's
+      side, that He should be made a curse; and on the Father's side, that
+      through Him sinners should be inheritors of the blessing. What wonderful
+      love doth there appear by this in the heart of our Lord Jesus, in
+      suffering such things for our poor bodies and souls? (Gal 3:13,14). This
+      is grace. 4. That on the Mediator's side there should be by Him a victory
+      over Hell, death, and the devil, and the curse of the Law; and on the
+      Father's side, that these should be communicated to sinners, and they set
+      at liberty thereby—"Turn you to the stronghold," saith God, "ye prisoners
+      of hope; even today do I declare that I will render double unto thee"
+      (Zech 9:12). Why so? It is because of the blood of My Son's covenant
+      (Verse 11); which made Paul, though sensible of a body of death, and of
+      the sting that death did strike into the souls of all those that are found
+      in their sins, bold to say, "O death! where is thy sting? O grave! where
+      is thy victory? The sting of death is sin." That is true, and the terrible
+      Law of God doth aggravate and set it home with insupportable torment and
+      pain. But shall I be daunted at this? No, "I thank my God through Jesus
+      Christ He hath given me this victory." So that now, though I be a sinner
+      in myself, yet I can, by believing in Jesus Christ, the Mediator of this
+      new covenant, triumph over the devil, sin, death, and Hell; and say, Do
+      not fear, my soul, seeing the victory is obtained over all my enemies
+      through my Lord Jesus Christ (1 Cor 15:55-57). This is the way to prove
+      ourselves under grace. 5. That on the Mediator's side He should by thus
+      doing bring in everlasting righteousness for saints (Dan 9:24); and that
+      the Father for this should give them an everlasting kingdom (1 Peter
+      1:3-5; Eph 1:4; 2 Tim 4:18; Luke 22:28,29). But, Third. [How the
+      conditions are fulfilled]. In the next place, this was not all—that is,
+      the Covenant of Grace, with the conditions thereof, was not only concluded
+      on by both parties to be done, but Jesus Christ [Christ is put into office
+      by the Father, to do all things contained in the new covenant]. must be
+      authorized to do what was concluded on touching this covenant by way of
+      office. I shall therefore speak a word or two also touching the offices,
+      at least, some of them, that Christ Jesus did and doth still execute as
+      the Mediator of the new covenant, which also were typed out in the
+      Levitical law; for this is the way to prove that we are not under the law,
+      but under grace.
+    </p>
+
+    <h3 id="p2c4">Part Two — Chapter 4</h3>
+    <p>
+      And, CHRIST IS THE SURETY OF THE NEW COVENANT. IRST. His first office,
+      after the covenant was made and concluded upon, was that Jesus should
+      become bound as a Surety, [His Suretyship]. and stand engaged upon oath to
+      see that all the conditions of the covenant that were concluded on between
+      Him and His Father should, according to the agreement, be accomplished by
+      Him; and that after that, He should be the Messenger from God to the world
+      to declare the mind of God touching the tenor and nature of both the
+      covenants, especially of the new one. The Scripture saith, that Jesus
+      Christ was not only made a priest by an oath, but also a Surety, or
+      bondsman, as in Hebrews 7:21, 22. In the 21st Verse he speaketh of the
+      priesthood of Christ, that it was with an oath; and saith, in the 22nd
+      Verse, "By so much" also "was Jesus made a Surety of a better testament,"
+      or covenant. Now the covenant was not only made on Jesus Christ's side
+      with an oath, but also on God the Father's side, that it might be for the
+      better ground of establishment to all those that are, or are to be, the
+      children of the promise. Methinks it is wonderful to consider that the God
+      and Father of our souls, by Jesus Christ, should be so bent upon the
+      salvation of sinners, that He would covenant with His Son Jesus for the
+      security of them, and also that there should pass an oath on both sides
+      for the confirmation of Their resolution to do good. As if the Lord had
+      said, My Son, Thou and I have here made a covenant, that I on My part
+      should do thus and thus, and that Thou on Thy part shouldst do so and so.
+      Now that We may give these souls the best ground of comfort that may be,
+      there shall pass an oath on both sides, that Our children may see that We
+      do indeed love them. "Wherein God, willing more abundantly to show unto
+      the heirs of promise the immutability of His counsel," in making of the
+      covenant, "confirmed it by an oath: that we might have a strong
+      consolation, who have fled for refuge to lay hold upon the hope set before
+      us" (Heb 6:17,18; 7:21). Mark, the 6th Chapter saith, God confirmed His
+      part by an oath; and the 7th saith, Christ was made or set on His office
+      also by an oath. Again, "Once," saith God, "have I sworn by My holiness,
+      that I will not lie unto David," "nor alter the thing that is gone out of
+      My mouth," (Psa 89:34,35) as was before cited. Herein you may see that God
+      and Christ were in good earnest about the salvation of sinners; for as
+      soon as ever the covenant was made, the next thing was, who should be
+      bound to see all those things fulfilled which were conditioned on between
+      the Father and the Son: the angels, they could have no hands in it; the
+      world could not do it; the devils had rather see them damned than they
+      would wish them the least good; thus Christ looked, and there was none to
+      help; though the burden lay never so heavy upon His shoulder, He must bear
+      it Himself; for there was none besides Himself to uphold, or so much as to
+      step in to be bound, to see the conditions, before mentioned, fulfilled
+      neither in whole nor in part (Isa 63:1-7). So that He must not be only He
+      with whom the covenant was made, but He must also become the bondsman or
+      surety thereof, and so stand bound to see that all and every particular
+      thing conditioned for should be, both in manner, and matter, at the time
+      and place, according to the agreement, duly and orderly fulfilled. Is not
+      this grace? Now as touching the nature of a surety and his work, in some
+      things it is well known to most men; therefore I shall be very brief upon
+      it. First. You know a surety is at the bargain's making; and so was
+      Christ—"Then was I beside Him" (Prov 8:30). Second. A surety must consent
+      to the terms of the agreement, or covenant; and so did Christ Jesus. Now
+      that which He did engage should be done for sinners, according to the
+      terms of the covenant; it was this—1. That there should be a complete
+      satisfaction given to God for the sins of the world; for that was one
+      great thing that was agreed upon when the covenant was made (Heb 10:5,17).
+      2. That Jesus Christ should, as aforesaid, bring in an everlasting
+      righteousness to clothe the saints (His body) withal (Dan 9:24,25). Here
+      is grace. 3. That He should take in charge to see all those forthcoming
+      without spot or wrinkle at the day of His glorious appearing from Heaven
+      in judgment, and to quit them before the Judgment-seat. Again, Third. In
+      the work of a surety there is required by the creditor that the surety
+      should stand to what he is bound; and on the surety's side there is a
+      consenting thereunto. 1. The creditor looks, that in case the debtor
+      proves a bankrupt, that then the surety should engage the payment. Is not
+      this grace? [However it is in other engagements, it is thus in this]. 2.
+      The creditor looks that the surety should be an able man. Now our Surety
+      was, and is, in this case, every way suitable; for He is heir of all
+      things. 3. The creditor appoints the day, and also looks that the covenant
+      should be kept, and the debt paid, according to the time appointed; and it
+      is required of sureties, as well as stewards, that they be found
+      faithful—namely, to pay the debt according to the bargain; and therefore
+      it is said, "When the fullness of the time was come, God sent forth His
+      Son—made under the law, to redeem them that were under the law," (Gal
+      4:4,5). Thus comes grace to saints. 4. The creditor looks that his money
+      should be brought into his house, to his own habitation. Jesus, our
+      Surety, in this also is faithful; for by His own blood, which was the
+      payment, He is entered into the holy place, even into Heaven itself, which
+      is God's dwelling-place, to render the value and price that was agreed
+      upon for the salvation of sinners. But I shall speak more of this in
+      another head, therefore I pass it. Again, Fourth. If the surety stands
+      bound, the debtor is at liberty; and if the law do issue out any process
+      to take any, it will be the surety. [Though the debtor, together with the
+      surety, is liable to pay the debt by the law of man, yet Christ our Surety
+      only by the Covenant of Grace]. And, O! how wonderfully true was this
+      accomplished in that, when Christ our Surety came down from Heaven, God's
+      Law did so seize upon the Lord Jesus, and so cruelly handle Him, and so
+      exact upon Him, that it would never let Him alone until it had accused Him
+      and condemned Him, executed Him, and screwed His very heart's blood out of
+      His precious heart and side; nay, and more than this too, as I shall show
+      hereafter.
+    </p>
+
+    <h3 id="p2c5">Part Two — Chapter 5</h3>
+    <p>
+      But, CHRIST THE MESSENGER OF THE NEW COVENANT. ECOND. [His second office].
+      After that Jesus Christ had stood bound, and was become our Surety in
+      things pertaining to this covenant, His next office was to be the
+      Messenger of God touching His mind and the tenor of the covenant unto the
+      poor world; and this did the Prophet foresee long before, when he saith,
+      "Behold, I will send My messenger, and he shall prepare the way before
+      Me"; speaking of John the Baptist. "And he shall prepare the way before
+      Me." And then He speaketh of Christ to the people, saying, "And the Lord
+      whom ye seek shall suddenly come to His temple." Who is He? Even the
+      Messenger of the covenant, whom ye delight in," that is Christ. "Behold,
+      He shall come, saith the LORD of Hosts" (Mal 3:1). Now the covenant being
+      made before between the Father and the Son, and Jesus Christ becoming
+      bound to see all the conditions fulfilled, this being done, He could come
+      down from Heaven to earth, to declare to the world what God the Father and
+      HE had concluded on before, and what was the mind of the Father towards
+      the world concerning the salvation of their souls; and indeed, who could
+      better come on such an errand than He that stood by when the covenant was
+      made? than He that shook hands with the Father in making of the covenant?
+      than He that was become a Surety in the behalf of poor sinners, according
+      to the terms of the covenant. Now, you know, a messenger commonly when he
+      cometh, doth bring some errand to them to whom he is sent, either of what
+      is done for them, or what they would have them whom they send unto do for
+      them, or such like. Now what a glorious message was that which our Lord
+      Jesus Christ came down from Heaven withal to declare unto poor sinners,
+      and that from God His Father? I say, how glorious was it; and how sweet is
+      it to you that have seen yourselves lost by nature? and it will also
+      appear a glorious one to you who are a seeking after Jesus Christ, if you
+      do but consider these following things about what He was sent— First.
+      Jesus Christ was sent from Heaven to declare unto the world from God the
+      Father that He was wonderfully filled with love to poor sinners. First, in
+      that He would forgive their sins. Secondly, in that He would save their
+      souls. Thirdly in that He would make them heirs of His glory. "For God so
+      loved the world, that He gave His only begotten Son.—For God sent not His
+      Son into the world to condemn the world, but that the world through Him
+      might be saved" (John 3:16,17). Second. God sent Jesus Christ to tell the
+      poor world how that He would do this for poor sinners, and yet be just,
+      and yet do His justice no wrong; and that was to be done by Jesus Christ's
+      dying of a cursed death in the room of poor sinners, to satisfy justice,
+      and make way for mercy; to take away the stumbling- blocks, and set open
+      Heaven's gates; to overcome Satan, and break off from sinners his chains
+      (Luke 4:18) to set open the prison doors, and to let the prisoners go free
+      (Isa 61:1-3). And this was the message that Christ was to deliver to the
+      world by commandment from His Father; and this did He tell us when He came
+      of His errand, where he saith, "I lay down My life for the sheep—no man
+      taketh it from Me, but I lay it down of Myself. I have power to lay it
+      down, and to take it again. This commandment have I received of My Father"
+      (John 10:15-18). Even this commandment hath My Father given Me, that I
+      should both do this thing and also tell it unto you. Third. He was not
+      only sent as a Messenger to declare this His father's love, but also how
+      dearly He himself loved sinners, what a heart He had to do them good,
+      where He saith, "All that the Father giveth Me shall come to Me"; and let
+      me tell you, MY heart too, saith Christ—"Him that cometh to Me, I will in
+      no wise cast out" (John 6:37). As My Father is willing to give you unto
+      Me, even so am I as willing to receive you. As My Father is willing to
+      give you Heaven, so am I willing to make you fit for it, by washing you
+      with My own blood; I lay down My life that you might have life; and this I
+      was sent to tell you of My Father. Fourth. His message was further; He
+      came to tell them how and which way they should come to enjoy these
+      glorious benefits; also by laying down motives to stir them up to accept
+      of the benefits. The way is laid down in John 3:14,15, where Christ saith,
+      "As Moses lifted up the serpent in the wilderness, even so must the Son of
+      Man be lifted up," or caused to be hanged on the Cross, and die the
+      death—"that whosoever believeth in Him should not perish but have
+      everlasting life." The way, therefore, that thou shalt have the benefit
+      and comfort of that which My Father and I have covenanted for, for thee, I
+      am come down from Heaven to earth on purpose to give thee intelligence,
+      and to certify thee of it. Know, therefore, that as I have been born of a
+      woman, and I have taken this Body upon Me, it is on purpose that I might
+      offer it up upon the Cross a sacrifice to God, to give Him satisfaction
+      for thy sins, that His mercy may be extended to thy soul, without any
+      wrong done to justice; and this thou art to believe, and not in the notion
+      but from thy very whole soul. Now the motives are many. 1. If they do not
+      leave their sins, and come to Jesus Christ, that their sins may be washed
+      away by His blood, they are sure to be damned in Hell; for the law hath
+      condemned them already (John 3:18,19). 2. But if they do come, they shall
+      have the bosom of Christ to lie in, the Kingdom of Heaven to dwell in, the
+      angels and saints for their companions, shall shine there like the sun,
+      shall be there for ever, shall sit upon the thrones of judgment, etc. Here
+      is grace. Methinks if I had but the time to speak fully to all things that
+      I could speak to from these two heavenly truths, and to make application
+      thereof, surely, with the blessing of God, I think it might persuade some
+      vile and abominable wretch to lay down his arms that he hath taken up in
+      defiance against God, and is marching Hellwards, post-haste with the
+      devil; I say, methinks it should stop them, and make them willing to look
+      back and accept of salvation for their poor condemned souls, before God's
+      eternal vengeance is executed upon them. O, therefore! you that are upon
+      this march, I beseech you consider a little. What! shall Christ become a
+      drudge for you; and will you be drudges for the devil? Shall Christ
+      covenant with God for the salvation of sinners; and shall sinners covenant
+      with Hell, death, and the devil for the damnation of their souls? Shall
+      Christ come down from Heaven to earth to declare this to sinners; and
+      shall sinners stop their ears against these good tidings? Will you not
+      hear the errand of Christ, although He telleth you tidings of peace and
+      salvation? How, if He had come, having taken a commandment from His Father
+      to damn you, and to send you to the devils in Hell? Sinner, hear His
+      message; He speaketh no harm, His words are Eternal Life; all men that
+      give ear unto them, they have eternal advantage by them; advantage, I say,
+      that never hath an end. Besides, do but consider these two things, it is
+      like they have some sway upon thy soul—1. When He came on His message, He
+      came with tears in His eyes, and did even weepingly tender the terms of
+      reconciliation to them; I say, with tears in his eyes. And when He came
+      near the city—i.e., with His message of peace—beholding the hardness of
+      their hearts, He wept over it, and took up a lamentation over it; because
+      He saw they rejected His mercy, which was tidings of peace; I say, wilt
+      thou then slight a weeping Jesus, One that so loveth thy soul that, rather
+      than He will lose thee, He will with tears persuade with thee? 2. Not only
+      so, but also when He came, He came all on a gore blood to proffer mercy to
+      thee, to show thee still how dearly He did love thee; as if He had said,
+      Sinner, here is mercy for thee; but behold My bloody sweat, My bloody
+      wounds, My cursed death; behold and see what danger I have gone through to
+      come unto thy soul; I am come indeed unto thee, and do bring thee tidings
+      of salvation, but it cost Me My heart's blood before I could come at thee,
+      to give thee the fruits of My everlasting love. But more of this anon.
+      Thus have I spoken something concerning Christ's being the Messenger of
+      the new covenant; but because I am not willing to cut too short of what
+      shall come after, I shall pass by these things not half touched, and come
+      to the other which I promised even now; which was to show you, that as
+      there were Levitical ceremonies in or belonging to the first covenant, so
+      these types, or Levitical ceremonies, did represent the glorious things of
+      the new covenant. In those ceremonies you read of a sacrifice, of a priest
+      to offer up the sacrifice, the place where, and the manner how, he was to
+      offer it; of which I shall speak something.
+    </p>
+
+    <h3 id="p2c9">Part Two — Chapter 9</h3>
+    <p>
+      THE COVENANT OF GRACE UNCHANGEABLE; THE OPPOSERS ANSWERED. he second thing
+      for the discovering of this freeness and constancy of the Covenant of
+      Grace of God is manifested thus— First. Whatsoever any man hath of the
+      grace of God, he hath it as a free gift of God through Christ Jesus the
+      Mediator of this covenant, even when they are in a state of enmity to Him,
+      whether it be Christ as the foundation-stone, or faith to lay hold of Him,
+      mark that (Rom 5:8,9; Col 1:21,22). "For by grace are ye saved through
+      faith; and that not of yourselves," not for anything in you, or done by
+      you for the purchasing of it, but "it is the gift of God," (Eph 2:8) and
+      that bestowed on you, even when ye "were dead in trespasses and sins" (Eph
+      2:1,9). Nay, if thou hast so much as one desire that is right, it is the
+      gift of God; for of ourselves, saith the Apostle, we are not able to speak
+      a good word, or think a good thought (2 Cor 3:5). Was it not grace,
+      absolute grace, that God made promise to Adam after transgression? (Gen
+      3:15). Was it not free grace in God to save such a wretch as Manasseh was,
+      who used enchantments, witchcraft, burnt his children in the fire, and
+      wrought much evil? (2 Chron 33). Was it not free grace to save such as
+      those were that are spoken of in the 16th of Ezekiel, which no eye pitied?
+      Was it not free grace for Christ to give Peter a loving look after he had
+      cursed, and swore, and denied Him? Was it not free grace that met Paul
+      when he was agoing to Damascus to persecute, which converted him, and made
+      him a vessel of mercy? And what shall I say of such that are spoken of in
+      1 Corinthians 6:9, 10, speaking there of fornicators, idolaters,
+      adulterers, effeminate, abusers of themselves with mankind, thieves,
+      covetous, drunkards, revilers, extortioners, the basest of sinners in the
+      world, and yet were washed, and yet were justified; was it not freely by
+      grace? O saints, you that are in heaven cry out, "We came hither by grace;
+      and you that are on the earth, I am sure you cry, If ever we do go
+      thither, it must be freely by grace!" Second. In the next place, it
+      appears to be unchangeable in this—1. Because justice being once satisfied
+      doth not use to call for the debt again. No; let never such a sinner come
+      to Jesus Christ, and so to God by Him, and justice, instead of speaking
+      against the salvation of that sinner, it will say, I am just as well as
+      faithful to forgive him his sins (1 John 1:9). When justice itself is
+      pleased with a man, and speaks on his side, instead of speaking against
+      him, we may well cry out, Who shall condemn? 2. Because there is no law to
+      come in against the sinner that believes in Jesus Christ; for he is not
+      under that, and that by right comes in against none but those that are
+      under it. But believers are not under that—that is, not their Lord,
+      therefore that hath nothing to do with them; and besides, Christ's blood
+      hath not only taken away the curse thereof, but also He hath in His own
+      Person completely fulfilled it as a public Person in our stead. (Rom
+      7:1-4). 3. The devil that accused them is destroyed (Heb 2:14,15). 4.
+      Death, and the grave, and Hell are overcome (1 Cor 15:55; Hosea 13:14). 5.
+      Sin, that great enemy of man's salvation, that is washed away (Rev 1:5).
+      6. The righteousness of God is put upon them that believe, and given to
+      them, and they are found in it (Phil 3:8- 10; Rom 3:22). 7. Christ is
+      always in Heaven to plead for them, and to prepare a place for them (Heb
+      7:24; John 14:1-4). 8. He hath not only promised that He will not leave
+      us, nor forsake us, but He hath also sworn to fulfill His promises. O rich
+      grace! O free grace! Lord, who desired Thee to promise? who compelled Thee
+      to swear? We use to take honest men upon their bare word, but God,
+      "willing more abundantly to show unto the heirs of promise the
+      immutability of His counsel," hath "confirmed it by an oath: that by two
+      immutable things," His promise and His oath, "in which it was impossible
+      for God to lie," or break either of them, "we might have a strong
+      consolation, who have fled for refuge to lay hold upon the hope set before
+      us" (Heb 6:17-18). I will warrant you, God will never break His oath;
+      therefore we may well have good ground to hope from such a good foundation
+      as this, that God will never leave us indeed. Amen. Third. Not only thus,
+      but, 1. God hath begotten believers again to Himself, to be His adopted
+      and accepted children, in and through the Lord Jesus (1 Peter 1:3). 2. God
+      hath prepared a kingdom for them before the foundation of the world,
+      through Jesus Christ (Matt 25:34). 3. He hath given them an earnest of
+      their happiness while they live here in this world. "After that ye
+      believed, ye were sealed with that holy Spirit of promise, which is the
+      earnest of our inheritance until the redemption of the purchased
+      possession, unto the praise of His glory," and that through this Jesus
+      (Eph 1:13,14). [These things are more fully laid down in that part of the
+      book which containeth the discourse of the privileges of the new
+      covenant]. 4. If His children sin through weakness, or by sudden
+      temptation, they confessing of it, He willingly forgives, and heals all
+      their wounds, reneweth His love towards them, waits to do them good,
+      casteth their sins into the depths of the sea, and all this freely,
+      without any work done by men as men—Not for your own sakes do I do this, O
+      house of Israel, be it known unto you, saith the Lord, but wholly and
+      alone by the blood of Jesus (Eze 36:23,23). 5. In a word, if you would see
+      it altogether, God's love was the cause why Jesus Christ was sent to bleed
+      for sinners. Jesus Christ's bleeding stops the cries of Divine justice;
+      God looks upon them as complete in Him, gives them to Him as His by right
+      of purchase. Jesus ever lives to pray for them that are thus given unto
+      Him. God sends His Holy Spirit into them to reveal this to them, sends His
+      angels to minister for them; and all this by virtue of an Everlasting
+      Covenant between the Father and the Son. Thrice happy are the people that
+      are in such a case! Nay, further, He hath made them brethren with Jesus
+      Christ, members of His flesh and of His bones, the spouse of this Lord
+      Jesus; and all to show you how dearly, how really, how constantly He
+      loveth us, who, by faith of His operation, have laid hold upon Him. [These
+      things I might have treated upon more largely]. [Further Arguments and
+      Objections answered]. I shall now lay down a few arguments for the
+      superabundant clearing of it, and afterwards answer two or three
+      objections that may be made against it, and so I shall fall upon the next
+      thing. First. God loves the saints as He loves Jesus Christ; and God loves
+      Jesus Christ with an eternal love; therefore the saints also with the
+      same. "Thou hast loved them as Thou has loved Me" (John 17:23). Second.
+      That love which is God Himself, must needs be everlasting love; and that
+      is the love wherewith God hath loved His saints in Christ Jesus; therefore
+      His love towards His children in Christ must needs be an everlasting love.
+      There is none dare say that the love of God is mixed with a created
+      mixture; if not, then it must needs be Himself (1 John 4:16). [You must
+      not understand that love in God is a passion as it is in us; but the love
+      of God is the very essence or nature of God]. Third. That love which is
+      always pitched upon us, in an object as holy as God, must needs be an
+      everlasting love. Now the love of God was and is pitched upon us, through
+      an object as holy as God Himself, even our Lord Jesus; therefore it must
+      needs be unchangeable. Fourth. If He with whom the Covenant of Grace was
+      made, did in every thing and condition do even what the Lord could desire
+      or require of Him, that His love might be extended to us, and that for
+      ever, then His love must needs be an everlasting love, seeing everything
+      required of us was completely accomplished for us by Him; and all this
+      hath our Lord Jesus done, and that most gloriously, even on our behalf;
+      therefore it must needs be a love that lasts for ever and ever. Fifth. If
+      God hath declared Himself to be the God that changeth not, and hath sworn
+      to be immutable in His promise, then surely He will be unchangeable; and
+      He hath done so; therefore it is impossible for God to lie, and so for His
+      eternal love to be changeable (Heb 6:13-18). Here is an argument of the
+      Spirit's own making! Who can contradict it? If any object, and say, But
+      still it is upon the condition of believing—I answer, The condition also
+      is His own free gift, and not a qualification arising from the stock of
+      nature (Eph 2:8; Phil 1:28,29). So that here is the love unchangeable;
+      here is also the condition given by Him whose love is unchangeable, which
+      may serve yet further for a strong argument that God will have His love
+      unchangeable. Sinner, this is better felt and enjoyed than talked of.
+      Objection First. But if this love of God be unchangeable in itself, yet it
+      is not unchangeably set upon the saints unless they behave themselves the
+      better. [The first objection]. Answ. As God's love at the first was
+      bestowed upon the saints without anything foreseen by the Lord in them, as
+      done by them, Deuteronomy 9:4-6, so He goeth on with the same, Saying, "I
+      will never leave thee nor forsake thee" (Heb 13:5). Objection Second. But
+      how cometh it to pass then, that many fall off again from the grace of the
+      Gospel, after a profession of it for some time; some to delusions, and
+      some to their own sins again? [The second objection]. Answ. They are all
+      fallen away, not from the everlasting love of God to them, but from the
+      profession of the love of God to them. Men may profess that God loves them
+      when there is no such matter, and that they are the children of God, when
+      the devil is their father; as it is in John 8:40-44. Therefore they that
+      do finally fall away from a profession of the grace of the Gospel, it is,
+      first, because they are bastards and not sons. Secondly, because as they
+      are not sons, so God suffereth them to fall, to make it appear that they
+      are not sons, not of the household of God—"They went out from us, but they
+      were not of us; for if they had been of us, they would no doubt," mark
+      that, "no doubt," saith he, "they would have continued with us: but they
+      went out," from us, "that they might be made manifest that they were not
+      all of us" (1 John 2:19). And though Hymeneus and Philetus do throw
+      themselves headlong to Hell, "nevertheless the foundation of God standeth
+      sure, having this seal, The Lord knoweth them that are His" (2 Tim
+      2:17-19). Objection Third. But the Scripture saith that there are some
+      that had faith, yet lost it, and have made shipwreck of it. [The third
+      objection]. Now God loves no longer than they believe, as is evident; for
+      "he that believeth not shall be damned." So then, if some may have faith,
+      and yet lose it, and so lose the love of God because they have lost their
+      faith, it is evident that God's love is not so immutable as you say it is
+      to every one that believeth. Answ. There are more sorts of faith than one
+      that are spoken of in Scripture— 1. There is a faith that man may have,
+      and yet be nothing, none of the saints of God, and yet may do great things
+      therewith (1 Cor 13:1-4). 2. There is a faith that was wrought merely by
+      the operation of the miracles that were done in those days by Christ and
+      his followers—"And many of the people believed in Him." How came they by
+      their faith? Why, by the operation of the miracles that He did among them;
+      for said they, "When Christ cometh, will He do more miracles than these
+      which this man hath done?" (John 7:31). The great thing that wrought their
+      faith in them, was only by seeing the miracles that He did, John 2:23,
+      which is not that saving faith which is called the faith of God's elect,
+      as is evident; for there must not be only miracles wrought upon outward
+      objects to beget that—that being too weak a thing—but it must be by the
+      same power that was stretched out in raising Christ from the dead; yea,
+      the exceeding greatness of that power (Eph 1:18,19). So there is a
+      believing, being taken with some marvelous work, visibly appearing to the
+      outward sense of seeing; and there is a believing that is wrought in the
+      heart by an invisible operation of the Spirit, revealing the certainty of
+      the satisfaction of the merits of Christ to the soul in a more glorious
+      way, both for certainty and for durableness, both as to the promise and
+      the constancy of it (Matt 16:17, 18). 3. There is a faith of a man's own,
+      of a man's self also; but the faith of the operation of God, in Scripture,
+      is set in opposition to that, for, saith He, you are saved by grace,
+      "through faith, and that not of yourselves," of your own making, but that
+      which is the free gift of God (Eph 2:8). 4. We say there is an historical
+      faith—that is, such as is begotten by the co-operation of the Spirit with
+      the Word. 5. We say there is a traditional faith—that is, to believe
+      things by tradition, because others say they believe them; this is
+      received by tradition, not by revelation, and shall never be able to
+      stand, neither at the day of death, nor at the day of judgment; though
+      possibly men, while they live here, may esteem themselves and states to be
+      very good, because their heads are filled full of it. 6. There is a faith
+      that is called in Scripture a dead faith, the faith of devils, or of the
+      devil; they also that have only this, they are like the devil, and as sure
+      to be damned as he, notwithstanding their faith, if they get no better
+      into their hearts; for it is far off from enabling of them to lay hold of
+      Jesus Christ, and so to put Him on for eternal life and sanctification,
+      which they must do if ever they be saved (James 2:19,26). But all these
+      are short of the saving faith of God's elect, as is manifest; I say,
+      first, Because these may be wrought, and not by that power so exceedingly
+      stretched forth. Secondly, Because these are wrought, partly, (1.) By the
+      sense of seeing—namely, the miracles—not by hearing; and, (2.) The rest is
+      wrought by a traditional or historical influence of the words in their
+      heads, not by a heavenly, invisible, almighty, and saving operation of the
+      Spirit of God in their hearts. 7. I do suppose also that there is a faith
+      that is wrought upon men through the influence of those gifts and
+      abilities that God gives sometimes to those that are not His own by
+      election, though by creation; my meaning is, some men, finding that God
+      hath given them very great gifts and abilities,—as to the gifts of
+      preaching, praying, working miracles, or the like—I say, therefore do
+      conclude that God is their Father, and they are His children; the ground
+      of which confidence is still begotten, not by the glorious operation of
+      the Spirit, but by a considering of the great gifts that God hath bestowed
+      upon them as to the things before-mentioned. As thus, (1.) the poor soul
+      considers how ignorant it was, and now how knowing it is. (2.) Considering
+      how vain it formerly was, and also now how civil it is, presently makes
+      this conclusion—Surely God loves me, surely He hath made me one of His,
+      and will save me. This is now a wrong faith, as is evident, in that it is
+      placed upon a wrong object; for mark, this faith is not placed assuredly
+      on God's grace alone, through the blood and merits of Christ being
+      discovered effectually to the soul, but upon God through those things that
+      God hath given it, as of gifts, either to preach, or pray, or do great
+      works, or the like, which will assuredly come to nought as sure as God is
+      in Heaven, if no better faith and ground of faith be found out for thy
+      soul savingly to rest upon. As to the second clause of the objection,
+      which runs to this effect, God loves men upon the account of their
+      believing, I answer, that God loves men before they believe; He loves
+      them, He calls them, and gives them faith to believe—"But God, who is rich
+      in mercy, for His great love wherewith He loved us," when? when we
+      believed, or before? "even when we were dead in sins," and so, far off
+      from believers, "hath quickened us together with" Christ, "by grace ye are
+      saved" (Eph 2:4,5). Now, also, I suppose that thou wilt say in thy heart,
+      I would you would show us then what is saving faith; which thing it may be
+      I may touch upon a while hence, in the next thing that I am to speak unto.
+      O they that have that are safe indeed!
+    </p>
+
+    <h3 id="p2c12">Part Two — Chapter 12</h3>
+    <p>
+      THIRD. THE PRIVILEGES OF THE NEW COVENANT. n the next place, I shall show
+      you the several privileges and advantages that the man or woman hath that
+      is under this Covenant of Grace, over what they have that are under the
+      Covenant of the Law and Works. As, First. The Covenant of Grace is not
+      grounded upon our obedience, but upon God's love, even His pardoning love
+      to us through Christ Jesus. The first covenant is stood to be broken or
+      kept by us, and God's love or anger to be lost or enjoyed thereafter as
+      we, as creatures, behaved ourselves; but now, the very ground of the
+      Covenant of Grace is God's love, His mere love through Jesus Christ—"The
+      LORD did not set His love upon you, nor choose you, because ye were more
+      in number than any people; for ye were the fewest of all people: but
+      because the LORD loved you, and because He would keep the oath which He
+      had sworn unto your fathers" (Deu 7:7,8). Again, "In His love and in His
+      pity He redeemed them," "and the angel of His presence saved them," that
+      is, Jesus Christ (Isa 63:9). And again, "Who hath saved us—not according
+      to our works" of righteousness which we have done, "but according to His
+      own purpose and grace, which was given us in Christ Jesus before the world
+      began" (2 Tim 1:9). Second. This love is not conveyed to us through what
+      we have done, as is before proved, but through what He hath done with Whom
+      the covenant was made, which was given us in Christ— According as He hath
+      chosen us in Christ. "Who hath blessed us with all spiritual blessings in
+      heavenly places in Christ." "God for Christ's sake hath forgiven you,"
+      that is, through Christ's doings, through Christ's sufferings (2 Tim 1:9;
+      Eph 1:3,4; 4:32). Now if this be but rightly understood, it doth discover
+      abundance of comfort to them, that are within the bounds of the Covenant
+      of Grace. For, 1. Here a believer seeth he shall stand, if Christ's doings
+      and sufferings stand; which is sure foundation, for God dealeth with him
+      through Christ. And so, secondly, he shall not fall, unless the suffering
+      and merits of Christ be thrown over the bar, being found guilty, which
+      will never be, before the eyes of Divine justice; for with Him the
+      covenant was made, and He was the Surety of it; that is, as the covenant
+      was made with Him, so He stood bound to fulfill the same (Zech 9:11; Heb
+      7:22). For you must understand that the covenant was made between the
+      Father and the Son long before it was accomplished, or manifestly sealed
+      with Christ's blood; it was made before the world began (Titus 1:2; Eph
+      1:4; 1 Peter 1:18-20). But the conditions thereof were not fulfilled until
+      less than two thousand years ago; and all that while did Jesus stand bound
+      as a surety, as I said before, is used to do, till the time in which the
+      payment should be made. And it was by virtue of His Suretyship, having
+      bound Himself by covenant to do all things agreed on by the Father and
+      Him, that all those of the election that were born before He came, that
+      they might be saved, and did enter into rest. For the forgiveness of sins
+      that were past, though it was through the blood of Christ, yet it was also
+      through the forbearance of God (Rom 3:25). That is, Christ becoming Surety
+      for those that died before His coming, that He should in deed and in
+      truth, at the fullness of time, or at the time appointed, give a complete
+      and full satisfaction for them according to the tenor or condition of the
+      covenant. (Gal 4:4). Again, 2. The second covenant, which believers are
+      under, as the ground and foundation, if it is safe, so the promises
+      thereof are better, surer, freer, and fuller, etc. (1.) They are better,
+      if you compare the excellency of the one with the excellency of the other.
+      The first hath promised nothing but an early paradise—Do this, and thou
+      shalt live; namely, here in an earthly paradise. But the other doth bring
+      the promise of a heavenly paradise. (2.) As the Covenant of Works doth
+      promise an earthly paradise, yet it is a paradise or blessing, though once
+      obtained, yet might be lost again; for no longer than thou doest well, no
+      longer art thou blessed by that. O, but the promises in the new covenant
+      do bring unto us the benefit of an eternal inheritance—That "they which
+      are called might receive the promise of eternal inheritance." O rare! it
+      is an "eternal inheritance" (Heb 9:15). (3.) The other, as it is not so
+      good as this, so neither is it so sure as this; and therefore he calls the
+      one such an one as might be, and was, shaken, but this is said to be such
+      an one that cannot be shaken. "And this Word," saith he, treating of the
+      two covenants from verse the 8th to the 24th—"And this Word, yet once
+      more, signifieth the removing of those things that are," or may be,
+      "shaken, as of things that are made, that those things which cannot be
+      shaken," which is the second covenant, "may remain," (Heb 12:27); for,
+      saith he (verse 28) "which cannot be moved." Therefore, ye blessed saints,
+      seeing you have received a kingdom "which cannot be moved," therefore,
+      "let us have grace, whereby we may serve" our "God acceptably with
+      reverence and godly fear." Thus in general, but more particularly. (4.)
+      They are surer, in that they are founded upon God's love also, and they
+      come to us without calling for those things at our hands that may be a
+      means of putting of a stop to our certain enjoying of them. The promises
+      under, or for the law, they might easily be stopped by our disobedience;
+      but the promises under the Gospel say, "If Heaven above can be measured,
+      and the foundations of the earth searched," then, and not till then, "I
+      will also cast off all the seed of Israel for all that they have done"
+      (Jer 31:37). Again, "I, even I, am He that blotteth out thy transgressions
+      for Mine own" name's "sake, and will not remember thy sins" (Isa 43:25). I
+      will make thee a partaker of My promise; and that I may so do, I will take
+      away that which would hinder; "I will cast all their sins into the depths
+      of the sea," that My promise may be sure to all the seed; and therefore,
+      saith the Apostle, when he would show us that the new-covenant promises
+      were more sure than the old, he tells us plainly that the law and works
+      are set aside and they are merely made ours through the righteousness of
+      faith, which is the righteousness of Christ—"For the promise, that he
+      [Abraham] should be the heir of the world," saith he, "was not to Abraham,
+      or to his seed, through the law," or works, "but through the righteousness
+      of faith. For if they which are of the law," or of works, "be heirs," then
+      "faith is made void, and the promise made of none effect. Therefore it is
+      of faith—to the end the promise might be sure to all the seed" (Rom
+      4:13-14,16). (5.) Surer, because that as that is taken away that should
+      hinder, so they are committed to a faithful Friend of ours in keeping. For
+      all the promises of God are in Christ, not yea and nay, but yea and amen;
+      certain and sure; sure, because they are in the hand of our Head, our
+      Friend, our Brother, our Husband, our flesh and bones, even in the heart
+      and hand of our precious Jesus. (6.) Because all the conditions of them
+      are already fulfilled for us by Jesus Christ, as aforesaid; every promise
+      that is a new- covenant promise, if there be any condition in it, our
+      Undertaker hath accomplished that for us, and also giveth us such grace as
+      to receive the sweetness as doth spring from them through His obedience to
+      every thing required in them. (7.) Surer, because that as they are
+      grounded upon the love of God, everything is taken out of the way, in the
+      hand of a sure Friend. And has Christ has fulfilled every condition as to
+      justification that is contained therein, so the Lord hath solemnly sworn
+      with an oath for our better confidence in this particular— "For when God
+      made promise to Abraham," and so to all the saints, "because He could
+      swear by no greater, He sware by Himself, saying, Surely, blessing I will
+      bless thee, and multiplying I will multiply thee. And so, after he had
+      patiently endured, he obtained the promise. For men verily swear by the
+      greater: and an oath for confirmation is to them an end of all strife,"
+      that there might be no more doubt or scruple concerning the certain
+      fulfilling of the promise. "Wherein God, willing more abundantly to show
+      unto the heirs of promise the immutability of His counsel," or certain,
+      constant, unchangeable decree of God in making of the promise, for the
+      comfort of his children, "confirmed it by an oath: that by two immutable
+      things," His promise backed with an oath, "in which it was impossible for
+      God to lie, we might have a strong consolation, who have fled for refuge
+      to lay hold upon the hope set before us" (Heb 6:13-18). (8.) That they are
+      better it appears also in that they are freer and fuller. That they are
+      freer, it is evident, in that one saith, No works, no life—Do this, and
+      then thou shalt live; if not, thou shalt be damned. But the other saith,
+      We are saved by believing in what Another hath done, without the works of
+      the Law— "Now to him that worketh not, but believeth on Him that
+      justifieth the ungodly, his faith is counted for righteousness" (Rom
+      4:4,5). The one saith, Pay me that thou owest; the other say, I do frankly
+      and freely forgive thee all. The one saith, Because thou hast sinned, thou
+      shalt die; the other saith, Because Christ lives, thou shalt live also
+      (John 15). (9.) And as they are freer, so they are fuller; fuller of
+      encouragement, fuller of comfort; the one, to wit, the law, looks like
+      Pharaoh's seven ill-favoured kine, more ready to eat one up than to afford
+      us any food; the other is like the full grape in the cluster, which for
+      certain hath a glorious blessing in it. The one saith, If thou hast
+      sinned, turn again; the other saith, If thou hast sinned, thou shalt be
+      damned, for all I have a promise in me. 3. They that are of the second are
+      better than they that are of the first; and it also appeareth in this—The
+      promises of the Law, through them we have neither faith, nor hope, nor the
+      Spirit conveyed; but through the promises of the Gospel there are all
+      these—"Whereby are given unto us exceeding great and precious promises,
+      that by these we might be partakers of the Divine nature" (2 Peter 1:4). O
+      therefore "let us hold fast the profession of our faith without wavering;
+      for He is faithful that promised" (Heb 10:23). "In hope of eternal life,"
+      how so? because "God, that cannot lie, promised it before the world began"
+      (Titus 1:2). 4. They that are in this covenant are in a very happy state;
+      for though there be several conditions in the Gospel to be done, yet
+      Christ Jesus doth not look that they should be done by man, as man, but by
+      His own Spirit in them, as it is written, "Thou hast wrought all our works
+      in us." Is there that condition, they must believe? Why, then, He will be
+      both the "author and finisher of their faith" (Heb 12:2,3). Is there also
+      hope to be in His children? He also doth and hath given them "good hope
+      through His grace" (2 Thess 2:16). Again, are the people of God to behave
+      themselves to the glory of God the Father? then He will work in them "both
+      to will and to do of His own good pleasure" (Phil 2:13). 5. Again, as He
+      works all our works in us and for us, so also by virtue of this covenant
+      we have another nature given unto us, whereby, or by which we are made
+      willing to be glorifying of God, both in our bodies and in our spirits,
+      which are His—"Thy people shall be willing in the day of Thy power" (1 Cor
+      6:20; Psa 110:3). 6. In the next place, all those that are under this
+      second covenant are in a wonderful safe condition; for in case they should
+      slip or fall after their conversion into some sin or sins (for who lives
+      and sins not? (Prov 24:16), yet through the merits and intercession of
+      Christ Jesus, who is their Undertaker in this covenant, they shall have
+      their sins pardoned, their wounds healed, and they raised up again; which
+      privilege the children of the first covenant have not; for if they sin,
+      they are never afterwards regarded by that covenant—They brake My covenant
+      and I regarded them not, saith the Lord (Heb 8:9). But when He comes to
+      speak of the Covenant of Grace, speaking first of the public person under
+      the name of David, He saith thus, "He shall cry unto Me, Thou art My
+      Father, My God, and the rock of My salvation. Also I will make Him My
+      firstborn, higher than the kings of the earth. My mercy will I keep for
+      Him for evermore, and My covenant shall stand fast with Him. His seed also
+      will I make to endure for ever, and His throne as the days of heaven. If
+      His children forsake My law, and walk not in My judgments; If they break
+      my statutes, and keep not My commandments; Then will I visit their
+      transgression with the rod, and their iniquity with stripes. Nevertheless
+      My lovingkindness will I not utterly take from Him, nor suffer My
+      faithfulness to fail. My covenant will I not break, nor alter the thing
+      that is gone out of My lips. Once have I sworn by My holiness that I will
+      not lie unto David. His seed shall endure for ever, and His throne as the
+      sun before Me. It shall be established for ever as the moon, and as a
+      faithful witness in heaven" (Psa 89:26-37). "My covenant shall stand fast
+      with him"—mark that. As if God had said, I did not make this covenant with
+      man, but with My Son, and with Him I will perform it; and seeing He hath
+      given Me complete satisfaction, though His children do, through infirmity,
+      transgress, yet My covenant is not therefore broken, seeing He with whom
+      it was made standeth firm, according to the desire of my heart; so that My
+      justice that is satisfied, and My Law, hath nothing to say, for there is
+      no want of perfection in the sacrifice of Christ. If you love your souls,
+      and would have them live in the peace of God, to the which you are called
+      in one body, even all believers, then I beseech you seriously to ponder,
+      and labour to settle in your souls this one thing, that the new covenant
+      is not broken by our transgressions, and that because it was not made with
+      us. The reason why the very saints of God have so many ups and downs in
+      this their travel towards Heaven, it is because they are so weak in the
+      faith of this one thing; for they think that if they fail of this or that
+      particular performance, if their hearts be dead and cold, and their lusts
+      mighty and strong, therefore now God is angry, and now He will shut them
+      out of His favour, now the new covenant is broken, and now Christ Jesus
+      will stand their Friend no longer; now also the devil hath power again,
+      and now they must have their part in the resurrection of damnation; when,
+      alas! the covenant is not for all this never the more broken, and so the
+      grace of God no more straitened than it was before. Therefore, I say, when
+      thou findest that thou art weak here, and failing there, backward to this
+      good, and thy heart forward to that evil; then be sure thou keep a
+      steadfast eye on the Mediator of this new covenant, and be persuaded that
+      it is not only made with Him, and His part also fulfilled, but that He
+      doth look upon His fulfilling of it, so as not to lay thy sins to thy
+      charge, though He may as a Father chastise thee for the same—"If His
+      children forsake My law, and walk not in My judgments; if they break My
+      statutes, and keep not My commandments; then will I visit their
+      transgression with the rod, and their iniquity with stripes.
+      Nevertheless," mark "nevertheless My lovingkindness will I not utterly
+      take from HIM, nor suffer My faithfulness to fail. My covenant will I not
+      break, nor alter the thing that is gone out of My lips." And what was
+      that? Why, that "His seed shall endure for ever, and His throne as the sun
+      before Me" (Psa 89:30- 34,36). 7. Another privilege that the saints have
+      by virtue of the new covenant is, that they have part of the possession or
+      hold of Heaven and Glory already, and that two manner of ways—(1.) The
+      Divine nature is conveyed from Heaven into them; and, secondly, the human
+      nature, i.e., the nature of man, is received up, and entertained in, and
+      hath got possession of Heaven. We have the first-fruits of the Spirit,
+      saith the man of God; we have the earnest of the Spirit, which is instead
+      of the whole, for it is the earnest of the whole—"Which is the earnest of
+      our inheritance until the redemption of the purchased possession, unto the
+      praise of His glory" (Eph 1:13,14; Rom 8:8-11). (2.) The nature of man,
+      our nature is got into glory as the first-fruits of mankind, as a
+      forerunner to take possession till we all come thither (1 Cor 15:20). For
+      the Man born at Bethlehem is ascended, which is part of the lump of
+      mankind, into glory as a public Person, as the first-fruits, representing
+      the whole of the children of God; so that in some sense it may be said
+      that the saints have already taken possession of the kingdom of Heaven by
+      their Jesus, their public Person, He being in their room entered to
+      prepare a place for them (John 14:1-4). I beseech you consider, when Jesus
+      Christ came down from Glory, it was that He might bring us to Glory; and
+      that He might be sure not to fail, He clothed Himself with our nature, as
+      if one should take a piece out of the whole lump instead of the whole,
+      until the other comes, and investeth it in that glory which He was in
+      before He came down from Heaven (Heb 2:14,15). And thus is that saying to
+      be understood, speaking of Christ and His saints, which saith, "And" He
+      "hath raised us up together, and made us sit together in heavenly places
+      in Christ Jesus" (Eph 2:6). 8. Again, not only thus, but all the power of
+      God, together with the rest of His glorious attributes, are on our side,
+      in that they dwell in our nature, which is the Man Jesus, and doth engage
+      for us poor, simple, empty, nothing creatures as to our eternal happiness
+      (1 Peter 1:5). "For in Him," that is, in the Man Christ, who is our
+      nature, our Head, our root, our flesh, our bone, "dwelleth all the
+      fullness of the Godhead bodily" (Col 2:9,10). Mark how they are joined
+      together, "In whom dwelleth the fullness of the Godhead. And ye are
+      complete in Him." God dwelleth completely in Him, and you also are
+      completely implanted in Him, which is the Head of all principality and
+      power; and all this by the consent of the Father—"For it pleased the
+      Father that in Him should all fullness dwell" (Col 1:19). Now mark, the
+      Godhead doth not dwell in Christ Jesus for Himself only, but that it may
+      be in a way of righteousness conveyed to us, for our comfort and help in
+      all our wants—"All power is given unto Me in heaven and in earth," saith
+      He (Matt 28:18). And then followeth, "And lo, I am with you alway, even
+      unto the end of the world" (Verse 20). "He hath received gifts for men,
+      yea for the rebellious" (Psa 68:18). "Of His fullness have all we
+      received, and grace for grace" (John 1:16). And this the saints cannot be
+      deprived of, because the covenant made with Christ, in every tittle of it,
+      was so completely fulfilled as to righteousness, both active and passive,
+      that justice cannot object anything; holiness now can find fault with
+      nothing; nay, all the power of God cannot shake anything that hath been
+      done for us by the Mediator of the new covenant; so that now there is no
+      Covenant of Works to a believer; none of the commands, accusations,
+      condemnations, or the least tittle of the old covenant to be charged on
+      any of those that are the children of the second covenant; no sin to be
+      charged, because there is no law to be pleaded, but all is made up by our
+      middle man, Jesus Christ. O blessed covenant! O blessed privilege! Be
+      wise, therefore, O ye poor drooping souls that are the sons of this second
+      covenant, and "stand fast in the liberty wherewith Christ hath made you
+      free, and be not entangled AGAIN," nor terrified in your consciences,
+      "with the yoke of bondage"; neither the commands, accusations, or
+      condemnations of the Law of the old covenant (Gal 5:1).
+    </p>
+
+    <h3 id="p2c13">Part Two — Chapter 13</h3>
+    <p>
+      TWO HELL-BRED OBJECTIONS ANSWERED. bject. If it be so, then one need not
+      care what they do; they may sin and sin again, seeing Christ hath made
+      satisfaction. [The first objection]. Answ. If I were to point out one that
+      was under the power of the devil, and going post-haste to Hell, for my
+      life I would look no farther for such a man than to him that would make
+      such a use as this of the grace of God. What, because Christ is a Saviour,
+      thou wilt be a sinner! because His grace abounds, therefore thou wilt
+      abound in sin! O wicked wretch! rake Hell all over, and surely I think thy
+      fellow will scarce be found! And let me tell thee this before I leave
+      thee—as God's covenant with Christ for His children, which are of faith,
+      stands sure, immutable, unrevocable, and unchangeable, so also hath God
+      taken such a course with thee, that unless thou canst make God forswear
+      Himself, it is impossible that thou shouldst go to Heaven, dying in that
+      condition—"They tempted Me, proved Me," and turned the grace of God into
+      lasciviousness, "so I sware," mark that, "so I sware," and that in My
+      wrath, too, that they should never enter into My rest. Compare Hebrews
+      3:9-11, with 1 Corinthians 10:5-10. No, saith God; if Christ will not
+      serve their turns, but they must have their sins too, take them, Devil; if
+      Heaven will not satisfy them, take them, Hell; devour them, Hell; scald
+      them, fry them, burn them, Hell! God hath more places than one to put
+      sinners into. If they do not like Heaven, He will fit them with Hell; if
+      they do not like Christ, they shall be forced to have the devil. Therefore
+      we must and will tell of the truth of the nature of the Covenant of Grace
+      of God to His poor saints for their encouragement and for their comfort,
+      who would be glad to leap at Christ upon any terms; yet therewith, we can
+      tell how, through grace, to tell the hogs and sons of this world what a
+      hog-sty there is prepared for them, even such an one that God hath
+      prepared to put the devil and his angels into, is fitly prepared for them
+      (Matt 25:41). Object. But if Christ hath given God a full and complete
+      satisfaction, then though I do go on in sin, I need not fear, seeing God
+      hath already been satisfied. [The second objection]. It will be injustice
+      in God to punish for those sins for which He is already satisfied for by
+      Christ. Answ. Rebel, rebel, there are some in Christ and some out of Him.
+      1. They that are in Him have their sins forgiven, and they themselves made
+      new creatures, and have the Spirit of the Son, which is a holy, living,
+      self-denying Spirit. And they that are thus in Jesus Christ are so far off
+      from delighting in sin, that sin is the greatest thing that troubleth
+      them; and O how willing would they be rid of the very thoughts of it (Psa
+      119:113). It is the grief of their souls, when they are in a right frame
+      of spirit, that they can live no more to the honour and glory of God than
+      they do; and in all their prayers to God, the breathings of their souls
+      are as much sanctifying grace as pardoning grace, that they might live a
+      holy life. They would as willing live holy here as they would be happy in
+      the world to come; they would as willingly be cleansed from the filth of
+      sin as to have the guilt of it taken away; they would as willingly glorify
+      God here as they would be glorified by Him hereafter (Phil 3:6-22). 2. But
+      there are some that are out of Christ, being under the Law; and as for all
+      those, let them be civil or profane, they are such as God accounts wicked;
+      and I say, as for those, if all the angels in Heaven can drag them before
+      the judgment-seat of Christ, they shall be brought before it to answer for
+      all their ungodly deeds; and being condemned for them, if all the fire in
+      Hell will burn them, they shall be burned there, if they die in that
+      condition (Jude 15). And, therefore, if you love your souls, do not give
+      way to such a wicked spirit. "Let no man deceive you with" such "vain
+      words," as to think, because Christ hath made satisfaction to God for sin,
+      therefore you may live in your sins. O no, God forbid that any should
+      think so, "for because of these things cometh the wrath of God upon the
+      children of disobedience" (Eph 5:6). Thus have I, reader, given thee a
+      brief discourse touching the Covenant of Works and the Covenant of Grace,
+      also of the nature of the one, together with the nature of the other. I
+      have also in this discourse endeavoured to show you the condition of them
+      that are under the Law, how sad it is, both from the nature of the
+      covenant they are under, and also by the carriage of God unto them by that
+      covenant. And now, because I would bring all into as little a compass as I
+      can, I shall begin with the use and application of the whole in as brief a
+      way as I can, desiring the Lord to bless it to thee.
+    </p>
+
+    <h3 id="p2c14">Part Two — Chapter 14</h3>
+    <p>
+      [USE AND APPLICATION]. A USE OF EXAMINATION ABOUT THE OLD COVENANT. irst.
+      And, first of all, let us here begin to examine a little touching the
+      covenant you stand before God in, whether it be the Covenant of Works or
+      the Covenant of Grace; [The first use is a use of examination]. and for
+      the right doing of this, I shall lay down this proposition—namely, that
+      all men naturally come into the world under the first of these, which is
+      called the old covenant, or the Covenant of Works, which is the Law; "And
+      were all by nature the children of wrath, even as others"; which they
+      could not be, had they not been under the law; for there are none that are
+      under the other covenant that are still the children of wrath, but the
+      children of faith, the children of the promise, the accepted children, the
+      children not of the bond-woman, but of the free (Gal 4:28-31). [Quest.]
+      Now here lieth the question. Which of these two covenants art thou under,
+      soul? Answ. I hope I am under the Covenant of Grace. Quest. But what
+      ground hast thou to think that thou art under that blessed covenant, and
+      not rather under the Covenant of Works, that strict, that soul-damning
+      covenant? Answ. What ground? Why, I hope I am. Quest. But what ground hast
+      thou for this thy hope? for a hope without a ground is like a castle built
+      in the air, that will never be able to do thee any good, but will prove
+      like unto that spoken of in Job 8, "Whose hope shall be cut off, and whose
+      trust shall be" like "a spider's web. He shall lean upon his house, but it
+      shall not stand; he shall hold it fast," as thou wouldst thy hope, it is
+      like, "but it shall not endure" (Job 8:13- 15). Answ. My hope is grounded
+      upon the promises; what else should it be grounded upon? Reply. Indeed, to
+      build my hope upon Christ Jesus, upon God in Christ, through the promise,
+      and to have this hope rightly, by the shedding abroad of the love of God
+      in the heart, it is a right- grounded hope (Rom 5:1-7). Quest. But what
+      promises in the Scripture do you find your hope built upon? and how do you
+      know whether you do build your hope upon the promises in the Gospel, the
+      promises of the new covenant, and not rather on the promises of the old
+      covenant, for there are promises in that as well as in the other? Answ. I
+      hope that if I do well I shall be accepted; because God hath said I shall
+      (Gen 4:7). Reply. O soul, if thy hope be grounded there, thy hope is not
+      grounded upon the Gospel promises, or the new covenant, but verily upon
+      the old; for these words were spoken to Cain, a son of the old covenant;
+      and they themselves are the tenor and scope of that; for that runs thus:
+      "Do this, and thou shalt live. The man that doth these things shall live
+      by them. If thou do well, thou shalt be accepted" (Lev 18:5; Eze 20:11;
+      Rom 10:5; Gal 3:12; Gen 4:7). Reply. Why, truly, if a man's doing well,
+      and living well, and his striving to serve God as well as he can, will not
+      help him to Christ, I do not know what will; I am sure sinning against God
+      will not. Quest. Did you never read that Scripture which saith, "Israel,
+      which followed after the law of righteousness, hath not attained to the
+      law of righteousness"? (Rom 9:30-32). Object. But doth not the Scripture
+      say, "Blessed are they that do His commandments, that they may have right
+      to the tree of life"? (Rev 22:14). Answ. There is first, therefore, to be
+      inquired into, whether to keep His commandments be to strive to keep the
+      Law as it is a Covenant of Works, or whether it be meant of the great
+      commandments of the New Testament which are cited in 1 John 3:22,23—"And
+      whatsoever we ask we receive of Him, because we keep His commandments, and
+      do those things that are pleasing in His sight." But what do you mean,
+      John? Do you mean the covenant of the Law, or the covenant to the Gospel?
+      Why, "this is His commandment," saith he, "That we should believe on the
+      name of His Son Jesus Christ, and love one another," as the fruits of this
+      faith, "as He gave us commandment." If it be of the old covenant, as a
+      Covenant of Works, then the Gospel is but a lost thing. If it were of
+      works, then no more of grace; therefore it is not the old covenant, as the
+      old covenant. Quest. But what do you mean by these words—the old covenant
+      as the old covenant? Explain your meaning. Answ. My meaning is, that the
+      Law is not to be looked upon for life, so as it was handed out from Mount
+      Sinai, if ever thou wouldst indeed be saved; though after thou hast faith
+      in Christ, thou mayest and must solace thyself in it, and take pleasure
+      therein, to express thy love to Him who hath already saved thee by His own
+      blood, without thy obedience to the law, either from Sinai or elsewhere.
+      Quest. Do you think that I do mean that my righteousness will save me
+      without Christ? If so, you mistake me, for I think not so; but this I say,
+      I will labour to do what I can; and what I cannot do, Christ will do for
+      me. Answ. Ah, poor soul, this is the wrong way too; for this is to make
+      Christ but a piece of a Saviour; thou wilt do something, and Christ shall
+      do the rest; thou wilt set thy own things in the first place, and if thou
+      wantest at last, then thou wilt borrow of Christ; thou art such an one
+      that dost Christ the greatest injury of all. First, in that thou dost
+      undervalue His merits by preferring of thy own works before His; and,
+      secondly, by mingling of thy works thy dirty, ragged righteousness with
+      His. Quest. Why, would you have us do nothing? Would you have us make
+      Christ such a drudge as to do all, while we sit idling still? Answ. Poor
+      soul, thou mistakest Jesus Christ in saying thou makest Him a drudge in
+      letting Him do all; I tell thee, He counts it a great glory to do all for
+      thee, and it is a great dishonour unto Him for thee so much as to think
+      otherwise. And this the saints of God that have experienced the work of
+      grace upon their souls do count it also the same—"Saying, Thou art worthy
+      to take the book, and to open the seals thereof" (Rev 5:9). "Worthy is the
+      Lamb, that was slain, to receive power, and riches, and wisdom, and
+      strength, and honour, and glory, and blessing" (Verse 12). And why so?
+      read again in the 9th verse, "For Thou wast slain, and hast redeemed us to
+      God by Thy" own "blood" (See also Eph 1:6,7). "To the praise of the glory
+      of His grace—in whom we have redemption through His blood." Reply. All
+      this we confess, that Jesus Christ died for us; but he that thinks to be
+      saved by Christ, and liveth in his sins, shall never be saved. Answ. I
+      grant that. But this I say again, a man must not make his good doings the
+      lowest round of the ladder by which he goeth to Heaven—that is, he that
+      will and shall go to Heaven, must, wholly and alone, without any of his
+      own things, venture his precious soul upon Jesus Christ and His merits.
+      Quest. What, and come to Christ as a sinner? Answ. Yea, with all thy sins
+      upon thee, even as filthy as ever thou canst. Quest. But is not this the
+      way to make Christ to loath us? You know when children fall down in the
+      dirt, they do usually before they go home make their clothes as clean as
+      they can, for fear their parents should chide them; and so I think should
+      we. Answ. This comparison is wrongly applied, if you bring it to show us
+      how we must do when we come to Christ. He that can make himself clean hath
+      no need of Christ; for the whole, the clean, and righteous have no need of
+      Christ, but those that are foul and sick. Physicians, you know, if they
+      love to be honoured, they will not bid the patients first make themselves
+      whole, and then come to them; no, but bid them come with their sores all
+      running on them, as the woman with her bloody issue (Mark 5). And as Mary
+      Magdalene with her belly full of devils, and the lepers all scabbed; and
+      that is the right coming to Jesus Christ. Reply. Well, I hope that Christ
+      will save me, for His promises and mercy are very large; and as long as He
+      hath promised to give us life, I fear my state the less. Answ. It is very
+      true, Christ's promises are very large, blessed be the Lord for ever; and
+      also so is His mercy; but notwithstanding all that, there are many go in
+      at the broad gate; and therefore I say, your business is seriously to
+      inquire whether you are under the first or second covenant; for unless you
+      are under the second, you will never be regarded of the Lord, forasmuch as
+      you are a sinner (Heb 8:9). And the rather, because if God should be so
+      good to you as to give you a share in the second, you shall have all your
+      sins pardoned, and for certain have eternal life, though you have been a
+      great sinner. But do not expect that thou shalt have any part or share in
+      the large promises and mercy of God, for the benefit and comfort of thy
+      poor soul, whilst thou art under the old covenant; because so long thou
+      art out of Christ, through whom God conveyeth His mercy, grace, and love
+      to sinners. "For all the promises of God in Him are yea, and in Him amen."
+      Indeed, His mercy, grace, and love are very great, but they are treasured
+      up in Him, "given forth in Him, through Him." "But God, who is rich in
+      mercy, for His great love wherewith He loved us—that He might show the
+      exceeding riches of His grace"—but which way?—"in His kindness towards us
+      through Jesus Christ." But out of Christ thou shalt find God a just God, a
+      sin-avenging God, a God that will by no means spare the guilty; and be
+      sure that every one that is found out of Jesus Christ will be found guilty
+      in the judgment-day, upon whom the wrath of God shall smoke to their
+      eternal ruin. Now, therefore, consider of it, and take the counsel of the
+      Apostle, in 2 Corinthians 13:5, which is, to examine thyself whether thou
+      art "in the faith," and to prove thy ownself whether thou hast received
+      the Spirit of Christ into thy soul, whether thou hast been converted,
+      whether thou hast been born again, and made a new creature, whether thou
+      hast had thy sins washed away in the blood of Christ, whether thou hast
+      been brought from under the old covenant into the new; and do not make a
+      slight examination, for thou hast a precious soul either to be saved or
+      damned. And that thou mayest not be deceived, consider that it is one
+      thing to be convinced, and another to be converted; one thing to be
+      wounded, and another to be killed, and so to be made alive again by the
+      faith of Jesus Christ. When men are killed, they are killed to all things
+      they lived to before, both sin and righteousness, as all their old faith
+      and supposed grace that they thought they had. Indeed, the old covenant
+      will show thee that thou art a sinner, and that a great one too; but the
+      old covenant, the Law, will not show thee, without the help of the Spirit,
+      that thou are without all grace by nature; no; but in the midst of thy
+      troubles thou wilt keep thyself from coming to Christ by persuading thy
+      soul that thou art come already, and hast some grace already. O,
+      therefore, be earnest in begging the Spirit, that thy soul may be
+      enlightened, and the wickedness of thy heart discovered, that thou mayest
+      see the miserable state that thou art in by reason of sin and unbelief,
+      which is the great condemning sin; and so in a sight and sense of thy sad
+      condition, if God should deal with thee in severity according to thy
+      deservings. Do thou [now] cry to God for faith in a crucified Christ, that
+      thou mayest have all thy sins washed away in His blood, and such a right
+      work of grace wrought in thy soul that may stand in the judgment-day.
+      Again, Second. In the next place, you know I told you that a man might go
+      a great way in a profession, and have many excellent gifts, [Second use].
+      so as to do many wondrous works, and yet be but under the Law; from hence
+      you may learn not to judge yourselves to be the children of God, because
+      you may have some gifts of knowledge or understanding more than others:
+      no, for thou mayest be the knowingest man in all the country as to
+      head-knowledge, and yet be but under the law, and so consequently under
+      the curse, notwithstanding that, 1 Corinthians 13. Now, seeing it is so,
+      that men may have all this and yet perish, then what will become of those
+      that do no good at all, and have no understanding, neither of their own
+      sadness, nor of Christ's mercy? O, sad! Read with understanding, Isaiah
+      27:11, "Therefore He that made them will not have mercy on them, and He
+      that formed them will show them no favour" (See also 2 Thess 1:8, 9). Now
+      there is one thing which, for want of, most people do miscarry in a very
+      sad manner, and that is, because they are not able to distinguish between
+      the nature of the Law and the Gospel. O, people, people, your being
+      blinded here as to the knowledge of this is one great cause of the ruining
+      of many. As Paul saith, "While Moses is read," or while the law is
+      discovered, "the veil is upon their heart" (2 Cor 3:15) that is, the veil
+      of ignorance is still upon their hearts, so that they cannot discern
+      either the nature of the law or the nature of the Gospel, they being so
+      dark and blind in their minds, as you may see, if you compare it with
+      Chronicles 4:3, 4. And truly I am confident, that were you but well
+      examined, I doubt many of you would be found so ignorant that you would
+      not be able to give a word of right answer concerning either the Law or
+      the Gospel. Nay, my friends, set the case, one should ask you what time
+      you spend, what pains you take, to the end you may understand the nature
+      and difference of these two covenants, would you not say, if you should
+      speak the truth, that you did not so much as regard whether there were two
+      or more? Would you not say, I did not think of covenants, or study the
+      nature of them? I thought that if I had lived honestly, and did as well as
+      I could, that God would accept of me, and have mercy upon me, as He had on
+      others. Ah, friends, this is the cause of the ruin of thousands; for if
+      they are blinded to this, both the right use of the law, and also of the
+      Gospel, is hid from their eyes, and so for certain they will be in danger
+      of perishing most miserably, poor souls that they are, unless God, of His
+      mere mercy and love, doth rend the veil from off their hearts, the veil of
+      ignorance, for that is it which doth keep these poor souls in this
+      besotted and blindfolded condition, in which if they die they may be
+      lamented for, but not helped; they may be pitied, but not preserved from
+      the stoke of God's everlasting vengeance.
+    </p>
+
+    <h3 id="p2c17">Part Two — Chapter 17</h3>
+    <p>
+      THE UNPARDONABLE SIN. bject. Alas! man, I am afraid that I have sinned the
+      unpardonable sin, and therefore there is no hope for me. Answ. Dost thou
+      know what the unpardonable sin, the sin against the Holy Ghost, is? and
+      when it is committed? Reply. It is a sin against light. Answ. That is
+      true; yet every sin against light is not the sin against the Holy Ghost.
+      Reply. Say you so? Answ. Yea, and I prove it thus—If every sin against
+      light had been the sin that is unpardonable, then had David and Peter and
+      others sinned that sin; but though they did sin against light, yet they
+      did not sin that sin; therefore every sin against light is not the sin
+      against the Holy Ghost, the unpardonable sin. Object. But the Scripture
+      saith, "If we sin willfully after that we have received the knowledge of
+      the Truth, there remaineth no more sacrifice for sins; but a certain
+      fearful looking for of judgment and fiery indignation, which shall devour
+      the adversaries." Answ. Do you know what that willful sin is? Reply. Why,
+      what is it? Is it not for a man to sin willingly after enlightening? Answ.
+      1. Yes; yet doubtless every willing sin is not that; for then David had
+      sinned it when he lay with Bathsheba; and Jonah, when he fled from the
+      presence of the Lord; and Solomon also, when he had so many concubines. 2.
+      But that sin is a sin that is of another nature, which is this—For a man
+      after he hath made some profession of salvation to come alone by the blood
+      of Jesus, together with some light and power of the same upon his spirit;
+      I say, for him after this knowingly, willfully, and despitefully to
+      trample upon the blood of Christ shed on the Cross, and to count it an
+      unholy thing, or no better than the blood of another man, and rather to
+      venture his soul any other way than to be saved by this precious blood.
+      And this must be done, I say, after some light (Heb 6:4,5) despitefully
+      (Heb 10:29) knowingly (2 Peter 2:21) and willfully (Heb 10:26 compared
+      with verse 29) and that not in a hurry and sudden fit, as Peter's was, but
+      with some time beforehand to pause upon it first, with Judas; and also
+      with a continued resolution never to turn or be converted again; "for it
+      is impossible to renew such again to repentance," they are so resolved and
+      so desperate (Heb 6). Quest. And how sayest thou now? Didst thou ever,
+      after thou hadst received some blessed light from Christ, willfully,
+      despitefully, and knowingly stamp or trample the blood of the Man Christ
+      Jesus under thy feet? and art thou for ever resolved so to do? Answ. O no;
+      I would not do that willfully, despitefully, and knowingly, not for all
+      the world. Inquiry. But yet I must tell you, now you put me in mind of it,
+      surely sometimes I have most horrible blasphemous thoughts in me against
+      God, Christ, and the Spirit. May not these be that sin I trow? Answ. Dost
+      thou delight in them? Are they such things as thou takest pleasure in?
+      Reply. O no; neither would I do it for a thousand worlds. O, methinks they
+      make me sometimes tremble to think of them. But how and if I should
+      delight in them before I am aware? Answ. Beg of God for strength against
+      them, and if at any time thou findest thy wicked heart to give way in the
+      least thereto, for that is likely enough, and though thou find it may on a
+      sudden give way to that Hell-bred wickedness that is in it, yet do not
+      despair, forasmuch as Christ hath said, "All manner of sins and
+      blasphemies shall be forgiven to the sons of men. And whosoever speaketh a
+      word against the Son of man," that is Christ, as he may do with Peter,
+      through temptation, yet upon repentance, "it shall be forgiven him" (Matt
+      12:31, 32). Object. But I thought it might have been committed all on a
+      sudden, either by some blasphemous thought, or else by committing some
+      other horrible sin. Answ. For certain, this sin and the commission of it
+      doth lie in a knowing, willful, malicious, or despiteful, together with a
+      final trampling the blood of sweet Jesus under foot (Heb 10). Object. But
+      it seems to be rather a resisting of the Spirit, and the motions thereof,
+      than this which you say; for, first, its proper title is the sin against
+      the Holy Ghost; and again, "They have done despite unto the Spirit of
+      grace"; so that it rather seems to be, I say, that a resisting of the
+      Spirit, and the movings thereof, is that sin. Answ. First. For certain,
+      the sin is committed by them that do as before I have said—that is, by a
+      final, knowing, willful, malicious trampling under foot the blood of
+      Christ, which was shed on Mount Calvary when Jesus was there crucified.
+      And though it be called the sin against the Spirit, yet as I said before,
+      every sin against the Spirit is not that; for if it were, then every sin
+      against the light and convictions of the Spirit would be unpardonable; but
+      that is an evident untruth, for these reasons— First, Because there be
+      those who have sinned against the movings of the Spirit, and that
+      knowingly too, and yet did not commit that sin; as Jonah, who when God had
+      expressly by His Spirit bid him go to Nineveh, he runs thereupon quite
+      another way. Secondly, Because the very people that have sinned against
+      the movings of the Spirit are yet, if they do return, received to mercy.
+      Witness also Jonah, who though he had sinned against the movings of the
+      Spirit of the Lord in doing contrary thereunto, "yet when he called," as
+      he saith, "to the Lord," out of the belly of Hell, "the LORD heard him,
+      and gave him deliverance, and set him again about his work." Read the
+      whole story of that Prophet. But, Answ. Second. I shall show you that it
+      must needs be willfully, knowingly, and a malicious rejecting of the Man
+      Christ Jesus as the Saviour—that is, counting His blood, His
+      righteousness, His intercession in His own Person, for he that rejects one
+      rejects all, to be of no value as to salvation; I say, this I shall show
+      you is the unpardonable sin, and then afterwards in brief show you why it
+      is called the sin against the Holy Ghost. [Must be a willfully and
+      maliciously rejecting the Saviour.] 1. That man that doth reject, as
+      aforesaid, the blood, death, righteousness, resurrection, ascension, and
+      intercession of the Man Christ, doth reject that sacrifice, that blood,
+      that righteousness, that victory, that rest, that God alone hath appointed
+      for salvation—"Behold the Lamb," or sacrifice, "of God" (John 1:29). "We
+      have redemption through His blood" (Eph 1:7). That I may "be found in
+      Him"—to wit, in Christ's righteousness, with Christ's own personal
+      obedience to His Father's will (Phil 3:7-10). By His resurrection comes
+      justification (Rom 4:25). His intercession now in His own Person in the
+      Heavens, now absent from His saints, is the cause of the saints'
+      perseverance (Rom 8:33-39). 2. They that reject this sacrifice, and the
+      merits of this Christ, which He by Himself hath brought in for sinners,
+      have rejected Him through whom alone all the promises of the New
+      Testament, together with all the mercy discovered thereby, doth come unto
+      poor creatures—"For all the promises of God in Him are yea, and in Him
+      amen, unto the glory of God" (2 Cor 1:20). And all spiritual blessings are
+      made over to us through Him; that is, through and in this Man, which is
+      Christ, we have all our spiritual, heavenly, and eternal mercies (Eph
+      1:3,4). 3. He that doth knowingly, willfully, and despitefully reject this
+      Man for salvation doth sin the unpardonable sin, because there is never
+      another sacrifice to be offered. "There is no more offering for sin.—There
+      remaineth no more sacrifice for sin," (Heb 10:18-26); namely, than the
+      offering of the body of Jesus Christ a sacrifice once for all (Heb
+      10:10,14, compared with 18, 26). No; but they that shall, after light and
+      clear conviction, reject the first offering of His body for salvation, do
+      crucify Him the second time, which irrecoverably merits their own
+      damnation—"For it is impossible for those who were once enlightened, and
+      have tasted of the heavenly gift, and were made partakers of the Holy
+      Ghost, and have tasted the good Word of God, and the powers of the world
+      to come, if they shall fall away, to renew them again unto repentance;
+      seeing they crucify to themselves the Son of God afresh, and put Him to an
+      open shame" (Heb 6:4-6). "If they shall fall away, to renew them again
+      unto repentance." And why so? Seeing, saith the Apostle, they do crucify
+      to themselves the Son of God afresh, and do put Him to an open shame. O,
+      then, how miserably hath the devil deceived some, in that he hath got them
+      to reject the merits of the first offering of the body of Christ, which
+      was for salvation, and got them to trust in a fresh crucifying of Christ,
+      which unavoidably brings their speedy damnation. 4. They that do reject
+      this Man, as aforesaid, do sin the unpardonable sin, because in rejecting
+      Him they do make way for the justice of God to break out upon them, and to
+      handle them as it shall find them; which will be, in the first place,
+      sinners against the first covenant; and also despising of, even the life,
+      and glory, and consolations, pardon, grace, and love, that is discovered
+      in the second covenant, forasmuch as they reject the Mediator and priest
+      of the same, which is the Man Jesus. And the man that doth so, I would
+      fain see how his sins should be pardoned, and his soul saved, seeing the
+      means, which is the Son of Man, the Son of Mary, and His merits, are
+      rejected; "for," saith He, "if you believe not that I am He, you shall,"
+      mark, "you shall," do what you can; "you shall," appear where you can;
+      "you shall," follow Moses' law, or any holiness whatsoever, "ye shall die
+      in your sins" (John 8:24). So that, I say, the sin that is called the
+      unpardonable sin is a knowing, willful, and despiteful rejecting of the
+      sacrificing of the Son of Man the first time for sin. [Why it is called
+      the sin against the Holy Ghost.] And now to show you why it is called the
+      sin against the Holy Ghost, as in these Scriptures, (Matt 12; Heb 10; Mark
+      3). 1. Because they sin against the manifest light of the Spirit, as I
+      said before; it is a sin against the light of the Spirit—that is, they
+      have been formerly enlightened into the nature of the Gospel and the
+      merits of the Man Christ, and His blood, righteousness, intercession,
+      etc.; and also professed and confessed the same, with some life and
+      comfort in and through the profession of Him; yet now against all that
+      light, maliciously, and with despite to all their former profession, turn
+      their backs and trample upon the same. 2. It is called the sin against the
+      Holy Ghost because such a person doth, as I may say, lay violent hands on
+      it; one that sets himself in opposition to, and is resolved to resist all
+      the motions that do come in from the Spirit to persuade the contrary. For
+      I do verily believe that men, in this very rejecting of the Son of God,
+      after some knowledge of Him, especially at their first resisting and
+      refusing of Him, they have certain motions of the Spirit of God to
+      dissuade them from so great a soul-damning act. But they, being filled
+      with an overpowering measure of the spirit of the devil, do despite unto
+      these convictions and motions by studying and contriving how they may
+      answer them, and get from under the convincing nature of them, and
+      therefore it is called a doing despite unto the Spirit of Grace (Heb
+      10:29). And so, 3. In that they do reject the beseeching of the Spirit,
+      and all its gentle entreatings of the soul to tarry still in the same
+      doctrine. 4. In that they do reject the very testimony of the Prophets and
+      Apostles with Christ Himself; I say, their testimony, through the Spirit,
+      of the power, virtue, sufficiency, and prevalency of the blood, sacrifice,
+      death, resurrection, ascension, and intercession of the Man Christ Jesus,
+      of which the Scriptures are full both in the Old and New Testament, as the
+      Apostle saith, for all the Prophets from Samuel, with them that follow
+      after, have showed of these days—that is, in which Christ should be a
+      sacrifice for sin (Acts 3:24, compared with verses 6, 13-15, 18, 26).
+      Again, saith, he, "He therefore that despiseth not man, but God; who hath
+      also given unto us His Holy Spirit" (1 Thessalonians 4:8); that is, he
+      rejecteth or despiseth the very testimony of the Spirit. 5. It is called
+      the sin against the Holy Ghost, because he that doth reject and disown the
+      doctrine of salvation by the Man Christ Jesus, through believing in Him,
+      doth despise, resist, and reject the wisdom of the Spirit; for the wisdom
+      of God's Spirit did never more appear than its finding out a way for
+      sinners to be reconciled to God by the death of this Man; and therefore
+      Christ, as He is a sacrifice, is called the wisdom of God. And again, when
+      it doth reveal the Lord Jesus it is called the "Spirit of wisdom and
+      revelation in the knowledge of Him" (Eph 1:17). Object. But, some may say,
+      the slighting or rejecting of the Son of Man, Jesus of Nazareth, the Son
+      of Mary, cannot be the sin that is unpardonable, as is clear from that
+      Scripture in Matthew 12:32, where He Himself saith, "Whosoever speaketh a
+      word against the Son of Man, it shall be forgiven him; but whosoever
+      speaketh against the Holy Ghost, it shall not be forgiven him, neither in
+      this world, neither in the world to come." Now by this it is clear that
+      the sin that is unpardonable is one thing, and the sin against the Son of
+      Man another; that sin that is against the Son of Man is pardonable; but if
+      that was the sin against the Holy Ghost, it would not be pardonable;
+      therefore the sin against the Son of Man is not the sin against the Holy
+      Ghost, the unpardonable sin. Answ. 1. I do know full well that there are
+      several persons that have been pardoned, yet have sinned against the Son
+      of Man, and that have for a time rejected Him, as Paul (1 Tim 1:13, 14)
+      also the Jews (Acts 2:36,37). But there was an ignorant rejecting of Him,
+      without the enlightening, and taste, and feeling of the power of the
+      things of God, made mention in Hebrews 6:3-6. 2. There is and hath been a
+      higher manner of sinning against the Son of Man, which also hath been, and
+      is still, pardonable; as in the case of Peter, who in a violent
+      temptation, in a mighty hurry, upon a sudden denied Him, and that after
+      the revelation of the Spirit of God from Heaven to him, that He, Jesus,
+      was the Son of God (Matt 16:16-18). This also is pardonable, if there be a
+      coming up again to repentance. O, rich grace! O, wonderful grace! that God
+      should be so full of love to His poor creatures, that though they do sin
+      against the Son of God, either through ignorance, or some sudden violent
+      charge breaking loose from Hell upon them, but yet take if for certain
+      that if a man do slight and reject the Son of God and the Spirit in that
+      manner as I have before hinted—that is, for a man after some great measure
+      of the enlightening by the Spirit of God, and some profession of Jesus
+      Christ to be the Saviour, and His blood that was shed on the mount without
+      the gates of Jerusalem to be the Atonement; I say, he that shall after
+      this knowingly, willfully, and out of malice and despite reject, speak
+      against, and trample that doctrine under foot, resolving for ever so to
+      do, and if he there continue, I will pawn my soul upon it, he hath sinned
+      the unpardonable sin, and shall never be forgiven, neither in this world,
+      nor in the world to come; or else these Scriptures that testify the truth
+      of this must be scrabbled out, and must be looked upon for mere fables,
+      which are these following—"For if after they have escaped the pollutions
+      of the world, through the knowledge of our Lord and Saviour Jesus Christ,"
+      which is the Son of Man (Matt 16:13) "and are again entangled therein, and
+      overcome," which must be by denying this Lord that brought them (2 Peter
+      2:1) "the latter end is worse with them than the beginning," (2 Peter
+      2:20). For it is impossible for those who were once enlightened, and have
+      tasted of the heavenly gift—and have tasted the good Word of God, and the
+      powers of the world to come; if they shall fall away," not only fall, but
+      fall away, that is, finally (Heb 10:29) "it is impossible to renew them
+      again unto repentance"; and the reason is rendered, "seeing they crucify
+      to themselves the Son of God," which is the Son of Man, "afresh, and put
+      Him to an open shame" (Heb 6:4-6). Now if you would further know what it
+      is to crucify the Son of God afresh, it is this—for to undervalue and
+      trample under foot the merits and virtue of His blood for remission of
+      sins, as is clearly manifested in Hebrews 10:26-28, where it is said, "For
+      if we sin willfully after that we have received the knowledge of the
+      Truth, there remaineth no more sacrifice for sins, but a certain fearful
+      looking for of judgment and fiery indignation, which shall devour the
+      adversaries. He that despised Moses' law died without mercy,—of how much
+      sorer punishment, suppose ye, shall he be thought worthy, who hath trodden
+      under foot the Son of God," there is the second crucifying of Christ,
+      which the Quakers think to be saved by, "and hath counted the blood of the
+      covenant, wherewith he was sanctified, an unholy thing,"— and then
+      followeth—"and hath done despite unto the Spirit of Grace?" (verse 29).
+      All that Paul had to keep him from this sin was, his ignorance in
+      persecuting the Man and merits of Jesus Christ (Acts 9). But I obtained
+      mercy, saith he, because I did it ignorantly (1 Tim 1:13). And Peter,
+      though he did deny Him knowingly, yet he did it unwillingly, and in a
+      sudden and fearful temptation, and so by the intercession of Jesus escaped
+      that danger. So, I say, they that commit this sin, they do it after light,
+      knowingly, willfully, and despitefully, and in the open view of the whole
+      world reject the Son of Man for being their Lord and Saviour, and in that
+      it is called the sin against the Holy Ghost. It is a name most fit for
+      this sin to be called the sin against the Holy Ghost, for these reasons
+      but now laid down; for this sin is immediately committed against the
+      motions, and convictions, and light of the Holy Spirit of God that makes
+      it its business to hand forth and manifest the truth and reality of the
+      merits and virtues of the Lord Jesus, the Son of Man. And therefore
+      beware, Ranters and Quakers, for I am sure you are the nearest that sin by
+      profession, which is, indeed, the right committing of it, of any persons
+      that I do know at this day under the whole heavens, forasmuch as you will
+      not venture the salvation of your souls on the blood shed on Mount
+      Calvary, out of the side of that Man that was offered up in sacrifice for
+      all that did believe (Luke 23:33). In that His offering up of His body at
+      that time, either before He offered it, or that have, do, or shall believe
+      on it for the time since, together with that time that He offered it,
+      though formerly you did profess that salvation was wrought out that way,
+      by that sacrifice then offered, and also seemed to have some comfort
+      thereby; yea, insomuch that some of you declared the same in the hearing
+      of many, professing yourselves to be believers of the same. O, therefore,
+      it is sad for you that were once enlightened, and have tasted these good
+      things, and yet, notwithstanding all your profession, you are now turned
+      from the simplicity that is in Christ to another doctrine, which will be
+      your destruction, if you continue in it; for without blood there is no
+      remission (Heb 9:22). Many other reasons might be given, but that I would
+      not be too tedious; yet I would put in this caution, that if there be any
+      souls that be but now willing to venture their salvation upon the merits
+      of a naked Jesus, I do verily for the present believe they have not sinned
+      that sin, because there is still a promise holds forth itself to such a
+      soul where Christ saith, "Him that cometh to me, I will in nowise," for
+      nothing that he hath done, "cast him out" (John 6:37). That promise is
+      worth to be written in letters of gold.
+    </p>
+
+    <h3 id="p2c18">Part Two — Chapter 18</h3>
+    <p>
+      OBJECTIONS ANSWERED FOR THEIR COMFORT WHO WOULD HAVE THEIR PART IN THE NEW
+      COVENANT. bject. But, alas, though I should never sin that sin, yet I have
+      other sins enough to damn me. Answ. What though thou hadst the sins of a
+      thousand sinners, yet if thou come to Christ, He will save thee (John
+      6:37; See also Hebrews 7:25). Object. Alas, but how shall I come? I doubt
+      I do not come as I should do? My heart is naught and dead; and, alas! then
+      how should I come? Answ. Why, bethink thyself of all the sins that ever
+      thou didst commit, and lay the weight of them all upon thy heart, till
+      thou art down loaden with the same, and come to Him in such a case as
+      this, and He will give thee rest for thy soul (Matt 11:28-30). And again;
+      if thou wouldst know how thou shouldst come, come as much undervaluing
+      thyself as ever thou canst, saying, Lord, here is a sinner, the basest in
+      all the country; if I had my deserts, I had been damned in Hell-fire long
+      ago; Lord, I am not worthy to have the least corner in the Kingdom of
+      Heaven; and yet, O that Thou wouldst have mercy! Come like Benhadad's
+      servants to the king of Israel, with a rope about thy neck (1 Kings
+      20:31,32) and fling thyself at Christ's feet, and lie there a while,
+      striving with Him by thy prayers, and I will warrant thee speed (Matt
+      11:28-30; John 6:37). Object. O, but I am not sanctified. Answ. He will
+      sanctify thee, and be made thy sanctification also (1 Cor 1:30; 6:10,11).
+      Object. O, but I cannot pray. Answ. To pray is not for thee to down on thy
+      knees, and say over a many Scripture words only; for that thou mayest do,
+      and yet do nothing but babble. But if thou from a sense of thy baseness
+      canst groan out thy heart's desire before the Lord, He will hear thee, and
+      grant thy desire; for He can tell what is the meaning of the groanings of
+      the Spirit (Rom 8:26,27). Object. O, but I am afraid to pray, for fear my
+      prayers should be counted as sin in the sight of the great God. Answ. That
+      is a good sign that thy prayers are more than bare words, and have some
+      prevalence at the Throne of Grace through Christ Jesus, or else the devil
+      would never seek to labour to beat thee off from prayer by undervaluing
+      thy prayers, telling thee they are sin; for the best prayers he will call
+      the worst, and the worst he will call the best, or else how should he be a
+      liar? Object. But I am afraid the day of grace is past; and if it should
+      be so, what should I do then? Answ. Truly, with some men indeed it doth
+      fare thus, that the day of grace is at an end before their lives are at
+      end. Or thus, the day of grace is past before the day of death is come, as
+      Christ saith, "If thou hadst known, even thou, at least in this thy day,
+      the things which belong unto thy peace," that is, the word of grace or
+      reconciliation, "but now they are hid from thine eyes" (Luke 19:41,42).
+      But for the better satisfying of thee as touching this thing, consider
+      these following things— First, Doth the Lord knock still at the door of
+      thy heart by His Word and Spirit? If so, then the day of grace is not past
+      with thy soul; for where He doth so knock, there He doth also proffer and
+      promise to come in and sup, that is, to communicate of His things unto
+      them, which he would not do was the day of grace past with his soul (Rev
+      3:20). Object. But how should I know whether Christ do so knock at my
+      heart as to be desirous to come in? That I may know also, whether the day
+      of grace be past with me or no? Answ. Consider these things—1. Doth the
+      Lord make thee sensible of thy miserable state without an interest in
+      Jesus Christ, and that naturally thou hast no share in Him, no faith in
+      Him, no communion with Him, no delight in Him, or love in the least to
+      Him? If He hath, and is doing this, He hath, and is knocking at thy heart.
+      2. Doth He, together with this, put into thy heart an earnest desire after
+      communion with Him, together with holy resolutions not to be satisfied
+      without real communion with Him. 3. Doth He sometimes give thee some
+      secret persuasions, though scarcely discernible, that thou mayest attain,
+      and get an interest in Him? 4. Doth He now and then glance in some of the
+      promises into thy heart, causing them to leave some heavenly savour,
+      though but for a very short time, on thy spirit? 5. Dost thou at some time
+      see some little excellency in Christ? And doth all this stir up in thy
+      heart some breathing after Him? If so, then fear not, the day of grace is
+      not past with thy poor soul; for if the day of grace should be past with
+      such a soul as this, then that Scripture must be broken where Christ
+      saith, "Him that cometh to Me, I will in nowise," for nothing, by no
+      means, upon no terms whatsoever, "cast out. (John 6:37). Object. But
+      surely, if the day of grace was not past with me, I should not be so long
+      without an answer of God's love to my soul; that therefore doth make me
+      mistrust my state the more is, that I wait and wait, and yet am not
+      delivered. Answ. 1. Hast thou waited on the Lord so long as the Lord hath
+      waited on thee? It may be the Lord hath waited on thee these twenty, or
+      thirty, yes, forty years or more, and thou hath not waited on Him seven
+      years. Cast this into thy mind, therefore, when Satan tells thee that God
+      doth not love thee, because thou hast waited so long without an assurance,
+      for it is his temptation, for God did wait longer upon thee, and was fain
+      to send to thee by His ambassadors time after time; and, therefore, say
+      thou, I will wait to see what the Lord will say unto me; and the rather,
+      because He will speak peace, for He is the Lord thereof. But, 2. Know that
+      it is not thy being under trouble a long time that will be an argument
+      sufficiently to prove that thou art past hopes; nay, contrariwise, for
+      Jesus Christ did take our nature upon Him, and also did undertake
+      deliverance for those, and bring it in for them who "were all their
+      LIFETIME subject to bondage" (Heb 2:14,15). Object. But alas! I am not
+      able to wait, all my strength is gone; I have waited so long, I can wait
+      no longer. Answ. It may be thou hast concluded on this long ago, thinking
+      thou shouldst not be able to hold out any longer; no, not a year, a month,
+      or a week; nay, it may be, not so long. It may be in the morning thou hast
+      thought thou shouldst not hold out till night; and at night, till morning
+      again; yet the Lord hath supported thee, and kept thee in waiting upon Him
+      many weeks and years; therefore that is but the temptation of the devil to
+      make thee think so, that he might drive thee to despair of God's mercy,
+      and so to leave off following the ways of God, and to close in with thy
+      sins again. O therefore do not give way unto it, but believe that thou
+      shalt "see the goodness of the Lord in the land of the living. Wait on the
+      Lord, be of good courage, and He shall strengthen thine heart; wait, I
+      say, on the Lord" (Psa 28:13,14). And that thou mayest so do, consider
+      these things— (1.) If thou, after thou hast waited thus long, shouldst now
+      give over, and wait no longer, thou wouldst lose all thy time and pains
+      that thou hast taken in the way of God hitherto, and wilt be like to a man
+      that, because he sought long for gold, and did not find it, therefore
+      turned back from seeking after it, though he was hard by it, and had
+      almost found it, and all because he was loath to look and seek a little
+      further. (2.) Thou wilt not only lose thy time, but also lose thy own
+      soul, for salvation is nowhere else but in Jesus Christ (Acts 4:12). (3.)
+      Thou wilt sin the highest sin that ever thou didst sin before, in drawing
+      finally back, insomuch that God may say, My soul shall have no pleasure in
+      him (Heb 10:38). But, 2. Consider, thou sayest, all my strength is gone,
+      and therefore how should I wait? Why, at that time when thou feelest and
+      findest thy strength quite gone, even that is the time when the Lord will
+      renew and give thee fresh strength. "The youths shall faint and be weary,
+      and the young men shall utterly fall: but they that wait upon the Lord
+      shall renew their strength: they shall mount up with wings as eagles; they
+      shall run and not be weary; they shall walk, and not faint" (Isa
+      40:30,31). Object. But though I do wait, yet if I be not elected to
+      eternal life, what good will all my waiting do me? "For it is not of him
+      that willeth, nor of him that runneth, but of God that showeth mercy."
+      Therefore, I say, if I should not be elected, all is in vain. Answ. 1. Why
+      in the first place, to be sure thy backsliding from God will not prove thy
+      election, neither thy growing weary of waiting upon God. But, 2. Thou art,
+      it may be, troubled to know whether thou art elected; and, sayest thou, If
+      I did but know that, that would encourage me in my waiting on God. Answ. I
+      believe thee; but mark, thou shalt not know thy election in the first
+      place, but in the second—that is to say, thou must first get acquaintance
+      with God in Christ, which doth come by thy giving credit to His promises,
+      and records which He hath given of Jesus Christ's blood and righteousness,
+      together with the rest of His merits—that is, before thou canst know
+      whether thou are elected, thou must believe in Jesus Christ so really,
+      that thy faith laying hold of, and drinking and eating the flesh and blood
+      of Christ, even so that there shall be life begotten in thy soul by the
+      same; life from the condemnings of the Law; life from the guilt of sin;
+      life over the filth of the same; life also to walk with God in His Son and
+      ways; the life of love to God the Father, and Jesus Christ His Son, saints
+      and ways and that because they are holy, harmless, and such that are
+      altogether contrary to iniquity. For these things must be in thy soul as a
+      forerunner of thy being made acquainted with the other; God hath these two
+      ways to show His children their election—(1.) By testimony of the
+      Spirit—that is, the soul being under trouble of conscience and grieved for
+      sin, the Spirit doth seal up the soul by its comfortable testimony;
+      persuading of the soul that God, for Christ's sake, hath forgiven all
+      those sins that lie so heavy on the conscience, and that do so much
+      perplex the soul, by showing it that that Law, which doth utter such
+      horrible curses against it, is by Christ's blood satisfied and fulfilled
+      (Eph 1:13,14). (2.) By consequence—that is, the soul finding that God hath
+      been good unto it, in that He hath showed it its lost state and miserable
+      condition, and also that He hath given it some comfortable hope that He
+      will save it from the same; I say, the soul, from a right sight thereof,
+      doth, or may, draw this conclusion, that if God had not been minded to
+      have saved it, He would not have done for it such things as these. But for
+      the more sure dealing with thy soul, it is not good to take any of these
+      apart—that is, it is not good to take the testimony of the Spirit, as thou
+      supposest thou hast, apart from the fruits thereof, so as to conclude the
+      testimony thou hast received to be a sufficient ground without the other;
+      not that it is not, if it be the testimony of the Spirit, but because the
+      devil doth also deceive souls by the workings of his spirit in them,
+      pretending that it is the Spirit of God. And again; thou shouldst not
+      satisfy thyself, though thou do find some seekings in thee after that
+      which is good, without the testimony of the other—that is to say, of the
+      Spirit—for it is the testimony of two that is to be taken for the truth;
+      therefore, say I, as thou shouldst be much in praying for the Spirit to
+      testify assurance to thee, so also thou shouldst look to the end of it
+      when thou thinkest thou hast it; which is this, to show thee that it is
+      alone for Christ's sake that thy sins are forgiven thee, and also thereby
+      a constraining of thee to advance Him, both by words and works, in
+      holiness and righteousness all the days of thy life. From hence thou mayst
+      boldly conclude thy election—"Remembering without ceasing your work of
+      faith, and labour of love, and patience of hope in our Lord Jesus Christ,
+      in the sight of God and our Father. Knowing, brethren," saith the Apostle,
+      "beloved, your election of God." But how? why by this, "For our Gospel
+      came not unto you in word only, but also in power, and in the Holy Ghost,
+      and in much assurance. And ye became followers of us, and of the Lord,
+      having received the word in much affliction, with joy of the Holy Ghost:
+      so that ye were ensamples to all that believe in Macedonia and Achaia. And
+      to wait for His Son from Heaven, whom He raised from the dead, even Jesus,
+      which" hath "delivered us from the wrath to come" (1 Thess 3:4-6, 10).
+      Object. But alas, for my part, instead of finding in me anything that is
+      good, I find in me all manners of wickedness, hard- heartedness,
+      hypocricy, coldness of affection to Christ, very great unbelief, together
+      with everything that is base and of an ill savour. What hope therefore can
+      I have? Answ. If thou wast not such an one, thou hadst no need of mercy.
+      If thou wast whole, thou hadst no need of the physician. Dost thou
+      therefore see thyself in such a sad condition as this? Thou hast the more
+      need to come to Christ, that thou mayst be not only cleansed from these
+      evils, but also that thou mayst be delivered from that wrath they will
+      bring upon thee, if thou dost not get rid of them, to all eternity. Quest.
+      But how should I do? and what course should I take to be delivered from
+      this sad and troublesome condition? Answ. Dost thou see in thee all manner
+      of wickedness? The best way that I can direct a soul in such a case is, to
+      pitch a steadfast eye on Him that is full, and to look so steadfastly upon
+      Him by faith, that thereby thou mayst even draw down of His fullness into
+      thy heart; for that is the right way, and the way that was typed out,
+      before Christ came in the flesh, in the time of Moses, when the Lord said
+      unto him, "Make thee a fiery serpent" of brass, which was a type of Christ
+      "and set it upon a pole; and it shall come to pass" that when a serpent
+      hath bitten any man, "when he looketh upon it, shall live" (Num 21:8).
+      Even so now in Gospel times, when any soul is bitten with the fiery
+      serpents—their sins—that then the next way to be healed is, for the soul
+      to look upon the Son of Man, who, as the serpent was, was hanged on a
+      pole, or tree, that whosoever shall indeed look on Him by faith may be
+      healed of all their distempers whatever (John 3:14,15). As now to instance
+      in some things. 1. Is thy heart hard? Why, then, behold how full of bowels
+      and compassion is the heart of Christ towards thee, which may be seen in
+      His coming down from Heaven to spill His heart-blood for thee. 2. Is thy
+      heart slothful and idle? Then see how active the Lord Jesus is for thee in
+      that He did not only die for thee, but also in that He hath been ever
+      since His ascension into Heaven making intercession for thee (Heb 7:25).
+      3. Dost thou see and find in thee iniquity and unrighteousness? Then look
+      up to Heaven, and see there a righteous Person, even thy righteous Jesus
+      Christ, now presenting thee in His own perfection before the throne of His
+      Father's glory (1 Cor 1:30). 4. Dost thou see that thou art very much void
+      of sanctification? Then look up, and thou shalt see that thy
+      sanctification is in the presence of God a complete sanctification,
+      representing all the saints as righteous, as sanctified ones in the
+      presence of the great God of Heaven. And so whatsoever thou wantest, be
+      sure to strive to pitch thy faith upon the Son of God, and behold Him
+      steadfastly, and thou shalt, by so doing, find a mighty change in thy
+      soul. For when we behold Him as in a glass, even the glory of the Lord, we
+      are changed, namely, by beholding, "from glory to glory, even as by the
+      Spirit of the Lord" (2 Cor 3:18). This is the true way to get both comfort
+      to thy soul, and also sanctification and right holiness into thy soul.
+      Poor souls that are under the distemper of a guilty conscience, and under
+      the workings of much corruption, do not go the nearest way to Heaven if
+      they do not in the first place look upon themselves as cursed sinners by
+      Law; and yet at that time they are blessed, for ever blessed saints by the
+      merits of Jesus Christ. "O wretched man that I am," saith Paul; and yet, O
+      blessed man that I am, through my Lord Jesus Christ; for that is the scope
+      of the Scripture (Rom 7:24,25). Object. But, alas, I am blind, and cannot
+      see; what shall I do now? Answ. Why, truly, thou must go to Him that can
+      make the eyes that are blind to see, even to our Lord Jesus, by prayer,
+      saying, as the poor blind man did, "Lord, that I might receive my sight";
+      and so continue begging Him, till thou do receive sight, even a sight of
+      Jesus Christ, His death, blood, resurrection, ascension, intercession, and
+      that for thee, even for thee. And the rather, because, 1. He hath invited
+      thee to come and buy such eye-salve of Him that may make thee see (Rev
+      3:18). 2. Because thou shalt never have any true comfort till thou dost
+      thus come to see and behold the Lamb of God that hath taken away thy sins
+      (John 1:29). 3. Because that thereby thou wilt be able through grace, to
+      step over and turn aside from the several stumbling-blocks that Satan,
+      together with his instruments, hath laid in our way, which otherwise thou
+      wilt not be able to shun, but will certainly fall when others stand, and
+      grope and stumble when others go upright, to the great prejudice of thy
+      poor soul. Object. But, alas, I have nothing to carry with me; how then
+      should I go? Answ. Hast thou no sins? If thou hast, carry them, and
+      exchange them for His righteousness; because He hath said, "Cast thy
+      burden upon the Lord, and He shall sustain thee" (Psa 54:22); and again,
+      because He hath said, though thou be heavy laden, yet if thou do but come
+      to Him, He will give thee rest (Matt 11:28). Object. But, you will say,
+      Satan telleth me that I am so cold in prayers, so weak in believing, so
+      great a sinner, that I do go so slothfully on in the way of God, that I am
+      so apt to slip at every temptation, and to be entangled therewith,
+      together with other things, so that I shall never be able to attain those
+      blessed things that are held forth to sinners by Jesus Christ; and
+      therefore my trouble is much upon this account also, and many times I fear
+      that will come upon me which Satan suggesteth to me—that is, I shall miss
+      of eternal life. Answ. 1. As to the latter part of the objection, that
+      thou shalt never attain to everlasting life, that is obtained for thee
+      already, without thy doing, either thy praying, striving, or wrestling
+      against sin. If we speak properly, it is Christ that hath in His own body
+      abolished death on the Cross, and brought light, life, and glory to us
+      through this His thus doing. But this is the thing that thou aimest at,
+      that thou shalt never have a share in this life already obtained for so
+      many as do come by faith to Jesus Christ; and all because thou art so
+      slothful, so cold, so weak, so great a sinner, so subject to slip and
+      commit infirmities. 2. I answer, Didst thou never learn for to outshoot
+      the devil in his own bow, and to cut off his head with his own sword, as
+      David served Goliath, who was a type of him. Quest. O how should a poor
+      soul do this? This is rare, indeed. Answ. Why, truly thus—Doth Satan tell
+      thee thou prayest but faintly, and with very cold devotion? Answer him
+      thus, and say, I am glad you told me, for this will make me trust the more
+      to Christ's prayers, and the less to my own; also I will endeavour
+      henceforth to groan, to sigh, and to be so fervent in my crying at the
+      Throne of Grace, that I will, if I can, make the heavens rattle again with
+      the mighty groans thereof. And whereas thou sayest that I am so weak in
+      believing, I am glad you mind me of it; I hope it will henceforward stir
+      me up to cry the more heartily to God for strong faith, and make me the
+      more restless till I have it. And seeing thou tellest me that I run so
+      softly, and that I shall go near to miss of glory, this also shall be,
+      through grace, to my advantage, and cause me to press the more earnestly
+      towards the mark for the prize of the high calling of God in Christ Jesus.
+      And seeing thou dost tell me that my sins are wondrous great, hereby thou
+      bringest the remembrance of the unsupportable vengeance of God into my
+      mind, if I die out of Jesus Christ, and also the necessity of the blood,
+      death, and merits of Christ to help me; I hope it will make me fly the
+      faster, and press the harder after an interest in Him; and the rather,
+      because, as thou tellest me, my state will be unspeakably miserable
+      without Him. And so all along, if he tell thee of thy deadness, dullness,
+      coldness, or unbelief, or the greatness of thy sins, answer him, and say,
+      I am glad you told me, I hope it will be a means to make me run faster,
+      seek earnestlier, and to be the more restless after Jesus Christ. If thou
+      didst but get this art as to outrun him in his own shoes, as I may say,
+      and to make his own darts to pierce himself, then thou mightst also say,
+      how doth Satan's temptations, as well as all other things, work together
+      for my good, for my advantage (Rom 8:28). Object. But I do find many
+      weaknesses in every duty that I do perform, as when I pray, when I read,
+      when I hear, or any other duty, that it maketh me out of conceit with
+      myself, it maketh me think that my duties are nothing worth. Answ. I
+      answer, it may be it is thy mercy that thou art sensible of infirmities in
+      thy best things thou doest; ay, a greater mercy than thou art aware of.
+      Quest. Can it me a mercy for me to be troubled with my corruptions? Can it
+      be a privilege for me to be annoyed with my infirmities, and to have my
+      best duties infected with it? How can it possibly be? Answ. Verily, thy
+      sins appearing in thy best duties, do work for thy advantage these ways—1.
+      In that thou findest ground enough thereby to make thee humble; and when
+      thou hast done all, yet to count thyself but an unprofitable servant. And,
+      2. Thou by this means art taken off from leaning on anything below a naked
+      Jesus for eternal life. It is like, if thou wast not sensible of many
+      by-thoughts and wickednesses in thy best performances, thou wouldst go
+      near to be some proud, abominable hypocrite, or a silly, proud dissembling
+      wretch at the best, such an one as would send thy soul to the devil in a
+      bundle of thy own righteousness. But now, thou, through grace, seest that
+      in all and everything thou doest there is sin enough in it to condemn
+      thee. This, in the first place, makes thee have a care of trusting in thy
+      own doings; and, secondly, showeth thee that there is nothing in thyself
+      which will do thee any good by working in thee, as to the meritorious
+      cause of thy salvation. No; but thou must have a share in the birth of
+      Jesus, in the death of Jesus, in the blood, resurrection, ascension, and
+      intercession of a crucified Jesus. And how sayest thou? Doth not thy
+      finding of this in thee cause thee to fly from a depending on thy own
+      doings? And doth it not also make thee more earnestly to groan after the
+      Lord Jesus? Yea, and let me tell thee also, it will be a cause to make
+      thee admire the freeness and tender heartedness of Christ to thee, when He
+      shall lift up the light of His countenance upon thee, because He hath
+      regarded such an one as thou, sinful thou; and therefore, in this sense,
+      it will be mercy to the saints that they do find the relics of sin still
+      struggling in their hearts. But this is not simply the nature of sin, but
+      the mercy and wisdom of God, who causeth all things to work together for
+      the good of those that love and fear God (Rom 8). And, therefore, whatever
+      thou findest in thy soul, though it be sin of never so black a
+      soul-scarring nature, let it move thee to run the faster to the Lord Jesus
+      Christ, and thou shalt not be ashamed—that is, of thy running to Him. But
+      when thou dost apprehend that thou art defiled, and also thy best duties
+      annoyed with many weaknesses, let that Scripture come into thy thoughts
+      which saith, "Of Him are ye in Christ Jesus, who of God is made unto us
+      wisdom, and righteousness, and sanctification, and redemption"; and if
+      thou shalt understand that, what thou canst not find in thyself thou shalt
+      find in Christ. Art thou a fool in thyself? then Christ is made of God thy
+      wisdom. Art thou unrighteous in thyself? Christ is made of God thy
+      righteousness. Dost thou find that there is but very little sanctifying
+      grace in thy soul? still here is Christ made thy sanctification; and all
+      this in His own Person without thee, without thy wisdom, without thy
+      righteousness, without thy sanctification, without in His own Person in
+      thy Father's presence, appearing there perfect wisdom, righteousness, and
+      sanctification in His own Person; I say, as a public Person for thee; so
+      that thou mayest believe, and say to thy soul, My soul, though dost find
+      innumerable infirmities in thyself, and in thy actions, yet look upon thy
+      Jesus, the Man Jesus; He is wisdom, and that for thee, to govern thee, to
+      take care for thee, and to order all things for the best for thee. He is
+      also thy righteousness now at God's right hand, always shining before the
+      eyes of His glory; so that there it is unmoveable, though thou art in
+      never such a sad condition, yet thy righteousness, which is the Son of
+      God, God-man, shines as bright as ever, and is as much accepted of God as
+      ever. O this sometimes hath been life to me; and so, whatever thou, O my
+      soul, findest wanting in thyself, through faith thou shalt see all laid up
+      for thee in Jesus Christ, whether it be wisdom, righteousness,
+      sanctification, or redemption. Nay, not only so, but, as I said before, He
+      is all these in His own Person without thee in the presence of His Father
+      for thee. Object. But now, if any should say in their hearts, O, but I am
+      one of the old-covenant men, I doubt—that is, I doubt I am not within this
+      glorious Covenant of Grace. And how if I should not? Answ. Well, thou
+      fearest that thou are one of the old covenant, a son of the bond-woman. 1.
+      In the first place, know that thou wast one of them by nature, for all by
+      nature are under that covenant; but set the case that thou art to this day
+      under that, yet let me tell thee, in the first place, there are hopes for
+      thee; for there is a gap open, a way made for souls to come from under the
+      Covenant of Works, by Christ, "for He hath broken down the middle wall of
+      partition between us" and you (Eph 2:14). And therefore, if thou wouldst
+      be saved, thou mayest come to Christ; if thou wantest a righteousness, as
+      I said before, there is one in Christ; if thou wouldst be washed, thou
+      mayest come to Christ; and if thou wouldst be justified, there is
+      justification enough in the Lord Jesus Christ. That is the first. 2. And
+      thou canst not be so willing to come to Christ as He is willing thou
+      shouldst come to Him. Witness His coming down from Heaven, His
+      humiliation, His spilling of His blood from both His cheeks, by sweat
+      under the burden of sin (Luke 22:44) and His shedding of it by the spear
+      when He hanged on the Cross. It appears also by His promises, by His
+      invitations, by His sending forth His messengers to preach the same to
+      poor sinners, and threateneth damnation upon this very account, namely,
+      the neglect of Him; and declares that all the thousands and ten thousands
+      of sins in the world should not be able to damn those that believed in
+      Him; that He would pardon all, forgive and pass by all, if they would but
+      come unto Him; moreover, promiseth to cast out none, no, not the poorest,
+      vilest, contemptiblest creature in the whole world. "Come unto Me all,"
+      every one, though you be never so many, so vile, though your load be never
+      so heavy and intolerable, though you deserve no help, not the least help,
+      no mercy, not the least compassion, yet "cast your burden upon Me, and you
+      shall find rest for your souls." Come unto Me and I will heal you, love
+      you, teach you, and tell you the way to the Kingdom of Heaven. Come unto
+      Me, and I will succour you, help you, and keep you from all devils and
+      their temptations, from the Law and its curses, and from being for ever
+      overcome with any evil whatever. Come unto Me for what you need, and tell
+      Me what you would have, or what you would have Me do for you, and all My
+      strength, love, wisdom, and interest that I have with My Father shall be
+      laid out for you. Come unto Me, your sweet Jesus, your loving and
+      tender-hearted Jesus, your everlasting and sin-pardoning Jesus. Come unto
+      Me ,and I will wash you, and put My righteousness upon you, pray to the
+      Father for you, and send My Spirit into you, that you might be saved.
+      Therefore, Consider, besides this, what a privilege thou shalt have at the
+      Day of Judgment above thousands, if thou do in deed and in truth close in
+      with this Jesus and accept of Him; for thou shalt not only have a
+      privilege in this life, but in the life everlasting, even at the time of
+      Christ's second coming from Heaven; for then, when there shall be the
+      whole world gathered together, and all the good angels, bad angels,
+      saints, and reprobates, when all thy friends and kindred, with thy
+      neighbours on the right hand and on the left shall be with thee, beholding
+      of the wonderful glory and majesty of the Son of God; then shall the Son
+      of Glory, even Jesus, in the very view and sight of them all, smile and
+      look kindly upon thee; when a smile or a kind look from Christ shall be
+      worth more than ten thousand worlds, then thou shalt have it. You know it
+      is counted an honour for a poor man to be favourably looked upon by a
+      judge, or a king, in the sight of lords, earls, dukes, and princes; why,
+      thus it will be with thee in the sight of all the princely saints, angels,
+      and devils, in the sight of all the great nobles in the world; then, even
+      thou that closest in with Christ, be thou rich or poor, be thou bond or
+      free, wise or foolish, if thou close in with Him, He will say unto thee,
+      "Well done, good and faithful servant," even in the midst of the whole
+      world; they that love thee shall see it, and they that hate thee shall all
+      to their shame behold it; for if thou fear Him here in secret, He will
+      make it manifest even at that day upon the house-tops. Secondly, Not only
+      thus, but thou shalt also be lovingly received and tenderly embraced of
+      Him at that day, when Christ hath thousands of gallant saints, as old
+      Abraham, Isaac, Jacob, David, Isaiah, Jeremiah, together with all the
+      Prophets, and Apostles, and martyrs, attending on Him; together with many
+      thousands of glittering angels ministering before Him; besides, when the
+      ungodly shall appear there with their pale faces, with their guilty
+      consciences, and trembling souls, that would then give thousands and ten
+      thousands of worlds, if they had so many, if they could enjoy but one
+      loving look from Christ. I say, then, then shalt thou have the hand of
+      Christ, reached to thee kindly to receive thee, saying, Come, thou
+      blessed, step up hither; thou was willing to leave all for Me, and now
+      will I give all to thee; here is a throne, a crown, a kingdom, take them;
+      thou wast not ashamed of Me when thou wast in the world among my enemies,
+      and now will not I be ashamed of thee before thine enemies, but will, in
+      the view of all these devils and damned reprobates promote thee to honour
+      and dignity. "Come, ye blessed of My Father, inherit the kingdom prepared
+      for you from the foundation of the world." Thou shalt see that those who
+      have served Me in truth shall lose nothing by the means. No; but ye shall
+      be as pillars in My temple, and inheritors of My glory, and shall have
+      place to walk in among My saints and angels (Zech 3:7). O! who would not
+      be in this condition? who would not be in this glory? It will be such a
+      soul-ravishing glory, that I am ready to think the whole reprobate world
+      will be ready to run mad, to think that they should miss of it (Deu
+      28:34). Then will the vilest drunkard, swearer, liar, and unclean person
+      willingly cry, "Lord, Lord, open to us," yet be denied of entrance; and
+      thou in the meantime embraced, entertained, made welcome, have a fair
+      mitre set upon thy head, and clothed with immortal glory (Zech 3:5). O,
+      therefore, let all this move thee, and be of weight upon thy soul to close
+      in with Jesus, this tender-hearted Jesus. And if yet, for all what I have
+      said, thy sins do still stick with thee, and thou findest thy hellish
+      heart loath to let them go, think with thyself in this manner—Shall I have
+      my sins and lose my soul? Will they do me any good when Christ comes?
+      Would not Heaven be better to me than my sins? and the company of God,
+      Christ, saints, and angels, be better than the company of Cain, Judas,
+      Balaam, with the devils in the furnace of fire? Canst thou now that
+      readest or hearest these lines turn thy back, and go on in your sins?
+      Canst thou set so light of Heaven, of God, of Christ, and the salvation of
+      thy poor, yet precious soul? Canst thou hear of Christ, His bloody sweat
+      and death, and not be taken with it, and not be grieved for it, and also
+      converted by it? If so, I might lay thee down several considerations to
+      stir thee up to mend thy pace towards Heaven; but I shall not; there is
+      enough written already to leave thy soul without excuse and to bring thee
+      down with a vengeance into Hell-fire, devouring fire, the Lake of Fire,
+      eternal everlasting fire; O to make thee swim and roll up and down in the
+      flames of the furnace of fire!
+    </p>
+
+    <button id="toc-toggle" aria-expanded="false" aria-controls="toc-panel">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      Contents
+    </button>
+    <div id="toc-overlay" role="presentation"></div>
+    <nav id="toc-panel" aria-label="Table of contents">
+      <p id="toc-heading">Contents</p>
+      <a href="#part-one">Part One: The Covenant of Works</a>
+      <a href="#part-two">Part Two: The Covenant of Grace</a>
+    </nav>
+    <script>
+      function openToc() {
+        document.getElementById("toc-panel").classList.add("open");
+        document.getElementById("toc-overlay").classList.add("open");
+        document
+          .getElementById("toc-toggle")
+          .setAttribute("aria-expanded", "true");
+      }
+      function closeToc() {
+        document.getElementById("toc-panel").classList.remove("open");
+        document.getElementById("toc-overlay").classList.remove("open");
+        document
+          .getElementById("toc-toggle")
+          .setAttribute("aria-expanded", "false");
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeToc();
+      });
+      document.querySelectorAll("#toc-panel a").forEach(function (link) {
+        link.addEventListener("click", closeToc);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+- title: "The Autobiography of C.H. Spurgeon, Vol. 1: The Early Years"
+  sortTitle: "Autobiography of C.H. Spurgeon, Vol. 1"
+  authors:
+    - charles-spurgeon
+  year: 1897
+  addedDate: 2026-06-02
+  pages: 400
+  tags:
+    - classic
+  contributors: []
+  description: |
+    Compiled from his diary, letters, and personal records by his wife Susannah and his private secretary Joseph Harrald, this first volume of Spurgeon's autobiography covers the years 1834–1854 — from his remarkable childhood in Essex to his early ministry in Cambridge and his first thunderous sermons at New Park Street Chapel in London. Here is the young Spurgeon: converted at fifteen under a snowstorm, preaching at sixteen in country villages, and arriving in London at nineteen to fill a chapel to overflowing. Written with Spurgeon's own vivid voice throughout, blending humor, tenderness, and deep piety, this volume is essential reading for anyone who wants to understand the man behind the Metropolitan Tabernacle pulpit.
+  license: Public Domain
+  path: /static/books/autobiography-of-charles-spurgeon
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/autobiography-of-charles-spurgeon/autobiography-of-charles-spurgeon.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/autobiography-of-charles-spurgeon.pdf
+    - type: mobi
+      label: Mobi
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/autobiography-of-charles-spurgeon.mobi

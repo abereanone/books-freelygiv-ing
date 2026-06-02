@@ -1,0 +1,36 @@
+- title: Grace Abounding to the Chief of Sinners
+  sortTitle: Grace Abounding to the Chief of Sinners
+  authors:
+    - john-bunyan
+  year: 1666
+  addedDate: 2026-06-02
+  pages: 130
+  tags:
+    - classic
+  contributors: []
+  description: |
+    One of the most searching and honest spiritual autobiographies in the English language. John Bunyan recounts with piercing candor the story of his conversion — his years of wild youth, his years of agonizing doubt and temptation, and the slow, painful breaking of his soul by the grace of God. Written in Bedford jail, this book is not a polished memoir but a raw, numbered account of God's pursuit of a sinner. Bunyan's struggle with assurance, his terrors of conscience, his flashes of gospel comfort, and his final rest in Christ have brought strength to countless readers who have walked the same dark road.
+  license: Public Domain
+  path: /static/books/grace-abounding
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/grace-abounding/grace-abounding.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/grace-abounding/grace-abounding.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/grace-abounding/grace-abounding.pdf
+    - type: mobi
+      label: Mobi
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/grace-abounding/grace-abounding.mobi
