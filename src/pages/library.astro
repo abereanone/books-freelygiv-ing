@@ -93,7 +93,7 @@ const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?
           <h5 class="library-letter-heading bg-body-secondary rounded px-3 py-1 mb-3">
             <em>{letter}</em>
           </h5>
-          <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="row row-cols-1 row-cols-md-3 g-3">
             {items.map((book: any) => (
               <div class="col">
                 <BookItem book={book} grid showAuthors />
@@ -111,7 +111,7 @@ const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?
           <h5 class="library-letter-heading bg-body-secondary rounded px-3 py-1 mb-3">
             <em>{letter}</em>
           </h5>
-          <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="row row-cols-1 row-cols-md-3 g-3">
             {items.map(({ book }: any) => (
               <div class="col">
                 <BookItem book={book} grid showAuthors />
