@@ -19,9 +19,11 @@ const books = getBooks()
 const fullName = personName(author);
 const descHtml = newlineToBr(linkify(author.description ?? ''));
 const photos = personPhotos(author);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = photos[0] ? `${siteUrl}${photos[0]}` : undefined;
 ---
 
-<Base title={fullName} ogTitle={fullName} ogDescription={author.description}>
+<Base title={fullName} ogTitle={fullName} ogDescription={author.description} ogImage={ogImage} ogType="profile">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>

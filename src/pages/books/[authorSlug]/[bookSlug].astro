@@ -33,27 +33,9 @@ const btnClass: Record<string, string> = {
   ogTitle={book.title}
   ogDescription={`${book.title}${book.authors?.[0] ? ' by ' + authorNames(book.authors) : ''}`}
   ogImage={ogImage}
+  ogImageAlt={`${book.title} cover`}
   ogType="book"
 >
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      {book.authors?.[0] ? (
-        <>
-          <li class="breadcrumb-item"><a href="/authors">Authors</a></li>
-          {book.authors.map((author: any) => (
-            <li class="breadcrumb-item">
-              <a href={`/authors/${author.slug}/`}>{personName(author)}</a>
-            </li>
-          ))}
-        </>
-      ) : (
-        <li class="breadcrumb-item"><a href="/library">Library</a></li>
-      )}
-      <li class="breadcrumb-item active" aria-current="page">{book.title}</li>
-    </ol>
-  </nav>
-
   <article class="book-page">
     <div class="mb-4 clearfix">
       {book.cover && (

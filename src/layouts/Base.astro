@@ -4,6 +4,7 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
 }
 
@@ -15,6 +16,7 @@ const {
   ogTitle,
   ogDescription,
   ogImage = `${SITE_URL}/static/images/fgbooks-og.jpeg`,
+  ogImageAlt = ogTitle,
   ogType,
 } = Astro.props;
 
@@ -45,7 +47,7 @@ const navItems = [
     {ogTitle       && <meta property="og:title"       content={ogTitle} />}
     {ogDescription && <meta property="og:description" content={ogDescription} />}
     <meta property="og:image"     content={ogImage} />
-    {ogImage       && <meta property="og:image:alt"   content={`${ogTitle} cover`} />}
+    {ogImage       && ogImageAlt && <meta property="og:image:alt"   content={ogImageAlt} />}
     {ogType        && <meta property="og:type"        content={ogType} />}
     <meta property="og:site_name" content={SITE_TITLE} />
 
