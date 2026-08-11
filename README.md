@@ -26,6 +26,10 @@ npm run dev
 node add-book.js
 ```
 
+See [docs/BOOK-FILES.md](docs/BOOK-FILES.md) for how to add or replace the
+downloadable files (PDF, EPUB, print-ready ZIP), which are served from R2
+rather than committed to git.
+
 Book records store author slugs, including multiple authors when needed:
 
 ```yaml

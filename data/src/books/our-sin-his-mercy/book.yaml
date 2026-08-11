@@ -25,14 +25,14 @@
       label: PDF
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/our-sin-his-mercy/our-sin-his-mercy.pdf
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy/OurSinHisMercy.pdf
     - type: printBook
       label: Book
       sources:
-        - name: Lulu
-          url: "https://www.lulu.com/shop/joseph-conkle-and-marv-plementosh-and-michael-coughlin/our-sin-his-mercy/paperback/product-q68vvdn.html"
+        - name: OneMillionTracts
+          url: "https://onemilliontracts-com.3dcartstores.com/Our-Sin-His-Mercy--Book_p_366.html"
     - type: printReady
       label: Print Ready
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/our-sin-his-mercy/print-ready.zip
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy/OurSinHisMercy.zip

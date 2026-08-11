@@ -11,10 +11,13 @@
  *   R2_BUCKET         — bucket name (e.g. books-freelygiv-ing)
  *
  * Usage:
- *   node scripts/upload-to-r2.js
+ *   node scripts/upload-to-r2.js                          # upload every new file
+ *   node scripts/upload-to-r2.js our-sin-his-mercy        # only that book
+ *   node scripts/upload-to-r2.js our-sin-his-mercy --force  # overwrite what's there
  *
- * Only uploads files that don't already exist in the bucket (safe to re-run).
- * To force re-upload a file, delete it from R2 first.
+ * By default only uploads files that don't already exist in the bucket, so it is
+ * safe to re-run. Pass --force to overwrite existing objects (use when replacing
+ * a PDF, epub, or print-ready zip with a newer version).
  */
 
 import {
@@ -30,22 +33,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_SRC = join(__dirname, "../data/src");
 const BOOKS_SRC = join(DATA_SRC, "books");
 const LEGACY_SRC = join(__dirname, "../freely-given-books-data/data/src");
-
-// Files in freely-given-books-data/data/src/joe-conkle/ that need renaming
-const LEGACY_FLAT = [
-  {
-    src: "joe-conkle/OurSinHisMercy.pdf",
-    key: "our-sin-his-mercy/our-sin-his-mercy.pdf",
-  },
-  {
-    src: "joe-conkle/OurSinHisMercy_print_ready.zip",
-    key: "our-sin-his-mercy/print-ready.zip",
-  },
-  {
-    src: "joe-conkle/book.html",
-    key: "our-sin-his-mercy/our-sin-his-mercy.html",
-  },
-];
 
 // Load .env file if present
 try {
@@ -82,6 +69,17 @@ const s3 = new S3Client({
 
 const BOOK_EXTS = new Set([".epub", ".pdf", ".zip", ".mobi", ".html"]);
 
+const args = process.argv.slice(2);
+const force = args.includes("--force");
+const onlySlugs = new Set(args.filter((a) => !a.startsWith("--")));
+
+let uploaded = 0;
+let skipped = 0;
+
+function wanted(bookSlug) {
+  return onlySlugs.size === 0 || onlySlugs.has(bookSlug);
+}
+
 async function fileExistsInR2(key) {
   try {
     await s3.send(new HeadObjectCommand({ Bucket: R2_BUCKET, Key: key }));
@@ -89,6 +87,25 @@ async function fileExistsInR2(key) {
   } catch {
     return false;
   }
+}
+
+async function upload(key, filePath) {
+  if (!force && (await fileExistsInR2(key))) {
+    console.log(`  skip    ${key}`);
+    skipped++;
+    return;
+  }
+
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: R2_BUCKET,
+      Key: key,
+      Body: readFileSync(filePath),
+      ContentType: mimeType(key),
+    }),
+  );
+  console.log(`  ${force ? "replace" : "upload "} ${key}`);
+  uploaded++;
 }
 
 function mimeType(filename) {
@@ -102,43 +119,24 @@ function mimeType(filename) {
 }
 
 async function main() {
-  console.log(`\nUploading book files to R2 bucket: ${R2_BUCKET}\n`);
-
-  let uploaded = 0;
-  let skipped = 0;
+  console.log(`\nUploading book files to R2 bucket: ${R2_BUCKET}`);
+  if (onlySlugs.size) console.log(`Limited to: ${[...onlySlugs].join(", ")}`);
+  if (force) console.log("--force: existing objects will be overwritten");
+  console.log();
 
   // Scan data/src/books/<book-slug>/content/ (primary, ongoing)
   if (existsSync(BOOKS_SRC)) {
     for (const bookSlug of readdirSync(BOOKS_SRC)) {
       const bookDir = join(BOOKS_SRC, bookSlug);
       if (!statSync(bookDir).isDirectory()) continue;
+      if (!wanted(bookSlug)) continue;
 
       const contentDir = join(bookDir, "content");
       if (!existsSync(contentDir)) continue;
 
       for (const file of readdirSync(contentDir)) {
         if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
-
-        const key = `${bookSlug}/${file}`;
-        const filePath = join(contentDir, file);
-
-        if (await fileExistsInR2(key)) {
-          console.log(`  skip  ${key}`);
-          skipped++;
-          continue;
-        }
-
-        const body = readFileSync(filePath);
-        await s3.send(
-          new PutObjectCommand({
-            Bucket: R2_BUCKET,
-            Key: key,
-            Body: body,
-            ContentType: mimeType(file),
-          }),
-        );
-        console.log(`  upload  ${key}`);
-        uploaded++;
+        await upload(`${bookSlug}/${file}`, join(contentDir, file));
       }
     }
   }
@@ -152,62 +150,16 @@ async function main() {
       for (const bookSlug of readdirSync(authorDir)) {
         const bookDir = join(authorDir, bookSlug);
         if (!statSync(bookDir).isDirectory()) continue;
+        if (!wanted(bookSlug)) continue;
         const contentDir = join(bookDir, "content");
         if (!existsSync(contentDir)) continue;
 
         for (const file of readdirSync(contentDir)) {
           if (!BOOK_EXTS.has(extname(file).toLowerCase())) continue;
-
-          const key = `${bookSlug}/${file}`;
-          const filePath = join(contentDir, file);
-
-          if (await fileExistsInR2(key)) {
-            console.log(`  skip  ${key}`);
-            skipped++;
-            continue;
-          }
-
-          const body = readFileSync(filePath);
-          await s3.send(
-            new PutObjectCommand({
-              Bucket: R2_BUCKET,
-              Key: key,
-              Body: body,
-              ContentType: mimeType(file),
-            }),
-          );
-          console.log(`  upload  ${key}`);
-          uploaded++;
+          await upload(`${bookSlug}/${file}`, join(contentDir, file));
         }
       }
     }
-  }
-
-  // Upload flat legacy files (our-sin-his-mercy from joe-conkle/)
-  for (const { src, key } of LEGACY_FLAT) {
-    const filePath = join(LEGACY_SRC, src);
-    if (!existsSync(filePath)) {
-      console.log(`  missing  ${src} (skipping)`);
-      continue;
-    }
-
-    if (await fileExistsInR2(key)) {
-      console.log(`  skip  ${key}`);
-      skipped++;
-      continue;
-    }
-
-    const body = readFileSync(filePath);
-    await s3.send(
-      new PutObjectCommand({
-        Bucket: R2_BUCKET,
-        Key: key,
-        Body: body,
-        ContentType: mimeType(key),
-      }),
-    );
-    console.log(`  upload  ${key}`);
-    uploaded++;
   }
 
   console.log(`\nDone — ${uploaded} uploaded, ${skipped} already existed.\n`);
