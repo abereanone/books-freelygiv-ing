@@ -11,6 +11,15 @@ interface Props {
 const SITE_TITLE = 'Freely Given Books';
 const SITE_URL   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 
+// This project answers on books.freelygiv.ing and the .pages.dev host as well as the
+// canonical domain, so every page has to say which one is the real URL. The trailing
+// slash is required: @astrojs/sitemap emits /about/, and a canonical of /about would
+// disagree with the sitemap entry.
+const canonicalPath = Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const canonicalUrl  = `${SITE_URL}${canonicalPath}`;
+
 const {
   title,
   ogTitle,
@@ -43,6 +52,7 @@ const navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {ogDescription && <meta name="description" content={ogDescription} />}
     <title>{title ? `${title} - ${SITE_TITLE}` : SITE_TITLE}</title>
+    <link rel="canonical" href={canonicalUrl} />
 
     {ogTitle       && <meta property="og:title"       content={ogTitle} />}
     {ogDescription && <meta property="og:description" content={ogDescription} />}
