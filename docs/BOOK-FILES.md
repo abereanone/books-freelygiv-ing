@@ -30,6 +30,12 @@ data/src/books/<book-slug>/content/
 
 giving URLs like `https://files.books.freelygiv.ing/<book-slug>/<book-slug>.pdf`.
 
+> **The `freelygiv.ing` registration has to stay alive.** The site itself moved to
+> `books.freely.giving`, but `files.books.freelygiv.ing` is a subdomain of the old domain and
+> serves the downloads for 23 of 24 books. Moving the asset host to `files.books.freely.giving`
+> is not currently possible: R2 custom domains require the zone to be on Cloudflare DNS, and
+> `freely.giving` is on NS1. Letting the old domain expire would break every download link.
+
 Some books keep the publisher's original filenames instead — `our-sin-his-mercy` uses `OurSinHisMercy.pdf` and `OurSinHisMercy.zip`. That's fine. Pick one and make `book.yaml` agree with it.
 
 **If you change a filename on a book that is already live**, you are creating a *new* R2 object, not renaming the old one. Upload the new name, update `book.yaml`, then delete the old object from R2 — otherwise the old file lingers and the site 404s until the YAML is pushed.
@@ -67,7 +73,7 @@ E.g. the book had a PDF, now it also has a print-ready ZIP.
           url: https://files.books.freelygiv.ing/<book-slug>/print-ready.zip
 ```
 
-Known `type` values: `htmlBook`, `pdfBook`, `epubBook`, `printBook` (a store link, e.g. Lulu), `printReady`.
+Known `type` values: `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook` (a store link, e.g. Lulu), `printReady`, `audiobook`.
 
 4. Commit and push `book.yaml`. Cloudflare Pages rebuilds on push.
 

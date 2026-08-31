@@ -46,4 +46,12 @@ npm run build      # output -> dist/
 
 ## Deploy
 
-Cloudflare Pages - set `SITE_URL` environment variable to `https://books.freelygiv.ing`.
+Cloudflare Pages. The canonical domain is `https://books.freely.giving`, which is the
+default `site` in `astro.config.mjs` - leave `SITE_URL` **unset** in production.
+`SITE_URL` exists so a preview deploy can build against its own origin, and it also
+determines the sitemap's `<loc>` entries, so setting it in production would point the
+sitemap at the wrong host.
+
+`books.freelygiv.ing` 301s to the canonical domain. **Do not let the `freelygiv.ing`
+registration lapse** — `files.books.freelygiv.ing` is a subdomain of it and serves every
+book download from R2. See [docs/BOOK-FILES.md](docs/BOOK-FILES.md).

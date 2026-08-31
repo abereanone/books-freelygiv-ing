@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page Not Found"
+  ogTitle="Page Not Found"
+  ogDescription="That page could not be found."
+>
+  <div class="text-center py-5">
+    <p class="display-1 fw-bold mb-2 text-body-secondary">404</p>
+    <h1 class="mb-3">That page could not be found</h1>
+    <p class="lead text-body-secondary mx-auto mb-4" style="max-width: 34rem;">
+      The link may be out of date, or the page may have moved. The books are all still
+      here — try the library.
+    </p>
+
+    <div class="d-flex flex-wrap gap-2 justify-content-center">
+      <a href="/library" class="btn btn-primary">Browse the Library</a>
+      <a href="/authors" class="btn btn-outline-secondary">Authors</a>
+      <a href="/" class="btn btn-outline-secondary">Home</a>
+    </div>
+  </div>
+</Base>

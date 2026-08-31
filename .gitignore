@@ -15,7 +15,6 @@ dist-check
 public/static/books/
 public/static/images/authors/
 public/static/images/contributors/
-CLAUDE.md
 freely-given-books-data/
 tmp
 _downloads

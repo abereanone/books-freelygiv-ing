@@ -11,10 +11,10 @@ interface Props {
 const SITE_TITLE = 'Freely Given Books';
 const SITE_URL   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 
-// This project answers on books.freelygiv.ing and the .pages.dev host as well as the
-// canonical domain, so every page has to say which one is the real URL. The trailing
-// slash is required: @astrojs/sitemap emits /about/, and a canonical of /about would
-// disagree with the sitemap entry.
+// This project also answers on the .pages.dev host, so every page has to say which
+// URL is the real one. (books.freelygiv.ing used to serve the site too; it now 301s
+// to the canonical domain.) The trailing slash is required: @astrojs/sitemap emits
+// /about/, and a canonical of /about would disagree with the sitemap entry.
 const canonicalPath = Astro.url.pathname.endsWith('/')
   ? Astro.url.pathname
   : `${Astro.url.pathname}/`;
