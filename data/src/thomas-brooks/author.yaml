@@ -1,0 +1,18 @@
+- firstName: Thomas
+  lastName: Brooks
+  slug: thomas-brooks
+  photo: "/static/images/authors/thomas-brooks/thomas-brooks.jpg"
+  description: >
+    Thomas Brooks (1608–1680) was an English Puritan preacher and writer, educated at
+    Emmanuel College, Cambridge. After serving as a chaplain at sea during the Civil War,
+    he ministered in London, latterly at St. Margaret's, Fish Street Hill, until he was
+    ejected from his pulpit in 1662 under the Act of Uniformity.
+
+    He stayed in the city through the plague of 1665 and the Great Fire of 1666, preaching
+    to his scattered flock wherever he could gather them. His books are famous for their
+    warmth and their sheer density of illustration — homely similitudes, histories, and
+    proverbs pressed into the service of the soul. Among the best known are Precious Remedies
+    Against Satan's Devices, The Mute Christian Under the Smarting Rod, Heaven on Earth,
+    An Ark for All God's Noahs, and The Privy Key of Heaven. Spurgeon reckoned him one of
+    the most quotable of all the Puritans.
+  donateUrl: ""

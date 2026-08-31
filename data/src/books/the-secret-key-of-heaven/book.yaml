@@ -1,0 +1,48 @@
+- title: The Secret Key of Heaven
+  sortTitle: Secret Key of Heaven
+  authors:
+    - thomas-brooks
+  year: 1665
+  addedDate: 2026-08-31
+  pages: 284
+  tags:
+    - classic
+  contributors:
+    - courtney-hicks
+  description: |
+    "But thou, when thou prayest, enter into thy closet, and when thou hast shut thy door, pray to thy Father which is in secret; and thy Father which seeth in secret shall reward thee openly." — Matthew 6:6
+
+    Brooks wrote this treatise because he could find no other. He asked old disciples whether they had ever heard one sermon on closet prayer among the thousands they had heard, or read any book on it, and they answered no. So he set himself to the neglected duty, and pressed it home with twenty arguments: that the most eminent saints have been most in secret prayer, that Christ Himself much exercised it, that it distinguishes the Christian from the hypocrite, that in secret we may freely unbosom our souls to God, that secret duties shall have open rewards, and that "every man is that really which he is secretly. There are many that sweat upon the stage that are key-cold in their closets."
+
+    The second half is all application — searching words for those who neglect closet prayer, answers to the six objections men commonly raise against it (we have much business, we are servants with no time of our own, we lack the gifts others have, God already knows our wants, we have no convenient place, our weaknesses shut us up), and eleven particulars of counsel for praying well in secret.
+
+    Set from Thomas Brooks's The Privy Key of Heaven (1665) and lightly modernized.
+  license: CC0
+  path: /static/books/the-secret-key-of-heaven
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-secret-key-of-heaven/the-secret-key-of-heaven.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/thomas-brooks-and-courtney-hicks/the-secret-key-of-heaven/paperback/product-65dnrmr.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-secret-key-of-heaven/the-secret-key-of-heaven.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-secret-key-of-heaven/the-secret-key-of-heaven.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-secret-key-of-heaven/print-ready.zip
