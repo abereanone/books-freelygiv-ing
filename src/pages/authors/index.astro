@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getAuthors, personName, personPhotos } from '../../lib/data.js';
+import { getAuthors, personName, personPhotos, personAvatar } from '../../lib/data.js';
 
 const authors = getAuthors().sort((a, b) => a.lastName.localeCompare(b.lastName));
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
@@ -19,7 +19,7 @@ const ogImage = `${siteUrl}/static/og/authors.jpg`;
 
   <div class="row row-cols-2 row-cols-md-4 g-3">
     {authors.map(author => {
-      const photo = personPhotos(author, 1)[0];
+      const photo = personAvatar(author);
       return (
         <div class="col">
           <a href={`/authors/${author.slug}/`} class="card h-100 text-decoration-none text-center">

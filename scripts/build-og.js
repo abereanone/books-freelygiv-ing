@@ -15,7 +15,7 @@
  *
  * `--force` rebuilds everything, for when you change the layout below.
  */
-import { existsSync, mkdirSync, statSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, statSync, readFileSync, readdirSync, writeFileSync } from "fs";
 import { createHash } from "crypto";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -26,6 +26,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const PUBLIC = join(ROOT, "public");
 const OG_DIR = join(PUBLIC, "static/og");
+const AVATAR_DIR = join(PUBLIC, "static/avatars");
 
 const W = 1200;
 const H = 630;
@@ -114,7 +115,7 @@ async function composeCard({ art, artBox, svgText, out }) {
 }
 
 /** Fit an image inside a box, preserving aspect, returning the buffer and placement. */
-async function fitArt(src, boxW, boxH, { round = false } = {}) {
+async function fitArt(src, boxW, boxH, { round = false, mask = true } = {}) {
   // Round art is cropped to fill (a "contain" letterbox leaves opaque bars that the
   // circle mask can't remove, so the result reads as a rounded square, not a circle).
   //
@@ -123,17 +124,27 @@ async function fitArt(src, boxW, boxH, { round = false } = {}) {
   // and slices the top of the head off. Square and landscape photos keep "attention",
   // where the subject may sit anywhere in frame.
   let position = "attention";
-  if (round) {
+  let pipeline = sharp(src);
+
+  const crop = cropBySrc.get(src);
+  if (round && crop) {
+    // An explicit square window, clamped so it cannot run off the edge.
+    const meta = await sharp(src).metadata();
+    const side = Math.round(Math.min(meta.width, meta.height, crop.size * meta.width));
+    const left = Math.round(Math.min(Math.max(crop.cx * meta.width - side / 2, 0), meta.width - side));
+    const top = Math.round(Math.min(Math.max(crop.cy * meta.height - side / 2, 0), meta.height - side));
+    pipeline = pipeline.extract({ left, top, width: side, height: side });
+  } else if (round) {
     const meta = await sharp(src).metadata();
     if (meta.height > meta.width) position = "top";
   }
 
-  const img = sharp(src).resize(boxW, boxH, {
+  const img = pipeline.resize(boxW, boxH, {
     fit: round ? "cover" : "contain",
     position,
     background: { r: 250, g: 247, b: 240 },
   });
-  const buf = await (round
+  const buf = await (round && mask
     ? img
         .composite([
           {
@@ -309,6 +320,21 @@ const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8"
 const nextManifest = {};
 
 /**
+ * Optional per-person crop, read from `photoCrop` in the person's yaml as
+ * "<centerX%> <centerY%> <size%>" — where the face sits and how tight to frame it.
+ * Automatic cropping can only guess; a wide shot, a group photo or a portrait with
+ * lots of headroom needs a human to say where the subject actually is.
+ */
+const cropBySrc = new Map();
+
+function parseCrop(spec) {
+  if (typeof spec !== "string") return null;
+  const n = spec.match(/-?[\d.]+/g);
+  if (!n || n.length < 3) return null;
+  return { cx: +n[0] / 100, cy: +n[1] / 100, size: +n[2] / 100 };
+}
+
+/**
  * Content hash, NOT mtime. Git doesn't preserve mtimes, so a fresh CI clone stamps every
  * file with checkout time — mtime signatures would miss on every build and regenerate all
  * the cards (in the builder's fonts, not Georgia). Content hashes survive the clone.
@@ -374,6 +400,12 @@ async function main() {
     ...authors.map((p) => [p, "Author"]),
     ...contributors.map((p) => [p, "Contributor"]),
   ];
+
+  for (const [person] of people) {
+    const rel = personPhotos(person, 1)[0];
+    const parsed = parseCrop(person.photoCrop);
+    if (rel && parsed) cropBySrc.set(join(PUBLIC, rel), parsed);
+  }
   for (const [person, role] of people) {
     const name = `person-${person.slug}.jpg`;
     const photo = personPhotos(person, 1)[0];
@@ -382,6 +414,7 @@ async function main() {
       personName(person),
       role,
       photo ?? "-",
+      person.photoCrop ?? "-",
       stamp(photo ? join(PUBLIC, photo) : null),
     ]);
     if (!needsBuild(name, sig)) {
@@ -437,7 +470,14 @@ async function main() {
   for (const m of montages) {
     // The whole image list is in the signature, so hiding a book — which changes the
     // list without touching a file — rebuilds the montage.
-    const sig = sign([selfStamp, m.title, m.subtitle, m.images, m.images.map(stamp)]);
+    const sig = sign([
+      selfStamp,
+      m.title,
+      m.subtitle,
+      m.images,
+      m.images.map(stamp),
+      m.images.map((i) => JSON.stringify(cropBySrc.get(i) ?? null)),
+    ]);
     if (!needsBuild(m.name, sig)) {
       kept++;
       continue;
@@ -450,6 +490,105 @@ async function main() {
 
   console.log(`[build-og] ${made} generated, ${kept} up to date → public/static/og/`);
   if (skipped.length) console.log(`[build-og] skipped: ${skipped.join(", ")}`);
+
+  await writeAvatars(people);
+  writePreview();
+}
+
+/**
+ * Square display copies of each person's photo, at /static/avatars/<slug>.jpg.
+ *
+ * The person templates crop to a circle with `object-fit: cover`, which centres the crop
+ * and slices the top off a tall head-and-shoulders portrait. Rather than fight that in
+ * CSS, pre-render a square using exactly the rules the OG cards use — `photoCrop` when
+ * the yaml supplies one, top-anchored otherwise — so the site and the share cards frame
+ * every face identically. The original photo is untouched.
+ *
+ * These are cheap and deterministic (no fonts involved), so they regenerate every run and
+ * are gitignored rather than committed.
+ */
+const AVATAR_PX = 480;
+
+async function writeAvatars(people) {
+  mkdirSync(AVATAR_DIR, { recursive: true });
+  let n = 0;
+  for (const [person] of people) {
+    const rel = personPhotos(person, 1)[0];
+    if (!rel) continue;
+    const src = join(PUBLIC, rel);
+    if (!existsSync(src)) continue;
+
+    // Square, uncircled — the templates round it with CSS.
+    const art = await fitArt(src, AVATAR_PX, AVATAR_PX, { round: true, mask: false });
+    await sharp(art).jpeg({ quality: 88, mozjpeg: true })
+      .toFile(join(AVATAR_DIR, `${person.slug}.jpg`));
+    n++;
+  }
+  console.log(`[build-og] ${n} avatars → public/static/avatars/`);
+}
+
+/**
+ * A local contact sheet of every card, at /static/og/preview.html.
+ *
+ * The cards never appear on the site — they only live in <meta property="og:image">, so
+ * the only way to see them is to open each file. This puts them on one page. It is
+ * gitignored: a local tool, not something to deploy.
+ */
+function writePreview() {
+  const names = readdirSync(OG_DIR)
+    .filter((f) => f.endsWith(".jpg"))
+    .sort();
+
+  const group = (label, list) =>
+    !list.length
+      ? ""
+      : `<h2>${esc(label)} <span class="n">${list.length}</span></h2>
+         <div class="grid">` +
+        list
+          .map(
+            (f) =>
+              `<figure><a href="${f}" target="_blank"><img src="${f}" loading="lazy" alt="${esc(f)}"></a>
+                 <figcaption>${esc(f.replace(/\.jpg$/, ""))}</figcaption></figure>`,
+          )
+          .join("") +
+        `</div>`;
+
+  const people = names.filter((f) => f.startsWith("person-"));
+  const books = names.filter((f) => f.startsWith("book-"));
+  const other = names.filter((f) => !f.startsWith("person-") && !f.startsWith("book-"));
+
+  const html = `<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OG card preview</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 2rem;
+         background: #14110e; color: #f2ece2; }
+  h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+  .sub { color: #a89f92; margin: 0 0 2rem; }
+  h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: .1em;
+       color: #c8a97e; margin: 2.5rem 0 1rem; border-bottom: 1px solid #3a322a;
+       padding-bottom: .4rem; }
+  h2 .n { color: #6a6058; letter-spacing: 0; text-transform: none; }
+  .grid { display: grid; gap: 1.25rem;
+          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  figure { margin: 0; }
+  img { width: 100%; height: auto; display: block; border-radius: 6px;
+        background: #faf7f0; box-shadow: 0 2px 10px rgba(0,0,0,.45); }
+  figcaption { font-size: .8rem; color: #a89f92; margin-top: .4rem;
+               word-break: break-all; }
+  a { text-decoration: none; }
+</style>
+<h1>Open Graph cards</h1>
+<p class="sub">${names.length} cards — what a shared link looks like. Not part of the site;
+regenerated by <code>npm run og</code>.</p>
+${group("People", people)}
+${group("Books", books)}
+${group("Listings", other)}
+`;
+
+  writeFileSync(join(OG_DIR, "preview.html"), html);
+  console.log(`[build-og] preview → /static/og/preview.html`);
 }
 
 main().catch((err) => {

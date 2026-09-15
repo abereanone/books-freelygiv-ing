@@ -2,8 +2,9 @@
   lastName: "Conkle"
   slug: "joe-conkle"
   photos:
-    - "/static/images/authors/joe-conkle/joseph-conkle.jpg"
     - "/static/images/authors/joe-conkle/joseph-conkle2.jpg"
+    - "/static/images/authors/joe-conkle/joseph-conkle.jpg"
+  photoCrop: "50% 40% 100%"  # the couple together, not him alone
   description: >
     Joe Conkle is a lifelong Ohio resident who currently lives in Perrysville. After a career as a corrections officer, he continues to serve his community and Christ's church in a variety of ways.
 

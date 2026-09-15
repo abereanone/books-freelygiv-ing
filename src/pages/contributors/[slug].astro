@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
-import { getContributors, getBooks, linkify, newlineToBr, personName, personPhotos } from '../../lib/data.js';
+import { getContributors, getBooks, linkify, newlineToBr, personName, personPhotos , personAvatar} from '../../lib/data.js';
 
 export function getStaticPaths() {
   return getContributors().map(contributor => ({
@@ -19,6 +19,8 @@ const books = getBooks()
 const fullName = personName(contributor);
 const descHtml = newlineToBr(linkify(contributor.description ?? ''));
 const photos = personPhotos(contributor);
+// The headline photo is the pre-cropped square; extras keep their original framing.
+if (photos.length) photos[0] = personAvatar(contributor);
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogImage = `${siteUrl}/static/og/person-${contributor.slug}.jpg`;
 ---
