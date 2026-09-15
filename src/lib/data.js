@@ -166,6 +166,26 @@ export function newlineToBr(text) {
     .join("\n");
 }
 
+/**
+ * Every person by slug, with the page to link them to.
+ *
+ * A person is just a person: they may be an author on one book and a contributor on
+ * another, or both at once. The site still routes them to /authors/ or /contributors/
+ * depending on which yaml they have, so resolve the link here rather than assuming —
+ * hardcoding /authors/<slug>/ 404s for anyone defined only as a contributor.
+ * When someone has both, the author page wins; it's the fuller one.
+ */
+export function getPeopleBySlug() {
+  const map = {};
+  for (const person of getContributors()) {
+    map[person.slug] = { ...person, href: `/contributors/${person.slug}/` };
+  }
+  for (const person of getAuthors()) {
+    map[person.slug] = { ...person, href: `/authors/${person.slug}/` };
+  }
+  return map;
+}
+
 export function personPhotos(person, limit = 2) {
   const photos = Array.isArray(person?.photos)
     ? person.photos

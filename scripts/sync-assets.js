@@ -45,8 +45,13 @@ for (const personSlug of readdirSync(DATA_SRC)) {
   const personDir = join(DATA_SRC, personSlug);
   if (!statSync(personDir).isDirectory()) continue;
 
-  const isAuthor = existsSync(join(personDir, "author.yaml"));
-  const imageFolder = isAuthor ? "authors" : "contributors";
+  // A person can be both — authored one book and contributed to another. Each yaml
+  // points its photo at its own folder, so copy into every folder the person has a
+  // yaml for, not just one. Picking a single folder would 404 the other page's photo.
+  const imageFolders = [];
+  if (existsSync(join(personDir, "author.yaml"))) imageFolders.push("authors");
+  if (existsSync(join(personDir, "contributor.yaml"))) imageFolders.push("contributors");
+  if (!imageFolders.length) imageFolders.push("contributors");
 
   // Copy person photo
   for (const file of readdirSync(personDir)) {
@@ -54,16 +59,18 @@ for (const personSlug of readdirSync(DATA_SRC)) {
       IMAGE_EXTS.has(extname(file).toLowerCase()) &&
       statSync(join(personDir, file)).isFile()
     ) {
-      const dest = join(
-        PUBLIC,
-        "static",
-        "images",
-        imageFolder,
-        personSlug,
-        file,
-      );
-      copyFile(join(personDir, file), dest);
-      copied++;
+      for (const imageFolder of imageFolders) {
+        const dest = join(
+          PUBLIC,
+          "static",
+          "images",
+          imageFolder,
+          personSlug,
+          file,
+        );
+        copyFile(join(personDir, file), dest);
+        copied++;
+      }
     }
   }
 }

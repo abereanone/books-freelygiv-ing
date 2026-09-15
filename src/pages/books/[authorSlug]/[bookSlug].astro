@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, personName } from '../../../lib/data.js';
+import { getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, personName, getPeopleBySlug } from '../../../lib/data.js';
 
 export function getStaticPaths() {
   return getBooks().map((book: any) => ({
@@ -13,6 +13,10 @@ export function getStaticPaths() {
 }
 
 const { book } = Astro.props;
+const peopleBySlug = getPeopleBySlug();
+const contributors = (book.contributors || [])
+  .map((slug: string) => peopleBySlug[slug])
+  .filter(Boolean);
 const descHtml  = newlineToBr(linkify(book.description ?? ''));
 const siteUrl   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogSlug    = bookSlugFromPath(book.path);
@@ -56,11 +60,19 @@ const btnClass: Record<string, string> = {
         {book.title}
         {book.authors?.[0] && (
           <span class="fs-5 fw-normal text-body-secondary ms-2">by {book.authors.map((author: any, i: number) => (
-              <span>{i > 0 ? ', ' : ''}<a href={`/authors/${author.slug}/`}>{personName(author)}</a></span>
+              <span>{i > 0 ? ', ' : ''}<a href={peopleBySlug[author.slug]?.href ?? `/authors/${author.slug}/`}>{personName(author)}</a></span>
             ))}
           </span>
         )}
       </h1>
+
+      {contributors.length > 0 && (
+        <p class="text-body-secondary mb-1">
+          with {contributors.map((person: any, i: number) => (
+            <span>{i > 0 ? ', ' : ''}<a href={person.href}>{personName(person)}</a></span>
+          ))}
+        </p>
+      )}
 
       <p class="text-body-secondary mb-3">
         {[
