@@ -85,7 +85,8 @@ bring it back.
 
 `mediaTypes` entries are `{ type, label, sources: [{ name, url }] }`. The `type` values in
 actual use are `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook`, `printReady`,
-`audiobook`, `wordDoc`.
+`audiobook`, `wordDoc`, `htmlBookEs` (Spanish read-online; its own type so /library gives it
+its own filter button rather than folding it into Read Online).
 
 `type` is what selects the button colour and icon, so a new type must be added in three places
 or it silently falls back to a plain blue button with no icon:

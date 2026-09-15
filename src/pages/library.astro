@@ -10,6 +10,7 @@ const allTags = [...new Set(books.flatMap(b => b.tags || []))].sort();
 
 const typeConfig: Record<string, { label: string; cls: string }> = {
   htmlBook:   { label: 'Read Online', cls: 'btn-success' },
+  htmlBookEs: { label: 'Leer en línea', cls: 'btn-outline-success' },
   pdfBook:    { label: 'PDF',         cls: 'btn-danger'  },
   eBook:      { label: 'eBook',       cls: 'btn-primary' },
   mobi:       { label: 'Mobi',        cls: 'btn-info'    },

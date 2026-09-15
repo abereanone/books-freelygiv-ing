@@ -19,16 +19,15 @@
   path: /static/books/the-divine-name
   cover: cover.jpg
   mediaTypes:
-    # Two separate htmlBook entries, not two sources on one: the template only shows a
-    # source name when an entry has more than one, so a single source renders as its
-    # label alone — which is how the Spanish edition gets a button entirely in Spanish
-    # rather than "Read Online (Leer en español)".
+    # The Spanish edition is its own type, not a second htmlBook entry: /library builds
+    # its filter buttons from `type`, so two htmlBook entries would collapse into one
+    # "Read Online" filter and a Spanish reader could not find it by filtering.
     - type: htmlBook
       label: Read Online
       sources:
         - name: Read
           url: https://freehebrew.online/the-divine-name/
-    - type: htmlBook
+    - type: htmlBookEs
       label: Leer en línea
       sources:
         - name: Leer
