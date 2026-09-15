@@ -105,6 +105,30 @@ The upload script uses the filename verbatim as the R2 key, so the file in `cont
 URL in `book.yaml` must match exactly, capitalisation included. See `docs/BOOK-FILES.md` for
 the full add/replace workflow and troubleshooting.
 
+## Future: multilanguage support
+
+`htmlBookEs` is a stopgap, not the design. Minting a type per language per format does not
+scale — a Spanish PDF and audiobook would need `pdfBookEs` and `audiobookEs`, then the same
+again for every language after that, each one requiring the three-place registration above.
+
+When a second language gets more than one format, replace it with a `lang` field on the
+`mediaTypes` entry (defaulting to `en`), and group the buttons by language on the book page:
+
+```yaml
+- type: htmlBook
+  label: Read Online
+  lang: es          # instead of a separate htmlBookEs type
+  sources:
+    - name: Leer
+      url: https://freehebrew.online/el-nombre-divino/
+```
+
+That keeps one type per *format* and lets /library filter by language independently of
+format — which is the thing a Spanish reader actually wants. Migrating means converting the
+`htmlBookEs` entry on `the-divine-name`, and deciding whether a book's language belongs on
+the whole book (a Spanish-only title) as well as per media type (a Spanish edition of an
+English book). Nothing else uses `htmlBookEs` today, so the migration is one book wide.
+
 ## Site conventions
 
 - **Domains.** The repo folder is `books-freelygiv-ing`, but the canonical site is
