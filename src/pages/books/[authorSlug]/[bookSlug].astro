@@ -15,7 +15,8 @@ export function getStaticPaths() {
 const { book } = Astro.props;
 const descHtml  = newlineToBr(linkify(book.description ?? ''));
 const siteUrl   = Astro.site?.toString().replace(/\/$/, '') ?? '';
-const ogImage   = `${siteUrl}${book.path}/${book.cover}`;
+const ogSlug    = bookSlugFromPath(book.path);
+const ogImage   = `${siteUrl}/static/og/book-${ogSlug}.jpg`;
 
 const btnClass: Record<string, string> = {
   htmlBook:   'btn-success',

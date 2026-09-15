@@ -14,6 +14,7 @@ live in Cloudflare R2, not in git.
 npm run dev        # sync-assets, then astro dev (port 4321)
 npm run build      # sync-assets, then astro build → dist/
 npm run sync       # copy data/src assets into public/ (covers, photos, html)
+npm run og         # regenerate Open Graph cards into public/static/og/
 npm run preview    # serve dist/
 node add-book.js   # interactive CLI that scaffolds data/src/books/<slug>/book.yaml
 
@@ -52,12 +53,35 @@ Books and people are plain YAML on disk, not an Astro content collection. Three 
 `scripts/upload-to-r2.js` additionally scans a third, older `freely-given-books-data/data/src/`
 tree if present locally.
 
+## Open Graph cards
+
+`scripts/build-og.js` composites a 1200×630 card per book and per person into
+`public/static/og/`, plus four montages for /library, /recently-added, /authors and
+/contributors. It runs as part of `dev` and `build`, after `sync-assets` (it reads covers
+and photos out of `public/`, so the order matters).
+
+Social sites crop `og:image` to ~1.91:1, which decapitates a portrait book cover — hence
+the card, which sets the cover beside the title rather than letting it be cropped. It also
+rescues the eleven covers that are only 384px wide.
+
+**The generated cards and `manifest.json` are committed.** Cloudflare's Linux builders have
+no Georgia, so regenerating there would silently restyle every card; with the cards present
+and their signatures matching, the build step is a no-op on CI. A card rebuilds when its
+signature changes — the text on it, its source image's mtime, or the script's own mtime — so
+after retitling a book or adding one, commit the regenerated cards. `npm run og -- --force`
+rebuilds everything, which is what you want after editing the layout.
+
 ## Book YAML shape
 
 Key fields: `title`, `sortTitle` (drives A–Z grouping on /library), `authors` (list of author
 **slugs**; multiple allowed), `contributors` (list of contributor slugs), `year`, `pages`,
 `addedDate` (drives /recently-added), `tags`, `license`, `path` (`/static/books/<slug>`),
 `cover` (filename relative to `path`), and `mediaTypes`.
+
+`hidden: true` removes a book from the entire site — its own page, every listing, the
+sitemap, and the OG montages — while leaving the YAML intact. The filter lives only in
+`getBooks()` (`src/lib/data.js`), so nothing can leak a hidden book. Remove the line to
+bring it back.
 
 `mediaTypes` entries are `{ type, label, sources: [{ name, url }] }`. The `type` values in
 actual use are `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook`, `printReady`,

@@ -34,9 +34,11 @@ function groupByLetter<T>(items: T[], getLetter: (item: T) => string): { letter:
 
 const byTitle  = groupByLetter(books, b => b.sortTitle?.[0]?.toUpperCase() ?? '#');
 const byAuthor = groupByLetter(bookAuthorPairs, ({ person }) => person.lastName?.[0]?.toUpperCase() ?? '#');
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = `${siteUrl}/static/og/library.jpg`;
 ---
 
-<Base title="Library" ogTitle="Library" ogDescription="Browse the full collection of freely given books.">
+<Base ogImage={ogImage} title="Library" ogTitle="Library" ogDescription="Browse the full collection of freely given books.">
   <h1>Library</h1>
 
   <div class="d-flex flex-wrap gap-2 mb-2" id="typeFilter">

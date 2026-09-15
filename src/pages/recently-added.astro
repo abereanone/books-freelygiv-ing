@@ -13,9 +13,11 @@ const books = getBooks()
   .filter((book: any) => book.addedDate)
   .sort((a: any, b: any) => dateValue(b.addedDate) - dateValue(a.addedDate))
   .slice(0, 15);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = `${siteUrl}/static/og/recently-added.jpg`;
 ---
 
-<Base title="Recently Added" ogTitle="Recently Added" ogDescription="The newest additions to Freely Given Books.">
+<Base ogImage={ogImage} title="Recently Added" ogTitle="Recently Added" ogDescription="The newest additions to Freely Given Books.">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>

@@ -3,9 +3,11 @@ import Base from '../../layouts/Base.astro';
 import { getAuthors, personName, personPhotos } from '../../lib/data.js';
 
 const authors = getAuthors().sort((a, b) => a.lastName.localeCompare(b.lastName));
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = `${siteUrl}/static/og/authors.jpg`;
 ---
 
-<Base title="Authors" ogTitle="Authors" ogDescription="Explore the authors whose works are featured on this site.">
+<Base ogImage={ogImage} title="Authors" ogTitle="Authors" ogDescription="Explore the authors whose works are featured on this site.">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>

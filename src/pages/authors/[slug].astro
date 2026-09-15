@@ -20,7 +20,7 @@ const fullName = personName(author);
 const descHtml = newlineToBr(linkify(author.description ?? ''));
 const photos = personPhotos(author);
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
-const ogImage = photos[0] ? `${siteUrl}${photos[0]}` : undefined;
+const ogImage = `${siteUrl}/static/og/person-${author.slug}.jpg`;
 ---
 
 <Base title={fullName} ogTitle={fullName} ogDescription={author.description} ogImage={ogImage} ogType="profile">

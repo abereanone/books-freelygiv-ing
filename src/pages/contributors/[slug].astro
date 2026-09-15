@@ -19,9 +19,11 @@ const books = getBooks()
 const fullName = personName(contributor);
 const descHtml = newlineToBr(linkify(contributor.description ?? ''));
 const photos = personPhotos(contributor);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = `${siteUrl}/static/og/person-${contributor.slug}.jpg`;
 ---
 
-<Base title={fullName} ogTitle={fullName} ogDescription={contributor.description}>
+<Base title={fullName} ogTitle={fullName} ogDescription={contributor.description} ogImage={ogImage} ogImageAlt={fullName} ogType="profile">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>

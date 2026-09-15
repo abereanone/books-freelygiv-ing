@@ -71,19 +71,26 @@ function getBookDirs() {
   return dirs;
 }
 
+/**
+ * Every visible book. `hidden: true` in book.yaml drops the book from the whole site —
+ * its own page, every listing, and the sitemap — while leaving the YAML in place. This
+ * is the only place that filter lives, so nothing can accidentally leak a hidden book.
+ */
 export function getBooks() {
   const authorsBySlug = personBySlug(getAuthors());
 
   return getBookDirs().flatMap(({ bookSlug, bookDir }) => {
     const f = join(bookDir, "book.yaml");
     return existsSync(f)
-      ? readYamlArray(f).map((book) => ({
-          ...book,
-          path: book.path ?? `/static/books/${bookSlug}`,
-          authors: (book.authors || [])
-            .map((author) => normalizeAuthorRef(author, authorsBySlug))
-            .filter(Boolean),
-        }))
+      ? readYamlArray(f)
+          .filter((book) => !book.hidden)
+          .map((book) => ({
+            ...book,
+            path: book.path ?? `/static/books/${bookSlug}`,
+            authors: (book.authors || [])
+              .map((author) => normalizeAuthorRef(author, authorsBySlug))
+              .filter(Boolean),
+          }))
       : [];
   });
 }

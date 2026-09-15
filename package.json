@@ -3,10 +3,11 @@
   "type": "module",
   "scripts": {
     "sync": "node scripts/sync-assets.js",
-    "dev": "node scripts/sync-assets.js && astro dev",
-    "build": "node scripts/sync-assets.js && astro build",
+    "dev": "node scripts/sync-assets.js && node scripts/build-og.js && astro dev",
+    "build": "node scripts/sync-assets.js && node scripts/build-og.js && astro build",
     "preview": "astro preview",
-    "upload": "node scripts/upload-to-r2.js"
+    "upload": "node scripts/upload-to-r2.js",
+    "og": "node scripts/build-og.js"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
