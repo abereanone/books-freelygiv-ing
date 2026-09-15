@@ -1,0 +1,55 @@
+- title: "God's Word Is Not Bound: Copyright & the Stewardship of Scripture"
+  sortTitle: "God's Word Is Not Bound: Copyright & the Stewardship of Scripture"
+  authors:
+    - andrew-case
+  year: 2026
+  addedDate: 2026-09-15
+  pages: 272
+  tags:
+    - modern
+  contributors:
+    - conley-owens
+    - michael-coughlin
+    - jon-here
+  description: |
+    "In the modern world, Scripture is often controlled by copyright. Bible translations, manuscript images, and critical texts are legally protected and treated as proprietary works. But can these systems be reconciled with the Bible's own teaching about the nature of God's Word?"
+
+    A book-length examination of the theology, history, and ethics of Bible distribution. It asks whether contemporary publishing practices reflect faithful stewardship of God's revelation, and takes up the questions that follow: who owns the manuscripts and critical texts, how the Bible societies produced the first copyrighted Bible in America, whether copyright actually protects Scripture from corruption, and what it means that publishers now stand between the church and the text.
+
+    Part One works through the historical and practical case, from the debate over selling licenses to Bible translations, through adaptation and inspiration, the sin of Balaam, and the question of whether Bible publishers are stewards or gatekeepers, closing with the Sunnyvale Statement on the Stewardship of Scripture. Part Two turns to the biblical argument — the Dorean Principle, Jesus' command to freely give, copyright as a perversion of justice, 2 Corinthians 2:17 on commercializing the word of God, the myth of institutional innocence, and why the KJV is not the solution.
+
+    Written by Andrew Case with contributions from Conley Owens, Michael Coughlin, and Jon Here. Published by Selling Jesus and dedicated to the public domain.
+  license: CC0
+  path: /static/books/gods-word-is-not-bound
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: https://sellingjesus.org/word-not-bound/read/
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://sellingjesus.org/book_bound/Gods-Word-Is-Not-Bound.pdf
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://sellingjesus.org/book_bound/Gods-Word-Is-Not-Bound.epub
+        - name: Kindle
+          url: https://mybook.to/word-not-bound-kindle
+        - name: Apple Books
+          url: https://books.apple.com/us/book/gods-word-is-not-bound-copyright-the-stewardship/id6805661986
+        - name: Kobo
+          url: https://www.kobo.com/us/en/ebook/god-s-word-is-not-bound-copyright-the-stewardship-of-scripture
+        - name: Barnes & Noble
+          url: https://www.barnesandnoble.com/w/gods-word-is-not-bound-andrew-case/1151180627
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/andrew-case-and-jon-here-and-conley-owens-and-jonathan-melin/gods-word-is-not-bound/paperback/product-gj4p7qj.html
+        - name: Amazon
+          url: https://www.amazon.com/dp/B0GRNSTRTM
