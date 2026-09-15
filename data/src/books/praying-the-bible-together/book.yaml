@@ -1,7 +1,8 @@
 - title: Praying the Bible Together
   sortTitle: Praying the Bible Together
-  authors:
-    - andrew-case
+  credits:
+    - person: andrew-case
+      role: author
   year: 2022
   addedDate: 2026-05-21
   pages: 233

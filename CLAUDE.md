@@ -34,19 +34,63 @@ a dependency — formatting is by hand/editor.
 Books and people are plain YAML on disk, not an Astro content collection. Three stages:
 
 1. **`data/src/`** is the source of truth.
-   - `data/src/<person-slug>/author.yaml` or `contributor.yaml` + a photo file.
+   - `data/src/<person-slug>/person.yaml` + a photo file. `photo`/`photos` are bare
+     filenames, resolved to `/static/images/people/<slug>/`.
    - `data/src/books/<book-slug>/book.yaml` + `content/` (cover image, optional HTML, and
      the PDF/EPUB/ZIP staging copies).
    - Each YAML file holds a **one-element array**, not a bare mapping — `src/lib/data.js`
      calls `readYamlArray` and ignores anything that isn't an array.
 2. **`scripts/sync-assets.js`** copies covers, HTML, and person photos from `data/src/` into
-   `public/static/{books,images}/`. It runs automatically as part of `dev` and `build`. It
+   `public/static/{books,images/people}/`. It runs automatically as part of `dev` and `build`. It
    deliberately does *not* copy epub/pdf/zip — those are R2's job. Those `public/static/`
-   destinations are gitignored (a handful of older files are still tracked).
+   destinations are gitignored.
 3. **`src/lib/data.js`** reads `data/src/` at build time via `process.cwd()` (not
    `import.meta.url` — Vite rewrites that during `astro build` and breaks path resolution).
-   `getBooks()`, `getAuthors()`, `getContributors()`, and `getBookAuthorPairs()` are the only
-   data entry points; pages import from here rather than touching the filesystem.
+   `getBooks()`, `getPeople()`, `getPeopleWithRole()`, `getPeopleBySlug()` and
+   `getBookAuthorPairs()` are the data entry points; pages import from here rather than
+   touching the filesystem.
+
+## People and roles
+
+A person is one person with one page, `/people/<slug>/`, however they're credited. Roles
+are **not** stored on the person: they come from the `credits` list in each `book.yaml`,
+and `getPeople()` derives each person's `roles` from the visible books.
+
+```yaml
+credits:
+  - person: andrew-case        # a person.yaml slug → linked
+    role: author
+  - person: michael-coughlin
+    role: contributor
+    note: "The Pricelessness of the Word"
+  - name: Jonathan Melin       # name-only: shown as plain text, no page
+    role: contributor
+  - person: courtney-hicks
+    prepared: true             # the edition credit
+```
+
+Two kinds of credit, and a credit carries **at most one of each** — the owner explicitly
+didn't want a list of trades per person:
+- **Book credit**, `role:` — `author`, `contributor` (wrote part of the book) or `foreword`.
+  True of any printing of the book. Co-authors are several `author` credits; the first is
+  primary and supplies the book URL's `[authorSlug]`.
+- **Edition credit**, `prepared: true` — made this free edition. Digitizing, editing,
+  typesetting and formatting are all "preparer"; there is deliberately no `editor` role.
+
+`note` is for contributors (which chapters); leave it off authors. The book page shows a
+"by" line, "with contributions by" / "foreword by" lines, a Contributors list with notes,
+and "About this edition: Prepared by …". `ROLES` in `src/lib/data.js` holds the labels,
+headings and byline phrases; an unknown `person` slug or `role` warns during the build.
+
+A contributor's `note` shows as a hover tooltip on their name in the "with contributions by"
+line (`src/components/CreditNames.astro`), not as a section — the owner didn't want the
+format buttons pushed down.
+
+`/people/` is the only people listing (`src/components/PeopleDirectory.astro`), with filter
+buttons kept in step with `?filter=authors|contributors|forewords|preparers`. The Authors menu
+item links to `/people/?filter=authors`; there are no /authors or /contributors pages.
+`public/_redirects` 301s both (and the old `/authors/<slug>/`, `/contributors/<slug>/` person
+URLs), and `redirects` in `astro.config.mjs` covers `/authors` for `astro dev`.
 
 `getBookDirs()` supports two layouts: the current `data/src/books/<slug>/` and a legacy
 `data/src/<person-slug>/<book-slug>/` (any directory containing a `book.yaml`).
@@ -56,8 +100,7 @@ tree if present locally.
 ## Open Graph cards
 
 `scripts/build-og.js` composites a 1200×630 card per book and per person into
-`public/static/og/`, plus four montages for /library, /recently-added, /authors and
-/contributors. It runs as part of `dev` and `build`, after `sync-assets` (it reads covers
+`public/static/og/`, plus three montages for /library, /recently-added and /people. It runs as part of `dev` and `build`, after `sync-assets` (it reads covers
 and photos out of `public/`, so the order matters).
 
 Social sites crop `og:image` to ~1.91:1, which decapitates a portrait book cover — hence
@@ -73,8 +116,7 @@ rebuilds everything, which is what you want after editing the layout.
 
 ## Book YAML shape
 
-Key fields: `title`, `sortTitle` (drives A–Z grouping on /library), `authors` (list of author
-**slugs**; multiple allowed), `contributors` (list of contributor slugs), `year`, `pages`,
+Key fields: `title`, `sortTitle` (drives A–Z grouping on /library), `credits` (see "People and roles"), `year`, `pages`,
 `addedDate` (drives /recently-added), `tags`, `license`, `path` (`/static/books/<slug>`),
 `cover` (filename relative to `path`), and `mediaTypes`.
 

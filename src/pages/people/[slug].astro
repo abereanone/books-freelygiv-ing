@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
 import ShareButton from '../../components/ShareButton.astro';
-import { ROLES, getPeople, getBooks, bookRoleSlugs, linkify, newlineToBr, personName, personPhotos, personAvatar, personRoleLabel } from '../../lib/data.js';
+import { ROLES, getPeople, getBooks, bookCredits, linkify, newlineToBr, personName, personPhotos, personAvatar, personRoleLabel } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return getPeople().map(person => ({ params: { slug: person.slug }, props: { person } }));
@@ -10,14 +10,23 @@ export function getStaticPaths() {
 
 const { person } = Astro.props;
 
-// One section per role the person holds, e.g. "Books Written" then "Books Added".
+// One section per role the person holds — "Books Written", "Contributed To", … — each
+// book carrying the credit's note, if it has one.
 const books = getBooks().sort((a: any, b: any) => a.sortTitle.localeCompare(b.sortTitle));
 const sections = ROLES
-  .map(role => ({ role, books: books.filter((book: any) => bookRoleSlugs(book, role.key).includes(person.slug)) }))
-  .filter(section => section.books.length);
+  .map(role => ({
+    role,
+    entries: books.flatMap((book: any) => {
+      const credit = bookCredits(book, role.key).find((c: any) => c.slug === person.slug);
+      return credit ? [{ book, note: role.key === 'preparer' ? null : credit.note }] : [];
+    }),
+  }))
+  .filter(section => section.entries.length);
 
-// Breadcrumb goes through the listing for the person's first role that has one.
-const listRole = ROLES.find(role => role.listPath && person.roles.includes(role.key));
+// Authors go back to the Authors view; everyone else to People.
+const listLink = person.roles.includes('author')
+  ? { href: '/people/?filter=authors', label: 'Authors' }
+  : { href: '/people/', label: 'People' };
 
 const fullName = personName(person);
 const roleLabel = personRoleLabel(person);
@@ -33,7 +42,7 @@ const ogImage = `${siteUrl}/static/og/person-${person.slug}.jpg`;
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>
-      {listRole && <li class="breadcrumb-item"><a href={listRole.listPath}>{listRole.plural}</a></li>}
+      <li class="breadcrumb-item"><a href={listLink.href}>{listLink.label}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{fullName}</li>
     </ol>
   </nav>
@@ -62,13 +71,14 @@ const ogImage = `${siteUrl}/static/og/person-${person.slug}.jpg`;
     </div>
   </div>
 
-  {sections.map(({ role, books }) => (
+  {sections.map(({ role, entries }) => (
     <section class="mb-4">
       <h2 class="mb-3">{role.booksHeading}</h2>
       <div class="row row-cols-1 row-cols-md-2 g-3">
-        {books.map((book: any) => (
+        {entries.map(({ book, note }: any) => (
           <div class="col">
             <BookItem book={book} grid />
+            {note && <p class="small text-body-secondary mt-1 mb-0 ps-2">{note}</p>}
           </div>
         ))}
       </div>

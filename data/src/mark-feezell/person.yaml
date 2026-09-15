@@ -1,7 +1,7 @@
 - firstName: Mark
   lastName: Feezell
   slug: mark-feezell
-  photo: "/static/images/authors/mark-feezell/mark-feezell.jpg"
+  photo: "mark-feezell.jpg"
   description: >
     Hi! I'm Mark.
 

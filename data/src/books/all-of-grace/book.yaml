@@ -1,14 +1,15 @@
 - title: All of Grace
   sortTitle: All of Grace
-  authors:
-    - charles-spurgeon
+  credits:
+    - person: charles-spurgeon
+      role: author
+    - person: courtney-hicks
+      prepared: true
   year: 1886
   addedDate: 2026-05-28
   pages: 140
   tags:
     - classic
-  contributors:
-    - courtney-hicks
   description: |
     Reader, do you mean business in reading these pages? If so, we are agreed at the outset; but nothing short of your finding Christ and Heaven is the business aimed at here. Oh that we may seek this together! I do so by dedicating this little book with prayer. Will not you join me by looking up to God, and asking Him to bless you while you read? Providence has put these pages in your way, you have a little spare time in which to read them, and you feel willing to give your attention to them. These are good signs. Who knows but the set time of blessing is come for you? At any rate, "The Holy Ghost saith, Today, if ye will hear his voice, harden not your hearts."
   license: CC0

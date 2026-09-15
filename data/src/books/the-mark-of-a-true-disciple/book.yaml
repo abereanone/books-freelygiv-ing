@@ -1,7 +1,8 @@
 - title: The Mark of a True Disciple
   sortTitle: Mark of a True Disciple
-  authors:
-    - shelby-pritchard
+  credits:
+    - person: shelby-pritchard
+      role: author
   year: 2024
   addedDate: 2026-05-21
   pages: 358

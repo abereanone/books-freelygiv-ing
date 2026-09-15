@@ -1,7 +1,7 @@
 - firstName: Richard
   lastName: Sibbes
   slug: richard-sibbes
-  photo: "/static/images/authors/richard-sibbes/richard-sibbes.jpg"
+  photo: "richard-sibbes.jpg"
   description: >
     Richard Sibbes (1577–1635) was an English Puritan theologian, born in Tostock, Suffolk,
     the son of a wheelwright. He studied at St John's College, Cambridge and served as lecturer

@@ -14,8 +14,7 @@ dist
 *.bat
 dist-check
 public/static/books/
-public/static/images/authors/
-public/static/images/contributors/
+public/static/images/people/
 freely-given-books-data/
 tmp
 _downloads

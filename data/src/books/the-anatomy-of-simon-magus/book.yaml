@@ -1,15 +1,17 @@
 - title: The Anatomy of Simon Magus
   sortTitle: Anatomy of Simon Magus
-  authors:
-    - anonymous
-    - conley-owens
+  credits:
+    - person: anonymous
+      role: author
+    - person: conley-owens
+      role: foreword
+    - person: courtney-hicks
+      prepared: true
   year: 1700
   addedDate: 2026-05-28
   pages: 124
   tags:
     - classic
-  contributors:
-    - courtney-hicks
   description: |
     A modernized edition of a 1700 Anglican treatise on simony, with a foreword by Conley Owens. The Anatomy of Simon Magus examines the buying and selling of ecclesiastical office and its consequences for the church.
   license: CC0

@@ -2,7 +2,8 @@
 import Base from '../../../layouts/Base.astro';
 import FormatIcon from '../../../components/FormatIcon.astro';
 import ShareButton from '../../../components/ShareButton.astro';
-import { getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, personName, getPeopleBySlug } from '../../../lib/data.js';
+import CreditNames from '../../../components/CreditNames.astro';
+import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
 
 export function getStaticPaths() {
   return getBooks().map((book: any) => ({
@@ -15,10 +16,13 @@ export function getStaticPaths() {
 }
 
 const { book } = Astro.props;
-const peopleBySlug = getPeopleBySlug();
-const contributors = (book.contributors || [])
-  .map((slug: string) => peopleBySlug[slug])
-  .filter(Boolean);
+const authorCredits   = bookCredits(book, 'author');
+const preparers       = bookCredits(book, 'preparer');
+// Book credits below the byline: "with contributions by …", "foreword by …".
+const secondaryLines  = ROLES
+  .filter(role => role.key === 'contributor' || role.key === 'foreword')
+  .map(role => ({ role, credits: bookCredits(book, role.key) }))
+  .filter(line => line.credits.length);
 const descHtml  = newlineToBr(linkify(book.description ?? ''));
 const siteUrl   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogSlug    = bookSlugFromPath(book.path);
@@ -63,21 +67,14 @@ const btnClass: Record<string, string> = {
 
       <h1 class="mb-1">
         {book.title}
-        {book.authors?.[0] && (
-          <span class="fs-5 fw-normal text-body-secondary ms-2">by {book.authors.map((author: any, i: number) => (
-              <span>{i > 0 ? ', ' : ''}<a href={peopleBySlug[author.slug]?.href ?? `/authors/${author.slug}/`}>{personName(author)}</a></span>
-            ))}
-          </span>
+        {authorCredits.length > 0 && (
+          <span class="fs-5 fw-normal text-body-secondary ms-2">by <CreditNames credits={authorCredits} /></span>
         )}
       </h1>
 
-      {contributors.length > 0 && (
-        <p class="text-body-secondary mb-1">
-          with {contributors.map((person: any, i: number) => (
-            <span>{i > 0 ? ', ' : ''}<a href={person.href}>{personName(person)}</a></span>
-          ))}
-        </p>
-      )}
+      {secondaryLines.map(({ role, credits }) => (
+        <p class="text-body-secondary mb-1">{role.byline} <CreditNames credits={credits} /></p>
+      ))}
 
       <p class="text-body-secondary mb-3">
         {[
@@ -129,6 +126,13 @@ const btnClass: Record<string, string> = {
         </div>
       </div>
     </div>
+
+    {preparers.length > 0 && (
+      <div class="book-edition mt-4">
+        <h3>About this edition</h3>
+        <p class="mb-0">Prepared by <CreditNames credits={preparers} />.</p>
+      </div>
+    )}
 
     <div class="mt-5">
       <a href="/library" class="btn btn-outline-secondary">

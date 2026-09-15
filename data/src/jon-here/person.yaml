@@ -1,7 +1,7 @@
 - firstName: "Jon"
   lastName: "Here"
   slug: "jon-here"
-  photo: "/static/images/authors/jon-here/jon-here.webp"
+  photo: "jon-here.webp"
   description: >
     Jon has served as a pastor, a missionary in South-East Asia, and went on to start his own company for creating apps for mission. Every app his company makes is free to use and open source.
 

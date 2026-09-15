@@ -20,7 +20,7 @@ import { createHash } from "crypto";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
-import { getBooks, getAuthors, getContributors, personName, personPhotos } from "../src/lib/data.js";
+import { getBooks, getPeople, personName, personPhotos, personRoleLabel } from "../src/lib/data.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -383,8 +383,8 @@ async function main() {
   mkdirSync(OG_DIR, { recursive: true });
 
   const books = getBooks();
-  const authors = getAuthors();
-  const contributors = getContributors();
+  const allPeople = getPeople();
+  const credited = allPeople.filter((p) => p.roles.length);
 
   let made = 0;
   let kept = 0;
@@ -413,10 +413,8 @@ async function main() {
       : skipped.push(`book ${slug} (no cover in public/)`);
   }
 
-  const people = [
-    ...authors.map((p) => [p, "Author"]),
-    ...contributors.map((p) => [p, "Contributor"]),
-  ];
+  // One card per person, naming every role they hold: "Author & Contributor".
+  const people = allPeople.map((p) => [p, personRoleLabel(p, " & ")]);
 
   for (const [person] of people) {
     const rel = personPhotos(person, 1)[0];
@@ -440,7 +438,7 @@ async function main() {
     }
     (await personCard(person, role, join(OG_DIR, name)))
       ? made++
-      : skipped.push(`${role.toLowerCase()} ${person.slug}`);
+      : skipped.push(`person ${person.slug}`);
   }
 
   // Index + listing pages.
@@ -469,16 +467,9 @@ async function main() {
       subtitle: "The newest additions",
     },
     {
-      name: "authors.jpg",
-      images: photosOf(authors),
-      title: "Authors",
-      subtitle: `${authors.length} authors`,
-      round: true,
-    },
-    {
-      name: "contributors.jpg",
-      images: photosOf(contributors),
-      title: "Contributors",
+      name: "people.jpg",
+      images: photosOf(credited),
+      title: "People",
       subtitle: "The people behind the books",
       round: true,
     },

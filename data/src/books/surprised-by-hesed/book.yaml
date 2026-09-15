@@ -1,7 +1,8 @@
 - title: Surprised by Hesed
   sortTitle: Surprised by Hesed
-  authors:
-    - mark-feezell
+  credits:
+    - person: mark-feezell
+      role: author
   year: 2024
   addedDate: 2026-05-21
   pages: 112

@@ -1,7 +1,8 @@
 - title: "Luther's Works: The Freely Given Edition. Volume 1519, Part 1"
   sortTitle: "Luther's Works: The Freely Given Edition. Volume 1519, Part 1"
-  authors:
-    - martin-luther
+  credits:
+    - person: martin-luther
+      role: author
   year: 1519
   addedDate: 2026-05-21
   pages: 178

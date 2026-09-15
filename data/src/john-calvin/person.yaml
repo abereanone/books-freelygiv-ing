@@ -1,7 +1,7 @@
 - firstName: "John"
   lastName: "Calvin"
   slug: "john-calvin"
-  photo: "/static/images/authors/john-calvin/john-calvin.jpg"
+  photo: "john-calvin.jpg"
   photoCrop: "50% 33% 100%"  # full width, flush with the top edge — nothing trimmed
   description: >
     John Calvin (1509-1564) was a French theologian, pastor, and reformer whose work shaped

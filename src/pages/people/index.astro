@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import PeopleDirectory from '../../components/PeopleDirectory.astro';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = `${siteUrl}/static/og/people.jpg`;
+---
+
+<Base ogImage={ogImage} title="People" ogTitle="People" ogDescription="The authors, contributors and preparers behind these freely given books.">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">People</li>
+    </ol>
+  </nav>
+
+  <h1>People</h1>
+
+  <PeopleDirectory />
+</Base>

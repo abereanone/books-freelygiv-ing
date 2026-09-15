@@ -1,0 +1,73 @@
+---
+// The one listing of people, at /people/. `?filter=authors` (or contributors, forewords,
+// preparers) preselects a filter, and clicking a button keeps the URL in step so a
+// filtered view can be linked. The Authors menu item is just /people/?filter=authors.
+import { ROLES, getPeople, personName, personAvatar } from '../lib/data.js';
+
+const people = getPeople()
+  .filter((person: any) => person.roles.length)
+  .sort((a: any, b: any) => a.lastName.localeCompare(b.lastName));
+const filters = ROLES.filter(role => people.some((person: any) => person.roles.includes(role.key)));
+---
+
+<div class="d-flex flex-wrap gap-2 mb-4" id="peopleFilter">
+  <button type="button" class="btn btn-sm btn-outline-secondary active" aria-pressed="true" data-role="all">Everyone</button>
+  {filters.map(role => (
+    <button type="button" class="btn btn-sm btn-outline-secondary" aria-pressed="false" data-role={role.key}>{role.plural}</button>
+  ))}
+</div>
+
+<div class="row row-cols-2 row-cols-md-4 g-3" id="peopleGrid">
+  {people.map((person: any) => {
+    const photo = personAvatar(person);
+    return (
+      <div class="col" data-roles={person.roles.join(' ')}>
+        <a href={person.href} class="card h-100 text-decoration-none text-center">
+          {photo && (
+            <img
+              src={photo}
+              class="card-img-top p-3 rounded-circle"
+              style="aspect-ratio: 1; object-fit: cover;"
+              alt={personName(person)}
+            />
+          )}
+          <div class="card-body">
+            <h5 class="card-title">{personName(person)}</h5>
+          </div>
+        </a>
+      </div>
+    );
+  })}
+</div>
+
+<script>
+  const cards = document.querySelectorAll<HTMLElement>('#peopleGrid [data-roles]');
+  const buttons = document.querySelectorAll<HTMLButtonElement>('#peopleFilter button[data-role]');
+  const roles = [...buttons].map(btn => btn.dataset.role!);
+
+  // The URL uses plurals (?filter=authors); role keys are singular. Accept either.
+  const toRole = (value: string | null) => {
+    const v = (value ?? '').toLowerCase();
+    return roles.find(role => role !== 'all' && (v === role || v === `${role}s`)) ?? 'all';
+  };
+
+  function show(role: string, updateUrl: boolean) {
+    buttons.forEach(btn => {
+      const on = btn.dataset.role === role;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+    cards.forEach(card => {
+      card.hidden = role !== 'all' && !card.dataset.roles!.split(' ').includes(role);
+    });
+    if (updateUrl) {
+      const url = new URL(location.href);
+      if (role === 'all') url.searchParams.delete('filter');
+      else url.searchParams.set('filter', `${role}s`);
+      history.replaceState(null, '', url);
+    }
+  }
+
+  buttons.forEach(btn => btn.addEventListener('click', () => show(btn.dataset.role!, true)));
+  show(toRole(new URLSearchParams(location.search).get('filter')), false);
+</script>

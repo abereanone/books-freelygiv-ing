@@ -1,7 +1,8 @@
 - title: "The Doctrine of Simony: A Theological Retrieval and Appraisal"
   sortTitle: "Doctrine of Simony: A Theological Retrieval and Appraisal"
-  authors:
-    - conley-owens
+  credits:
+    - person: conley-owens
+      role: author
   year: 2026
   addedDate: 2026-09-15
   pages: 332

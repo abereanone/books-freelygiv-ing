@@ -10,4 +10,9 @@ export default defineConfig({
   output: "static",
   site,
   integrations: [sitemap()],
+  // Authors is a filter on /people/, not a page. On Cloudflare public/_redirects answers
+  // first with a real 301; this covers `astro dev` and any host without _redirects.
+  redirects: {
+    "/authors": "/people/?filter=authors",
+  },
 });

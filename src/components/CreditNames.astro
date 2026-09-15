@@ -1,0 +1,34 @@
+---
+// A comma-separated run of credited names: linked when the person has a page, plain
+// text for name-only credits. A credit's note (which chapters, say) shows as a tooltip
+// on the name rather than taking room on the page; name-only credits get a dotted
+// underline and focus so the note is still reachable by keyboard and tap.
+interface Props { credits: any[] }
+const { credits } = Astro.props;
+---
+{credits.map((credit: any, i: number) => {
+  const tip = credit.note ? { 'data-bs-toggle': 'tooltip', 'data-bs-title': credit.note, title: credit.note } : {};
+  return (
+    <span>{i > 0 ? ', ' : ''}{credit.href
+      ? <a href={credit.href} {...tip}>{credit.name}</a>
+      : credit.note
+        ? <span class="credit-note" tabindex="0" {...tip}>{credit.name}</span>
+        : credit.name}</span>
+  );
+})}
+
+<style>
+  .credit-note {
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    cursor: help;
+  }
+</style>
+
+<script>
+  // Bootstrap's tooltips are opt-in. The native title attribute is the fallback if this
+  // never runs; Bootstrap moves it aside once the tooltip is created.
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+    (window as any).bootstrap?.Tooltip.getOrCreateInstance(el);
+  });
+</script>

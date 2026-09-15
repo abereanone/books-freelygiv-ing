@@ -1,16 +1,25 @@
 - title: "God's Word Is Not Bound: Copyright & the Stewardship of Scripture"
   sortTitle: "God's Word Is Not Bound: Copyright & the Stewardship of Scripture"
-  authors:
-    - andrew-case
+  credits:
+    - person: andrew-case
+      role: author
+    - person: conley-owens
+      role: contributor
+      note: "The debate (affirmative); Who Owns the Manuscripts and Critical Texts?; Adaptation & Inspiration; The Sin of Balaam; Copyright & Jesus' Command to Freely Give; 2 Corinthians 2:17 (with Andrew Case)"
+    - name: Jonathan Melin
+      role: contributor
+      note: "The debate (negative)"
+    - person: michael-coughlin
+      role: contributor
+      note: "The Pricelessness of the Word"
+    - person: jon-here
+      role: contributor
+      note: "Bible Publishers: Stewards or Gatekeepers?"
   year: 2026
   addedDate: 2026-09-15
   pages: 272
   tags:
     - modern
-  contributors:
-    - conley-owens
-    - michael-coughlin
-    - jon-here
   description: |
     "In the modern world, Scripture is often controlled by copyright. Bible translations, manuscript images, and critical texts are legally protected and treated as proprietary works. But can these systems be reconciled with the Bible's own teaching about the nature of God's Word?"
 

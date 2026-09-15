@@ -1,7 +1,8 @@
 - title: Cristina of Aspen Aisle
   sortTitle: Cristina of Aspen Aisle
-  authors:
-    - andrew-case
+  credits:
+    - person: andrew-case
+      role: author
   year: 2018
   addedDate: 2026-05-21
   tags:

@@ -1,7 +1,8 @@
 - title: The Dorean Principle
   sortTitle: Dorean Principle
-  authors:
-    - conley-owens
+  credits:
+    - person: conley-owens
+      role: author
   year: 2021
   addedDate: 2026-05-21
   pages: 179

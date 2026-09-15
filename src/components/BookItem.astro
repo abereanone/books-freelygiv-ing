@@ -43,7 +43,7 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
         {showAuthors && book.authors?.[0] && (
           <div class="text-body-secondary small mb-1" style="position:relative;z-index:2;">
             {book.authors.map((author: any, i: number) => (
-              <span>{i > 0 ? ', ' : ''}<a href={`/authors/${author.slug}/`} class="text-reset">{personListName(author)}</a></span>
+              <span>{i > 0 ? ', ' : ''}{author.href ? <a href={author.href} class="text-reset">{personListName(author)}</a> : personListName(author)}</span>
             ))}
           </div>
         )}
@@ -76,11 +76,11 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
         {(!compact || showAuthors) && book.authors?.[0] && (
           <p class="mb-1">
             {book.authors.map((author: any, i: number) => (
-              <span>{i > 0 ? ', ' : ''}<a
-                href={`/authors/${author.slug}/`}
+              <span>{i > 0 ? ', ' : ''}{author.href ? <a
+                href={author.href}
                 class="text-reset"
                 onclick="event.stopPropagation()"
-              >{personName(author)}</a></span>
+              >{personName(author)}</a> : personName(author)}</span>
             ))}
           </p>
         )}

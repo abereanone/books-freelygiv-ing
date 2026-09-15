@@ -1,7 +1,8 @@
 - firstName: Thomas
   lastName: Watson
   slug: thomas-watson
-  photo: "/static/images/authors/thomas-watson/thomas-watson.jpg"
+  photo: "thomas-watson.jpg"
+  photoCrop: "45.5% 33% 86%"  # head centred across; some headroom above the cap, more below the chin
   description: >
     Thomas Watson (c. 1620–1686) was a Puritan minister and prolific author, born in England
     and educated at Emmanuel College, Cambridge. He served as rector of St. Stephen's Walbrook

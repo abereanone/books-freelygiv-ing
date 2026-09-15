@@ -1,7 +1,7 @@
 - firstName: Thomas
   lastName: Brooks
   slug: thomas-brooks
-  photo: "/static/images/authors/thomas-brooks/thomas-brooks.jpg"
+  photo: "thomas-brooks.jpg"
   description: >
     Thomas Brooks (1608–1680) was an English Puritan preacher and writer, educated at
     Emmanuel College, Cambridge. After serving as a chaplain at sea during the Civil War,

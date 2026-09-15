@@ -1,7 +1,7 @@
 - firstName: Matthew
   lastName: Statler
   slug: matthew-statler
-  photo: "/static/images/authors/matthew-statler/matthew-statler.jpg"
+  photo: "matthew-statler.jpg"
   photoCrop: "46% 33% 64%"  # head spans y13-47%, centred x45%; framed to match the other portraits
   description: >
     Matthew Statler is a pastor and biblical counselor at Sierra Vista Baptist Church,

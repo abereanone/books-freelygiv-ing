@@ -1,9 +1,18 @@
 - title: Abolish the Jesus Trade
   sortTitle: Abolish the Jesus Trade
-  authors:
-    - andrew-case
-    - conley-owens
-    - jon-here
+  credits:
+    - person: andrew-case
+      role: author
+    - person: conley-owens
+      role: author
+    - person: jon-here
+      role: author
+    - name: Maurice A. Robinson
+      role: contributor
+      note: "The Bondage of the Word: Copyright and the Bible"
+    - name: Sarah Owens
+      role: contributor
+      note: "ACBC Counseling Fees"
   year: 2025
   addedDate: 2026-05-21
   pages: 377

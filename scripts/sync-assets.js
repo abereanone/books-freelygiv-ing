@@ -1,5 +1,5 @@
 /**
- * Copies book content files and author/contributor photos from books-data into public/.
+ * Copies book content files and person photos from books-data into public/.
  * Run automatically via `npm run dev` and `npm run build`.
  */
 import { existsSync, readdirSync, statSync, mkdirSync, copyFileSync } from "fs";
@@ -45,32 +45,15 @@ for (const personSlug of readdirSync(DATA_SRC)) {
   const personDir = join(DATA_SRC, personSlug);
   if (!statSync(personDir).isDirectory()) continue;
 
-  // A person can be both — authored one book and contributed to another. Each yaml
-  // points its photo at its own folder, so copy into every folder the person has a
-  // yaml for, not just one. Picking a single folder would 404 the other page's photo.
-  const imageFolders = [];
-  if (existsSync(join(personDir, "author.yaml"))) imageFolders.push("authors");
-  if (existsSync(join(personDir, "contributor.yaml"))) imageFolders.push("contributors");
-  if (!imageFolders.length) imageFolders.push("contributors");
-
-  // Copy person photo
+  // One folder per person whatever their roles — personImageDir() in src/lib/data.js
+  // resolves the photo filenames in person.yaml against it.
   for (const file of readdirSync(personDir)) {
     if (
       IMAGE_EXTS.has(extname(file).toLowerCase()) &&
       statSync(join(personDir, file)).isFile()
     ) {
-      for (const imageFolder of imageFolders) {
-        const dest = join(
-          PUBLIC,
-          "static",
-          "images",
-          imageFolder,
-          personSlug,
-          file,
-        );
-        copyFile(join(personDir, file), dest);
-        copied++;
-      }
+      copyFile(join(personDir, file), join(PUBLIC, "static", "images", "people", personSlug, file));
+      copied++;
     }
   }
 }

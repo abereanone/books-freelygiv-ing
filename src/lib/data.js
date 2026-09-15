@@ -20,17 +20,60 @@ function readYamlArray(file) {
   return Array.isArray(parsed) ? parsed : [];
 }
 
-export function getAuthors() {
-  return listPersonSlugs().flatMap((slug) => {
-    const f = join(DATA_SRC, slug, "author.yaml");
-    return existsSync(f) ? readYamlArray(f) : [];
-  });
+/**
+ * The ways someone can be credited on a book, in display order. A person is one person with
+ * one page at /people/<slug>/; roles aren't declared on the person — they fall out of the
+ * `credits` lists in book.yaml.
+ *
+ * There are two kinds of credit, and a credit holds at most one of each:
+ *  - a book credit, `role:` — author, contributor or foreword. Who made the book; true of
+ *    any printing of it.
+ *  - the edition credit, `prepared: true` — who made this free edition: digitizing,
+ *    editing, typesetting, formatting. Deliberately one role, not a list of trades.
+ *
+ * `byline` is the phrase the book page puts before the names.
+ */
+export const ROLES = [
+  { key: "author",      label: "Author",      plural: "Authors",          booksHeading: "Books Written",  byline: "by" },
+  { key: "contributor", label: "Contributor", plural: "Contributors",     booksHeading: "Contributed To", byline: "with contributions by" },
+  { key: "foreword",    label: "Foreword",    plural: "Foreword Writers", booksHeading: "Forewords",      byline: "foreword by" },
+  { key: "preparer",    label: "Preparer",    plural: "Preparers",        booksHeading: "Books Prepared", byline: "prepared by" },
+];
+
+const BOOK_ROLES = new Set(["author", "contributor", "foreword"]);
+
+/** Whether a credit carries a ROLES key — `preparer` is the `prepared` flag, the rest `role`. */
+export function creditHasRole(credit, roleKey) {
+  return roleKey === "preparer" ? credit.prepared : credit.role === roleKey;
 }
 
-export function getContributors() {
+/** A book's credits in one role, in the order book.yaml lists them. */
+export function bookCredits(book, roleKey) {
+  return (book.credits || []).filter((credit) => creditHasRole(credit, roleKey));
+}
+
+/** Where a person's photos are synced to by scripts/sync-assets.js. */
+export function personImageDir(slug) {
+  return `/static/images/people/${slug}`;
+}
+
+/** Each data/src/<slug>/person.yaml, with its photo filenames resolved to site paths. */
+function readPeople() {
   return listPersonSlugs().flatMap((slug) => {
-    const f = join(DATA_SRC, slug, "contributor.yaml");
-    return existsSync(f) ? readYamlArray(f) : [];
+    const f = join(DATA_SRC, slug, "person.yaml");
+    if (!existsSync(f)) return [];
+    return readYamlArray(f).map((person) => {
+      const resolve = (photo) =>
+        typeof photo === "string" && !photo.startsWith("/")
+          ? `${personImageDir(person.slug)}/${photo}`
+          : photo;
+      return {
+        ...person,
+        href: `/people/${person.slug}/`,
+        photo: resolve(person.photo),
+        photos: Array.isArray(person.photos) ? person.photos.map(resolve) : resolve(person.photos),
+      };
+    });
   });
 }
 
@@ -38,11 +81,57 @@ function personBySlug(people) {
   return Object.fromEntries(people.map((person) => [person.slug, person]));
 }
 
-function normalizeAuthorRef(ref, authorsBySlug) {
-  if (typeof ref === "string")
-    return authorsBySlug[ref] ?? { slug: ref, firstName: ref, lastName: "" };
-  if (ref?.slug) return authorsBySlug[ref.slug] ?? ref;
-  return ref;
+/**
+ * One `credits` entry from book.yaml, resolved. `person: <slug>` links to a person.yaml;
+ * `name: <text>` credits someone who has no page. An unknown slug is a typo, not a
+ * name-only credit, so it warns at build time and falls back to showing the slug.
+ */
+function normalizeCredit(entry, peopleBySlug, bookSlug) {
+  const person = entry.person ? peopleBySlug[entry.person] : null;
+  if (entry.person && !person)
+    console.warn(`[data] ${bookSlug}: no data/src/${entry.person}/person.yaml for credit`);
+  if (entry.role && !BOOK_ROLES.has(entry.role))
+    console.warn(`[data] ${bookSlug}: unknown credit role "${entry.role}"`);
+
+  const name = person ? personName(person) : (entry.name ?? entry.person ?? "");
+  return {
+    slug: person?.slug ?? null,
+    person: person ?? null,
+    name,
+    href: person?.href ?? null,
+    role: entry.role ?? null,
+    prepared: entry.prepared === true,
+    note: entry.note ?? null,
+  };
+}
+
+/** A credit as the author-shaped object BookItem, OG cards and book URLs expect. */
+function creditAsAuthor(credit) {
+  if (credit.person) return credit.person;
+  const slug = credit.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return { slug, firstName: credit.name, lastName: "", href: null };
+}
+
+/** Every person, with `roles` — the ROLES keys they hold on at least one visible book. */
+export function getPeople() {
+  const books = getBooks();
+  return readPeople().map((person) => ({
+    ...person,
+    roles: ROLES.map((role) => role.key).filter((key) =>
+      books.some((book) => bookCredits(book, key).some((credit) => credit.slug === person.slug)),
+    ),
+  }));
+}
+
+export function getPeopleWithRole(roleKey) {
+  return getPeople().filter((person) => person.roles.includes(roleKey));
+}
+
+/** "Author · Contributor" — a person's roles as a display string. */
+export function personRoleLabel(person, separator = " · ") {
+  return ROLES.filter((role) => person.roles?.includes(role.key))
+    .map((role) => role.label)
+    .join(separator);
 }
 
 function getBookDirs() {
@@ -77,53 +166,43 @@ function getBookDirs() {
  * is the only place that filter lives, so nothing can accidentally leak a hidden book.
  */
 export function getBooks() {
-  const authorsBySlug = personBySlug(getAuthors());
+  const peopleBySlug = personBySlug(readPeople());
 
   return getBookDirs().flatMap(({ bookSlug, bookDir }) => {
     const f = join(bookDir, "book.yaml");
     return existsSync(f)
       ? readYamlArray(f)
           .filter((book) => !book.hidden)
-          .map((book) => ({
-            ...book,
-            path: book.path ?? `/static/books/${bookSlug}`,
-            authors: (book.authors || [])
-              .map((author) => normalizeAuthorRef(author, authorsBySlug))
-              .filter(Boolean),
-          }))
+          .map((book) => {
+            const credits = (book.credits || []).map((entry) =>
+              normalizeCredit(entry, peopleBySlug, bookSlug),
+            );
+            return {
+              ...book,
+              path: book.path ?? `/static/books/${bookSlug}`,
+              credits,
+              // Derived, for everything that only wants the byline. The first author is the
+              // primary one and supplies the book URL's [authorSlug].
+              authors: credits.filter((credit) => credit.role === "author").map(creditAsAuthor),
+            };
+          })
       : [];
   });
 }
 
-/** One {book, person} pair per primary author and per contributor. Pre-sorted by lastName. */
+/**
+ * One {book, person} pair per person with a page who wrote any of a book — author,
+ * contributor or foreword; preparers aren't the book's writers. Pre-sorted by lastName.
+ */
 export function getBookAuthorPairs() {
-  const allPeople = personBySlug([...getAuthors(), ...getContributors()]);
-
   const pairs = [];
   const seen = new Set();
   for (const book of getBooks()) {
-    for (const author of book.authors || []) {
-      const key = `${book.path}::${author.slug}`;
-      if (!seen.has(key)) {
-        seen.add(key);
-        pairs.push({ book, person: author });
-      }
-    }
-    for (const contribSlug of book.contributors || []) {
-      const key = `${book.path}::${contribSlug}`;
-      if (!seen.has(key)) {
-        seen.add(key);
-        const p = allPeople[contribSlug];
-        if (p)
-          pairs.push({
-            book,
-            person: {
-              slug: p.slug,
-              firstName: p.firstName,
-              lastName: p.lastName,
-            },
-          });
-      }
+    for (const credit of book.credits) {
+      const key = `${book.path}::${credit.slug}`;
+      if (!credit.person || !BOOK_ROLES.has(credit.role) || seen.has(key)) continue;
+      seen.add(key);
+      pairs.push({ book, person: credit.person });
     }
   }
 
@@ -166,24 +245,9 @@ export function newlineToBr(text) {
     .join("\n");
 }
 
-/**
- * Every person by slug, with the page to link them to.
- *
- * A person is just a person: they may be an author on one book and a contributor on
- * another, or both at once. The site still routes them to /authors/ or /contributors/
- * depending on which yaml they have, so resolve the link here rather than assuming —
- * hardcoding /authors/<slug>/ 404s for anyone defined only as a contributor.
- * When someone has both, the author page wins; it's the fuller one.
- */
+/** Every person by slug, each carrying `href` (their /people/<slug>/ page) and `roles`. */
 export function getPeopleBySlug() {
-  const map = {};
-  for (const person of getContributors()) {
-    map[person.slug] = { ...person, href: `/contributors/${person.slug}/` };
-  }
-  for (const person of getAuthors()) {
-    map[person.slug] = { ...person, href: `/authors/${person.slug}/` };
-  }
-  return map;
+  return personBySlug(getPeople());
 }
 
 /**

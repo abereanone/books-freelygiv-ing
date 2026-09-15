@@ -1,7 +1,8 @@
 - title: "Jude: A Theological Commentary"
   sortTitle: "Jude: A Theological Commentary"
-  authors:
-    - shelby-pritchard
+  credits:
+    - person: shelby-pritchard
+      role: author
   year: 2025
   addedDate: 2026-05-21
   pages: 103

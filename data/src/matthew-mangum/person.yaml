@@ -1,7 +1,7 @@
 - firstName: "Matthew"
   lastName: "Mangum"
   slug: "matthew-mangum"
-  photo: "/static/images/authors/matthew-mangum/matthew-mangum.webp"
+  photo: "matthew-mangum.webp"
   description: >
     Hi there, my name is Matthew Mangum. I am a husband to Miranda and father to six children. Our lives our very full.
 

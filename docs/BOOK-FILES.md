@@ -84,7 +84,7 @@ A new type also needs registering in three places — see "Book YAML shape" in `
 node add-book.js          # interactive, writes data/src/books/<slug>/book.yaml
 ```
 
-Then create `data/src/books/<slug>/content/`, drop in the cover plus any PDF/EPUB/ZIP using the naming above, run `npm run upload -- <slug>`, and commit. If the author is new, they also need `data/src/<author-slug>/author.yaml` and a photo.
+Then create `data/src/books/<slug>/content/`, drop in the cover plus any PDF/EPUB/ZIP using the naming above, run `npm run upload -- <slug>`, and commit. If the author is new, they also need `data/src/<person-slug>/person.yaml` and a photo.
 
 ## Upload script reference
 

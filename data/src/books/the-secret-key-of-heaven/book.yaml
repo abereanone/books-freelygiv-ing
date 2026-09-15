@@ -1,14 +1,15 @@
 - title: The Secret Key of Heaven
   sortTitle: Secret Key of Heaven
-  authors:
-    - thomas-brooks
+  credits:
+    - person: thomas-brooks
+      role: author
+    - person: courtney-hicks
+      prepared: true
   year: 1665
   addedDate: 2026-08-31
   pages: 284
   tags:
     - classic
-  contributors:
-    - courtney-hicks
   description: |
     "But thou, when thou prayest, enter into thy closet, and when thou hast shut thy door, pray to thy Father which is in secret; and thy Father which seeth in secret shall reward thee openly." — Matthew 6:6
 

@@ -1,7 +1,8 @@
 - title: God Spoke
   sortTitle: God Spoke
-  authors:
-    - matthew-mangum
+  credits:
+    - person: matthew-mangum
+      role: author
   year: 2025
   addedDate: 2026-05-21
   pages: 337

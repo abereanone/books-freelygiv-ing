@@ -1,7 +1,7 @@
 - firstName: Martin
   lastName: Luther
   slug: martin-luther
-  photo: "/static/images/authors/martin-luther/martin-luther.jpg"
+  photo: "martin-luther.jpg"
   description: >
     Martin Luther (1483–1546) was a German theologian and the central figure of the Protestant
     Reformation. Born in Eisleben, he studied at the University of Erfurt before entering an

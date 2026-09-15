@@ -1,7 +1,8 @@
 - title: "Catechism of Suffering: The God Who Comforts and Conforms"
   sortTitle: "Catechism of Suffering: The God Who Comforts and Conforms"
-  authors:
-    - matthew-statler
+  credits:
+    - person: matthew-statler
+      role: author
   year: 2026
   addedDate: 2026-09-15
   pages: 24

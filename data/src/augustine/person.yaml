@@ -1,7 +1,7 @@
 - firstName: "St."
   lastName: "Augustine"
   slug: "augustine"
-  photo: "/static/images/authors/augustine/augustine.jpg"
+  photo: "augustine.jpg"
   description: >
     St. Augustine of Hippo (354-430) was a North African bishop, theologian, and philosopher
     whose writings shaped Western Christian thought. Born in Thagaste, he taught rhetoric

@@ -53,9 +53,11 @@ function ensureDir(path) {
   if (!existsSync(path)) mkdirSync(path, { recursive: true });
 }
 
-// ── author YAML ───────────────────────────────────────────────────────────────
+// ── person YAML ───────────────────────────────────────────────────────────────
 
-function buildAuthorYaml({
+// Roles aren't stored here: someone is an author because a book.yaml lists them in
+// `authors`. The photo is a bare filename, resolved against the person's image folder.
+function buildPersonYaml({
   firstName,
   lastName,
   slug,
@@ -67,7 +69,7 @@ function buildAuthorYaml({
   return `- firstName: "${firstName}"
   lastName: "${lastName}"
   slug: "${slug}"
-  photo: "/static/images/authors/${slug}/${slug}.${ext}"
+  photo: "${slug}.${ext}"
   description: >
     ${description}
   donateUrl: "${donateUrl || ""}"
@@ -87,19 +89,19 @@ function buildBookYaml({
   tag,
   description,
   license,
-  contributors,
+  preparers,
   formats,
 }) {
   const bookSlug = toSlug(title);
   const sitePath = `/static/books/${bookSlug}`;
   const r2Path = `${R2_BASE}/${bookSlug}`;
 
-  const authorsYaml = authorSlugs.map((slug) => `    - ${slug}`).join("\n");
-
-  const contributorsYaml =
-    contributors.length > 0
-      ? contributors.map((c) => `    - ${c}`).join("\n")
-      : "    []";
+  // Book credits (author/contributor/foreword) and the edition credit (prepared). Notes
+  // and name-only credits are added by hand afterwards — see CLAUDE.md, "People and roles".
+  const creditsYaml = [
+    ...authorSlugs.map((slug) => `    - person: ${slug}\n      role: author`),
+    ...preparers.map((slug) => `    - person: ${slug}\n      prepared: true`),
+  ].join("\n");
 
   const mediaTypeEntries = [];
 
@@ -140,13 +142,11 @@ function buildBookYaml({
 
   return `- title: "${title}"
   sortTitle: "${sortTitle}"
-  authors:
-${authorsYaml}
+  credits:
+${creditsYaml}
   year: ${year}${pages ? `\n  pages: ${pages}` : ""}
   tags:
     - ${tag}
-  contributors:
-${contributorsYaml}
   description: >
     ${description}
   license: ${license}
@@ -172,13 +172,13 @@ async function main() {
   console.log(`  → slug: ${authorSlug}`);
 
   const authorDir = join(DATA_SRC, authorSlug);
-  const authorFile = join(authorDir, "author.yaml");
+  const authorFile = join(authorDir, "person.yaml");
   let authorExists = existsSync(authorFile);
   let photoExt = "jpg";
 
   if (authorExists) {
     console.log(
-      `  ✓ Author folder already exists — skipping author.yaml creation.`,
+      `  ✓ Person already exists — skipping person.yaml creation.`,
     );
   } else {
     ensureDir(authorDir);
@@ -191,7 +191,7 @@ async function main() {
 
     writeFileSync(
       authorFile,
-      buildAuthorYaml({
+      buildPersonYaml({
         firstName,
         lastName,
         slug: authorSlug,
@@ -235,12 +235,12 @@ async function main() {
   const license = await ask("License", "CC0");
   const description = await ask("Description (one paragraph)");
 
-  const contribInput = await ask(
-    "Contributor slugs (comma-separated, or blank)",
+  const preparerInput = await ask(
+    "Preparer slugs — who digitized/edited/typeset it (comma-separated, or blank)",
     "",
   );
-  const contributors = contribInput
-    ? contribInput
+  const preparers = preparerInput
+    ? preparerInput
         .split(",")
         .map((s) => s.trim())
         .filter(Boolean)
@@ -269,7 +269,7 @@ async function main() {
       tag,
       description,
       license,
-      contributors,
+      preparers,
       formats,
     }),
   );

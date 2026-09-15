@@ -1,7 +1,7 @@
 - firstName: John
   lastName: Bunyan
   slug: john-bunyan
-  photo: "/static/images/authors/john-bunyan/john-bunyan.jpg"
+  photo: "john-bunyan.jpg"
   photoCrop: "50% 42% 100%"  # full width, flush with the top edge — little headroom to spare
   description: >
     John Bunyan (1628–1688) was an English writer and Baptist preacher, born in Elstow, near

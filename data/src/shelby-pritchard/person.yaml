@@ -1,7 +1,8 @@
 - firstName: Shelby
   lastName: Pritchard
   slug: shelby-pritchard
-  photo: "/static/images/authors/shelby-pritchard/shelby-pritchard.jpg"
+  photo: "shelby-pritchard.jpg"
+  photoCrop: "49% 45% 66%"  # the family, centred; automatic cropping drifted left onto the pond
   description: >
     Shelby grew up in a small Oklahoma town, was saved in late 2001, and surrendered his life to the 
     work of the ministry at age 13. He met his wife, Beth, while they were both attending Bible College. 

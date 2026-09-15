@@ -1,14 +1,15 @@
 - title: The Glorious Feast of the Gospel
   sortTitle: Glorious Feast of the Gospel
-  authors:
-    - richard-sibbes
+  credits:
+    - person: richard-sibbes
+      role: author
+    - person: courtney-hicks
+      prepared: true
   year: 1650
   addedDate: 2026-05-28
   pages: 189
   tags:
     - classic
-  contributors:
-    - courtney-hicks
   description: |
     Christ's gracious invitation and royal entertainment of believers. Wherein amongst other things these comfortable doctrines are handles:
 

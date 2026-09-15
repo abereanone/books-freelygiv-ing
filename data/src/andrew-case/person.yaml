@@ -1,7 +1,7 @@
 - firstName: "Andrew"
   lastName: "Case"
   slug: "andrew-case"
-  photo: "/static/images/authors/andrew-case/andrew-case.webp"
+  photo: "andrew-case.webp"
   description: >
     Andrew Case grew up on the mission field in Oaxaca, Mexico, and is a graduate of The Southern
     Baptist Theological Seminary. He also studied Bible Translation at the Canada Institute of
