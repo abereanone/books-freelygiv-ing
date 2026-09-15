@@ -19,6 +19,13 @@
   path: /static/books/the-divine-name
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: https://freehebrew.online/the-divine-name/
+        - name: Español
+          url: https://freehebrew.online/el-nombre-divino/
     - type: pdfBook
       label: PDF
       sources:
