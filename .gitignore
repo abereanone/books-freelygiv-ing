@@ -8,6 +8,7 @@ dist
 *.pdf
 *.zip
 *.mobi
+*.docx
 .env
 *.py
 *.bat

@@ -1,5 +1,5 @@
 /**
- * Bulk-uploads book files (epub, pdf, zip) to Cloudflare R2.
+ * Bulk-uploads book files (epub, pdf, zip, mobi, docx) to Cloudflare R2.
  *
  * Setup:
  *   npm install @aws-sdk/client-s3
@@ -67,7 +67,7 @@ const s3 = new S3Client({
   },
 });
 
-const BOOK_EXTS = new Set([".epub", ".pdf", ".zip", ".mobi", ".html"]);
+const BOOK_EXTS = new Set([".epub", ".pdf", ".zip", ".mobi", ".html", ".docx"]);
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
@@ -114,6 +114,8 @@ function mimeType(filename) {
   if (ext === ".pdf") return "application/pdf";
   if (ext === ".zip") return "application/zip";
   if (ext === ".mobi") return "application/x-mobipocket-ebook";
+  if (ext === ".docx")
+    return "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
   if (ext === ".html") return "text/html";
   return "application/octet-stream";
 }

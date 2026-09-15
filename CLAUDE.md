@@ -85,12 +85,19 @@ bring it back.
 
 `mediaTypes` entries are `{ type, label, sources: [{ name, url }] }`. The `type` values in
 actual use are `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook`, `printReady`,
-`audiobook`.
+`audiobook`, `wordDoc`.
 
 `type` is what selects the button colour and icon, so a new type must be added in three places
 or it silently falls back to a plain blue button with no icon:
-`src/pages/books/[authorSlug]/[bookSlug].astro` (`btnClass` + the inline SVG chain) and
-`src/pages/library.astro` (`typeConfig`, which also orders the filter buttons).
+`src/pages/books/[authorSlug]/[bookSlug].astro` (`btnClass`), `src/components/FormatIcon.astro`
+(the icon), and `src/pages/library.astro` (`typeConfig`, which also orders the filter buttons).
+
+**One entry per button group, and sources decide the shape.** A `mediaTypes` entry with a
+single source renders as a plain button labelled with `label`; an entry with two or more
+renders as a dropdown, with each `source.name` an item inside it. That is why the Spanish
+edition of *The Divine Name* is its own `htmlBook` entry rather than a second source — as a
+source it would have read "Read Online (Leer en línea)". The dropdown opens on hover on
+pointer devices and on click everywhere, so touch and keyboard still work.
 
 R2-hosted downloads are absolute URLs at `https://files.books.freelygiv.ing/<slug>/<file>`.
 The upload script uses the filename verbatim as the R2 key, so the file in `content/` and the
