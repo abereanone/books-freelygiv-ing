@@ -123,7 +123,9 @@ the full add/replace workflow and troubleshooting.
 
 ## Working in this repo
 
-- **Never `git push`.** Commit on a branch; the owner reviews and pushes.
+- **Commit straight to `main`.** Don't create a branch for routine work — adding a book,
+  a person, a fix. The owner found the branch-then-merge dance more friction than it was
+  worth. Still ask before `git push`; the owner says when it goes out.
 - Tell the user when a change requires restarting the Astro dev server — new covers and
   photos only appear after `sync-assets` reruns, which happens at dev/build startup.
 - `sitemapActivity.md` and `_downloads/` are intentionally untracked working files; don't let
