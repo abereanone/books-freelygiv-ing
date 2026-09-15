@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import BookItem from '../../components/BookItem.astro';
+import ShareButton from '../../components/ShareButton.astro';
+import { ROLES, getPeople, getBooks, bookRoleSlugs, linkify, newlineToBr, personName, personPhotos, personAvatar, personRoleLabel } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return getPeople().map(person => ({ params: { slug: person.slug }, props: { person } }));
+}
+
+const { person } = Astro.props;
+
+// One section per role the person holds, e.g. "Books Written" then "Books Added".
+const books = getBooks().sort((a: any, b: any) => a.sortTitle.localeCompare(b.sortTitle));
+const sections = ROLES
+  .map(role => ({ role, books: books.filter((book: any) => bookRoleSlugs(book, role.key).includes(person.slug)) }))
+  .filter(section => section.books.length);
+
+// Breadcrumb goes through the listing for the person's first role that has one.
+const listRole = ROLES.find(role => role.listPath && person.roles.includes(role.key));
+
+const fullName = personName(person);
+const roleLabel = personRoleLabel(person);
+const descHtml = newlineToBr(linkify(person.description ?? ''));
+const photos = personPhotos(person);
+// The headline photo is the pre-cropped square; extras keep their original framing.
+if (photos.length) photos[0] = personAvatar(person);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ogImage = `${siteUrl}/static/og/person-${person.slug}.jpg`;
+---
+
+<Base title={fullName} ogTitle={fullName} ogDescription={person.description} ogImage={ogImage} ogImageAlt={fullName} ogType="profile">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      {listRole && <li class="breadcrumb-item"><a href={listRole.listPath}>{listRole.plural}</a></li>}
+      <li class="breadcrumb-item active" aria-current="page">{fullName}</li>
+    </ol>
+  </nav>
+
+  <div class="mb-4 clearfix">
+    {photos.length > 0 && (
+      <div class="float-md-end ms-md-4 mb-3 text-center text-md-start">
+        {photos.map((photo: string, index: number) => (
+          <img
+            src={photo}
+            class="rounded"
+            style="width: 180px; max-width: 100%; aspect-ratio: 1; object-fit: cover;"
+            alt={photos.length === 1 ? fullName : `${fullName} photo ${index + 1}`}
+          />
+        ))}
+      </div>
+    )}
+    <h1 class="mb-1">{fullName}</h1>
+    {roleLabel && <p class="text-body-secondary mb-3">{roleLabel}</p>}
+    {person.description && <div set:html={descHtml} />}
+    <div class="d-flex flex-wrap gap-2 mt-2">
+      {person.donateUrl && (
+        <a href={person.donateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+      )}
+      <ShareButton title={fullName} />
+    </div>
+  </div>
+
+  {sections.map(({ role, books }) => (
+    <section class="mb-4">
+      <h2 class="mb-3">{role.booksHeading}</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+        {books.map((book: any) => (
+          <div class="col">
+            <BookItem book={book} grid />
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+</Base>

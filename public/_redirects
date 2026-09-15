@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects. Not applied by `astro dev`.
+# Person pages moved from /authors/<slug>/ and /contributors/<slug>/ to /people/<slug>/.
+# The listing pages /authors/ and /contributors/ still exist; :slug never matches them.
+/authors/:slug/       /people/:slug/  301
+/authors/:slug        /people/:slug/  301
+/contributors/:slug/  /people/:slug/  301
+/contributors/:slug   /people/:slug/  301
