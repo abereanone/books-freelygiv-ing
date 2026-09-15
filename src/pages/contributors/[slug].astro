@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
+import ShareButton from '../../components/ShareButton.astro';
 import { getContributors, getBooks, linkify, newlineToBr, personName, personPhotos , personAvatar} from '../../lib/data.js';
 
 export function getStaticPaths() {
@@ -49,9 +50,12 @@ const ogImage = `${siteUrl}/static/og/person-${contributor.slug}.jpg`;
     )}
     <h1>{fullName}</h1>
     {contributor.description && <div set:html={descHtml} />}
-    {contributor.donateUrl && (
-      <a href={contributor.donateUrl} class="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Donate</a>
-    )}
+    <div class="d-flex flex-wrap gap-2 mt-2">
+      {contributor.donateUrl && (
+        <a href={contributor.donateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+      )}
+      <ShareButton title={fullName} />
+    </div>
   </div>
 
   <h2 class="mb-3">Books Added</h2>

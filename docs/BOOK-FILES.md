@@ -73,7 +73,8 @@ E.g. the book had a PDF, now it also has a print-ready ZIP.
           url: https://files.books.freelygiv.ing/<book-slug>/print-ready.zip
 ```
 
-Known `type` values: `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook` (a store link, e.g. Lulu), `printReady`, `audiobook`.
+Known `type` values: `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook` (a store link, e.g. Lulu), `printReady`, `audiobook`, `wordDoc` (.docx), `htmlBookEs` (Spanish read-online).
+A new type also needs registering in three places — see "Book YAML shape" in `CLAUDE.md`.
 
 4. Commit and push `book.yaml`. Cloudflare Pages rebuilds on push.
 

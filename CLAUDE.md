@@ -92,6 +92,9 @@ its own filter button rather than folding it into Read Online).
 or it silently falls back to a plain blue button with no icon:
 `src/pages/books/[authorSlug]/[bookSlug].astro` (`btnClass`), `src/components/FormatIcon.astro`
 (the icon), and `src/pages/library.astro` (`typeConfig`, which also orders the filter buttons).
+Also add a row to the Formats legend on `src/pages/about.astro`, which is hand-written and
+drifts otherwise. Colours Bootstrap lacks (`btn-word`, `btn-audiobook`) live in
+`public/css/custom.css` with dark-theme overrides.
 
 **One entry per button group, and sources decide the shape.** A `mediaTypes` entry with a
 single source renders as a plain button labelled with `label`; an entry with two or more

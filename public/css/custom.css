@@ -58,6 +58,48 @@
   --bs-btn-active-color: #000;
 }
 
+/* Format colours Bootstrap has no variant for. btn-dark vanished on the dark
+   theme and audiobook shared btn-secondary with printReady. */
+.btn-word {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #2b579a;
+  --bs-btn-border-color: #2b579a;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #234a84;
+  --bs-btn-hover-border-color: #234a84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #1e3f71;
+  --bs-btn-active-border-color: #1e3f71;
+  --bs-btn-focus-shadow-rgb: 43, 87, 154;
+}
+
+.btn-audiobook {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6f42c1;
+  --bs-btn-border-color: #6f42c1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #5e38a4;
+  --bs-btn-hover-border-color: #5e38a4;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #59359a;
+  --bs-btn-active-border-color: #59359a;
+  --bs-btn-focus-shadow-rgb: 111, 66, 193;
+}
+
+[data-bs-theme="dark"] .btn-word {
+  --bs-btn-bg: #3d6fbf;
+  --bs-btn-border-color: #3d6fbf;
+  --bs-btn-hover-bg: #4a7cc9;
+  --bs-btn-hover-border-color: #4a7cc9;
+}
+
+[data-bs-theme="dark"] .btn-audiobook {
+  --bs-btn-bg: #8257d1;
+  --bs-btn-border-color: #8257d1;
+  --bs-btn-hover-bg: #9068d9;
+  --bs-btn-hover-border-color: #9068d9;
+}
+
 .text-yellow {
   color: var(--my-yellow-text);
 }

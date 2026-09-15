@@ -15,26 +15,42 @@ import Base from '../layouts/Base.astro';
 
   <h2>Formats</h2>
   <p>We provide books in multiple formats to suit your reading preferences:</p>
-  <div class="d-flex flex-column gap-2 mb-3">
-    <div class="d-flex align-items-center gap-3">
+  <div class="row row-cols-1 row-cols-md-2 g-2 mb-3">
+    <div class="col d-flex align-items-center gap-3">
       <span class="btn btn-success btn-sm" style="min-width:7rem;pointer-events:none;">Read Online</span>
-      <span>Some books can be read directly in your browser on a webpage!/</span>
+      <span>Some books can be read directly in your browser on a webpage!</span>
     </div>
-    <div class="d-flex align-items-center gap-3">
-      <span class="btn btn-primary btn-sm" style="min-width:7rem;pointer-events:none;">eBook</span>
-      <span>Various EPUB or MOBI (or other) downloads for e-readers and mobile devices.</span>
+    <div class="col d-flex align-items-center gap-3">
+      <span class="btn btn-outline-success btn-sm" style="min-width:7rem;pointer-events:none;">Leer en línea</span>
+      <span>Spanish editions you can read in your browser.</span>
     </div>
-    <div class="d-flex align-items-center gap-3">
+    <div class="col d-flex align-items-center gap-3">
       <span class="btn btn-danger btn-sm" style="min-width:7rem;pointer-events:none;">PDF</span>
       <span>Free printable PDF for reading on any device or to print at home.</span>
     </div>
-    <div class="d-flex align-items-center gap-3">
-      <span class="btn btn-warning btn-sm" style="min-width:7rem;pointer-events:none;">Book</span>
+    <div class="col d-flex align-items-center gap-3">
+      <span class="btn btn-primary btn-sm" style="min-width:7rem;pointer-events:none;">eBook</span>
+      <span>EPUB downloads for e-readers and mobile devices.</span>
+    </div>
+    <div class="col d-flex align-items-center gap-3">
+      <span class="btn btn-info btn-sm" style="min-width:7rem;pointer-events:none;">Mobi</span>
+      <span>MOBI downloads for older Kindle devices.</span>
+    </div>
+    <div class="col d-flex align-items-center gap-3">
+      <span class="btn btn-warning btn-sm" style="min-width:7rem;pointer-events:none;">Print</span>
       <span>High-quality PRINT editions available for purchase.</span>
     </div>
-    <div class="d-flex align-items-center gap-3">
+    <div class="col d-flex align-items-center gap-3">
       <span class="btn btn-secondary btn-sm" style="min-width:7rem;pointer-events:none;">Print Ready</span>
       <span>A ZIP file with a PDF and a COVER formatted for home or professional printing.</span>
+    </div>
+    <div class="col d-flex align-items-center gap-3">
+      <span class="btn btn-word btn-sm" style="min-width:7rem;pointer-events:none;">Word</span>
+      <span>An editable Word document (.docx).</span>
+    </div>
+    <div class="col d-flex align-items-center gap-3">
+      <span class="btn btn-audiobook btn-sm" style="min-width:7rem;pointer-events:none;">Audiobook</span>
+      <span>Listen to the book read aloud.</span>
     </div>
   </div>
 

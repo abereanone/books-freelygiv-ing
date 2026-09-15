@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import FormatIcon from '../../../components/FormatIcon.astro';
+import ShareButton from '../../../components/ShareButton.astro';
 import { getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, personName, getPeopleBySlug } from '../../../lib/data.js';
 
 export function getStaticPaths() {
@@ -22,6 +23,7 @@ const descHtml  = newlineToBr(linkify(book.description ?? ''));
 const siteUrl   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogSlug    = bookSlugFromPath(book.path);
 const ogImage   = `${siteUrl}/static/og/book-${ogSlug}.jpg`;
+const shareTitle = `${book.title}${book.authors?.[0] ? ' by ' + authorNames(book.authors) : ''}`;
 
 const btnClass: Record<string, string> = {
   htmlBook:   'btn-success',
@@ -31,15 +33,15 @@ const btnClass: Record<string, string> = {
   mobi:       'btn-info',
   printBook:  'btn-warning',
   printReady: 'btn-secondary',
-  wordDoc:    'btn-dark',
-  audiobook:  'btn-secondary',
+  wordDoc:    'btn-word',
+  audiobook:  'btn-audiobook',
 };
 ---
 
 <Base
   title={book.title}
   ogTitle={book.title}
-  ogDescription={`${book.title}${book.authors?.[0] ? ' by ' + authorNames(book.authors) : ''}`}
+  ogDescription={shareTitle}
   ogImage={ogImage}
   ogImageAlt={`${book.title} cover`}
   ogType="book"
@@ -123,6 +125,7 @@ const btnClass: Record<string, string> = {
               </div>
             );
           })}
+          <ShareButton title={shareTitle} iconSize={20} />
         </div>
       </div>
     </div>

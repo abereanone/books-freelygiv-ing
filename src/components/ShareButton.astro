@@ -1,0 +1,68 @@
+---
+// Opens the OS share sheet where the browser has one (phones, most desktops);
+// otherwise copies the page's canonical URL and says so on the button.
+interface Props {
+  title: string;
+  text?: string;
+  class?: string;
+  iconSize?: number;
+}
+const { title, text, class: cls = 'btn btn-outline-secondary', iconSize = 16 } = Astro.props;
+---
+<button type="button" class={cls} data-share-title={title} data-share-text={text}>
+  <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="currentColor" class="bi bi-share me-2" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+  </svg><span class="share-label" aria-live="polite">Share</span>
+</button>
+
+<script>
+  function shareUrl() {
+    // Canonical rather than location.href, so shared links drop query strings
+    // and carry the trailing slash the sitemap uses.
+    return document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href ?? location.href;
+  }
+
+  async function copy(url: string) {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(url);
+      return;
+    }
+    const field = document.createElement('textarea');
+    field.value = url;
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.select();
+    const ok = document.execCommand('copy');
+    field.remove();
+    if (!ok) throw new Error('copy failed');
+  }
+
+  document.addEventListener('click', async (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-share-title]');
+    if (!button) return;
+
+    const url = shareUrl();
+    const data = { title: button.dataset.shareTitle, text: button.dataset.shareText, url };
+
+    if (navigator.share && (!navigator.canShare || navigator.canShare(data))) {
+      try {
+        await navigator.share(data);
+        return;
+      } catch (err) {
+        // The reader closed the share sheet; don't second-guess them with a copy.
+        if ((err as DOMException).name === 'AbortError') return;
+      }
+    }
+
+    const label = button.querySelector('.share-label')!;
+    try {
+      await copy(url);
+      label.textContent = 'Link copied';
+    } catch {
+      window.prompt('Copy this link:', url);
+      return;
+    }
+    setTimeout(() => { label.textContent = 'Share'; }, 2000);
+  });
+</script>
