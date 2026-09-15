@@ -31,14 +31,34 @@ function readYamlArray(file) {
  *  - the edition credit, `prepared: true` — who made this free edition: digitizing,
  *    editing, typesetting, formatting. Deliberately one role, not a list of trades.
  *
- * `byline` is the phrase the book page puts before the names.
+ * `byline` is the phrase the book page puts before the names. `description` explains the
+ * role to readers on the People page's filter buttons.
  */
 export const ROLES = [
-  { key: "author",      label: "Author",      plural: "Authors",          booksHeading: "Books Written",  byline: "by" },
-  { key: "contributor", label: "Contributor", plural: "Contributors",     booksHeading: "Contributed To", byline: "with contributions by" },
-  { key: "foreword",    label: "Foreword",    plural: "Foreword Writers", booksHeading: "Forewords",      byline: "foreword by" },
-  { key: "preparer",    label: "Preparer",    plural: "Preparers",        booksHeading: "Books Prepared", byline: "prepared by" },
+  {
+    key: "author", label: "Author", plural: "Authors",
+    booksHeading: "Books Written", byline: "by",
+    description: "Wrote the book. A book with several authors was written by them together.",
+  },
+  {
+    key: "contributor", label: "Contributor", plural: "Contributors",
+    booksHeading: "Contributed To", byline: "with contributions by",
+    description: "Wrote part of a book, such as a chapter, essay or section, alongside its authors.",
+  },
+  {
+    key: "foreword", label: "Foreword", plural: "Foreword Writers",
+    booksHeading: "Forewords", byline: "foreword by",
+    description: "Wrote the foreword that introduces a book.",
+  },
+  {
+    key: "preparer", label: "Preparer", plural: "Preparers",
+    booksHeading: "Books Prepared", byline: "prepared by",
+    description: "Prepared a free edition for this site: digitizing, editing, typesetting or formatting it so it can be freely given.",
+  },
 ];
+
+/** What the People page's "Everyone" filter describes. */
+export const EVERYONE_DESCRIPTION = "Everyone credited on a book in this library, in any role.";
 
 const BOOK_ROLES = new Set(["author", "contributor", "foreword"]);
 

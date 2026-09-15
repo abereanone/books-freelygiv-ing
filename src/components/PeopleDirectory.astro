@@ -2,7 +2,7 @@
 // The one listing of people, at /people/. `?filter=authors` (or contributors, forewords,
 // preparers) preselects a filter, and clicking a button keeps the URL in step so a
 // filtered view can be linked. The Authors menu item is just /people/?filter=authors.
-import { ROLES, getPeople, personName, personAvatar } from '../lib/data.js';
+import { ROLES, EVERYONE_DESCRIPTION, getPeople, personName, personAvatar } from '../lib/data.js';
 
 const people = getPeople()
   .filter((person: any) => person.roles.length)
@@ -10,12 +10,16 @@ const people = getPeople()
 const filters = ROLES.filter(role => people.some((person: any) => person.roles.includes(role.key)));
 ---
 
-<div class="d-flex flex-wrap gap-2 mb-4" id="peopleFilter">
-  <button type="button" class="btn btn-sm btn-outline-secondary active" aria-pressed="true" data-role="all">Everyone</button>
+<div class="d-flex flex-wrap gap-2 mb-2" id="peopleFilter">
+  <button type="button" class="btn btn-sm btn-outline-secondary active" aria-pressed="true"
+    data-role="all" data-description={EVERYONE_DESCRIPTION}>Everyone</button>
   {filters.map(role => (
-    <button type="button" class="btn btn-sm btn-outline-secondary" aria-pressed="false" data-role={role.key}>{role.plural}</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" aria-pressed="false"
+      data-role={role.key} data-description={role.description}>{role.plural}</button>
   ))}
 </div>
+<!-- Clicking or tapping a filter shows its description here; hovering on desktop also shows it as a tooltip. -->
+<p class="text-body-secondary small mb-4" id="peopleFilterHelp" aria-live="polite">{EVERYONE_DESCRIPTION}</p>
 
 <div class="row row-cols-2 row-cols-md-4 g-3" id="peopleGrid">
   {people.map((person: any) => {
@@ -51,11 +55,26 @@ const filters = ROLES.filter(role => people.some((person: any) => person.roles.i
     return roles.find(role => role !== 'all' && (v === role || v === `${role}s`)) ?? 'all';
   };
 
+  const help = document.getElementById('peopleFilterHelp')!;
+
+  // Hover tooltips only where hovering is real. On touch screens Bootstrap's hover tooltip
+  // sticks after a tap, and the tap already shows the same text in the line below.
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    buttons.forEach(btn => {
+      (window as any).bootstrap?.Tooltip.getOrCreateInstance(btn, {
+        title: btn.dataset.description,
+        trigger: 'hover',
+        placement: 'top',
+      });
+    });
+  }
+
   function show(role: string, updateUrl: boolean) {
     buttons.forEach(btn => {
       const on = btn.dataset.role === role;
       btn.classList.toggle('active', on);
       btn.setAttribute('aria-pressed', String(on));
+      if (on) help.textContent = btn.dataset.description ?? '';
     });
     cards.forEach(card => {
       card.hidden = role !== 'all' && !card.dataset.roles!.split(' ').includes(role);
