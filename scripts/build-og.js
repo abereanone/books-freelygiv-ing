@@ -297,7 +297,19 @@ const MANIFEST = join(OG_DIR, "manifest.json");
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
 const nextManifest = {};
 
-const stamp = (p) => (p && existsSync(p) ? String(statSync(p).mtimeMs) : "-");
+/**
+ * Content hash, NOT mtime. Git doesn't preserve mtimes, so a fresh CI clone stamps every
+ * file with checkout time — mtime signatures would miss on every build and regenerate all
+ * the cards (in the builder's fonts, not Georgia). Content hashes survive the clone.
+ */
+const stampCache = new Map();
+function stamp(p) {
+  if (!p || !existsSync(p)) return "-";
+  if (!stampCache.has(p)) {
+    stampCache.set(p, createHash("sha1").update(readFileSync(p)).digest("hex").slice(0, 16));
+  }
+  return stampCache.get(p);
+}
 
 function sign(parts) {
   return createHash("sha1").update(JSON.stringify(parts)).digest("hex").slice(0, 16);
