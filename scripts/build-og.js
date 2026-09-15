@@ -117,9 +117,20 @@ async function composeCard({ art, artBox, svgText, out }) {
 async function fitArt(src, boxW, boxH, { round = false } = {}) {
   // Round art is cropped to fill (a "contain" letterbox leaves opaque bars that the
   // circle mask can't remove, so the result reads as a rounded square, not a circle).
+  //
+  // Anchor the crop to the top on tall sources. A head-and-shoulders portrait puts the
+  // face near the top with headroom above it, and "attention" zooms past that headroom
+  // and slices the top of the head off. Square and landscape photos keep "attention",
+  // where the subject may sit anywhere in frame.
+  let position = "attention";
+  if (round) {
+    const meta = await sharp(src).metadata();
+    if (meta.height > meta.width) position = "top";
+  }
+
   const img = sharp(src).resize(boxW, boxH, {
     fit: round ? "cover" : "contain",
-    position: "attention",
+    position,
     background: { r: 250, g: 247, b: 240 },
   });
   const buf = await (round
