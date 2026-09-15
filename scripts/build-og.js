@@ -180,14 +180,20 @@ async function bookCard(book, out) {
   const main = idx > 0 ? full.slice(0, idx) : full;
   const sub = idx > 0 ? full.slice(idx + 2) : "";
 
-  const titleSize = main.length > 42 ? 48 : 58;
+  const titleSize = main.length > 42 ? 60 : 74;
   const titleLines = wrap(main, textW, titleSize, 3);
-  const subLines = sub ? wrap(sub, textW, 30, 2) : [];
+  const subLines = sub ? wrap(sub, textW, 38, 2) : [];
 
   const authors = (book.authors || []).map(personName).filter(Boolean).join(", ");
+  const authorLines = authors ? wrap(authors, textW, 34, 2) : [];
 
+  // The byline is part of the block: leave it out of the height and a long title pushes
+  // it down into the site line at the foot of the card.
   const blockH =
-    titleLines.length * titleSize * 1.22 + (subLines.length ? subLines.length * 30 * 1.25 + 18 : 0);
+    titleLines.length * titleSize * 1.22 +
+    (subLines.length ? subLines.length * 38 * 1.25 + 18 : 0) +
+    (authorLines.length ? authorLines.length * 34 * 1.22 + 34 : 0);
+
   let y = Math.round((H - blockH) / 2) + titleSize * 0.4;
   if (y < PAD + titleSize) y = PAD + titleSize;
 
@@ -196,17 +202,17 @@ async function bookCard(book, out) {
 
   if (subLines.length) {
     cursor += 10;
-    svg += textBlock(subLines, textX, cursor, 30, MUTED, SERIF, 1.25);
-    cursor += subLines.length * 30 * 1.25;
+    svg += textBlock(subLines, textX, cursor, 38, MUTED, SERIF, 1.25);
+    cursor += subLines.length * 38 * 1.25;
   }
 
   if (authors) {
     cursor += 34;
     svg += `<line x1="${textX}" y1="${cursor - 26}" x2="${textX + 90}" y2="${cursor - 26}" stroke="${RULE}" stroke-width="2"/>`;
-    svg += textBlock(wrap(authors, textW, 28, 2), textX, cursor + 6, 28, INK, SANS);
+    svg += textBlock(authorLines, textX, cursor + 6, 34, INK, SANS);
   }
 
-  svg += `<text x="${textX}" y="${H - PAD}" font-family="${SANS}" font-size="22" fill="${MUTED}">${SITE}</text>`;
+  svg += `<text x="${textX}" y="${H - PAD}" font-family="${SANS}" font-size="26" fill="${MUTED}">${SITE}</text>`;
 
   await composeCard({ art, artBox: { top, left }, svgText: svg, out });
   return true;
@@ -227,7 +233,7 @@ async function personCard(person, role, out) {
   const textW = W - textX - PAD;
 
   const name = personName(person);
-  const nameSize = name.length > 22 ? 52 : 62;
+  const nameSize = name.length > 22 ? 64 : 78;
   const nameLines = wrap(name, textW, nameSize, 2);
 
   let y = Math.round(H / 2) - 10;
@@ -236,8 +242,8 @@ async function personCard(person, role, out) {
 
   cursor += 22;
   svg += `<line x1="${textX}" y1="${cursor - 28}" x2="${textX + 90}" y2="${cursor - 28}" stroke="${RULE}" stroke-width="2"/>`;
-  svg += `<text x="${textX}" y="${cursor + 4}" font-family="${SANS}" font-size="26" fill="${MUTED}">${esc(role)}</text>`;
-  svg += `<text x="${textX}" y="${H - PAD}" font-family="${SANS}" font-size="22" fill="${MUTED}">${SITE}</text>`;
+  svg += `<text x="${textX}" y="${cursor + 4}" font-family="${SANS}" font-size="34" fill="${MUTED}">${esc(role)}</text>`;
+  svg += `<text x="${textX}" y="${H - PAD}" font-family="${SANS}" font-size="26" fill="${MUTED}">${SITE}</text>`;
 
   await composeCard({ art, artBox: { top, left }, svgText: svg, out });
   return true;
@@ -288,10 +294,10 @@ async function montageCard({ images, title, subtitle, out, round = false }) {
     x += a.w + gap;
   }
 
-  let svg = `<text x="${PAD}" y="100" font-family="${SERIF}" font-size="68" fill="${INK}">${esc(title)}</text>`;
+  let svg = `<text x="${PAD}" y="106" font-family="${SERIF}" font-size="84" fill="${INK}">${esc(title)}</text>`;
   if (subtitle)
-    svg += `<text x="${PAD}" y="148" font-family="${SANS}" font-size="27" fill="${MUTED}">${esc(subtitle)}</text>`;
-  svg += `<text x="${W - PAD}" y="100" text-anchor="end" font-family="${SANS}" font-size="22" fill="${MUTED}">${SITE}</text>`;
+    svg += `<text x="${PAD}" y="156" font-family="${SANS}" font-size="34" fill="${MUTED}">${esc(subtitle)}</text>`;
+  svg += `<text x="${W - PAD}" y="100" text-anchor="end" font-family="${SANS}" font-size="26" fill="${MUTED}">${SITE}</text>`;
 
   const bg = Buffer.from(
     `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
