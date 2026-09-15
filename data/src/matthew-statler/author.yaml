@@ -1,8 +1,11 @@
 - firstName: Matthew
   lastName: Statler
   slug: matthew-statler
+  photo: "/static/images/authors/matthew-statler/matthew-statler.jpg"
   description: >
-    Matthew Statler is the pastor of Sierra Vista Baptist Church.
+    Matthew Statler is a pastor and biblical counselor at Sierra Vista Baptist Church,
+    glorifying God through shepherding His people, applying the Word to trauma and
+    suffering, and training others to counsel biblically.
 
 
     He wrote Catechism of Suffering first for himself: "As a pastor and a fellow sufferer,
