@@ -224,26 +224,37 @@ async function personCard(person, role, out) {
 
   // A person with no photo still gets a card — text alone, centred — so no page ever
   // falls back to the generic site image.
-  const size = 320;
+  const size = 380;
   const art = src ? await fitArt(src, size, size, { round: true }) : null;
   const left = PAD + 20;
   const top = Math.round((H - size) / 2);
 
-  const textX = src ? left + size + 64 : PAD;
+  const textX = src ? left + size + 56 : PAD;
   const textW = W - textX - PAD;
 
   const name = personName(person);
-  const nameSize = name.length > 22 ? 64 : 78;
+  const nameSize = name.length > 22 ? 68 : 84;
   const nameLines = wrap(name, textW, nameSize, 2);
 
-  let y = Math.round(H / 2) - 10;
+  const roleSize = 46;
+  const siteSize = 34;
+
+  // Name, role and site read as one group. Pinning the site line to the foot of the card
+  // instead left a large void between it and the role on a card carrying only a name.
+  const blockH =
+    nameLines.length * nameSize * 1.22 + 30 + roleSize + 34 + siteSize;
+
+  let y = Math.round((H - blockH) / 2) + nameSize * 0.72;
+  if (y < PAD + nameSize) y = PAD + nameSize;
+
   let svg = textBlock(nameLines, textX, y, nameSize, INK, SERIF);
   let cursor = y + nameLines.length * nameSize * 1.22;
 
-  cursor += 22;
-  svg += `<line x1="${textX}" y1="${cursor - 28}" x2="${textX + 90}" y2="${cursor - 28}" stroke="${RULE}" stroke-width="2"/>`;
-  svg += `<text x="${textX}" y="${cursor + 4}" font-family="${SANS}" font-size="34" fill="${MUTED}">${esc(role)}</text>`;
-  svg += `<text x="${textX}" y="${H - PAD}" font-family="${SANS}" font-size="26" fill="${MUTED}">${SITE}</text>`;
+  cursor += 30;
+  svg += `<line x1="${textX}" y1="${cursor - roleSize * 0.78}" x2="${textX + 110}" y2="${cursor - roleSize * 0.78}" stroke="${RULE}" stroke-width="2"/>`;
+  svg += `<text x="${textX}" y="${cursor + roleSize * 0.2}" font-family="${SANS}" font-size="${roleSize}" fill="${MUTED}">${esc(role)}</text>`;
+  cursor += roleSize + 34;
+  svg += `<text x="${textX}" y="${cursor}" font-family="${SANS}" font-size="${siteSize}" fill="${MUTED}">${SITE}</text>`;
 
   await composeCard({ art, artBox: { top, left }, svgText: svg, out });
   return true;
