@@ -1,0 +1,36 @@
+- title: "The Doctrine of Simony: A Theological Retrieval and Appraisal"
+  sortTitle: "Doctrine of Simony: A Theological Retrieval and Appraisal"
+  authors:
+    - conley-owens
+  year: 2026
+  addedDate: 2026-09-15
+  pages: 332
+  tags:
+    - modern
+  description: |
+    "There is hardly one sin in the world, whose nature is less known, and whose heinousness is less considered, than the sin of simony."
+
+    Simony — the buying or selling of spiritual things — was once a central category of Christian moral reflection, argued over by the fathers, the medieval canonists, the Reformers, and the English divines. Today it is nearly forgotten, a word most Christians could not define. Conley Owens argues that this forgetting is not harmless: the Reformation itself began in opposition to the sale of spiritual things, and a church that can no longer name simony has lost the means of recognizing it in its own practices.
+
+    The book works in six parts. It traces the history of the doctrine and makes the case for its retrieval; it recovers the classical definition piece by piece — "an earnest desire to buy or sell something spiritual or something annexed to a spiritual thing"; it sets out a positive account of ministerial maintenance under the headings of gifts, giving, and receiving; it examines the scriptural forefathers of simony and the proofs; it weighs the church's censure of the sin, as sin and as heresy; and it closes with an analysis of spiritual words, mediated obligation, and present danger.
+
+    This is the fuller, scholarly companion to the argument Owens made popularly in The Dorean Principle. Published by Dorean Press and dedicated to the public domain.
+  license: CC0
+  path: /static/books/the-doctrine-of-simony
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: https://simony.info/
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://simony.info/the-doctrine-of-simony.pdf
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://simony.info/the-doctrine-of-simony.epub
