@@ -1,0 +1,701 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- fgbooks:css:start -->
+    <style>
+      /* Reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 18px;
+      }
+
+      body {
+        background-color: #faf6ef;
+        color: #2a1f14;
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.75;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 5rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        font-variant: small-caps;
+        letter-spacing: 0.08em;
+        text-align: center;
+        color: #4a2c10;
+        margin: 3.5rem 0 1.5rem;
+        padding: 0.6rem 0;
+        border-top: 2px solid #c8a97e;
+        border-bottom: 2px solid #c8a97e;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-variant: small-caps;
+        letter-spacing: 0.14em;
+        text-align: center;
+        color: #5a3a1a;
+        margin: 3rem 0 1.25rem;
+      }
+
+      p {
+        margin: 0 0 0.8em;
+        text-align: justify;
+        hyphens: auto;
+      }
+
+      h2 + p,
+      h3 + p {
+        text-indent: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 2rem auto;
+      }
+
+      /* Centered callout divs (e.g. "NOW OR NEVER") */
+      div[style*="text-align: center"],
+      div[style*="text-align:center"] {
+        text-align: center !important;
+        margin: 1.5em 0;
+        font-variant: small-caps;
+        letter-spacing: 0.06em;
+        color: #4a2c10;
+      }
+
+      a {
+        color: #7a3e1a;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: #c8a97e;
+        transition: color 0.15s;
+      }
+      a:hover {
+        color: #a05010;
+      }
+
+      sup {
+        font-size: 0.7em;
+        line-height: 0;
+        vertical-align: super;
+      }
+
+      ol {
+        padding-left: 2em;
+        margin: 1em 0 1em 1em;
+      }
+      li {
+        margin-bottom: 0.4em;
+      }
+      li > p {
+        margin: 0;
+      }
+
+      section[role="doc-endnotes"] {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #c8a97e;
+        font-size: 0.82rem;
+        color: #5a4535;
+        line-height: 1.55;
+      }
+      section[role="doc-endnotes"] li {
+        margin-bottom: 0.6em;
+      }
+
+      /* ── Floating TOC ──────────────────────────────────────────────────── */
+      #toc-toggle {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #4a2c10;
+        color: #faf6ef;
+        border: none;
+        border-radius: 2rem;
+        padding: 0.65rem 1.1rem;
+        font-family: Georgia, serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      #toc-toggle:hover {
+        background: #7a3e1a;
+        transform: translateY(-2px);
+      }
+
+      #toc-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1001;
+      }
+
+      #toc-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(320px, 88vw);
+        background: #fdf9f3;
+        border-left: 2px solid #c8a97e;
+        padding: 1.5rem 1.5rem 2rem;
+        overflow-y: auto;
+        z-index: 1002;
+        transform: translateX(100%);
+        transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 0.05rem;
+      }
+      #toc-panel.open {
+        transform: translateX(0);
+      }
+      #toc-overlay.open {
+        display: block;
+      }
+
+      #toc-close {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        line-height: 1;
+        color: #5a3a1a;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 0.5rem;
+      }
+      #toc-close:hover {
+        color: #a05010;
+      }
+
+      #toc-panel > h2 {
+        font-size: 1rem;
+        font-variant: small-caps;
+        letter-spacing: 0.12em;
+        color: #4a2c10;
+        margin: 0 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #c8a97e;
+        border-top: none;
+        text-align: left;
+      }
+
+      #toc-panel a {
+        display: block;
+        color: #2a1f14;
+        text-decoration: none;
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        transition: color 0.15s;
+      }
+      #toc-panel a:hover {
+        color: #a05010;
+      }
+      #toc-panel a.toc-sub {
+        padding-left: 1rem;
+        font-size: 0.83rem;
+        color: #4a3020;
+      }
+      #toc-panel a.toc-sub:hover {
+        color: #a05010;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: #5a3a1a;
+        margin: -1rem 0 0.4rem;
+      }
+
+      .byline {
+        text-align: center;
+        font-variant: small-caps;
+        letter-spacing: 0.1em;
+        font-size: 0.95rem;
+        color: #6a4a28;
+        margin: 0 0 2.5rem;
+      }
+
+      .qa {
+        margin: 1.6rem 0;
+      }
+
+      .qa .q {
+        font-weight: bold;
+        margin: 0 0 0.35em;
+        text-align: left;
+      }
+
+      .qa .q .num {
+        color: #7a3e1a;
+        margin-right: 0.35em;
+      }
+
+      .qa .a {
+        margin: 0 0 0.35em;
+        text-align: justify;
+      }
+
+      .qa .ref {
+        margin: 0;
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #5a4535;
+        text-align: left;
+      }
+
+      .front p {
+        text-align: justify;
+      }
+
+      .front .signoff {
+        text-align: center;
+        font-variant: small-caps;
+        letter-spacing: 0.08em;
+        color: #6a4a28;
+        margin-top: 2rem;
+      }
+
+      blockquote {
+        margin: 1.6rem 2rem;
+        font-style: italic;
+        color: #4a2c10;
+        text-align: center;
+      }
+
+      blockquote .attrib {
+        display: block;
+        font-style: normal;
+        font-variant: small-caps;
+        letter-spacing: 0.08em;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+      }
+
+      ul {
+        padding-left: 1.6em;
+        margin: 1em 0 1.2em 1em;
+      }
+    </style>
+    <!-- fgbooks:css:end -->
+  </head>
+  <body>
+    <h2 id="catechism-of-suffering">Catechism of Suffering</h2>
+    <p class="subtitle">The God Who Comforts and Conforms</p>
+    <p class="byline">Pastor Matthew Statler &middot; Sierra Vista Baptist Church</p>
+    <p>
+      You can copy, translate, modify, and distribute this resource without
+      restriction and without needing to ask permission. This resource is freely
+      given (Matt 10:8) for the sake of the gospel.
+    </p>
+    <h3 id="introduction">Introduction</h3>
+    <div class="front">
+    <p>Dear reader,</p>
+    <p>Thank you for choosing this booklet. Christians throughout the centuries have used catechisms as a tool to strengthen their faith and grow in their knowledge of God. The practice of question-and-answer helps anchor the heart in the truths that sustain us through every season of life.</p>
+    <p>I have designed this catechism primarily for myself. As a pastor and a fellow sufferer, I need to often rehearse these truths to myself. They remind me that the path of suffering is not wasted, random, or meaningless. Suffering is governed by a wise and loving Father who uses affliction to conform His children to the image of His Son.</p>
+    </div>
+    <h3 id="how-to-use-this-catechism">How to Use This Catechism</h3>
+    <div class="front">
+    <p>Suffering has a way of disorienting the soul. Pain clouds what once was clear when it was calm. The truths we confessed in strength can feel distant when sorrow comes. This catechism is written to steady your heart by retraining your mind, to lead you back again and again to the unshakable foundation of God’s Word. In a sense, it is a training manual for your heart.</p>
+    <p>The form is simple: question and answer. It is meant to help you think biblically about affliction. To speak truth to your soul and to find enduring comfort in the character of God. These brief statements are not a substitute for Scripture; they are a doorway back into it.</p>
+    <p>How to use it:</p>
+    </div>
+    <ul>
+      <li>Read one or two questions at a time. Maybe a section a week.</li>
+      <li>Look up the Scripture proofs and linger over them.</li>
+      <li>Pray the truths back to God in your own words.</li>
+      <li>Return to them often, especially in times of suffering.</li>
+      <li>Use the added space for your own notes and reminders.</li>
+    </ul>
+    <p>You may use this catechism privately, as a family, or in the context of counseling. However it is used, let the questions serve as gentle companions in your suffering, guiding you toward the God who draws near to the brokenhearted and who sanctifies His people through every trial. If you find this tool helpful, please pass it on to another sufferer who might benefit from these reminders in their hour of need.</p>
+    <p>May this small work teach you to say with quiet confidence, even in the darkest hour:</p>
+    <blockquote>
+      “I know, O Lord, that your rules are righteous, and that in faithfulness you have afflicted me.”
+      <span class="attrib">Psalm 119:75</span>
+    </blockquote>
+    <p class="signoff">Soli Deo Gloria,</p>
+    <p class="signoff">Matthew Statler</p>
+    <h3 id="section-1-the-reality-of-suffering">Section 1: The Reality of Suffering</h3>
+    <div class="qa">
+      <p class="q"><span class="num">1.</span>What is suffering?</p>
+      <p class="a">Suffering is the experience of pain, loss, and sorrow that entered the world through sin.</p>
+      <p class="ref">Romans 8:20–22; Genesis 3:16–19</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">2.</span>Why does suffering exist?</p>
+      <p class="a">Suffering exists because humanity fell from fellowship with God, and the whole creation was subjected to futility.</p>
+      <p class="ref">Genesis 3:17; Romans 5:12; Romans 8:20</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">3.</span>Is all suffering the same?</p>
+      <p class="a">No. Some suffering comes from our own sin, some from the sins of others, and some from living in a broken world.</p>
+      <p class="ref">1 Peter 2:19–20; Job 1:21; John 9:3</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">4.</span>Does God cause suffering?</p>
+      <p class="a">God is not the author of evil, but He sovereignly ordains all things, including suffering, for His wise and holy purposes.</p>
+      <p class="ref">Genesis 50:20; Isaiah 45:7; Acts 2:23</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">5.</span>Has anyone ever suffered apart from sin?</p>
+      <p class="a">Only the Lord Jesus Christ, who suffered though He was sinless, to redeem sinners and bring them to God.</p>
+      <p class="ref">1 Peter 3:18; Hebrews 4:15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">6.</span>Why does God allow His people to suffer?</p>
+      <p class="a">He allows suffering to display His glory, test and deepen our faith, and conform us to the image of His Son.</p>
+      <p class="ref">John 9:3; James 1:2-4; Romans 8:28–29</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">7.</span>Does suffering mean God has forsaken us?</p>
+      <p class="a">No. For those in Christ, suffering is never a sign of abandonment but of Fatherly love and refinement.</p>
+      <p class="ref">Hebrews 12:6–7; Isaiah 49:15–16</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">8.</span>Can a believer question or lament in suffering?</p>
+      <p class="a">Yes. Honest lament is the language of faith, bringing grief before God in trust, not rebellion.</p>
+      <p class="ref">Psalm 13:1–2; Lamentations 3:19–24</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">9.</span>What makes suffering meaningful?</p>
+      <p class="a">Suffering finds meaning only in relationship to the sovereign and suffering Savior, Jesus Christ.</p>
+      <p class="ref">Philippians 3:10; 2 Corinthians 1:5</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">10.</span>What hope sustains the believer in suffering?</p>
+      <p class="a">The hope that Christ has overcome the world, and that present sufferings are not worth comparing with the glory to come.</p>
+      <p class="ref">John 16:33; Romans 8:18</p>
+    </div>
+    <h3 id="section-2-the-god-who-reigns">Section 2: The God Who Reigns</h3>
+    <div class="qa">
+      <p class="q"><span class="num">11.</span>Who reigns over suffering?</p>
+      <p class="a">The Lord God Almighty reigns over every moment of suffering; nothing happens apart from His sovereign will.</p>
+      <p class="ref">Psalm 103:19; Daniel 4:35</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">12.</span>Is God good even when we suffer?</p>
+      <p class="a">Yes. God is always good and does good, even when His purposes are hidden from our sight.</p>
+      <p class="ref">Psalm 119:68; Romans 11:33–36</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">13.</span>Does God control all suffering?</p>
+      <p class="a">Yes. God ordains the limits, duration, and purpose of every trial, and He turns even evil for the good of His people.</p>
+      <p class="ref">Job 1:12; Genesis 50:20; Romans 8:28</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">14.</span>Can anything happen to the believer by chance?</p>
+      <p class="a">Nothing comes by chance; all things are directed by the hand of our loving Father.</p>
+      <p class="ref">Proverbs 16:9; Matthew 10:29–31</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">15.</span>Does God owe us explanations for our suffering?</p>
+      <p class="a">No. God is not obligated to explain His ways, but He invites us to trust His character when we cannot trace His hand.</p>
+      <p class="ref">Job 38:1–4; Isaiah 55:8–9</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">16.</span>Is God distant in our suffering?</p>
+      <p class="a">Never. He is near to the brokenhearted and saves the crushed in spirit.</p>
+      <p class="ref">Psalm 34:18; Isaiah 57:15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">17.</span>How does God relate to human pain?</p>
+      <p class="a">He enters into our pain through the incarnation of His Son, who knows our weakness and carries our sorrows.</p>
+      <p class="ref">Isaiah 53:3–4; Hebrews 4:15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">18.</span>Does God delight in our suffering?</p>
+      <p class="a">No. God does not delight in the suffering itself but in the holy fruit it produces—trust, humility, endurance and hope.</p>
+      <p class="ref">Hebrews 12:10–11; Romans 5:3–5</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">19.</span>How should we view the providence of God in suffering?</p>
+      <p class="a">With reverence and rest, knowing that His providence is neither blind fate nor cold determinism, but the wise care of a loving Father.</p>
+      <p class="ref">Psalm 139:16; Romans 8:15–17</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">20.</span>What truth anchors the believer’s heart in affliction?</p>
+      <p class="a">That God reigns, God is good, God is near, and God will not waste one tear of His redeemed children.</p>
+      <p class="ref">Psalm 56:8; Psalm 46:1; Revelation 21:4</p>
+    </div>
+    <h3 id="section-3-the-god-who-draws-near">Section 3: The God Who Draws Near</h3>
+    <div class="qa">
+      <p class="q"><span class="num">21.</span>How does God draw near to the suffering?</p>
+      <p class="a">God draws near through His Son, Jesus Christ, who entered our world of sorrow to redeem and comfort His people.</p>
+      <p class="ref">John 1:14; Hebrews 2:14–15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">22.</span>Did Jesus experience suffering?</p>
+      <p class="a">Yes. Jesus suffered in body and soul, bearing grief, rejection, and pain, and was even deeply troubled by it, that He might become our merciful High Priest.</p>
+      <p class="ref">Isaiah 53:3; John 11:33; Hebrews 4:15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">23.</span>Why did the Son of God suffer?</p>
+      <p class="a">He suffered to take the punishment of our sin, to destroy death, and to bring us to God.</p>
+      <p class="ref">1 Peter 3:18; Hebrews 2:9</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">24.</span>Does Jesus understand my pain?</p>
+      <p class="a">Yes. He is able to sympathize with every weakness, for He has been tested in every way yet without sin.</p>
+      <p class="ref">Hebrews 4:15; Psalm 34:19</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">25.</span>How does Christ’s suffering help us?</p>
+      <p class="a">His suffering shows the depth of His love, secures our redemption, and teaches us to trust our Father in trials.</p>
+      <p class="ref">Romans 5:8; Hebrews 5:8</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">26.</span>Where is Christ when I suffer?</p>
+      <p class="a">Christ is present by His Spirit, interceding for you and sustaining you with grace that cannot fail.</p>
+      <p class="ref">Romans 8:26–27; Hebrews 7:25</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">27.</span>What does the Holy Spirit do for the suffering believer?</p>
+      <p class="a">He comforts the heart, strengthens faith, and assures us we are God’s children even in affliction.</p>
+      <p class="ref">Romans 8:15–17; John 14:16–18</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">28.</span>What comfort does the gospel bring to the sufferer?</p>
+      <p class="a">That the One who bore our griefs now reigns over them, and nothing can separate us from His love.</p>
+      <p class="ref">Romans 8:35–39; 2 Corinthians 1:5</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">29.</span>What example did Christ leave for us in suffering?</p>
+      <p class="a">He entrusted Himself to the One who judges justly, overcame evil with steadfast obedience, and set the pattern for us to follow in obedience to God, by not returning evil for evil, but doing good.</p>
+      <p class="ref">1 Peter 2:21–23; 1 Peter 4:19; Rom 12:21</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">30.</span>What promise assures us of God’s nearness?</p>
+      <p class="a">“I will never leave you nor forsake you,” says the Lord, whose presence is our peace.</p>
+      <p class="ref">Hebrews 13:5; John 14:27</p>
+    </div>
+    <h3 id="section-4-the-purpose-of-suffering">Section 4: The Purpose of Suffering</h3>
+    <div class="qa">
+      <p class="q"><span class="num">31.</span>What is God’s purpose in the suffering of His people?</p>
+      <p class="a">God uses suffering to make His people more like Christ, deepening faith, producing holiness, endurance and hope.</p>
+      <p class="ref">Romans 8:28–29; James 1:2–4</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">32.</span>How does suffering reveal our hearts?</p>
+      <p class="a">Suffering exposes what we love, trust, and treasure, revealing the desires and conflicts within that show where our hope truly lies.</p>
+      <p class="ref">Deuteronomy 8:2; James 4:1-3; 1 Peter 1:6–7</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">33.</span>What does suffering teach us about sin?</p>
+      <p class="a">It teaches us that sin is destructive and that only God’s grace can heal what is broken.</p>
+      <p class="ref">Psalm 119:67, 71; Romans 7:24–25</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">34.</span>How does suffering produce endurance?</p>
+      <p class="a">By teaching us to rely on God’s strength rather than our own and to persevere in faith when comfort is absent.</p>
+      <p class="ref">2 Corinthians 1:8–9; James 1:3–4</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">35.</span>How does suffering shape our character?</p>
+      <p class="a">It refines our faith like gold, growing humility, patience, and compassion for others.</p>
+      <p class="ref">1 Peter 1:6–7; Romans 5:3–5</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">36.</span>How does suffering strengthen hope?</p>
+      <p class="a">Through trials, we learn that this world cannot satisfy and that eternal glory far outweighs present pain.</p>
+      <p class="ref">2 Corinthians 4:17–18; Romans 8:18, 25</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">37.</span>Does suffering make us more dependent on God?</p>
+      <p class="a">Yes. In weakness we discover God’s power, and in affliction we learn that His grace is sufficient.</p>
+      <p class="ref">2 Corinthians 12:9–10; Psalm 119:75–76</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">38.</span>What happens when we resist God in suffering?</p>
+      <p class="a">We forfeit peace and growth, revealing pride that trusts self over God, allowing bitterness to take root instead of trust and repentance.</p>
+      <p class="ref">Hebrews 12:15; Jonah 4:1–4; 1 Peter 5:6-7; James 4:6-8</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">39.</span>What happens when we submit to God in suffering?</p>
+      <p class="a">We find rest for our souls, joy in trials, and a deeper communion with Christ who suffered for us.</p>
+      <p class="ref">Matthew 11:28–29; Philippians 3:10</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">40.</span>How should believers interpret suffering in light of the cross?</p>
+      <p class="a">The cross proves that God brings life through death, victory through weakness, and glory through pain.</p>
+      <p class="ref">1 Corinthians 1:23–25; John 12:24</p>
+    </div>
+    <h3 id="section-5-the-comfort-of-the-saints">Section 5: The Comfort of the Saints</h3>
+    <div class="qa">
+      <p class="q"><span class="num">41.</span>What comfort does God give to His suffering people?</p>
+      <p class="a">God comforts us by His presence, His promises, and His people, assuring us that He is with us in every trial.</p>
+      <p class="ref">2 Corinthians 1:3–4; Isaiah 43:1–2</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">42.</span>What role does Scripture play in our suffering?</p>
+      <p class="a">The Word of God revives the weary soul, teaches us in our affliction, interprets our pain rightly, and anchors our hope in His truth.</p>
+      <p class="ref">Psalm 119:50, 71; Romans 15:4</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">43.</span>How does prayer sustain us in affliction?</p>
+      <p class="a">Prayer draws our hearts to God, turns despair into dependence, and teaches us to rest in His will.</p>
+      <p class="ref">Philippians 4:6–7; Psalm 62:8</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">44.</span>What if we cannot find words to pray?</p>
+      <p class="a">The Spirit Himself intercedes for us with groanings too deep for words.</p>
+      <p class="ref">Romans 8:26–27</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">45.</span>How does the church comfort the suffering?</p>
+      <p class="a">The church bears one another’s burdens, weeps with those who weep, and reminds the hurting of God’s steadfast love.</p>
+      <p class="ref">Galatians 6:2; Romans 12:15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">46.</span>Why must suffering not be faced alone?</p>
+      <p class="a">Because Christ designed His people for fellowship, where comfort multiplies and faith is strengthened together.</p>
+      <p class="ref">1 Thessalonians 5:11; Ecclesiastes 4:9–10</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">47.</span>What part does worship play in enduring suffering?</p>
+      <p class="a">Worship lifts our eyes from pain to the beauty of God, teaching us to rejoice even in the midst of sorrow.</p>
+      <p class="ref">Habakkuk 3:17–18; Psalm 42:11</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">48.</span>How does remembering God’s faithfulness bring comfort?</p>
+      <p class="a">Remembering His past mercies strengthens present trust, fuels future hope, and, in the testimony of the saints, displays His glory to help others endure.</p>
+      <p class="ref">Lamentations 3:21–23; Psalm 77:11–12; Revelation 12:11</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">49.</span>How should we speak to one another in times of suffering?</p>
+      <p class="a">With gentleness and grace-filled truth, speaking words seasoned with wisdom that offer the same comfort we have received from God.</p>
+      <p class="ref">2 Corinthians 1:3–4; Isaiah 50:4; Colossians 4:6</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">50.</span>What promise enables believers to persevere through suffering?</p>
+      <p class="a">That the God who began a good work in us will carry it on to completion in Christ Jesus.</p>
+      <p class="ref">Philippians 1:6; Jude 24–25</p>
+    </div>
+    <h3 id="section-6-the-glory-to-come">Section 6: The Glory to Come</h3>
+    <div class="qa">
+      <p class="q"><span class="num">51.</span>Will suffering last forever?</p>
+      <p class="a">No. For those in Christ, every sorrow will end when death is destroyed and all things are made new.</p>
+      <p class="ref">Revelation 21:4; 1 Corinthians 15:26</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">52.</span>What happens to the believer after death?</p>
+      <p class="a">The believer’s soul departs to be with Christ, which is far better, while the body rests until the resurrection.</p>
+      <p class="ref">Philippians 1:23; 1 Thessalonians 4:14</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">53.</span>What hope awaits the church at Christ’s return?</p>
+      <p class="a">The resurrection of the body, the renewal of creation, and the everlasting joy of dwelling with God.</p>
+      <p class="ref">Romans 8:21–23; Revelation 21:1–3</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">54.</span>How does this future hope shape our present suffering?</p>
+      <p class="a">It teaches us that present afflictions are light and momentary, preparing us for an eternal weight of glory.</p>
+      <p class="ref">2 Corinthians 4:17–18; Romans 8:18</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">55.</span>What will happen to pain and tears in the new creation?</p>
+      <p class="a">God Himself will wipe away every tear, and pain, sorrow, and death shall be no more.</p>
+      <p class="ref">Revelation 21:4–5; Isaiah 25:8</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">56.</span>What will we see in the age to come?</p>
+      <p class="a">We will see the face of Christ, our Redeemer, and be perfectly satisfied in His glory forever.</p>
+      <p class="ref">Revelation 22:4; Psalm 17:15</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">57.</span>How does the hope of glory purify us now?</p>
+      <p class="a">Those who hope in Christ’s appearing purify themselves, living in holiness as He is holy.</p>
+      <p class="ref">1 John 3:2–3; Titus 2:11–13</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">58.</span>What song will the redeemed sing in eternity?</p>
+      <p class="a">“Worthy is the Lamb who was slain, for He has redeemed us by His blood and made us a kingdom of priests to our God.”</p>
+      <p class="ref">Revelation 5:9–10</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">59.</span>What will the end of all suffering reveal?</p>
+      <p class="a">The perfect wisdom, goodness, and faithfulness of God, who works all things for His glory and our joy in Him.</p>
+      <p class="ref">Romans 11:36; Psalm 16:11</p>
+    </div>
+    <div class="qa">
+      <p class="q"><span class="num">60.</span>How should believers live while they wait for glory?</p>
+      <p class="a">With endurance, joy, and steadfast faith, fixing their eyes on Jesus, the founder and perfecter of their faith.</p>
+      <p class="ref">Hebrews 12:1–2; James 5:7–8</p>
+    </div>
+    <!-- fgbooks:toc:start -->
+    <div id="toc-overlay" onclick="closeToc()"></div>
+    <nav id="toc-panel" aria-label="Table of contents">
+      <button id="toc-close" onclick="closeToc()" aria-label="Close">
+        &times;
+      </button>
+      <h2>Contents</h2>
+      <a href="#catechism-of-suffering">Catechism of Suffering</a>
+      <a href="#introduction" class="toc-sub">Introduction</a>
+      <a href="#how-to-use-this-catechism" class="toc-sub">How to Use This Catechism</a>
+      <a href="#section-1-the-reality-of-suffering" class="toc-sub">Section 1: The Reality of Suffering</a>
+      <a href="#section-2-the-god-who-reigns" class="toc-sub">Section 2: The God Who Reigns</a>
+      <a href="#section-3-the-god-who-draws-near" class="toc-sub">Section 3: The God Who Draws Near</a>
+      <a href="#section-4-the-purpose-of-suffering" class="toc-sub">Section 4: The Purpose of Suffering</a>
+      <a href="#section-5-the-comfort-of-the-saints" class="toc-sub">Section 5: The Comfort of the Saints</a>
+      <a href="#section-6-the-glory-to-come" class="toc-sub">Section 6: The Glory to Come</a>
+    </nav>
+    <button
+      id="toc-toggle"
+      onclick="openToc()"
+      aria-label="Open table of contents"
+      aria-expanded="false"
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <rect x="2" y="4" width="16" height="2" rx="1" />
+        <rect x="2" y="9" width="12" height="2" rx="1" />
+        <rect x="2" y="14" width="14" height="2" rx="1" />
+      </svg>
+      <span>Contents</span>
+    </button>
+    <script>
+      function openToc() {
+        document.getElementById("toc-panel").classList.add("open");
+        document.getElementById("toc-overlay").classList.add("open");
+        document
+          .getElementById("toc-toggle")
+          .setAttribute("aria-expanded", "true");
+      }
+      function closeToc() {
+        document.getElementById("toc-panel").classList.remove("open");
+        document.getElementById("toc-overlay").classList.remove("open");
+        document
+          .getElementById("toc-toggle")
+          .setAttribute("aria-expanded", "false");
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeToc();
+      });
+      document.querySelectorAll("#toc-panel a").forEach(function (link) {
+        link.addEventListener("click", closeToc);
+      });
+    </script>
+    <!-- fgbooks:toc:end -->
+  </body>
+</html>

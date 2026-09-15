@@ -1,0 +1,31 @@
+- title: "Catechism of Suffering: The God Who Comforts and Conforms"
+  sortTitle: "Catechism of Suffering: The God Who Comforts and Conforms"
+  authors:
+    - matthew-statler
+  year: 2026
+  addedDate: 2026-09-15
+  pages: 24
+  tags:
+    - modern
+  description: |
+    "I know, O Lord, that your rules are righteous, and that in faithfulness you have afflicted me." — Psalm 119:75
+
+    Sixty questions and answers on affliction, written by a pastor who says he made it first for himself: "As a pastor and a fellow sufferer, I need to often rehearse these truths to myself. They remind me that the path of suffering is not wasted, random, or meaningless."
+
+    Suffering disorients. Truths confessed in strength feel distant when sorrow comes, and this booklet is built to steady the heart by retraining the mind — a training manual for the heart, in the old question-and-answer form, with Scripture proofs under every answer. Six short sections move from the reality of suffering, to the God who reigns over it, to the God who draws near in Christ, to the purpose of affliction, the comfort of the saints, and the glory to come.
+
+    It is meant to be taken slowly — a question or two at a time, perhaps a section a week — and used privately, as a family, or in counseling. Freely given (Matthew 10:8) by Sierra Vista Baptist Church.
+  license: CC0
+  path: /static/books/catechism-of-suffering
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/catechism-of-suffering/catechism-of-suffering.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/catechism-of-suffering/catechism-of-suffering.pdf
