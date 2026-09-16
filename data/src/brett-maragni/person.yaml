@@ -2,6 +2,7 @@
   lastName: Maragni
   slug: brett-maragni
   photo: "brett-maragni.jpg"
+  photoCrop: "44% 45% 70%"  # head spans y19-64%, centred x44%; tightened to match the other portraits
   description: >
     Brett Maragni is the founder of Harvest Jacksonville, where he serves as lead teacher and
     an elder, and the founder of Sound of Truth Ministries — the home of his video teachings,
@@ -10,7 +11,7 @@
 
 
     A native of southern Illinois, he is a graduate of Union University (B.A.), Southwestern
-    Seminary (M.Div.BL), and Luther Rice (D.Min.). He and his wife, Lacey, are the blessed
+    Seminary (M.Div.), and Luther Rice (D.Min.). He and his wife, Lacey, are the blessed
     parents of four grown children. He is also a member of the ownership group of the NFL's
     Green Bay Packers.
 
