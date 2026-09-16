@@ -1,0 +1,34 @@
+- title: "These Five Anchors"
+  sortTitle: "These Five Anchors"
+  credits:
+    - person: brett-maragni
+      role: author
+  year: 2025
+  addedDate: 2026-09-16
+  pages: 100
+  tags:
+    - modern
+  description: |
+    "...tossed about by the waves and carried around by every wind of teaching and by the clever cunning of men in their deceitful scheming." — Ephesians 4.14
+
+    Picture your spiritual life as a ship, and the five solas of the Reformation as five anchors dropped from five different angles. That is the image behind this thirty-one-day devotional: Scripture alone, Christ alone, grace alone, faith alone, and glory to God alone, each one a truth that holds a believer steady when the wind picks up.
+
+    This is a devotional book about doctrine, which its author knows is not how devotionals usually go. "Doctrine is simply what we believe about something," he writes. "Your mind is already filled with doctrine. The real issue is whether or not the doctrines you embrace are true." Thirty-one short chapters, each opening with a Scripture and closing with a prayer, work through the thesis of the book: the Bible alone is our authority, and it teaches that salvation and successful Christian living are in Jesus Christ alone by grace alone through faith alone to the glory of God alone.
+
+    Maragni moves Christ alone up to second in the usual order, wanting to get to Jesus as quickly as possible, and he has deliberately written so the book cannot be filed neatly into one camp of the Calvinist–Arminian debate. It began as a month-long congregational study at Harvest Jacksonville, written in partial fulfilment of his doctoral work; this is the revised and updated second edition. Three appendices follow — discussion questions for each of the five anchors, ideas for pastors and church leaders, and a reflection on the solas by Randall Bush.
+
+    The first edition was sold. This one is freely given (Matthew 10:8): the digital edition costs nothing, and print copies are priced at the cost of production and distribution, with the author taking no royalties.
+  license: CC0
+  path: /static/books/these-five-anchors
+  cover: cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/these-five-anchors/these-five-anchors.pdf
+    - type: printBook
+      label: Book
+      sources:
+        - name: Amazon
+          url: https://www.amazon.com/These-Five-Anchors-Discovering-Doctrines/dp/B0G5HVHLLD
