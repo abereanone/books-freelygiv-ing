@@ -38,12 +38,13 @@
       sources:
         - name: Download
           url: https://1drv.ms/b/c/bcb2002e8d07bc79/EU8GLd9FlTFNuNTcdNADth4BZp8Kaf3BrySnjISsbFl2yQ?e=cpMBo7
-    # The publisher's OneDrive EPUB link is dead — the file is gone, confirmed with the
-    # owner. Left out rather than shipping a button that 404s; restore it if Andrew
-    # reposts the file, ideally mirrored to R2 like the .docx below.
+    # The EPUB is mirrored to R2 rather than linked from the publisher's OneDrive: the
+    # previous OneDrive link died when the file moved, and those links can demand a sign-in.
     - type: eBook
       label: eBook
       sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-divine-name/the-divine-name.epub
         - name: Kindle
           url: https://www.amazon.com/dp/B09SKPC3YX
         - name: More stores
