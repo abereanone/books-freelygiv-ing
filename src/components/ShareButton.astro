@@ -43,7 +43,11 @@ const { title, text, class: cls = 'btn btn-outline-secondary', iconSize = 16 } =
     if (!button) return;
 
     const url = shareUrl();
-    const data = { title: button.dataset.shareTitle, text: button.dataset.shareText, url };
+    // Only set the keys we actually have. An explicit `text: undefined` is supposed to
+    // read as absent, but Android puts the string "undefined" into the share sheet's
+    // EXTRA_TEXT, so it turns up as a line above the link in Signal, WhatsApp and the rest.
+    const data: ShareData = { title: button.dataset.shareTitle, url };
+    if (button.dataset.shareText) data.text = button.dataset.shareText;
 
     if (navigator.share && (!navigator.canShare || navigator.canShare(data))) {
       try {
