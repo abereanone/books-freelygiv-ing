@@ -320,3 +320,14 @@ export function personPhotos(person, limit = 2) {
 export function bookSlugFromPath(path) {
   return path.split("/").pop();
 }
+
+/**
+ * The [authorSlug] segment of a book's URL. Normally the primary author, but a book can
+ * have no author at all — a confession is issued by an assembly, not written by someone —
+ * and then the first preparer stands in, so the URL still names a person with a page.
+ * Both the route and BookItem read it from here; when they disagreed the listings linked
+ * to a URL the build never generated.
+ */
+export function bookAuthorSlug(book) {
+  return book.authors?.[0]?.slug ?? bookCredits(book, "preparer")[0]?.slug ?? "unknown";
+}

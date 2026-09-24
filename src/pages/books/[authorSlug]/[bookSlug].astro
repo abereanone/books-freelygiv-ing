@@ -3,12 +3,12 @@ import Base from '../../../layouts/Base.astro';
 import FormatIcon from '../../../components/FormatIcon.astro';
 import ShareButton from '../../../components/ShareButton.astro';
 import CreditNames from '../../../components/CreditNames.astro';
-import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
+import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
 
 export function getStaticPaths() {
   return getBooks().map((book: any) => ({
     params: {
-      authorSlug: book.authors?.[0]?.slug ?? 'unknown',
+      authorSlug: bookAuthorSlug(book),
       bookSlug:   bookSlugFromPath(book.path),
     },
     props: { book },

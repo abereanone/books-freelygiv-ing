@@ -1,0 +1,46 @@
+- title: The 1689 Baptist Confession of Faith
+  sortTitle: 1689 Baptist Confession of Faith
+  credits:
+    - person: courtney-hicks
+      prepared: true
+    - person: michael-coughlin
+      prepared: true
+  year: 1689
+  addedDate: 2026-09-24
+  pages: 210
+  tags:
+    - classic
+  description: |
+    "Our whole design is accomplished, if we may obtain that Justice, as to be measured in our principles, and practice, and the judgment of both by others, according to what we have now published."
+
+    The Particular Baptists of London had a problem: everyone knew what they were said to believe, and almost no one knew what they actually believed. So in 1677 they published a confession — anonymously, since Charles II's reign was no time to sign your name to a dissenting document — and in 1689, once the Act of Toleration made it safe, an assembly of more than a hundred congregations met in London and put their names to it. Those signatories close the confession here.
+
+    Its thirty-two chapters deliberately follow the order and, for the most part, the very wording of the Westminster Confession and the Savoy Declaration. The preface explains why: the authors had "no itch to clogge Religion with new words," and wanted to show at a glance how much they held in common with their paedobaptist brethren, so that the places where they did differ — the church, baptism, the Lord's Supper, the magistrate — could be read plainly rather than guessed at. Every article carries its Scripture proofs in the margin, with the request that readers follow "that (never enough commended) example of the noble Bereans."
+
+    Two catechisms follow the confession. The Baptist Catechism, long associated with Benjamin Keach, is the question-and-answer companion to it. An Orthodox Catechism is Hercules Collins's 1680 Baptist recension of the Heidelberg Catechism, which asks its famous first question — what is your only comfort in life and in death? — and then unfolds the Apostles' Creed, the Ten Commandments and the Lord's Prayer under the three heads of misery, deliverance and thankfulness.
+
+    The preface's closing burden is not doctrine but the family: the writers name the neglect of household worship and catechizing as "one spring and cause of the decay of Religion in our day." The catechisms bound in with the confession are their answer to it.
+  license: CC0
+  path: /static/books/the-1689-baptist-confession-of-faith
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: https://confess.catechize.ing/confessions/lbcf-1689/
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/courtney-hicks/the-1689-baptist-confession-of-faith/paperback/product-e76dy2y.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-1689-baptist-confession-of-faith/the-1689-baptist-confession-of-faith.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-1689-baptist-confession-of-faith/the-1689-baptist-confession-of-faith.pdf

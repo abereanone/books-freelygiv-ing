@@ -1,5 +1,5 @@
 ---
-import { bookSlugFromPath, personName } from '../lib/data.js';
+import { bookAuthorSlug, bookSlugFromPath, personName } from '../lib/data.js';
 
 interface Props {
   book: any;
@@ -10,9 +10,9 @@ interface Props {
 }
 
 const { book, compact = false, grid = false, showAuthors = false, showAddedDateTooltip = false } = Astro.props;
-const authorSlug = book.authors?.[0]?.slug;
+const authorSlug = bookAuthorSlug(book);
 const bookSlug   = bookSlugFromPath(book.path);
-const href       = authorSlug ? `/books/${authorSlug}/${bookSlug}/` : `/books/${bookSlug}/`;
+const href       = `/books/${authorSlug}/${bookSlug}/`;
 const tags       = (book.tags || []).join(',');
 const types      = (book.mediaTypes || []).map((m: any) => m.type).join(',');
 const personListName = (person: any) => person.lastName ? `${person.lastName}, ${person.firstName}`.trim() : personName(person);
