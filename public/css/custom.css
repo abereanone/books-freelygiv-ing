@@ -178,6 +178,19 @@
   text-underline-offset: 3px;
 }
 
+/* Home page "show me a random book" link, in the bible-reference colour */
+.random-book-link {
+  color: var(--my-bible-ref);
+}
+
+.random-book-link:hover,
+.random-book-link:focus {
+  color: var(--my-bible-ref);
+  text-decoration: underline !important;
+  text-decoration-color: var(--my-bible-ref);
+  text-underline-offset: 4px;
+}
+
 .fb-enhancer-hover {
   background: var(--bs-body-bg) !important;
   border: 1px solid var(--bs-border-color) !important;
