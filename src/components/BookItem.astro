@@ -35,8 +35,7 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
       />
       <div>
         <h6 class="mb-1 lh-sm">
-          <a href={href} class="stretched-link text-decoration-none text-reset">{book.title}</a>
-          {(book.tags || []).map((tag: string) => (
+          <a href={href} class="stretched-link text-decoration-none text-reset">{book.title}</a>{(book.tags || []).map((tag: string) => (
             <span class={`badge tag-badge tag-${tag} ms-1`}>{tag}</span>
           ))}
         </h6>
@@ -68,8 +67,7 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
       </div>
       <div class="col">
         <h5 class="mb-1">
-          {book.title}
-          {(book.tags || []).map((tag: string) => (
+          {book.title}{(book.tags || []).map((tag: string) => (
             <span class={`badge tag-badge tag-${tag}`}>{tag}</span>
           ))}
         </h5>

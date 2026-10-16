@@ -9,6 +9,9 @@ const site = process.env.SITE_URL ?? "https://books.freely.giving";
 export default defineConfig({
   output: "static",
   site,
+  // Astro 7 defaults to "jsx", which drops the line break between text and an inline
+  // tag ("enjoy<a>x</a>and" renders as "enjoyxand"). true keeps the Astro 6 behaviour.
+  compressHTML: true,
   integrations: [sitemap()],
   // Authors is a filter on /people/, not a page. On Cloudflare public/_redirects answers
   // first with a real 301; this covers `astro dev` and any host without _redirects.

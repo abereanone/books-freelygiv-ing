@@ -10,9 +10,9 @@
     "og": "node scripts/build-og.js"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@aws-sdk/client-s3": "^3.0.0",
-    "astro": "^6.2.1",
+    "astro": "^7.4.0",
     "yaml": "^2.8.1"
   }
 }
