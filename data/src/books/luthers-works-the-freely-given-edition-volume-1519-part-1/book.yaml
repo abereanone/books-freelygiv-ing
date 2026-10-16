@@ -3,6 +3,8 @@
   credits:
     - person: martin-luther
       role: author
+    - name: Luke Smith
+      prepared: true
   year: 1519
   addedDate: 2026-05-21
   pages: 178

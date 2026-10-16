@@ -22,8 +22,8 @@
       sources:
         - name: Amazon
           url: https://a.co/d/0aR5u2f8
-    - type: eBook
-      label: eBook
+    - type: mobi
+      label: Mobi
       sources:
-        - name: Download (mobi)
+        - name: Download
           url: https://files.books.freelygiv.ing/cristina-of-aspen-aisle/cristina-of-aspen-aisle.mobi

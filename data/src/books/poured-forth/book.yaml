@@ -19,13 +19,3 @@
       sources:
         - name: Amazon
           url: https://www.amazon.com/dp/B0FQBT2DMH/
-    - type: eBook
-      label: eBook
-      sources:
-        - name: Download
-          url: https://files.books.freelygiv.ing/poured-forth/poured-forth.epub
-    - type: pdfBook
-      label: PDF
-      sources:
-        - name: Download
-          url: https://files.books.freelygiv.ing/poured-forth/poured-forth.pdf

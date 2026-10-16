@@ -25,7 +25,7 @@
       label: eBook
       sources:
         - name: Download
-          url: /static/books/god-spoke/god-spoke.epub
+          url: https://files.books.freelygiv.ing/god-spoke/god-spoke.epub
         - name: Nook
           url: https://www.barnesandnoble.com/w/god-spoke-matthew-j-d-mangum/1149086258
         - name: Kindle
@@ -36,7 +36,7 @@
       label: PDF
       sources:
         - name: Download
-          url: /static/books/god-spoke/god-spoke.pdf
+          url: https://files.books.freelygiv.ing/god-spoke/god-spoke.pdf
     - type: audiobook
       label: Audiobook
       sources:

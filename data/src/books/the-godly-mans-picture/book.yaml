@@ -5,11 +5,25 @@
       role: author
   year: 1666
   addedDate: 2026-06-02
-  pages: 230
+  pages: 129
   tags:
     - classic
   description: |
     Thomas Watson draws the portrait of a true Christian with a scripture-pencil, describing in vivid, memorable strokes the marks of a man who is going to heaven. In twenty-four characteristics — from the man who is deeply humbled for sin to the man who makes God his chief joy — Watson provides both a mirror for self-examination and a map toward genuine godliness. The writing is Puritan at its best: theologically exact, practically urgent, and full of warm illustrations. Whether used for self-examination, devotional reading, or pulpit preparation, this book has shaped the piety of English-speaking Christians for three and a half centuries.
+  # REVISIT after the next push. Watson's 1666 text is public domain, but the files
+  # hosted here are William H. Gross's Jan 2015 modernised edition (onthewing.org,
+  # from a gracegems.org source); the Monergism-produced MOBI was dropped 2026-10-16.
+  # Gross's copyright page says his edited public-domain works "remain in the public
+  # domain" and his "work product is not restricted", but also "you may not modify
+  # them, or sell them, or use them for fund-raising" -- so the flat "Public Domain"
+  # label slightly overstates it, and a print or print-ready edition would conflict
+  # with his terms. Decided 2026-10-16 to keep his files for now.
+  # Re-setting from scratch means OCR: unlike Bunyan's Law and Grace, there is no
+  # proofed transcription available (not on Project Gutenberg; CCEL carries six
+  # Watson works but not this one). The source would be archive.org
+  # `discoursesonimpo0000wats` -- Discourses on Important and Interesting Subjects
+  # (Blackie & Fullarton, 1829), Discourse VIII, pp. 383-620, which is the edition
+  # the current PDF already cites for its page numbers.
   license: Public Domain
   path: /static/books/the-godly-mans-picture
   cover: cover.jpg
@@ -24,8 +38,3 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-godly-mans-picture/the-godly-mans-picture.pdf
-    - type: mobi
-      label: Mobi
-      sources:
-        - name: Download
-          url: https://files.books.freelygiv.ing/the-godly-mans-picture/the-godly-mans-picture.mobi
