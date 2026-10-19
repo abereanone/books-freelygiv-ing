@@ -7,7 +7,7 @@
       prepared: true
   year: 1741
   addedDate: 2026-05-21
-  pages: 42
+  pages: 38
   tags:
     - classic
   description: |
@@ -17,6 +17,16 @@
   path: /static/books/sinners-in-the-hands-of-an-angry-god
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god-whats-new.html
     - type: eBook
       label: eBook
       sources:
