@@ -1,0 +1,30 @@
+- title: Morning and Evening
+  sortTitle: Morning and Evening
+  credits:
+    - person: charles-spurgeon
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  year: 1865
+  addedDate: 2026-10-19
+  pages: 789
+  tags:
+    - classic
+  description: |
+    A reading for every morning and every evening of the year. Spurgeon wrote these short meditations, each on a single verse of Scripture, for private devotion and for family worship. They were first published as two volumes, Morning by Morning (1865) and Evening by Evening (1868).
+
+    The online edition opens at today's reading.
+  license: CC0
+  path: /static/books/morning-and-evening
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/morning-and-evening/morning-and-evening.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/morning-and-evening/morning-and-evening.pdf
