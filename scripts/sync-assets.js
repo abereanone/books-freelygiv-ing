@@ -2,9 +2,10 @@
  * Copies book content files and person photos from books-data into public/.
  * Run automatically via `npm run dev` and `npm run build`.
  */
-import { existsSync, readdirSync, statSync, mkdirSync, copyFileSync } from "fs";
+import { existsSync, readdirSync, statSync, mkdirSync, copyFileSync, readFileSync } from "fs";
 import { join, extname, dirname } from "path";
 import { fileURLToPath } from "url";
+import { parse } from "yaml";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_SRC = join(__dirname, "../data/src");
@@ -16,6 +17,24 @@ const IMAGE_EXTS = new Set([".webp", ".jpg", ".jpeg", ".png", ".html"]);
 function copyFile(src, dest) {
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(src, dest);
+}
+
+/**
+ * `hidden: true` keeps a book off every page and out of the sitemap, but that
+ * filter lives in getBooks() and says nothing about its files. Without this
+ * check the book's read-online page still gets copied into public/ and
+ * deployed — unlinked, but publicly reachable and indexable, which is exactly
+ * what a book is hidden to avoid while its text is unfinished.
+ */
+function isHidden(bookDir) {
+  const yaml = join(bookDir, "book.yaml");
+  if (!existsSync(yaml)) return false;
+  try {
+    const parsed = parse(readFileSync(yaml, "utf8"));
+    return Array.isArray(parsed) && parsed[0]?.hidden === true;
+  } catch {
+    return false; // a broken yaml is the build's problem to report, not ours to swallow
+  }
 }
 
 function syncDir(srcDir, destDir) {
@@ -64,6 +83,10 @@ if (existsSync(BOOKS_SRC)) {
   for (const bookSlug of readdirSync(BOOKS_SRC)) {
     const bookDir = join(BOOKS_SRC, bookSlug);
     if (!statSync(bookDir).isDirectory()) continue;
+    if (isHidden(bookDir)) {
+      console.log(`[sync-assets] skipping hidden book: ${bookSlug}`);
+      continue;
+    }
 
     const contentDir = join(bookDir, "content");
     if (!existsSync(contentDir)) continue;
