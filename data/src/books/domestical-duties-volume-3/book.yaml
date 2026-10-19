@@ -1,0 +1,54 @@
+- title: "Of Domestical Duties, Volume III"
+  sortTitle: "Domestical Duties, Volume III"
+  credits:
+    - person: william-gouge
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1622
+  addedDate: 2026-10-18
+  pages: 232
+  tags:
+    - classic
+  description: |
+    The third of four volumes of Gouge's Of Domesticall Duties (1622), on children and parents.
+
+    First the child's part: showing respect to father and mother, asking their leave, obeying their instruction and submitting to their correction, giving back to them when they are old and in need, and doing all of it in the Lord.
+
+    Then the parent's: loving, praying for and providing for children; nurturing, teaching and training them; admonishing and correcting them; directing them into adulthood and a calling; and dealing faithfully with every child under their care, not only the ones easiest to love.
+
+    Set from the 1622 first edition in modern spelling, with Gouge's own wording kept.
+  license: CC0
+  path: /static/books/domestical-duties-volume-3
+  cover: cover.png
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/domestical-duties-volume-3/domestical-duties-volume-3.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/domestical-duties-volume-3/domestical-duties-volume-3-whats-new.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/william-gouge/domestical-duties-volume-3/paperback/product-p6mvre9.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-3/domestical-duties-volume-3.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-3/domestical-duties-volume-3.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-3/print-ready.zip
