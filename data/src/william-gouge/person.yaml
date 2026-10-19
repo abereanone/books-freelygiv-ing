@@ -1,0 +1,25 @@
+- firstName: William
+  lastName: Gouge
+  slug: william-gouge
+  photo: "william-gouge.jpg"
+  photoCrop: "48% 32% 82%"  # head centred across; framed to match the other Mansfield portraits
+  description: >
+    William Gouge (1575–1653) was an English Puritan minister, born at Stratford-le-Bow in
+    Middlesex and baptised there on 6 November 1575. He was schooled at Felsted, St Paul's and
+    Eton before going up to King's College, Cambridge, where he took his B.A. in 1598 and his
+    M.A. in 1601, and stayed on as fellow and lecturer. Among his kinsmen were Laurence
+    Chaderton, William Whitaker and the Culverwells — much of the Elizabethan Puritan
+    leadership met in his family tree.
+
+    From 1608 he preached at St Ann Blackfriars in London, first as assistant to Stephen
+    Egerton and then for forty-five years as its minister, until his death. He was called to
+    the Westminster Assembly in 1643, chaired the committee that drafted the Westminster
+    Confession in 1644, and was made an Assessor in 1647 and prolocutor of the Provincial
+    Assembly of London.
+
+    Of Domesticall Duties (1622) grew out of his sermons on Ephesians 5:21–6:4 and became the
+    most used English book on family life for a century. He also wrote The Whole Armour of God
+    (1616), God's Three Arrows (1631), and a commentary on Hebrews that his eldest son Thomas
+    published after his death. He and his wife Elizabeth had thirteen children; she died soon
+    after the last was born.
+  donateUrl: ""
