@@ -86,11 +86,31 @@
   --bs-btn-focus-shadow-rgb: 111, 66, 193;
 }
 
+.btn-whats-new {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #c02a6f;
+  --bs-btn-border-color: #c02a6f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #a4235e;
+  --bs-btn-hover-border-color: #a4235e;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #8c1e50;
+  --bs-btn-active-border-color: #8c1e50;
+  --bs-btn-focus-shadow-rgb: 192, 42, 111;
+}
+
 [data-bs-theme="dark"] .btn-word {
   --bs-btn-bg: #3d6fbf;
   --bs-btn-border-color: #3d6fbf;
   --bs-btn-hover-bg: #4a7cc9;
   --bs-btn-hover-border-color: #4a7cc9;
+}
+
+[data-bs-theme="dark"] .btn-whats-new {
+  --bs-btn-bg: #d6457f;
+  --bs-btn-border-color: #d6457f;
+  --bs-btn-hover-bg: #de5c8f;
+  --bs-btn-hover-border-color: #de5c8f;
 }
 
 [data-bs-theme="dark"] .btn-audiobook {
