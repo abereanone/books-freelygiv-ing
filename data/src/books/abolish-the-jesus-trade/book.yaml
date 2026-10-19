@@ -54,3 +54,8 @@
       sources:
         - name: Podcast
           url: https://sellingjesus.org/podcast
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/abolish-the-jesus-trade/print-ready.zip

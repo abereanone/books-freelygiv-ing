@@ -18,3 +18,13 @@
       sources:
         - name: Read
           url: /static/books/doctrine-of-law-and-grace/doctrine-of-law-and-grace.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/doctrine-of-law-and-grace/doctrine-of-law-and-grace.pdf
+    - type: mobi
+      label: Mobi
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/doctrine-of-law-and-grace/doctrine-of-law-and-grace.mobi

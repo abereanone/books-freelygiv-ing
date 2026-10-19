@@ -38,3 +38,8 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-godly-mans-picture/the-godly-mans-picture.pdf
+    - type: mobi
+      label: Mobi
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-godly-mans-picture/the-godly-mans-picture.mobi
