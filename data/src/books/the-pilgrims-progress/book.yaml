@@ -7,19 +7,24 @@
       prepared: true
   year: 1678
   addedDate: 2026-05-28
-  pages: 382
+  pages: 357
   tags:
     - classic
   description: From this world to that which is to come; delivered under the similitude of a dream.
   license: CC0
   path: /static/books/the-pilgrims-progress
-  cover: cover.jpg
+  cover: cover.png
   mediaTypes:
     - type: htmlBook
       label: Read Online
       sources:
         - name: Read
           url: /static/books/the-pilgrims-progress/the-pilgrims-progress.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-pilgrims-progress/the-pilgrims-progress-whats-new.html
     - type: printBook
       label: Book
       sources:
