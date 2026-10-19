@@ -18,7 +18,7 @@
     Set from the 1622 first edition in modern spelling, with Gouge's own wording kept.
   license: CC0
   path: /static/books/domestical-duties-volume-1
-  cover: cover.png
+  cover: cover.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online
@@ -34,7 +34,7 @@
       label: Book
       sources:
         - name: Lulu
-          url: https://www.lulu.com/shop/william-gouge/domestical-duties-volume-1/paperback/product-dy759jz.html?page=1&pageSize=4
+          url: https://www.lulu.com/shop/william-gouge/domestical-duties-volume-1/paperback/product-dy759jz.html
     - type: eBook
       label: eBook
       sources:

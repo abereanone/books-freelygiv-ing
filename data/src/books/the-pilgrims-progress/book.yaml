@@ -13,7 +13,7 @@
   description: From this world to that which is to come; delivered under the similitude of a dream.
   license: CC0
   path: /static/books/the-pilgrims-progress
-  cover: cover.png
+  cover: cover.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online

@@ -27,6 +27,11 @@
       sources:
         - name: Compare
           url: /static/books/sinners-in-the-hands-of-an-angry-god/sinners-in-the-hands-of-an-angry-god-whats-new.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/jonathan-edwards-and-courtney-hicks/sinners-in-the-hands-of-an-angry-god/paperback/product-65w6dz7.html
     - type: eBook
       label: eBook
       sources:
