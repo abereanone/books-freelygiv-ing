@@ -10,12 +10,12 @@ import Base from '../layouts/Base.astro';
     library — please write to Michael Coughlin:
   </p>
   <p class="fs-5 mb-4">
-    <a href="mailto:abereanone@pm.me">abereanone@pm.me</a>
+    <a class="js-email" data-u="enonaereba" data-d="em.mp" href="/contact/">Email Michael</a>
   </p>
 
   <p class="text-body-secondary">
     Only if that fails — no reply after a while, or the mail bounces — try Courtney Hicks
-    at <a href="mailto:books.freely@lyndnex.com">books.freely@lyndnex.com</a>.
+    at <a class="js-email" data-u="yleerf.skoob" data-d="moc.xendnyl" href="/contact/">Courtney's email</a>.
   </p>
 
   <h2>Add a Resource</h2>
@@ -25,4 +25,15 @@ import Base from '../layouts/Base.astro';
     <a href="https://freely.giving/publish?type=books">freely.giving/publish</a> to see what you
     need to do, then email Michael at the address above.
   </p>
+  <noscript><p class="text-body-secondary">The email addresses on this page need JavaScript turned on.</p></noscript>
+  <script is:inline>
+    // Addresses are stored reversed and split so scrapers reading the raw HTML don't find them;
+    // they're put back together in the browser.
+    document.querySelectorAll('.js-email').forEach(function (a) {
+      var rev = function (s) { return s.split('').reverse().join(''); };
+      var addr = rev(a.dataset.u) + '@' + rev(a.dataset.d);
+      a.href = 'mailto:' + addr;
+      a.textContent = addr;
+    });
+  </script>
 </Base>

@@ -8,6 +8,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 reprints and modern works). Deployed to Cloudflare Pages; large book files (PDF/EPUB/ZIP/MOBI)
 live in Cloudflare R2, not in git.
 
+**This is a Cloudflare Pages project, not a Worker** (confirmed 2026-10-19). Pages project
+`books-freelygiv-ing` in the `abereanone@pm.me` account, built from GitHub
+`abereanone/books-freelygiv-ing`, serving `books.freely.giving` and
+`books-freelygiv-ing.pages.dev`. There is no `wrangler` config and no `functions/` directory.
+If server code is ever added, remember Pages Functions support only a subset of bindings —
+notably **no `send_email` binding** — so anything needing one (e.g. a contact form) has to
+live in a separate Worker or the site has to move to Workers.
+
 ## Commands
 
 ```bash
