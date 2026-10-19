@@ -177,7 +177,7 @@ a { color: var(--accent); }
 </section>
 <section class="matter introduction" id="introduction"><h2 class="matter-title">Introduction</h2><p>Spurgeon has a way of taking a Bible verse, or part of a Bible verse, and looking at it from more angles than anyone thought possible. Yet he does it in a concise and beautiful way that honors the stunning brilliance of the scriptures while adhering to faithfully and truthfully teaching what God has said.</p>
 <p><em>Morning by Morning</em> appeared in 1865 and <em>Evening by Evening</em> in 1868, written while Spurgeon pastored the Metropolitan Tabernacle in London. The two volumes were later bound together as <em>Morning and Evening</em>, and that is how most readers have known the book ever since.</p>
-<p>There is a reading for every morning and every evening of the year, and you may begin on any date. In this edition each day is a two-page spread, the morning reading on the left and the evening on the right, and every reading opens with its text from the King James Version. The online edition opens at the current day's reading.</p>
+<p>There is a reading for every morning and every evening of the year, and you may begin on any date. In this edition each day is a two-page spread, the morning reading on the left and the evening on the right, and every reading opens with its text from the King James Version. The online edition has a Today button that jumps to the current day's reading.</p>
 <p>Spurgeon's own counsel, in his preface, was plain: if there is not time for both, read the Bible rather than this book.</p>
 <p>It's my desire to make these helpful devotions available to as many as possible. I encourage you to read it for yourself and your home, and translate this work for others!</p>
 </section>
@@ -7745,7 +7745,8 @@ LEST THOU BE CONSUMED.”</p>
   <label class="rb-date"><span class="rb-label">January 1</span><input type="date" aria-label="Go to a date"></label>
   <button type="button" data-go="next" aria-label="Next reading">›</button>
 </div>
-<script>// Web edition reader: opens at today's reading and drives the toolbar.
+<script>// Web edition reader: opens at the front of the book (or at today's reading with
+// ?today=y, or at #dMMDDam) and drives the toolbar.
 // Readings are <article class="reading" id="dMMDDam|pm">. The address keeps #dMMDDam so a reading can be shared.
 (function () {
   var EVENING_FROM = 16; // hour (local time) from which "Today" means the evening reading
@@ -7762,6 +7763,14 @@ LEST THOU BE CONSUMED.”</p>
     var half = d.getHours() >= EVENING_FROM ? 'pm' : 'am';
     return 'd' + pad(d.getMonth() + 1) + pad(d.getDate()) + half;
   }
+  // ?today=y opens straight at the day's reading, so it can be bookmarked that way.
+  function wantsToday() {
+    var m = /[?&]today(?:=([^&]*))?/.exec(location.search);
+    if (!m) return false;
+    var v = (m[1] || 'y').toLowerCase();
+    return v !== 'n' && v !== 'no' && v !== '0' && v !== 'false';
+  }
+
   function label(id) {
     return MONTHS[+id.slice(1, 3) - 1] + ' ' + (+id.slice(3, 5));
   }
@@ -7836,8 +7845,12 @@ LEST THOU BE CONSUMED.”</p>
     if (hash && document.getElementById(hash)) {
       if (/^d\d{4}(am|pm)$/.test(hash)) go(hash);
       else document.getElementById(hash).scrollIntoView({ block: 'start' });
-    } else {
+    } else if (wantsToday()) {
       go(todayId());
+    } else {
+      // Open at the front of the book. The toolbar still points at today, so
+      // Today, the arrows and Morning/Evening all work from the first click.
+      show(todayId());
     }
     setTimeout(function () { settled = true; }, 300);
   }

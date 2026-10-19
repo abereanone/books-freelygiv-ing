@@ -13,7 +13,7 @@
   description: |
     A reading for every morning and every evening of the year. Spurgeon wrote these short meditations, each on a single verse of Scripture, for private devotion and for family worship. They were first published as two volumes, Morning by Morning (1865) and Evening by Evening (1868).
 
-    The online edition opens at today's reading.
+    The online edition has a Today button that jumps to the current day's reading. To land there every time, bookmark the reader with ?today=y on the end of the address.
   license: CC0
   path: /static/books/morning-and-evening
   cover: cover.jpg
