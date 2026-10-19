@@ -7,7 +7,7 @@
       prepared: true
   year: 1665
   addedDate: 2026-08-31
-  pages: 284
+  pages: 301
   tags:
     - classic
   description: |
@@ -20,13 +20,18 @@
     Set from Thomas Brooks's The Privy Key of Heaven (1665) and lightly modernized.
   license: CC0
   path: /static/books/the-secret-key-of-heaven
-  cover: cover.jpg
+  cover: cover.png
   mediaTypes:
     - type: htmlBook
       label: Read Online
       sources:
         - name: Read
           url: /static/books/the-secret-key-of-heaven/the-secret-key-of-heaven.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-secret-key-of-heaven/the-secret-key-of-heaven-whats-new.html
     - type: printBook
       label: Book
       sources:
