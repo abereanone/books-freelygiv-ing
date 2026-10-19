@@ -7,7 +7,7 @@
       prepared: true
   year: 1650
   addedDate: 2026-05-28
-  pages: 189
+  pages: 166
   tags:
     - classic
   description: |
@@ -23,13 +23,18 @@
     8. The duty and comfort of waiting upon God.
   license: CC0
   path: /static/books/the-glorious-feast-of-the-gospel
-  cover: cover.jpg
+  cover: cover.png
   mediaTypes:
     - type: htmlBook
       label: Read Online
       sources:
         - name: Read
           url: /static/books/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-glorious-feast-of-the-gospel/the-glorious-feast-of-the-gospel-whats-new.html
     - type: printBook
       label: Book
       sources:
