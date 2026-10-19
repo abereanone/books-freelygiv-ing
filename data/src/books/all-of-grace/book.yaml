@@ -7,7 +7,7 @@
       prepared: true
   year: 1886
   addedDate: 2026-05-28
-  pages: 140
+  pages: 121
   tags:
     - classic
   description: |
@@ -21,6 +21,11 @@
       sources:
         - name: Read
           url: /static/books/all-of-grace/all-of-grace.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/all-of-grace/all-of-grace-whats-new.html
     - type: printBook
       label: Book
       sources:
