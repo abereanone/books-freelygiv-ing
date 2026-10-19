@@ -3,22 +3,26 @@
   credits:
     - person: john-bunyan
       role: author
+    - person: courtney-hicks
+      prepared: true
   year: 1666
   addedDate: 2026-06-02
-  pages: 84
+  pages: 122
   tags:
     - classic
   description: |
     One of the most searching and honest spiritual autobiographies in the English language. John Bunyan recounts with piercing candor the story of his conversion — his years of wild youth, his years of agonizing doubt and temptation, and the slow, painful breaking of his soul by the grace of God. Written in Bedford jail, this book is not a polished memoir but a raw, numbered account of God's pursuit of a sinner. Bunyan's struggle with assurance, his terrors of conscience, his flashes of gospel comfort, and his final rest in Christ have brought strength to countless readers who have walked the same dark road.
-  license: Public Domain
+
+    Bunyan's enlarged text as CCEL gives it, with CCEL's slips and lost words corrected against the 1666 first edition and George Offor's 1855 edition.
+  license: CC0
   path: /static/books/grace-abounding
   cover: cover.jpg
   mediaTypes:
-    - type: htmlBook
-      label: Read Online
+    - type: printBook
+      label: Book
       sources:
-        - name: Read
-          url: /static/books/grace-abounding/grace-abounding.html
+        - name: Lulu
+          url: https://www.lulu.com/shop/john-bunyan/grace-abounding-to-the-chief-of-sinners/paperback/product-p6mpygr.html
     - type: eBook
       label: eBook
       sources:
@@ -29,8 +33,8 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/grace-abounding/grace-abounding.pdf
-    - type: mobi
-      label: Mobi
+    - type: printReady
+      label: Print Ready
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/grace-abounding/grace-abounding.mobi
+          url: https://files.books.freelygiv.ing/grace-abounding/print-ready.zip
