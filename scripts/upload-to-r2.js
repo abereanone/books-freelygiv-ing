@@ -67,7 +67,10 @@ const s3 = new S3Client({
   },
 });
 
-const BOOK_EXTS = new Set([".epub", ".pdf", ".zip", ".mobi", ".html", ".docx"]);
+// No .html: reader pages and What's New? pages are served from /static/, synced
+// there by scripts/sync-assets.js. Uploading them too put 44MB of copies in R2
+// that nothing ever linked to.
+const BOOK_EXTS = new Set([".epub", ".pdf", ".zip", ".mobi", ".docx"]);
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
