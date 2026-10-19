@@ -124,6 +124,22 @@
   color: var(--my-yellow-text);
 }
 
+.book-count-badge {
+  display: inline-block;
+  min-width: 2.2em;
+  margin-left: 0.75em;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  background: var(--my-yellow-text);
+  color: #212529;
+  font-size: 0.65em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: 0.15em;
+  font-variant-numeric: tabular-nums;
+}
+
 .card-hover {
   transition:
     transform 0.15s ease,

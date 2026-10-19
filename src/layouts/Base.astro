@@ -1,4 +1,6 @@
 ---
+import { getBooks } from '../lib/data.js';
+
 interface Props {
   title?: string;
   ogTitle?: string;
@@ -9,6 +11,7 @@ interface Props {
 }
 
 const SITE_TITLE = 'Freely Given Books';
+const BOOK_COUNT = getBooks().length;
 const SITE_URL   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 
 // This project also answers on the .pages.dev host, so every page has to say which
@@ -78,8 +81,28 @@ const navItems = [
     <nav class="navbar navbar-expand-md border-bottom mb-4">
       <div class="container">
         <a href="/" class="navbar-brand text-yellow">
-          <h2 class="fs-4 mb-0">{SITE_TITLE}</h2>
+          <h2 class="fs-4 mb-0">{SITE_TITLE}<span class="book-count-badge" id="bookCount" data-count={BOOK_COUNT} title={`${BOOK_COUNT} freely given books`} aria-label={`${BOOK_COUNT} freely given books`}>{BOOK_COUNT}</span></h2>
         </a>
+        <script is:inline>
+          // Count up to the total on the first page of a visit; afterwards just show it.
+          (function () {
+            var el = document.getElementById('bookCount');
+            var total = Number(el.dataset.count);
+            try {
+              if (sessionStorage.getItem('bookCountSeen')) return;
+              sessionStorage.setItem('bookCountSeen', '1');
+            } catch (e) { return; }
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var start = null;
+            el.textContent = '0';
+            requestAnimationFrame(function step(t) {
+              if (start === null) start = t;
+              var p = Math.min((t - start) / 2000, 1);
+              el.textContent = Math.round(total * (1 - Math.pow(1 - p, 3)));
+              if (p < 1) requestAnimationFrame(step);
+            });
+          })();
+        </script>
         <div class="d-flex align-items-center gap-2 d-md-none">
           <button class="btn btn-sm" id="themeBtnMobile">
             <img src="/static/images/light-mode.svg" alt="Toggle theme" />
