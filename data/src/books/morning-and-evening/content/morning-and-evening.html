@@ -7810,6 +7810,10 @@ LEST THOU BE CONSUMED.”</p>
     else if (what === 'next') step(1);
     else if ((what === 'am' || what === 'pm') && current) go(current.slice(0, 5) + what);
   });
+  // Firefox only opens the picker from its own icon, not a click on the (invisible) field.
+  bar.querySelector('input[type=date]').addEventListener('click', function () {
+    if (this.showPicker) try { this.showPicker(); } catch (e) {}
+  });
   bar.querySelector('input[type=date]').addEventListener('change', function () {
     var v = this.value; // YYYY-MM-DD
     if (!v) return;
