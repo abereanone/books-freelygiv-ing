@@ -23,6 +23,11 @@
       sources:
         - name: Read
           url: /static/books/the-anatomy-of-simon-magus/the-anatomy-of-simon-magus.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-anatomy-of-simon-magus/the-anatomy-of-simon-magus-whats-new.html
     - type: printBook
       label: Book
       sources:
