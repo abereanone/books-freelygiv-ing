@@ -1,0 +1,54 @@
+- title: "Of Domestical Duties, Volume II"
+  sortTitle: "Domestical Duties, Volume II"
+  credits:
+    - person: william-gouge
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1622
+  addedDate: 2026-10-18
+  pages: 348
+  tags:
+    - classic
+  description: |
+    The second of four volumes of Gouge's Of Domesticall Duties (1622), on husbands and wives.
+
+    Gouge begins before the wedding — how to seek a marriage and how to enter one — then takes up what a husband and wife owe each other in common: unity and faithfulness, living together in love, caring for each other's souls, guarding each other's health, reputation and property, and serving together in the worship of the household.
+
+    The rest is divided. For the wife: respect for her husband, not crossing his will, active obedience, and the limit of it all in her submission to Christ first. For the husband: authority held with affection, gentleness in place of harshness, patience in correcting, kindness in his daily conduct, provision for her, and a love that is sincere and does not run dry. It is the longest of the four volumes and the one the book is best known for.
+
+    Set from the 1622 first edition in modern spelling, with Gouge's own wording kept.
+  license: CC0
+  path: /static/books/domestical-duties-volume-2
+  cover: cover.png
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/domestical-duties-volume-2/domestical-duties-volume-2.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/domestical-duties-volume-2/domestical-duties-volume-2-whats-new.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/william-gouge-and-courtney-hicks/domestical-duties-volume-2/paperback/product-q679ezr.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-2/domestical-duties-volume-2.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-2/domestical-duties-volume-2.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-2/print-ready.zip
