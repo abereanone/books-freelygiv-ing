@@ -1,0 +1,52 @@
+- title: "Of Domestical Duties, Volume I"
+  sortTitle: "Domestical Duties, Volume I"
+  credits:
+    - person: william-gouge
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1622
+  addedDate: 2026-10-18
+  pages: 235
+  tags:
+    - classic
+  description: |
+    The first of four volumes of Gouge's Of Domesticall Duties (1622), the most used English book on family life for a century after it appeared.
+
+    This volume holds the Epistle Dedicatory and the first treatise: Gouge's exposition of Ephesians 5:21–6:4, the text the whole work is built on. He takes it clause by clause — mutual submission in the fear of God, the wife's place and the husband's, the headship of Christ over the church as the pattern for marriage, the love that purifies, the ancient law of one flesh, and then the duties children owe parents and parents owe children. The seven treatises that follow in Volumes II to IV are the application of this one.
+
+    Set from the 1622 first edition in modern spelling, with Gouge's own wording kept.
+  license: CC0
+  path: /static/books/domestical-duties-volume-1
+  cover: cover.png
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/domestical-duties-volume-1/domestical-duties-volume-1.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/domestical-duties-volume-1/domestical-duties-volume-1-whats-new.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/william-gouge/domestical-duties-volume-1/paperback/product-dy759jz.html?page=1&pageSize=4
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-1/domestical-duties-volume-1.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-1/domestical-duties-volume-1.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-volume-1/print-ready.zip
