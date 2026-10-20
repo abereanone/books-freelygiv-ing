@@ -455,6 +455,12 @@ async function main() {
 
   const montages = [
     {
+      name: "home.jpg",
+      images: coversByDate.map((b) => join(PUBLIC, b.path, b.cover)),
+      title: "Freely Given Books",
+      subtitle: `${books.length} books to read, download and share`,
+    },
+    {
       name: "library.jpg",
       images: coversByDate.map((b) => join(PUBLIC, b.path, b.cover)),
       title: "Library",
