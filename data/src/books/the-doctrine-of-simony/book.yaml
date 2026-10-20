@@ -35,3 +35,12 @@
       sources:
         - name: Download
           url: https://simony.info/the-doctrine-of-simony.epub
+    - type: audiobook
+      label: Audiobook
+      sources:
+        - name: Listen online
+          url: https://simony.info/audiobook
+        - name: Podcast feed
+          url: https://simony.info/audiobook/feed.xml
+        - name: Download (MP3)
+          url: https://files.books.freelygiv.ing/the-doctrine-of-simony/the-doctrine-of-simony.mp3

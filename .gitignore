@@ -9,6 +9,7 @@ dist
 *.zip
 *.mobi
 *.docx
+*.mp3
 .env
 *.py
 *.bat
