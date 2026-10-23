@@ -21,3 +21,4 @@ tmp
 _downloads
 public/static/og/preview.html
 public/static/avatars/
+.claude/settings.local.json

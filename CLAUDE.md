@@ -213,5 +213,4 @@ English book). Nothing else uses `htmlBookEs` today, so the migration is one boo
   worth. Still ask before `git push`; the owner says when it goes out.
 - Tell the user when a change requires restarting the Astro dev server — new covers and
   photos only appear after `sync-assets` reruns, which happens at dev/build startup.
-- `sitemapActivity.md` and `_downloads/` are intentionally untracked working files; don't let
-  `git add -A` sweep them in.
+- `_downloads/` is an intentionally untracked working folder; don't let `git add -A` sweep it in.
