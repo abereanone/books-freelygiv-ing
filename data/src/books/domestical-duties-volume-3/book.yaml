@@ -21,6 +21,8 @@
   license: CC0
   path: /static/books/domestical-duties-volume-3
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online

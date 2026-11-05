@@ -17,6 +17,8 @@
   license: CC0
   path: /static/books/the-anatomy-of-simon-magus
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online

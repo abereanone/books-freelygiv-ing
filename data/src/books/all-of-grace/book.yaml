@@ -15,6 +15,8 @@
   license: CC0
   path: /static/books/all-of-grace
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online

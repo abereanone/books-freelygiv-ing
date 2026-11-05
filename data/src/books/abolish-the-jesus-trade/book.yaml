@@ -25,6 +25,8 @@
   license: CC0
   path: /static/books/abolish-the-jesus-trade
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: printBook
       label: Book

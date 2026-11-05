@@ -16,6 +16,8 @@
   license: CC0
   path: /static/books/sinners-in-the-hands-of-an-angry-god
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online

@@ -21,6 +21,8 @@
   license: CC0
   path: /static/books/the-mark-of-a-true-disciple
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: printBook
       label: Book
