@@ -18,6 +18,11 @@
   path: /static/books/meditations-on-psalm-119
   cover: cover.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/meditations-on-psalm-119/meditations-on-psalm-119.html
     - type: pdfBook
       label: PDF
       sources:
