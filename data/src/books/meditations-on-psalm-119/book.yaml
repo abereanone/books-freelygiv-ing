@@ -1,0 +1,25 @@
+- title: Meditations on Psalm 119
+  sortTitle: Meditations on Psalm 119
+  credits:
+    - person: michael-coughlin
+      role: author
+  year: 2026
+  addedDate: 2026-11-05
+  pages: 272
+  tags:
+    - modern
+  description: |
+    Psalm 119 is 176 verses in 22 sections of eight, and it is the longest chapter in the Bible. Memorize it four verses a week and you will have the whole psalm in a year.
+
+    Meditations on Psalm 119 is a companion for that journey: 44 weekly meditations, one for each set of four verses. Every chapter opens with the verses printed in full (Berean Standard Bible), so you can read, memorize, and meditate with the text in front of you. Scripture that is cited but not quoted is printed in the footnotes, and a Scripture index at the back helps you find any reference.
+
+    Read it, memorize it, and let it work on your heart.
+  license: CC0
+  path: /static/books/meditations-on-psalm-119
+  cover: cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/meditations-on-psalm-119/MeditationsOnPsalm119.pdf
