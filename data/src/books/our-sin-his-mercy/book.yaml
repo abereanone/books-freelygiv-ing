@@ -4,7 +4,14 @@
     - person: joe-conkle
       role: author
     - person: michael-coughlin
+      role: contributor
       prepared: true
+    - name: Tim Pasma
+      role: contributor
+    - name: Mike Stockwell
+      role: contributor
+    - name: Jim Deweese
+      role: contributor
   year: 2025
   addedDate: 2026-05-21
   pages: 142
