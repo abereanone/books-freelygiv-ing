@@ -5,7 +5,7 @@ description: Pull Courtney Hicks's Freely Given Books editions (PDF, EPUB, print
 
 # Sync Courtney's books
 
-Courtney Hicks prepares editions of classic books in
+Courtney Hicks (he) prepares editions of classic books in
 [freely-given-books/books](https://github.com/freely-given-books/books). Each
 GitHub release there carries every signed-off book's files plus a `site.json`
 written for this site. `scripts/sync-freely-given.js` does the mechanical
@@ -23,8 +23,28 @@ npm run sync:fgb -- --dry-run --release TAG   # a particular one
 npm run sync:fgb -- --dry-run <slug> <slug>   # only these site pages
 ```
 
-Show the owner the plan in a few lines: which books are new, which are
-updated (which files), anything flagged. Ask before going on.
+Give the owner the plan in a few lines: which books are new, which are
+updated, anything flagged. The owner wants this to take as little of their
+time as possible, so **don't stop to ask** when everything is an update with
+no problems: go straight on to step 2. Stop and ask only when a book is new
+(step 3), or the script printed `PROBLEM:` or `CHECK:` lines.
+
+### Problems go back to Courtney
+
+Courtney (he) publishes the releases. The script checks every edition (files
+present, real PDF/EPUB/HTML, listed in `SHA256SUMS`, title not garbled, slug
+not a duplicate of an existing page, no dead links in the HTML). An edition with a
+`PROBLEM:` is **not imported at all**; the rest still sync. `CHECK:` items
+are imported but worth his attention.
+
+Whenever it prints `FILE TO SEND BACK TO COURTNEY`, that file
+(`_downloads/freely-given/for-courtney.md`) is the message for him: what is
+wrong, per book and file, and what the sync needs. Tell the owner the path and
+that it is ready to send. Don't edit it, don't fix his files here, and don't
+work around a problem by hand-editing `book.yaml` or `content/`. Once he
+re-releases, run the sync again; it only changes what's different. The same
+file can carry an "Optional" note: new books arrive complete when his
+`site.json` has `year`, `description` and `tags` for them.
 
 ## 2. Sync
 
@@ -105,12 +125,13 @@ expires.
 ## When it goes wrong
 
 - **"release … has no site.json"**: that release predates the sync. Use a
-  newer one, or ask Courtney.
+  newer one; the script writes the file to send back to Courtney (he).
 - **"checksum does not match SHA256SUMS"**: a download was cut short, or the
   release changed. Delete `_downloads/freely-given/<tag>/` and run it again.
-  If it keeps failing, tell Courtney.
+  If it keeps failing it lands in the file for Courtney.
 - **GitHub rate limit (403)**: set `GITHUB_TOKEN` (any token, no scopes) and
   run it again.
 - **A slug isn't the one the site uses**: Courtney sets the site's slug in
-  her repository (`books/publishing.toml`, `slug = "..."`). Tell her, and
-  don't rename anything here.
+  his repository (`books/publishing.toml`, `slug = "..."`). The script
+  catches a new book whose title matches an existing page under another slug and
+  reports it in the file for him. Don't rename anything here.
