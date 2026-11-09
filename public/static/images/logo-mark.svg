@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 14 56 40" role="img" aria-label="Freely Given Books">
+  <title>Freely Given Books</title>
+  <g fill="#e0b04f">
+    <path d="M31 21C25 17 16 16 8 18V46C16 44 25 45 31 49Z"/>
+    <path d="M33 21C39 17 48 16 56 18V46C48 44 39 45 33 49Z"/>
+    <path d="M5 21V49C14 47 25 48 32 52C39 48 50 47 59 49V21" fill="none" stroke="#e0b04f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>

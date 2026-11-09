@@ -57,6 +57,14 @@ const navItems = [
     <title>{title ? `${title} - ${SITE_TITLE}` : SITE_TITLE}</title>
     <link rel="canonical" href={canonicalUrl} />
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b2a33" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1b2a33" />
+
     {ogTitle       && <meta property="og:title"       content={ogTitle} />}
     {ogDescription && <meta property="og:description" content={ogDescription} />}
     <meta property="og:image"     content={ogImage} />
@@ -81,7 +89,7 @@ const navItems = [
     <nav class="navbar navbar-expand-md border-bottom mb-4">
       <div class="container">
         <a href="/" class="navbar-brand text-yellow">
-          <h2 class="fs-4 mb-0">{SITE_TITLE}<span class="book-count-badge" id="bookCount" data-count={BOOK_COUNT} title={`${BOOK_COUNT} freely given books`} aria-label={`${BOOK_COUNT} freely given books`}>{BOOK_COUNT}</span></h2>
+          <h2 class="fs-4 mb-0"><img src="/static/images/logo-mark.svg" alt="" width="32" height="23" class="me-2" style="vertical-align: -3px" />{SITE_TITLE}<span class="book-count-badge" id="bookCount" data-count={BOOK_COUNT} title={`${BOOK_COUNT} freely given books`} aria-label={`${BOOK_COUNT} freely given books`}>{BOOK_COUNT}</span></h2>
         </a>
         <script is:inline>
           // Count up to the total on the first page of a visit; afterwards just show it.
