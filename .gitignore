@@ -22,3 +22,4 @@ _downloads
 public/static/og/preview.html
 public/static/avatars/
 .claude/settings.local.json
+!scripts/cut-cover.py

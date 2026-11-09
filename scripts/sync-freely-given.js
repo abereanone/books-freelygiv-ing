@@ -39,7 +39,9 @@
  */
 
 import { createHash } from "crypto";
-import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs";
+import { spawnSync } from "child_process";
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, unlinkSync, writeFileSync } from "fs";
+import { tmpdir } from "os";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { crc32 } from "zlib";
@@ -241,6 +243,28 @@ function editorReport(tag, report, general = []) {
   return REPORT;
 }
 
+/** Back cover and spine, cut from the print-ready wrap cover by scripts/cut-cover.py
+ * (needs Python with PyMuPDF). Returns {back, spine} buffers; {problem} when the
+ * editor's cover doesn't fit his interior (goes in his report); {note} when this
+ * machine can't do it (console only). */
+function cutCover(coverPath, interiorPath) {
+  const dir = mkdtempSync(join(tmpdir(), "fgb-cut-"));
+  try {
+    let res;
+    for (const py of ["python", "python3", "py"]) {
+      res = spawnSync(py, [join(ROOT, "scripts/cut-cover.py"), coverPath, interiorPath, dir], { encoding: "utf8" });
+      if (!res.error) break;
+    }
+    if (res.error) return { note: "back cover and spine not cut: Python was not found on this machine" };
+    if (res.status === 2) return { problem: res.stderr.trim() };
+    if (res.status !== 0)
+      return { note: `back cover and spine not cut: ${res.stderr.trim().split("\n").pop()}` };
+    return { back: readFileSync(join(dir, "back-cover.jpg")), spine: readFileSync(join(dir, "spine.jpg")) };
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
 async function main() {
   const { site, sums: sumsFile, dir } = await release();
   const sums = Object.fromEntries(sumsFile.toString().trim().split("\n")
@@ -323,6 +347,11 @@ async function main() {
     }
     if (r.problems.length) return;
 
+    // back cover and spine, cut from the wrap cover
+    const cut = cutCover(join(cache, f.cover), join(cache, f.pdf));
+    if (cut.problem) r.warnings.push(`cover (${f.cover}): ${cut.problem}. The back cover and spine on the site were not updated.`);
+    else if (cut.note) r.kept.push(cut.note);
+
     const out = {};
     out[`${slug}.pdf`] = pdf;
     out[`${slug}.epub`] = epub;
@@ -332,6 +361,7 @@ async function main() {
     out[`${slug}.html`] = Buffer.from(relink(reader.toString(), names));
     if (compare) out[`${slug}-whats-new.html`] = Buffer.from(relink(compare.toString(), names));
     out["cover.jpg"] = jpg;
+    if (cut.back) { out["back-cover.jpg"] = cut.back; out["spine.jpg"] = cut.spine; }
     const staged = new Set([`${slug}.html`, `${slug}-whats-new.html`]);
     for (const [n, src] of [[`${slug}.html`, f.reader], [`${slug}-whats-new.html`, f.compare]]) {
       const stray = out[n] ? strayLinks(out[n].toString(), staged) : [];
@@ -376,6 +406,7 @@ async function main() {
     if (credits && !credits.items.some((c) => c.get?.("person") === PREPARER && c.get?.("prepared")))
       credits.add(doc.createNode({ person: PREPARER, prepared: true }));
     b.set("cover", "cover.jpg");
+    if (cut.back) { b.set("backCover", "back-cover.jpg"); b.set("spine", "spine.jpg"); }
 
     // a book still hidden with a placeholder year/description/tags: Courtney
     // can supply them in site.json, so the report keeps asking until it's live

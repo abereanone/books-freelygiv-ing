@@ -67,7 +67,9 @@ volume, `<slug>-volume-N`) the script:
 
 - writes `<slug>.pdf`, `<slug>.epub`, `print-ready.zip` (the interior and the
   Lulu cover PDF), `<slug>.html` (Read Online), `<slug>-whats-new.html`
-  (What's New?) and `cover.jpg` into `data/src/books/<slug>/content/`, with
+  (What's New?), `cover.jpg`, and the back cover and spine (`back-cover.jpg`, `spine.jpg`,
+  cut from the Lulu wrap cover by `scripts/cut-cover.py`, which needs Python
+  with PyMuPDF) into `data/src/books/<slug>/content/`, with
   the HTML pages' links pointed at those names
 - in `book.yaml`, sets `pages` and the Read Online, What's New?, eBook, PDF
   and Print Ready buttons, in the order Pilgrim's Progress shows them; adds a

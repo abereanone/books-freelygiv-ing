@@ -54,3 +54,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-1689-baptist-confession-of-faith/print-ready.zip
+  backCover: back-cover.jpg
+  spine: spine.jpg
