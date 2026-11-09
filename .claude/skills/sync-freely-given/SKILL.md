@@ -11,7 +11,7 @@ GitHub release there carries every signed-off book's files plus a `site.json`
 written for this site. `scripts/sync-freely-given.js` does the mechanical
 part: it downloads and checksums the files, writes them into `content/` under
 this site's stable names, and updates `book.yaml`. Your job is to run it,
-deal with what it can't decide, and hand the R2 upload to the owner.
+deal with what it can't decide, upload to R2, and ask the owner only for the push.
 
 Read `CLAUDE.md` and `docs/BOOK-FILES.md` first if you haven't this session.
 
@@ -45,6 +45,16 @@ work around a problem by hand-editing `book.yaml` or `content/`. Once he
 re-releases, run the sync again; it only changes what's different. The same
 file can carry an "Optional" note: new books arrive complete when his
 `site.json` has `year`, `description` and `tags` for them.
+
+### Ask Courtney for whatever saves the owner work
+
+The owner wants to be involved only when needed, and wants Courtney told
+about anything that would let you do it instead. Each time you have to ask
+the owner for something Courtney could supply (a year, a description, tags,
+a Lulu link, a fix to a slug), don't just ask: add it as a request in the
+"Requests that make the next sync hands-free" section of `editorReport()`
+in `scripts/sync-freely-given.js` (and make the script use the field when
+it's there), so it reaches him in the file to send back.
 
 ## 2. Sync
 
@@ -109,18 +119,24 @@ pages, `data/freely-given-sync.json` and the regenerated OG cards. Never
 commit PDFs, EPUBs or ZIPs (`.gitignore` excludes them) or `_downloads/`.
 Ask before pushing.
 
-## 5. The owner uploads
+## 5. Upload to R2 (you do this, no need to ask)
 
-The script ends with the line to run, for example:
+The owner has authorised this: run the `npm run upload -- <slugs> --force`
+line the sync script prints, yourself, **when the sync had no `PROBLEM:`
+lines**. The R2 keys are already in `.env`: never read, print or ask for
+them. `--force` is needed because the files replace ones already in R2.
 
-```bash
-npm run upload -- the-pilgrims-progress all-of-grace --force
-```
+The upload reads every object back and compares sizes; each line must end
+`verified` and the summary must show 0 FAILED. If anything fails, stop and
+tell the owner which files, and don't push.
 
-`--force` is needed because the files replace ones already in R2. Don't run
-it yourself, and don't ask for the R2 keys. The owner runs it, then pushes.
-Downloads can show the old file for a few minutes until the CDN cache
-expires.
+Upload **before** the push, so the live site never links to a file that
+isn't in R2 yet. Then the only step left for the owner is the go-ahead to
+push (ask once, with a one-line summary of what went up). Downloads can show
+the old file for a few minutes until the CDN cache expires.
+
+If the owner is running `npm run dev`, tell them to stop it before you
+run `npm run build`.
 
 ## When it goes wrong
 

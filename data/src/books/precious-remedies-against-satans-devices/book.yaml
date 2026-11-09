@@ -22,6 +22,16 @@
   backCover: back-cover.jpg
   spine: spine.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/precious-remedies-against-satans-devices/precious-remedies-against-satans-devices.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/precious-remedies-against-satans-devices/precious-remedies-against-satans-devices-whats-new.html
     - type: printBook
       label: Book
       sources:

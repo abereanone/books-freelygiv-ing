@@ -78,6 +78,7 @@ const onlySlugs = new Set(args.filter((a) => !a.startsWith("--")));
 
 let uploaded = 0;
 let skipped = 0;
+let failed = 0;
 
 function wanted(bookSlug) {
   return onlySlugs.size === 0 || onlySlugs.has(bookSlug);
@@ -99,15 +100,23 @@ async function upload(key, filePath) {
     return;
   }
 
+  const body = readFileSync(filePath);
   await s3.send(
     new PutObjectCommand({
       Bucket: R2_BUCKET,
       Key: key,
-      Body: readFileSync(filePath),
+      Body: body,
       ContentType: mimeType(key),
     }),
   );
-  console.log(`  ${force ? "replace" : "upload "} ${key}`);
+  // read it back: the object must exist at the size we sent
+  const head = await s3.send(new HeadObjectCommand({ Bucket: R2_BUCKET, Key: key }));
+  if (head.ContentLength !== body.length) {
+    console.error(`  FAILED  ${key}: R2 has ${head.ContentLength} bytes, sent ${body.length}`);
+    failed++;
+    return;
+  }
+  console.log(`  ${force ? "replace" : "upload "} ${key} (${body.length} bytes, verified)`);
   uploaded++;
 }
 
@@ -168,7 +177,8 @@ async function main() {
     }
   }
 
-  console.log(`\nDone — ${uploaded} uploaded, ${skipped} already existed.\n`);
+  console.log(`\nDone — ${uploaded} uploaded, ${skipped} already existed${failed ? `, ${failed} FAILED` : ""}.\n`);
+  if (failed) process.exitCode = 1;
 }
 
 main().catch((err) => {

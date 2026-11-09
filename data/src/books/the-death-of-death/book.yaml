@@ -1,0 +1,43 @@
+- title: The Death of Death in the Death of Christ
+  sortTitle: Death of Death in the Death of Christ
+  hidden: true
+  credits:
+    - name: John Owen
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: null
+  addedDate: 2026-11-09
+  pages: 482
+  tags:
+    - classic
+  description: Owen's Death of Death in the Death of Christ in William Goold's text, as CCEL gives it, with CCEL's slips corrected against Goold's printing and Owen's own wording, chiefly his quotations of Scripture, restored from the 1648 first edition.
+  license: CC0
+  path: /static/books/the-death-of-death
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-death-of-death/the-death-of-death.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-death-of-death/the-death-of-death-whats-new.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-death-of-death/the-death-of-death.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-death-of-death/the-death-of-death.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-death-of-death/print-ready.zip

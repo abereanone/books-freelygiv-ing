@@ -20,6 +20,16 @@
   backCover: back-cover.jpg
   spine: spine.jpg
   mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/grace-abounding/grace-abounding.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/grace-abounding/grace-abounding-whats-new.html
     - type: printBook
       label: Book
       sources:

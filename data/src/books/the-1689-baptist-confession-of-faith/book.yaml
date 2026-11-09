@@ -7,7 +7,7 @@
       prepared: true
   year: 1689
   addedDate: 2026-09-24
-  pages: 210
+  pages: 179
   tags:
     - classic
   description: |
@@ -29,6 +29,11 @@
       sources:
         - name: Read
           url: https://confess.catechize.ing/confessions/lbcf-1689/
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-1689-baptist-confession-of-faith/the-1689-baptist-confession-of-faith-whats-new.html
     - type: printBook
       label: Book
       sources:
@@ -44,3 +49,8 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-1689-baptist-confession-of-faith/the-1689-baptist-confession-of-faith.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-1689-baptist-confession-of-faith/print-ready.zip

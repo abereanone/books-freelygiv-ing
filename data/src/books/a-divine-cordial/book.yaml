@@ -1,0 +1,43 @@
+- title: A Divine Cordial
+  sortTitle: Divine Cordial
+  hidden: true
+  credits:
+    - person: thomas-watson
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: null
+  addedDate: 2026-11-09
+  pages: 164
+  tags:
+    - classic
+  description: Thomas Watson's A Divine Cordial (1663), in modern spelling from the EEBO-TCP transcription of the first edition; Greek, Hebrew and illegible letters restored, and transcription slips corrected, from the 1663 page images, with the 1678 edition where the 1663 film is lost.
+  license: CC0
+  path: /static/books/a-divine-cordial
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/a-divine-cordial/a-divine-cordial.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/a-divine-cordial/a-divine-cordial-whats-new.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-divine-cordial/a-divine-cordial.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-divine-cordial/a-divine-cordial.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-divine-cordial/print-ready.zip

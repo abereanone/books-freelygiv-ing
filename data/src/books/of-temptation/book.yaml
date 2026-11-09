@@ -1,0 +1,43 @@
+- title: Of Temptation
+  sortTitle: Of Temptation
+  hidden: true
+  credits:
+    - name: John Owen
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: null
+  addedDate: 2026-11-09
+  pages: 104
+  tags:
+    - classic
+  description: Owen's Of Temptation from the first edition (Oxford, 1658), EEBO-TCP A90277, its printer's errata and the transcription's slips corrected, with Goold's text (1850-53) as the guide to modern wording.
+  license: CC0
+  path: /static/books/of-temptation
+  cover: cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/of-temptation/of-temptation.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/of-temptation/of-temptation-whats-new.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/of-temptation/of-temptation.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/of-temptation/of-temptation.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/of-temptation/print-ready.zip

@@ -202,7 +202,7 @@ function parseSite(buf) {
 function editorReport(tag, report, general = []) {
   const bad = report.filter((r) => r.problems.length);
   const warned = report.filter((r) => !r.problems.length && r.warnings.length);
-  const meta = report.filter((r) => r.isNew && !r.problems.length && r.missingMeta?.length);
+  const meta = report.filter((r) => !r.problems.length && r.missingMeta?.length);
   if (!general.length && !bad.length && !warned.length && !meta.length) {
     if (existsSync(REPORT)) unlinkSync(REPORT);
     return null;
@@ -225,11 +225,12 @@ function editorReport(tag, report, general = []) {
     for (const r of warned) L.push(head(r), ...r.warnings.map((p) => `- ${p}`), "");
   }
   if (meta.length) {
-    L.push("", "## Optional: so new books arrive complete", "",
-      "New books arrive hidden until the site owner adds a year, description and tags.",
-      "If `site.json` carries them on each book (`\"year\": 1658`, `\"description\": \"...\"`,",
-      "`\"tags\": [\"puritan\"]`) the sync uses them. Missing for:", "",
-      ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}`), "");
+    L.push("", "## Requests that make the next sync hands-free", "",
+      "New books arrive hidden until the site owner fills in a year, description and tags by hand.",
+      "If `site.json` carries them on each book (`\"year\": 1658`, a reader-facing `\"description\"`",
+      "of a sentence or two, not the edition summary, and `\"tags\": [\"puritan\"]`) the sync uses",
+      "them and nobody has to do it. Missing for:", "",
+      ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}${r.noLulu ? "; lulu (only if a print edition exists)" : ""}`), "");
   }
   L.push("", "## What the sync needs, per edition", "",
     "`slug`, `pages`, and `files` with `pdf`, `epub`, `cover` (the Lulu cover PDF), `front` (the front",
@@ -355,8 +356,6 @@ async function main() {
     const b = doc.get(0, true);
     if (isNew) {
       const author = personSlug(book.author);
-      r.missingMeta = [!book.year && "year", !book.description && "description",
-        !(Array.isArray(book.tags) && book.tags.length) && "tags"].filter(Boolean);
       b.set("title", title);
       b.set("sortTitle", sortTitle(title));
       b.set("hidden", true);
@@ -377,6 +376,19 @@ async function main() {
     if (credits && !credits.items.some((c) => c.get?.("person") === PREPARER && c.get?.("prepared")))
       credits.add(doc.createNode({ person: PREPARER, prepared: true }));
     b.set("cover", "cover.jpg");
+
+    // a book still hidden with a placeholder year/description/tags: Courtney
+    // can supply them in site.json, so the report keeps asking until it's live
+    if (isNew || b.get("hidden") === true) {
+      const hasTags = Array.isArray(book.tags) && book.tags.length;
+      const yTags = b.get("tags")?.toJSON?.() ?? [];
+      r.missingMeta = [
+        !book.year && (isNew || b.get("year") == null) && "year",
+        !book.description && (isNew || b.get("description") === book.summary) && "description",
+        !hasTags && (isNew || (yTags.length === 1 && yTags[0] === "classic")) && "tags",
+      ].filter(Boolean);
+      r.noLulu = !ed.lulu;
+    }
 
     const want = {
       htmlBook: button("htmlBook", "Read Online", "Read", page(`${slug}.html`)),
