@@ -1,6 +1,7 @@
 - firstName: John
   lastName: Owen
   slug: john-owen
+  photo: "john-owen.jpg"
   description: >
     John Owen (1616–1683) was an English Puritan theologian and pastor, educated at Queen's
     College, Oxford. Under Cromwell he served as dean of Christ Church and as Vice-Chancellor

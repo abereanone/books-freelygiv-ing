@@ -1,17 +1,16 @@
 - title: A Divine Cordial
   sortTitle: Divine Cordial
-  hidden: true
   credits:
     - person: thomas-watson
       role: author
     - person: courtney-hicks
       prepared: true
-  year: null
-  addedDate: 2026-11-09
+  year: 1663
+  addedDate: 2026-11-08
   pages: 164
   tags:
     - classic
-  description: Thomas Watson's A Divine Cordial (1663), in modern spelling from the EEBO-TCP transcription of the first edition; Greek, Hebrew and illegible letters restored, and transcription slips corrected, from the 1663 page images, with the 1678 edition where the 1663 film is lost.
+  description: 'Watson on Romans 8:28, "All things work together for good to them that love God": the comfort of that promise for believers under every kind of trouble.'
   license: CC0
   path: /static/books/a-divine-cordial
   cover: cover.jpg

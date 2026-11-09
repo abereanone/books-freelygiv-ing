@@ -1,17 +1,16 @@
 - title: The Mortification of Sin
   sortTitle: Mortification of Sin
-  hidden: true
   credits:
     - person: john-owen
       role: author
     - person: courtney-hicks
       prepared: true
-  year: null
-  addedDate: 2026-11-09
+  year: 1656
+  addedDate: 2026-11-08
   pages: 151
   tags:
     - classic
-  description: Owen's Of the Mortification of Sin in Believers in Goold's text (1850-53), as CCEL gives it, with two lines CCEL dropped and three slips corrected from Goold's printing, the 1668 second edition agreeing.
+  description: 'Owen on Romans 8:13, "If ye through the Spirit do mortify the deeds of the body, ye shall live": how a believer is to fight the sin that remains in him, and by whose power.'
   license: CC0
   path: /static/books/the-mortification-of-sin
   cover: cover.jpg

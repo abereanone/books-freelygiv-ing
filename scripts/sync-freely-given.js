@@ -260,7 +260,7 @@ async function main() {
   }
 
   const state = existsSync(STATE) ? JSON.parse(readFileSync(STATE, "utf8")) : { editions: {} };
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date().toLocaleDateString("en-CA"); // local date, YYYY-MM-DD
   const report = [], upload = [], seen = new Set(), titles = existingTitles();
   console.log(`Freely Given Books release ${site.release}${dryRun ? " (dry run)" : ""}`);
 

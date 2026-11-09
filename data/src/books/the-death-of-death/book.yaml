@@ -1,17 +1,16 @@
 - title: The Death of Death in the Death of Christ
   sortTitle: Death of Death in the Death of Christ
-  hidden: true
   credits:
     - person: john-owen
       role: author
     - person: courtney-hicks
       prepared: true
-  year: null
-  addedDate: 2026-11-09
+  year: 1648
+  addedDate: 2026-11-08
   pages: 482
   tags:
     - classic
-  description: Owen's Death of Death in the Death of Christ in William Goold's text, as CCEL gives it, with CCEL's slips corrected against Goold's printing and Owen's own wording, chiefly his quotations of Scripture, restored from the 1648 first edition.
+  description: Owen's long argument that Christ's death did not merely make salvation possible but actually secured the redemption and reconciliation of those for whom he died.
   license: CC0
   path: /static/books/the-death-of-death
   cover: cover.jpg

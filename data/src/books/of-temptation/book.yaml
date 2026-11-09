@@ -1,17 +1,16 @@
 - title: Of Temptation
   sortTitle: Of Temptation
-  hidden: true
   credits:
     - person: john-owen
       role: author
     - person: courtney-hicks
       prepared: true
-  year: null
-  addedDate: 2026-11-09
+  year: 1658
+  addedDate: 2026-11-08
   pages: 104
   tags:
     - classic
-  description: Owen's Of Temptation from the first edition (Oxford, 1658), EEBO-TCP A90277, its printer's errata and the transcription's slips corrected, with Goold's text (1850-53) as the guide to modern wording.
+  description: 'Owen on Matthew 26:41, "Watch and pray, that ye enter not into temptation": the nature and power of temptation, the danger of entering into it, and the means of preventing that danger.'
   license: CC0
   path: /static/books/of-temptation
   cover: cover.jpg

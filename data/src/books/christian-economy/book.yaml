@@ -1,17 +1,16 @@
 - title: Christian Economy
   sortTitle: Christian Economy
-  hidden: true
   credits:
     - person: william-perkins
       role: author
     - person: courtney-hicks
       prepared: true
-  year: null
-  addedDate: 2026-11-09
+  year: 1609
+  addedDate: 2026-11-08
   pages: 124
   tags:
     - classic
-  description: Perkins's Christian Oeconomie (1609), translated from the Latin by Thomas Pickering, in modern spelling from the EEBO-TCP transcription; footnotes kept in the original spelling; readings corrected and words the transcription left out restored from the 1609 page images.
+  description: "Perkins's short survey of the right manner of ordering a family according to the Scriptures: the duties of husband and wife, parents and children, masters and servants."
   license: CC0
   path: /static/books/christian-economy
   cover: cover.jpg
