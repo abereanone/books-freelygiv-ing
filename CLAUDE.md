@@ -30,8 +30,8 @@ npm run upload                              # push new book files to R2 (skips e
 npm run upload -- <slug>                    # one book only
 npm run upload -- <slug> --force            # overwrite an existing R2 object (required for replacements)
 
-npm run sync:fgb -- --dry-run               # Courtney Hicks's books from her newest GitHub release
-npm run sync:fgb                            # (the sync-freely-given skill walks through it)
+npm run sync:fgb -- --dry-run               # Courtney Hicks's books from his newest GitHub release
+npm run sync:fgb                            # (the courtney-books skill walks through it)
 ```
 
 There are no tests, linter, or typecheck script. `.prettierignore` exists but Prettier is not
