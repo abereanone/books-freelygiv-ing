@@ -138,8 +138,8 @@ bring it back.
 
 `mediaTypes` entries are `{ type, label, sources: [{ name, url }] }`. The `type` values in
 actual use are `htmlBook`, `pdfBook`, `eBook` (epub), `mobi`, `printBook`, `printReady`,
-`audiobook`, `wordDoc`, `htmlBookEs` (Spanish read-online; its own type so /library gives it
-its own filter button rather than folding it into Read Online).
+`audiobook`, `wordDoc`, `htmlBookEs` (a Spanish read-online link on an English book; a full
+translation gets its own page instead, see "Other languages").
 
 `type` is what selects the button colour and icon, so a new type must be added in three places
 or it silently falls back to a plain blue button with no icon:
@@ -161,29 +161,37 @@ The upload script uses the filename verbatim as the R2 key, so the file in `cont
 URL in `book.yaml` must match exactly, capitalisation included. See `docs/BOOK-FILES.md` for
 the full add/replace workflow and troubleshooting.
 
-## Future: multilanguage support
+## Other languages (decided 2026-11-13)
 
-`htmlBookEs` is a stopgap, not the design. Minting a type per language per format does not
-scale — a Spanish PDF and audiobook would need `pdfBookEs` and `audiobookEs`, then the same
-again for every language after that, each one requiring the three-place registration above.
-
-When a second language gets more than one format, replace it with a `lang` field on the
-`mediaTypes` entry (defaulting to `en`), and group the buttons by language on the book page:
+**A translated edition is its own book page**, with its own slug, cover, Spanish title and
+description, and its own files, e.g. `meditaciones-sobre-el-salmo-119` beside
+`meditations-on-psalm-119`. Three fields make it one:
 
 ```yaml
-- type: htmlBook
-  label: Read Online
-  lang: es          # instead of a separate htmlBookEs type
-  sources:
-    - name: Leer
-      url: https://freehebrew.online/el-nombre-divino/
+- title: Meditaciones sobre el Salmo 119
+  lang: es                                   # the whole book's language; default en
+  translationOf: meditations-on-psalm-119    # slug of the original
+  tags: [modern, español]                    # language tag: badge on cards + /library tag filter
 ```
 
-That keeps one type per *format* and lets /library filter by language independently of
-format — which is the thing a Spanish reader actually wants. Migrating means converting the
-`htmlBookEs` entry on `the-divine-name`, and deciding whether a book's language belongs on
-the whole book (a Spanish-only title) as well as per media type (a Spanish edition of an
-English book). Nothing else uses `htmlBookEs` today, so the migration is one book wide.
+- `lang` must be a key of `LANGUAGES` in `src/lib/data.js` (add a language there first). The
+  book page puts it on the title and description only; the page chrome stays English.
+- `translationOf` links the family: `getBooks()` gives every book an `editions` list, and each
+  page shows "Also available in Spanish: …" / "Also available in English: …". Only the
+  translation carries the field; the original needs no edit. A slug that is not a visible book
+  warns during the build.
+- The language tag (`español`) is how a Spanish reader finds every Spanish book in /library.
+  Its badge colour is `.tag-español` in `public/css/custom.css`; a new language needs a rule.
+- Button `label`s and source `name`s are in the book's language (Leer en línea / Descargar /
+  Para imprimir); the `type`s are the ordinary ones, so no new type is registered.
+- `printBook` (Lulu) is added only once the translation has its own Lulu product.
+
+`htmlBookEs` is older and narrower: a Spanish read-online link on an *English* book whose
+Spanish edition has no page here (`the-divine-name`, hosted on freehebrew.online). Keep it for
+that case; if that edition is ever hosted here, give it its own page as above instead.
+
+Built HTML books (fonts and images beside `book.html`) become the single file the site serves
+with `python scripts/inline-html.py path/to/book.html content/<slug>.html`.
 
 ## Site conventions
 

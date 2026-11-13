@@ -188,7 +188,7 @@ function getBookDirs() {
 export function getBooks() {
   const peopleBySlug = personBySlug(readPeople());
 
-  return getBookDirs().flatMap(({ bookSlug, bookDir }) => {
+  const books = getBookDirs().flatMap(({ bookSlug, bookDir }) => {
     const f = join(bookDir, "book.yaml");
     return existsSync(f)
       ? readYamlArray(f)
@@ -197,8 +197,11 @@ export function getBooks() {
             const credits = (book.credits || []).map((entry) =>
               normalizeCredit(entry, peopleBySlug, bookSlug),
             );
+            const lang = book.lang ?? "en";
+            if (!LANGUAGES[lang]) console.warn(`[data] ${bookSlug}: unknown lang "${lang}" (add it to LANGUAGES)`);
             return {
               ...book,
+              lang,
               path: book.path ?? `/static/books/${bookSlug}`,
               credits,
               // Derived, for everything that only wants the byline. The first author is the
@@ -208,6 +211,42 @@ export function getBooks() {
           })
       : [];
   });
+  return withEditions(books);
+}
+
+/**
+ * Languages a book can be in. `lang` in book.yaml (default `en`) is the language of the
+ * whole book. A translated edition is its own book page with `translationOf: <slug of the
+ * original>`; every book in that family then lists the others ("Also available in Spanish").
+ */
+export const LANGUAGES = {
+  en: { name: "English", native: "English" },
+  es: { name: "Spanish", native: "Español" },
+};
+
+function withEditions(books) {
+  const slugOf = (book) => bookSlugFromPath(book.path);
+  const visible = new Set(books.map(slugOf));
+  const families = new Map();
+  for (const book of books) {
+    if (book.translationOf && !visible.has(book.translationOf)) {
+      console.warn(`[data] ${slugOf(book)}: translationOf "${book.translationOf}" is not a visible book`);
+    }
+    const root = book.translationOf ?? slugOf(book);
+    if (!families.has(root)) families.set(root, []);
+    families.get(root).push(book);
+  }
+  return books.map((book) => ({
+    ...book,
+    editions: families
+      .get(book.translationOf ?? slugOf(book))
+      .filter((other) => other !== book)
+      .map((other) => ({
+        title: other.title,
+        lang: other.lang,
+        href: `/books/${bookAuthorSlug(other)}/${slugOf(other)}/`,
+      })),
+  }));
 }
 
 /**

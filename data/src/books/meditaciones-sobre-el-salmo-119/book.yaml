@@ -1,0 +1,45 @@
+- title: Meditaciones sobre el Salmo 119
+  sortTitle: Meditaciones sobre el Salmo 119
+  lang: es
+  translationOf: meditations-on-psalm-119
+  credits:
+    - person: michael-coughlin
+      role: author
+  year: 2026
+  addedDate: 2026-11-13
+  pages: 280
+  tags:
+    - modern
+    - español
+  description: |
+    El Salmo 119 tiene 176 versículos en 22 secciones de ocho, y es el capítulo más largo de la Biblia. Si memorizas cuatro versículos por semana, en un año tendrás el salmo completo.
+
+    Meditaciones sobre el Salmo 119 te acompaña en ese camino: 44 meditaciones semanales, una por cada grupo de cuatro versículos. Cada capítulo comienza con sus versículos impresos completos (Reina-Valera 1909), para que puedas leer, memorizar y meditar con el texto delante. Los pasajes que se citan sin transcribirse aparecen en las notas al pie, y un índice bíblico al final te ayuda a encontrar cualquier referencia.
+
+    Léelo, memorízalo y deja que obre en tu corazón.
+  license: CC0
+  path: /static/books/meditaciones-sobre-el-salmo-119
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Leer en línea
+      sources:
+        - name: Leer
+          url: /static/books/meditaciones-sobre-el-salmo-119/meditaciones-sobre-el-salmo-119.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/meditaciones-sobre-el-salmo-119/MeditacionesSobreElSalmo119.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/meditaciones-sobre-el-salmo-119/MeditacionesSobreElSalmo119.epub
+    - type: printReady
+      label: Para imprimir
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/meditaciones-sobre-el-salmo-119/print-ready.zip

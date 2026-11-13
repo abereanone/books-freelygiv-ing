@@ -3,7 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import FormatIcon from '../../../components/FormatIcon.astro';
 import ShareButton from '../../../components/ShareButton.astro';
 import CreditNames from '../../../components/CreditNames.astro';
-import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
+import { ROLES, LANGUAGES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
 
 export function getStaticPaths() {
   return getBooks().map((book: any) => ({
@@ -28,6 +28,8 @@ const siteUrl   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogSlug    = bookSlugFromPath(book.path);
 const ogImage   = `${siteUrl}/static/og/book-${ogSlug}.jpg`;
 const shareTitle = `${book.title}${book.authors?.[0] ? ' by ' + authorNames(book.authors) : ''}`;
+// The page chrome is English; only the book's own title and description carry its language.
+const bookLang  = book.lang && book.lang !== 'en' ? book.lang : undefined;
 
 const btnClass: Record<string, string> = {
   htmlBook:   'btn-success',
@@ -85,7 +87,7 @@ const views = [
       )}
 
       <h1 class="mb-1">
-        {book.title}
+        <span lang={bookLang}>{book.title}</span>
         {authorCredits.length > 0 && (
           <span class="fs-5 fw-normal text-body-secondary ms-2">by <CreditNames credits={authorCredits} /></span>
         )}
@@ -103,10 +105,18 @@ const views = [
         ].filter(Boolean).join(' · ')}
       </p>
 
+      {book.editions?.length > 0 && (
+        <p class="book-editions mb-3">
+          {book.editions.map((ed: any, i: number) => (
+            <span>{i > 0 && ' · '}Also available in {LANGUAGES[ed.lang]?.name ?? ed.lang}: <a href={ed.href} lang={ed.lang !== 'en' ? ed.lang : undefined}><em>{ed.title}</em></a></span>
+          ))}
+        </p>
+      )}
+
       {book.description && (
         <div class="book-description mb-4">
           <h3>Description</h3>
-          <div set:html={descHtml} />
+          <div lang={bookLang} set:html={descHtml} />
         </div>
       )}
 

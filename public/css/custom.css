@@ -197,6 +197,13 @@
   color: #fff;
 }
 
+/* Language tags: a translated edition carries its language as a tag ("español"), which gives
+   it a badge on every card and an entry in /library's tag filter. */
+.tag-español {
+  background-color: #8a2a3c;
+  color: #fff;
+}
+
 .type-btn-active {
   outline: 3px solid gold;
   outline-offset: 2px;
