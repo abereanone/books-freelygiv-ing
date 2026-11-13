@@ -1,0 +1,45 @@
+- title: Indwelling Sin
+  sortTitle: Indwelling Sin
+  hidden: true
+  credits:
+    - person: john-owen
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1668
+  addedDate: 2026-11-13
+  pages: 276
+  tags:
+    - classic
+  description: 'Owen on Romans 7:21, "I find then a law, that, when I would do good, evil is present with me": the power and deceit of the sin that remains in believers, and how it works against the law and grace of God in them.'
+  license: CC0
+  path: /static/books/indwelling-sin
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/indwelling-sin/indwelling-sin.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/indwelling-sin/indwelling-sin-whats-new.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/indwelling-sin/indwelling-sin.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/indwelling-sin/indwelling-sin.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/indwelling-sin/print-ready.zip
