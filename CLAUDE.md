@@ -183,7 +183,9 @@ description, and its own files, e.g. `meditaciones-sobre-el-salmo-119` beside
   tags: [modern, español]                    # language tag: badge on cards + /library tag filter
 ```
 
-- `lang` must be a key of `LANGUAGES` in `src/lib/data.js` (add a language there first). The
+- `lang` must be a key of `LANGUAGES` in `src/lib/data.js` (add a language there first, with its
+  `siteName`: the book page passes `lang` to `Base.astro`, which shows that name in the header,
+  tab title, footer and og:site_name, e.g. "Libros Dados de Gracia" for `es`). The
   book page puts it on the title and description only; the page chrome stays English.
 - `translationOf` links the family: `getBooks()` gives every book an `editions` list, and each
   page shows "Also available in Spanish: …" / "Also available in English: …". Only the

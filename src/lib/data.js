@@ -228,8 +228,9 @@ export function getBooks() {
  * original>`; every book in that family then lists the others ("Also available in Spanish").
  */
 export const LANGUAGES = {
-  en: { name: "English", native: "English" },
-  es: { name: "Spanish", native: "Español" },
+  // siteName: the site's name shown on that language's book pages (header, tab title, footer)
+  en: { name: "English", native: "English", siteName: "Freely Given Books" },
+  es: { name: "Spanish", native: "Español", siteName: "Libros Dados de Gracia" }, // Mt 10:8 RV1909 "dad de gracia"
 };
 
 function withEditions(books) {

@@ -1,7 +1,8 @@
 ---
-import { getBooks } from '../lib/data.js';
+import { getBooks, LANGUAGES } from '../lib/data.js';
 
 interface Props {
+  lang?: string;   // language of the page's content; picks the site name (LANGUAGES[lang].siteName)
   title?: string;
   ogTitle?: string;
   ogDescription?: string;
@@ -10,7 +11,9 @@ interface Props {
   ogType?: string;
 }
 
-const SITE_TITLE = 'Freely Given Books';
+const pageLang   = Astro.props.lang && Astro.props.lang !== 'en' ? Astro.props.lang : undefined;
+const SITE_TITLE = (pageLang && LANGUAGES[pageLang]?.siteName) || LANGUAGES.en.siteName;
+const titleLang  = pageLang && LANGUAGES[pageLang]?.siteName ? pageLang : undefined;
 const BOOK_COUNT = getBooks().length;
 const SITE_URL   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 
@@ -89,7 +92,7 @@ const navItems = [
     <nav class="navbar navbar-expand-md border-bottom mb-4">
       <div class="container">
         <a href="/" class="navbar-brand text-yellow">
-          <h2 class="fs-4 mb-0"><img src="/static/images/logo-mark.svg" alt="" width="32" height="23" class="me-2" style="vertical-align: -3px" />{SITE_TITLE}<span class="book-count-badge" id="bookCount" data-count={BOOK_COUNT} title={`${BOOK_COUNT} freely given books`} aria-label={`${BOOK_COUNT} freely given books`}>{BOOK_COUNT}</span></h2>
+          <h2 class="fs-4 mb-0"><img src="/static/images/logo-mark.svg" alt="" width="32" height="23" class="me-2" style="vertical-align: -3px" /><span lang={titleLang}>{SITE_TITLE}</span><span class="book-count-badge" id="bookCount" data-count={BOOK_COUNT} title={`${BOOK_COUNT} freely given books`} aria-label={`${BOOK_COUNT} freely given books`}>{BOOK_COUNT}</span></h2>
         </a>
         <script is:inline>
           // Count up to the total on the first page of a visit; afterwards just show it.
@@ -141,7 +144,7 @@ const navItems = [
 
     <div class="container">
       <footer class="py-3 my-4">
-        <p class="text-center text-body-secondary">{SITE_TITLE}</p>
+        <p class="text-center text-body-secondary" lang={titleLang}>{SITE_TITLE}</p>
         <p class="text-center">
           <a href="https://github.com/abereanone/books-freelygiv-ing/issues/new" target="_blank" rel="noopener noreferrer" class="text-body-secondary small">Report a Problem</a>
         </p>
