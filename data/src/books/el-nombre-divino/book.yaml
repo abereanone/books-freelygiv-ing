@@ -1,0 +1,58 @@
+- title: "Pronunciando y traduciendo el Nombre Divino יהוה: Historia y práctica"
+  sortTitle: "Pronunciando y traduciendo el Nombre Divino יהוה: Historia y práctica"
+  lang: es
+  translationOf: the-divine-name
+  credits:
+    - person: andrew-case
+      role: author
+    - name: Fernando Sánchez-Pérez
+      role: translator
+  year: 2026
+  addedDate: 2026-11-13
+  pages: 197
+  tags:
+    - modern
+    - español
+  description: |
+    ¿Por qué tantas Biblias ponen SEÑOR donde el hebreo dice יהוה? ¿Cómo se llegó a evitar el nombre personal que Dios mismo se dio, y qué deben hacer hoy los traductores con él?
+
+    Andrew Case recorre la larga historia de cómo se ha evitado ese nombre: el paso de pronunciarlo a suprimirlo, el uso de «Señor» en el Nuevo Testamento, la práctica de la iglesia primitiva y de la Antigüedad tardía, y la manera en que distintas lenguas y versiones han tratado יהוה desde entonces. Junto a la historia aborda las preguntas prácticas: qué se puede saber de su pronunciación, cómo se impuso el tabú y en qué consiste hoy la fidelidad para un traductor.
+
+    A lo largo del libro sostiene que Dios quiere que su nombre se pronuncie y se recuerde. Está escrito para cristianos y traductores de la Biblia que quieren entender las distintas posturas en lugar de heredar una convención sin examinarla.
+  license: CC0
+  path: /static/books/el-nombre-divino
+  cover: cover.jpg
+  mediaTypes:
+    # The files stay on the publisher's OneDrive, as the English PDF does. If a link dies,
+    # mirror that file to R2 the way the English EPUB was (see the-divine-name/book.yaml).
+    - type: htmlBook
+      label: Leer en línea
+      sources:
+        - name: Leer
+          url: https://freehebrew.online/el-nombre-divino/
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Descargar
+          url: https://1drv.ms/b/c/bcb2002e8d07bc79/IQAYgGX0GX-JQp1xHED5mAShAcQUJPlnb-wl5VRsJMzIpws?e=QKsPkL
+    - type: eBook
+      label: eBook
+      sources:
+        - name: EPUB
+          url: https://1drv.ms/u/c/bcb2002e8d07bc79/IQDzbyzqmfadRJqy9HXgWdzwAWd_O9efXpufpYoNwAMIOrY?e=bMhR1X
+        - name: Kindle
+          url: https://www.amazon.com/dp/B0GXH17T1P
+        - name: Otras tiendas
+          url: https://books2read.com/u/mVGnkA
+    - type: wordDoc
+      label: Word
+      sources:
+        - name: Descargar
+          url: https://1drv.ms/w/c/bcb2002e8d07bc79/IQDPoDT23ovpQK9E40ZNkoe7AQruFZ8Ld42t6uMZJ0eXXXo?e=fCTvyS
+    - type: printBook
+      label: Libro
+      sources:
+        - name: Amazon
+          url: https://www.amazon.com/dp/B0GRQW21R1
+        - name: Lulu
+          url: https://www.lulu.com/shop/andrew-case-and-fernando-s%C3%A1nchez-p%C3%A9rez/pronunciando-y-traduciendo-el-nombre-divino-%D7%99%D7%94%D7%95%D7%94/paperback/product-yvrk2p7.html

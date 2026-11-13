@@ -51,6 +51,11 @@ export const ROLES = [
     description: "Wrote the foreword that introduces a book.",
   },
   {
+    key: "translator", label: "Translator", plural: "Translators",
+    booksHeading: "Books Translated", byline: "translated by",
+    description: "Translated a book into another language. Credited on that translated edition's own page.",
+  },
+  {
     key: "preparer", label: "Preparer", plural: "Preparers",
     booksHeading: "Books Prepared", byline: "prepared by",
     description: "Prepared a free edition for this site: digitizing, editing, typesetting or formatting it so it can be freely given.",
@@ -61,6 +66,9 @@ export const ROLES = [
 export const EVERYONE_DESCRIPTION = "Everyone credited on a book in this library, in any role.";
 
 const BOOK_ROLES = new Set(["author", "contributor", "foreword"]);
+// Every `role:` a credit may carry. A translator is credited on the translated edition but did
+// not write the book, so they stay out of BOOK_ROLES (the library's By Author tab).
+const CREDIT_ROLES = new Set([...BOOK_ROLES, "translator"]);
 
 /** Whether a credit carries a ROLES key — `preparer` is the `prepared` flag, the rest `role`. */
 export function creditHasRole(credit, roleKey) {
@@ -110,7 +118,7 @@ function normalizeCredit(entry, peopleBySlug, bookSlug) {
   const person = entry.person ? peopleBySlug[entry.person] : null;
   if (entry.person && !person)
     console.warn(`[data] ${bookSlug}: no data/src/${entry.person}/person.yaml for credit`);
-  if (entry.role && !BOOK_ROLES.has(entry.role))
+  if (entry.role && !CREDIT_ROLES.has(entry.role))
     console.warn(`[data] ${bookSlug}: unknown credit role "${entry.role}"`);
 
   const name = person ? personName(person) : (entry.name ?? entry.person ?? "");

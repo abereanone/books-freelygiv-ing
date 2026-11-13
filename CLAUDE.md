@@ -82,7 +82,9 @@ credits:
 
 Two kinds of credit, and a credit carries **at most one of each** — the owner explicitly
 didn't want a list of trades per person:
-- **Book credit**, `role:` — `author`, `contributor` (wrote part of the book) or `foreword`.
+- **Book credit**, `role:` — `author`, `contributor` (wrote part of the book), `foreword`, or
+  `translator` (on a translated edition's page: "translated by"; not counted as a writer, so not
+  in /library's By Author tab).
   True of any printing of the book. Co-authors are several `author` credits; the first is
   primary and supplies the book URL's `[authorSlug]`.
 - **Edition credit**, `prepared: true` — made this free edition. Digitizing, editing,
@@ -186,9 +188,13 @@ description, and its own files, e.g. `meditaciones-sobre-el-salmo-119` beside
   Para imprimir); the `type`s are the ordinary ones, so no new type is registered.
 - `printBook` (Lulu) is added only once the translation has its own Lulu product.
 
-`htmlBookEs` is older and narrower: a Spanish read-online link on an *English* book whose
-Spanish edition has no page here (`the-divine-name`, hosted on freehebrew.online). Keep it for
-that case; if that edition is ever hosted here, give it its own page as above instead.
+The files may live elsewhere: `el-nombre-divino` (Spanish *Divine Name*) links to the publisher's
+own read-online page and OneDrive files, as the English page does. A page is about the edition,
+not where its files are hosted.
+
+`htmlBookEs` (a Spanish read-online button on an English page) is no longer used by any book:
+the-divine-name's was replaced by the `el-nombre-divino` page on 2026-11-13. It is still
+registered in the three places; don't use it for new books.
 
 Built HTML books (fonts and images beside `book.html`) become the single file the site serves
 with `python scripts/inline-html.py path/to/book.html content/<slug>.html`.

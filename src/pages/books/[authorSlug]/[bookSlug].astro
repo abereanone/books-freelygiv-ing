@@ -18,9 +18,9 @@ export function getStaticPaths() {
 const { book } = Astro.props;
 const authorCredits   = bookCredits(book, 'author');
 const preparers       = bookCredits(book, 'preparer');
-// Book credits below the byline: "with contributions by …", "foreword by …".
+// Book credits below the byline: "with contributions by …", "foreword by …", "translated by …".
 const secondaryLines  = ROLES
-  .filter(role => role.key === 'contributor' || role.key === 'foreword')
+  .filter(role => role.key === 'contributor' || role.key === 'foreword' || role.key === 'translator')
   .map(role => ({ role, credits: bookCredits(book, role.key) }))
   .filter(line => line.credits.length);
 const descHtml  = newlineToBr(linkify(book.description ?? ''));
