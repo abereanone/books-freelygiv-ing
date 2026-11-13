@@ -22,6 +22,11 @@
       sources:
         - name: Read
           url: /static/books/on-the-election-of-infants/on-the-election-of-infants.html
+    - type: htmlBook
+      label: Open on ThingsAbove.us
+      sources:
+        - name: Open
+          url: https://thingsabove.us/on-the-election-of-infants/
     - type: pdfBook
       label: PDF
       sources:
