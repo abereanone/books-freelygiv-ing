@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import BookItem from '../components/BookItem.astro';
-import { getBooks, getBookAuthorPairs } from '../lib/data.js';
+import { getBooks, getBookAuthorPairs, LANGUAGES } from '../lib/data.js';
 
 const books = getBooks().sort((a, b) => a.sortTitle.localeCompare(b.sortTitle));
 const bookAuthorPairs = getBookAuthorPairs();
@@ -23,6 +23,12 @@ const typeConfig: Record<string, { label: string; cls: string }> = {
 const allTypes = [...new Set(books.flatMap(b => (b.mediaTypes || []).map((m: any) => m.type)))]
   .filter(t => typeConfig[t])
   .sort((a, b) => Object.keys(typeConfig).indexOf(a) - Object.keys(typeConfig).indexOf(b));
+
+// One button per language that has a book, in LANGUAGES order; none while every book is English.
+const allLangs = [...new Set(books.map((b: any) => b.lang))]
+  .sort((a, b) => Object.keys(LANGUAGES).indexOf(a) - Object.keys(LANGUAGES).indexOf(b));
+const langLabel = (lang: string) => (LANGUAGES as any)[lang]?.filter ?? lang;
+const langName  = (lang: string) => (LANGUAGES as any)[lang]?.name ?? lang;
 
 function groupByLetter<T>(items: T[], getLetter: (item: T) => string): { letter: string; items: T[] }[] {
   const map = new Map<string, T[]>();
@@ -46,6 +52,17 @@ const ogImage = `${siteUrl}/static/og/library.jpg`;
   <h1>Library</h1>
 
   <div class="d-flex flex-wrap gap-2 mb-2" id="typeFilter">
+    {allLangs.length > 1 && allLangs.map(lang => (
+      <button
+        class="btn btn-sm btn-lang lang-filter-btn"
+        data-lang={lang}
+        data-name={langName(lang)}
+        lang={lang}
+        type="button"
+        aria-pressed="false"
+      >{langLabel(lang)}</button>
+    ))}
+    {allLangs.length > 1 && <span class="filter-divider" aria-hidden="true"></span>}
     {allTypes.map(type => (
       <button
         class={`btn btn-sm ${typeConfig[type].cls} type-filter-btn`}
@@ -55,7 +72,7 @@ const ogImage = `${siteUrl}/static/og/library.jpg`;
     ))}
   </div>
   <p class="text-body-secondary small mb-3" id="typeFilterStatus" style="display:none;">
-    Showing only books available as: <strong id="typeFilterLabel"></strong> &mdash;
+    Showing only books <strong id="typeFilterLabel"></strong> &mdash;
     <button class="btn btn-link btn-sm p-0 text-body-secondary type-clear-btn" type="button">show all</button>
   </p>
 
@@ -157,10 +174,28 @@ const ogImage = `${siteUrl}/static/og/library.jpg`;
     const typeLabel      = document.getElementById('typeFilterLabel') as HTMLElement;
     const typeClearBtns  = document.querySelectorAll('.type-clear-btn');
 
+    const langButtons    = document.querySelectorAll('.lang-filter-btn');
+
     let activeType: string | null = null;
+    let activeLang: string | null = null;
 
     function getSelectedTags(): string[] {
       return [...checkboxes].filter(cb => (cb as HTMLInputElement).checked).map(cb => (cb as HTMLInputElement).value);
+    }
+
+    // "Showing only books in Spanish, available as PDF — show all"
+    function updateStatus() {
+      const parts: string[] = [];
+      if (activeLang) {
+        const btn = document.querySelector(`.lang-filter-btn[data-lang="${activeLang}"]`) as HTMLElement | null;
+        parts.push(`in ${btn?.dataset.name ?? activeLang}`);
+      }
+      if (activeType) {
+        const label = (document.querySelector(`.type-filter-btn[data-type="${activeType}"]`) as HTMLElement)?.textContent?.trim() ?? activeType;
+        parts.push(`available as ${label}`);
+      }
+      typeLabel.textContent = parts.join(', ');
+      typeStatus.style.display = parts.length ? '' : 'none';
     }
 
     function setActiveType(type: string | null) {
@@ -171,13 +206,25 @@ const ogImage = `${siteUrl}/static/og/library.jpg`;
         btn.classList.toggle('type-btn-active', isActive);
         (btn as HTMLElement).style.opacity = type === null || isActive ? '1' : '0.35';
       });
-      if (type) {
-        const label = (document.querySelector(`.type-filter-btn[data-type="${type}"]`) as HTMLElement)?.textContent?.trim() ?? type;
-        typeLabel.textContent = label;
-        typeStatus.style.display = '';
-      } else {
-        typeStatus.style.display = 'none';
+      updateStatus();
+    }
+
+    // The language filter is kept in the URL (?lang=es) so a Spanish reader can be sent
+    // straight to the Spanish books: books.freely.giving/library/?lang=es
+    function setActiveLang(lang: string | null, updateUrl = true) {
+      activeLang = lang;
+      langButtons.forEach(btn => {
+        const el = btn as HTMLElement;
+        const isActive = el.dataset.lang === lang;
+        el.classList.toggle('active', isActive);
+        el.setAttribute('aria-pressed', String(isActive));
+      });
+      if (updateUrl) {
+        const url = new URL(location.href);
+        if (lang) url.searchParams.set('lang', lang); else url.searchParams.delete('lang');
+        history.replaceState(null, '', url);
       }
+      updateStatus();
     }
 
     function applyFilter() {
@@ -202,8 +249,9 @@ const ogImage = `${siteUrl}/static/og/library.jpg`;
 
           const tagOk  = selectedTags.length === 0 || selectedTags.some(t => tags.includes(t));
           const typeOk = activeType === null || types.includes(activeType);
+          const langOk = activeLang === null || el.dataset.lang === activeLang;
 
-          const visible = tagOk && typeOk;
+          const visible = tagOk && typeOk && langOk;
           col.style.display = visible ? '' : 'none';
           if (visible) hasVisible = true;
         });
@@ -219,15 +267,31 @@ const ogImage = `${siteUrl}/static/og/library.jpg`;
       });
     });
 
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = (btn as HTMLElement).dataset.lang!;
+        setActiveLang(activeLang === lang ? null : lang);
+        applyFilter();
+      });
+    });
+
     checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
     clearBtn?.addEventListener('click', () => {
       checkboxes.forEach(cb => (cb as HTMLInputElement).checked = false);
       setActiveType(null);
+      setActiveLang(null);
       applyFilter();
     });
     typeClearBtns.forEach(btn => btn.addEventListener('click', () => {
       setActiveType(null);
+      setActiveLang(null);
       applyFilter();
     }));
+
+    const startLang = new URLSearchParams(location.search).get('lang');
+    if (startLang && document.querySelector(`.lang-filter-btn[data-lang="${startLang}"]`)) {
+      setActiveLang(startLang, false);
+      applyFilter();
+    }
   });
 </script>

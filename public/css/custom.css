@@ -197,11 +197,32 @@
   color: #fff;
 }
 
-/* Language tags: a translated edition carries its language as a tag ("español"), which gives
-   it a badge on every card and an entry in /library's tag filter. */
-.tag-español {
+/* Language badge on the cards of books not in English ("Español"), from `lang` in book.yaml. */
+.lang-badge {
   background-color: #8a2a3c;
   color: #fff;
+}
+
+/* /library language buttons (English / En español): outlined in the page's strongest text
+   colour so they read in both themes, filled in when chosen. */
+.btn-lang {
+  --bs-btn-color: var(--bs-emphasis-color);
+  --bs-btn-border-color: var(--bs-emphasis-color);
+  --bs-btn-hover-color: var(--bs-body-bg);
+  --bs-btn-hover-bg: var(--bs-emphasis-color);
+  --bs-btn-hover-border-color: var(--bs-emphasis-color);
+  --bs-btn-active-color: var(--bs-body-bg);
+  --bs-btn-active-bg: var(--bs-emphasis-color);
+  --bs-btn-active-border-color: var(--bs-emphasis-color);
+  font-weight: 600;
+}
+
+/* /library: a thin rule between the language buttons and the format buttons. */
+.filter-divider {
+  align-self: stretch;
+  width: 1px;
+  margin: 0 0.25rem;
+  background-color: var(--bs-border-color);
 }
 
 .type-btn-active {

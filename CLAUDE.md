@@ -180,7 +180,7 @@ description, and its own files, e.g. `meditaciones-sobre-el-salmo-119` beside
 - title: Meditaciones sobre el Salmo 119
   lang: es                                   # the whole book's language; default en
   translationOf: meditations-on-psalm-119    # slug of the original
-  tags: [modern, español]                    # language tag: badge on cards + /library tag filter
+  tags: [modern]                             # no language tag: `lang` drives the badge and filter
 ```
 
 - `lang` must be a key of `LANGUAGES` in `src/lib/data.js` (add a language there first, with its
@@ -191,8 +191,13 @@ description, and its own files, e.g. `meditaciones-sobre-el-salmo-119` beside
   page shows "Also available in Spanish: …" / "Also available in English: …". Only the
   translation carries the field; the original needs no edit. A slug that is not a visible book
   warns during the build.
-- The language tag (`español`) is how a Spanish reader finds every Spanish book in /library.
-  Its badge colour is `.tag-español` in `public/css/custom.css`; a new language needs a rule.
+- /library has a language filter (2026-11-13): one button per language that has a book
+  ("English", "En español"; the `filter` label in `LANGUAGES`), left of the format buttons and
+  combinable with them and with tags. It is kept in the URL, so `/library/?lang=es` opens on
+  the Spanish books: the link to give a Spanish speaker. Cards of a non-English book carry a
+  `.lang-badge` with the language's `native` name ("Español"). Both come from `lang`, so a new
+  language needs only its `LANGUAGES` entry (name, native, filter, siteName). Do not tag books
+  with their language; `español` was a tag until the filter replaced it.
 - Button `label`s and source `name`s are in the book's language (Leer en línea / Descargar /
   Para imprimir); the `type`s are the ordinary ones, so no new type is registered.
 - `printBook` (Lulu) is added only once the translation has its own Lulu product.

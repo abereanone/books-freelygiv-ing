@@ -229,8 +229,9 @@ export function getBooks() {
  */
 export const LANGUAGES = {
   // siteName: the site's name shown on that language's book pages (header, tab title, footer)
-  en: { name: "English", native: "English", siteName: "Freely Given Books" },
-  es: { name: "Spanish", native: "Español", siteName: "Libros Dados de Gracia" }, // Mt 10:8 RV1909 "dad de gracia"
+  // filter: the /library language button, written in that language; native: the card badge
+  en: { name: "English", native: "English", filter: "English", siteName: "Freely Given Books" },
+  es: { name: "Spanish", native: "Español", filter: "En español", siteName: "Libros Dados de Gracia" }, // Mt 10:8 RV1909 "dad de gracia"
 };
 
 function withEditions(books) {
