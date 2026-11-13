@@ -1,0 +1,31 @@
+- title: He Put a New Song In My Heart
+  sortTitle: He Put a New Song In My Heart
+  credits:
+    - person: michael-coughlin
+      prepared: true
+    - name: Katie Isenbarger
+      role: contributor
+      note: "Cover artwork and lettering"
+  year: 2026
+  addedDate: 2026-11-13
+  pages: 95
+  tags:
+    - classic
+  description: |
+    A large-print songbook of well-loved hymns for the church, from "A Mighty Fortress Is Our God" to "It Is Well with My Soul," with Christmas carols, a few songs from Psalm 119, and Bible verses after many of the hymns to reinforce the truths they sing.
+
+    The song numbers match the Hymns of Grace hymnal, so it can be used alongside it. This 4th edition contains only public-domain texts, and the compilation is released to the public domain (CC0), so print it, copy it and sing from it freely.
+  license: CC0
+  path: /static/books/he-put-a-new-song-in-my-heart
+  cover: cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/he-put-a-new-song-in-my-heart/HePutANewSongInMyHeart.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/he-put-a-new-song-in-my-heart/print-ready.zip
