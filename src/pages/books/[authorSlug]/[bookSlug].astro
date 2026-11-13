@@ -65,14 +65,14 @@ const views = [
       {book.cover && (
         <div class="float-md-start me-md-4 mb-3 text-center text-md-start">
           {views.length > 1 ? (
-            <button type="button" class="cover-open shadow rounded" id="cover-open" aria-label={`View ${book.title} front, back and spine`}>
+            <button type="button" class="cover-open shadow rounded" id="cover-open" aria-label={`View ${book.title}: ${views.map(v => v.label.toLowerCase()).join(', ')}`}>
               <img
                 src={`${book.path}/${book.cover}`}
                 class="rounded"
                 style="width: 100%; height: auto; display: block;"
                 alt={`${book.title} cover`}
               />
-              <span class="cover-hint">Front · Back · Spine</span>
+              <span class="cover-hint">{views.map(v => v.label).join(' · ')}</span>
             </button>
           ) : (
             <div class="shadow rounded" style="display: inline-block; max-width: 220px; line-height: 0;">

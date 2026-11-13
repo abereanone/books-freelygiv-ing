@@ -1,0 +1,31 @@
+- title: "Our Sin, His Mercy: Children's Devotions"
+  sortTitle: "Our Sin, His Mercy: Children's Devotions"
+  credits:
+    - person: joe-conkle
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  year: 2026
+  addedDate: 2026-11-13
+  pages: 48
+  tags:
+    - modern
+  description: |
+    Our Sin, His Mercy exists to help children honestly confess their sin, trust the forgiveness found in Jesus Christ, and grow in joyful obedience to God.
+
+    Sixteen short, full-colour devotions to read and pray together, each with a confession of sin, an assurance of pardon, a prayer, and a memory verse from the Berean Standard Bible. A children's companion to Our Sin, His Mercy.
+  license: CC0
+  path: /static/books/our-sin-his-mercy-childrens-devotions
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy-childrens-devotions/OurSinHisMercyChildrensDevotions.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/our-sin-his-mercy-childrens-devotions/print-ready.zip
