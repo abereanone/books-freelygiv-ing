@@ -43,7 +43,7 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
           ))}{langBadge && <span class="badge tag-badge lang-badge ms-1" lang={lang}>{langBadge}</span>}
         </h6>
         {showAuthors && book.authors?.[0] && (
-          <div class="text-body-secondary small mb-1" style="position:relative;z-index:2;">
+          <div class="text-body-secondary small mb-1 card-authors">
             {book.authors.map((author: any, i: number) => (
               <span>{i > 0 ? ', ' : ''}{author.href ? <a href={author.href} class="text-reset">{personListName(author)}</a> : personListName(author)}</span>
             ))}
@@ -99,3 +99,25 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
     </div>
   </a>
 )}
+
+<style is:global>
+  /* The whole grid card opens the book (the title's stretched-link covers it). The author line
+     sits above that cover so its names stay links to the person pages, but only the names
+     catch taps: the empty part of the line passes them through to the book. */
+  .book-grid-item { cursor: pointer; }
+  .book-grid-item .card-authors { position: relative; z-index: 2; pointer-events: none; }
+  .book-grid-item .card-authors a { pointer-events: auto; }
+</style>
+
+<script>
+  // Backup for phone browsers that miss the stretched link: a tap anywhere on a grid card
+  // that is not itself a link opens the book. Ctrl/Cmd-click opens it in a new tab.
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element | null;
+    if (!target || target.closest('a, button, input, label, select, textarea')) return;
+    const link = target.closest('.book-grid-item')?.querySelector<HTMLAnchorElement>('a.stretched-link');
+    if (!link) return;
+    if (e.ctrlKey || e.metaKey) window.open(link.href, '_blank');
+    else location.assign(link.href);
+  });
+</script>
