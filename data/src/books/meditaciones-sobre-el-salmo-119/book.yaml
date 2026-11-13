@@ -38,6 +38,11 @@
       sources:
         - name: Descargar
           url: https://files.books.freelygiv.ing/meditaciones-sobre-el-salmo-119/MeditacionesSobreElSalmo119.epub
+    - type: printBook
+      label: Libro impreso
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/michael-coughlin/salmo-119/paperback/product-gjkdd6w.html
     - type: printReady
       label: Para imprimir
       sources:
