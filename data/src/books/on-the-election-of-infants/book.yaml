@@ -1,0 +1,39 @@
+- title: On the Election of Infants
+  sortTitle: On the Election of Infants
+  credits:
+    - person: michael-coughlin
+      role: author
+  year: 2026
+  addedDate: 2026-11-13
+  pages: 12
+  tags:
+    - modern
+  description: |
+    What happens when a baby dies? Christians who lose a child, through miscarriage, illness, or abortion, want to know what the Bible gives them to hope for.
+
+    In this short booklet, Michael Coughlin walks through the six positions believers take on the election of infants, sets aside the ones that cannot stand, and calls for charity on every side, because real love offers hurting people rational hope. Scripture that is cited but not quoted is printed in the footnotes (Berean Standard Bible).
+  license: CC0
+  path: /static/books/on-the-election-of-infants
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/on-the-election-of-infants/on-the-election-of-infants.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/on-the-election-of-infants/OnTheElectionOfInfants.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/on-the-election-of-infants/OnTheElectionOfInfants.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/on-the-election-of-infants/print-ready.zip
