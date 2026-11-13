@@ -158,6 +158,13 @@ edition of *The Divine Name* is its own `htmlBook` entry rather than a second so
 source it would have read "Read Online (Leer en línea)". The dropdown opens on hover on
 pointer devices and on click everywhere, so touch and keyboard still work.
 
+**Book files are hosted here, never linked from OneDrive** (owner's rule, 2026-11-13). A PDF,
+EPUB, Word or zip that a publisher shares on OneDrive (or Google Drive, Dropbox) is downloaded and
+mirrored to R2: those links die when the file moves and can demand a sign-in. Publisher web pages
+and store links (Amazon, Lulu, Books2Read, a publisher's read-online page) are fine as links.
+New-style OneDrive links refuse curl (403/503); open them in the browser pane and use the viewer's
+download button (the owner clicks Save), or ask the owner to save them into `_downloads/`.
+
 R2-hosted downloads are absolute URLs at `https://files.books.freelygiv.ing/<slug>/<file>`.
 The upload script uses the filename verbatim as the R2 key, so the file in `content/` and the
 URL in `book.yaml` must match exactly, capitalisation included. See `docs/BOOK-FILES.md` for

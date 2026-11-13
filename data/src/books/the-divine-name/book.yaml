@@ -29,9 +29,9 @@
       label: PDF
       sources:
         - name: Download
-          url: https://1drv.ms/b/c/bcb2002e8d07bc79/EU8GLd9FlTFNuNTcdNADth4BZp8Kaf3BrySnjISsbFl2yQ?e=cpMBo7
-    # The EPUB is mirrored to R2 rather than linked from the publisher's OneDrive: the
-    # previous OneDrive link died when the file moved, and those links can demand a sign-in.
+          url: https://files.books.freelygiv.ing/the-divine-name/the-divine-name.pdf
+    # The PDF, EPUB and Word files are mirrored to R2 rather than linked from the publisher's
+    # OneDrive: a OneDrive link died once when the file moved, and those links can demand a sign-in.
     - type: eBook
       label: eBook
       sources:

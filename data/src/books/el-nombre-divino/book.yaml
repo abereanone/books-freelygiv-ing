@@ -23,8 +23,8 @@
   path: /static/books/el-nombre-divino
   cover: cover.jpg
   mediaTypes:
-    # The files stay on the publisher's OneDrive, as the English PDF does. If a link dies,
-    # mirror that file to R2 the way the English EPUB was (see the-divine-name/book.yaml).
+    # Files are mirrored to R2 (2026-11-13): never link a OneDrive file. The read-online page
+    # and the store links are the publisher's.
     - type: htmlBook
       label: Leer en línea
       sources:
@@ -34,12 +34,12 @@
       label: PDF
       sources:
         - name: Descargar
-          url: https://1drv.ms/b/c/bcb2002e8d07bc79/IQAYgGX0GX-JQp1xHED5mAShAcQUJPlnb-wl5VRsJMzIpws?e=QKsPkL
+          url: https://files.books.freelygiv.ing/el-nombre-divino/el-nombre-divino.pdf
     - type: eBook
       label: eBook
       sources:
         - name: EPUB
-          url: https://1drv.ms/u/c/bcb2002e8d07bc79/IQDzbyzqmfadRJqy9HXgWdzwAWd_O9efXpufpYoNwAMIOrY?e=bMhR1X
+          url: https://files.books.freelygiv.ing/el-nombre-divino/el-nombre-divino.epub
         - name: Kindle
           url: https://www.amazon.com/dp/B0GXH17T1P
         - name: Otras tiendas
@@ -48,7 +48,7 @@
       label: Word
       sources:
         - name: Descargar
-          url: https://1drv.ms/w/c/bcb2002e8d07bc79/IQDPoDT23ovpQK9E40ZNkoe7AQruFZ8Ld42t6uMZJ0eXXXo?e=fCTvyS
+          url: https://files.books.freelygiv.ing/el-nombre-divino/el-nombre-divino.docx
     - type: printBook
       label: Libro
       sources:
