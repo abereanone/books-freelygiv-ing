@@ -30,8 +30,9 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-divine-name/the-divine-name.pdf
-    # The PDF, EPUB and Word files are mirrored to R2 rather than linked from the publisher's
-    # OneDrive: a OneDrive link died once when the file moved, and those links can demand a sign-in.
+    # The PDF, EPUB, Word and audiobook files are mirrored to R2 rather than linked from the
+    # publisher's OneDrive / Google Drive: a OneDrive link died once when the file moved, and
+    # those links can demand a sign-in.
     - type: eBook
       label: eBook
       sources:
@@ -57,4 +58,4 @@
       label: Audiobook
       sources:
         - name: Listen
-          url: https://drive.google.com/file/d/172KsFHZ4VAlIwqpJfGmTRlDQkb9PrRwp/view?usp=sharing
+          url: https://files.books.freelygiv.ing/the-divine-name/the-divine-name.mp3
