@@ -34,6 +34,11 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/on-the-election-of-infants/OnTheElectionOfInfants.pdf
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: "https://www.lulu.com/shop/michael-coughlin/on-the-election-of-infants/paperback/product-45g8edy.html"
     - type: eBook
       label: EPUB
       sources:
