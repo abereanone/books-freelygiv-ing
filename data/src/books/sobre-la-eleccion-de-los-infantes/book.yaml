@@ -1,0 +1,43 @@
+- title: Sobre la elección de los infantes
+  sortTitle: Sobre la elección de los infantes
+  lang: es
+  translationOf: on-the-election-of-infants
+  credits:
+    - person: michael-coughlin
+      role: author
+  year: 2026
+  addedDate: 2026-11-14
+  pages: 12
+  tags:
+    - modern
+  description: |
+    Durante siglos, filósofos cristianos y no cristianos han debatido si los bebés que mueren en la infancia van al cielo. Esquivar del todo el tema no es posible en un mundo maldito, donde hay padres en duelo que buscan esperanza después de perder a su hijo.
+
+    Este folleto resume las posturas racionales que se pueden adoptar sobre la elección de los infantes, descarta las absurdas y explica qué implican las posturas que están “en juego”. Los pasajes de las Escrituras a los que se hace referencia sin citarlos aparecen en las notas al pie (Reina-Valera 1909).
+
+    El amor verdadero ofrece a los que sufren una esperanza racional.
+  license: CC0
+  path: /static/books/sobre-la-eleccion-de-los-infantes
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Leer en línea
+      sources:
+        - name: Leer
+          url: /static/books/sobre-la-eleccion-de-los-infantes/sobre-la-eleccion-de-los-infantes.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/sobre-la-eleccion-de-los-infantes/SobreLaEleccionDeLosInfantes.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/sobre-la-eleccion-de-los-infantes/SobreLaEleccionDeLosInfantes.epub
+    - type: printReady
+      label: Para imprimir
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/sobre-la-eleccion-de-los-infantes/print-ready.zip
