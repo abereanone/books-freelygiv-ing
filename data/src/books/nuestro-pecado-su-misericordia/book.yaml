@@ -1,0 +1,46 @@
+- title: Nuestro pecado, su misericordia
+  sortTitle: Nuestro pecado, su misericordia
+  lang: es
+  translationOf: our-sin-his-mercy
+  credits:
+    - person: joe-conkle
+      role: author
+    - person: michael-coughlin
+      role: contributor
+      prepared: true
+    - name: Tim Pasma
+      role: contributor
+    - name: Mike Stockwell
+      role: contributor
+    - name: Jim Deweese
+      role: contributor
+  year: 2026
+  addedDate: 2026-11-14
+  pages: 146
+  tags:
+    - modern
+  description: |
+    Este libro se escribió para honrar a Dios y llamar a su pueblo a una conciencia más profunda de su pecado y a un gozo mayor en la misericordia de Cristo. La confesión congregacional no es un medio para recuperar el perdón (porque Jesús ya pagó el castigo una vez y para siempre), sino un recordatorio de quiénes somos sin él, de lo que él ha hecho por nosotros y de cómo debemos permanecer humildes delante de nuestro santo Dios. Es un tiempo para arrepentirnos, renunciar al pecado y descansar en la seguridad del perdón por medio de Cristo.
+
+    También se escribió con la esperanza de animar y capacitar a los hombres para que dirijan tanto en el hogar como en la iglesia. Al usar estas confesiones para guiar a sus familias en el culto familiar, los hombres crecerán en fidelidad y madurez espiritual. Y al pasar al púlpito para presentar estas confesiones de pecado, crecerán en reverencia, humildad y confianza en la Palabra de Dios, y así se prepararán para un liderazgo mayor al servicio de su iglesia local.
+  license: CC0
+  path: /static/books/nuestro-pecado-su-misericordia
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Leer en línea
+      sources:
+        - name: Leer
+          url: /static/books/nuestro-pecado-su-misericordia/nuestro-pecado-su-misericordia.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/nuestro-pecado-su-misericordia/NuestroPecadoSuMisericordia.pdf
+    - type: printReady
+      label: Para imprimir
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/nuestro-pecado-su-misericordia/print-ready.zip

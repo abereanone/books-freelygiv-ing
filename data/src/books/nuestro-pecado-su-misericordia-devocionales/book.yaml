@@ -1,0 +1,33 @@
+- title: "Nuestro pecado, su misericordia: Devocionales para niños"
+  sortTitle: "Nuestro pecado, su misericordia: Devocionales para niños"
+  lang: es
+  translationOf: our-sin-his-mercy-childrens-devotions
+  credits:
+    - person: joe-conkle
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  year: 2026
+  addedDate: 2026-11-14
+  pages: 48
+  tags:
+    - modern
+  description: |
+    Nuestro pecado, su misericordia se escribió para ayudar a los niños a confesar su pecado con sinceridad, a confiar en el perdón que hay en Jesucristo y a crecer en obediencia alegre a Dios.
+
+    Dieciséis devocionales cortos, a todo color, para leer y orar juntos, cada uno con una confesión de pecado, la seguridad del perdón, una oración y un versículo para memorizar de la Reina-Valera 1909. Un complemento para niños de Nuestro pecado, su misericordia.
+  license: CC0
+  path: /static/books/nuestro-pecado-su-misericordia-devocionales
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/nuestro-pecado-su-misericordia-devocionales/NuestroPecadoSuMisericordiaDevocionales.pdf
+    - type: printReady
+      label: Para imprimir
+      sources:
+        - name: Descargar
+          url: https://files.books.freelygiv.ing/nuestro-pecado-su-misericordia-devocionales/print-ready.zip
