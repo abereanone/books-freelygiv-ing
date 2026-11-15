@@ -19,6 +19,7 @@
   license: CC0
   path: /static/books/he-put-a-new-song-in-my-heart
   cover: cover.jpg
+  backCover: back-cover.jpg
   mediaTypes:
     - type: pdfBook
       label: PDF
