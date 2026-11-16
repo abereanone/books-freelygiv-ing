@@ -20,7 +20,7 @@ live in a separate Worker or the site has to move to Workers.
 
 ```bash
 npm run dev        # sync-assets, then astro dev (port 4321)
-npm run build      # sync-assets, then astro build → dist/
+npm run build      # sync-assets, og, astro build → dist/, then canonical tags on Read Online pages
 npm run sync       # copy data/src assets into public/ (covers, photos, html)
 npm run og         # regenerate Open Graph cards into public/static/og/
 npm run preview    # serve dist/
@@ -227,6 +227,11 @@ with `python scripts/inline-html.py path/to/book.html content/<slug>.html`.
 - **Canonical URLs.** `src/layouts/Base.astro` builds `<link rel="canonical">` and `og:url`
   with a **trailing slash**, because `@astrojs/sitemap` emits `/about/` and the two must agree.
   Internal links to dynamic routes should keep the trailing slash for the same reason.
+  The hosted Read Online books (`/static/books/**.html`) are files from other pipelines with no
+  canonical tag. Cloudflare 308s `/x.html` to `/x`, so the sitemap lists them without `.html`
+  (`astro.config.mjs`), and `scripts/canonical-read-online.js` (last step of `npm run build`)
+  adds `<link rel="canonical">` with that address in `dist/` only. Added 2026-11-15 after
+  Search Console flagged "Page with redirect" and "Duplicate without user-selected canonical".
 - **Base layout props** cover the whole SEO surface: `title`, `ogTitle`, `ogDescription`,
   `ogImage`, `ogImageAlt`, `ogType`. New pages should pass at least a title and description.
 - **Styling** is Bootstrap 5 vendored into `public/css` + `public/js` (no build step, no npm

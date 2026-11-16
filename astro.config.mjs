@@ -15,7 +15,9 @@ const readOnlinePages = getBooks()
   .flatMap((m) => m.sources || [])
   .map((source) => source.url)
   .filter((url) => url?.startsWith("/"))
-  .map((url) => new URL(url, site).href);
+  // Cloudflare answers /x.html with a 308 to /x; list the final address so Search
+  // Console doesn't report "Page with redirect".
+  .map((url) => new URL(url.replace(/\.html$/, ""), site).href);
 
 export default defineConfig({
   output: "static",
