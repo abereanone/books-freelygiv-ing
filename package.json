@@ -4,7 +4,7 @@
   "scripts": {
     "sync": "node scripts/sync-assets.js",
     "dev": "node scripts/sync-assets.js && node scripts/build-og.js && astro dev",
-    "build": "node scripts/sync-assets.js && node scripts/build-og.js && astro build && node scripts/canonical-read-online.js",
+    "build": "node scripts/sync-assets.js && node scripts/build-og.js && astro build && node scripts/canonical-read-online.js && node scripts/go-links.mjs dist --base https://go.freelygiv.ing/ --own books.freely.giving,files.books.freelygiv.ing --skip static",
     "preview": "astro preview",
     "upload": "node scripts/upload-to-r2.js",
     "og": "node scripts/build-og.js",

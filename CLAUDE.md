@@ -20,7 +20,7 @@ live in a separate Worker or the site has to move to Workers.
 
 ```bash
 npm run dev        # sync-assets, then astro dev (port 4321)
-npm run build      # sync-assets, og, astro build → dist/, then canonical tags on Read Online pages
+npm run build      # sync-assets, og, astro build → dist/, canonical tags on Read Online pages, then go-links
 npm run sync       # copy data/src assets into public/ (covers, photos, html)
 npm run og         # regenerate Open Graph cards into public/static/og/
 npm run preview    # serve dist/
@@ -33,6 +33,15 @@ npm run upload -- <slug> --force            # overwrite an existing R2 object (r
 npm run sync:fgb -- --dry-run               # Courtney Hicks's books from his newest GitHub release
 npm run sync:fgb                            # (the courtney-books skill walks through it)
 ```
+
+Outside links are counted: the last build step, `scripts/go-links.mjs` (copy of `C:/code/go-links/go-links.mjs`),
+points every link to another site at `https://go.freelygiv.ing/<name>` and writes `dist/go/links.json`
+(name → URL). The go-links Worker (repo `C:/code/go-links`) answers those with a 302, using that list.
+They go through `freelygiv.ing` because Cloudflare does not log `freely.giving` (its DNS is elsewhere).
+`C:/code/site-stats` archives the counts and the stats report lists them. Links on the hosted Read Online
+books (`static/`) and to the file host are left alone. Add `data-no-go` to a link to leave it alone.
+`astro dev` shows the original links.
+
 
 There are no tests, linter, or typecheck script. `.prettierignore` exists but Prettier is not
 a dependency — formatting is by hand/editor.
