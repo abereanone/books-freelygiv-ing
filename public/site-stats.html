@@ -83,11 +83,23 @@
   .stat .num { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
   .stat .label { color: var(--text-soft); font-size: 0.92rem; }
 
-  .tablewrap { overflow-x: auto; }
   .booktable { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
   .booktable th, .booktable td { padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
-  .booktable thead th { font-weight: 600; color: var(--text-soft); font-size: 0.82rem; vertical-align: bottom; white-space: normal; }
+  /* The header row stays in view while scrolling down a long table (and repeats on each printed page). */
+  .booktable thead th { position: sticky; top: 0; z-index: 1; background: var(--bg); font-weight: 600; color: var(--text-soft); font-size: 0.82rem; vertical-align: bottom; white-space: normal; box-shadow: inset 0 -1px 0 var(--border); }
+  .booktable thead { display: table-header-group; }
   .booktable th[scope="row"], .booktable thead th:first-child { text-align: left; font-weight: 500; white-space: normal; min-width: 11rem; }
+  .booktable tr { break-inside: avoid; }
+  /* Phones: no header row to lose track of. Each book is a block, and every number carries its own label. */
+  @media (max-width: 640px) {
+    .booktable thead { display: none; }
+    .booktable, .booktable tbody { display: block; }
+    .booktable tr { display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1.2rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .booktable th[scope="row"] { grid-column: 1 / -1; min-width: 0; padding: 0 0 0.2rem; border: 0; font-weight: 600; }
+    .booktable td { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0; border: 0; text-align: right; }
+    .booktable td::before { content: attr(data-label); color: var(--text-soft); text-align: left; white-space: normal; }
+    .booktable td.none { display: none; }
+  }
   .bars { display: flex; flex-direction: column; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
   .bars li { display: grid; grid-template-columns: minmax(0, 21rem) minmax(0, 1fr) 3.6rem; gap: 0.75rem; align-items: center; font-size: 0.95rem; }
   .bars .name { min-width: 0; overflow-wrap: anywhere; }
@@ -141,20 +153,20 @@
   <div class="summary">
     <h2>The short version</h2>
     <ul>
-      <li>About <strong>500 visits</strong> in the last 30 days.</li>
+      <li>About <strong>630 visits</strong> in the last 30 days.</li>
       <li>The most-viewed pages are <strong>Home page</strong>, <strong>Michael Coughlin – Meditations on Psalm 119</strong> and <strong>Library</strong>.</li>
-      <li>91% of visitors typed the address or used a bookmark, and 1% arrived from Google.</li>
-      <li>78% of visitors are on a phone or tablet.</li>
+      <li>93% of visitors typed the address or used a bookmark, and 0% arrived from Google.</li>
+      <li>77% of visitors are on a phone or tablet.</li>
       <li>Pages load fast for 97% of visitors.</li>
-      <li>Books were downloaded up to <strong>770 times</strong> in the 21 days we have counts for.</li>
+      <li>About <strong>700 whole copies</strong> of books were downloaded in the 26 days we have counts for.</li>
     </ul>
   </div>
 
   <section>
     <h2>How many people visit</h2>
     <div class="stats">
-      <div class="stat"><div class="num">~500</div><div class="label">visits, the last 30 days</div></div>
-      <div class="stat"><div class="num">~120</div><div class="label">visits in an average week</div></div>
+      <div class="stat"><div class="num">~630</div><div class="label">visits, the last 30 days</div></div>
+      <div class="stat"><div class="num">~150</div><div class="label">visits in an average week</div></div>
     </div>
     <p class="sowhat">A visit is one arrival at the site. Someone who comes back on another day counts again, so visits are not the same as different people.</p>
   </section>
@@ -162,11 +174,11 @@
   <section>
     <h2>Year to date (since October 17, 2026)</h2>
     <div class="stats">
-      <div class="stat"><div class="num">~510</div><div class="label">visits, year to date</div></div>
+      <div class="stat"><div class="num">~640</div><div class="label">visits, year to date</div></div>
     </div>
     <ul class="bars" aria-label="Visits by month">
-      <li><span class="name">October (from the 17th)</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">306</span></li>
-      <li><span class="name">November (so far)</span><span class="track"><span class="fill" style="width:65%"></span></span><span class="val">199</span></li>
+      <li><span class="name">October (from the 17th)</span><span class="track"><span class="fill" style="width:92%"></span></span><span class="val">306</span></li>
+      <li><span class="name">November (so far)</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">332</span></li>
     </ul>
     <p class="sowhat">Visitor counts for 2026 begin October 17, 2026. Cloudflare keeps only about 13 weeks of visitor counts, and saving them here started after that, so earlier months cannot be filled in.</p>
   </section>
@@ -174,12 +186,12 @@
   <section>
     <h2>What people look at</h2>
     <ul class="bars" aria-label="Most viewed pages">
-      <li><span class="name">Home page</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">111</span></li>
-      <li><span class="name">Michael Coughlin – Meditations on Psalm 119</span><span class="track"><span class="fill" style="width:66%"></span></span><span class="val">73</span></li>
-      <li><span class="name">Library</span><span class="track"><span class="fill" style="width:45%"></span></span><span class="val">50</span></li>
-      <li><span class="name">People</span><span class="track"><span class="fill" style="width:36%"></span></span><span class="val">40</span></li>
-      <li><span class="name">People – Joe Conkle</span><span class="track"><span class="fill" style="width:35%"></span></span><span class="val">39</span></li>
-      <li><span class="name">Morning and Evening – Morning and Evening</span><span class="track"><span class="fill" style="width:29%"></span></span><span class="val">32</span></li>
+      <li><span class="name">Home page</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">149</span></li>
+      <li><span class="name">Michael Coughlin – Meditations on Psalm 119</span><span class="track"><span class="fill" style="width:58%"></span></span><span class="val">86</span></li>
+      <li><span class="name">Library</span><span class="track"><span class="fill" style="width:48%"></span></span><span class="val">72</span></li>
+      <li><span class="name">People</span><span class="track"><span class="fill" style="width:39%"></span></span><span class="val">58</span></li>
+      <li><span class="name">People – Joe Conkle</span><span class="track"><span class="fill" style="width:35%"></span></span><span class="val">52</span></li>
+      <li><span class="name">Domestical Duties Volume 1 – Domestical Duties Volume 1</span><span class="track"><span class="fill" style="width:23%"></span></span><span class="val">34</span></li>
     </ul>
 
   </section>
@@ -187,13 +199,13 @@
   <section class="newpage">
     <h2>How people find us</h2>
     <ul class="bars" aria-label="How visitors arrived">
-      <li><span class="name">Typed the address, bookmark, or a link in a text or email</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">452</span></li>
-      <li><span class="name">Facebook</span><span class="track"><span class="fill" style="width:7%"></span></span><span class="val">33</span></li>
+      <li><span class="name">Typed the address, bookmark, or a link in a text or email</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">581</span></li>
+      <li><span class="name">Facebook</span><span class="track"><span class="fill" style="width:6%"></span></span><span class="val">35</span></li>
       <li><span class="name">Bing search</span><span class="track"><span class="fill" style="width:3%"></span></span><span class="val">5</span></li>
       <li><span class="name">Google search</span><span class="track"><span class="fill" style="width:3%"></span></span><span class="val">3</span></li>
-      <li><span class="name">DuckDuckGo search</span><span class="track"><span class="fill" style="width:3%"></span></span><span class="val">1</span></li>
+      <li><span class="name">X (Twitter)</span><span class="track"><span class="fill" style="width:3%"></span></span><span class="val">2</span></li>
     </ul>
-    <p class="sowhat">22% of visits are on a computer and 78% on a phone or tablet.</p>
+    <p class="sowhat">23% of visits are on a computer and 77% on a phone or tablet.</p>
   </section>
 
   <section>
@@ -201,65 +213,65 @@
     <div class="stats">
       <div class="stat"><div class="num">97%</div><div class="label">of visits see the main content quickly</div></div>
       <div class="stat"><div class="num">93%</div><div class="label">respond quickly to taps and clicks</div></div>
-      <div class="stat"><div class="num">98%</div><div class="label">stay steady without things jumping</div></div>
+      <div class="stat"><div class="num">97%</div><div class="label">stay steady without things jumping</div></div>
     </div>
     <p class="sowhat">Pages load fast for most visitors.</p>
   </section>
 
   <section>
     <h2>Book downloads</h2>
-    <p class="small">Download counts cover 21 of the 30 days. Cloudflare keeps only 30 days of per-file traffic, so earlier days were not saved.</p>
+    <p class="small">Download counts cover 26 of the 30 days. Cloudflare keeps only 30 days of per-file traffic, so earlier days were not saved.</p>
     <div class="stats">
-      <div class="stat"><div class="num">~770</div><div class="label">downloads, up to</div></div>
-      <div class="stat"><div class="num">~2.5 GB</div><div class="label">of files downloaded</div></div>
-      <div class="stat"><div class="num">~29</div><div class="label">different devices downloading on a typical day, up to 82 on the busiest</div></div>
+      <div class="stat"><div class="num">~700</div><div class="label">whole copies downloaded</div></div>
+      <div class="stat"><div class="num">~3.2 GB</div><div class="label">of files downloaded</div></div>
+      <div class="stat"><div class="num">~33</div><div class="label">different devices downloading on a typical day, up to 82 on the busiest</div></div>
     </div>
-    <ul class="bars" aria-label="Most requested">
-      <li><span class="name">Morning and Evening</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">92</span></li>
-      <li><span class="name">Meditations on Psalm 119</span><span class="track"><span class="fill" style="width:77%"></span></span><span class="val">71</span></li>
-      <li><span class="name">Domestical Duties Volume 1</span><span class="track"><span class="fill" style="width:66%"></span></span><span class="val">61</span></li>
-      <li><span class="name">Domestical Duties Volume 1 (print files)</span><span class="track"><span class="fill" style="width:38%"></span></span><span class="val">35</span></li>
-      <li><span class="name">Domestical Duties Volume 2</span><span class="track"><span class="fill" style="width:36%"></span></span><span class="val">33</span></li>
-      <li><span class="name">Abolish the Jesus Trade</span><span class="track"><span class="fill" style="width:33%"></span></span><span class="val">30</span></li>
-      <li><span class="name">Domestical Duties Volume 3</span><span class="track"><span class="fill" style="width:27%"></span></span><span class="val">25</span></li>
-      <li><span class="name">Domestical Duties Volume 2 (print files)</span><span class="track"><span class="fill" style="width:17%"></span></span><span class="val">16</span></li>
+    <ul class="bars" aria-label="Most downloaded (whole copies)">
+      <li><span class="name">Morning and Evening</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">72</span></li>
+      <li><span class="name">Domestical Duties Volume 1</span><span class="track"><span class="fill" style="width:86%"></span></span><span class="val">62</span></li>
+      <li><span class="name">Meditations on Psalm 119</span><span class="track"><span class="fill" style="width:79%"></span></span><span class="val">57</span></li>
+      <li><span class="name">Abolish the Jesus Trade</span><span class="track"><span class="fill" style="width:57%"></span></span><span class="val">41</span></li>
+      <li><span class="name">Domestical Duties Volume 1 (print files)</span><span class="track"><span class="fill" style="width:47%"></span></span><span class="val">34</span></li>
+      <li><span class="name">Sinners in the Hands of an Angry God (print files)</span><span class="track"><span class="fill" style="width:42%"></span></span><span class="val">30</span></li>
+      <li><span class="name">Domestical Duties Volume 3</span><span class="track"><span class="fill" style="width:39%"></span></span><span class="val">28</span></li>
+      <li><span class="name">Meditations on Psalm 119 (print files)</span><span class="track"><span class="fill" style="width:28%"></span></span><span class="val">20</span></li>
     </ul>
 
-    <p class="sowhat">Downloads are requests for book files, and opening one PDF in a browser can make several, so the downloads figure runs high. "Different devices" counts each phone or computer once per day, using its internet address, so it is a closer guide to how many people download. It covers 21 days so far, and a household sharing one connection counts once.</p>
+    <p class="sowhat">Whole copies are all the data sent for each file divided by its size, because opening a large PDF in a browser often fetches it in pieces. "Different devices" counts each phone or computer once per day, using its internet address, so it is a closer guide to how many people download. It covers 26 days so far, and a household sharing one connection counts once.</p>
   </section>
 
   <section>
     <h2>Book by book</h2>
     <div class="tablewrap"><table class="booktable">
-      <thead><tr><th>Book</th><th>Book page views</th><th>Read online</th><th>PDF</th><th>EPUB</th><th>Kindle</th><th>Print files</th></tr></thead>
+      <thead><tr><th>Book</th><th>Book page views</th><th>Read online</th><th>PDF copies</th><th>EPUB copies</th><th>Kindle copies</th><th>Print zips</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Meditations on Psalm 119</th><td>73</td><td>18</td><td>71</td><td>4</td><td>–</td><td>15</td></tr>
-        <tr><th scope="row">Of Domestical Duties, Volume I</th><td>11</td><td>32</td><td>61</td><td>15</td><td>–</td><td>35</td></tr>
-        <tr><th scope="row">Morning and Evening</th><td>23</td><td>32</td><td>92</td><td>–</td><td>–</td><td>–</td></tr>
-        <tr><th scope="row">Of Domestical Duties, Volume II</th><td>18</td><td>16</td><td>33</td><td>15</td><td>–</td><td>16</td></tr>
-        <tr><th scope="row">Of Domestical Duties, Volume III</th><td>3</td><td>2</td><td>25</td><td>11</td><td>–</td><td>13</td></tr>
-        <tr><th scope="row">Of Domestical Duties, Volume IV</th><td>11</td><td>1</td><td>12</td><td>12</td><td>–</td><td>10</td></tr>
-        <tr><th scope="row">Abolish the Jesus Trade</th><td>3</td><td>–</td><td>30</td><td>5</td><td>–</td><td>4</td></tr>
-        <tr><th scope="row">The Godly Man's Picture</th><td>10</td><td>21</td><td>5</td><td>–</td><td>4</td><td>–</td></tr>
-        <tr><th scope="row">Precious Remedies Against Satan's Devices</th><td>11</td><td>–</td><td>12</td><td>12</td><td>–</td><td>4</td></tr>
-        <tr><th scope="row">Jude: A Theological Commentary</th><td>11</td><td>–</td><td>13</td><td>8</td><td>–</td><td>5</td></tr>
-        <tr><th scope="row">The Anatomy of Simon Magus</th><td>2</td><td>8</td><td>11</td><td>7</td><td>–</td><td>2</td></tr>
-        <tr><th scope="row">The Autobiography of C.H. Spurgeon, Vol. 1: The Early Years</th><td>5</td><td>15</td><td>5</td><td>–</td><td>3</td><td>–</td></tr>
-        <tr><th scope="row">All of Grace</th><td>3</td><td>–</td><td>8</td><td>9</td><td>–</td><td>3</td></tr>
-        <tr><th scope="row">The Secret Key of Heaven</th><td>6</td><td>3</td><td>4</td><td>4</td><td>–</td><td>4</td></tr>
-        <tr><th scope="row">Our Sin, His Mercy</th><td>9</td><td>2</td><td>5</td><td>–</td><td>–</td><td>4</td></tr>
+        <tr><th scope="row">Meditations on Psalm 119</th><td data-label="Book page views">86</td><td data-label="Read online">18</td><td data-label="PDF copies">57</td><td data-label="EPUB copies">4</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">20</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume I</th><td data-label="Book page views">13</td><td data-label="Read online">34</td><td data-label="PDF copies">62</td><td data-label="EPUB copies">8</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">34</td></tr>
+        <tr><th scope="row">Morning and Evening</th><td data-label="Book page views">23</td><td data-label="Read online">32</td><td data-label="PDF copies">72</td><td data-label="EPUB copies" class="none">–</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips" class="none">–</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume II</th><td data-label="Book page views">19</td><td data-label="Read online">17</td><td data-label="PDF copies">18</td><td data-label="EPUB copies">9</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">12</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume III</th><td data-label="Book page views">4</td><td data-label="Read online">4</td><td data-label="PDF copies">28</td><td data-label="EPUB copies">8</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">14</td></tr>
+        <tr><th scope="row">Abolish the Jesus Trade</th><td data-label="Book page views">4</td><td data-label="Read online" class="none">–</td><td data-label="PDF copies">41</td><td data-label="EPUB copies">5</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">2</td></tr>
+        <tr><th scope="row">Sinners in the Hands of an Angry God</th><td data-label="Book page views">1</td><td data-label="Read online" class="none">–</td><td data-label="PDF copies">7</td><td data-label="EPUB copies">7</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">30</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume IV</th><td data-label="Book page views">11</td><td data-label="Read online">3</td><td data-label="PDF copies">10</td><td data-label="EPUB copies">7</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">8</td></tr>
+        <tr><th scope="row">The Godly Man's Picture</th><td data-label="Book page views">11</td><td data-label="Read online">21</td><td data-label="PDF copies">3</td><td data-label="EPUB copies" class="none">–</td><td data-label="Kindle copies">3</td><td data-label="Print zips" class="none">–</td></tr>
+        <tr><th scope="row">Precious Remedies Against Satan's Devices</th><td data-label="Book page views">13</td><td data-label="Read online" class="none">–</td><td data-label="PDF copies">15</td><td data-label="EPUB copies">6</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">2</td></tr>
+        <tr><th scope="row">The Autobiography of C.H. Spurgeon, Vol. 1: The Early Years</th><td data-label="Book page views">5</td><td data-label="Read online">21</td><td data-label="PDF copies">7</td><td data-label="EPUB copies" class="none">–</td><td data-label="Kindle copies">1</td><td data-label="Print zips" class="none">–</td></tr>
+        <tr><th scope="row">Our Sin, His Mercy: Children's Devotions</th><td data-label="Book page views">28</td><td data-label="Read online" class="none">–</td><td data-label="PDF copies" class="none">–</td><td data-label="EPUB copies" class="none">–</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips" class="none">–</td></tr>
+        <tr><th scope="row">Jude: A Theological Commentary</th><td data-label="Book page views">11</td><td data-label="Read online" class="none">–</td><td data-label="PDF copies">14</td><td data-label="EPUB copies">2</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">1</td></tr>
+        <tr><th scope="row">The Anatomy of Simon Magus</th><td data-label="Book page views">2</td><td data-label="Read online">10</td><td data-label="PDF copies">10</td><td data-label="EPUB copies">3</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">2</td></tr>
+        <tr><th scope="row">Our Sin, His Mercy</th><td data-label="Book page views">11</td><td data-label="Read online">2</td><td data-label="PDF copies">6</td><td data-label="EPUB copies" class="none">–</td><td data-label="Kindle copies" class="none">–</td><td data-label="Print zips">4</td></tr>
       </tbody>
     </table></div>
-    <p class="small">21 more books have less activity.</p>
-    <p class="sowhat"><strong>Meditations on Psalm 119</strong> had the most activity: 73 views of its page, 18 opened to read online and up to 90 downloads. Across all books, people opened a book to read online about 157 times and downloaded files up to 765 times. Of the downloads, 60% were PDF, 20% EPUB and 16% print files.</p>
-    <p class="sowhat">"Read online" counts each time someone opened a book's online version on this site. Downloads are requests for files and can run high, because a browser often fetches a large PDF in several pieces. "Print files" is the zip for printing a copy. Downloads cover 21 of the 30 days.</p>
+    <p class="small">28 more books have less activity.</p>
+    <p class="sowhat"><strong>Meditations on Psalm 119</strong> had the most activity: 86 views of its page, 18 opened to read online and about 81 whole copies downloaded. Across all books, people opened a book to read online about 184 times and downloaded about 704 whole copies. Of the copies, 64% were PDF, 20% print files and 14% EPUB.</p>
+    <p class="sowhat">"Read online" counts each time someone opened a book's online version on this site. The copies columns are whole copies: all the data sent for that file divided by its size, because a browser often fetches a large PDF in pieces. Someone who opens a book again counts again, and someone who reads only a few pages counts as part of a copy. "Print zips" are the files for printing a paper copy. Downloads cover 26 of the 30 days.</p>
   </section>
 
   <section>
     <h2>Downloads by month</h2>
     <ul class="bars" aria-label="Downloads by month">
       <li><span class="name">October (from the 2nd)</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">653</span></li>
-      <li><span class="name">November (so far)</span><span class="track"><span class="fill" style="width:46%"></span></span><span class="val">301</span></li>
+      <li><span class="name">November (so far)</span><span class="track"><span class="fill" style="width:87%"></span></span><span class="val">566</span></li>
     </ul>
     <p class="sowhat">Each bar is downloads, up to. Per-file counts have only been saved since the first month shown, and Cloudflare does not keep earlier ones.</p>
   </section>
