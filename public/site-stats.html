@@ -83,6 +83,11 @@
   .stat .num { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
   .stat .label { color: var(--text-soft); font-size: 0.92rem; }
 
+  .tablewrap { overflow-x: auto; }
+  .booktable { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+  .booktable th, .booktable td { padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+  .booktable thead th { font-weight: 600; color: var(--text-soft); font-size: 0.82rem; vertical-align: bottom; white-space: normal; }
+  .booktable th[scope="row"], .booktable thead th:first-child { text-align: left; font-weight: 500; white-space: normal; min-width: 11rem; }
   .bars { display: flex; flex-direction: column; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
   .bars li { display: grid; grid-template-columns: minmax(0, 21rem) minmax(0, 1fr) 3.6rem; gap: 0.75rem; align-items: center; font-size: 0.95rem; }
   .bars .name { min-width: 0; overflow-wrap: anywhere; }
@@ -221,6 +226,33 @@
     </ul>
 
     <p class="sowhat">Downloads are requests for book files, and opening one PDF in a browser can make several, so the downloads figure runs high. "Different devices" counts each phone or computer once per day, using its internet address, so it is a closer guide to how many people download. It covers 21 days so far, and a household sharing one connection counts once.</p>
+  </section>
+
+  <section>
+    <h2>Book by book</h2>
+    <div class="tablewrap"><table class="booktable">
+      <thead><tr><th>Book</th><th>Book page views</th><th>Read online</th><th>PDF</th><th>EPUB</th><th>Kindle</th><th>Print files</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Meditations on Psalm 119</th><td>73</td><td>18</td><td>71</td><td>4</td><td>–</td><td>15</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume I</th><td>11</td><td>32</td><td>61</td><td>15</td><td>–</td><td>35</td></tr>
+        <tr><th scope="row">Morning and Evening</th><td>23</td><td>32</td><td>92</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume II</th><td>18</td><td>16</td><td>33</td><td>15</td><td>–</td><td>16</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume III</th><td>3</td><td>2</td><td>25</td><td>11</td><td>–</td><td>13</td></tr>
+        <tr><th scope="row">Of Domestical Duties, Volume IV</th><td>11</td><td>1</td><td>12</td><td>12</td><td>–</td><td>10</td></tr>
+        <tr><th scope="row">Abolish the Jesus Trade</th><td>3</td><td>–</td><td>30</td><td>5</td><td>–</td><td>4</td></tr>
+        <tr><th scope="row">The Godly Man's Picture</th><td>10</td><td>21</td><td>5</td><td>–</td><td>4</td><td>–</td></tr>
+        <tr><th scope="row">Precious Remedies Against Satan's Devices</th><td>11</td><td>–</td><td>12</td><td>12</td><td>–</td><td>4</td></tr>
+        <tr><th scope="row">Jude: A Theological Commentary</th><td>11</td><td>–</td><td>13</td><td>8</td><td>–</td><td>5</td></tr>
+        <tr><th scope="row">The Anatomy of Simon Magus</th><td>2</td><td>8</td><td>11</td><td>7</td><td>–</td><td>2</td></tr>
+        <tr><th scope="row">The Autobiography of C.H. Spurgeon, Vol. 1: The Early Years</th><td>5</td><td>15</td><td>5</td><td>–</td><td>3</td><td>–</td></tr>
+        <tr><th scope="row">All of Grace</th><td>3</td><td>–</td><td>8</td><td>9</td><td>–</td><td>3</td></tr>
+        <tr><th scope="row">The Secret Key of Heaven</th><td>6</td><td>3</td><td>4</td><td>4</td><td>–</td><td>4</td></tr>
+        <tr><th scope="row">Our Sin, His Mercy</th><td>9</td><td>2</td><td>5</td><td>–</td><td>–</td><td>4</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">21 more books have less activity.</p>
+    <p class="sowhat"><strong>Meditations on Psalm 119</strong> had the most activity: 73 views of its page, 18 opened to read online and up to 90 downloads. Across all books, people opened a book to read online about 157 times and downloaded files up to 765 times. Of the downloads, 60% were PDF, 20% EPUB and 16% print files.</p>
+    <p class="sowhat">"Read online" counts each time someone opened a book's online version on this site. Downloads are requests for files and can run high, because a browser often fetches a large PDF in several pieces. "Print files" is the zip for printing a copy. Downloads cover 21 of the 30 days.</p>
   </section>
 
   <section>
