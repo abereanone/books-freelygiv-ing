@@ -3,7 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import FormatIcon from '../../../components/FormatIcon.astro';
 import ShareButton from '../../../components/ShareButton.astro';
 import CreditNames from '../../../components/CreditNames.astro';
-import { ROLES, LANGUAGES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
+import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
 
 export function getStaticPaths() {
   return getBooks().map((book: any) => ({
@@ -107,12 +107,21 @@ const views = [
         ].filter(Boolean).join(' · ')}
       </p>
 
-      {book.editions?.length > 0 && (
-        <p class="book-editions mb-3">
-          {book.editions.map((ed: any, i: number) => (
-            <span>{i > 0 && ' · '}Also available in {LANGUAGES[ed.lang]?.name ?? ed.lang}: <a href={ed.href} lang={ed.lang !== 'en' ? ed.lang : undefined}><em>{ed.title}</em></a></span>
+      {book.setAxes?.length > 0 && (
+        <nav class="book-set mb-3" aria-label="Other books in this set">
+          {book.setAxes.map((axis: any) => (
+            <div class="book-set-row">
+              <span class="book-set-label text-body-secondary">{axis.label}</span>
+              <div class="btn-group btn-group-sm flex-wrap" role="group" aria-label={axis.label}>
+                {axis.options.map((opt: any) => (
+                  opt.current
+                    ? <span class="btn btn-primary active" aria-current="page" lang={opt.lang}>{opt.name}</span>
+                    : <a class="btn btn-outline-primary" href={opt.href} title={opt.title} lang={opt.lang}>{opt.name}</a>
+                ))}
+              </div>
+            </div>
           ))}
-        </p>
+        </nav>
       )}
 
       {book.description && (
@@ -180,6 +189,10 @@ const views = [
      hover state, so a hover-only menu would never open for them; the Bootstrap
      click/keyboard behaviour stays in place underneath for touch and keyboards. */
   .format-dropdown > .btn { width: 100%; }
+
+  .book-set { display: flex; flex-direction: column; gap: .4rem; }
+  .book-set-row { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+  .book-set-label { min-width: 4.5rem; font-size: .9rem; }
 
   @media (min-width: 768px) {
     .format-dropdown > .btn { width: auto; }

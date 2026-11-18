@@ -152,4 +152,14 @@ const navItems = [
     </div>
   </body>
   <script src="/js/themeToggle.js" is:inline></script>
+  <script is:inline>
+    // Links to other sites open in a new tab, so the reader keeps this page. Done on click,
+    // so it also covers links from YAML descriptions and ones other scripts insert.
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!a || a.target || !/^https?:$/.test(a.protocol) || a.host === location.host) return;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+  </script>
 </html>

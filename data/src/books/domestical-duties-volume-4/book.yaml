@@ -1,5 +1,8 @@
 - title: "Of Domestical Duties, Volume IV"
   sortTitle: "Domestical Duties, Volume IV"
+  set: domestical-duties
+  volume: 4
+  volumeLabel: Vol. IV
   credits:
     - person: william-gouge
       role: author

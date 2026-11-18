@@ -196,10 +196,9 @@ description, and its own files, e.g. `meditaciones-sobre-el-salmo-119` beside
   `siteName`: the book page passes `lang` to `Base.astro`, which shows that name in the header,
   tab title, footer and og:site_name, e.g. "Libros Dados de Gracia" for `es`). The
   book page puts it on the title and description only; the page chrome stays English.
-- `translationOf` links the family: `getBooks()` gives every book an `editions` list, and each
-  page shows "Also available in Spanish: …" / "Also available in English: …". Only the
-  translation carries the field; the original needs no edit. A slug that is not a visible book
-  warns during the build.
+- `translationOf` puts the translation in the original's book set (see "Book sets" below), so
+  both pages get a Language switcher (English | Español). Only the translation carries the
+  field; the original needs no edit. A slug that is not a visible book warns during the build.
 - /library has a language filter (2026-11-13): one button per language that has a book
   ("English", "En español"; the `filter` label in `LANGUAGES`), left of the format buttons and
   combinable with them and with tags. It is kept in the URL, so `/library/?lang=es` opens on
@@ -221,6 +220,32 @@ registered in the three places; don't use it for new books.
 
 Built HTML books (fonts and images beside `book.html`) become the single file the site serves
 with `python scripts/inline-html.py path/to/book.html content/<slug>.html`.
+
+## Book sets (2026-11-18)
+
+One concept covers every way books belong together: the volumes of a multi-volume work, its
+modern and classic versions, and its translations. Books sharing a `set` key are one set; each
+sits on three axes, and the book page shows a row of buttons for each axis that varies within
+the set (Volume / Version / Language), current one highlighted.
+
+```yaml
+  set: domestical-duties   # shared key
+  volume: 1                # ordering number for a multi-volume work
+  volumeLabel: Vol. I      # optional button text; default "Vol. 1"
+  version: modern          # modern | classic (VERSIONS in src/lib/data.js)
+  lang: es                 # LANGUAGES, default en
+```
+
+`translationOf: <slug>` and `versionOf: <slug>` are shorthand for "same set as that book", so
+the original needs no edit; with `versionOf`, an original with no `version` is taken as the
+opposite one. A button goes to the book with that value that keeps the most of the current
+book's other axes, so Vol. III's Version button stays on Vol. III. The logic is `withSets()` in
+`src/lib/data.js`; the switcher is `.book-set` on the book page. Sets now: `domestical-duties`
+(Gouge, 4 volumes), `institutes` (Calvin, Parts 1–2), plus every `translationOf` pair. Every
+volume still has its own card on /library.
+
+External links open in a new tab site-wide: a click handler at the end of `Base.astro` adds
+`target="_blank"` to any `http(s)` link to another host that has no `target` yet.
 
 ## Site conventions
 

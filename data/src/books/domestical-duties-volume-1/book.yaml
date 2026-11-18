@@ -1,5 +1,8 @@
 - title: "Of Domestical Duties, Volume I"
   sortTitle: "Domestical Duties, Volume I"
+  set: domestical-duties
+  volume: 1
+  volumeLabel: Vol. I
   credits:
     - person: william-gouge
       role: author

@@ -219,7 +219,7 @@ export function getBooks() {
           })
       : [];
   });
-  return withEditions(books);
+  return withSets(books);
 }
 
 /**
@@ -234,29 +234,91 @@ export const LANGUAGES = {
   es: { name: "Spanish", native: "Español", filter: "En español", siteName: "Libros Dados de Gracia" }, // Mt 10:8 RV1909 "dad de gracia"
 };
 
-function withEditions(books) {
+/**
+ * Book sets: books that belong together — the volumes of a multi-volume work, its modern
+ * and classic versions, and its translations. Each book in a set sits at a point on three
+ * axes, and the book page shows a switcher for every axis that varies within the set:
+ *
+ *   set: domestical-duties   # shared key; every book with the same key is in the set
+ *   volume: 1                # position in a multi-volume work (number, for ordering)
+ *   volumeLabel: Vol. I      # optional button text; default "Vol. <volume>"
+ *   version: modern          # modern | classic (see VERSIONS)
+ *   lang: es                 # the book's language (see LANGUAGES), default en
+ *
+ * `translationOf: <slug>` / `versionOf: <slug>` are shorthand for "in the same set as that
+ * book", so the original needs no edit. A switcher button goes to the book with that value
+ * that keeps the most of the current book's other axes (Vol. III stays in Spanish/modern
+ * when that exists).
+ */
+export const VERSIONS = {
+  classic: { name: "Classic" },
+  modern: { name: "Modern" },
+};
+
+const SET_AXES = [
+  { key: "volume", label: "Volume", value: (b) => b.volume, name: (b) => b.volumeLabel ?? `Vol. ${b.volume}` },
+  { key: "version", label: "Version", value: (b) => b.version, name: (b) => VERSIONS[b.version]?.name ?? b.version },
+  { key: "lang", label: "Language", value: (b) => b.lang, name: (b) => LANGUAGES[b.lang]?.native ?? b.lang },
+];
+
+function withSets(books) {
   const slugOf = (book) => bookSlugFromPath(book.path);
-  const visible = new Set(books.map(slugOf));
-  const families = new Map();
+  const bySlug = new Map(books.map((book) => [slugOf(book), book]));
   for (const book of books) {
-    if (book.translationOf && !visible.has(book.translationOf)) {
-      console.warn(`[data] ${slugOf(book)}: translationOf "${book.translationOf}" is not a visible book`);
+    for (const field of ["translationOf", "versionOf"]) {
+      if (book[field] && !bySlug.has(book[field])) {
+        console.warn(`[data] ${slugOf(book)}: ${field} "${book[field]}" is not a visible book`);
+      }
     }
-    const root = book.translationOf ?? slugOf(book);
-    if (!families.has(root)) families.set(root, []);
-    families.get(root).push(book);
+    if (book.version && !VERSIONS[book.version]) {
+      console.warn(`[data] ${slugOf(book)}: unknown version "${book.version}" (${Object.keys(VERSIONS).join(", ")})`);
+    }
   }
-  return books.map((book) => ({
-    ...book,
-    editions: families
-      .get(book.translationOf ?? slugOf(book))
-      .filter((other) => other !== book)
-      .map((other) => ({
-        title: other.title,
-        lang: other.lang,
-        href: `/books/${bookAuthorSlug(other)}/${slugOf(other)}/`,
-      })),
-  }));
+  // A book's set key: its own `set`, else the set of the book it translates or modernizes.
+  const keyOf = (book, seen = new Set()) => {
+    if (book.set) return book.set;
+    const parent = bySlug.get(book.translationOf ?? book.versionOf);
+    return parent && !seen.has(parent) ? keyOf(parent, seen.add(book)) : slugOf(book);
+  };
+  // versionOf with no version on the original: the original is the other one.
+  const books2 = books.map((book) => {
+    if (book.version) return book;
+    const derived = books.find((other) => other.versionOf === slugOf(book) && VERSIONS[other.version]);
+    return derived ? { ...book, version: derived.version === "modern" ? "classic" : "modern" } : book;
+  });
+  const sets = new Map();
+  for (const book of books2) {
+    const key = keyOf(book);
+    if (!sets.has(key)) sets.set(key, []);
+    sets.get(key).push(book);
+  }
+  return books2.map((book) => {
+    const members = sets.get(keyOf(book));
+    const setAxes = [];
+    for (const axis of SET_AXES) {
+      const values = [...new Set(members.map(axis.value).filter((v) => v !== undefined))];
+      if (values.length < 2) continue;
+      const order = { lang: Object.keys(LANGUAGES), version: Object.keys(VERSIONS) }[axis.key];
+      values.sort(order ? (x, y) => order.indexOf(x) - order.indexOf(y) : (x, y) => x - y);
+      const others = SET_AXES.filter((a) => a !== axis);
+      const options = values.map((value) => {
+        // The book with this value that keeps the most of the current book's other axes.
+        const target = members
+          .filter((m) => axis.value(m) === value)
+          .map((m) => ({ m, score: others.filter((a) => a.value(m) === a.value(book)).length }))
+          .sort((x, y) => y.score - x.score)[0].m;
+        return {
+          name: axis.name(target),
+          lang: axis.key === "lang" ? value : undefined,
+          current: value === axis.value(book),
+          href: `/books/${bookAuthorSlug(target)}/${slugOf(target)}/`,
+          title: target.title,
+        };
+      });
+      setAxes.push({ key: axis.key, label: axis.label, options });
+    }
+    return { ...book, setAxes };
+  });
 }
 
 /**
