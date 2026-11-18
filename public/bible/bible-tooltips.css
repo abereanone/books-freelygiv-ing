@@ -1,0 +1,37 @@
+/* Bible verse tooltips (script and verses shared with thingsabove.us, michaelcoughlin.net and
+   macaudio; the verses come from confession's bsb.json via its sync-bible-to-sites script).
+   Coloured with Bootstrap's theme variables so they follow the light/dark toggle. */
+.bible-ref {
+  color: var(--bs-link-color);
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+  text-decoration: none;
+}
+.bible-ref:hover,
+.bible-ref:focus-visible { color: var(--bs-link-hover-color); border-bottom-style: solid; outline: none; }
+
+.bible-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 14px 16px;
+  border: 1px solid var(--bs-border-color);
+  border-top: 4px solid var(--bs-primary);
+  border-radius: 10px;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.bible-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 24px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--bs-primary) transparent;
+}
+.bible-tooltip a { color: var(--bs-link-color); text-decoration: underline; }

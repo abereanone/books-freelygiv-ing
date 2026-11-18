@@ -247,6 +247,22 @@ volume still has its own card on /library.
 External links open in a new tab site-wide: a click handler at the end of `Base.astro` adds
 `target="_blank"` to any `http(s)` link to another host that has no `target` yet.
 
+## Bible verse tooltips (2026-11-18)
+
+Scripture references in book and person descriptions get a verse tooltip (hover, focus, tap).
+It is the same script as thingsabove.us, michaelcoughlin.net and macaudio, not fetch.bible
+(removed 2026-11-18): `public/bible/bible-tooltips.js` + `.css` + `-meta.json` (book names) +
+`-verses.json` (the whole BSB, 4 MB, fetched on the first hover only). The script scans
+`article` (the book page) and `.entry-content` (person descriptions); headings and links are
+skipped.
+
+The verses come from the modified BSB master, `C:/code/confession/shared/data/bsb.json`. Never
+edit `bible-tooltips-verses.json` here: change the master and run
+`node scripts/sync-bible-to-sites.mjs` in `C:/code/confession` (`--check` reports drift); this
+site is in its list. BFG's copy of the script has two additions the other sites lack: a bare
+chapter ("Psalm 119") is left as plain text, and ranges across chapters ("Ephesians 5:21–6:4")
+work.
+
 ## Site conventions
 
 - **Domains.** The repo folder is `books-freelygiv-ing`, but the canonical site is

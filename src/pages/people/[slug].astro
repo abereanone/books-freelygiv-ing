@@ -62,7 +62,7 @@ const ogImage = `${siteUrl}/static/og/person-${person.slug}.jpg`;
     )}
     <h1 class="mb-1">{fullName}</h1>
     {roleLabel && <p class="text-body-secondary mb-3">{roleLabel}</p>}
-    {person.description && <div set:html={descHtml} />}
+    {person.description && <div class="entry-content" set:html={descHtml} />}
     <div class="d-flex flex-wrap gap-2 mt-2">
       {person.donateUrl && (
         <a href={person.donateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
