@@ -1,0 +1,29 @@
+- title: Owen on Sin
+  sortTitle: Owen on Sin
+  credits:
+    - person: john-owen
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1658
+  addedDate: 2026-11-17
+  pages: 262
+  tags:
+    - classic
+  description: "Two of John Owen's classic works on sin in one paperback: Of Temptation (1658) and The Mortification of Sin (1656). Each is also on this site on its own, with an eBook and a Read Online version."
+  license: CC0
+  path: /static/books/owen-on-sin
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/owen-on-sin/owen-on-sin.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/owen-on-sin/print-ready.zip

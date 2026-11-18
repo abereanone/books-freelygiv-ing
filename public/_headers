@@ -1,0 +1,7 @@
+# Cloudflare Pages response headers.
+# The sync report for Courtney Hicks (written by scripts/sync-freely-given.js): plain text, never
+# cached stale, kept out of search results.
+/CourtneyHicks.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex

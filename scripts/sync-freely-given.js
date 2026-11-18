@@ -137,8 +137,11 @@ function personSlug(author) {
  * in the report to send back, not just the console. */
 class EditorError extends Error {}
 
-/** Where the report to send back to the editor is written (untracked). */
+/** The sync report for the editor. A real sync publishes it on the site as /CourtneyHicks.md, where Courtney
+ * (or his tools) can read it at any time; a dry run writes only the local copy in _downloads (untracked). */
 const REPORT = join(ROOT, "_downloads/freely-given/for-courtney.md");
+const PUBLISHED = join(ROOT, "public/CourtneyHicks.md");
+const SITE_URL = "https://books.freely.giving";
 
 const isPdf = (b) => (b.subarray(0, 5).toString() === "%PDF-" ? null : "not a PDF file");
 const isZip = (b) => (b[0] === 0x50 && b[1] === 0x4b ? null : "not a valid EPUB (ZIP) file");
@@ -200,47 +203,61 @@ function parseSite(buf) {
   return site;
 }
 
-/** The file to send back to the editor, or null (and no stale file) when there is nothing to say. */
-function editorReport(tag, report, general = []) {
+/** The sync report for the editor, written every run (published on the site on a real sync). */
+function editorReport(tag, report, general = [], { publish = false } = {}) {
   const bad = report.filter((r) => r.problems.length);
   const warned = report.filter((r) => !r.problems.length && r.warnings.length);
   const meta = report.filter((r) => !r.problems.length && r.missingMeta?.length);
-  if (!general.length && !bad.length && !warned.length && !meta.length) {
-    if (existsSync(REPORT)) unlinkSync(REPORT);
-    return null;
-  }
+  const today = new Date().toLocaleDateString("en-CA");
   const head = (r) => `### ${r.slug} (${r.title ?? "no title"}${r.version ? `, ${r.version}` : ""})`;
+  const status = (r) =>
+    r.problems.length ? (r.isNew ? "not imported (see below)" : "not updated (see below); the site keeps its previous version")
+    : r.hidden ? "imported, hidden until the site owner finishes it"
+    : "on the site";
+  const live = report.filter((r) => !r.problems.length && !r.hidden).length;
   const L = [
-    `# books.freely.giving: sync report for release ${tag}`,
+    "# Sync report for Courtney Hicks",
     "",
-    "The site's sync script (`npm run sync:fgb`) read this release and found the items below.",
-    "Nothing needs to change on the site's side: fix these in the release, publish a new one,",
-    "and the next sync picks it up. Editions not listed here synced fine.",
+    `This file is for Courtney Hicks and his tools. ${SITE_URL} rewrites it each time it syncs a`,
+    "Freely Given Books release from https://github.com/freely-given-books/books. Read it after",
+    "publishing a release to see what the site took, and anything to fix in the next release.",
+    "Nothing in it needs a change on the site's side: fix things in the release and publish a new",
+    "one, and the next sync picks it up.",
+    "",
+    `- Last sync: ${today}`,
+    `- Release: ${tag}`,
+    `- Editions in the release: ${report.length}; on the site: ${live}; hidden: ${report.filter((r) => !r.problems.length && r.hidden).length}; ` +
+      `not imported or not updated: ${bad.length}`,
   ];
   if (general.length) L.push("", "## The release itself", "", ...general.map((g) => `- ${g}`));
-  if (bad.length) {
-    L.push("", "## Not imported (fix and re-release)", "");
-    for (const r of bad) L.push(head(r), ...r.problems.map((p) => `- ${p}`), "");
+  if (report.length) {
+    L.push("", "## Editions", "", "| Edition | Version | Status | Page |", "| --- | --- | --- | --- |",
+      ...report.map((r) => `| ${r.slug} | ${r.version ?? ""} | ${status(r)} | ${r.page && !r.problems.length && !r.hidden ? r.page : ""} |`));
   }
-  if (warned.length) {
-    L.push("", "## Imported, but please check", "");
-    for (const r of warned) L.push(head(r), ...r.warnings.map((p) => `- ${p}`), "");
-  }
+  L.push("", "## Not imported (fix and re-release)", "");
+  if (bad.length) for (const r of bad) L.push(head(r), ...r.problems.map((p) => `- ${p}`), "");
+  else L.push("None.");
+  L.push("", "## Imported, but please check", "");
+  if (warned.length) for (const r of warned) L.push(head(r), ...r.warnings.map((p) => `- ${p}`), "");
+  else L.push("None.");
   if (meta.length) {
-    L.push("", "## Requests that make the next sync hands-free", "",
+    L.push("", "## Optional: details that save the site owner work", "",
       "New books arrive hidden until the site owner fills in a year, description and tags by hand.",
       "If `site.json` carries them on each book (`\"year\": 1658`, a reader-facing `\"description\"`",
       "of a sentence or two, not the edition summary, and `\"tags\": [\"puritan\"]`) the sync uses",
       "them and nobody has to do it. Missing for:", "",
-      ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}${r.noLulu ? "; lulu (only if a print edition exists)" : ""}`), "");
+      ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}${r.noLulu ? "; lulu (only if a print edition exists)" : ""}`));
   }
   L.push("", "## What the sync needs, per edition", "",
-    "`slug`, `pages`, and `files` with `pdf`, `epub`, `cover` (the Lulu cover PDF), `front` (the front",
-    "cover PNG) and `reader`, plus `compare` for What's New?. Per book: `title`, `author`. Every file",
-    "named must be attached to the release and listed in `SHA256SUMS`.");
+    "`slug`, `pages`, and `files` with `pdf`, `cover` (the Lulu cover PDF) and `front` (the front cover",
+    "PNG). `epub` and `reader` (Read Online) are optional: an edition without them (a combined paperback,",
+    "say) goes up with only the buttons it has. `compare` gives What's New?. Per book: `title`,",
+    "`author`. Every file named must be attached to the release and listed in `SHA256SUMS`.");
+  const text = L.join("\n") + "\n";
   mkdirSync(dirname(REPORT), { recursive: true });
-  writeFileSync(REPORT, L.join("\n") + "\n");
-  return REPORT;
+  writeFileSync(REPORT, text);
+  if (publish) writeFileSync(PUBLISHED, text);
+  return { file: publish ? PUBLISHED : REPORT, hasIssues: Boolean(general.length || bad.length || warned.length) };
 }
 
 /** Back cover and spine, cut from the print-ready wrap cover by scripts/cut-cover.py
@@ -336,9 +353,14 @@ async function main() {
         return null;
       }
     };
-    const pdf = await need("pdf", isPdf), epub = await need("epub", isZip),
+    // PDF, print cover and front cover are required. EPUB and Read Online are optional (owner, 2026-11-17):
+    // an edition without them goes up with the buttons it has, and the report asks Courtney for the rest.
+    const pdf = await need("pdf", isPdf), epub = await need("epub", isZip, true),
       cover = await need("cover", isPdf), front = await need("front"),
-      reader = await need("reader", isHtml), compare = await need("compare", isHtml, true);
+      reader = await need("reader", isHtml, true), compare = await need("compare", isHtml, true);
+    // Not sent to Courtney: he leaves them out on purpose (e.g. a two-in-one paperback whose books have their own pages).
+    if (!f.epub) r.kept.push("no EPUB in this release, so no eBook button");
+    if (!f.reader) r.kept.push("no Read Online page in this release, so no Read Online button");
     let jpg = null;
     if (front) {
       try {
@@ -354,11 +376,13 @@ async function main() {
 
     const out = {};
     out[`${slug}.pdf`] = pdf;
-    out[`${slug}.epub`] = epub;
+    if (epub) out[`${slug}.epub`] = epub;
     out["print-ready.zip"] = storedZip([{ name: f.pdf, data: pdf }, { name: f.cover, data: cover }]);
-    const names = { [f.pdf]: r2(`${slug}.pdf`), [f.epub]: r2(`${slug}.epub`), [f.reader]: `${slug}.html` };
+    const names = { [f.pdf]: r2(`${slug}.pdf`) };
+    if (epub) names[f.epub] = r2(`${slug}.epub`);
+    if (reader) names[f.reader] = `${slug}.html`;
     if (compare) names[f.compare] = `${slug}-whats-new.html`;
-    out[`${slug}.html`] = Buffer.from(relink(reader.toString(), names));
+    if (reader) out[`${slug}.html`] = Buffer.from(relink(reader.toString(), names));
     if (compare) out[`${slug}-whats-new.html`] = Buffer.from(relink(compare.toString(), names));
     out["cover.jpg"] = jpg;
     if (cut.back) { out["back-cover.jpg"] = cut.back; out["spine.jpg"] = cut.spine; }
@@ -422,10 +446,10 @@ async function main() {
     }
 
     const want = {
-      htmlBook: button("htmlBook", "Read Online", "Read", page(`${slug}.html`)),
+      htmlBook: reader && button("htmlBook", "Read Online", "Read", page(`${slug}.html`)),
       whatsNew: compare && button("whatsNew", "What's New?", "Compare", page(`${slug}-whats-new.html`)),
       printBook: ed.lulu && button("printBook", "Book", "Lulu", ed.lulu),
-      eBook: button("eBook", "eBook", "Download", r2(`${slug}.epub`)),
+      eBook: epub && button("eBook", "eBook", "Download", r2(`${slug}.epub`)),
       pdfBook: button("pdfBook", "PDF", "Download", r2(`${slug}.pdf`)),
       printReady: button("printReady", "Print Ready", "Download", r2("print-ready.zip")),
     };
@@ -442,6 +466,9 @@ async function main() {
       kept.push(`Read Online stays at ${url(had("htmlBook"))} (<slug>.html is staged, not linked)`);
     }
     if (had("printBook")) want.printBook = had("printBook");
+    // A release missing a file the site already offers keeps the site's existing button.
+    if (!epub && had("eBook")) want.eBook = had("eBook");
+    if (!reader && had("htmlBook")) want.htmlBook = had("htmlBook");
     b.set("mediaTypes", doc.createNode([...BUTTONS.map((t) => want[t]).filter(Boolean), ...others]));
     const yamlOut = doc.toString({ lineWidth: 0 });
     const yamlChanged = isNew || yamlOut !== readFileSync(yamlPath, "utf8");
@@ -456,7 +483,11 @@ async function main() {
       };
     }
     if (toR2.length) upload.push(slug);
+    const creditList = b.get("credits")?.toJSON?.() ?? [];
+    const urlPerson = creditList.find((c) => c.role === "author" && c.person)?.person ?? creditList.find((c) => c.prepared && c.person)?.person;
     Object.assign(r, {
+      hidden: b.get("hidden") === true,
+      page: urlPerson ? `${SITE_URL}/books/${urlPerson}/${slug}/` : "",
       files: changedForReal, yamlChanged, others: others.map((m) => m.type), kept,
       line: isNew
         ? `NEW (hidden${r.missingMeta.length ? `; still needs ${r.missingMeta.join(", ")}` : ""}; check the author page, then remove hidden)`
@@ -497,17 +528,19 @@ async function main() {
     ? `\nThen upload the changed files to R2 (the owner):\n  npm run upload -- ${upload.join(" ")} --force`
     : "\nNothing to upload to R2.");
 
-  const hasIssues = report.some((r) => r.problems.length || r.warnings.length);
-  const file = editorReport(site.release, report);
-  if (file) console.log(`\n${hasIssues ? "FILE TO SEND BACK TO COURTNEY (issues found)" : "Optional note for Courtney"}: ${file}`);
+  const out = editorReport(site.release, report, [], { publish: !dryRun });
+  console.log(dryRun
+    ? `\nReport for Courtney (dry run, local copy only): ${out.file}`
+    : `\nReport for Courtney written to ${out.file}; it is live at ${SITE_URL}/CourtneyHicks.md once pushed.` +
+      (out.hasIssues ? " It lists things for him to fix." : ""));
   if (report.some((r) => r.problems.length)) process.exitCode = 1;
 }
 
 main().catch((e) => {
   console.error(`sync: ${e.message}`);
   if (e instanceof EditorError) {
-    const file = editorReport(e.release ?? tagArg ?? "latest", [], [e.message]);
-    if (file) console.error(`FILE TO SEND BACK TO COURTNEY: ${file}`);
+    const out = editorReport(e.release ?? tagArg ?? "latest", [], [e.message], { publish: !dryRun });
+    console.error(`Report for Courtney: ${out.file}${dryRun ? "" : ` (live at ${SITE_URL}/CourtneyHicks.md once pushed)`}`);
   }
   process.exit(1);
 });
