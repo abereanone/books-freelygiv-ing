@@ -50,3 +50,28 @@ None.
 PNG). `epub` and `reader` (Read Online) are optional: an edition without them (a combined paperback,
 say) goes up with only the buttons it has. `compare` gives What's New?. Per book: `title`,
 `author`. Every file named must be attached to the release and listed in `SHA256SUMS`.
+
+## Volumes, and modern and classic wordings
+
+The site links books that belong together and puts switch buttons on each book's page
+(Volume: Vol. I | Vol. II …; Version: Classic | Modern), so a reader can move between them.
+
+- **Volumes** work already: give each edition its `"volume"` (1, 2, …), as Of Domestical
+  Duties does. The volumes of one book are linked to each other.
+- **The same work in modern and classic wording** is two books in `site.json`, each with its
+  own `book`, `title` and edition `slug`s (the slugs must differ, e.g. `the-secret-key-of-heaven`
+  and `the-privie-key-of-heaven`). Give both books:
+  - `"wording"`: `"modern"` (spelling or grammar brought up to date) or `"classic"` (the
+    wording and spelling as first printed)
+  - `"set"`: the same short key on both, e.g. `"secret-key-of-heaven"`
+- A work in volumes in both wordings: the same `set` on both books and the same `volume`
+  numbers, so Vol. II modern switches to Vol. II classic.
+- One wording only for now: `wording` and `set` are still welcome; the switch appears once the
+  other wording is in a release.
+
+```json
+{ "book": "thomas-brooks/the-secret-key-of-heaven", "title": "The Secret Key of Heaven",
+  "wording": "modern", "set": "secret-key-of-heaven", "editions": [ { "slug": "the-secret-key-of-heaven", … } ] },
+{ "book": "thomas-brooks/the-privie-key-of-heaven", "title": "The Privie Key of Heaven",
+  "wording": "classic", "set": "secret-key-of-heaven", "editions": [ { "slug": "the-privie-key-of-heaven", … } ] }
+```
