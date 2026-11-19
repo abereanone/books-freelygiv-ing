@@ -1,18 +1,27 @@
-- title: "The Autobiography of C.H. Spurgeon, Vol. 1: The Early Years"
-  sortTitle: "Autobiography of C.H. Spurgeon, Vol. 1"
+- title: "The Autobiography of Charles H. Spurgeon, Vol. 1: The Early Years"
+  sortTitle: "Autobiography of Charles H. Spurgeon, Vol. 1"
   credits:
     - person: charles-spurgeon
       role: author
+    - person: michael-coughlin
+      prepared: true
+  set: spurgeon-autobiography
+  volume: 1
+  volumeLabel: Vol. I
   year: 1897
   addedDate: 2026-06-02
-  pages: 408
+  pages: 462
   tags:
     - classic
   description: |
-    Compiled from his diary, letters, and personal records by his wife Susannah and his private secretary Joseph Harrald, this first volume of Spurgeon's autobiography covers the years 1834–1854 — from his remarkable childhood in Essex to his early ministry in Cambridge and his first thunderous sermons at New Park Street Chapel in London. Here is the young Spurgeon: converted at fifteen under a snowstorm, preaching at sixteen in country villages, and arriving in London at nineteen to fill a chapel to overflowing. Written with Spurgeon's own vivid voice throughout, blending humor, tenderness, and deep piety, this volume is essential reading for anyone who wants to understand the man behind the Metropolitan Tabernacle pulpit.
-  license: Public Domain
+    "I looked to Him; He looked on me; and we were one for ever." Compiled by his wife and his private secretary from his diary, letters, and records, this first volume tells Spurgeon's story largely in his own words, from his birth in 1834 to his first year in London: childhood at his grandfather's manse at Stambourne, school at Colchester and Maidstone, his conversion in a Primitive Methodist chapel on a snowy Sunday in January 1850, his baptism in the river at Isleham, his first sermons in the cottages of the fens, the village pastorate at Waterbeach, and the call to New Park Street Chapel.
+
+    This edition follows the London edition of 1897 (C. H. Spurgeon's Autobiography, Vol. I), with its pictures, its London spelling, and footnotes giving the verses cited (Berean Standard Bible).
+  license: CC0
   path: /static/books/autobiography-of-charles-spurgeon
   cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
   mediaTypes:
     - type: htmlBook
       label: Read Online
@@ -23,9 +32,14 @@
       label: PDF
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/autobiography-of-charles-spurgeon.pdf
-    - type: mobi
-      label: Mobi
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/AutobiographyOfCharlesHSpurgeonVol1.pdf
+    - type: eBook
+      label: EPUB
       sources:
         - name: Download
-          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/autobiography-of-charles-spurgeon.mobi
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/AutobiographyOfCharlesHSpurgeonVol1.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon/print-ready.zip
