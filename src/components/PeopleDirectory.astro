@@ -2,12 +2,23 @@
 // The one listing of people, at /people/. `?filter=authors` (or contributors, forewords,
 // preparers) preselects a filter, and clicking a button keeps the URL in step so a
 // filtered view can be linked. The Authors menu item is just /people/?filter=authors.
-import { ROLES, EVERYONE_DESCRIPTION, getPeople, personName, personAvatar } from '../lib/data.js';
+// Classic / Modern narrows any role to people credited on a book with that tag (?era=classic);
+// someone credited on both kinds of book shows under both.
+import { ROLES, EVERYONE_DESCRIPTION, getBooks, getPeople, personName, personAvatar } from '../lib/data.js';
+
+const ERAS = [
+  { key: 'classic', label: 'Classic', description: 'Only people credited on a classic book.' },
+  { key: 'modern', label: 'Modern', description: 'Only people credited on a modern book.' },
+];
+const books = getBooks();
+const erasOf = (slug: string) => ERAS.map(era => era.key).filter(key =>
+  books.some((book: any) => book.tags?.includes(key) && (book.credits || []).some((credit: any) => credit.slug === slug)));
 
 const people = getPeople()
   .filter((person: any) => person.roles.length)
   .sort((a: any, b: any) => a.lastName.localeCompare(b.lastName));
 const filters = ROLES.filter(role => people.some((person: any) => person.roles.includes(role.key)));
+const eras = ERAS.filter(era => people.some((person: any) => erasOf(person.slug).includes(era.key)));
 ---
 
 <div class="d-flex flex-wrap gap-2 mb-2" id="peopleFilter">
@@ -17,6 +28,11 @@ const filters = ROLES.filter(role => people.some((person: any) => person.roles.i
     <button type="button" class="btn btn-sm btn-outline-secondary" aria-pressed="false"
       data-role={role.key} data-description={role.description}>{role.plural}</button>
   ))}
+  {eras.length > 1 && <span class="filter-divider" aria-hidden="true"></span>}
+  {eras.length > 1 && eras.map(era => (
+    <button type="button" class="btn btn-sm btn-outline-secondary" aria-pressed="false"
+      data-era={era.key} data-description={era.description}>{era.label}</button>
+  ))}
 </div>
 <!-- Clicking or tapping a filter shows its description here; hovering on desktop also shows it as a tooltip. -->
 <p class="text-body-secondary small mb-4" id="peopleFilterHelp" aria-live="polite">{EVERYONE_DESCRIPTION}</p>
@@ -25,7 +41,7 @@ const filters = ROLES.filter(role => people.some((person: any) => person.roles.i
   {people.map((person: any) => {
     const photo = personAvatar(person);
     return (
-      <div class="col" data-roles={person.roles.join(' ')}>
+      <div class="col" data-roles={person.roles.join(' ')} data-eras={erasOf(person.slug).join(' ')}>
         <a href={person.href} class="card h-100 text-decoration-none text-center">
           {photo && (
             <img
@@ -48,6 +64,11 @@ const filters = ROLES.filter(role => people.some((person: any) => person.roles.i
   const cards = document.querySelectorAll<HTMLElement>('#peopleGrid [data-roles]');
   const buttons = document.querySelectorAll<HTMLButtonElement>('#peopleFilter button[data-role]');
   const roles = [...buttons].map(btn => btn.dataset.role!);
+  const eraButtons = document.querySelectorAll<HTMLButtonElement>('#peopleFilter button[data-era]');
+  const eras = [...eraButtons].map(btn => btn.dataset.era!);
+  const toEra = (value: string | null) => eras.find(era => era === (value ?? '').toLowerCase()) ?? null;
+  let role = 'all';
+  let era: string | null = null;
 
   // The URL uses plurals (?filter=authors); role keys are singular. Accept either.
   const toRole = (value: string | null) => {
@@ -60,7 +81,7 @@ const filters = ROLES.filter(role => people.some((person: any) => person.roles.i
   // Hover tooltips only where hovering is real. On touch screens Bootstrap's hover tooltip
   // sticks after a tap, and the tap already shows the same text in the line below.
   if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    buttons.forEach(btn => {
+    [...buttons, ...eraButtons].forEach(btn => {
       (window as any).bootstrap?.Tooltip.getOrCreateInstance(btn, {
         title: btn.dataset.description,
         trigger: 'hover',
@@ -69,24 +90,43 @@ const filters = ROLES.filter(role => people.some((person: any) => person.roles.i
     });
   }
 
-  function show(role: string, updateUrl: boolean) {
+  function show(updateUrl: boolean) {
+    let text = '';
     buttons.forEach(btn => {
       const on = btn.dataset.role === role;
       btn.classList.toggle('active', on);
       btn.setAttribute('aria-pressed', String(on));
-      if (on) help.textContent = btn.dataset.description ?? '';
+      if (on) text = btn.dataset.description ?? '';
     });
+    eraButtons.forEach(btn => {
+      const on = btn.dataset.era === era;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-pressed', String(on));
+      if (on) text += ` ${btn.dataset.description ?? ''}`;
+    });
+    help.textContent = text;
     cards.forEach(card => {
-      card.hidden = role !== 'all' && !card.dataset.roles!.split(' ').includes(role);
+      card.hidden = (role !== 'all' && !card.dataset.roles!.split(' ').includes(role))
+        || (era !== null && !card.dataset.eras!.split(' ').includes(era));
     });
     if (updateUrl) {
       const url = new URL(location.href);
       if (role === 'all') url.searchParams.delete('filter');
       else url.searchParams.set('filter', `${role}s`);
+      if (era) url.searchParams.set('era', era);
+      else url.searchParams.delete('era');
       history.replaceState(null, '', url);
     }
   }
 
-  buttons.forEach(btn => btn.addEventListener('click', () => show(btn.dataset.role!, true)));
-  show(toRole(new URLSearchParams(location.search).get('filter')), false);
+  buttons.forEach(btn => btn.addEventListener('click', () => { role = btn.dataset.role!; show(true); }));
+  // Classic / Modern toggle: clicking the active one again turns it off.
+  eraButtons.forEach(btn => btn.addEventListener('click', () => {
+    era = era === btn.dataset.era ? null : btn.dataset.era!;
+    show(true);
+  }));
+  const params = new URLSearchParams(location.search);
+  role = toRole(params.get('filter'));
+  era = toEra(params.get('era'));
+  show(false);
 </script>
