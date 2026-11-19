@@ -30,3 +30,8 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/morning-and-evening/morning-and-evening.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/morning-and-evening/print-ready.zip
