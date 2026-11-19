@@ -25,10 +25,12 @@ const books = getBooks()
 // Every visible book is reachable, including one with no author.
 const randomBookUrls = books.map((book: any) => book.href);
 
-// The cover wall: dealt round-robin into rows so each row mixes old and new.
-const ROWS = 3;
+// The cover wall: the newest books dealt round-robin into two rows. Kept small (each row
+// is drawn twice for the loop) because a big moving wall stutters on slower PCs.
+const ROWS = 2;
+const PER_ROW = 14;
 const wallRows: any[][] = Array.from({ length: ROWS }, () => []);
-books.forEach((book: any, i: number) => wallRows[i % ROWS].push(book));
+books.slice(0, ROWS * PER_ROW).forEach((book: any, i: number) => wallRows[i % ROWS].push(book));
 
 const recent = books.slice(0, 12);
 
@@ -63,9 +65,9 @@ const links = [
         <a
           id="randomBookLink"
           href="/library"
-          class="btn btn-outline-secondary btn-lg random-book-btn"
+          class="btn btn-lg random-book-btn"
           data-book-urls={JSON.stringify(randomBookUrls)}
-        >Random book</a>
+        >Show me a<br />random book</a>
       </div>
     </div>
 
@@ -80,7 +82,7 @@ const links = [
               aria-hidden={copy ? 'true' : undefined}
               tabindex={copy ? -1 : undefined}
             >
-              <img src={book.thumb} alt={copy ? '' : book.title} width="100" height="150" loading={r === 2 ? 'lazy' : 'eager'} decoding="async" />
+              <img src={book.thumb} alt={copy ? '' : book.title} width="120" height="180" decoding="async" />
             </a>
           )))}
         </div>
@@ -199,13 +201,25 @@ const links = [
     justify-content: center;
     gap: 0.6rem;
   }
-  .hero-actions .btn { flex: 1 1 10rem; max-width: 16rem; }
+  .hero-actions .btn {
+    flex: 1 1 10rem;
+    max-width: 16rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.15;
+  }
+  /* In the Scripture-reference rose the old "SHOW ME A RANDOM BOOK" link used. */
   .random-book-btn {
-    --bs-btn-color: var(--bs-emphasis-color);
-    --bs-btn-border-color: var(--bs-emphasis-color);
-    --bs-btn-hover-color: var(--bs-body-bg);
-    --bs-btn-hover-bg: var(--bs-emphasis-color);
-    --bs-btn-hover-border-color: var(--bs-emphasis-color);
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--my-bible-ref);
+    --bs-btn-border-color: var(--my-bible-ref);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: color-mix(in srgb, var(--my-bible-ref) 85%, #000);
+    --bs-btn-hover-border-color: color-mix(in srgb, var(--my-bible-ref) 85%, #000);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: color-mix(in srgb, var(--my-bible-ref) 75%, #000);
+    --bs-btn-active-border-color: color-mix(in srgb, var(--my-bible-ref) 75%, #000);
     font-weight: 600;
   }
 
@@ -240,8 +254,7 @@ const links = [
     will-change: transform;
   }
   .wall-row-1 { animation-direction: reverse; animation-duration: 170s; }
-  .wall-row-2 { animation-duration: 155s; display: none; }
-  .wall:hover .wall-row, .wall.is-offscreen .wall-row { animation-play-state: paused; }
+  .wall:hover .wall-row, .wall.is-offscreen .wall-row, .wall.is-scrolling .wall-row { animation-play-state: paused; }
   .wall-cover { flex: none; display: block; border-radius: 4px; transition: transform 0.2s ease; }
   .wall-cover:hover, .wall-cover:focus-visible { transform: translateY(-4px) scale(1.04); }
   .wall-cover img {
@@ -264,10 +277,10 @@ const links = [
     .hero-lead { margin-left: 0; font-size: 1.25rem; }
     .hero-actions { justify-content: flex-start; }
     .hero-actions .btn { flex: 0 0 auto; }
-    .wall { order: 0; padding: 1.5rem 0; gap: 0.9rem; }
-    .wall-row { gap: 0.9rem; }
-    .wall-row-2 { display: flex; }
-    .wall-cover img { width: 100px; height: 150px; }
+    .wall { order: 0; padding: 1.75rem 0; gap: 1rem; }
+    .wall-row { gap: 1rem; }
+    /* No shadows here: on desktop they made the moving rows too heavy for slower PCs. */
+    .wall-cover img { width: 120px; height: 180px; box-shadow: none; outline: 1px solid rgba(0, 0, 0, 0.25); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -425,10 +438,19 @@ const links = [
 </style>
 
 <script>
-  // Stop the cover wall while it is scrolled out of view, so it costs nothing below the fold.
+  // Stop the cover wall while it is scrolled out of view, so it costs nothing below the fold,
+  // and while the page is scrolling: moving both at once made scrolling stutter in Edge.
   const wall = document.querySelector('.wall');
   if (wall && 'IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => wall.classList.toggle('is-offscreen', !entry.isIntersecting)).observe(wall);
+  }
+  if (wall) {
+    let scrollTimer: number | undefined;
+    window.addEventListener('scroll', () => {
+      wall.classList.add('is-scrolling');
+      clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(() => wall.classList.remove('is-scrolling'), 200);
+    }, { passive: true });
   }
 
   document.getElementById('randomBookLink')?.addEventListener('click', event => {
