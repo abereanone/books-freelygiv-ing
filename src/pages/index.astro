@@ -1,97 +1,436 @@
 ---
 import Base from '../layouts/Base.astro';
-import { bookAuthorSlug, bookSlugFromPath, getBooks } from '../lib/data.js';
+import { bookAuthorSlug, bookSlugFromPath, getBooks, getPeopleWithRole, personAvatar, personName, LANGUAGES } from '../lib/data.js';
 
-// Every visible book is reachable, including one with no author — bookAuthorSlug() gives
-// the same segment the route and the listings use.
-const randomBookUrls = getBooks()
-  .map((book: any) => `/books/${bookAuthorSlug(book)}/${bookSlugFromPath(book.path)}/`);
+function dateValue(date: any): number {
+  if (!date) return 0;
+  if (date instanceof Date) return date.getTime();
+  return new Date(`${date}T00:00:00`).getTime() || 0;
+}
 
-const navItems = [
-  { title: 'Authors',      path: '/people/?filter=authors', description: 'Explore the authors whose works are featured on this site.', icon: 'people' },
-  { title: 'Library',      path: '/library',      description: 'Browse the full collection of freely given books.',           icon: 'book'   },
-  { title: 'About',        path: '/about',        description: 'Learn more about this project and its mission.',              icon: 'info-circle' },
-  { title: 'Contact',      path: '/contact',      description: 'Get in touch with questions or suggestions.',                 icon: 'envelope'    },
-  { title: 'Recently Added', path: '/recently-added', description: 'See the newest additions to the library.',                 icon: 'clock' },
-  { title: 'People',       path: '/people',       description: 'The authors, contributors and preparers behind these books.', icon: 'people' },
+// Newest first. Each book carries its URL and the small cover copy build-og.js makes.
+const books = getBooks()
+  .sort((a: any, b: any) => dateValue(b.addedDate) - dateValue(a.addedDate))
+  .map((book: any) => {
+    const slug = bookSlugFromPath(book.path);
+    return {
+      ...book,
+      href: `/books/${bookAuthorSlug(book)}/${slug}/`,
+      thumb: `/static/thumbs/${slug}.webp`,
+      byline: (book.authors || []).map((a: any) => personName(a)).join(', '),
+      langName: book.lang !== 'en' ? ((LANGUAGES as any)[book.lang]?.native ?? book.lang) : null,
+    };
+  });
+
+// Every visible book is reachable, including one with no author.
+const randomBookUrls = books.map((book: any) => book.href);
+
+// The cover wall: dealt round-robin into rows so each row mixes old and new.
+const ROWS = 3;
+const wallRows: any[][] = Array.from({ length: ROWS }, () => []);
+books.forEach((book: any, i: number) => wallRows[i % ROWS].push(book));
+
+const recent = books.slice(0, 12);
+
+// Authors with a photo, most books first.
+const bookCount = new Map<string, number>();
+for (const book of books) for (const a of book.authors || []) bookCount.set(a.slug, (bookCount.get(a.slug) ?? 0) + 1);
+const authors = getPeopleWithRole('author')
+  .filter((p: any) => p.slug !== 'anonymous' && personAvatar(p))
+  .map((p: any) => ({ ...p, avatar: personAvatar(p), count: bookCount.get(p.slug) ?? 0 }))
+  .sort((a: any, b: any) => b.count - a.count || (a.lastName ?? '').localeCompare(b.lastName ?? ''));
+
+const links = [
+  { title: 'Library',        path: '/library' },
+  { title: 'En español',     path: '/library?lang=es' },
+  { title: 'Recently Added', path: '/recently-added' },
+  { title: 'People',         path: '/people' },
+  { title: 'About',          path: '/about' },
+  { title: 'Contact',        path: '/contact' },
 ];
 ---
 
 <Base>
-  <div class="text-center pt-4 pb-3">
-    <h1 class="display-4 fw-bold mb-3">Freely Given Books</h1>
-    <a
-      id="randomBookLink"
-      href="/library"
-      class="fs-3 fw-bold random-book-link text-decoration-none"
-      data-book-urls={JSON.stringify(randomBookUrls)}
-    >
-      SHOW ME A RANDOM BOOK
-    </a>
-  </div>
-
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
-    {navItems.map(item => (
-      <div class="col">
-        <a href={item.path} class="card h-100 text-decoration-none card-hover" style="border: 1px solid var(--bs-border-color);">
-          <div class="card-body text-center p-2">
-            {item.icon === 'people' && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
-                <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
-              </svg>
-            )}
-            {item.icon === 'book' && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
-                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
-              </svg>
-            )}
-            {item.icon === 'info-circle' && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-              </svg>
-            )}
-            {item.icon === 'envelope' && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-              </svg>
-            )}
-            {item.icon === 'clock' && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi mb-1 text-primary" viewBox="0 0 16 16">
-                <path d="M8 3.5a.5.5 0 0 1 .5.5v3.25l2.25 1.35a.5.5 0 1 1-.5.86l-2.5-1.5A.5.5 0 0 1 7.5 7.5V4a.5.5 0 0 1 .5-.5"/>
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m0-1A7 7 0 1 1 8 1a7 7 0 0 1 0 14"/>
-              </svg>
-            )}
-            <h6 class="card-title mb-1">{item.title}</h6>
-            <p class="card-text text-body-secondary small mb-0">{item.description}</p>
-          </div>
-        </a>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">{books.length} free books · Read online, PDF, EPUB</p>
+      <h1 class="hero-title">Freely Given Books</h1>
+      <p class="hero-lead">
+        Puritan classics and modern works, free for the body of Christ.
+      </p>
+      <div class="hero-actions">
+        <a href="/library" class="btn btn-warning btn-lg fw-semibold">Browse the library</a>
+        <a
+          id="randomBookLink"
+          href="/library"
+          class="btn btn-outline-secondary btn-lg random-book-btn"
+          data-book-urls={JSON.stringify(randomBookUrls)}
+        >Random book</a>
       </div>
-    ))}
-  </div>
+    </div>
 
-  <div class="text-center pt-2 pb-4">
-    <p class="lead mx-auto" style="max-width: 720px;">
-      Wisdom from the Holy Spirit is something freely given to believers (1 Cor. 2:12), and Jesus
-      told us that we should freely give, just as we have freely received (Matt. 10:8).
-      <br />
-      <br />
-      We desire to obey this command from Christ and freely give to the body of Christ, just as we have
-      freely received.
-      <br />
-      <br />
-      — Courtney Hicks & Michael Coughlin
-    </p>
-    <p class="mx-auto text-body-secondary mb-0" style="max-width: 720px;">
+    <div class="wall">
+      {wallRows.map((row, r) => (
+        <div class={`wall-row wall-row-${r}`}>
+          {[0, 1].map(copy => row.map((book: any) => (
+            <a
+              href={book.href}
+              class="wall-cover"
+              title={book.title}
+              aria-hidden={copy ? 'true' : undefined}
+              tabindex={copy ? -1 : undefined}
+            >
+              <img src={book.thumb} alt={copy ? '' : book.title} width="100" height="150" loading={r === 2 ? 'lazy' : 'eager'} decoding="async" />
+            </a>
+          )))}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-head">
+      <h2>Recently added</h2>
+      <a href="/recently-added">See all →</a>
+    </div>
+    <div class="shelf">
+      {recent.map((book: any) => (
+        <a href={book.href} class="shelf-book">
+          <span class="shelf-cover">
+            <img src={book.thumb} alt="" width="120" height="180" loading="lazy" decoding="async" />
+            {book.langName && <span class="shelf-lang" lang={book.lang}>{book.langName}</span>}
+          </span>
+          <span class="shelf-title" lang={book.langName ? book.lang : undefined}>{book.title}</span>
+          {book.byline && <span class="shelf-author">{book.byline}</span>}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-head">
+      <h2>Authors</h2>
+      <a href="/people/?filter=authors">All authors →</a>
+    </div>
+    <div class="faces">
+      {authors.map((person: any) => (
+        <a href={`/people/${person.slug}/`} class="face">
+          <img src={person.avatar} alt="" width="96" height="96" loading="lazy" decoding="async" />
+          <span class="face-name">{personName(person)}</span>
+          <span class="face-count">{person.count} {person.count === 1 ? 'book' : 'books'}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <nav class="home-links" aria-label="More">
+    {links.map(link => <a href={link.path} class="btn btn-outline-secondary btn-sm rounded-pill px-3">{link.title}</a>)}
+  </nav>
+
+  <!-- entry-content: bible-tooltips.js only scans article / .entry-content for references -->
+  <section class="mission entry-content">
+    <blockquote>
+      <p>
+        Wisdom from the Holy Spirit is something freely given to believers (1 Cor. 2:12), and Jesus
+        told us that we should freely give, just as we have freely received (Matt. 10:8).
+      </p>
+      <p>
+        We desire to obey this command from Christ and freely give to the body of Christ, just as we have
+        freely received.
+      </p>
+      <footer>— Courtney Hicks &amp; Michael Coughlin</footer>
+    </blockquote>
+    <p class="mission-note text-body-secondary">
       The books on this website are a blend of books that we have formatted from the original sources
-      into readable ebooks and books by modern authors. Our desire is to make these books as
-      easy to access as we can for the body of Christ, that we may grow together and that our love
-      may abound in knowledge and all discernment. (Phil. 1:9, 2 Pet. 3:18, Col. 1:10).
+      into readable ebooks and books by modern authors. In some cases, we've set up links for you to
+      be able to quickly order a print copy. You are also free to shop around and print any book on
+      the site yourself.
     </p>
-  </div>
+    <p class="mission-note text-body-secondary">
+      Our desire is to make these books as easy to access as we can for the body of Christ, that we
+      may grow together and that our love may abound in knowledge and all discernment. (Phil. 1:9,
+      2 Pet. 3:18, Col. 1:10).
+    </p>
+  </section>
 </Base>
 
+<style>
+  /* ── hero: text beside a drifting wall of covers (stacked on phones) ─────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: -0.5rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--my-yellow-text) 16%, transparent), transparent 60%),
+      var(--bs-tertiary-bg);
+  }
+  .hero-text {
+    order: 2;
+    padding: 1.25rem 1.25rem 1.5rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    margin-bottom: 0.4rem;
+    color: var(--my-yellow-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero-title {
+    margin-bottom: 0.5rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2rem, 8vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+  .hero-lead {
+    margin: 0 auto 1.25rem;
+    max-width: 28rem;
+    color: var(--bs-secondary-color);
+    font-size: 1.1rem;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .hero-actions .btn { flex: 1 1 10rem; max-width: 16rem; }
+  .random-book-btn {
+    --bs-btn-color: var(--bs-emphasis-color);
+    --bs-btn-border-color: var(--bs-emphasis-color);
+    --bs-btn-hover-color: var(--bs-body-bg);
+    --bs-btn-hover-bg: var(--bs-emphasis-color);
+    --bs-btn-hover-border-color: var(--bs-emphasis-color);
+    font-weight: 600;
+  }
+
+  /* The edge fades are two overlays rather than a mask-image: a mask over moving content
+     makes the browser repaint the whole wall every frame, which stutters (seen in Edge). */
+  .wall {
+    order: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem 0 0.25rem;
+    overflow: hidden;
+    contain: paint;
+  }
+  .wall::before, .wall::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 8%;
+    pointer-events: none;
+  }
+  .wall::before { left: 0;  background: linear-gradient(90deg, var(--bs-tertiary-bg), transparent); }
+  .wall::after  { right: 0; background: linear-gradient(-90deg, var(--bs-tertiary-bg), transparent); }
+  .wall-row {
+    display: flex;
+    gap: 0.6rem;
+    width: max-content;
+    animation: drift 140s linear infinite;
+    will-change: transform;
+  }
+  .wall-row-1 { animation-direction: reverse; animation-duration: 170s; }
+  .wall-row-2 { animation-duration: 155s; display: none; }
+  .wall:hover .wall-row, .wall.is-offscreen .wall-row { animation-play-state: paused; }
+  .wall-cover { flex: none; display: block; border-radius: 4px; transition: transform 0.2s ease; }
+  .wall-cover:hover, .wall-cover:focus-visible { transform: translateY(-4px) scale(1.04); }
+  .wall-cover img {
+    display: block;
+    width: 76px;
+    height: 114px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  }
+  @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+
+  @media (min-width: 992px) {
+    .hero {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      align-items: center;
+      margin-top: 0;
+    }
+    .hero-text { order: 0; padding: 3rem 1rem 3rem 3rem; text-align: left; }
+    .hero-lead { margin-left: 0; font-size: 1.25rem; }
+    .hero-actions { justify-content: flex-start; }
+    .hero-actions .btn { flex: 0 0 auto; }
+    .wall { order: 0; padding: 1.5rem 0; gap: 0.9rem; }
+    .wall-row { gap: 0.9rem; }
+    .wall-row-2 { display: flex; }
+    .wall-cover img { width: 100px; height: 150px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wall::before, .wall::after { display: none; }
+    .wall-row { animation: none; overflow-x: auto; max-width: 100%; padding: 0 1rem 4px; }
+  }
+
+  /* ── sections ───────────────────────────────────────────────────────────── */
+  .home-section { margin-top: 2.5rem; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .section-head a { white-space: nowrap; text-decoration: none; font-weight: 600; }
+
+  /* Phones: one swipeable row running to the screen edges. Desktop: a grid. */
+  .shelf, .faces {
+    display: flex;
+    gap: 0.9rem;
+    margin-inline: calc(var(--bs-gutter-x, 1.5rem) * -0.5);
+    padding: 0.25rem calc(var(--bs-gutter-x, 1.5rem) * 0.5) 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+    scrollbar-width: none;
+  }
+  .shelf::-webkit-scrollbar, .faces::-webkit-scrollbar { display: none; }
+
+  .shelf-book {
+    flex: 0 0 8rem;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    color: inherit;
+    text-decoration: none;
+  }
+  .shelf-cover { position: relative; display: block; margin-bottom: 0.5rem; }
+  .shelf-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .shelf-book:hover .shelf-cover img {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  }
+  .shelf-lang {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    background: #8a2a3c;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+  .shelf-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .shelf-author {
+    margin-top: 0.15rem;
+    overflow: hidden;
+    color: var(--bs-secondary-color);
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .face {
+    flex: 0 0 5.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+  }
+  .face img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.4rem;
+    border: 3px solid var(--bs-body-bg);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--my-yellow-text) 70%, transparent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .face:hover img { transform: scale(1.06); box-shadow: 0 0 0 3px var(--my-yellow-text); }
+  .face-name { font-size: 0.82rem; font-weight: 600; line-height: 1.2; }
+  .face-count { color: var(--bs-secondary-color); font-size: 0.72rem; }
+
+  @media (min-width: 768px) {
+    .shelf, .faces {
+      display: grid;
+      margin-inline: 0;
+      padding-inline: 0;
+      overflow: visible;
+    }
+    .shelf { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 1.25rem; }
+    .faces { grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); gap: 1.25rem 0.75rem; }
+    .face img { width: 6rem; height: 6rem; }
+    .face-name { font-size: 0.9rem; }
+  }
+  @media (min-width: 992px) {
+    .shelf { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  }
+
+  /* ── links and mission ──────────────────────────────────────────────────── */
+  .home-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .mission { max-width: 720px; margin: 3rem auto 0; }
+  .mission blockquote {
+    margin: 0 0 1.5rem;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 4px solid var(--my-yellow-text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    line-height: 1.55;
+  }
+  .mission blockquote p { margin-bottom: 0.75rem; }
+  .mission blockquote footer {
+    color: var(--bs-secondary-color);
+    font-family: var(--bs-body-font-family);
+    font-size: 0.95rem;
+  }
+  .mission-note { font-size: 0.95rem; }
+</style>
+
 <script>
+  // Stop the cover wall while it is scrolled out of view, so it costs nothing below the fold.
+  const wall = document.querySelector('.wall');
+  if (wall && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => wall.classList.toggle('is-offscreen', !entry.isIntersecting)).observe(wall);
+  }
+
   document.getElementById('randomBookLink')?.addEventListener('click', event => {
     const link = event.currentTarget as HTMLAnchorElement;
     const bookUrls = JSON.parse(link.dataset.bookUrls || '[]');

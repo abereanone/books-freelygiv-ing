@@ -64,8 +64,10 @@
             .sort((a, b) => b.length - a.length)
             .map(toBookPattern)
             .join("|");
+          // A list item followed by a word is the number of the next book, not a verse:
+          // "Phil. 1:9, 2 Pet. 3:18" is two references, not Phil. 1:9 and verse 2.
           referenceRegex = new RegExp(
-            "\\b(" + bookPattern + ")\\s+(\\d+(?::\\d+(?:[-\\u2013\\u2014](?:\\d+:)?\\d+)?(?:\\s*,\\s*(?:\\d+:)?\\d+(?:[-\\u2013\\u2014]\\d+)?)*)?|\\d+(?:[-\\u2013\\u2014]\\d+)?(?:\\s*,\\s*\\d+(?:[-\\u2013\\u2014]\\d+)?)*)\\b",
+            "\\b(" + bookPattern + ")\\s+(\\d+(?::\\d+(?:[-\\u2013\\u2014](?:\\d+:)?\\d+)?(?:\\s*,\\s*(?:\\d+:)?\\d+(?:[-\\u2013\\u2014]\\d+)?(?!\\s+[A-Za-z]))*)?|\\d+(?:[-\\u2013\\u2014]\\d+)?(?:\\s*,\\s*\\d+(?:[-\\u2013\\u2014]\\d+)?(?!\\s+[A-Za-z]))*)\\b",
             "gi"
           );
           return data;

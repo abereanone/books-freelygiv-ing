@@ -21,5 +21,6 @@ tmp
 _downloads
 public/static/og/preview.html
 public/static/avatars/
+public/static/thumbs/
 .claude/settings.local.json
 !scripts/cut-cover.py

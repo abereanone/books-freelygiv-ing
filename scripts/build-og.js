@@ -27,6 +27,7 @@ const ROOT = join(__dirname, "..");
 const PUBLIC = join(ROOT, "public");
 const OG_DIR = join(PUBLIC, "static/og");
 const AVATAR_DIR = join(PUBLIC, "static/avatars");
+const THUMB_DIR = join(PUBLIC, "static/thumbs");
 
 const W = 1200;
 const H = 630;
@@ -506,6 +507,7 @@ async function main() {
   if (skipped.length) console.log(`[build-og] skipped: ${skipped.join(", ")}`);
 
   await writeAvatars(people);
+  await writeThumbs(books);
   writePreview();
 }
 
@@ -539,6 +541,29 @@ async function writeAvatars(people) {
     n++;
   }
   console.log(`[build-og] ${n} avatars → public/static/avatars/`);
+}
+
+/**
+ * Small cover copies for the home page, at /static/thumbs/<book-slug>.webp.
+ *
+ * The home page shows dozens of covers at once, and the full covers run to 13 MB between
+ * them. These are 240 px wide (sharp on 2x screens at the ~120 px they are shown), a few
+ * KB each. Rebuilt only when the cover is newer; gitignored like the avatars.
+ */
+const THUMB_W = 240;
+
+async function writeThumbs(books) {
+  mkdirSync(THUMB_DIR, { recursive: true });
+  let n = 0;
+  for (const book of books) {
+    const src = join(PUBLIC, book.path, book.cover ?? "");
+    if (!book.cover || !existsSync(src)) continue;
+    const out = join(THUMB_DIR, `${book.path.split("/").pop()}.webp`);
+    if (existsSync(out) && statSync(out).mtimeMs >= statSync(src).mtimeMs) continue;
+    await sharp(src).resize({ width: THUMB_W, withoutEnlargement: true }).webp({ quality: 78 }).toFile(out);
+    n++;
+  }
+  console.log(`[build-og] ${n} cover thumbnails → public/static/thumbs/`);
 }
 
 /**

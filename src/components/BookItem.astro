@@ -7,9 +7,11 @@ interface Props {
   grid?: boolean;
   showAuthors?: boolean;
   showAddedDateTooltip?: boolean;
+  firstAuthorOnly?: boolean;  // with showAuthors on a grid card: just the primary author
 }
 
-const { book, compact = false, grid = false, showAuthors = false, showAddedDateTooltip = false } = Astro.props;
+const { book, compact = false, grid = false, showAuthors = false, showAddedDateTooltip = false, firstAuthorOnly = false } = Astro.props;
+const gridAuthors = firstAuthorOnly ? (book.authors || []).slice(0, 1) : (book.authors || []);
 const authorSlug = bookAuthorSlug(book);
 const bookSlug   = bookSlugFromPath(book.path);
 const href       = `/books/${authorSlug}/${bookSlug}/`;
@@ -42,9 +44,9 @@ const addedDateTooltip = showAddedDateTooltip && addedDate
             <span class={`badge tag-badge tag-${tag} ms-1`}>{tag}</span>
           ))}{langBadge && <span class="badge tag-badge lang-badge ms-1" lang={lang}>{langBadge}</span>}
         </h6>
-        {showAuthors && book.authors?.[0] && (
+        {showAuthors && gridAuthors[0] && (
           <div class="text-body-secondary small mb-1 card-authors">
-            {book.authors.map((author: any, i: number) => (
+            {gridAuthors.map((author: any, i: number) => (
               <span>{i > 0 ? ', ' : ''}{author.href ? <a href={author.href} class="text-reset">{personListName(author)}</a> : personListName(author)}</span>
             ))}
           </div>
