@@ -141,6 +141,23 @@
     return keys;
   }
 
+  // The BSB marks the plural "you" as you+ / your+ / yours+: show the + small and raised.
+  function setVerseText(element, text) {
+    element.textContent = "";
+    String(text).split(/([A-Za-z])\+/).forEach((part, index) => {
+      if (index % 2 === 0) {
+        element.appendChild(document.createTextNode(part));
+        return;
+      }
+      element.appendChild(document.createTextNode(part));
+      const plus = document.createElement("sup");
+      plus.textContent = "+";
+      plus.style.fontSize = "0.7em";
+      plus.style.lineHeight = "0";
+      element.appendChild(plus);
+    });
+  }
+
   function resolveVerseText(reference, data) {
     const normalized = normalizeReference(reference);
     const match = normalized.match(/^([1-3]?[a-z]+)\s+(\d+):(.+)$/);
@@ -302,7 +319,7 @@
     getVerses().then((data) => {
       const tooltip = document.createElement("div");
       tooltip.className = "bible-tooltip";
-      tooltip.textContent = resolveVerseText(element.dataset.ref, data);
+      setVerseText(tooltip, resolveVerseText(element.dataset.ref, data));
       document.body.appendChild(tooltip);
       element.__bibleTooltip = tooltip;
       positionTooltip(element, tooltip);
