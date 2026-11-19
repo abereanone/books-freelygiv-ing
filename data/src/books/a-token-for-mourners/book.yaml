@@ -1,0 +1,42 @@
+- title: A Token for Mourners
+  sortTitle: Token for Mourners
+  credits:
+    - person: john-flavel
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  year: 1674
+  addedDate: 2026-11-19
+  pages: 91
+  tags:
+    - classic
+  description: |
+    "And when the Lord saw her, he had compassion on her, and said unto her, Weep not" (Luke 7:13). Flavel buried his wife and his only son within one year. Soon after, death took the only child of his brother and sister, and he sent them these pages, "the after-fruits of my own troubles."
+
+    From Christ's words to the widow of Nain he shows how far a Christian may mourn, when sorrow becomes sinful, how to answer the pleas a grieving heart makes for itself, and how to cure and prevent immoderate grief. This edition follows the 1813 Brattleboro text, checked page by page against the printed book, with footnotes and a glossary for old words and old meanings.
+  license: CC0
+  path: /static/books/a-token-for-mourners
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/a-token-for-mourners/a-token-for-mourners.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-token-for-mourners/ATokenForMourners.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-token-for-mourners/ATokenForMourners.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-token-for-mourners/print-ready.zip
