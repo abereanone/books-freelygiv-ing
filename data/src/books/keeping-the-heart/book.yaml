@@ -1,0 +1,42 @@
+- title: Keeping the Heart
+  sortTitle: Keeping the Heart
+  credits:
+    - person: john-flavel
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  year: 1667
+  addedDate: 2026-11-18
+  pages: 128
+  tags:
+    - classic
+  description: |
+    "Keep thy heart with all diligence; for out of it are the issues of life" (Proverbs 4:23). Flavel wrote this little book in 1667 for his flock at Dartmouth, when the law had shut him out of their pulpit. It shows what it is to keep the heart, why it is the great business of a Christian's life, and how to keep it in twelve seasons that try every believer: prosperity and adversity, public danger and private want, injuries and provocations, temptation, spiritual darkness, suffering for Christ, and sickness and death.
+
+    This edition follows the American Tract Society text (Keeping the Heart; or, The Saint Indeed), checked page by page against the printed book, with footnotes and a glossary for old words and old meanings.
+  license: CC0
+  path: /static/books/keeping-the-heart
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/keeping-the-heart/keeping-the-heart.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/keeping-the-heart/KeepingTheHeart.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/keeping-the-heart/KeepingTheHeart.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/keeping-the-heart/print-ready.zip
