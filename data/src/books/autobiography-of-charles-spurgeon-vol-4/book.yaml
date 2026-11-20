@@ -1,0 +1,45 @@
+- title: "The Autobiography of Charles H. Spurgeon, Vol. 4: 1878–1892"
+  sortTitle: "Autobiography of Charles H. Spurgeon, Vol. 4"
+  credits:
+    - person: charles-spurgeon
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  set: spurgeon-autobiography
+  volume: 4
+  volumeLabel: Vol. IV
+  year: 1900
+  addedDate: 2026-11-19
+  pages: 477
+  tags:
+    - classic
+  description: |
+    "I have had to lean on the bare arm of God. It is a grand sensation." Compiled by his wife and his private secretary from his diary, letters, and records, this fourth and last volume follows Spurgeon through his last fourteen years, from 1878 to 1892: a winter at Mentone, told by his son Thomas; the "double silver wedding" of his pastorate and his marriage; enquirers and converts; his home at "Westwood" and a typical week's work; his letters, and his opinions on the questions of the day; his jubilee; the "Down-Grade" Controversy, from his own standpoint; his books and reading; the growth of the Institutions; and his last letters from Mentone, his long illness, and his death.
+
+    This edition follows the London edition of 1900 (C. H. Spurgeon's Autobiography, Vol. IV), with its pictures, its London spelling, and footnotes giving the verses cited (Berean Standard Bible).
+  license: CC0
+  path: /static/books/autobiography-of-charles-spurgeon-vol-4
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/autobiography-of-charles-spurgeon-vol-4/autobiography-of-charles-spurgeon-vol-4.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon-vol-4/AutobiographyOfCharlesHSpurgeonVol4.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon-vol-4/AutobiographyOfCharlesHSpurgeonVol4.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon-vol-4/print-ready.zip

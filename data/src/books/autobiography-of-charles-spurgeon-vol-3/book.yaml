@@ -1,0 +1,45 @@
+- title: "The Autobiography of Charles H. Spurgeon, Vol. 3: 1856–1878"
+  sortTitle: "Autobiography of Charles H. Spurgeon, Vol. 3"
+  credits:
+    - person: charles-spurgeon
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  set: spurgeon-autobiography
+  volume: 3
+  volumeLabel: Vol. III
+  year: 1899
+  addedDate: 2026-11-19
+  pages: 472
+  tags:
+    - classic
+  description: |
+    "If I am asked what is my creed, I reply, 'It is Jesus Christ.'" Compiled by his wife and his private secretary from his diary, letters, and records, this third volume covers the years 1856 to 1878: the opening of the Metropolitan Tabernacle and its deacons and elders; notable lectures and memorable services; the Pastors' College, the colporteurs, and the Stockwell Orphanage; the new "Helensburgh House"; his travels on the Continent and his letters home and to his people; his twin sons' memories of their father; his later literary works and the blessing on his printed sermons; and his pure fun and his preaching in the open air.
+
+    This edition follows the London edition of 1899 (C. H. Spurgeon's Autobiography, Vol. III), with its pictures, its London spelling, and footnotes giving the verses cited (Berean Standard Bible).
+  license: CC0
+  path: /static/books/autobiography-of-charles-spurgeon-vol-3
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/autobiography-of-charles-spurgeon-vol-3/autobiography-of-charles-spurgeon-vol-3.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon-vol-3/AutobiographyOfCharlesHSpurgeonVol3.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon-vol-3/AutobiographyOfCharlesHSpurgeonVol3.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/autobiography-of-charles-spurgeon-vol-3/print-ready.zip
