@@ -358,7 +358,7 @@ export function personName(person) {
 export function linkify(text) {
   if (!text) return text;
   return text.replace(
-    /(https?:\/\/[^\s<]+)/g,
+    /(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g, // a full stop or comma after a URL stays outside the link
     '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>',
   );
 }
