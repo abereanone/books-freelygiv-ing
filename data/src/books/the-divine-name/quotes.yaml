@@ -12,8 +12,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-03.jpg, light: light-19.jpg, solid: navy}
   added: '2026-11-23'
+  tone: dark
 - id: case-no-passage-in-scripture-forbids
   text: No passage in Scripture forbids the use of God’s name, which is why it is used nearly 7,000 times by the biblical authors.
   author: andrew-case
@@ -25,8 +26,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-08.jpg, light: light-05.jpg, solid: violet}
   added: '2026-11-23'
+  tone: solid
 - id: case-way-we-address-god-must
   text: The way we address God must conform to Scripture’s model representing God’s own explicit desires, not to man’s cultural propensities.
   author: andrew-case
@@ -38,8 +40,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {dark: forest-10.jpg, light: light-22.jpg, solid: teal}
   added: '2026-11-23'
+  tone: dark
 - id: case-sanctity-divine-name-rooted-not
   text: 'The sanctity of the divine name is rooted not merely in its form but in what it signifies: the self-revealed identity of God.'
   author: andrew-case
@@ -51,8 +54,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-01.jpg, light: light-09.jpg, solid: rust}
   added: '2026-11-23'
+  tone: solid
 - id: case-faithful-theology-must-hold-together
   text: 'A faithful theology must hold together what Scripture holds together: the name of Jesus and the name of Yahweh in continuity.'
   author: andrew-case
@@ -64,5 +68,6 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-12.jpg, light: light-10.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: light

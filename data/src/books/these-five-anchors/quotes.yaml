@@ -12,8 +12,9 @@
   words: 11
   status: candidate
   featured: false
-  background: null
+  background: {dark: forest-09.jpg, light: light-15.jpg, solid: burgundy}
   added: '2026-11-23'
+  tone: dark
 - id: maragni-only-way-to-know-god
   text: The only way to know God is through Jesus Christ, the Son of God.
   author: brett-maragni
@@ -25,8 +26,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-07.jpg, light: light-20.jpg, solid: navy}
   added: '2026-11-23'
+  tone: light
 - id: maragni-if-we-can-get-into
   text: If we can get into heaven by any other way than the death of Jesus Christ, then the bottom line would be that He died in vain.
   author: brett-maragni
@@ -38,8 +40,9 @@
   words: 27
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-08.jpg, light: light-06.jpg, solid: violet}
   added: '2026-11-23'
+  tone: solid
 - id: maragni-only-grace-jesus-christ-appropriated
   text: Only the grace of Jesus Christ, appropriated to us through faith, makes us right with God.
   author: brett-maragni
@@ -51,8 +54,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-08.jpg, light: light-21.jpg, solid: teal}
   added: '2026-11-23'
+  tone: light
 - id: maragni-faith-in-christ-alone-saves
   text: Faith (in Christ) alone saves, but faith is never alone.
   author: brett-maragni
@@ -64,5 +68,6 @@
   words: 10
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-10.jpg, light: light-11.jpg, solid: rust}
   added: '2026-11-23'
+  tone: light

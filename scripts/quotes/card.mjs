@@ -33,9 +33,10 @@ export function cardCss(base) {
   /* Light cards: a bright sky painting washed pale, dark ink, deeper gold (light-NN paintings). */
   .card.light .bg{filter:brightness(1.03) blur(.6px) saturate(.95)}
   .card.light .veil{background:radial-gradient(ellipse 72% 52% at 50% 47%,rgba(255,252,244,.84) 0%,rgba(255,252,244,.6) 55%,rgba(255,252,244,.12) 100%)}
-  .card:not(.framed) .tag{text-shadow:0 0 10px rgba(0,0,0,.95),0 0 3px rgba(0,0,0,.9)}
+  /* Painting cards: a soft pill behind the tag so it reads on busy corners (2026-11-23). */
+  .card:not(.framed) .tag{left:46px;bottom:44px;padding:10px 18px 8px;border-radius:999px;background:rgba(10,8,6,.62);text-shadow:0 0 6px rgba(0,0,0,.9)}
   .card.light .q{color:#1d2630;text-shadow:0 1px 14px rgba(255,255,255,.8)}
-  .card.light .tag{color:#6b4e0e;text-shadow:0 0 10px rgba(255,255,255,1),0 0 4px rgba(255,255,255,1),0 0 2px rgba(255,255,255,1)}
+  .card.light .tag{color:#5e430a;background:rgba(255,252,244,.8);text-shadow:none}
   .card.light .who{color:#5e430a;text-shadow:0 0 12px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
   .card.light .book{color:#1d2630;opacity:.9;text-shadow:0 0 8px rgba(255,255,255,.9)}
   /* Solid cards: one colour with the double-line box and double L-brackets of the prepared-book

@@ -29,7 +29,7 @@ const context = (slug, text) => {
 const quotes = [];
 for (const slug of readdirSync(BOOKS).filter((s) => existsSync(join(BOOKS, s, "quotes.yaml")))) {
   const title = readY(join(BOOKS, slug, "book.yaml"))[0].title;
-  for (const q of readY(join(BOOKS, slug, "quotes.yaml"))) if (q.status !== "rejected") quotes.push({ ...q, bookTitle: title, authorName: person(q.author) });
+  for (const q of readY(join(BOOKS, slug, "quotes.yaml"))) if (q.status !== "rejected") quotes.push({ ...q, bookTitle: title, authorName: q.writtenBy || person(q.author) });
 }
 
 const usage = {};

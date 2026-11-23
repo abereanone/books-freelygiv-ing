@@ -12,8 +12,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-01.jpg, light: light-01.jpg, solid: teal}
   added: '2026-11-23'
+  tone: dark
 - id: calvin-conscience-which-distinguishing-between-good
   text: Conscience, which, distinguishing, between good and evil, responds to the Judgment of God, is an undoubted sign of an immortal spirit.
   author: john-calvin
@@ -25,8 +26,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {dark: road-02.jpg, light: light-10.jpg, solid: rust}
   added: '2026-11-23'
+  tone: solid
 - id: calvin-beginning-willing-doing-well-faith
   text: The beginning of willing and doing well is of faith; faith again is the gift of God; and hence mere grace is the cause of our beginning to will well.
   author: john-calvin
@@ -38,8 +40,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-04.jpg, light: light-23.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: light
 - id: calvin-god-has-not-rendered-you
   text: God has not rendered you due punishment, but bestows upon you unmerited grace.
   author: john-calvin
@@ -51,8 +54,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-02.jpg, light: light-03.jpg, solid: burgundy}
   added: '2026-11-23'
+  tone: light
 - id: calvin-when-law-discloses-our-guilt
   text: When the Law discloses our guilt, we should not despond, but flee to the mercy of God.
   author: john-calvin
@@ -64,8 +68,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-13.jpg, light: light-13.jpg, solid: navy}
   added: '2026-11-23'
+  tone: light
 - id: calvin-we-must-rest-entirely-in
   text: We must rest entirely, in order that God may work in us; we must resign our own will, yield up our heart, and abandon all the lusts of the flesh.
   author: john-calvin
@@ -77,8 +82,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {dark: forest-06.jpg, light: light-09.jpg, solid: violet}
   added: '2026-11-23'
+  tone: dark
 - id: calvin-when-temptation-suggested-that-god
   text: When the temptation suggested is, that God is an enemy because he afflicts, faith replies, that while he afflicts he is merciful, his chastening proceeding more from love than anger.
   author: john-calvin
@@ -90,8 +96,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-07.jpg, light: light-24.jpg, solid: teal}
   added: '2026-11-23'
+  tone: solid
 - id: calvin-faith-foundation-on-which-hope
   text: Faith is the foundation on which hope rests; hope nourishes and sustains faith.
   author: john-calvin
@@ -103,8 +110,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-11.jpg, light: light-25.jpg, solid: rust}
   added: '2026-11-23'
+  tone: light
 - id: calvin-our-doctrine-was-that-soul
   text: Our doctrine was, that the soul looked not to its own compunction or its own tears, but fixed both eyes on the mercy of God alone.
   author: john-calvin
@@ -116,5 +124,6 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {dark: winter-02.jpg, light: light-18.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: dark

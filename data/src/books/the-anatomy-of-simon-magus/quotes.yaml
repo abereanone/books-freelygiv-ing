@@ -1,0 +1,17 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: anonymous-but-simoniacs-acknowledging-holy-spirit
+  text: But the simoniacs, acknowledging the Holy Spirit to be God, yet make him a servant to themselves, and to their own covetous or ambitious designs; nay, as their very slave, they buy, and sell, and make merchandise of him.
+  author: anonymous
+  book: the-anatomy-of-simon-magus
+  chapter: Of the Heinousness of the Sin of Simony
+  anchor: chapter-04-h1
+  topics: [holy-spirit, sin]
+  scripture: ['Acts 8:20']
+  words: 39
+  status: candidate
+  featured: false
+  background: {dark: sky-11.jpg, light: light-24.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: dark

@@ -490,8 +490,10 @@ export function getQuotes() {
         ...q,
         tone: ["light", "solid"].includes(q.tone) ? q.tone : "dark",
         added: String(q.added ?? ""),
-        authorName: person ? personName(person) : q.author,
-        authorHref: person?.href ?? null,
+        // `writtenBy` names a contributor whose chapter the quote comes from (e.g. the guest
+        // writers in Our Sin, His Mercy); they have no person page, so no link.
+        authorName: q.writtenBy || (person ? personName(person) : q.author),
+        authorHref: q.writtenBy ? null : person?.href ?? null,
         bookTitle: book.title,
         bookHref: `/books/${bookAuthorSlug(book)}/${slug}/`,
         readUrl: read ? `${read}${q.anchor ? `#${q.anchor}` : ""}` : null,

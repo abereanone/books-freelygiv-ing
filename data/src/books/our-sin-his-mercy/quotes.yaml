@@ -30,6 +30,7 @@
   added: '2026-11-23'
   tone: solid
 - id: conkle-love-god-for-his-people
+  writtenBy: David Hlavaty
   text: The love of God for His people is not measured by our devotion but by His steadfast mercy.
   author: joe-conkle
   book: our-sin-his-mercy
@@ -72,6 +73,7 @@
   added: '2026-11-23'
   tone: light
 - id: conkle-let-us-confess-our-sins
+  writtenBy: Chad Tackett
   text: Let us confess our sins not to earn grace, but because grace has already been given.
   author: joe-conkle
   book: our-sin-his-mercy
@@ -86,6 +88,7 @@
   added: '2026-11-23'
   tone: dark
 - id: conkle-when-we-forget-him-we
+  writtenBy: Derrill Wakefield
   text: When we forget Him, we fall into sin; when we remember Him, we grow in holiness.
   author: joe-conkle
   book: our-sin-his-mercy
@@ -100,6 +103,7 @@
   added: '2026-11-23'
   tone: solid
 - id: conkle-fear-man-spiritual-trap-it
+  writtenBy: James Deweese
   text: The fear of man is a spiritual trap, and it stands in direct contrast to the fear of the Lord, which is the beginning of wisdom.
   author: joe-conkle
   book: our-sin-his-mercy
@@ -153,5 +157,139 @@
   status: candidate
   featured: false
   background: {solid: navy, dark: ruins-02.jpg, light: light-10.jpg}
+  added: '2026-11-23'
+  tone: dark
+- id: coughlin-our-reticence-to-speak-has
+  text: Our reticence to speak has accompanied many to Hell, and our fear of confrontation has allowed many to murder our little neighbors without a warning.
+  author: michael-coughlin
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_43
+  topics: [fear, love]
+  scripture: ['Proverbs 24:11']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: storm-02.jpg, light: light-12.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid
+- id: conkle-call-to-discipleship-does-not
+  writtenBy: Tim Pasma
+  text: The call to discipleship does not end with a terminal diagnosis or the nearness of death.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_30
+  topics: [death, faith]
+  scripture: ['2 Timothy 4:6']
+  words: 16
+  status: candidate
+  featured: false
+  background: {dark: ruins-01.jpg, light: light-13.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: dark
+- id: conkle-if-we-woke-up-tomorrow
+  writtenBy: Jamie Terry
+  text: If we woke up tomorrow with only the things we have given thanks for, surely, we would have many fewer blessings.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: The Sin Of Ingratitude
+  anchor: _the_sin_of_ingratitude
+  topics: [contentment, worship]
+  scripture: ['1 Thessalonians 5:18']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: road-03.jpg, light: light-23.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: solid
+- id: conkle-in-christ-condemnation-gone-guilt
+  writtenBy: Joshua E. Smith
+  text: In Christ, condemnation is gone, guilt is lifted, and we are set free to walk in newness of life by His Spirit.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Assurance of Pardon
+  anchor: _assurance_of_pardon_18
+  topics: [assurance, holy-spirit]
+  scripture: ['Romans 8:1']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: sky-12.jpg, light: light-25.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: light
+- id: conkle-by-our-silence-we-rob
+  writtenBy: Mike Stockwell
+  text: By our silence, we rob God of the praise that is His due and our neighbor of the hope that only the gospel brings.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_18
+  topics: [fear, worship]
+  scripture: ['Luke 8:39']
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: storm-03.jpg, light: light-16.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: dark
+- id: conkle-if-death-could-not-hold
+  writtenBy: Andrew Rappaport
+  text: If death could not hold Christ, neither can sin hold His people.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_49
+  topics: [death, sin]
+  scripture: ['Acts 2:24']
+  words: 12
+  status: candidate
+  featured: false
+  background: {dark: ruins-02.jpg, light: light-17.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: solid
+- id: conkle-we-are-told-to-love
+  writtenBy: James Dahl
+  text: We are told to love what God loves, but we should also hate what He hates. God hates lying. And we should, too.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: The Sin Of Lying
+  anchor: _the_sin_of_lying
+  topics: [sin, holiness]
+  scripture: ['Proverbs 12:22']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: storm-04.jpg, light: light-01.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: dark
+- id: conkle-so-how-do-we-overcome
+  writtenBy: Michael Mount
+  text: So how do we overcome sin? The same way we were saved, by looking to Christ.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_29
+  topics: [sin, faith]
+  scripture: ['Galatians 3:3']
+  words: 16
+  status: candidate
+  featured: false
+  background: {dark: storm-07.jpg, light: light-14.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: solid
+- id: conkle-we-love-ourselves-more-than
+  writtenBy: Robert Gray
+  text: We love ourselves more than we love Christ.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_31
+  topics: [humility]
+  scripture: ['James 4:6']
+  words: 8
+  status: candidate
+  featured: false
+  background: {dark: road-02.jpg, light: light-02.jpg, solid: violet}
   added: '2026-11-23'
   tone: dark

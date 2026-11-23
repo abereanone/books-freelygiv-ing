@@ -12,8 +12,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {dark: road-05.jpg, light: light-15.jpg, solid: rust}
   added: '2026-11-23'
+  tone: dark
 - id: augustine-fear-seems-to-belong-to
   text: Fear seems to belong to the weak, but the Lord is the stay of them that fear Him.
   author: augustine
@@ -25,8 +26,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-07.jpg, light: light-22.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: solid
 - id: augustine-if-when-you-are-whole
   text: If when you are whole God's Will be sweet, and when you are sick God's Will be bitter; you are not of a right heart.
   author: augustine
@@ -38,8 +40,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-10.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-23'
+  tone: dark
 - id: augustine-thou-sufferest-but-for-time
   text: 'Thou sufferest but for a time; you shall rest for ever: your trouble is short; your happiness is to be everlasting.'
   author: augustine
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-05.jpg, light: light-24.jpg, solid: navy}
   added: '2026-11-23'
+  tone: solid
 - id: augustine-hope-for-nothing-else-from
   text: Hope for nothing else from the Lord your God; but let the Lord your God Himself be thine hope.
   author: augustine
@@ -64,8 +68,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-09.jpg, light: light-16.jpg, solid: violet}
   added: '2026-11-23'
+  tone: light
 - id: augustine-neither-so-on-his-mercy
   text: 'Neither so on His mercy rely, as that His power ye despise: nor so the power fear ye, as that of mercy ye despair.'
   author: augustine
@@ -77,8 +82,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-13.jpg, light: light-19.jpg, solid: teal}
   added: '2026-11-23'
+  tone: light
 - id: augustine-truth-christ-way-christ-walk
   text: 'The Truth is Christ, the Way is Christ: walk therein.'
   author: augustine
@@ -90,8 +96,9 @@
   words: 10
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-05.jpg, light: light-20.jpg, solid: rust}
   added: '2026-11-23'
+  tone: light
 - id: augustine-if-air-this-world-be
   text: 'If the air of this world be withdrawn, there dies body: if God be withdrawn, there dies soul.'
   author: augustine
@@ -103,8 +110,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-07.jpg, light: light-07.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: dark
 - id: augustine-remove-not-from-wood-christ
   text: 'Remove not from the wood of Christ''s Cross: you shall not sink: hold yourself fast to Christ.'
   author: augustine
@@ -116,8 +124,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-05.jpg, light: light-06.jpg, solid: burgundy}
   added: '2026-11-23'
+  tone: solid
 - id: augustine-if-thou-love-earth-you
   text: 'If thou love the earth, you wander from God: if you love God, you rise unto God.'
   author: augustine
@@ -129,8 +138,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {dark: forest-01.jpg, light: light-15.jpg, solid: navy}
   added: '2026-11-23'
+  tone: dark
 - id: augustine-soul-indeed-sinful-stained-with
   text: The soul indeed is sinful, is stained with certain defilements of lusts; yet gold, though rusted, is better than the most polished lead.
   author: augustine
@@ -142,5 +152,6 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-06.jpg, light: light-02.jpg, solid: violet}
   added: '2026-11-23'
+  tone: solid

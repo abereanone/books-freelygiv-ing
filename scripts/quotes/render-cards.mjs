@@ -26,7 +26,7 @@ const require = createRequire(import.meta.url);
 const puppeteer = require("C:/code/keeping-the-heart/node_modules/puppeteer-core");
 const u = (p) => pathToFileURL(p).href;
 const readY = (f) => YAML.parse(readFileSync(f, "utf8"));
-const person = (slug) => { const p = readY(join(ROOT, "data/src", slug, "person.yaml"))[0]; return `${p.firstName} ${p.lastName}`; };
+const person = (slug) => { const p = readY(join(ROOT, "data/src", slug, "person.yaml"))[0]; return `${p.firstName} ${p.lastName}`.trim(); };
 const templateSig = createHash("sha1").update(readFileSync(join(ROOT, "scripts/quotes/card.mjs"))).digest("hex").slice(0, 8);
 
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
@@ -89,9 +89,9 @@ for (const slug of slugs) {
       const bg = q.background?.[tone];
       if (!bg) { console.warn(`no ${tone} background for ${q.id}; run the review pull first`); continue; }
       const key = `${q.id}-${tone}`;
-      const sig = createHash("sha1").update([q.text, q.author, title, bg, templateSig].join("|")).digest("hex");
+      const sig = createHash("sha1").update([q.text, q.writtenBy || q.author, title, bg, templateSig].join("|")).digest("hex");
       if (!FORCE && manifest[key] === sig && existsSync(join(OUT, `${key}.jpg`))) continue;
-      jobs.push({ key, sig, text: q.text, author: person(q.author), book: title, bg, solid: tone === "solid" ? bg : null });
+      jobs.push({ key, sig, text: q.text, author: q.writtenBy || person(q.author), book: title, bg, solid: tone === "solid" ? bg : null });
     }
   }
 }

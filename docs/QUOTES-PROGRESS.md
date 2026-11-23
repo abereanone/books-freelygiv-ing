@@ -35,7 +35,7 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] on-the-election-of-infants (Coughlin)
 - [x] our-sin-his-mercy (Conkle)
 - [x] sinners-in-the-hands-of-an-angry-god (Edwards)
-- [x] the-anatomy-of-simon-magus (anonymous): skipped, no lines that stand alone
+- [x] the-anatomy-of-simon-magus (anonymous): 1 (picked by Michael, 2026-11-23)
 - [x] the-crook-in-the-lot (Boston)
 - [x] the-death-of-death (Owen)
 - [x] the-glorious-feast-of-the-gospel (Sibbes)

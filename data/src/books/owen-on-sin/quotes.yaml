@@ -12,8 +12,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {dark: ruins-02.jpg, light: light-26.jpg, solid: navy}
   added: '2026-11-23'
+  tone: dark
 - id: owen-when-prince-this-world-came
   text: When the prince of this world came to Christ, he had “no part in him;” but when he comes to us, he hath so in us.
   author: john-owen
@@ -25,8 +26,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-01.jpg, light: light-08.jpg, solid: violet}
   added: '2026-11-23'
+  tone: solid
 - id: owen-use-means-for-obtaining-peace
   text: The use of means for the obtaining of peace is ours; the bestowing of it is God’s prerogative.
   author: john-owen
@@ -38,8 +40,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-05.jpg, light: light-18.jpg, solid: teal}
   added: '2026-11-23'
+  tone: light
 - id: owen-to-have-peace-with-god
   text: To have peace with God, to have strength to walk before God, is the sum of the great promises of the covenant of grace.
   author: john-owen
@@ -51,8 +54,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-10.jpg, light: light-04.jpg, solid: rust}
   added: '2026-11-23'
+  tone: light
 - id: owen-we-may-love-honour-believe
   text: We may love, honour, believe, and obey our Father; and therewith he accepts our childish thoughts, for they are but childish.
   author: john-owen
@@ -64,8 +68,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {dark: mountain-06.jpg, light: light-07.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: dark
 - id: owen-light-gospel-whereby-now-god
   text: The light of the gospel whereby now God is revealed is glorious; not a star, but the sun in his beauty is risen upon us, and the vail is taken from our faces.
   author: john-owen
@@ -77,5 +82,6 @@
   words: 33
   status: candidate
   featured: false
-  background: null
+  background: {dark: sky-03.jpg, light: light-03.jpg, solid: burgundy}
   added: '2026-11-23'
+  tone: solid

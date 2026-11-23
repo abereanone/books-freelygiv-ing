@@ -12,8 +12,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {dark: winter-01.jpg, light: light-05.jpg, solid: navy}
   added: '2026-11-23'
+  tone: dark
 - id: conkle-god-tells-us-not-to
   text: God tells us not to be afraid because He is always with us and cares for us.
   author: joe-conkle
@@ -25,8 +26,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-08.jpg, light: light-22.jpg, solid: violet}
   added: '2026-11-23'
+  tone: solid
 - id: conkle-even-small-lies-matter-to
   text: Even small lies matter to God, because they come from a heart that is not trusting Him.
   author: joe-conkle
@@ -38,8 +40,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {dark: storm-10.jpg, light: light-17.jpg, solid: teal}
   added: '2026-11-23'
+  tone: dark
 - id: conkle-god-calls-us-to-be
   text: God calls us to be thankful and content with what He gives us.
   author: joe-conkle
@@ -51,8 +54,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {dark: road-05.jpg, light: light-19.jpg, solid: rust}
   added: '2026-11-23'
+  tone: solid
 - id: conkle-pride-means-thinking-we-are
   text: Pride means thinking we are better than others or acting like we do not need help.
   author: joe-conkle
@@ -64,8 +68,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {dark: road-01.jpg, light: light-20.jpg, solid: evergreen}
   added: '2026-11-23'
+  tone: dark
 - id: conkle-when-we-confess-our-sins
   text: When we confess our sins, He forgives us, washes us clean, and welcomes us with love.
   author: joe-conkle
@@ -77,5 +82,6 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {dark: winter-02.jpg, light: light-26.jpg, solid: burgundy}
   added: '2026-11-23'
+  tone: solid
