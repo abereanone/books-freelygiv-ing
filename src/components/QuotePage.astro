@@ -95,7 +95,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
         <p class="small mt-3 mb-1"><span class="text-body-secondary">Scripture:</span> {q.scripture.join('; ')}</p>
       )}
       <p class="qp-topics small">
-        {q.topics.filter((t: string) => topics[t]).map((t: string) => <a class="badge rounded-pill text-bg-secondary text-decoration-none" href={`/quotes/topics/${t}/`}>{topics[t].label}</a>)}
+        {q.topics.filter((t: string) => topics[t]).sort((a: string, b: string) => Object.keys(topics).indexOf(a) - Object.keys(topics).indexOf(b)).map((t: string) => <a class="badge rounded-pill text-bg-secondary text-decoration-none" href={`/quotes/topics/${t}/`}>{topics[t].label}</a>)}
       </p>
     </div>
   </article>

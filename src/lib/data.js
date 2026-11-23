@@ -461,7 +461,11 @@ export const QUOTE_ERAS = {
 /** Topic slug -> { label, about, mood }, in the order of topics.yaml. */
 export function getQuoteTopics() {
   const f = join(QUOTES_SRC, "topics.yaml");
-  return existsSync(f) ? YAML.parse(readFileSync(f, "utf8")) || {} : {};
+  const topics = existsSync(f) ? YAML.parse(readFileSync(f, "utf8")) || {} : {};
+  // Alphabetical by label everywhere topics are listed (dropdown, topic list, pages),
+  // ignoring a leading "The" as /library does with titles.
+  const key = (t) => t.label.replace(/^The /, "");
+  return Object.fromEntries(Object.entries(topics).sort(([, a], [, b]) => key(a).localeCompare(key(b))));
 }
 
 function quoteEras() {
