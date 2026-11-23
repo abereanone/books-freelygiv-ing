@@ -8,8 +8,7 @@ const topics = getQuoteTopics() as Record<string, { label: string }>;
 const used = new Set(quotes.flatMap((q: any) => q.topics));
 const topicLinks = Object.entries(topics).filter(([k]) => used.has(k));
 
-// Quote of the day: picked in the browser by today's date, from the featured quotes
-// (all of them until some are featured), so it changes daily without a rebuild.
+// The page's share preview uses a featured quote's card (or the first one).
 const pool = (quotes.some((q: any) => q.featured) ? quotes.filter((q: any) => q.featured) : quotes)
   .map((q: any) => ({ id: q.id, img: quoteImage(q.id, q.tone, 'full'), text: q.text, by: q.authorName, book: q.bookTitle }));
 const first = pool[0];
@@ -20,18 +19,6 @@ const desc = 'Free quote images from the books on Freely Given Books: download t
 <Base title="Quote Cards" ogTitle="Quote Cards" ogDescription={desc} ogImage={first ? (first.img.startsWith('http') ? first.img : `${siteUrl}${first.img}`) : undefined}>
   <h1>Quote Cards</h1>
 
-  {first && (
-    <section class="qotd" aria-labelledby="qotdHeading">
-      <a class="qotd-card" id="qotdLink" href={`/quotes/${first.id}/`}>
-        <img id="qotdImg" src={first.img} alt={`${first.text} (${first.by})`} width="1080" height="1080" />
-      </a>
-      <div class="qotd-text">
-        <h2 id="qotdHeading" class="visually-hidden">Quote of the day</h2>
-        <a class="btn btn-primary" id="qotdOpen" href={`/quotes/${first.id}/`}>Share or download</a>
-      </div>
-    </section>
-  )}
-
   <QuoteGallery />
 
   <h2 class="h5 mt-5">Topics</h2>
@@ -41,25 +28,8 @@ const desc = 'Free quote images from the books on Freely Given Books: download t
   <p class="small text-body-secondary mt-4">Backgrounds are public-domain paintings from the Art Institute of Chicago's open-access collection.</p>
 </Base>
 
-<script type="application/json" id="qotdData" set:html={JSON.stringify(pool)}></script>
-<script>
-  const pool = JSON.parse(document.getElementById('qotdData')!.textContent!);
-  if (pool.length) {
-    const d = new Date();
-    const day = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5);
-    const q = pool[day % pool.length];
-    const href = `/quotes/${q.id}/`;
-    (document.getElementById('qotdLink') as HTMLAnchorElement).href = href;
-    (document.getElementById('qotdOpen') as HTMLAnchorElement).href = href;
-    const img = document.getElementById('qotdImg') as HTMLImageElement;
-    img.src = q.img; img.alt = `${q.text} (${q.by})`;
-  }
-</script>
+
 
 <style>
-  .qotd { display: grid; gap: .75rem; max-width: 420px; margin: 1rem 0 2rem; }
-  .qotd-card { display: block; border-radius: .4rem; overflow: hidden; }
-  .qotd-card img { width: 100%; height: auto; display: block; }
-  .qotd-text .btn { width: 100%; }
   .qc-topics { display: flex; flex-wrap: wrap; gap: .4rem; }
 </style>

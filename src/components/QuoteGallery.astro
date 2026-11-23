@@ -220,6 +220,10 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
   [topicSel, authorSel, bookSel, eraSel, shortChk, sortSel].forEach((el) => el?.addEventListener('change', () => apply()));
   bgBtns.forEach((b) => b.addEventListener('click', () => { bg = b.dataset.bg || ''; apply(false); }));
   more.addEventListener('click', () => { shown += PAGE; render(); });
+  // Load the next cards on their own as the visitor nears the bottom (the button stays as a fallback).
+  if ('IntersectionObserver' in window)
+    new IntersectionObserver((es) => { if (es[0].isIntersecting && !more.hidden) { shown += PAGE; render(); requestAnimationFrame(() => { if (!more.hidden && more.getBoundingClientRect().top < innerHeight + 600) more.click(); }); } },
+      { rootMargin: '600px 0px' }).observe(more);
   // Remember this view's order, so swiping on a quote page walks through the same cards.
   grid.addEventListener('click', (e) => {
     if (!(e.target as Element).closest('.qg-card')) return;

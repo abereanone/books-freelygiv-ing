@@ -112,7 +112,11 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
       <div class="qp-more">{moreBook.map((x: any) => <a href={`/quotes/${x.id}/`}><img src={quoteImage(x.id, x.tone, 'thumb')} alt={`${x.text} (${x.authorName})`} width="480" height="480" loading="lazy" /></a>)}</div>
     </section>
   )}
-  <p class="mt-4"><a href="/quotes/">All quote cards</a></p>
+  <section class="mt-5">
+    <h2 class="h5">More quote cards</h2>
+    <div class="qp-more qp-feed" id="qpFeed"></div>
+    <p class="mt-3"><a href="/quotes/" id="qpAll">All quote cards</a></p>
+  </section>
 </Base>
 
 <style>
@@ -133,6 +137,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
   .qp-more { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
   @media (max-width: 575px) { .qp-more { grid-template-columns: 1fr 1fr; } }
   .qp-more img { width: 100%; height: auto; display: block; border-radius: .35rem; }
+  :global(.qp-feed img) { width: 100%; height: auto; display: block; border-radius: .35rem; }
 </style>
 
 <script>
@@ -278,6 +283,35 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
     if ((e.target as Element).closest('input, textarea, select') || e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.key === 'ArrowLeft') go(prevId); else if (e.key === 'ArrowRight') go(nextId);
   });
+  // Endless "More quote cards": every other card in a fresh shuffle, 12 at a time as the visitor
+  // scrolls (list from /quotes/cards.json, fetched only when they get near it).
+  (() => {
+    const feed = document.getElementById('qpFeed')!, all = document.getElementById('qpAll')!;
+    const shown = new Set([art.dataset.id, ...[...document.querySelectorAll<HTMLAnchorElement>('.qp-more a')].map((a) => a.pathname.split('/')[2])]);
+    let cards: { id: string; img: string; alt: string }[] | null = null, at = 0, loading = false;
+    async function more() {
+      if (loading) return; loading = true;
+      try {
+        if (!cards) {
+          cards = (await (await fetch('/quotes/cards.json')).json()).filter((c: any) => !shown.has(c.id));
+          for (let i = cards!.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [cards![i], cards![j]] = [cards![j], cards![i]]; }
+        }
+        for (const c of cards!.slice(at, at + 12)) {
+          const a = document.createElement('a'); a.href = `/quotes/${c.id}/`;
+          const im = document.createElement('img'); im.src = c.img; im.alt = c.alt; im.width = im.height = 480; im.loading = 'lazy';
+          a.append(im); feed.append(a);
+        }
+        at += 12;
+        if (at >= cards!.length) { io?.disconnect(); return; }
+      } catch { return; } finally { loading = false; }
+      // Still near the bottom (a tall screen or a quick scroll)? Keep filling.
+      if (all.getBoundingClientRect().top < innerHeight + 800) setTimeout(more, 50);
+    }
+    const io = 'IntersectionObserver' in window
+      ? new IntersectionObserver((es) => { if (es[0].isIntersecting) more(); }, { rootMargin: '800px 0px' }) : null;
+    io ? io.observe(all) : more();
+  })();
+
   // Swipe on the card: a mostly sideways drag of 50 px or more.
   const frame = document.getElementById('qpFrame')!;
   let sx = 0, sy = 0, tracking = false;
