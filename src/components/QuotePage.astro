@@ -51,7 +51,6 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
         <a class="qp-nav qp-prev" id="qpPrev" href={`/quotes/${prev}/`} aria-label="Previous quote">‹</a>
         <a class="qp-nav qp-next" id="qpNext" href={`/quotes/${next}/`} aria-label="Next quote">›</a>
       </div>
-      <p class="small text-body-secondary mt-2 mb-0 qp-pos" id="qpPos">Swipe or use ‹ › for the next card.</p>
       <div class="btn-group btn-group-sm qp-tone" role="group" aria-label="Background">
         <button type="button" class="btn btn-outline-secondary" data-tone="dark">Dark</button>
         <button type="button" class="btn btn-outline-secondary" data-tone="light">Light</button>
@@ -60,7 +59,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
     </div>
 
     <div class="qp-body">
-      <blockquote class="qp-quote">
+      <blockquote class="qp-quote visually-hidden">  <!-- all of it is on the card; kept for search and screen readers -->
         <p>{q.text}</p>
         <footer class="text-body-secondary">
           {q.authorHref ? <a href={q.authorHref}>{q.authorName}</a> : q.authorName},
@@ -75,7 +74,6 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
         <button type="button" class="btn btn-outline-primary" id="qpShareLink">Share link</button>
         <button type="button" class="btn btn-outline-secondary" id="qpCopyText">Copy quote</button>
       </div>
-      <p class="small text-body-secondary mt-2 mb-0">Share image sends the picture, with a link to the free book, to Signal, Messages, Facebook or any app on your phone; on a computer it copies the picture for you to paste into a chat. Share link sends just the link; its preview shows this card. Save image keeps a copy.</p>
 
       <p class="qp-share small" aria-label="Share a link">
         <span class="text-body-secondary me-1">Or share a link:</span>
@@ -269,7 +267,6 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
     if (i >= 0 && saved.ids.length > 1) {
       prevId = saved.ids[(i - 1 + saved.ids.length) % saved.ids.length];
       nextId = saved.ids[(i + 1) % saved.ids.length];
-      document.getElementById('qpPos')!.textContent = `${i + 1} of ${saved.ids.length}. Swipe or use ‹ › for the next card.`;
     }
   } catch {}
   const go = (id: string) => { location.href = `/quotes/${id}/` + (chosen ? `${tone}/` : ''); };
