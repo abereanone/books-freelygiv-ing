@@ -1,0 +1,55 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: perkins-only-rule-ordering-family-written
+  text: The only rule of ordering the family, is the written word of God.
+  author: william-perkins
+  book: christian-economy
+  chapter: 1. Of Christian Economy, and of the Family
+  anchor: chapter-01-h1
+  topics: [family, scripture]
+  scripture: ['2 Timothy 3:16']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: perkins-duty-unto-god-private-worship
+  text: The duty unto God, is the private Worship and Service of God, which must be established and settled in every family.
+  author: william-perkins
+  book: christian-economy
+  chapter: 2. Of the Household Service of God
+  anchor: chapter-02-h1
+  topics: [family, worship]
+  scripture: ['Joshua 24:15']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: perkins-parents-provoke-not-your-children
+  text: Parents provoke not your children to anger, that is, by too much austerity in government.
+  author: william-perkins
+  book: christian-economy
+  chapter: 13. Of the Parent
+  anchor: chapter-13-h1
+  topics: [family]
+  scripture: ['Ephesians 6:4']
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: perkins-in-choice-husband-or-wife
+  text: In the choice of a husband or wife, the parents ought to have a greater respect unto piety and wisdom, then unto beauty and riches, or any other outward blessings.
+  author: william-perkins
+  book: christian-economy
+  chapter: 13. Of the Parent
+  anchor: chapter-13-h1
+  topics: [family]
+  scripture: ['Proverbs 31:30']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

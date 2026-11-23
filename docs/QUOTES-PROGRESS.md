@@ -20,9 +20,9 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] autobiography-of-charles-spurgeon-vol-2
 - [x] autobiography-of-charles-spurgeon-vol-3
 - [x] autobiography-of-charles-spurgeon-vol-4
-- [ ] catechism-of-suffering (Statler)
-- [ ] christian-economy (Perkins)
-- [ ] doctrine-of-law-and-grace (Bunyan)
+- [x] catechism-of-suffering (Statler)
+- [x] christian-economy (Perkins)
+- [x] doctrine-of-law-and-grace (Bunyan)
 - [ ] domestical-duties-volume-1 (Gouge)
 - [ ] domestical-duties-volume-2
 - [ ] domestical-duties-volume-3

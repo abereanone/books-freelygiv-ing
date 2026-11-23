@@ -1,0 +1,107 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: bunyan-in-word-if-you-would
+  text: In a word, if you would see it altogether, God’s love was the cause why Jesus Christ was sent to bleed for sinners.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: First. Why It Is a Free and Unchangeable Grace
+  anchor: first-why-it-is-a-free-and-unchangeable-grace
+  topics: [cross, love]
+  scripture: ['John 3:16']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-god-loves-saints-as-he
+  text: God loves the saints as He loves Jesus Christ; and God loves Jesus Christ with an eternal love; therefore the saints also with the same.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: First. Why It Is a Free and Unchangeable Grace
+  anchor: first-why-it-is-a-free-and-unchangeable-grace
+  topics: [love, assurance]
+  scripture: ['John 17:23']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-covenant-grace-not-grounded-upon
+  text: The Covenant of Grace is not grounded upon our obedience, but upon God’s love, even His pardoning love to us through Christ Jesus.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: Third. The Privileges of the New Covenant
+  anchor: third-the-privileges-of-the-new-covenant
+  topics: [grace, love]
+  scripture: ['Titus 3:5']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-if-they-do-not-like
+  text: If they do not like Heaven, He will fit them with Hell; if they do not like Christ, they shall be forced to have the devil.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: Third. The Privileges of the New Covenant
+  anchor: third-the-privileges-of-the-new-covenant
+  topics: [conversion, sin]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-all-this-we-confess-that
+  text: All this we confess, that Jesus Christ died for us; but he that thinks to be saved by Christ, and liveth in his sins, shall never be saved.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: Use and Application
+  anchor: use-and-application
+  topics: [repentance, sin]
+  scripture: ['Hebrews 12:14']
+  words: 28
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-god-holy-i-am-sinner
+  text: God is holy, I am a sinner; God is just, and I have offended.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: The Use of the New Covenant
+  anchor: the-use-of-the-new-covenant
+  topics: [sin, repentance]
+  scripture: ['Luke 18:13']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-i-have-precious-jesus-soul
+  text: I have a precious Jesus, a soul-comforting Jesus, a sin-pardoning Jesus.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: The Use of the New Covenant
+  anchor: the-use-of-the-new-covenant
+  topics: [christ]
+  scripture: []
+  words: 11
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-to-pray-not-for-thee
+  text: To pray is not for thee to down on thy knees, and say over a many Scripture words only; for that thou mayest do, and yet do nothing but babble.
+  author: john-bunyan
+  book: doctrine-of-law-and-grace
+  chapter: The Use of the New Covenant
+  anchor: the-use-of-the-new-covenant
+  topics: [prayer, hypocrisy]
+  scripture: ['Matthew 6:7']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
