@@ -19,7 +19,6 @@ const desc = 'Free quote images from the books on Freely Given Books: download t
 
 <Base title="Quote Cards" ogTitle="Quote Cards" ogDescription={desc} ogImage={first ? (first.img.startsWith('http') ? first.img : `${siteUrl}${first.img}`) : undefined}>
   <h1>Quote Cards</h1>
-  <p class="lead qc-lead">Images of the best lines from the books in this library. Download them, share them, and every one links back to its free book.</p>
 
   {first && (
     <section class="qotd" aria-labelledby="qotdHeading">
@@ -27,10 +26,8 @@ const desc = 'Free quote images from the books on Freely Given Books: download t
         <img id="qotdImg" src={first.img} alt={`${first.text} (${first.by})`} width="1080" height="1080" />
       </a>
       <div class="qotd-text">
-        <h2 id="qotdHeading" class="h6 text-uppercase text-body-secondary qotd-label">Quote of the day</h2>
-        <p class="qotd-quote" id="qotdText">{first.text}</p>
-        <p class="text-body-secondary mb-3" id="qotdBy">{first.by}, <i>{first.book}</i></p>
-        <a class="btn btn-primary btn-sm" id="qotdOpen" href={`/quotes/${first.id}/`}>Share or download</a>
+        <h2 id="qotdHeading" class="visually-hidden">Quote of the day</h2>
+        <a class="btn btn-primary" id="qotdOpen" href={`/quotes/${first.id}/`}>Share or download</a>
       </div>
     </section>
   )}
@@ -56,21 +53,13 @@ const desc = 'Free quote images from the books on Freely Given Books: download t
     (document.getElementById('qotdOpen') as HTMLAnchorElement).href = href;
     const img = document.getElementById('qotdImg') as HTMLImageElement;
     img.src = q.img; img.alt = `${q.text} (${q.by})`;
-    document.getElementById('qotdText')!.textContent = q.text;
-    const by = document.getElementById('qotdBy')!;
-    by.textContent = `${q.by}, `;
-    const i = document.createElement('i'); i.textContent = q.book; by.append(i);
   }
 </script>
 
 <style>
-  .qc-lead { max-width: 46rem; }
-  .qotd { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 1.25rem; align-items: center;
-          padding: 1rem; margin: 1.25rem 0 2rem; border: 1px solid var(--bs-border-color); border-radius: .5rem; }
-  @media (max-width: 575px) { .qotd { grid-template-columns: 1fr; } }
+  .qotd { display: grid; gap: .75rem; max-width: 420px; margin: 1rem 0 2rem; }
   .qotd-card { display: block; border-radius: .4rem; overflow: hidden; }
   .qotd-card img { width: 100%; height: auto; display: block; }
-  .qotd-label { letter-spacing: .08em; }
-  .qotd-quote { font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; line-height: 1.35; text-wrap: balance; margin-bottom: .5rem; }
+  .qotd-text .btn { width: 100%; }
   .qc-topics { display: flex; flex-wrap: wrap; gap: .4rem; }
 </style>
