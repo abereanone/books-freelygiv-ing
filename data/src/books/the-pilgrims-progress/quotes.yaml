@@ -1,0 +1,68 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: bunyan-to-go-back-nothing-but
+  text: 'To go back is nothing but death: to go forward is fear of death, and life everlasting beyond it: I will yet go forward.'
+  author: john-bunyan
+  book: the-pilgrims-progress
+  chapter: THE THIRD STAGE
+  anchor: part-1-stage-03-h1
+  topics: [death, faith]
+  scripture: ['Philippians 3:13']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-man-may-cry-out-against
+  text: A man may cry out against sin, of policy; but he cannot abhor it but by virtue of a godly antipathy against it.
+  author: john-bunyan
+  book: the-pilgrims-progress
+  chapter: THE FIFTH STAGE
+  anchor: part-1-stage-05-h1
+  topics: [sin, hypocrisy]
+  scripture: ['Psalm 97:10']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-indeed-to-know-thing-that
+  text: Indeed, to know is a thing that pleaseth talkers and boasters; but to do is that which pleaseth God.
+  author: john-bunyan
+  book: the-pilgrims-progress
+  chapter: THE FIFTH STAGE
+  anchor: part-1-stage-05-h1
+  topics: [holiness, hypocrisy]
+  scripture: ['James 1:22']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-i-have-known-many-laboring
+  text: I have known many laboring men that have got good estates in this Valley of Humiliation; for God resisteth the proud, but giveth grace to the humble.
+  author: john-bunyan
+  book: the-pilgrims-progress
+  chapter: THE FIFTH STAGE
+  anchor: part-2-stage-05-h1
+  topics: [humility]
+  scripture: ['James 4:6']
+  words: 27
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-it-my-duty-said-he
+  text: It is my duty, said he, to mistrust my own ability, that I may have reliance on Him who is stronger than all.
+  author: john-bunyan
+  book: the-pilgrims-progress
+  chapter: THE SIXTH STAGE
+  anchor: part-2-stage-06-h1
+  topics: [humility, faith]
+  scripture: ['2 Corinthians 12:10']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

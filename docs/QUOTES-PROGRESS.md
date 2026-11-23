@@ -40,8 +40,10 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] the-death-of-death (Owen)
 - [x] the-glorious-feast-of-the-gospel (Sibbes)
 - [x] the-godly-mans-picture (Watson)
-- [ ] the-pilgrims-progress (Bunyan)
-- [ ] the-secret-key-of-heaven (Brooks)
+- [x] the-pilgrims-progress (Bunyan)
+- [x] the-secret-key-of-heaven (Brooks)
+
+Batch 1 done 2026-11-23 (383 quotes, 31 books); render, upload and push wait for Michael's OK.
 
 ## Batch 2: EPUB / PDF only (extract.py needs EPUB/PDF support first)
 - [ ] the-divine-name (Case, EPUB)
