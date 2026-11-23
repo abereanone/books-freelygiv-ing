@@ -1,0 +1,120 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: owen-pleasures-sin-are-rewards-sin
+  text: The pleasures of sin are the rewards of sin; a reward that most men lose their souls to obtain.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter II
+  anchor: chapter-02-h1
+  topics: [sin, temptation]
+  scripture: ['Hebrews 11:25']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-doth-heart-promise-fair-rest
+  text: Doth the heart promise fair, rest not on it, but say to the Lord Christ, Lord, do thou undertake for me.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter III
+  anchor: chapter-03-h1
+  topics: [heart, christ]
+  scripture: ['Isaiah 38:14']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-grace-changeth-nature-man-but
+  text: Grace changeth the nature of man, but nothing can change the nature of sin.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter IV
+  anchor: chapter-04-h1
+  topics: [grace, sin]
+  scripture: []
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-sin-enmity-to-god-as
+  text: Sin is enmity to God as God, and therefore to all of God.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter IV
+  anchor: chapter-04-h1
+  topics: [sin]
+  scripture: ['Romans 8:7']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-when-fire-doth-any-thing
+  text: 'When fire doth any thing, it burns: And when the Law of Sin doth any thing, it lusts.'
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter VI
+  anchor: chapter-06-h1
+  topics: [sin]
+  scripture: ['Galatians 5:17']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-sin-gives-place-for-season
+  text: Sin gives place for a season, but returns and presseth on the soul again.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter VI
+  anchor: chapter-06-h1
+  topics: [sin, temptation]
+  scripture: []
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-every-sin-forsaking-lord-our
+  text: Every sin is a forsaking of the Lord our God.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Drawing the Mind Away from Its Duty
+  anchor: chapter-08-h3
+  topics: [sin]
+  scripture: ['Jeremiah 2:19']
+  words: 10
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-god-in-christ-makes-proposition
+  text: God in Christ makes the proposition, and Satan and Sin make the conclusion.
+  author: john-owen
+  book: indwelling-sin
+  chapter: The Abuse of Gospel Grace
+  anchor: chapter-08-h3
+  topics: [grace, temptation]
+  scripture: ['Romans 6:1']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-as-i-say-sense-gospel
+  text: As, I say, is the sense of Gospel-pardon, so will be the life of Gospel-love.
+  author: john-owen
+  book: indwelling-sin
+  chapter: Chapter XV
+  anchor: chapter-15-h1
+  topics: [love, mercy]
+  scripture: ['Luke 7:47']
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

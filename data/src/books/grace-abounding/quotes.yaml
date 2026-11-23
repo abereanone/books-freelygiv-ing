@@ -1,0 +1,94 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: bunyan-i-can-remember-my-fears
+  text: I can remember my fears, and doubts, and sad months with comfort; they are as the head of Goliath in my hand.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: A Preface, or Brief Account of the Publishing of This Work
+  anchor: preface-h1
+  topics: [affliction, assurance]
+  scripture: ['1 Samuel 17:57']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-i-cannot-now-express-what
+  text: I cannot now express what then I saw and felt of the steadiness of Jesus Christ, the rock of man’s salvation; what was done could not be undone, added to, nor altered.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: Grace Abounding to the Chief of Sinners
+  anchor: relation-h1
+  topics: [christ, assurance]
+  scripture: ['Hebrews 13:8']
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-great-sins-do-draw-out
+  text: Great sins do draw out great grace; and where guilt is most terrible and fierce there the mercy of God in Christ, when showed to the soul, appears most high and mighty.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: Grace Abounding to the Chief of Sinners
+  anchor: relation-h1
+  topics: [grace, mercy]
+  scripture: ['Romans 5:20']
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-god-himself-portion-saints
+  text: God Himself is the portion of the saints.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: Grace Abounding to the Chief of Sinners
+  anchor: relation-h1
+  topics: [contentment]
+  scripture: ['Psalm 73:26']
+  words: 8
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-i-preached-what-i-felt
+  text: I preached what I felt, what I smartingly did feel, even that under which my poor soul did groan and tremble to astonishment.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: A Brief Account of the Author’s Call to the Work of the Ministry
+  anchor: call-to-the-ministry-h1
+  topics: [church, heart]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-let-all-men-therefore-prize
+  text: Let all men therefore prize a little with the fear of the Lord; gifts indeed are desirable, but yet great grace and small gifts are better than great gifts and no grace.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: A Brief Account of the Author’s Call to the Work of the Ministry
+  anchor: call-to-the-ministry-h1
+  topics: [grace, holiness]
+  scripture: ['Proverbs 15:16']
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: bunyan-all-fears-they-are-best
+  text: Of all fears, they are best that are made by the blood of Christ; and of all joy, that is the sweetest that is mixed with mourning over Christ.
+  author: john-bunyan
+  book: grace-abounding
+  chapter: The Conclusion
+  anchor: conclusion-h1
+  topics: [cross, repentance]
+  scripture: ['Zechariah 12:10']
+  words: 29
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
