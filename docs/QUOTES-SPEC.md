@@ -243,4 +243,8 @@ replace satori in section 4.
 
 ## 8. Later, maybe
 
+- **Author-photo backgrounds** (Michael, 2026-11-23): a card that uses the author's portrait
+  (person photos on BFG, e.g. the Flavel engraving, Spurgeon) faded to one side, quote beside it;
+  likely a fourth look.
+
 - "Quote of the day" on the home page, or an RSS feed of it.
