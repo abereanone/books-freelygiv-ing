@@ -248,3 +248,14 @@ replace satori in section 4.
   likely a fourth look.
 
 - "Quote of the day" on the home page, or an RSS feed of it.
+
+## Bible verse cards (2026-11-23)
+
+`data/src/quotes/scripture.yaml` holds verse cards, all from the BSB (the modified master,
+synced to `public/bible/`). Fields: `id` (e.g. `psalm-147-3`), `ref` (one verse or a range in
+one chapter, "Psalm 147:3-4"), `text` (verify.py checks it is the BSB word for word),
+`topics`, `status`, `added`; render-cards adds `background` and `tone` as for book quotes
+(set `tone: light` by hand when the verse is hopeful and the topic's mood is dark).
+The card shows the reference in the author's place and "Berean Standard Bible" in the
+book's. On the site they are "Bible (BSB)" in the Authors filter and "Berean Standard Bible"
+in the Books filter; the quote page links to /library/ instead of a book page.

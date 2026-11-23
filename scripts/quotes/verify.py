@@ -7,10 +7,11 @@ Checks: text is word-for-word in the book's Read Online HTML; the anchor exists 
 1-3 topics, all in data/src/quotes/topics.yaml; every Scripture reference is a real verse
 (checked against the site's BSB); the author has an era in eras.yaml; ids are unique.
 """
-import subprocess, sys
+import re, subprocess, sys
 from common import ROOT, BOOKS, QDATA, WORK, load_yaml, paragraphs, norm, bible, check_ref
 
 STATUSES = {"candidate", "approved", "rejected"}
+REF_RANGE = re.compile(r"^(?P<book>(?:[123] )?[A-Z][A-Za-z ]+?) (?P<ch>\d+):(?P<v>\d+)(?:[-–](?P<v2>\d+))?$")
 
 
 def main(slugs):
@@ -58,6 +59,34 @@ def main(slugs):
                     err(m)
             if not 5 <= len(q["text"].split()) <= 50:
                 err("text should be 5-50 words")
+    # Bible verse cards (data/src/quotes/scripture.yaml): text must be the BSB verse(s) exactly.
+    for q in load_yaml(QDATA / "scripture.yaml", []):
+        where = f"scripture/{q.get('id')}"
+        err = lambda m: errors.append(f"{where}: {m}")
+        if q["id"] in seen:
+            err(f"duplicate id (also in {seen[q['id']]})")
+        seen[q["id"]] = "scripture"
+        if q.get("status") not in STATUSES:
+            err(f"status must be one of {sorted(STATUSES)}")
+            continue
+        counts[q["status"]] += 1
+        if q["status"] == "rejected":
+            continue
+        m = REF_RANGE.match(q.get("ref") or "")
+        if not m:
+            err(f"bad ref {q.get('ref')!r} (want 'Psalm 147:3' or 'Psalm 147:3-4')")
+            continue
+        code = meta.get(m["book"].lower())
+        first, last = int(m["v"]), int(m["v2"] or m["v"])
+        keys = [f"{code} {m['ch']}:{v}" for v in range(first, last + 1)]
+        if not code or any(k not in verses for k in keys):
+            err(f"no such verse(s) {q['ref']!r}")
+            continue
+        if norm(q["text"]) != norm(" ".join(verses[k] for k in keys)):
+            err("text is not the BSB verse(s) word for word")
+        t = q.get("topics") or []
+        if not 1 <= len(t) <= 3 or any(x not in topics for x in t):
+            err("needs 1-3 topics from topics.yaml")
     for e in errors:
         print("ERROR", e)
     print(f"{len(seen)} quotes in {len(slugs)} books: " + ", ".join(f"{v} {k}" for k, v in counts.items())

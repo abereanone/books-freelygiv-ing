@@ -511,6 +511,28 @@ export function getQuotes() {
       });
     }
   }
+  // Bible verse cards: the reference stands in for the author, the BSB for the book.
+  const sf = join(QUOTES_SRC, "scripture.yaml");
+  for (const q of existsSync(sf) ? YAML.parse(readFileSync(sf, "utf8")) || [] : []) {
+    if (q.status === "rejected") continue;
+    out.push({
+      ...q,
+      tone: ["light", "solid"].includes(q.tone) ? q.tone : "dark",
+      added: String(q.added ?? ""),
+      isScripture: true,
+      author: "bible",
+      authorKey: "bible",
+      authorName: q.ref,
+      authorSort: "Bible (BSB)",
+      authorHref: null,
+      book: "bsb",
+      bookTitle: "Berean Standard Bible",
+      bookHref: null,
+      readUrl: null,
+      scripture: [],
+      era: null,
+    });
+  }
   return out;
 }
 

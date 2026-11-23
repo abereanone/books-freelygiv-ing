@@ -32,7 +32,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
 <Base
   title={short}
   ogTitle={`“${short}” — ${q.authorName}`}
-  ogDescription={`From ${q.bookTitle} by ${q.authorName}. Free to share; the book is free too.`}
+  ogDescription={q.isScripture ? `${q.authorName}, Berean Standard Bible. Free to share.` : `From ${q.bookTitle} by ${q.authorName}. Free to share; the book is free too.`}
   ogImage={abs(img[shown])}
   canonical={pageUrl}
   ogImageAlt={`${q.text} (${q.authorName})`}
@@ -44,7 +44,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
     </ol>
   </nav>
 
-  <article class="qp" data-id={q.id} data-tone={q.tone} data-start={shown} data-caption={`From ${q.bookTitle} by ${q.authorName}, free to read:`} data-dark={img.dark} data-light={img.light} data-solid={img.solid} data-share-text={shareText} data-page={pageUrl} data-prev={prev} data-next={next}>
+  <article class="qp" data-id={q.id} data-tone={q.tone} data-start={shown} data-caption={q.isScripture ? `${q.authorName} (BSB). More free cards and books:` : `From ${q.bookTitle} by ${q.authorName}, free to read:`} data-dark={img.dark} data-light={img.light} data-solid={img.solid} data-share-text={shareText} data-page={pageUrl} data-prev={prev} data-next={next}>
     <div class="qp-image">
       <div class="qp-frame" id="qpFrame">
         <img id="qpImg" src={img[shown]} alt={`${q.text} (${q.authorName})`} width="1080" height="1080" />
@@ -63,7 +63,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
         <p>{q.text}</p>
         <footer class="text-body-secondary">
           {q.authorHref ? <a href={q.authorHref}>{q.authorName}</a> : q.authorName},
-          <cite><a href={q.bookHref}>{q.bookTitle}</a></cite>
+          <cite>{q.bookHref ? <a href={q.bookHref}>{q.bookTitle}</a> : q.bookTitle}</cite>
           {q.chapter && <span class="d-block small mt-1">{q.chapter}</span>}
         </footer>
       </blockquote>
@@ -88,7 +88,9 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
 
       <div class="qp-book">
         {q.readUrl && <a class="btn btn-success btn-sm" href={q.readUrl}>Read it in the book</a>}
-        <a class="btn btn-outline-secondary btn-sm" href={q.bookHref}>About the book (free)</a>
+        {q.bookHref
+          ? <a class="btn btn-outline-secondary btn-sm" href={q.bookHref}>About the book (free)</a>
+          : <a class="btn btn-outline-secondary btn-sm" href="/library/">Free books</a>}
       </div>
 
       {q.scripture?.length > 0 && (

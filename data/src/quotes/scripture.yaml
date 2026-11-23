@@ -1,0 +1,12 @@
+# Bible verse cards for /quotes/, all from the Berean Standard Bible (the modified BSB master,
+# synced to public/bible/). On the card the reference takes the author's place and
+# "Berean Standard Bible" the book's. text must match the BSB word for word (verify.py).
+# ref: one verse ("Psalm 147:3") or a range in one chapter ("Psalm 147:3-4").
+- id: psalm-147-3
+  ref: Psalm 147:3
+  text: He heals the brokenhearted and binds up their wounds.
+  topics: [affliction, mercy]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-01.jpg, light: light-13.jpg, solid: rust}
+  tone: light

@@ -31,6 +31,16 @@ const templateSig = createHash("sha1").update(readFileSync(join(ROOT, "scripts/q
 
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
 const slugs = readdirSync(BOOKS).filter((s) => existsSync(join(BOOKS, s, "quotes.yaml")));
+// Every quotes file, with what goes in the card's author and book lines. Bible verse cards
+// (data/src/quotes/scripture.yaml) show the reference and "Berean Standard Bible".
+const SCRIPTURE = join(ROOT, "data/src/quotes/scripture.yaml");
+const sources = [
+  ...slugs.map((slug) => {
+    const title = readY(join(BOOKS, slug, "book.yaml"))[0].title;
+    return { file: join(BOOKS, slug, "quotes.yaml"), title, who: (q) => q.writtenBy || person(q.author), sigWho: (q) => q.writtenBy || q.author };
+  }),
+  ...(existsSync(SCRIPTURE) ? [{ file: SCRIPTURE, title: "Berean Standard Bible", who: (q) => q.ref, sigWho: (q) => q.ref }] : []),
+];
 
 // Give every quote what it lacks, and write it into quotes.yaml so it never changes:
 //  - background.dark / background.light: the least-used painting of its first topic's mood
@@ -43,14 +53,13 @@ const { byMood } = paintings();
 const used = Object.fromEntries(Object.keys(SOLIDS).map((k) => [k, 0]));
 const paintUse = {};
 let darkSeen = 0;
-for (const slug of slugs) for (const q of readY(join(BOOKS, slug, "quotes.yaml"))) {
+for (const { file } of sources) for (const q of readY(file) || []) {
   const b = q.background || {};
   if (b.solid && used[b.solid] !== undefined) used[b.solid]++;
   for (const f of [b.dark, b.light]) if (f) paintUse[f] = (paintUse[f] || 0) + 1;
   if (q.tone === "dark" || q.tone === "solid") darkSeen++;
 }
-for (const slug of slugs) {
-  const file = join(BOOKS, slug, "quotes.yaml");
+for (const { file } of sources) {
   const doc = YAML.parseDocument(readFileSync(file, "utf8"));
   let changed = false;
   for (const node of doc.contents.items) {
@@ -81,17 +90,16 @@ for (const slug of slugs) {
 }
 
 const jobs = [];
-for (const slug of slugs) {
-  const title = readY(join(BOOKS, slug, "book.yaml"))[0].title;
-  for (const q of readY(join(BOOKS, slug, "quotes.yaml"))) {
+for (const { file, title, who, sigWho } of sources) {
+  for (const q of readY(file) || []) {
     if (q.status === "rejected") continue;
     for (const tone of ["dark", "light", "solid"]) {
       const bg = q.background?.[tone];
       if (!bg) { console.warn(`no ${tone} background for ${q.id}; run the review pull first`); continue; }
       const key = `${q.id}-${tone}`;
-      const sig = createHash("sha1").update([q.text, q.writtenBy || q.author, title, bg, templateSig].join("|")).digest("hex");
+      const sig = createHash("sha1").update([q.text, sigWho(q), title, bg, templateSig].join("|")).digest("hex");
       if (!FORCE && manifest[key] === sig && existsSync(join(OUT, `${key}.jpg`))) continue;
-      jobs.push({ key, sig, text: q.text, author: q.writtenBy || person(q.author), book: title, bg, solid: tone === "solid" ? bg : null });
+      jobs.push({ key, sig, text: q.text, author: who(q), book: title, bg, solid: tone === "solid" ? bg : null });
     }
   }
 }
