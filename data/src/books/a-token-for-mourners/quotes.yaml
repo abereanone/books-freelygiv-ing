@@ -1,0 +1,146 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: flavel-when-our-sin-finds-us
+  text: When our sin finds us out by affliction, happy are we, if, by the light of affliction, we find out sin.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: The Epistle Dedicatory
+  anchor: epistle-dedicatory
+  topics: [affliction, sin]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-if-god-will-not-have
+  text: If God will not have any part of your happiness to lie in children, then let it wholly lie in himself.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: The Epistle Dedicatory
+  anchor: epistle-dedicatory
+  topics: [death, family, contentment]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-did-we-know-desert-our
+  text: Did we know the desert of our sins, we should rather wonder to see one mercy left, than that twenty are cut off.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: The Signs of Immoderate Sorrow
+  anchor: chapter-1
+  topics: [mercy, affliction]
+  scripture: ['Lamentations 3:22']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-poor-creature-cease-to-weep
+  text: Poor creature, cease to weep any longer for thy dead relation, and weep rather for thy dead heart.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: The Signs of Immoderate Sorrow
+  anchor: chapter-1
+  topics: [death, heart]
+  scripture: []
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-your-relations-are-dear-but
+  text: Your relations are dear, but Christ is dearer to you by far.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: A Dissuasive from Immoderate Sorrow
+  anchor: chapter-2
+  topics: [christ, family]
+  scripture: ['Matthew 10:37']
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-lords-time-was-come-your
+  text: The Lord’s time was come, your relations lived with you every moment that God intended them for you before you had them.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: A Dissuasive from Immoderate Sorrow
+  anchor: chapter-2
+  topics: [providence, death]
+  scripture: ['Psalm 139:16']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-do-what-thou-wilt-with
+  text: Do what thou wilt with me; let me be friendless, let me be childless, let me be poor, let me be any thing rather than a Christless, graceless, hopeless soul.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: A Dissuasive from Immoderate Sorrow
+  anchor: chapter-2
+  topics: [christ, contentment]
+  scripture: ['Philippians 3:8']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-be-quiet-hold-your-peace
+  text: Be quiet, and hold your peace, you little know how many mercies lie in the womb of this affliction.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: A Dissuasive from Immoderate Sorrow
+  anchor: chapter-2
+  topics: [affliction, patience, mercy]
+  scripture: ['Psalm 46:10']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-if-god-be-your-god
+  text: If God be your God, you have really lost nothing by the removal of any creature-comfort.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: A Dissuasive from Immoderate Sorrow
+  anchor: chapter-2
+  topics: [death, contentment]
+  scripture: ['Psalm 73:26']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-if-stream-fail-repair-to
+  text: If the stream fail, repair to the fountain, there is enough still; God is where he was, though the creature be not.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: A Dissuasive from Immoderate Sorrow
+  anchor: chapter-2
+  topics: [death, contentment]
+  scripture: ['Jeremiah 2:13']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: flavel-strong-affections-make-strong-afflictions
+  text: Strong affections make strong afflictions; the higher the tide the lower the ebb.
+  author: john-flavel
+  book: a-token-for-mourners
+  chapter: The Cure of Immoderate Sorrow
+  anchor: chapter-4
+  topics: [affliction, death]
+  scripture: []
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

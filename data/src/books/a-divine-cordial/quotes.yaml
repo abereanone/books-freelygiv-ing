@@ -1,0 +1,224 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: watson-god-more-willing-to-pardon
+  text: 'God is more willing to pardon, than to punish: Mercy doth more multiply in him, than sin in us: Mercy is his Nature.'
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: The Promises of God
+  anchor: chapter-03-h1
+  topics: [mercy]
+  scripture: ['Micah 7:18']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-mercies-god-make-sinner-proud
+  text: The mercies of God make a sinner proud, but a Saint humble.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: The Mercies of God
+  anchor: chapter-03-h1
+  topics: [mercy, humility]
+  scripture: []
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-prayer-keeps-heart-open-to
+  text: Prayer keeps the heart open to God, and shut to sin; it assuageth the intemperate heats and swellings of lust.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: The Mercies of God
+  anchor: chapter-03-h1
+  topics: [prayer, sin]
+  scripture: []
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-sick-bed-often-teacheth-more
+  text: A sick-bed often teacheth more than a Sermon; we can best see the ugly visage of sin in the glass of affliction.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: SECTION I. Showing that the evil of affliction works for good to the Godly.
+  anchor: chapter-04-h1
+  topics: [affliction, sin]
+  scripture: ['Psalm 119:71']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-sin-mother-affliction-daughter-daughter
+  text: Sin is the Mother, affliction is the Daughter; the Daughter helps to destroy the Mother.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: SECTION I. Showing that the evil of affliction works for good to the Godly.
+  anchor: chapter-04-h1
+  topics: [affliction, sin]
+  scripture: []
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-god-sweetens-outward-pain-with
+  text: God sweetens outward pain, with inward peace.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: SECTION I. Showing that the evil of affliction works for good to the Godly.
+  anchor: chapter-04-h1
+  topics: [affliction, peace]
+  scripture: ['Hosea 2:15']
+  words: 7
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-limner-lays-his-gold-upon
+  text: 'The Limner lays his Gold upon dark colours: So God first lays the dark colours of affliction, and then he lays the golden colour of Glory.'
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: SECTION I. Showing that the evil of affliction works for good to the Godly.
+  anchor: chapter-04-h1
+  topics: [affliction, heaven]
+  scripture: ['2 Corinthians 4:17']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-better-that-temptation-which-humbles
+  text: Better is that temptation which humbles me, than that duty which makes me proud.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: SECTION II. Showing that the evil of Temptation works for good to the Godly.
+  anchor: chapter-04-h1
+  topics: [temptation, humility]
+  scripture: []
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-stone-in-pipe-hinders-current
+  text: 'A stone in the pipe hinders the current of water: So sin lived in, hinders the sweet current of God’s love.'
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: SECTION III. Showing that the evil of Desertion works for good to the Godly.
+  anchor: chapter-04-h1
+  topics: [sin, love]
+  scripture: ['Isaiah 59:2']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-we-complain-such-sore-trials
+  text: We complain such sore trials lie upon us; let us remember God is our Physician, therefore he labours rather to heal us, than humour us.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: Chapter V
+  anchor: chapter-05-h1
+  topics: [affliction, providence]
+  scripture: ['Hebrews 12:10']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-affliction-high-way-to-heaven
+  text: Affliction is the High-way to Heaven; though it be Flinty and Thorny, yet it is the nearest way.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: Chapter VI
+  anchor: chapter-06-h1
+  topics: [affliction, heaven]
+  scripture: ['Acts 14:22']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-love-not-only-full-benevolence
+  text: Love is not only full of Benevolence, but Beneficence; Love which enlargeth the heart, never straitens the hand.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: The Properties of Love
+  anchor: chapter-07-h1
+  topics: [love]
+  scripture: ['1 John 3:18']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-love-like-pulse-body-always
+  text: Love is like the Pulse of the body, always beating; ‘tis not a Land-flood, but a Spring.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: The Properties of Love
+  anchor: chapter-07-h1
+  topics: [love]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-man-cannot-love-health-love
+  text: 'A man cannot love health, and love poison too: so, one cannot love God, and sin too.'
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: Chapter IX
+  anchor: chapter-09-h1
+  topics: [love, sin]
+  scripture: ['Matthew 6:24']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-tis-not-duty-but-love
+  text: ‘Tis not duty, but love to duty, God looks at; ‘tis not how much we do, but how much we love.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: Motives to Love God
+  anchor: chapter-10-h1
+  topics: [love, worship]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-you-may-love-wine-too
+  text: You may love Wine too much, Silver too much, but you cannot love God too much.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: Motives to Love God
+  anchor: chapter-10-h1
+  topics: [love]
+  scripture: ['Mark 12:30']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-flower-love-kills-weed-sin
+  text: The Flower of love kills the Weed of sin; though sin doth not die perfectly, yet it dies daily.
+  author: thomas-watson
+  book: a-divine-cordial
+  chapter: Motives to Love God
+  anchor: chapter-10-h1
+  topics: [love, mortification]
+  scripture: []
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

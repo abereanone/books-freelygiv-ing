@@ -13,9 +13,9 @@ need Michael's OK** (never done by the hourly task).
 Skipped: Spanish translations (same quotes as the English); confession (1689); hidden books.
 
 ## Batch 1: English books with Read Online HTML in the repo
-- [ ] a-divine-cordial (Watson)
-- [ ] a-token-for-mourners (Flavel)
-- [ ] all-of-grace (Spurgeon)
+- [x] a-divine-cordial (Watson)
+- [x] a-token-for-mourners (Flavel)
+- [x] all-of-grace (Spurgeon)
 - [ ] autobiography-of-charles-spurgeon (I)
 - [ ] autobiography-of-charles-spurgeon-vol-2
 - [ ] autobiography-of-charles-spurgeon-vol-3

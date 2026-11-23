@@ -1,0 +1,198 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: spurgeon-our-lord-jesus-did-not
+  text: Our Lord Jesus did not die for imaginary sins, but his heart’s blood was spilled to wash out deep crimson stains, which nothing else can remove.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: God Justifieth The Ungodly
+  anchor: chapter-03-h1
+  topics: [cross, sin]
+  scripture: ['Isaiah 1:18']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-law-for-self-righteous-to
+  text: 'The law is for the self-righteous, to humble their pride: the gospel is for the lost, to remove their despair.'
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: God Justifieth The Ungodly
+  anchor: chapter-03-h1
+  topics: [conversion, grace]
+  scripture: ['Galatians 3:24']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-jesus-christ-came-into-world
+  text: 'Jesus Christ came into the world to save sinners: forgiveness is for the guilty.'
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: God Justifieth The Ungodly
+  anchor: chapter-03-h1
+  topics: [conversion, mercy]
+  scripture: ['1 Timothy 1:15']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-only-god-can-justify-ungodly
+  text: Only God can justify the ungodly; but he can do it to perfection.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: “It Is God That Justifieth”
+  anchor: chapter-04-h1
+  topics: [grace]
+  scripture: ['Romans 4:5']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-law-god-was-more-vindicated
+  text: The law of God was more vindicated by the death of Christ than it would have been had all transgressors been sent to hell.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Just And The Justifier
+  anchor: chapter-05-h1
+  topics: [cross]
+  scripture: ['Romans 3:26']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-remember-that-lord-jesus-came
+  text: Remember that the Lord Jesus came to take away sin in three ways; he came to remove the penalty of sin, the power of sin, and, at last, the presence of sin.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Concerning Deliverance From Sinning
+  anchor: chapter-06-h1
+  topics: [christ, sin]
+  scripture: ['Matthew 1:21']
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-grace-fountain-stream-faith-aqueduct
+  text: Grace is the fountain and the stream; faith is the aqueduct along which the flood of mercy flows down to refresh the thirsty sons of men.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: By Grace Through Faith
+  anchor: chapter-07-h1
+  topics: [grace, faith]
+  scripture: ['Ephesians 2:8']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-by-faith-all-things-become
+  text: By faith all things become possible to us; yet the power is not in the faith, but in the God upon whom faith relies.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: By Grace Through Faith
+  anchor: chapter-07-h1
+  topics: [faith]
+  scripture: ['Mark 9:23']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-trust-life-blood-faith-there
+  text: Trust is the life-blood of faith; there is no saving faith without it.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Faith, What Is It?
+  anchor: chapter-08-h1
+  topics: [faith]
+  scripture: []
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-jesus-did-not-die-for
+  text: Jesus did not die for our righteousness, but he died for our sins.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Alas! I Can Do Nothing!
+  anchor: chapter-11-h1
+  topics: [cross, sin]
+  scripture: ['1 Corinthians 15:3']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-however-pure-our-tears-there
+  text: 'However pure our tears, there will always be some dirt in them: there will be something to be repented of even in our best repentance.'
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Alas! I Can Do Nothing!
+  anchor: chapter-11-h1
+  topics: [repentance]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-repentance-will-not-make-you
+  text: Repentance will not make you see Christ; but to see Christ will give you repentance.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Alas! I Can Do Nothing!
+  anchor: chapter-11-h1
+  topics: [repentance, christ]
+  scripture: ['Zechariah 12:10']
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-you-will-never-value-pardon
+  text: You will never value pardon unless you feel repentance; and you will never taste the deepest draft of repentance until you know that you are pardoned.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Repentance Must Go With Forgiveness
+  anchor: chapter-15-h1
+  topics: [repentance, mercy]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-no-chain-stronger-than-its
+  text: 'No chain is stronger than its weakest link: if Jesus be our hope for everything, except one thing, we shall utterly fail, because in that one point we shall come to nought.'
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: The Fear Of Final Falling
+  anchor: chapter-17-h1
+  topics: [faith, christ]
+  scripture: []
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-life-your-soul-lies-in
+  text: The life of your soul lies in faith; its health lies in love.
+  author: charles-spurgeon
+  book: all-of-grace
+  chapter: Close
+  anchor: chapter-20-h1
+  topics: [faith, love]
+  scripture: ['Galatians 5:6']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
