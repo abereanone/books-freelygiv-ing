@@ -37,7 +37,7 @@ def main(src):
             if not d:
                 continue
             new = {k: d[k] for k in FIELDS if k in d}
-            new["background"] = {"dark": d.get("bgDark"), "light": d.get("bgLight")}
+            new["background"] = {**(q.get("background") or {}), "dark": d.get("bgDark"), "light": d.get("bgLight")}  # keeps `solid`
             for k, v in new.items():
                 if q.get(k) != v:
                     q[k] = v

@@ -31,7 +31,7 @@ const eraOpts    = Object.entries(QUOTE_ERAS).filter(([k]) => eraCounts.has(k)).
 const data = quotes.map((q: any) => ({
   id: q.id, text: q.text, a: q.author, an: q.authorName, b: q.book, bt: q.bookTitle,
   t: q.topics, e: q.era, w: q.words, tone: q.tone, f: !!q.featured, d: q.added,
-  dark: quoteImage(q.id, 'dark', 'thumb'), light: quoteImage(q.id, 'light', 'thumb'),
+  dark: quoteImage(q.id, 'dark', 'thumb'), light: quoteImage(q.id, 'light', 'thumb'), solid: quoteImage(q.id, 'solid', 'thumb'),
 }));
 const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k, v.label]));
 ---
@@ -77,6 +77,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
         <button type="button" class="btn btn-outline-secondary" data-bg="">Mixed</button>
         <button type="button" class="btn btn-outline-secondary" data-bg="dark">Dark</button>
         <button type="button" class="btn btn-outline-secondary" data-bg="light">Light</button>
+        <button type="button" class="btn btn-outline-secondary" data-bg="solid">Solid</button>
       </div>
       <label class="visually-hidden" for="qgSort">Order</label>
       <select id="qgSort" class="form-select form-select-sm qg-sort">
@@ -125,7 +126,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
 
 <script>
   type Q = { id: string; text: string; a: string; an: string; b: string; bt: string; t: string[]; e: string | null;
-             w: number; tone: string; f: boolean; d: string; dark: string; light: string };
+             w: number; tone: string; f: boolean; d: string; dark: string; light: string; solid: string };
   const { quotes, topics } = JSON.parse(document.getElementById('qgData')!.textContent!) as { quotes: Q[]; topics: Record<string, string> };
   const root = document.querySelector('.quote-gallery') as HTMLElement;
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -152,7 +153,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
     if (eraSel) eraSel.value = p.get('era') || '';
     shortChk.checked = p.get('short') === '1';
     sortSel.value = p.get('sort') || '';
-    bg = ['dark', 'light'].includes(p.get('bg') || '') ? p.get('bg')! : '';
+    bg = ['dark', 'light', 'solid'].includes(p.get('bg') || '') ? p.get('bg')! : '';
   }
 
   function writeUrl() {
@@ -203,7 +204,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
       a.className = 'qg-card';
       a.href = `/quotes/${q.id}/${suffix}`;
       const img = document.createElement('img');
-      img.src = (bg || q.tone) === 'light' ? q.light : q.dark;
+      img.src = q[((bg || q.tone) as 'dark' | 'light' | 'solid')] || q.dark;
       img.alt = `${q.text} (${q.an})`;
       img.width = img.height = 480;
       img.loading = 'lazy';

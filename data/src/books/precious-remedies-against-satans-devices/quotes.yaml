@@ -13,9 +13,9 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: forest-06.jpg, light: light-02.jpg}
+  background: {dark: forest-06.jpg, light: light-02.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-satan-that-wily-merchant-that
   text: Satan is that wily merchant, that devoureth not widows’ houses, but most men’s souls.
   author: thomas-brooks
@@ -27,7 +27,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-04.jpg}
+  background: {dark: storm-05.jpg, light: light-04.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: brooks-adversity-hath-slain-her-thousand
@@ -41,9 +41,9 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-02.jpg}
+  background: {dark: road-01.jpg, light: light-02.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-sin-that-in-one-mans
   text: The sin that is in one man’s heart, is able to infect a whole world, ’tis of such a spreading and infectious nature.
   author: thomas-brooks
@@ -55,7 +55,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-05.jpg}
+  background: {dark: storm-06.jpg, light: light-05.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: brooks-many-eat-that-on-earth
@@ -69,9 +69,9 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-09.jpg}
+  background: {dark: storm-08.jpg, light: light-09.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-sin-will-surely-prove-evil
   text: Sin will surely prove evil, and bitter to the soul, when its robes are taken off.
   author: thomas-brooks
@@ -83,7 +83,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-03.jpg}
+  background: {dark: storm-02.jpg, light: light-03.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-debates-soul-are-quick-soon
@@ -97,9 +97,9 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-06.jpg}
+  background: {dark: storm-03.jpg, light: light-06.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-one-little-miscarriage-doth-in
   text: One little miscarriage doth in the eyes of the world, overshadow all a Christian’s Graces, as one little cloud doth sometimes overshadow the whole body of the Sun.
   author: thomas-brooks
@@ -111,7 +111,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: forest-05.jpg, light: light-01.jpg}
+  background: {dark: forest-05.jpg, light: light-01.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: brooks-one-drop-evil-conscience-swallows
@@ -125,9 +125,9 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-07.jpg}
+  background: {dark: road-01.jpg, light: light-07.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-many-can-sin-with-david
   text: Many can sin with David and Peter, that cannot repent with David and Peter, and so must perish for ever.
   author: thomas-brooks
@@ -139,7 +139,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: winter-01.jpg, light: light-10.jpg}
+  background: {dark: winter-01.jpg, light: light-10.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: brooks-god-most-angry-when-he
@@ -153,9 +153,9 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-08.jpg}
+  background: {dark: storm-08.jpg, light: light-08.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-repentance-for-sin-nothing-worth
   text: Repentance for sin is nothing worth, without repentance from sin.
   author: thomas-brooks
@@ -167,7 +167,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: winter-02.jpg, light: light-07.jpg}
+  background: {dark: winter-02.jpg, light: light-07.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-man-may-not-look-intently
@@ -181,9 +181,9 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-04.jpg}
+  background: {dark: storm-04.jpg, light: light-04.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-usually-worst-men-have-most
   text: Usually the worst of men have most of these outward things, and the best of men have least of earth, though most of heaven.
   author: thomas-brooks
@@ -195,7 +195,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-03.jpg}
+  background: {dark: road-01.jpg, light: light-03.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: brooks-tis-better-to-have-sore
@@ -209,9 +209,9 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-10.jpg}
+  background: {dark: road-01.jpg, light: light-10.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-more-saints-be-beaten-with
   text: The more saints be beaten with the hammer of afflictions, the more they are made the trumpets of God’s praises, and the more are their graces revived and quickened.
   author: thomas-brooks
@@ -223,7 +223,7 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-01.jpg}
+  background: {dark: storm-05.jpg, light: light-01.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: brooks-gracious-soul-may-look-through
@@ -237,9 +237,9 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-05.jpg}
+  background: {dark: storm-06.jpg, light: light-05.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-snow-covers-many-dunghill-so
   text: The snow covers many a dunghill; so doth prosperity many a rotten heart.
   author: thomas-brooks
@@ -251,7 +251,7 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-08.jpg}
+  background: {dark: road-01.jpg, light: light-08.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-hard-weather-tries-what-health
@@ -265,9 +265,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-09.jpg}
+  background: {dark: storm-07.jpg, light: light-09.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-bees-are-killed-with-honey
   text: 'Bees are killed with honey, but quickened with vinegar: The honey of prosperity kills our graces, but the vinegar of adversity quickens our graces.'
   author: thomas-brooks
@@ -279,7 +279,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-06.jpg}
+  background: {dark: storm-09.jpg, light: light-06.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: brooks-when-gods-hand-on-thy
@@ -293,9 +293,9 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-02.jpg}
+  background: {dark: storm-01.jpg, light: light-02.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-god-had-one-son-without
   text: God had one Son without sin, but none without sorrow.
   author: thomas-brooks
@@ -307,7 +307,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-03.jpg}
+  background: {dark: storm-06.jpg, light: light-03.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: brooks-one-old-piece-gold-worth
@@ -321,9 +321,9 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: sky-08.jpg, light: light-01.jpg}
+  background: {dark: sky-08.jpg, light: light-01.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-you-may-as-soon-fill
   text: You may as soon fill a bag with wisdom, a chest with virtue, or a circle with a triangle, as the heart of man with any thing here below.
   author: thomas-brooks
@@ -335,7 +335,7 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-02.jpg}
+  background: {dark: road-01.jpg, light: light-02.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-beauty-world-foils-christian-more
@@ -349,9 +349,9 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-09.jpg}
+  background: {dark: road-01.jpg, light: light-09.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-childs-most-precious-things-are
   text: The child’s most precious things are most secure in his father’s hands; so are our souls, our graces, and our comforts, in the hand of Christ.
   author: thomas-brooks
@@ -363,7 +363,7 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: sky-09.jpg, light: light-04.jpg}
+  background: {dark: sky-09.jpg, light: light-04.jpg, solid: teal}
   added: '2026-11-22'
   tone: light
 - id: brooks-remember-this-that-god-will
@@ -377,7 +377,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: forest-07.jpg, light: light-10.jpg}
+  background: {dark: forest-07.jpg, light: light-10.jpg, solid: rust}
   added: '2026-11-22'
   tone: dark
 - id: brooks-sure-tis-better-to-go
@@ -391,9 +391,9 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-06.jpg}
+  background: {dark: road-01.jpg, light: light-06.jpg, solid: evergreen}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-promises-god-are-precious-book
   text: The promises of God are a precious book, every leaf drops myrrh and mercy.
   author: thomas-brooks
@@ -405,7 +405,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: sky-10.jpg, light: light-07.jpg}
+  background: {dark: sky-10.jpg, light: light-07.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-god-can-look-sourly-chide
@@ -419,9 +419,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-05.jpg}
+  background: {dark: storm-07.jpg, light: light-05.jpg, solid: navy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-god-brings-not-pair-scales
   text: God brings not a pair of scales to weigh our graces, but a touch-stone to try our graces.
   author: thomas-brooks
@@ -433,7 +433,7 @@
   words: 18
   status: candidate
   featured: false
-  background: {dark: sky-03.jpg, light: light-08.jpg}
+  background: {dark: sky-03.jpg, light: light-08.jpg, solid: violet}
   added: '2026-11-22'
   tone: light
 - id: brooks-mortification-continued-act-tis-daily
@@ -447,7 +447,7 @@
   words: 11
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-04.jpg}
+  background: {dark: storm-04.jpg, light: light-04.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: brooks-god-takes-away-little-comfort
@@ -461,9 +461,9 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-02.jpg}
+  background: {dark: storm-05.jpg, light: light-02.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-god-will-graciously-pardon-those
   text: God will graciously pardon those sins to his people, that he will not in this life effectually subdue in his people.
   author: thomas-brooks
@@ -475,7 +475,7 @@
   words: 21
   status: candidate
   featured: false
-  background: {dark: sky-04.jpg, light: light-03.jpg}
+  background: {dark: sky-04.jpg, light: light-03.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: light
 - id: brooks-humble-heart-habitation-for-god
@@ -489,7 +489,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-09.jpg}
+  background: {dark: road-01.jpg, light: light-09.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-humility-cannot-find-three-things
@@ -503,9 +503,9 @@
   words: 27
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-05.jpg}
+  background: {dark: road-01.jpg, light: light-05.jpg, solid: navy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-satan-can-never-undo-man
   text: Satan can never undo a man without himself, but a man may easily undo himself without Satan.
   author: thomas-brooks
@@ -517,7 +517,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-10.jpg}
+  background: {dark: storm-08.jpg, light: light-10.jpg, solid: violet}
   added: '2026-11-22'
   tone: dark
 - id: brooks-satan-foiled-adversary-christ-hath
@@ -531,9 +531,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-07.jpg}
+  background: {dark: storm-09.jpg, light: light-07.jpg, solid: teal}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-souls-security-satans-opportunity-to
   text: The soul’s security is Satan’s opportunity to fall upon the soul, and to spoil the soul, as Joshua did the men of Ai.
   author: thomas-brooks
@@ -545,7 +545,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-08.jpg}
+  background: {dark: storm-01.jpg, light: light-08.jpg, solid: rust}
   added: '2026-11-22'
   tone: dark
 - id: brooks-communion-with-god-shield-upon
@@ -559,9 +559,9 @@
   words: 34
   status: candidate
   featured: false
-  background: {dark: forest-08.jpg, light: light-06.jpg}
+  background: {dark: forest-08.jpg, light: light-06.jpg, solid: evergreen}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-christs-heart-christs-arms-are
   text: Christ’s heart, Christ’s arms are wide open to embrace the returning prodigal.
   author: thomas-brooks
@@ -573,7 +573,7 @@
   words: 12
   status: candidate
   featured: false
-  background: {dark: sky-09.jpg, light: light-01.jpg}
+  background: {dark: sky-09.jpg, light: light-01.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: light
 - id: brooks-sinners-there-no-way-to
@@ -587,7 +587,7 @@
   words: 18
   status: candidate
   featured: false
-  background: {dark: sky-10.jpg, light: light-09.jpg}
+  background: {dark: sky-10.jpg, light: light-09.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: brooks-sin-always-dies-most-where
@@ -601,7 +601,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: sky-06.jpg, light: light-06.jpg}
+  background: {dark: sky-06.jpg, light: light-06.jpg, solid: violet}
   added: '2026-11-22'
   tone: light
 - id: brooks-thrice-happy-are-those-souls
@@ -615,9 +615,9 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: sky-07.jpg, light: light-07.jpg}
+  background: {dark: sky-07.jpg, light: light-07.jpg, solid: teal}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: brooks-till-men-have-faith-in
   text: Till men have faith in Christ, their best services are but glorious sins.
   author: thomas-brooks
@@ -629,6 +629,6 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: sky-08.jpg, light: light-08.jpg}
+  background: {dark: sky-08.jpg, light: light-08.jpg, solid: rust}
   added: '2026-11-22'
   tone: light

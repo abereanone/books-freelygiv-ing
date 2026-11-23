@@ -487,7 +487,7 @@ export function getQuotes() {
       const person = people[q.author];
       out.push({
         ...q,
-        tone: q.tone === "light" ? "light" : "dark",
+        tone: ["light", "solid"].includes(q.tone) ? q.tone : "dark",
         added: String(q.added ?? ""),
         authorName: person ? personName(person) : q.author,
         authorHref: person?.href ?? null,
@@ -501,7 +501,7 @@ export function getQuotes() {
   return out;
 }
 
-/** URL of a card image. size: "full" (1080 px) or "thumb" (480 px). Dev serves the local
+/** URL of a card image. tone: "dark" | "light" (paintings) | "solid" (framed colour). size: "full" (1080 px) or "thumb" (480 px). Dev serves the local
  *  render; the built site points at R2, so upload the cards before pushing. */
 let cardsVersion;
 export function quoteImage(id, tone = "dark", size = "full") {
@@ -510,5 +510,5 @@ export function quoteImage(id, tone = "dark", size = "full") {
     const f = join(QUOTES_SRC, "cards-version.txt");
     cardsVersion = existsSync(f) ? readFileSync(f, "utf8").trim() : "";
   }
-  return `${base}/${id}-${tone === "light" ? "light" : "dark"}${size === "thumb" ? "-480" : ""}.jpg${cardsVersion ? `?v=${cardsVersion}` : ""}`;
+  return `${base}/${id}-${["light", "solid"].includes(tone) ? tone : "dark"}${size === "thumb" ? "-480" : ""}.jpg${cardsVersion ? `?v=${cardsVersion}` : ""}`;
 }

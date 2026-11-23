@@ -13,7 +13,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-10.jpg}
+  background: {dark: storm-02.jpg, light: light-10.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: owen-mortification-from-self-strength-carried
@@ -27,9 +27,9 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-04.jpg}
+  background: {dark: storm-03.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-vigour-power-comfort-our-spiritual
   text: The vigour, and power, and comfort of our spiritual life depends on the mortification of the deeds of the flesh.
   author: john-owen
@@ -41,7 +41,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-01.jpg}
+  background: {dark: storm-06.jpg, light: light-01.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: owen-do-you-mortify-do-you
@@ -55,9 +55,9 @@
   words: 33
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-02.jpg}
+  background: {dark: storm-01.jpg, light: light-02.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-indwelling-sin-always-abides-whilst
   text: Indwelling sin always abides whilst we are in this world; therefore it is always to be mortified.
   author: john-owen
@@ -69,7 +69,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-03.jpg}
+  background: {dark: storm-04.jpg, light: light-03.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: owen-sin-aims-always-at-utmost
@@ -83,9 +83,9 @@
   words: 32
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-05.jpg}
+  background: {dark: storm-03.jpg, light: light-05.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-let-not-that-man-think
   text: Let not that man think he makes any progress in holiness who walks not over the bellies of his lusts.
   author: john-owen
@@ -97,7 +97,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-08.jpg}
+  background: {dark: storm-05.jpg, light: light-08.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: owen-root-unmortified-course-digestion-sin
@@ -111,9 +111,9 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-04.jpg}
+  background: {dark: storm-07.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-duties-are-excellent-food-for
   text: Duties are excellent food for a healthy soul; they are no physic for a sick soul.
   author: john-owen
@@ -125,7 +125,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: forest-09.jpg, light: light-06.jpg}
+  background: {dark: forest-09.jpg, light: light-06.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: owen-law-drives-them-on-sin
@@ -139,9 +139,9 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-09.jpg}
+  background: {dark: storm-09.jpg, light: light-09.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-unmortified-lust-will-drink-up
   text: An unmortified lust will drink up the spirit, and all the vigour of the soul, and weaken it for all duties.
   author: john-owen
@@ -153,7 +153,7 @@
   words: 21
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-05.jpg}
+  background: {dark: storm-08.jpg, light: light-05.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: owen-mortification-prunes-all-graces-god
@@ -167,9 +167,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-02.jpg}
+  background: {dark: storm-02.jpg, light: light-02.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-heart-like-sluggards-field-so
   text: The heart is like the sluggard’s field, — so overgrown with weeds that you can scarce see the good corn.
   author: john-owen
@@ -181,7 +181,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: forest-07.jpg, light: light-10.jpg}
+  background: {dark: forest-07.jpg, light: light-10.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: owen-to-be-able-always-to
@@ -195,9 +195,9 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-01.jpg}
+  background: {dark: storm-06.jpg, light: light-01.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-man-may-easier-see-without
   text: A man may easier see without eyes, speak without a tongue, than truly mortify one sin without the Spirit.
   author: john-owen
@@ -209,7 +209,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-07.jpg}
+  background: {dark: storm-04.jpg, light: light-07.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: owen-to-kill-sin-work-living
@@ -223,9 +223,9 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-03.jpg}
+  background: {dark: storm-09.jpg, light: light-03.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-poor-soul-it-not-thy
   text: Poor soul! it is not thy sore finger but thy hectic fever that thou art to apply thyself to the consideration of.
   author: john-owen
@@ -237,7 +237,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: sky-05.jpg, light: light-05.jpg}
+  background: {dark: sky-05.jpg, light: light-05.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: owen-thou-settest-thyself-against-particular
@@ -251,9 +251,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: sky-01.jpg, light: light-06.jpg}
+  background: {dark: sky-01.jpg, light: light-06.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-let-not-any-man-think
   text: Let not any man think to do his own work that will not do God’s.
   author: john-owen
@@ -265,7 +265,7 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: forest-01.jpg, light: light-09.jpg}
+  background: {dark: forest-01.jpg, light: light-09.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: owen-what-gospel-principles-do-not
@@ -279,7 +279,7 @@
   words: 9
   status: candidate
   featured: false
-  background: {dark: sky-02.jpg, light: light-08.jpg}
+  background: {dark: sky-02.jpg, light: light-08.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: light
 - id: owen-new-sin-may-be-permitted
@@ -293,9 +293,9 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-07.jpg}
+  background: {dark: storm-07.jpg, light: light-07.jpg, solid: navy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-thou-that-wast-tender-didst
   text: Thou that wast tender, and didst use to melt under the word, under afflictions, wilt grow as some have profanely spoken, “sermon-proof and sickness-proof.”
   author: john-owen
@@ -307,7 +307,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-03.jpg}
+  background: {dark: storm-01.jpg, light: light-03.jpg, solid: violet}
   added: '2026-11-22'
   tone: dark
 - id: owen-suffer-not-thy-heart-one
@@ -321,9 +321,9 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: forest-02.jpg, light: light-10.jpg}
+  background: {dark: forest-02.jpg, light: light-10.jpg, solid: teal}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-longing-breathing-panting-after-deliverance
   text: Longing, breathing, and panting after deliverance is a grace in itself, that hath a mighty power to conform the soul into the likeness of the thing longed after.
   author: john-owen
@@ -335,7 +335,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: forest-08.jpg, light: light-02.jpg}
+  background: {dark: forest-08.jpg, light: light-02.jpg, solid: rust}
   added: '2026-11-22'
   tone: dark
 - id: owen-we-lisp-babble-say-we
@@ -349,9 +349,9 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: mountain-06.jpg, light: light-01.jpg}
+  background: {dark: mountain-06.jpg, light: light-01.jpg, solid: evergreen}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-utmost-best-our-thoughts-being
   text: The utmost of the best of our thoughts of the being of God is, that we can have no thoughts of it.
   author: john-owen
@@ -363,7 +363,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: mountain-01.jpg, light: light-04.jpg}
+  background: {dark: mountain-01.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: dark
 - id: owen-set-faith-at-work-on
@@ -377,7 +377,7 @@
   words: 12
   status: candidate
   featured: false
-  background: {dark: sky-08.jpg, light: light-08.jpg}
+  background: {dark: sky-08.jpg, light: light-08.jpg, solid: navy}
   added: '2026-11-22'
   tone: light
 - id: owen-when-heart-once-won-to
@@ -391,7 +391,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: sky-07.jpg, light: light-07.jpg}
+  background: {dark: sky-07.jpg, light: light-07.jpg, solid: violet}
   added: '2026-11-22'
   tone: light
 - id: owen-mortification-sin-peculiarly-from-death
@@ -405,9 +405,9 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-09.jpg}
+  background: {dark: storm-02.jpg, light: light-09.jpg, solid: teal}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-man-may-have-leanness-body
   text: A man may have leanness of body and soul together.
   author: john-owen
@@ -419,7 +419,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-05.jpg}
+  background: {dark: storm-03.jpg, light: light-05.jpg, solid: rust}
   added: '2026-11-22'
   tone: dark
 - id: owen-know-that-he-that-dares
@@ -433,9 +433,9 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-06.jpg}
+  background: {dark: storm-05.jpg, light: light-06.jpg, solid: evergreen}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: owen-as-sin-gets-ground-in
   text: As sin gets ground in the affections to delight in, it gets also upon the understanding to slight it.
   author: john-owen
@@ -447,7 +447,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-04.jpg}
+  background: {dark: storm-08.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: dark
 - id: owen-gods-peace-humbling-peace-melting
@@ -461,6 +461,6 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: sky-09.jpg, light: light-10.jpg}
+  background: {dark: sky-09.jpg, light: light-10.jpg, solid: navy}
   added: '2026-11-22'
   tone: light

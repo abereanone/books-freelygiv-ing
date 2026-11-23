@@ -1,4 +1,5 @@
-// Renders every public quote card (status not "rejected"), light and dark, at two sizes:
+// Renders every public quote card (status not "rejected") in all three looks (painting dark,
+// painting light, solid colour), at two sizes:
 //   <id>-<tone>.jpg       1080x1080, for download, sharing and og:image
 //   <id>-<tone>-480.jpg   480x480, for the /quotes/ grid
 // into public/static/quotes/ (gitignored; `astro dev` serves it). Production serves the same
@@ -12,7 +13,7 @@ import { createHash } from "crypto";
 import { createRequire } from "module";
 import YAML from "yaml";
 import sharp from "sharp";
-import { cardCss, cardHtml, FIT_JS, ART_DIR, FONT_DIR } from "./card.mjs";
+import { cardCss, cardHtml, FIT_JS, ART_DIR, FONT_DIR, SOLIDS } from "./card.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const BOOKS = join(ROOT, "data/src/books");
@@ -29,18 +30,43 @@ const person = (slug) => { const p = readY(join(ROOT, "data/src", slug, "person.
 const templateSig = createHash("sha1").update(readFileSync(join(ROOT, "scripts/quotes/card.mjs"))).digest("hex").slice(0, 8);
 
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
+const slugs = readdirSync(BOOKS).filter((s) => existsSync(join(BOOKS, s, "quotes.yaml")));
+
+// Give every quote without one a solid colour, spread evenly (least-used colour first), and
+// show half of the dark-painting quotes as solid by default, for variety in the gallery.
+// Written into quotes.yaml (background.solid, tone) so a quote keeps its colour for good.
+const used = Object.fromEntries(Object.keys(SOLIDS).map((k) => [k, 0]));
+let darkSeen = 0;
+for (const slug of slugs) for (const q of readY(join(BOOKS, slug, "quotes.yaml")))
+  if (q.background?.solid && used[q.background.solid] !== undefined) used[q.background.solid]++;
+for (const slug of slugs) {
+  const file = join(BOOKS, slug, "quotes.yaml");
+  const doc = YAML.parseDocument(readFileSync(file, "utf8"));
+  let changed = false;
+  for (const node of doc.contents.items) {
+    const bg = node.get("background", true);
+    if (!YAML.isMap(bg) || bg.get("solid")) continue;
+    const pick = Object.keys(used).sort((a, b) => used[a] - used[b])[0];
+    used[pick]++;
+    bg.set("solid", pick);
+    if (node.get("tone") === "dark" && darkSeen++ % 2 === 1) node.set("tone", "solid");
+    changed = true;
+  }
+  if (changed) writeFileSync(file, doc.toString({ lineWidth: 0, flowCollectionPadding: false }), "utf8");
+}
+
 const jobs = [];
-for (const slug of readdirSync(BOOKS).filter((s) => existsSync(join(BOOKS, s, "quotes.yaml")))) {
+for (const slug of slugs) {
   const title = readY(join(BOOKS, slug, "book.yaml"))[0].title;
   for (const q of readY(join(BOOKS, slug, "quotes.yaml"))) {
     if (q.status === "rejected") continue;
-    for (const tone of ["dark", "light"]) {
+    for (const tone of ["dark", "light", "solid"]) {
       const bg = q.background?.[tone];
-      if (!bg) { console.warn(`no ${tone} painting for ${q.id}; run the review pull first`); continue; }
+      if (!bg) { console.warn(`no ${tone} background for ${q.id}; run the review pull first`); continue; }
       const key = `${q.id}-${tone}`;
       const sig = createHash("sha1").update([q.text, q.author, title, bg, templateSig].join("|")).digest("hex");
       if (!FORCE && manifest[key] === sig && existsSync(join(OUT, `${key}.jpg`))) continue;
-      jobs.push({ key, sig, text: q.text, author: person(q.author), book: title, bg });
+      jobs.push({ key, sig, text: q.text, author: person(q.author), book: title, bg, solid: tone === "solid" ? bg : null });
     }
   }
 }
@@ -52,7 +78,7 @@ if (jobs.length) {
   const tmp = join(OUT, "_card.html");
   for (const j of jobs) {
     writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>body{margin:0}${cardCss(u(FONT_DIR) + "/")}</style>
-${cardHtml({ text: j.text, author: j.author, book: j.book, bgUrl: u(join(ART_DIR, j.bg)) })}
+${cardHtml({ text: j.text, author: j.author, book: j.book, bgUrl: j.solid ? "" : u(join(ART_DIR, j.bg)), solid: j.solid })}
 <script>${FIT_JS};document.fonts.ready.then(()=>{fitCards(document);document.body.dataset.ready=1})</script>`);
     await page.goto(u(tmp));
     await page.waitForSelector("body[data-ready]");

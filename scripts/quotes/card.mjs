@@ -34,8 +34,35 @@ export function cardCss(base) {
   .card.light .q{color:#1d2630;text-shadow:0 1px 14px rgba(255,255,255,.8)}
   .card.light .tag{color:#7a5a12;text-shadow:0 1px 8px rgba(255,255,255,.7)}
   .card.light .who{color:#5e430a;text-shadow:0 0 12px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
-  .card.light .book{color:#1d2630;opacity:.9;text-shadow:0 0 8px rgba(255,255,255,.9)}`;
+  .card.light .book{color:#1d2630;opacity:.9;text-shadow:0 0 8px rgba(255,255,255,.9)}
+  /* Solid cards: one colour with the double-line box and double L-brackets of the prepared-book
+     covers (Keeping the Heart), in that colour's pale tint; tag centred below (2026-11-23). */
+  .card.framed{background:var(--bg)}
+  .framed .box{position:absolute;inset:44px;border:4px solid var(--pale)}
+  .framed .box::after{content:'';position:absolute;inset:10px;border:2px solid color-mix(in srgb,var(--pale) 60%,transparent)}
+  .framed .cb{position:absolute;width:96px;height:96px;border:0 solid var(--pale)}
+  .framed .cb::after{content:'';position:absolute;width:62px;height:62px;border:0 solid color-mix(in srgb,var(--pale) 60%,transparent)}
+  .framed .tl{left:76px;top:76px;border-left-width:4px;border-top-width:4px}.framed .tl::after{left:14px;top:14px;border-left-width:2px;border-top-width:2px}
+  .framed .tr{right:76px;top:76px;border-right-width:4px;border-top-width:4px}.framed .tr::after{right:14px;top:14px;border-right-width:2px;border-top-width:2px}
+  .framed .bl{left:76px;bottom:76px;border-left-width:4px;border-bottom-width:4px}.framed .bl::after{left:14px;bottom:14px;border-left-width:2px;border-bottom-width:2px}
+  .framed .br{right:76px;bottom:76px;border-right-width:4px;border-bottom-width:4px}.framed .br::after{right:14px;bottom:14px;border-right-width:2px;border-bottom-width:2px}
+  .framed .body{left:150px;right:150px;top:150px;bottom:200px}
+  .framed .q{color:${CREAM};text-shadow:none}
+  .framed .who{color:${GOLD};text-shadow:none}
+  .framed .book{color:var(--pale);opacity:1;text-shadow:none}
+  .framed .tag{left:0;right:0;bottom:104px;text-align:center}`;
 }
+
+// Solid-card colours: [background, pale tint]. The CROSSWORDS cover palettes (crosswords-books.md)
+// plus teal; a quote's colour is stored as background.solid in quotes.yaml (render-cards.mjs).
+export const SOLIDS = {
+  evergreen: ["#1F4A3B", "#A9C9A4"],
+  burgundy: ["#5A1626", "#E3B7A0"],
+  navy: ["#14213D", "#A9BCE0"],
+  violet: ["#3A2348", "#BCA6D6"],
+  teal: ["#173F44", "#9CCBC6"],
+  rust: ["#7A3517", "#E6B98F"],
+};
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 // Straight apostrophes in titles become curly; quote text is left exactly as printed.
@@ -44,14 +71,18 @@ const curly = (s) => String(s ?? "").replace(/'/g, "’");
 // A light-NN painting makes a light card; every other painting a dark one.
 export const isLight = (file) => /^light-/.test(file || "");
 
-export function cardHtml({ text, author, book, bgUrl }) {
-  return `<div class="card${/\/light-[^/]*$/.test(bgUrl) ? " light" : ""}"><div class="bg" style="background-image:url('${bgUrl}')"></div><div class="veil"></div>
+// `solid` (a SOLIDS key) makes a framed solid-colour card; otherwise `bgUrl` is the painting.
+export function cardHtml({ text, author, book, bgUrl, solid }) {
+  const open = solid && SOLIDS[solid]
+    ? `<div class="card framed" style="--bg:${SOLIDS[solid][0]};--pale:${SOLIDS[solid][1]}"><div class="box"></div><div class="cb tl"></div><div class="cb tr"></div><div class="cb bl"></div><div class="cb br"></div>`
+    : `<div class="card${/\/light-[^/]*$/.test(bgUrl) ? " light" : ""}"><div class="bg" style="background-image:url('${bgUrl}')"></div><div class="veil"></div>`;
+  return `${open}
   <div class="body"><div class="q">${esc(text)}</div><div class="who">${esc(author)}</div><div class="book">${esc(curly(book))}</div></div>
   <div class="tag">BOOKS.FREELY.GIVING</div></div>`;
 }
 
 // Shrinks the quote until the text block fits. Run in the page after fonts load.
-export const FIT_JS = `function fitCards(root){root.querySelectorAll('.card .q').forEach(q=>{const b=q.parentElement;let s=96;q.style.fontSize=s+'px';while(s>40&&b.scrollHeight>b.clientHeight){s-=2;q.style.fontSize=s+'px'}})}`;
+export const FIT_JS = `function fitCards(root){root.querySelectorAll('.card .q').forEach(q=>{const b=q.parentElement;let s=q.closest('.framed')?88:96;q.style.fontSize=s+'px';while(s>40&&b.scrollHeight>b.clientHeight){s-=2;q.style.fontSize=s+'px'}})}`;
 
 // Paintings by mood, from quote-art/credits.json.
 export function paintings() {

@@ -13,7 +13,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-01.jpg}
+  background: {dark: road-01.jpg, light: light-01.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: flavel-heart-work-weighty-difficult-work
@@ -27,9 +27,9 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: forest-05.jpg, light: light-05.jpg}
+  background: {dark: forest-05.jpg, light: light-05.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-greatest-difficulty-in-conversion-to
   text: The greatest difficulty in conversion, is to win the heart to God; and the greatest difficulty after conversion, is to keep the heart with God.
   author: john-flavel
@@ -41,7 +41,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: forest-01.jpg, light: light-08.jpg}
+  background: {dark: forest-01.jpg, light: light-08.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: flavel-heart-treasury-hand-tongue-but
@@ -55,9 +55,9 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: forest-02.jpg, light: light-06.jpg}
+  background: {dark: forest-02.jpg, light: light-06.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-though-bankrupts-care-not-to
   text: Though bankrupts care not to look into their books of accounts, yet upright hearts will know whether they go backward or forward.
   author: john-flavel
@@ -69,7 +69,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: forest-06.jpg, light: light-02.jpg}
+  background: {dark: forest-06.jpg, light: light-02.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: flavel-quick-sighted-self-jealousy-excellent
@@ -83,9 +83,9 @@
   words: 8
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-03.jpg}
+  background: {dark: storm-09.jpg, light: light-03.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-how-many-have-been-coached
   text: O, how many have been coached to hell in the chariots of earthly pleasures, while others have been whipped to heaven by the rod of affliction!
   author: john-flavel
@@ -97,7 +97,7 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-09.jpg}
+  background: {dark: road-01.jpg, light: light-09.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: flavel-god-values-no-man-by
@@ -111,9 +111,9 @@
   words: 27
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-07.jpg}
+  background: {dark: road-01.jpg, light: light-07.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-as-god-did-not-at
   text: As God did not at first choose you because you were high, so he will not forsake you because you are low.
   author: john-flavel
@@ -125,7 +125,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: sky-01.jpg, light: light-04.jpg}
+  background: {dark: sky-01.jpg, light: light-04.jpg, solid: navy}
   added: '2026-11-22'
   tone: light
 - id: flavel-though-your-condition-be-changed
@@ -139,7 +139,7 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: sky-02.jpg, light: light-10.jpg}
+  background: {dark: sky-02.jpg, light: light-10.jpg, solid: violet}
   added: '2026-11-22'
   tone: light
 - id: flavel-affliction-pill-which-being-wrapt
@@ -153,7 +153,7 @@
   words: 27
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-02.jpg}
+  background: {dark: storm-04.jpg, light: light-02.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: flavel-you-have-not-smiles-great
@@ -167,9 +167,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-10.jpg}
+  background: {dark: storm-07.jpg, light: light-10.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-remember-christians-true-riches-are
   text: 'Remember, the Christian’s true riches are laid out of the reach of all his enemies: they may make you poor, but not miserable.'
   author: john-flavel
@@ -181,7 +181,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-05.jpg}
+  background: {dark: road-01.jpg, light: light-05.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: flavel-wicked-men-are-sometimes-like
@@ -195,9 +195,9 @@
   words: 27
   status: candidate
   featured: false
-  background: {dark: sky-03.jpg, light: light-03.jpg}
+  background: {dark: sky-03.jpg, light: light-03.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-fear-both-multiplying-tormenting-passion
   text: Fear is both a multiplying and a tormenting passion; it represents troubles as much greater than they are, and so tortures and racks the soul much worse than when the suffering itself comes.
   author: john-flavel
@@ -209,7 +209,7 @@
   words: 33
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-09.jpg}
+  background: {dark: storm-01.jpg, light: light-09.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: flavel-guilty-conscience-more-terrified-by
@@ -223,9 +223,9 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-01.jpg}
+  background: {dark: road-01.jpg, light: light-01.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-guilt-to-danger-what-fire
   text: 'Guilt is to danger, what fire is to gunpowder: a man need not fear to walk among many barrels of powder, if he have no fire about him.'
   author: john-flavel
@@ -237,7 +237,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-07.jpg}
+  background: {dark: road-01.jpg, light: light-07.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: flavel-even-darkness-hell-itself-would
@@ -251,7 +251,7 @@
   words: 21
   status: candidate
   featured: false
-  background: {dark: sky-04.jpg, light: light-04.jpg}
+  background: {dark: sky-04.jpg, light: light-04.jpg, solid: rust}
   added: '2026-11-22'
   tone: light
 - id: flavel-your-poverty-not-your-sin
@@ -265,9 +265,9 @@
   words: 9
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-06.jpg}
+  background: {dark: road-01.jpg, light: light-06.jpg, solid: evergreen}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-you-cannot-come-reeking-hot
   text: You cannot come reeking hot out of the world into God’s presence, but you will find a tang of it in your duties.
   author: john-flavel
@@ -279,7 +279,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: forest-03.jpg, light: light-08.jpg}
+  background: {dark: forest-03.jpg, light: light-08.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: dark
 - id: flavel-fervent-heart-cannot-be-vagrant
@@ -293,9 +293,9 @@
   words: 8
   status: candidate
   featured: false
-  background: {dark: forest-09.jpg, light: light-09.jpg}
+  background: {dark: forest-09.jpg, light: light-09.jpg, solid: navy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-keep-down-thy-heart-by
   text: Keep down thy heart by this consideration, that by revenge thou canst but satisfy a sinful passion, but by forgiveness thou shalt conquer it.
   author: john-flavel
@@ -307,7 +307,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-07.jpg}
+  background: {dark: road-01.jpg, light: light-07.jpg, solid: violet}
   added: '2026-11-22'
   tone: dark
 - id: flavel-methinks-mercy-god-to-us
@@ -321,9 +321,9 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-10.jpg}
+  background: {dark: road-01.jpg, light: light-10.jpg, solid: teal}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-get-more-humility-that-will
   text: O get more humility, and that will bring you more peace.
   author: john-flavel
@@ -335,7 +335,7 @@
   words: 11
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-01.jpg}
+  background: {dark: road-01.jpg, light: light-01.jpg, solid: rust}
   added: '2026-11-22'
   tone: dark
 - id: flavel-quiet-conscience-never-produced-unquiet
@@ -349,9 +349,9 @@
   words: 8
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-03.jpg}
+  background: {dark: road-01.jpg, light: light-03.jpg, solid: evergreen}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-many-saint-hath-charged-condemned
   text: Many a saint hath charged and condemned himself, for that which God will never charge him with nor condemn him for.
   author: john-flavel
@@ -363,7 +363,7 @@
   words: 21
   status: candidate
   featured: false
-  background: {dark: sky-05.jpg, light: light-04.jpg}
+  background: {dark: sky-05.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-22'
   tone: light
 - id: flavel-every-breach-peace-with-god
@@ -377,7 +377,7 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: sky-06.jpg, light: light-02.jpg}
+  background: {dark: sky-06.jpg, light: light-02.jpg, solid: navy}
   added: '2026-11-22'
   tone: light
 - id: flavel-whatever-our-sin-or-trouble
@@ -391,7 +391,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-05.jpg}
+  background: {dark: storm-02.jpg, light: light-05.jpg, solid: violet}
   added: '2026-11-22'
   tone: dark
 - id: flavel-when-once-thou-art-in
@@ -405,7 +405,7 @@
   words: 18
   status: candidate
   featured: false
-  background: {dark: sky-07.jpg, light: light-06.jpg}
+  background: {dark: sky-07.jpg, light: light-06.jpg, solid: teal}
   added: '2026-11-22'
   tone: light
 - id: flavel-never-expect-better-hearts-till
@@ -419,9 +419,9 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: forest-07.jpg, light: light-08.jpg}
+  background: {dark: forest-07.jpg, light: light-08.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-honest-well-experienced-heart-singular
   text: 'An honest, well-experienced heart, is a singular help to a weak head: such a heart will serve you instead of a commentary upon a great part of the Scriptures.'
   author: john-flavel
@@ -433,7 +433,7 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: forest-04.jpg, light: light-10.jpg}
+  background: {dark: forest-04.jpg, light: light-10.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: flavel-i-cannot-expect-better-times
@@ -447,9 +447,9 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: forest-08.jpg, light: light-05.jpg}
+  background: {dark: forest-08.jpg, light: light-05.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-had-david-kept-his-heart
   text: Had David kept his heart, he had not broken his bones.
   author: john-flavel
@@ -461,7 +461,7 @@
   words: 11
   status: candidate
   featured: false
-  background: {dark: forest-04.jpg, light: light-06.jpg}
+  background: {dark: forest-04.jpg, light: light-06.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
 - id: flavel-we-never-lose-our-hearts
@@ -475,9 +475,9 @@
   words: 18
   status: candidate
   featured: false
-  background: {dark: forest-01.jpg, light: light-08.jpg}
+  background: {dark: forest-01.jpg, light: light-08.jpg, solid: violet}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-take-heed-christian-lest-thy
   text: Take heed, Christian, lest thy shop steal away thy heart from thy closet.
   author: john-flavel
@@ -489,7 +489,7 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-03.jpg}
+  background: {dark: road-01.jpg, light: light-03.jpg, solid: teal}
   added: '2026-11-22'
   tone: dark
 - id: flavel-god-never-intended-earthly-employments
@@ -503,9 +503,9 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-07.jpg}
+  background: {dark: road-01.jpg, light: light-07.jpg, solid: rust}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-serpent-heart-apostasy-best-killed
   text: The serpent of heart-apostasy is best killed in the egg of a small remissness.
   author: john-flavel
@@ -517,7 +517,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-09.jpg}
+  background: {dark: storm-03.jpg, light: light-09.jpg, solid: evergreen}
   added: '2026-11-22'
   tone: dark
 - id: flavel-heart-hungry-restless-thing-it
@@ -531,9 +531,9 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: forest-03.jpg, light: light-01.jpg}
+  background: {dark: forest-03.jpg, light: light-01.jpg, solid: burgundy}
   added: '2026-11-22'
-  tone: dark
+  tone: solid
 - id: flavel-many-one-now-in-hell
   text: Many a one is now in hell that had a better head than thine, and many a one now in heaven that complained of as bad a heart as thine.
   author: john-flavel
@@ -545,6 +545,6 @@
   words: 30
   status: candidate
   featured: false
-  background: {dark: forest-02.jpg, light: light-04.jpg}
+  background: {dark: forest-02.jpg, light: light-04.jpg, solid: navy}
   added: '2026-11-22'
   tone: dark
