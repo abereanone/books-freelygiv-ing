@@ -75,7 +75,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
         <button type="button" class="btn btn-outline-primary" id="qpShareLink">Share link</button>
         <button type="button" class="btn btn-outline-secondary" id="qpCopyText">Copy quote</button>
       </div>
-      <p class="small text-body-secondary mt-2 mb-0">Share image sends the picture, with a link to the free book, to Signal, Messages, Facebook or any app on your phone. Share link sends just the link; its preview shows this card. Save image puts it in your photos.</p>
+      <p class="small text-body-secondary mt-2 mb-0">Share image sends the picture, with a link to the free book, to Signal, Messages, Facebook or any app on your phone; on a computer it copies the picture for you to paste into a chat. Share link sends just the link; its preview shows this card. Save image keeps a copy.</p>
 
       <p class="qp-share small" aria-label="Share a link">
         <span class="text-body-secondary me-1">Or share a link:</span>
@@ -157,7 +157,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
   const link = () => new URL(pathFor(tone), art.dataset.page).href;
   const srcFor = (t: string) => (art.dataset as any)[t] || art.dataset.dark!;
   const imageUrl = () => new URL(srcFor(tone), location.href).href;
-  const say = (msg: string) => { note.textContent = msg; setTimeout(() => { if (note.textContent === msg) note.textContent = ''; }, 2500); };
+  const say = (msg: string) => { note.textContent = msg; setTimeout(() => { if (note.textContent === msg) note.textContent = ''; }, 5000); };
 
   function setTone(t: string, push = true) {
     tone = t;
@@ -166,6 +166,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
     toneBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tone === t)));
     if (push) { chosen = true; history.replaceState(null, '', pathFor(t)); }
     updateNets();
+    blobFor(t);   // fetch now, so the share menu opens straight from the tap
   }
 
   function updateNets() {
@@ -186,23 +187,48 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
             document.body.append(f); f.select(); const ok = document.execCommand('copy'); f.remove(); return ok; }
   }
 
-  // Share image: send the picture itself through the phone's share menu (Messages, Facebook,
-  // Instagram, WhatsApp…). Browsers that can't hand files to other apps (most computers) save
-  // the picture instead, so it can be attached or uploaded by hand.
+  // The card's picture, fetched once per look. Fetching ahead matters: phones only open the
+  // share menu straight from a tap, and a slow download in between can cost that permission.
+  const blobs: Record<string, Promise<Blob>> = {};
+  function blobFor(t: string) {
+    return (blobs[t] ||= fetch(new URL(srcFor(t), location.href).href, { mode: 'cors' })
+      .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.blob(); })
+      .catch((e) => { delete blobs[t]; throw e; }));
+  }
+  const isPhone = matchMedia('(pointer: coarse)').matches;
+
+  // Share image. Phones: the share menu, with the picture plus one line linking to the free
+  // book (Signal, Messages, WhatsApp keep both; an app that takes only pictures drops the line).
+  // Computers: copy the picture, to paste into a chat (Signal Desktop, Messenger, email).
+  // Last resort: save the file.
   document.getElementById('qpShare')!.addEventListener('click', async () => {
+    const t = tone;
     try {
-      const blob = await (await fetch(imageUrl(), { mode: 'cors' })).blob();
-      const file = new File([blob], `${art.dataset.id}-${tone}.jpg`, { type: 'image/jpeg' });
-      // The picture plus one line with the link to the free book. Most apps (Signal, Messages,
-      // WhatsApp) keep both; an app that takes only the picture just drops the line.
-      const withLink = { files: [file], text: `${art.dataset.caption} ${link()}` };
-      if (navigator.canShare?.(withLink)) { await navigator.share(withLink); return; }
-      if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file] }); return; }
-      saveBlob(blob);
-      say('Saved the picture. This browser can’t pass pictures to other apps, so attach or upload it from your downloads.');
+      if (isPhone && navigator.canShare) {
+        const blob = await blobFor(t);
+        const file = new File([blob], `${art.dataset.id}-${t}.jpg`, { type: 'image/jpeg' });
+        const withLink = { files: [file], text: `${art.dataset.caption} ${link()}` };
+        if (navigator.canShare(withLink)) { await navigator.share(withLink); return; }
+        if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file] }); return; }
+      }
+      if (navigator.clipboard?.write && typeof ClipboardItem !== 'undefined') {
+        // Clipboards take PNG, not JPEG; the promise keeps the copy tied to this tap.
+        const png = blobFor(t).then(async (b) => {
+          const bmp = await createImageBitmap(b);
+          const c = document.createElement('canvas'); c.width = bmp.width; c.height = bmp.height;
+          c.getContext('2d')!.drawImage(bmp, 0, 0);
+          return new Promise<Blob>((res, rej) => c.toBlob((x) => (x ? res(x) : rej(new Error('png'))), 'image/png'));
+        });
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]);
+        say('Picture copied. Paste it into your chat or post (Ctrl+V), and add the link with Copy link if you like.');
+        return;
+      }
+      saveBlob(await blobFor(t));
+      say('Saved the picture to your downloads, ready to attach.');
     } catch (e) {
       if ((e as DOMException).name === 'AbortError') return;
-      say('Couldn’t get the picture. Press and hold the card (or right-click it) to save it.');
+      try { saveBlob(await blobFor(t)); say('Saved the picture to your downloads, ready to attach.'); }
+      catch { say('Couldn’t get the picture. Press and hold the card (or right-click it) to save it.'); }
     }
   });
   // Share link: just the link; Signal, Messages and the rest show this card as its preview.
