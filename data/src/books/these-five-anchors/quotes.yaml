@@ -1,0 +1,68 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: maragni-world-judges-by-results-but
+  text: The world judges by results, but God looks on the heart.
+  author: brett-maragni
+  book: these-five-anchors
+  chapter: p. 35
+  anchor: ''
+  topics: [heart]
+  scripture: ['1 Samuel 16:7']
+  words: 11
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: maragni-only-way-to-know-god
+  text: The only way to know God is through Jesus Christ, the Son of God.
+  author: brett-maragni
+  book: these-five-anchors
+  chapter: p. 39
+  anchor: ''
+  topics: [christ, knowing-god]
+  scripture: ['John 14:6']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: maragni-if-we-can-get-into
+  text: If we can get into heaven by any other way than the death of Jesus Christ, then the bottom line would be that He died in vain.
+  author: brett-maragni
+  book: these-five-anchors
+  chapter: p. 46
+  anchor: ''
+  topics: [cross]
+  scripture: ['Galatians 2:21']
+  words: 27
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: maragni-only-grace-jesus-christ-appropriated
+  text: Only the grace of Jesus Christ, appropriated to us through faith, makes us right with God.
+  author: brett-maragni
+  book: these-five-anchors
+  chapter: p. 65
+  anchor: ''
+  topics: [grace, faith]
+  scripture: ['Romans 3:24']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: maragni-faith-in-christ-alone-saves
+  text: Faith (in Christ) alone saves, but faith is never alone.
+  author: brett-maragni
+  book: these-five-anchors
+  chapter: p. 66
+  anchor: ''
+  topics: [faith, holiness]
+  scripture: ['James 2:17']
+  words: 10
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

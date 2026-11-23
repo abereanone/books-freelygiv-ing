@@ -1,0 +1,146 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: augustine-let-others-choose-for-themselves
+  text: 'Let others choose for themselves portions, earthly and temporal, to enjoy: the portion of the Saints is the Lord eternal.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 88
+  anchor: ''
+  topics: [contentment]
+  scripture: ['Psalm 16:5']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-fear-seems-to-belong-to
+  text: Fear seems to belong to the weak, but the Lord is the stay of them that fear Him.
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 118
+  anchor: ''
+  topics: [fear]
+  scripture: ['Psalm 25:14']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-if-when-you-are-whole
+  text: If when you are whole God's Will be sweet, and when you are sick God's Will be bitter; you are not of a right heart.
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 168
+  anchor: ''
+  topics: [affliction, heart]
+  scripture: ['Job 2:10']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-thou-sufferest-but-for-time
+  text: 'Thou sufferest but for a time; you shall rest for ever: your trouble is short; your happiness is to be everlasting.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 177
+  anchor: ''
+  topics: [affliction, heaven]
+  scripture: ['2 Corinthians 4:17']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-hope-for-nothing-else-from
+  text: Hope for nothing else from the Lord your God; but let the Lord your God Himself be thine hope.
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 220
+  anchor: ''
+  topics: [faith, contentment]
+  scripture: ['Psalm 39:7']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-neither-so-on-his-mercy
+  text: 'Neither so on His mercy rely, as that His power ye despise: nor so the power fear ye, as that of mercy ye despair.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 447
+  anchor: ''
+  topics: [mercy, fear]
+  scripture: ['Psalm 130:4']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-truth-christ-way-christ-walk
+  text: 'The Truth is Christ, the Way is Christ: walk therein.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 492
+  anchor: ''
+  topics: [christ]
+  scripture: ['John 14:6']
+  words: 10
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-if-air-this-world-be
+  text: 'If the air of this world be withdrawn, there dies body: if God be withdrawn, there dies soul.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 559
+  anchor: ''
+  topics: [knowing-god]
+  scripture: ['Acts 17:28']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-remove-not-from-wood-christ
+  text: 'Remove not from the wood of Christ''s Cross: you shall not sink: hold yourself fast to Christ.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 780
+  anchor: ''
+  topics: [cross, faith]
+  scripture: ['Galatians 6:14']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-if-thou-love-earth-you
+  text: 'If thou love the earth, you wander from God: if you love God, you rise unto God.'
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 1019
+  anchor: ''
+  topics: [love, world]
+  scripture: ['Colossians 3:2']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: augustine-soul-indeed-sinful-stained-with
+  text: The soul indeed is sinful, is stained with certain defilements of lusts; yet gold, though rusted, is better than the most polished lead.
+  author: augustine
+  book: expositions-on-the-psalms
+  chapter: p. 1148
+  anchor: ''
+  topics: [sin, grace]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

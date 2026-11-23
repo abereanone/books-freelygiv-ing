@@ -47,10 +47,10 @@ Batch 1 done 2026-11-23 (383 quotes, 31 books); render, upload and push wait for
 
 ## Batch 2: EPUB / PDF only (extract.py reads EPUB and PDF since 2026-11-23; PDF quotes record the page)
 - [x] the-divine-name (Case, EPUB)
-- [ ] expositions-on-the-psalms (Augustine, PDF)
+- [x] expositions-on-the-psalms (Augustine, PDF)
 - [ ] institutes-of-the-christian-religion-part-1 / part-2 (Calvin, PDF)
 - [x] owen-on-sin (Owen, PDF)
-- [ ] these-five-anchors (Maragni, PDF)
+- [x] these-five-anchors (Maragni, PDF)
 - [ ] our-sin-his-mercy-childrens-devotions (Conkle, PDF)
 
 ## Batch 3: text only on other sites (no local file)
