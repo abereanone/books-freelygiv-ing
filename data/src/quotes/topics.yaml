@@ -152,3 +152,36 @@ family:
   label: "Family"
   about: "Marriage, children and the home."
   mood: forest
+# Added 2026-11-23 (Michael chose them; each has at least one verse card).
+joy:
+  label: "Joy"
+  about: "Joy in God, in trouble and beyond it."
+  mood: light
+hope:
+  label: "Hope"
+  about: "Waiting on God, and the sure hope of glory."
+  mood: light
+thankfulness:
+  label: "Thankfulness"
+  about: "Gratitude to God for His gifts, and the sin of ingratitude."
+  mood: light
+freely-given:
+  label: "Freely Given (Money & Ministry)"
+  about: "Freely you have received; freely give: the gospel is not for sale."
+  mood: road
+evangelism:
+  label: "Evangelism & Witness"
+  about: "Speaking the gospel to others, and the sin of keeping silent."
+  mood: road
+wisdom:
+  label: "Wisdom"
+  about: "The fear of God, the beginning of wisdom, against the wisdom of the world."
+  mood: mountain
+anger:
+  label: "Anger"
+  about: "Righteous anger and sinful anger."
+  mood: storm
+truthfulness:
+  label: "Truthfulness & the Tongue"
+  about: "Lying, honest speech, and the use of words."
+  mood: forest

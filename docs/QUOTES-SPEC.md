@@ -266,3 +266,11 @@ superscriptions and unpaired quotation marks are left off, and the master's plur
 shown as plain "you" unless Michael asks to keep it for a card (2026-11-23: 43 verses, none kept).
 Every topic must have at least one verse card (Michael, 2026-11-23); verify.py fails
 otherwise, so a new topic in topics.yaml needs a verse in scripture.yaml too. 74 verses so far.
+
+## New topics (2026-11-23)
+
+Eight topics added on Michael's choice: Joy, Hope, Thankfulness, Freely Given (Money &
+Ministry), Evangelism & Witness, Wisdom, Anger, Truthfulness & the Tongue (45 in all). Existing
+quotes were re-tagged where the new topic truly fits (66 of them), and each new topic has a
+verse. When quotes are added, a theme the list lacks becomes a proposed new topic rather than a
+near-miss tag (add-book skill, step 4).

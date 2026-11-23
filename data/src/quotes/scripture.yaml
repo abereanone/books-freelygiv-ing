@@ -69,7 +69,7 @@
 - id: proverbs-3-5-6
   ref: Proverbs 3:5-6
   text: "Trust in Yahweh with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He will make your paths straight."
-  topics: [faith, providence]
+  topics: [faith, providence, wisdom]
   status: candidate
   added: 2026-11-23
   background: {dark: sky-01.jpg, light: light-01.jpg, solid: burgundy}
@@ -77,7 +77,7 @@
 - id: proverbs-9-10
   ref: Proverbs 9:10
   text: "The fear of Yahweh is the beginning of wisdom, and knowledge of the Holy One is understanding."
-  topics: [knowing-god]
+  topics: [knowing-god, wisdom]
   status: candidate
   added: 2026-11-23
   background: {dark: mountain-03.jpg, light: light-14.jpg, solid: navy}
@@ -85,7 +85,7 @@
 - id: isaiah-40-31
   ref: Isaiah 40:31
   text: "But those who wait upon Yahweh will renew their strength; they will mount up with wings like eagles; they will run and not grow weary, they will walk and not faint."
-  topics: [patience, faith]
+  topics: [patience, faith, hope]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -109,7 +109,7 @@
 - id: isaiah-55-1
   ref: Isaiah 55:1
   text: "Come, all you who are thirsty, come to the waters; and you without money, come, buy, and eat! Come, buy wine and milk without money and without cost!"
-  topics: [grace, conversion]
+  topics: [grace, conversion, freely-given]
   status: candidate
   added: 2026-11-23
   background: {dark: sky-02.jpg, light: light-15.jpg, solid: evergreen}
@@ -133,7 +133,7 @@
 - id: zephaniah-3-17
   ref: Zephaniah 3:17
   text: "Yahweh your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
-  topics: [love]
+  topics: [love, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -301,7 +301,7 @@
 - id: philippians-4-6-7
   ref: Philippians 4:6-7
   text: "Be anxious for nothing, but in everything, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."
-  topics: [prayer, peace]
+  topics: [prayer, peace, thankfulness]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -309,7 +309,7 @@
 - id: hebrews-12-2
   ref: Hebrews 12:2
   text: "Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."
-  topics: [cross, faith]
+  topics: [cross, faith, joy]
   status: candidate
   added: 2026-11-23
   background: {dark: mountain-02.jpg, light: light-10.jpg, solid: burgundy}
@@ -349,7 +349,7 @@
 - id: psalm-30-5
   ref: Psalm 30:5
   text: "For His anger is fleeting, but His favor lasts a lifetime. Weeping may stay the night, but joy comes in the morning."
-  topics: [affliction, mercy]
+  topics: [affliction, mercy, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -357,7 +357,7 @@
 - id: psalm-16-11
   ref: Psalm 16:11
   text: "You have made known to me the path of life; You will fill me with joy in Your presence, with eternal pleasures at Your right hand."
-  topics: [worship, heaven]
+  topics: [worship, heaven, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -365,7 +365,7 @@
 - id: psalm-126-5
   ref: Psalm 126:5
   text: "Those who sow in tears will reap with shouts of joy."
-  topics: [affliction, patience]
+  topics: [affliction, patience, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -405,7 +405,7 @@
 - id: psalm-42-11
   ref: Psalm 42:11
   text: "Why are you downcast, O my soul? Why the unease within me? Put your hope in God, for I will yet praise Him, my Savior and my God."
-  topics: [assurance, affliction]
+  topics: [assurance, affliction, hope]
   status: candidate
   added: 2026-11-23
   background: {dark: sky-12.jpg, light: light-09.jpg, solid: burgundy}
@@ -421,7 +421,7 @@
 - id: psalm-30-11-12
   ref: Psalm 30:11-12
   text: "You turned my mourning into dancing; You peeled off my sackcloth and clothed me with joy, that my heart may sing Your praises and not be silent. O Yahweh my God, I will give thanks forever."
-  topics: [worship, affliction]
+  topics: [worship, joy, thankfulness]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -429,7 +429,7 @@
 - id: psalm-94-19
   ref: Psalm 94:19
   text: "When anxiety overwhelms me, Your consolation delights my soul."
-  topics: [fear, peace]
+  topics: [fear, peace, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -461,7 +461,7 @@
 - id: psalm-118-24
   ref: Psalm 118:24
   text: "This is the day that Yahweh has made; we will rejoice and be glad in it."
-  topics: [worship]
+  topics: [worship, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -493,7 +493,7 @@
 - id: galatians-5-22-23
   ref: Galatians 5:22-23
   text: "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. Against such things there is no law."
-  topics: [holy-spirit, holiness]
+  topics: [holy-spirit, holiness, joy]
   status: candidate
   added: 2026-11-23
   tone: light
@@ -594,3 +594,91 @@
   added: 2026-11-23
   background: {dark: forest-01.jpg, light: light-16.jpg, solid: evergreen}
   tone: dark
+- id: romans-1-16
+  ref: Romans 1:16
+  text: "I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes, first to the Jew, then to the Greek."
+  topics: [evangelism, conversion]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: road-03.jpg, light: light-22.jpg, solid: navy}
+  tone: dark
+- id: 1-peter-3-15
+  ref: 1 Peter 3:15
+  text: "But in your hearts sanctify Christ as Lord. Always be prepared to give a defense to everyone who asks you the reason for the hope that is in you."
+  topics: [evangelism, hope]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: road-04.jpg, light: light-08.jpg, solid: violet}
+  tone: solid
+- id: romans-10-14
+  ref: Romans 10:14
+  text: "How then can they call on the One in whom they have not believed? And how can they believe in the One of whom they have not heard? And how can they hear without someone to preach?"
+  topics: [evangelism]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: road-01.jpg, light: light-23.jpg, solid: teal}
+  tone: dark
+- id: matthew-28-19-20
+  ref: Matthew 28:19-20
+  text: "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey all that I have commanded you. And surely I am with you always, even to the end of the age."
+  topics: [evangelism, christ]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: road-04.jpg, light: light-24.jpg, solid: rust}
+- id: james-1-19-20
+  ref: James 1:19-20
+  text: "My beloved brothers, understand this: Everyone should be quick to listen, slow to speak, and slow to anger, for man’s anger does not bring about the righteousness that God desires."
+  topics: [anger, truthfulness]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-06.jpg, light: light-01.jpg, solid: evergreen}
+  tone: solid
+- id: ephesians-4-26-27
+  ref: Ephesians 4:26-27
+  text: "“Be angry, yet do not sin.” Do not let the sun set upon your anger, and do not give the devil a foothold."
+  topics: [anger, satan]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-07.jpg, light: light-09.jpg, solid: burgundy}
+  tone: dark
+- id: proverbs-12-22
+  ref: Proverbs 12:22
+  text: "Lying lips are detestable to Yahweh, but those who deal faithfully are His delight."
+  topics: [truthfulness]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: forest-12.jpg, light: light-25.jpg, solid: navy}
+  tone: solid
+- id: ephesians-4-25
+  ref: Ephesians 4:25
+  text: "Therefore each of you must put off falsehood and speak truthfully to his neighbor, for we are all members of one another."
+  topics: [truthfulness, church]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: forest-02.jpg, light: light-12.jpg, solid: violet}
+  tone: dark
+- id: nehemiah-8-10
+  ref: Nehemiah 8:10
+  text: "Do not grieve, for the joy of Yahweh is your strength."
+  topics: [joy]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: sky-06.jpg, light: light-19.jpg, solid: teal}
+- id: romans-15-13
+  ref: Romans 15:13
+  text: "Now may the God of hope fill you with all joy and peace as you believe in Him, so that you may overflow with hope by the power of the Holy Spirit."
+  topics: [hope, joy]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: sky-02.jpg, light: light-15.jpg, solid: rust}
+- id: 1-thessalonians-5-18
+  ref: 1 Thessalonians 5:18
+  text: "Give thanks in every circumstance, for this is God’s will for you in Christ Jesus."
+  topics: [thankfulness]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: sky-09.jpg, light: light-09.jpg, solid: evergreen}

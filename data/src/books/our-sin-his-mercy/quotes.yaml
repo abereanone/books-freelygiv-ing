@@ -109,7 +109,7 @@
   book: our-sin-his-mercy
   chapter: The Fear Of Man
   anchor: _the_fear_of_man
-  topics: [fear]
+  topics: [fear, wisdom]
   scripture: ['Proverbs 29:25']
   words: 26
   status: candidate
@@ -165,7 +165,7 @@
   book: our-sin-his-mercy
   chapter: Confession of Sin
   anchor: _confession_of_sin_43
-  topics: [fear, love]
+  topics: [fear, love, evangelism]
   scripture: ['Proverbs 24:11']
   words: 25
   status: candidate
@@ -195,7 +195,7 @@
   book: our-sin-his-mercy
   chapter: The Sin Of Ingratitude
   anchor: _the_sin_of_ingratitude
-  topics: [contentment, worship]
+  topics: [contentment, worship, thankfulness]
   scripture: ['1 Thessalonians 5:18']
   words: 21
   status: candidate
@@ -225,7 +225,7 @@
   book: our-sin-his-mercy
   chapter: Confession of Sin
   anchor: _confession_of_sin_18
-  topics: [fear, worship]
+  topics: [fear, worship, evangelism]
   scripture: ['Luke 8:39']
   words: 24
   status: candidate
@@ -255,7 +255,7 @@
   book: our-sin-his-mercy
   chapter: The Sin Of Lying
   anchor: _the_sin_of_lying
-  topics: [sin, holiness]
+  topics: [sin, holiness, truthfulness]
   scripture: ['Proverbs 12:22']
   words: 23
   status: candidate
@@ -293,3 +293,18 @@
   background: {dark: road-02.jpg, light: light-02.jpg, solid: violet}
   added: '2026-11-23'
   tone: dark
+- id: conkle-holy-anger-must-never-give
+  writtenBy: Jamie Terry
+  text: Holy anger must never give way to unholy actions or attitudes.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: The Sin Of Unrighteous Anger
+  anchor: _the_sin_of_unrighteous_anger
+  topics: [anger, holiness]
+  scripture: ['Ephesians 4:26']
+  words: 11
+  status: candidate
+  featured: false
+  background: {dark: storm-03.jpg, light: light-04.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid

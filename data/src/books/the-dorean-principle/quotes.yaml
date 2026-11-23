@@ -7,7 +7,7 @@
   book: the-dorean-principle
   chapter: Reciprocity and Colabor
   anchor: ''
-  topics: [work, church]
+  topics: [work, church, freely-given]
   scripture: ['Matthew 10:8']
   words: 21
   status: candidate
@@ -21,7 +21,7 @@
   book: the-dorean-principle
   chapter: Colabor as Shared Suffering
   anchor: ''
-  topics: [affliction, church]
+  topics: [affliction, church, freely-given]
   scripture: ['Galatians 6:2']
   words: 19
   status: candidate
@@ -35,7 +35,7 @@
   book: the-dorean-principle
   chapter: Conclusion
   anchor: ''
-  topics: [work]
+  topics: [work, freely-given]
   scripture: ['1 Corinthians 9:18']
   words: 22
   status: candidate
@@ -49,7 +49,7 @@
   book: the-dorean-principle
   chapter: Bibles
   anchor: ''
-  topics: [scripture]
+  topics: [scripture, freely-given]
   scripture: ['Matthew 10:8']
   words: 21
   status: candidate
@@ -63,7 +63,7 @@
   book: the-dorean-principle
   chapter: A Final Word About the Gospel
   anchor: ''
-  topics: [world, christ]
+  topics: [world, christ, freely-given]
   scripture: ['Isaiah 55:1']
   words: 25
   status: candidate

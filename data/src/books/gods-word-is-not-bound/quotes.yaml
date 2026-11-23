@@ -7,7 +7,7 @@
   book: gods-word-is-not-bound
   chapter: Introduction
   anchor: ''
-  topics: [church, hypocrisy]
+  topics: [church, hypocrisy, freely-given]
   scripture: []
   words: 17
   status: candidate
@@ -35,7 +35,7 @@
   book: gods-word-is-not-bound
   chapter: Jesus Is the Word
   anchor: ''
-  topics: [scripture, christ]
+  topics: [scripture, christ, freely-given]
   scripture: ['John 1:1']
   words: 24
   status: candidate
@@ -49,7 +49,7 @@
   book: gods-word-is-not-bound
   chapter: Conclusion
   anchor: ''
-  topics: [scripture]
+  topics: [scripture, freely-given]
   scripture: ['Psalm 19:10']
   words: 18
   status: candidate
@@ -63,7 +63,7 @@
   book: gods-word-is-not-bound
   chapter: An Argument from Contemporary Human Law
   anchor: ''
-  topics: [scripture]
+  topics: [scripture, freely-given]
   scripture: ['Matthew 10:8']
   words: 18
   status: candidate
@@ -77,7 +77,7 @@
   book: gods-word-is-not-bound
   chapter: God’s Sovereignty and Our Responsibility
   anchor: ''
-  topics: [scripture, providence]
+  topics: [scripture, providence, freely-given]
   scripture: ['Isaiah 40:8']
   words: 18
   status: candidate
@@ -91,7 +91,7 @@
   book: gods-word-is-not-bound
   chapter: Would God want his Word to be “stewarded” in this way?
   anchor: ''
-  topics: [scripture, hypocrisy]
+  topics: [scripture, hypocrisy, freely-given]
   scripture: []
   words: 12
   status: candidate
@@ -105,7 +105,7 @@
   book: gods-word-is-not-bound
   chapter: Conclusion
   anchor: ''
-  topics: [scripture, church]
+  topics: [scripture, church, freely-given]
   scripture: ['2 Timothy 2:9']
   words: 33
   status: candidate

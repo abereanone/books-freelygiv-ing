@@ -21,7 +21,7 @@
   book: the-doctrine-of-simony
   chapter: Conclusion
   anchor: ''
-  topics: [holy-spirit, grace]
+  topics: [holy-spirit, grace, freely-given]
   scripture: ['Acts 8:20']
   words: 23
   status: candidate
@@ -35,7 +35,7 @@
   book: the-doctrine-of-simony
   chapter: Romans 11:6—Graceless Grace
   anchor: ''
-  topics: [grace]
+  topics: [grace, freely-given]
   scripture: ['Romans 11:6']
   words: 28
   status: candidate
@@ -49,7 +49,7 @@
   book: the-doctrine-of-simony
   chapter: Conclusion
   anchor: ''
-  topics: [sin]
+  topics: [sin, freely-given]
   scripture: ['Acts 8:20']
   words: 24
   status: candidate
@@ -63,7 +63,7 @@
   book: the-doctrine-of-simony
   chapter: Righteous Indignation
   anchor: ''
-  topics: [sin, holiness]
+  topics: [sin, holiness, freely-given]
   scripture: []
   words: 22
   status: candidate
@@ -77,7 +77,7 @@
   book: the-doctrine-of-simony
   chapter: Heresy
   anchor: ''
-  topics: [repentance, world]
+  topics: [repentance, world, freely-given]
   scripture: ['Matthew 26:75']
   words: 20
   status: candidate
