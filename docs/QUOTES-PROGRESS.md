@@ -36,10 +36,10 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] our-sin-his-mercy (Conkle)
 - [x] sinners-in-the-hands-of-an-angry-god (Edwards)
 - [x] the-anatomy-of-simon-magus (anonymous): skipped, no lines that stand alone
-- [ ] the-crook-in-the-lot (Boston)
-- [ ] the-death-of-death (Owen)
-- [ ] the-glorious-feast-of-the-gospel (Sibbes)
-- [ ] the-godly-mans-picture (Watson)
+- [x] the-crook-in-the-lot (Boston)
+- [x] the-death-of-death (Owen)
+- [x] the-glorious-feast-of-the-gospel (Sibbes)
+- [x] the-godly-mans-picture (Watson)
 - [ ] the-pilgrims-progress (Bunyan)
 - [ ] the-secret-key-of-heaven (Brooks)
 

@@ -1,0 +1,198 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: watson-man-who-pretender-to-saintshipbut
+  text: The man who is a pretender to saintship—but whose heart tells him he has nothing but the name, carries Christ in his Bible but not in his heart.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Introduction
+  anchor: introduction
+  topics: [hypocrisy]
+  scripture: ['Matthew 15:8']
+  words: 28
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-to-know-god-out-christ
+  text: To know God out of Christ is to know him as an enemy—but to know him in Christ is sweet and delicious.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 1
+  anchor: characteristics-1
+  topics: [christ, knowing-god]
+  scripture: ['John 14:6']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-many-take-christ-as-jesusto
+  text: Many take Christ as Jesus—to save them; but refuse him as Lord—to rule them.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 1
+  anchor: characteristics-1
+  topics: [christ, conversion]
+  scripture: ['Luke 6:46']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-god-s-power-makes-him
+  text: God's power makes him mighty; his mercy makes him lovely; but his holiness makes him glorious.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 1
+  anchor: characteristics-1
+  topics: [knowing-god, holiness]
+  scripture: ['Exodus 15:11']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-sin-tyrannizing-thing-sinner-slave
+  text: Sin is a tyrannizing thing; a sinner is a slave when he sins with most freedom.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 1
+  anchor: characteristics-1
+  topics: [sin]
+  scripture: ['John 8:34']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-christ-more-precious-than-soul
+  text: Christ is more precious than the soul, than the angels, than heaven.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 1
+  anchor: characteristics-1
+  topics: [christ]
+  scripture: ['1 Peter 2:7']
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-divine-tears-not-only-wetbut
+  text: Divine tears not only wet—but wash; they purge out the love of sin!
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 1
+  anchor: characteristics-1
+  topics: [repentance]
+  scripture: ['2 Corinthians 7:10']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-word-jewel-heart-cabinet-where
+  text: The Word is the jewel; the heart is the cabinet where it must be locked up.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 2
+  anchor: characteristics-2
+  topics: [scripture, heart]
+  scripture: ['Psalm 119:11']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-spirit-soul-word-without-which
+  text: The Spirit is the soul of the Word, without which it is but a dead letter.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 2
+  anchor: characteristics-2
+  topics: [holy-spirit, scripture]
+  scripture: ['2 Corinthians 3:6']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-angel-creature-great-abilities-but
+  text: An angel is a creature of great abilities; but take away humility from an angel—and he is a devil!
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 2
+  anchor: characteristics-2
+  topics: [humility]
+  scripture: ['Isaiah 14:13']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-prayer-delights-god-s-ear
+  text: Prayer delights God's ear; it melts his heart; it opens his hand.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 3
+  anchor: characteristics-3
+  topics: [prayer]
+  scripture: ['Psalm 145:16']
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-godly-man-spiritualizes-duty-he
+  text: A godly man spiritualizes duty; he is not only for the doing of holy things--but for the holy doing of things.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Characteristics of a Godly Man, Part 4
+  anchor: characteristics-4
+  topics: [holiness, worship]
+  scripture: ['John 4:24']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-men-world-have-bounty-dropping
+  text: The men of the world have bounty dropping from God's fingers—but the godly have love dropping from God's heart.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Exhortations to Godliness
+  anchor: exhortations
+  topics: [love, world]
+  scripture: ['Matthew 5:45']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-sin-in-heart-like-gunpowder
+  text: Sin in the heart is like gunpowder; it may make us fear lest a spark of temptation should fall on us and blow us up.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Helps and Motives to Godliness
+  anchor: helps-and-motives
+  topics: [sin, temptation]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: watson-god-will-sooner-extinguish-light
+  text: God will sooner extinguish the light of the sun, than extinguish the dawning light of his Spirit in your heart.
+  author: thomas-watson
+  book: the-godly-mans-picture
+  chapter: Helps and Motives to Godliness
+  anchor: helps-and-motives
+  topics: [assurance, holy-spirit]
+  scripture: ['Philippians 1:6']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

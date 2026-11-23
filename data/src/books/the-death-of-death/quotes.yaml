@@ -1,0 +1,68 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: owen-salvation-indeed-bestowed-conditionally-but
+  text: Salvation, indeed, is bestowed conditionally; but faith, which is the condition, is absolutely procured.
+  author: john-owen
+  book: the-death-of-death
+  chapter: Chapter V
+  anchor: book-2-chapter-05-h1
+  topics: [faith, cross]
+  scripture: ['Philippians 1:29']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-god-was-more-pleased-with
+  text: God was more pleased with the obedience, offering and sacrifice of his Son, than displeased with the sins and rebellions of all the elect.
+  author: john-owen
+  book: the-death-of-death
+  chapter: Chapter VII
+  anchor: book-3-chapter-07-h1
+  topics: [cross]
+  scripture: ['Isaiah 53:10']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-denying-satisfaction-christ-destroys-foundation
+  text: Denying the satisfaction of Christ destroys the foundation of faith and comfort.
+  author: john-owen
+  book: the-death-of-death
+  chapter: Chapter IX
+  anchor: book-3-chapter-09-h1
+  topics: [cross, faith]
+  scripture: []
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-to-die-for-others-does
+  text: To die for others does at least denote to die for their good, and in the Scripture always to die in their stead.
+  author: john-owen
+  book: the-death-of-death
+  chapter: Chapter VI
+  anchor: book-4-chapter-06-h1
+  topics: [cross]
+  scripture: ['1 Peter 3:18']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-surely-jesus-christ-gives-not
+  text: Surely Jesus Christ gives not a dowry for any but his own spouse.
+  author: john-owen
+  book: the-death-of-death
+  chapter: Some Few Testimonies of the Ancients
+  anchor: appendix-1-testimonies-h1
+  topics: [cross, church]
+  scripture: ['Ephesians 5:25']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

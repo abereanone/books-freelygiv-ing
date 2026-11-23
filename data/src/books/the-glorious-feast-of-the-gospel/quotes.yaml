@@ -1,0 +1,120 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: sibbes-love-god-derived-to-us
+  text: The love of God is derived to us by Christ, yea, and all that we have that is good is but Christ parcelled out.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The First Sermon
+  anchor: chapter1-h1
+  topics: [christ, love]
+  scripture: ['Colossians 2:9']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-i-will-venture-upon-jesus
+  text: I will venture upon Jesus Christ; he hath food that endures to eternal life, and if I perish there, I perish.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Second Sermon
+  anchor: chapter2-h1
+  topics: [faith, conversion]
+  scripture: ['Esther 4:16']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-seeds-joy-comfort-are-sown
+  text: The seeds of joy and of comfort are sown in tears and grief in this world; but yet we know we shall reap in joy in the world to come.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Second Sermon
+  anchor: chapter2-h1
+  topics: [affliction, heaven]
+  scripture: ['Psalm 126:5']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-think-all-thy-wants-all
+  text: Think of all thy wants, and of all thy sins; let them be never so many, yet there is more to be had in Christ than there can be wanting in thee.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Second Sermon
+  anchor: chapter2-h1
+  topics: [christ, mercy]
+  scripture: ['Colossians 2:10']
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-we-are-to-deal-with
+  text: We are to deal with death like the brazen serpent, that hath the shape of death, but no sting at all.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Fourth Sermon
+  anchor: chapter4-h1
+  topics: [death]
+  scripture: ['1 Corinthians 15:55']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-truth-goeth-always-with-torn
+  text: Truth goeth always with a torn and scratched face; it is a stranger in the world, and hath strange entertainment.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Sixth Sermon
+  anchor: chapter6-h1
+  topics: [scripture, world]
+  scripture: []
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-god-taketh-long-day-for
+  text: God taketh a long day for his promises; long to us, not to him, ‘for to him a thousand years are but as one day.’
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Eighth Sermon
+  anchor: chapter8-h1
+  topics: [patience]
+  scripture: ['2 Peter 3:8']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-if-time-were-shorter-than
+  text: If the time were shorter than God hath appointed, then it were too short; if longer, too long.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Ninth Sermon
+  anchor: chapter9-h1
+  topics: [providence, patience]
+  scripture: ['Psalm 31:15']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: sibbes-perhaps-christian-hath-no-wealth
+  text: Perhaps a Christian hath no wealth, no great rents to glory in, aye, but he hath a God to glory in, let him glory in him.
+  author: richard-sibbes
+  book: the-glorious-feast-of-the-gospel
+  chapter: The Ninth Sermon
+  anchor: chapter9-h1
+  topics: [contentment]
+  scripture: ['Jeremiah 9:24']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
