@@ -1,0 +1,29 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: edwards-there-nothing-that-keeps-wicked
+  text: “There is nothing that keeps wicked men at any one moment out of hell, but the mere pleasure of God.”
+  author: jonathan-edwards
+  book: sinners-in-the-hands-of-an-angry-god
+  chapter: Sinners in the Hands of an Angry God
+  anchor: sermon-h1
+  topics: [sin, mercy]
+  scripture: ['Deuteronomy 32:35']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: edwards-you-have-reason-to-wonder
+  text: You have reason to wonder that you are not already in hell.
+  author: jonathan-edwards
+  book: sinners-in-the-hands-of-an-angry-god
+  chapter: Application
+  anchor: sermon-h2
+  topics: [sin, mercy]
+  scripture: ['Lamentations 3:22']
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

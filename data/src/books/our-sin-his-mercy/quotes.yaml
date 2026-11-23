@@ -1,0 +1,146 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: conkle-we-are-reminded-that-grace
+  text: We are reminded that grace is not abstract, but real; not cheap, but costly; not earned but freely given through the cross of our Lord Jesus Christ.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: IV - To the Reader
+  anchor: _iv_to_the_reader
+  topics: [grace, cross]
+  scripture: ['Ephesians 2:8']
+  words: 27
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-sin-not-just-mistake-to
+  text: Sin is not just a mistake to be brushed aside; it is a legal offense against the God of justice.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_5
+  topics: [sin]
+  scripture: ['Psalm 51:4']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-love-god-for-his-people
+  text: The love of God for His people is not measured by our devotion but by His steadfast mercy.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Assurance of Pardon
+  anchor: _assurance_of_pardon_9
+  topics: [love, mercy]
+  scripture: ['Lamentations 3:22']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-our-sin-not-limited-to
+  text: Our sin is not limited to what we have done; it is who we are apart from grace.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Our Sin, His Mercy
+  anchor: _our_sin_his_mercy
+  topics: [sin, grace]
+  scripture: ['Ephesians 2:3']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-in-him-sin-bitter-but
+  text: In Him, sin is bitter, but grace is sweet; guilt is heavy, but forgiveness is full.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Assurance of Pardon
+  anchor: _assurance_of_pardon_17
+  topics: [grace, mercy]
+  scripture: []
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-let-us-confess-our-sins
+  text: Let us confess our sins not to earn grace, but because grace has already been given.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Jesus The Great High Priest
+  anchor: _jesus_the_great_high_priest
+  topics: [repentance, grace]
+  scripture: ['1 John 1:9']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-when-we-forget-him-we
+  text: When we forget Him, we fall into sin; when we remember Him, we grow in holiness.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_28
+  topics: [holiness, sin]
+  scripture: []
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-fear-man-spiritual-trap-it
+  text: The fear of man is a spiritual trap, and it stands in direct contrast to the fear of the Lord, which is the beginning of wisdom.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: The Fear Of Man
+  anchor: _the_fear_of_man
+  topics: [fear]
+  scripture: ['Proverbs 29:25']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-grace-god-does-not-free
+  text: The grace of God does not free us to sin; it frees us from sin.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_38
+  topics: [grace, sin]
+  scripture: ['Romans 6:1']
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-greed-more-than-desire-for
+  text: Greed is more than a desire for wealth; it is a posture of the heart that trusts in riches instead of in the living God.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_42
+  topics: [world]
+  scripture: ['1 Timothy 6:17']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-death-has-been-defeated-now
+  text: Death has been defeated; now may we live and die as if death has been defeated.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Assurance of Pardon
+  anchor: _assurance_of_pardon_61
+  topics: [death]
+  scripture: ['1 Corinthians 15:55']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

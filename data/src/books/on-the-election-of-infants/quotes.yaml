@@ -1,0 +1,55 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: coughlin-unreached-tribal-villager-dying-infant
+  text: The unreached tribal villager and the dying infant are two different types of people reached by two different means, but saved by the same blood of Christ.
+  author: michael-coughlin
+  book: on-the-election-of-infants
+  chapter: 'Position 1: We know that ALL infants go to Hell when they die.'
+  anchor: ''
+  topics: [death, cross, family]
+  scripture: ['Revelation 5:9']
+  words: 27
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-we-trust-that-lord-will
+  text: We trust that the Lord will do right, and we can thus hope that we will see loved ones in Heaven who were not able to be outwardly called.
+  author: michael-coughlin
+  book: on-the-election-of-infants
+  chapter: 'Position 4: We don’t know whether all infants go to Hell or Heaven, but we accept both are possible.'
+  anchor: ''
+  topics: [death, family, heaven]
+  scripture: ['Genesis 18:25']
+  words: 29
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-fact-that-god-does-something
+  text: The fact that God does something wonderful with a wicked act neither affirms that act as moral nor does it make the agents of the act morally good!
+  author: michael-coughlin
+  book: on-the-election-of-infants
+  chapter: 'Position 5: We know that ALL infants go to Heaven when they die.'
+  anchor: ''
+  topics: [providence]
+  scripture: ['Genesis 50:20']
+  words: 28
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-knowing-or-believing-god-will
+  text: Knowing or believing God will do something good is never justification for evil.
+  author: michael-coughlin
+  book: on-the-election-of-infants
+  chapter: 'Position 5: We know that ALL infants go to Heaven when they die.'
+  anchor: ''
+  topics: [sin, providence]
+  scripture: ['Romans 3:8']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

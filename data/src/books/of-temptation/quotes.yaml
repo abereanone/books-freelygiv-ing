@@ -1,0 +1,133 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: owen-even-best-saints-being-left
+  text: Even the best of saints, being left to themselves, will quickly appear to be less than men,—to be nothing.
+  author: john-owen
+  book: of-temptation
+  chapter: Chapter I
+  anchor: chapter-01-h1
+  topics: [humility, grace]
+  scripture: ['John 15:5']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-when-we-give-vent-to
+  text: When we give vent to the soul, to try what grace is there, corruption comes out; and when we search for corruption, grace appears.
+  author: john-owen
+  book: of-temptation
+  chapter: I. What Temptation Is
+  anchor: chapter-01-h2
+  topics: [self-examination, grace]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-whilst-satan-continues-in-his
+  text: Whilst Satan continues in his power and malice, whilst the world and lust are in being, we shall be tempted.
+  author: john-owen
+  book: of-temptation
+  chapter: II. What It Is to Enter into Temptation
+  anchor: chapter-02-h2
+  topics: [temptation, satan]
+  scripture: ['1 Peter 5:8']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-men-sometimes-are-carried-into
+  text: Men sometimes are carried into sin by love to it, and are continued in it by fear of what will ensue upon it.
+  author: john-owen
+  book: of-temptation
+  chapter: II. What It Is to Enter into Temptation
+  anchor: chapter-02-h2
+  topics: [sin]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-generally-mens-hearts-deceive-them
+  text: Generally men’s hearts deceive them no oftener than they do trust in them, and then they never fail so to do.
+  author: john-owen
+  book: of-temptation
+  chapter: The Doctrine and Its Grounds
+  anchor: chapter-03-h2
+  topics: [heart]
+  scripture: ['Proverbs 28:26']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-soul-may-cruciate-itself-for
+  text: The soul may cruciate itself for a season with such a procedure; but it must come to this,—its lust must die, or the soul must die.
+  author: john-owen
+  book: of-temptation
+  chapter: The Doctrine and Its Grounds
+  anchor: chapter-03-h2
+  topics: [mortification]
+  scripture: ['Romans 8:13']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-let-no-man-then-pretend
+  text: Let no man, then, pretend to fear sin that doth not fear temptation to it.
+  author: john-owen
+  book: of-temptation
+  chapter: Watch and Pray, Taken Jointly
+  anchor: chapter-05-h2
+  topics: [temptation]
+  scripture: []
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-to-pray-that-we-enter
+  text: To pray that we enter not into temptation is a means to preserve us from it.
+  author: john-owen
+  book: of-temptation
+  chapter: Pray
+  anchor: chapter-05-h2
+  topics: [prayer, temptation]
+  scripture: ['Matthew 26:41']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-gospel-provisions-will-do-this
+  text: Gospel provisions will do this work; that is, keep the heart full of a sense of the love of God in Christ.
+  author: john-owen
+  book: of-temptation
+  chapter: Watch the Heart
+  anchor: chapter-07-h1
+  topics: [heart, love]
+  scripture: ['Romans 8:39']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-gospel-gives-free-large-noble
+  text: The gospel gives a free, large, and noble spirit, in subjection to God, and none else.
+  author: john-owen
+  book: of-temptation
+  chapter: 'The Last General Direction: Keep the Word of Christ’s Patience'
+  anchor: chapter-08-h1
+  topics: [grace]
+  scripture: ['2 Corinthians 3:17']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
