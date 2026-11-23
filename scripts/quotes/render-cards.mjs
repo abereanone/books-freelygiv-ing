@@ -31,6 +31,13 @@ const templateSig = createHash("sha1").update(readFileSync(join(ROOT, "scripts/q
 
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
 const slugs = readdirSync(BOOKS).filter((s) => existsSync(join(BOOKS, s, "quotes.yaml")));
+// Verse cards also carry CONFESS.CATECHIZE.ING (the site of the BSB master text), bottom right
+// opposite BOOKS.FREELY.GIVING; on a framed card the two are stacked and centred. Kept here, not
+// in card.mjs, because card.mjs is hashed into every card's signature (2026-11-23).
+const TAG2 = "CONFESS.CATECHIZE.ING";
+const TAG2_CSS = `.card:not(.framed) .tag2{left:auto;right:46px}
+.framed .tag:not(.tag2){bottom:150px}.framed .tag2{bottom:104px}.framed .body{top:130px;bottom:240px}`;
+const TAG2_SIG = "tag2-v1:" + TAG2 + TAG2_CSS;
 // Every quotes file, with what goes in the card's author and book lines. Bible verse cards
 // (data/src/quotes/scripture.yaml) show the reference and "Berean Standard Bible".
 const SCRIPTURE = join(ROOT, "data/src/quotes/scripture.yaml");
@@ -39,7 +46,7 @@ const sources = [
     const title = readY(join(BOOKS, slug, "book.yaml"))[0].title;
     return { file: join(BOOKS, slug, "quotes.yaml"), title, who: (q) => q.writtenBy || person(q.author), sigWho: (q) => q.writtenBy || q.author };
   }),
-  ...(existsSync(SCRIPTURE) ? [{ file: SCRIPTURE, title: "Berean Standard Bible", who: (q) => q.ref, sigWho: (q) => q.ref }] : []),
+  ...(existsSync(SCRIPTURE) ? [{ file: SCRIPTURE, title: "Berean Standard Bible", who: (q) => q.ref, sigWho: (q) => `${q.ref}|${TAG2_SIG}`, tag2: true }] : []),
 ];
 
 // Give every quote what it lacks, and write it into quotes.yaml so it never changes:
@@ -90,7 +97,7 @@ for (const { file } of sources) {
 }
 
 const jobs = [];
-for (const { file, title, who, sigWho } of sources) {
+for (const { file, title, who, sigWho, tag2 } of sources) {
   for (const q of readY(file) || []) {
     if (q.status === "rejected") continue;
     for (const tone of ["dark", "light", "solid"]) {
@@ -99,7 +106,7 @@ for (const { file, title, who, sigWho } of sources) {
       const key = `${q.id}-${tone}`;
       const sig = createHash("sha1").update([q.text, sigWho(q), title, bg, templateSig].join("|")).digest("hex");
       if (!FORCE && manifest[key] === sig && existsSync(join(OUT, `${key}.jpg`))) continue;
-      jobs.push({ key, sig, text: q.text, author: who(q), book: title, bg, solid: tone === "solid" ? bg : null });
+      jobs.push({ key, sig, text: q.text, author: who(q), book: title, bg, solid: tone === "solid" ? bg : null, tag2: !!tag2 });
     }
   }
 }
@@ -110,8 +117,10 @@ if (jobs.length) {
   await page.setViewport({ width: 1080, height: 1080 });
   const tmp = join(OUT, "_card.html");
   for (const j of jobs) {
-    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>body{margin:0}${cardCss(u(FONT_DIR) + "/")}</style>
-${cardHtml({ text: j.text, author: j.author, book: j.book, bgUrl: j.solid ? "" : u(join(ART_DIR, j.bg)), solid: j.solid })}
+    let card = cardHtml({ text: j.text, author: j.author, book: j.book, bgUrl: j.solid ? "" : u(join(ART_DIR, j.bg)), solid: j.solid });
+    if (j.tag2) card = card.replace(/<\/div>$/, `<div class="tag tag2">${TAG2}</div></div>`);
+    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>body{margin:0}${cardCss(u(FONT_DIR) + "/")}${j.tag2 ? TAG2_CSS : ""}</style>
+${card}
 <script>${FIT_JS};document.fonts.ready.then(()=>{fitCards(document);document.body.dataset.ready=1})</script>`);
     await page.goto(u(tmp));
     await page.waitForSelector("body[data-ready]");

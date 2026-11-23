@@ -82,8 +82,11 @@ def main(slugs):
         if not code or any(k not in verses for k in keys):
             err(f"no such verse(s) {q['ref']!r}")
             continue
-        if norm(q["text"]) != norm(" ".join(verses[k] for k in keys)):
-            err("text is not the BSB verse(s) word for word")
+        # A card may quote part of the verse(s) (no psalm superscription, no unpaired quotation
+        # mark) and may show the master's plural "you+" as plain "you".
+        whole = norm(" ".join(verses[k] for k in keys))
+        if norm(q["text"]) not in whole and norm(q["text"]) not in re.sub(r"(?<=[a-z])\+", "", whole):
+            err("text is not word for word from the BSB verse(s)")
         t = q.get("topics") or []
         if not 1 <= len(t) <= 3 or any(x not in topics for x in t):
             err("needs 1-3 topics from topics.yaml")

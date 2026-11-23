@@ -259,3 +259,8 @@ one chapter, "Psalm 147:3-4"), `text` (verify.py checks it is the BSB word for w
 The card shows the reference in the author's place and "Berean Standard Bible" in the
 book's. On the site they are "Bible (BSB)" in the Authors filter and "Berean Standard Bible"
 in the Books filter; the quote page links to /library/ instead of a book page.
+Verse cards carry a second site name, CONFESS.CATECHIZE.ING, bottom right (stacked under
+BOOKS.FREELY.GIVING on framed cards); that markup and CSS live in render-cards.mjs (TAG2), not
+card.mjs, so the book cards don't re-render. A card may quote part of the verse(s): psalm
+superscriptions and unpaired quotation marks are left off, and the master's plural "you+" is
+shown as plain "you" unless Michael asks to keep it for a card (2026-11-23: 43 verses, none kept).
