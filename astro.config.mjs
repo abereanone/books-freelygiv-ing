@@ -25,7 +25,12 @@ export default defineConfig({
   // Astro 7 defaults to "jsx", which drops the line break between text and an inline
   // tag ("enjoy<a>x</a>and" renders as "enjoyxand"). true keeps the Astro 6 behaviour.
   compressHTML: true,
-  integrations: [sitemap({ customPages: readOnlinePages })],
+  // Quote look pages (/quotes/<id>/<dark|light|solid>/) exist only so shared links preview the
+  // right card; their canonical is /quotes/<id>/, so they stay out of the sitemap.
+  integrations: [sitemap({
+    customPages: readOnlinePages,
+    filter: (page) => !/\/quotes\/[^/]+\/(dark|light|solid)\/$/.test(page),
+  })],
   // Authors is a filter on /people/, not a page. On Cloudflare public/_redirects answers
   // first with a real 301; this covers `astro dev` and any host without _redirects.
   redirects: {

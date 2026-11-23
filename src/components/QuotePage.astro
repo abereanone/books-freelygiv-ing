@@ -1,0 +1,267 @@
+---
+// One quote card page: the image with a Dark/Light/Solid switch, share and save, links, and the
+// book. Rendered at /quotes/<id>/ (the quote's own look) and /quotes/<id>/<look>/ (one per look),
+// so a shared link's preview (og:image) is exactly the card that was showing. The look pages
+// point their canonical at the main page and stay out of the sitemap.
+import Base from '../layouts/Base.astro';
+import { getQuoteTopics, quoteImage } from '../lib/data.js';
+
+interface Props { q: any; all: any[]; prev: string; next: string; look?: 'dark' | 'light' | 'solid' }
+const { q, all, prev, next, look } = Astro.props as Props;
+const shown = (look || q.tone) as 'dark' | 'light' | 'solid';
+const topics = getQuoteTopics() as Record<string, { label: string }>;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const abs = (u: string) => (u.startsWith('http') ? u : `${siteUrl}${u}`);
+const img = { dark: quoteImage(q.id, 'dark'), light: quoteImage(q.id, 'light'), solid: quoteImage(q.id, 'solid') };
+const pageUrl = `${siteUrl}/quotes/${q.id}/`;
+const shareText = `“${q.text}” — ${q.authorName}, ${q.bookTitle}`;
+const short = q.text.length > 90 ? q.text.slice(0, 88).replace(/\s+\S*$/, '') + '…' : q.text;
+
+// "More like this": same first topic, then same book; never this one, never twice.
+const pick = (fn: (x: any) => boolean, n: number, skip: Set<string>) => {
+  const out = all.filter((x: any) => !skip.has(x.id) && fn(x)).slice(0, n);
+  out.forEach((x: any) => skip.add(x.id));
+  return out;
+};
+const skip = new Set([q.id]);
+const firstTopic = q.topics[0];
+const moreTopic = pick((x) => x.topics.includes(firstTopic), 4, skip);
+const moreBook = pick((x) => x.book === q.book, 4, skip);
+---
+
+<Base
+  title={short}
+  ogTitle={`“${short}” — ${q.authorName}`}
+  ogDescription={`From ${q.bookTitle} by ${q.authorName}. Free to share; the book is free too.`}
+  ogImage={abs(img[shown])}
+  canonical={pageUrl}
+  ogImageAlt={`${q.text} (${q.authorName})`}
+>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb small">
+      <li class="breadcrumb-item"><a href="/quotes/">Quote Cards</a></li>
+      {firstTopic && topics[firstTopic] && <li class="breadcrumb-item"><a href={`/quotes/topics/${firstTopic}/`}>{topics[firstTopic].label}</a></li>}
+    </ol>
+  </nav>
+
+  <article class="qp" data-id={q.id} data-tone={q.tone} data-start={shown} data-caption={`From ${q.bookTitle} by ${q.authorName}, free to read:`} data-dark={img.dark} data-light={img.light} data-solid={img.solid} data-share-text={shareText} data-page={pageUrl} data-prev={prev} data-next={next}>
+    <div class="qp-image">
+      <div class="qp-frame" id="qpFrame">
+        <img id="qpImg" src={img[shown]} alt={`${q.text} (${q.authorName})`} width="1080" height="1080" />
+        <a class="qp-nav qp-prev" id="qpPrev" href={`/quotes/${prev}/`} aria-label="Previous quote">‹</a>
+        <a class="qp-nav qp-next" id="qpNext" href={`/quotes/${next}/`} aria-label="Next quote">›</a>
+      </div>
+      <p class="small text-body-secondary mt-2 mb-0 qp-pos" id="qpPos">Swipe or use ‹ › for the next card.</p>
+      <div class="btn-group btn-group-sm qp-tone" role="group" aria-label="Background">
+        <button type="button" class="btn btn-outline-secondary" data-tone="dark">Dark</button>
+        <button type="button" class="btn btn-outline-secondary" data-tone="light">Light</button>
+        <button type="button" class="btn btn-outline-secondary" data-tone="solid">Solid colour</button>
+      </div>
+    </div>
+
+    <div class="qp-body">
+      <blockquote class="qp-quote">
+        <p>{q.text}</p>
+        <footer class="text-body-secondary">
+          {q.authorHref ? <a href={q.authorHref}>{q.authorName}</a> : q.authorName},
+          <cite><a href={q.bookHref}>{q.bookTitle}</a></cite>
+          {q.chapter && <span class="d-block small mt-1">{q.chapter}</span>}
+        </footer>
+      </blockquote>
+
+      <div class="qp-actions">
+        <button type="button" class="btn btn-primary" id="qpShare">Share image</button>
+        <a class="btn btn-outline-primary" id="qpDownload" href={img[shown]} download={`${q.id}.jpg`}>Save image</a>
+        <button type="button" class="btn btn-outline-primary" id="qpShareLink">Share link</button>
+        <button type="button" class="btn btn-outline-secondary" id="qpCopyText">Copy quote</button>
+      </div>
+      <p class="small text-body-secondary mt-2 mb-0">Share image sends the picture, with a link to the free book, to Signal, Messages, Facebook or any app on your phone. Share link sends just the link; its preview shows this card. Save image puts it in your photos.</p>
+
+      <p class="qp-share small" aria-label="Share a link">
+        <span class="text-body-secondary me-1">Or share a link:</span>
+        <a data-net="facebook" href="#" rel="noopener">Facebook</a>
+        <a data-net="x" href="#" rel="noopener">X</a>
+        <a data-net="whatsapp" href="#" rel="noopener">WhatsApp</a>
+        <a data-net="pinterest" href="#" rel="noopener">Pinterest</a>
+        <a data-net="email" href="#">Email</a>
+        <button type="button" class="btn btn-link btn-sm p-0 align-baseline" id="qpCopyLink">Copy link</button>
+      </p>
+      <p class="small text-body-secondary" id="qpNote" aria-live="polite"></p>
+
+      <div class="qp-book">
+        {q.readUrl && <a class="btn btn-success btn-sm" href={q.readUrl}>Read it in the book</a>}
+        <a class="btn btn-outline-secondary btn-sm" href={q.bookHref}>About the book (free)</a>
+      </div>
+
+      {q.scripture?.length > 0 && (
+        <p class="small mt-3 mb-1"><span class="text-body-secondary">Scripture:</span> {q.scripture.join('; ')}</p>
+      )}
+      <p class="qp-topics small">
+        {q.topics.filter((t: string) => topics[t]).map((t: string) => <a class="badge rounded-pill text-bg-secondary text-decoration-none" href={`/quotes/topics/${t}/`}>{topics[t].label}</a>)}
+      </p>
+    </div>
+  </article>
+
+  {moreTopic.length > 0 && topics[firstTopic] && (
+    <section class="mt-5">
+      <h2 class="h5">More on {topics[firstTopic].label.toLowerCase()}</h2>
+      <div class="qp-more">{moreTopic.map((x: any) => <a href={`/quotes/${x.id}/`}><img src={quoteImage(x.id, x.tone, 'thumb')} alt={`${x.text} (${x.authorName})`} width="480" height="480" loading="lazy" /></a>)}</div>
+    </section>
+  )}
+  {moreBook.length > 0 && (
+    <section class="mt-4">
+      <h2 class="h5">More from <i>{q.bookTitle}</i></h2>
+      <div class="qp-more">{moreBook.map((x: any) => <a href={`/quotes/${x.id}/`}><img src={quoteImage(x.id, x.tone, 'thumb')} alt={`${x.text} (${x.authorName})`} width="480" height="480" loading="lazy" /></a>)}</div>
+    </section>
+  )}
+  <p class="mt-4"><a href="/quotes/">All quote cards</a></p>
+</Base>
+
+<style>
+  .qp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+  @media (max-width: 767px) { .qp { grid-template-columns: 1fr; gap: 1.25rem; } }
+  .qp-image img { width: 100%; height: auto; display: block; border-radius: .5rem; }
+  .qp-frame { position: relative; touch-action: pan-y; }
+  .qp-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 64px; display: grid; place-items: center;
+            font-size: 2.4rem; line-height: 1; text-decoration: none; color: #fff; background: rgba(0,0,0,.35); border-radius: .4rem; }
+  .qp-nav:hover, .qp-nav:focus-visible { background: rgba(0,0,0,.6); color: #fff; }
+  .qp-prev { left: 8px; } .qp-next { right: 8px; }
+  .qp-tone { margin-top: .6rem; }
+  .qp-tone [aria-pressed="true"] { background: var(--bs-secondary); color: var(--bs-body-bg); }
+  .qp-quote p { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; line-height: 1.35; text-wrap: balance; }
+  .qp-actions, .qp-book { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .qp-share { display: flex; flex-wrap: wrap; gap: .25rem .9rem; align-items: baseline; margin: 1rem 0 .25rem; }
+  .qp-topics { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .9rem; }
+  .qp-more { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
+  @media (max-width: 575px) { .qp-more { grid-template-columns: 1fr 1fr; } }
+  .qp-more img { width: 100%; height: auto; display: block; border-radius: .35rem; }
+</style>
+
+<script>
+  const art = document.querySelector('.qp') as HTMLElement;
+  const img = document.getElementById('qpImg') as HTMLImageElement;
+  const dl = document.getElementById('qpDownload') as HTMLAnchorElement;
+  const note = document.getElementById('qpNote')!;
+  const toneBtns = [...document.querySelectorAll<HTMLButtonElement>('.qp-tone [data-tone]')];
+  const shareText = art.dataset.shareText!;
+  const LOOKS = ['dark', 'light', 'solid'];
+  let tone = art.dataset.start!;
+  const p = new URLSearchParams(location.search).get('bg');   // old ?bg= links still work
+  if (p && LOOKS.includes(p)) tone = p;
+  // A look the visitor picked (or arrived on) carries over to the next card when swiping.
+  let chosen = tone !== art.dataset.tone || /\/(dark|light|solid)\/$/.test(location.pathname) || !!p;
+
+  // Each look has its own address, whose preview (og:image) is that exact card, so the link
+  // that gets shared shows the friend the same picture.
+  const pathFor = (t: string) => `/quotes/${art.dataset.id}/` + (t !== art.dataset.tone ? `${t}/` : '');
+  const link = () => new URL(pathFor(tone), art.dataset.page).href;
+  const srcFor = (t: string) => (art.dataset as any)[t] || art.dataset.dark!;
+  const imageUrl = () => new URL(srcFor(tone), location.href).href;
+  const say = (msg: string) => { note.textContent = msg; setTimeout(() => { if (note.textContent === msg) note.textContent = ''; }, 2500); };
+
+  function setTone(t: string, push = true) {
+    tone = t;
+    img.src = srcFor(t);
+    dl.href = img.src;
+    toneBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tone === t)));
+    if (push) { chosen = true; history.replaceState(null, '', pathFor(t)); }
+    updateNets();
+  }
+
+  function updateNets() {
+    const u = encodeURIComponent(link()), txt = encodeURIComponent(shareText);
+    const nets: Record<string, string> = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+      x: `https://x.com/intent/post?text=${txt}&url=${u}`,
+      whatsapp: `https://wa.me/?text=${txt}%20${u}`,
+      pinterest: `https://pinterest.com/pin/create/button/?url=${u}&media=${encodeURIComponent(imageUrl())}&description=${txt}`,
+      email: `mailto:?subject=${encodeURIComponent('A quote for you')}&body=${txt}%0A%0A${u}`,
+    };
+    document.querySelectorAll<HTMLAnchorElement>('[data-net]').forEach((a) => { a.href = nets[a.dataset.net!]; });
+  }
+
+  async function copy(text: string) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch { const f = document.createElement('textarea'); f.value = text; f.style.position = 'fixed'; f.style.opacity = '0';
+            document.body.append(f); f.select(); const ok = document.execCommand('copy'); f.remove(); return ok; }
+  }
+
+  // Share image: send the picture itself through the phone's share menu (Messages, Facebook,
+  // Instagram, WhatsApp…). Browsers that can't hand files to other apps (most computers) save
+  // the picture instead, so it can be attached or uploaded by hand.
+  document.getElementById('qpShare')!.addEventListener('click', async () => {
+    try {
+      const blob = await (await fetch(imageUrl(), { mode: 'cors' })).blob();
+      const file = new File([blob], `${art.dataset.id}-${tone}.jpg`, { type: 'image/jpeg' });
+      // The picture plus one line with the link to the free book. Most apps (Signal, Messages,
+      // WhatsApp) keep both; an app that takes only the picture just drops the line.
+      const withLink = { files: [file], text: `${art.dataset.caption} ${link()}` };
+      if (navigator.canShare?.(withLink)) { await navigator.share(withLink); return; }
+      if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file] }); return; }
+      saveBlob(blob);
+      say('Saved the picture. This browser can’t pass pictures to other apps, so attach or upload it from your downloads.');
+    } catch (e) {
+      if ((e as DOMException).name === 'AbortError') return;
+      say('Couldn’t get the picture. Press and hold the card (or right-click it) to save it.');
+    }
+  });
+  // Share link: just the link; Signal, Messages and the rest show this card as its preview.
+  document.getElementById('qpShareLink')!.addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({ url: link() }); return; }
+      catch (e) { if ((e as DOMException).name === 'AbortError') return; }
+    }
+    say((await copy(link())) ? 'Link copied.' : 'Copy failed.');
+  });
+  document.getElementById('qpCopyText')!.addEventListener('click', async () =>
+    say((await copy(`${shareText}\n${link()}`)) ? 'Quote copied, with the link.' : 'Copy failed.'));
+  document.getElementById('qpCopyLink')!.addEventListener('click', async () =>
+    say((await copy(link())) ? 'Link copied.' : 'Copy failed.'));
+
+  function saveBlob(blob: Blob) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = `${art.dataset.id}-${tone}.jpg`;
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }
+  // Cross-site images ignore the download attribute, so fetch and save the file directly.
+  dl.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try { saveBlob(await (await fetch(imageUrl(), { mode: 'cors' })).blob()); say('Saved.'); }
+    catch { window.open(imageUrl(), '_blank'); }
+  });
+
+  toneBtns.forEach((b) => b.addEventListener('click', () => setTone(b.dataset.tone!)));
+  setTone(tone, false);
+
+  // Next / previous: through the gallery view the visitor came from (its filters and order),
+  // else through every card. The chosen background travels along.
+  let prevId = art.dataset.prev!, nextId = art.dataset.next!;
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('qgList') || 'null');
+    const i = saved?.ids?.indexOf(art.dataset.id) ?? -1;
+    if (i >= 0 && saved.ids.length > 1) {
+      prevId = saved.ids[(i - 1 + saved.ids.length) % saved.ids.length];
+      nextId = saved.ids[(i + 1) % saved.ids.length];
+      document.getElementById('qpPos')!.textContent = `${i + 1} of ${saved.ids.length}. Swipe or use ‹ › for the next card.`;
+    }
+  } catch {}
+  const go = (id: string) => { location.href = `/quotes/${id}/` + (chosen ? `${tone}/` : ''); };
+  const prevA = document.getElementById('qpPrev') as HTMLAnchorElement, nextA = document.getElementById('qpNext') as HTMLAnchorElement;
+  prevA.href = `/quotes/${prevId}/`; nextA.href = `/quotes/${nextId}/`;
+  prevA.addEventListener('click', (e) => { e.preventDefault(); go(prevId); });
+  nextA.addEventListener('click', (e) => { e.preventDefault(); go(nextId); });
+  document.addEventListener('keydown', (e) => {
+    if ((e.target as Element).closest('input, textarea, select') || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === 'ArrowLeft') go(prevId); else if (e.key === 'ArrowRight') go(nextId);
+  });
+  // Swipe on the card: a mostly sideways drag of 50 px or more.
+  const frame = document.getElementById('qpFrame')!;
+  let sx = 0, sy = 0, tracking = false;
+  frame.addEventListener('touchstart', (e) => { const t = e.touches[0]; sx = t.clientX; sy = t.clientY; tracking = e.touches.length === 1; }, { passive: true });
+  frame.addEventListener('touchend', (e) => {
+    if (!tracking) return; tracking = false;
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) >= 50 && Math.abs(dx) > Math.abs(dy) * 1.5) go(dx < 0 ? nextId : prevId);
+  }, { passive: true });
+</script>

@@ -1,0 +1,15 @@
+---
+// /quotes/<id>/<dark|light|solid>/: the same page showing one look, so a shared link's preview
+// is that exact card. Canonical points at /quotes/<id>/; left out of the sitemap.
+import QuotePage from '../../../components/QuotePage.astro';
+import { getQuotes } from '../../../lib/data.js';
+
+export function getStaticPaths() {
+  const all = getQuotes();
+  return all.flatMap((q: any, i: number) => ['dark', 'light', 'solid'].map((look) => ({
+    params: { id: q.id, look },
+    props: { q, all, look, prev: all[(i - 1 + all.length) % all.length].id, next: all[(i + 1) % all.length].id },
+  })));
+}
+---
+<QuotePage {...(Astro.props as any)} />

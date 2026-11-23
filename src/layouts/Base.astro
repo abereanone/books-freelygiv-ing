@@ -9,6 +9,7 @@ interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   ogType?: string;
+  canonical?: string;   // absolute URL, when this page is a variant of another (quote look pages)
 }
 
 const pageLang   = Astro.props.lang && Astro.props.lang !== 'en' ? Astro.props.lang : undefined;
@@ -24,7 +25,8 @@ const SITE_URL   = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const canonicalPath = Astro.url.pathname.endsWith('/')
   ? Astro.url.pathname
   : `${Astro.url.pathname}/`;
-const canonicalUrl  = `${SITE_URL}${canonicalPath}`;
+const pageUrl       = `${SITE_URL}${canonicalPath}`;
+const canonicalUrl  = Astro.props.canonical ?? pageUrl;
 
 const {
   title,
@@ -74,7 +76,7 @@ const navItems = [
     <meta property="og:image"     content={ogImage} />
     {ogImage       && ogImageAlt && <meta property="og:image:alt"   content={ogImageAlt} />}
     {ogType        && <meta property="og:type"        content={ogType} />}
-    <meta property="og:url"       content={canonicalUrl} />
+    <meta property="og:url"       content={pageUrl} />  <!-- the page itself: a look page's preview must stay its own card -->
     <meta property="og:site_name" content={SITE_TITLE} />
 
     <meta name="twitter:card"  content="summary_large_image" />

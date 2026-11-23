@@ -198,7 +198,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
   }
 
   function render() {
-    const suffix = bg ? `?bg=${bg}` : '';
+    const suffix = bg ? `${bg}/` : '';
     grid.replaceChildren(...list.slice(0, shown).map((q) => {
       const a = document.createElement('a');
       a.className = 'qg-card';
