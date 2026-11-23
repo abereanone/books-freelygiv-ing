@@ -1,0 +1,229 @@
+---
+// The /quotes/ gallery: search, filters (topic, author, book, era, short), background switch
+// and sort, all kept in the URL so a filtered view is a link you can send. The whole list is
+// embedded as JSON and filtered in the browser (fine into the low thousands).
+// `topic` pre-selects a topic (the /quotes/topics/<topic>/ pages).
+import { getQuotes, getQuoteTopics, QUOTE_ERAS, quoteImage } from '../lib/data.js';
+
+interface Props { topic?: string }
+const { topic = '' } = Astro.props;
+
+const quotes = getQuotes();
+const topics = getQuoteTopics() as Record<string, { label: string }>;
+
+const count = (key: (q: any) => string[]) => {
+  const m = new Map<string, number>();
+  quotes.forEach((q: any) => key(q).forEach((k) => m.set(k, (m.get(k) || 0) + 1)));
+  return m;
+};
+const topicCounts  = count((q) => q.topics);
+const authorCounts = count((q) => [q.author]);
+const bookCounts   = count((q) => [q.book]);
+const eraCounts    = count((q) => (q.era ? [q.era] : []));
+
+const topicOpts  = Object.entries(topics).filter(([k]) => topicCounts.has(k)).map(([k, v]) => ({ k, label: v.label, n: topicCounts.get(k) }));
+const authorOpts = [...authorCounts].map(([k, n]) => ({ k, n, label: quotes.find((q: any) => q.author === k).authorName }))
+  .sort((a, b) => b.n - a.n || a.label.localeCompare(b.label));
+const bookOpts   = [...bookCounts].map(([k, n]) => { const q = quotes.find((x: any) => x.book === k); return { k, n, label: q.bookTitle, author: q.author }; })
+  .sort((a, b) => a.label.localeCompare(b.label));
+const eraOpts    = Object.entries(QUOTE_ERAS).filter(([k]) => eraCounts.has(k)).map(([k, label]) => ({ k, label, n: eraCounts.get(k) }));
+
+const data = quotes.map((q: any) => ({
+  id: q.id, text: q.text, a: q.author, an: q.authorName, b: q.book, bt: q.bookTitle,
+  t: q.topics, e: q.era, w: q.words, tone: q.tone, f: !!q.featured, d: q.added,
+  dark: quoteImage(q.id, 'dark', 'thumb'), light: quoteImage(q.id, 'light', 'thumb'),
+}));
+const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k, v.label]));
+---
+
+<div class="quote-gallery" data-topic={topic}>
+  <div class="qg-controls">
+    <label class="visually-hidden" for="qgSearch">Search quotes</label>
+    <input type="search" id="qgSearch" class="form-control" placeholder="Search words, authors, books…" autocomplete="off" />
+
+    <div class="qg-selects">
+      <label class="visually-hidden" for="qgTopic">Topic</label>
+      <select id="qgTopic" class="form-select form-select-sm">
+        <option value="">All topics</option>
+        {topicOpts.map((o) => <option value={o.k}>{o.label} ({o.n})</option>)}
+      </select>
+      <label class="visually-hidden" for="qgAuthor">Author</label>
+      <select id="qgAuthor" class="form-select form-select-sm">
+        <option value="">All authors</option>
+        {authorOpts.map((o) => <option value={o.k}>{o.label} ({o.n})</option>)}
+      </select>
+      <label class="visually-hidden" for="qgBook">Book</label>
+      <select id="qgBook" class="form-select form-select-sm">
+        <option value="">All books</option>
+        {bookOpts.map((o) => <option value={o.k} data-author={o.author}>{o.label} ({o.n})</option>)}
+      </select>
+      {eraOpts.length > 1 && (
+        <>
+          <label class="visually-hidden" for="qgEra">Era</label>
+          <select id="qgEra" class="form-select form-select-sm">
+            <option value="">All eras</option>
+            {eraOpts.map((o) => <option value={o.k}>{o.label} ({o.n})</option>)}
+          </select>
+        </>
+      )}
+    </div>
+
+    <div class="qg-row">
+      <div class="form-check form-switch m-0">
+        <input class="form-check-input" type="checkbox" role="switch" id="qgShort" />
+        <label class="form-check-label" for="qgShort">Short ones only</label>
+      </div>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Background">
+        <button type="button" class="btn btn-outline-secondary" data-bg="">Mixed</button>
+        <button type="button" class="btn btn-outline-secondary" data-bg="dark">Dark</button>
+        <button type="button" class="btn btn-outline-secondary" data-bg="light">Light</button>
+      </div>
+      <label class="visually-hidden" for="qgSort">Order</label>
+      <select id="qgSort" class="form-select form-select-sm qg-sort">
+        <option value="">Shuffled</option>
+        <option value="new">Newest</option>
+        <option value="author">By author</option>
+      </select>
+    </div>
+  </div>
+
+  <p class="qg-status text-body-secondary small" aria-live="polite">
+    <span id="qgCount">{quotes.length} quote cards</span>
+    <button type="button" class="btn btn-link btn-sm p-0 ms-2 text-body-secondary" id="qgClear" hidden>Clear filters</button>
+  </p>
+
+  <div class="qg-grid" id="qgGrid">
+    {quotes.slice(0, 24).map((q: any) => (
+      <a class="qg-card" href={`/quotes/${q.id}/`}>
+        <img src={quoteImage(q.id, q.tone, 'thumb')} alt={`${q.text} (${q.authorName})`} width="480" height="480" loading="lazy" />
+      </a>
+    ))}
+  </div>
+  <p class="text-body-secondary" id="qgEmpty" hidden>No quotes match. Try fewer filters.</p>
+  <div class="text-center my-4">
+    <button type="button" class="btn btn-outline-primary" id="qgMore" hidden>Show more</button>
+  </div>
+</div>
+
+<script type="application/json" id="qgData" set:html={JSON.stringify({ quotes: data, topics: topicLabels })}></script>
+
+<!-- Global: the grid's cards are built by the script below, which Astro's scoped styles don't reach. -->
+<style is:global>
+  .qg-controls { display: grid; gap: .6rem; margin-bottom: .75rem; }
+  .qg-selects { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .5rem; }
+  .qg-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
+  .qg-sort { width: auto; }
+  .qg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: .75rem; }
+  @media (max-width: 575px) { .qg-grid { grid-template-columns: 1fr 1fr; gap: .5rem; } }
+  .qg-card { display: block; border-radius: .4rem; overflow: hidden; background: var(--bs-secondary-bg); aspect-ratio: 1; }
+  .qg-card img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .15s ease; }
+  .qg-card:hover img, .qg-card:focus-visible img { transform: scale(1.03); }
+  .qg-card:focus-visible { outline: 3px solid var(--bs-primary); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .qg-card img { transition: none; } }
+  .quote-gallery .btn-group [aria-pressed="true"] { background: var(--bs-secondary); color: var(--bs-body-bg); }
+</style>
+
+<script>
+  type Q = { id: string; text: string; a: string; an: string; b: string; bt: string; t: string[]; e: string | null;
+             w: number; tone: string; f: boolean; d: string; dark: string; light: string };
+  const { quotes, topics } = JSON.parse(document.getElementById('qgData')!.textContent!) as { quotes: Q[]; topics: Record<string, string> };
+  const root = document.querySelector('.quote-gallery') as HTMLElement;
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const search = $<HTMLInputElement>('qgSearch'), topicSel = $<HTMLSelectElement>('qgTopic'),
+        authorSel = $<HTMLSelectElement>('qgAuthor'), bookSel = $<HTMLSelectElement>('qgBook'),
+        eraSel = document.getElementById('qgEra') as HTMLSelectElement | null,
+        shortChk = $<HTMLInputElement>('qgShort'), sortSel = $<HTMLSelectElement>('qgSort');
+  const grid = $('qgGrid'), more = $('qgMore'), countEl = $('qgCount'), clear = $('qgClear'), empty = $('qgEmpty');
+  const bgBtns = [...document.querySelectorAll<HTMLButtonElement>('[data-bg]')];
+  const PAGE = 48;
+  let shown = PAGE, bg = '', list: Q[] = [];
+
+  // A fresh mix each visit (seeded per page load), so the same cards aren't always on top.
+  const seed = Math.floor(Math.random() * 1e9);
+  const rank = (id: string) => { let h = seed; for (const c of id) h = Math.imul(h ^ c.charCodeAt(0), 2654435761) >>> 0; return h; };
+  const norm = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, "'");
+
+  function readUrl() {
+    const p = new URLSearchParams(location.search);
+    search.value = p.get('q') || '';
+    topicSel.value = p.get('topic') || root.dataset.topic || '';
+    authorSel.value = p.get('author') || '';
+    bookSel.value = p.get('book') || '';
+    if (eraSel) eraSel.value = p.get('era') || '';
+    shortChk.checked = p.get('short') === '1';
+    sortSel.value = p.get('sort') || '';
+    bg = ['dark', 'light'].includes(p.get('bg') || '') ? p.get('bg')! : '';
+  }
+
+  function writeUrl() {
+    const p = new URLSearchParams();
+    if (search.value.trim()) p.set('q', search.value.trim());
+    if (topicSel.value && topicSel.value !== root.dataset.topic) p.set('topic', topicSel.value);
+    if (authorSel.value) p.set('author', authorSel.value);
+    if (bookSel.value) p.set('book', bookSel.value);
+    if (eraSel?.value) p.set('era', eraSel.value);
+    if (shortChk.checked) p.set('short', '1');
+    if (sortSel.value) p.set('sort', sortSel.value);
+    if (bg) p.set('bg', bg);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : ''));
+  }
+
+  function apply(resetPage = true) {
+    // Book list follows the chosen author.
+    for (const o of bookSel.options) if (o.value) o.hidden = !!authorSel.value && o.dataset.author !== authorSel.value;
+    if (bookSel.selectedOptions[0]?.hidden) bookSel.value = '';
+
+    const words = norm(search.value).split(/\s+/).filter(Boolean);
+    list = quotes.filter((q) =>
+      (!topicSel.value || q.t.includes(topicSel.value)) &&
+      (!authorSel.value || q.a === authorSel.value) &&
+      (!bookSel.value || q.b === bookSel.value) &&
+      (!eraSel?.value || q.e === eraSel.value) &&
+      (!shortChk.checked || q.w <= 20) &&
+      (!words.length || words.every((w) => norm(`${q.text} ${q.an} ${q.bt} ${q.t.map((t) => topics[t]).join(' ')}`).includes(w))));
+    if (sortSel.value === 'new') list.sort((x, y) => y.d.localeCompare(x.d) || rank(x.id) - rank(y.id));
+    else if (sortSel.value === 'author') list.sort((x, y) => x.an.localeCompare(y.an) || x.bt.localeCompare(y.bt));
+    else list.sort((x, y) => rank(x.id) - rank(y.id));
+
+    if (resetPage) shown = PAGE;
+    bgBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.bg === bg)));
+    const filtered = list.length !== quotes.length;
+    countEl.textContent = filtered ? `${list.length} of ${quotes.length} quote cards` : `${quotes.length} quote cards`;
+    clear.hidden = !(filtered || bg || sortSel.value);
+    empty.hidden = list.length > 0;
+    render();
+    writeUrl();
+  }
+
+  function render() {
+    const suffix = bg ? `?bg=${bg}` : '';
+    grid.replaceChildren(...list.slice(0, shown).map((q) => {
+      const a = document.createElement('a');
+      a.className = 'qg-card';
+      a.href = `/quotes/${q.id}/${suffix}`;
+      const img = document.createElement('img');
+      img.src = (bg || q.tone) === 'light' ? q.light : q.dark;
+      img.alt = `${q.text} (${q.an})`;
+      img.width = img.height = 480;
+      img.loading = 'lazy';
+      a.append(img);
+      return a;
+    }));
+    more.hidden = list.length <= shown;
+    more.textContent = `Show more (${list.length - shown} left)`;
+  }
+
+  let t: number | undefined;
+  search.addEventListener('input', () => { clearTimeout(t); t = window.setTimeout(() => apply(), 150); });
+  [topicSel, authorSel, bookSel, eraSel, shortChk, sortSel].forEach((el) => el?.addEventListener('change', () => apply()));
+  bgBtns.forEach((b) => b.addEventListener('click', () => { bg = b.dataset.bg || ''; apply(false); }));
+  more.addEventListener('click', () => { shown += PAGE; render(); });
+  clear.addEventListener('click', () => {
+    search.value = ''; topicSel.value = root.dataset.topic || ''; authorSel.value = ''; bookSel.value = '';
+    if (eraSel) eraSel.value = ''; shortChk.checked = false; sortSel.value = ''; bg = ''; apply();
+  });
+
+  readUrl();
+  apply();
+</script>

@@ -1,0 +1,634 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+# tone: the look shown first (light | dark); both are made. background: the painting for each.
+- id: brooks-guilt-or-grief-all-that
+  text: Guilt or grief is all that gracious souls get by communion with vain souls.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: The Text Opened and the Point Proved
+  anchor: introduction-h1
+  topics: [church, world]
+  scripture: ['Psalm 1:1']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: forest-06.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-satan-that-wily-merchant-that
+  text: Satan is that wily merchant, that devoureth not widows’ houses, but most men’s souls.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: The Text Opened and the Point Proved
+  anchor: introduction-h1
+  topics: [satan]
+  scripture: ['2 Corinthians 2:11']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: storm-05.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-adversity-hath-slain-her-thousand
+  text: Adversity hath slain her thousand, but prosperity her ten thousand.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 1. Presenting the Bait and Hiding the Hook
+  anchor: sin-01-h1
+  topics: [world, affliction]
+  scripture: ['1 Samuel 18:7']
+  words: 10
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-sin-that-in-one-mans
+  text: The sin that is in one man’s heart, is able to infect a whole world, ’tis of such a spreading and infectious nature.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 1. Presenting the Bait and Hiding the Hook
+  anchor: sin-01-h1
+  topics: [sin]
+  scripture: ['Romans 5:12']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: storm-06.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-many-eat-that-on-earth
+  text: Many eat that on earth, that they digest in hell; sin’s murdering morsels will deceive those that devour them.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 1. Presenting the Bait and Hiding the Hook
+  anchor: sin-01-h1
+  topics: [sin, temptation]
+  scripture: ['Proverbs 9:17', 'Proverbs 9:18']
+  words: 19
+  status: candidate
+  featured: false
+  background: {dark: storm-08.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-sin-will-surely-prove-evil
+  text: Sin will surely prove evil, and bitter to the soul, when its robes are taken off.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 2. Painting Sin with Virtue’s Colours
+  anchor: sin-02-h1
+  topics: [sin, temptation]
+  scripture: []
+  words: 16
+  status: candidate
+  featured: false
+  background: {dark: storm-02.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-debates-soul-are-quick-soon
+  text: The debates of the soul are quick, and soon ended; and that may be done in a moment, that may undo a man for ever.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 3. Lessening Sin
+  anchor: sin-03-h1
+  topics: [temptation, sin]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: storm-03.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-one-little-miscarriage-doth-in
+  text: One little miscarriage doth in the eyes of the world, overshadow all a Christian’s Graces, as one little cloud doth sometimes overshadow the whole body of the Sun.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 3. Lessening Sin
+  anchor: sin-03-h1
+  topics: [holiness, sin]
+  scripture: ['Ecclesiastes 10:1']
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: forest-05.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-one-drop-evil-conscience-swallows
+  text: One drop of an evil conscience swallows up the whole sea of worldly joy.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 3. Lessening Sin
+  anchor: sin-03-h1
+  topics: [conscience, world]
+  scripture: []
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-many-can-sin-with-david
+  text: Many can sin with David and Peter, that cannot repent with David and Peter, and so must perish for ever.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 4. The Best Men’s Sins
+  anchor: sin-04-h1
+  topics: [repentance, sin]
+  scripture: ['Psalm 51:1']
+  words: 20
+  status: candidate
+  featured: false
+  background: {dark: winter-01.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-god-most-angry-when-he
+  text: God is most angry, when he shows no anger, God keep me from this mercy; this kind of mercy is worse than all other misery.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 4. The Best Men’s Sins
+  anchor: sin-04-h1
+  topics: [sin, mercy]
+  scripture: ['Hosea 4:17']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: storm-08.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-repentance-for-sin-nothing-worth
+  text: Repentance for sin is nothing worth, without repentance from sin.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 6. Repentance Made Easy
+  anchor: sin-06-h1
+  topics: [repentance]
+  scripture: []
+  words: 10
+  status: candidate
+  featured: false
+  background: {dark: winter-02.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-man-may-not-look-intently
+  text: A man may not look intently upon that, that he may not love entirely.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 7. The Occasions of Sin
+  anchor: sin-07-h1
+  topics: [temptation]
+  scripture: ['Job 31:1']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: storm-04.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-usually-worst-men-have-most
+  text: Usually the worst of men have most of these outward things, and the best of men have least of earth, though most of heaven.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 8. The Outward Mercies of Vain Men
+  anchor: sin-08-h1
+  topics: [world, contentment]
+  scripture: ['Psalm 73:3']
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-tis-better-to-have-sore
+  text: ’Tis better to have a sore, than a seared conscience. ’Tis better to have no heart than a hard heart; no mind, than a blind mind.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 8. The Outward Mercies of Vain Men
+  anchor: sin-08-h1
+  topics: [conscience, heart]
+  scripture: ['1 Timothy 4:2']
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-more-saints-be-beaten-with
+  text: The more saints be beaten with the hammer of afflictions, the more they are made the trumpets of God’s praises, and the more are their graces revived and quickened.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [affliction, worship]
+  scripture: []
+  words: 29
+  status: candidate
+  featured: false
+  background: {dark: storm-05.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-gracious-soul-may-look-through
+  text: A gracious soul may look through the darkest cloud, and see a God smiling on him.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [affliction, assurance, faith]
+  scripture: []
+  words: 16
+  status: candidate
+  featured: false
+  background: {dark: storm-06.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-snow-covers-many-dunghill-so
+  text: The snow covers many a dunghill; so doth prosperity many a rotten heart.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [world, hypocrisy]
+  scripture: []
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-hard-weather-tries-what-health
+  text: Hard weather tries what health we have; afflictions try what sap we have, what grace we have.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [affliction, grace]
+  scripture: ['1 Peter 1:7']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: storm-07.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-bees-are-killed-with-honey
+  text: 'Bees are killed with honey, but quickened with vinegar: The honey of prosperity kills our graces, but the vinegar of adversity quickens our graces.'
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [affliction, world]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: storm-09.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-when-gods-hand-on-thy
+  text: When God’s hand is on thy back, let thy hand be on thy mouth; for though the affliction be sharp, it shall be but short.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [affliction, patience]
+  scripture: ['Psalm 39:9', '2 Corinthians 4:17']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: storm-01.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-god-had-one-son-without
+  text: God had one Son without sin, but none without sorrow.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 9. The Crosses of the Saints
+  anchor: sin-09-h1
+  topics: [affliction, christ]
+  scripture: ['Hebrews 12:6']
+  words: 10
+  status: candidate
+  featured: false
+  background: {dark: storm-06.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-one-old-piece-gold-worth
+  text: One old piece of Gold is worth a thousand new counters, and one old truth of God is more worth than a thousand new errors.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 11. Error in the Judgment
+  anchor: sin-11-h1
+  topics: [scripture]
+  scripture: ['Jeremiah 6:16']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: sky-08.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-you-may-as-soon-fill
+  text: You may as soon fill a bag with wisdom, a chest with virtue, or a circle with a triangle, as the heart of man with any thing here below.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 1. The World in Its Best Dress
+  anchor: duties-01-h1
+  topics: [world, contentment]
+  scripture: ['Ecclesiastes 1:8']
+  words: 29
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-beauty-world-foils-christian-more
+  text: The beauty of the world foils a Christian more than the strength; the flattering sunshine more than the blustering storm; in storms, we keep our garments close about us.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 1. The World in Its Best Dress
+  anchor: duties-01-h1
+  topics: [world, temptation]
+  scripture: []
+  words: 29
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-childs-most-precious-things-are
+  text: The child’s most precious things are most secure in his father’s hands; so are our souls, our graces, and our comforts, in the hand of Christ.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 2. The Dangers of Duty
+  anchor: duties-02-h1
+  topics: [assurance, christ]
+  scripture: ['John 10:28']
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: sky-09.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: brooks-remember-this-that-god-will
+  text: Remember this, that God will suit your strength to your work, and in the hardest service you shall have the choicest assistance.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 3. The Difficulty of Duty
+  anchor: duties-03-h1
+  topics: [worship, grace]
+  scripture: ['2 Corinthians 12:9']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: forest-07.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-sure-tis-better-to-go
+  text: Sure ’tis better to go to heaven alone, than to hell with company.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 6. The Example of the World
+  anchor: duties-06-h1
+  topics: [world, heaven]
+  scripture: ['Matthew 7:13', 'Exodus 23:2']
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-promises-god-are-precious-book
+  text: The promises of God are a precious book, every leaf drops myrrh and mercy.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 1. Poring on Sin More than on the Saviour
+  anchor: doubting-01-h1
+  topics: [scripture, mercy]
+  scripture: ['2 Peter 1:4']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: sky-10.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-god-can-look-sourly-chide
+  text: God can look sourly, and chide bitterly, and strike heavily, even where, and when he loves dearly.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 3. Cross Providences
+  anchor: doubting-03-h1
+  topics: [affliction, assurance]
+  scripture: ['Hebrews 12:6']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: storm-07.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-god-brings-not-pair-scales
+  text: God brings not a pair of scales to weigh our graces, but a touch-stone to try our graces.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 4. Counterfeit Graces
+  anchor: doubting-04-h1
+  topics: [assurance, grace]
+  scripture: []
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: sky-03.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: brooks-mortification-continued-act-tis-daily
+  text: Mortification is a continued act, ’tis a daily dying to sin.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 5. Conflict as in Hypocrites
+  anchor: doubting-05-h1
+  topics: [mortification]
+  scripture: ['1 Corinthians 15:31']
+  words: 11
+  status: candidate
+  featured: false
+  background: {dark: storm-04.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-god-takes-away-little-comfort
+  text: God takes away a little comfort, that he may make room in the soul for a greater degree of comfort.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 6. Lost Joy
+  anchor: doubting-06-h1
+  topics: [affliction, assurance]
+  scripture: []
+  words: 20
+  status: candidate
+  featured: false
+  background: {dark: storm-05.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-god-will-graciously-pardon-those
+  text: God will graciously pardon those sins to his people, that he will not in this life effectually subdue in his people.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 7. Relapses
+  anchor: doubting-07-h1
+  topics: [assurance, mercy, sin]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: sky-04.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: brooks-humble-heart-habitation-for-god
+  text: An humble heart is a habitation for God, a scholar for Christ, a companion for angels, a preserver of grace, and a fitter for glory.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: '4. The Saints: Division'
+  anchor: ranks-04-h1
+  topics: [humility]
+  scripture: ['Isaiah 57:15']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-humility-cannot-find-three-things
+  text: Humility cannot find three things on this side heaven; it cannot find fulness in the creature, nor sweetness in sin, nor life in an ordinance without Christ.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: '4. The Saints: Division'
+  anchor: ranks-04-h1
+  topics: [humility, christ]
+  scripture: []
+  words: 27
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-satan-can-never-undo-man
+  text: Satan can never undo a man without himself, but a man may easily undo himself without Satan.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: Six Propositions Concerning Satan
+  anchor: propositions-h1
+  topics: [satan, sin]
+  scripture: ['James 1:14']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: storm-08.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-satan-foiled-adversary-christ-hath
+  text: Satan is a foiled adversary, Christ hath led him captive, and triumphed over him upon the cross.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: Six Propositions Concerning Satan
+  anchor: propositions-h1
+  topics: [satan, cross, christ]
+  scripture: ['Colossians 2:15']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: storm-09.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-souls-security-satans-opportunity-to
+  text: The soul’s security is Satan’s opportunity to fall upon the soul, and to spoil the soul, as Joshua did the men of Ai.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 'The Use: Ten Helps Against All His Devices'
+  anchor: use-h1
+  topics: [satan, temptation]
+  scripture: ['1 Peter 5:8']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: storm-01.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-communion-with-god-shield-upon
+  text: Communion with God is a shield upon land, as well as an anchor at sea; ’tis a sword to defend you, as well as a staff to support you; therefore keep up your communion.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: 'The Use: Ten Helps Against All His Devices'
+  anchor: use-h1
+  topics: [prayer, satan]
+  scripture: []
+  words: 34
+  status: candidate
+  featured: false
+  background: {dark: forest-08.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-christs-heart-christs-arms-are
+  text: Christ’s heart, Christ’s arms are wide open to embrace the returning prodigal.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: Now the first Device that Satan hath to keep the soul off from believing in Christ, from closing with Christ, etc. is,
+  anchor: appendix-01-h2
+  topics: [mercy, christ, repentance]
+  scripture: ['Luke 15:20']
+  words: 12
+  status: candidate
+  featured: false
+  background: {dark: sky-09.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: brooks-sinners-there-no-way-to
+  text: Sinners, there is no way to avoid perishing by Christ’s iron rod, but by kissing his golden sceptre.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: Now the first Device that Satan hath to keep the soul off from believing in Christ, from closing with Christ, etc. is,
+  anchor: appendix-01-h2
+  topics: [conversion, christ]
+  scripture: ['Psalm 2:9', 'Psalm 2:12']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: sky-10.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-sin-always-dies-most-where
+  text: Sin always dies most, where faith lives most; the most believing soul, is the most mortified soul.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: Now the first Device that Satan hath to keep the soul off from believing in Christ, from closing with Christ, etc. is,
+  anchor: appendix-01-h2
+  topics: [faith, mortification]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: sky-06.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: brooks-thrice-happy-are-those-souls
+  text: Thrice happy are those souls that are brought to Christ, whether it be in a winter’s night, or in a summer’s day.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: The third Device that Satan hath to keep poor sinners from believing in Christ, from closing with Christ, from resting on Christ, etc. is,
+  anchor: appendix-03-h2
+  topics: [conversion]
+  scripture: ['John 3:8']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: sky-07.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: brooks-till-men-have-faith-in
+  text: Till men have faith in Christ, their best services are but glorious sins.
+  author: thomas-brooks
+  book: precious-remedies-against-satans-devices
+  chapter: The third Device that Satan hath to keep poor sinners from believing in Christ, from closing with Christ, from resting on Christ, etc. is,
+  anchor: appendix-03-h2
+  topics: [faith, worship]
+  scripture: ['Romans 14:23', 'Hebrews 11:6']
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: sky-08.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: light

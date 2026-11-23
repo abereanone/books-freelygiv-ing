@@ -1,0 +1,154 @@
+# Quote topics: the fixed list for the /quotes/ filters and topic pages.
+# A quote has 1-3 of these. An unknown topic fails scripts/quotes/verify.py.
+# slug: { label, about, mood }  about = the one-line intro on the topic page;
+# mood = which set of paintings in quote-art/ (storm, sky, forest, mountain, ruins, winter, road,
+# or light: bright skies, which make a light card; chosen 2026-11-22 for the hopeful topics)
+# a card with this as its first topic gets its background from.
+affliction:
+  label: "Affliction & Suffering"
+  about: "Trials, losses and hard providences, and God's purpose in them."
+  mood: storm
+death:
+  label: "Death & Dying"
+  about: "Facing death, and the Christian's hope in it."
+  mood: ruins
+heaven:
+  label: "Heaven & Glory"
+  about: "The life to come and the saints' rest."
+  mood: light
+assurance:
+  label: "Assurance & Doubt"
+  about: "For troubled consciences and doubting believers."
+  mood: light
+prayer:
+  label: "Prayer"
+  about: "Coming to God in prayer."
+  mood: forest
+heart:
+  label: "The Heart"
+  about: "Keeping, searching and guarding the heart."
+  mood: forest
+sin:
+  label: "Sin"
+  about: "The nature, danger and deceit of sin."
+  mood: storm
+temptation:
+  label: "Temptation"
+  about: "Standing against temptation."
+  mood: storm
+satan:
+  label: "Satan & Spiritual Warfare"
+  about: "The devil's devices and Christ's victory over him."
+  mood: storm
+mortification:
+  label: "Killing Sin"
+  about: "Mortification, the daily fight against indwelling sin."
+  mood: storm
+repentance:
+  label: "Repentance"
+  about: "Turning from sin to God."
+  mood: winter
+grace:
+  label: "Grace"
+  about: "God's free grace, and grace at work in the soul."
+  mood: light
+faith:
+  label: "Faith"
+  about: "Believing and trusting God."
+  mood: light
+christ:
+  label: "Christ"
+  about: "The person and work of Jesus Christ."
+  mood: light
+cross:
+  label: "The Cross"
+  about: "Christ's death and what it accomplished."
+  mood: mountain
+holy-spirit:
+  label: "The Holy Spirit"
+  about: "The Spirit's work in believers."
+  mood: sky
+scripture:
+  label: "Scripture & Truth"
+  about: "The Word of God, truth and error."
+  mood: sky
+providence:
+  label: "Providence"
+  about: "God's rule over all things."
+  mood: sky
+fear:
+  label: "Fear & Anxiety"
+  about: "Fear of men and dangers, and the fear of God."
+  mood: storm
+humility:
+  label: "Pride & Humility"
+  about: "Pride, humility and lowliness."
+  mood: road
+world:
+  label: "The World & Prosperity"
+  about: "Riches, honours and the snares of ease."
+  mood: road
+contentment:
+  label: "Poverty & Contentment"
+  about: "Want, straits and being content with God."
+  mood: road
+worship:
+  label: "Worship & Duty"
+  about: "Prayer, hearing and the duties of worship."
+  mood: forest
+forgiveness:
+  label: "Forgiveness"
+  about: "Forgiving others, and laying down revenge."
+  mood: road
+conscience:
+  label: "Conscience"
+  about: "A good conscience and a guilty one."
+  mood: road
+self-examination:
+  label: "Self-Examination"
+  about: "Searching and knowing one's own heart."
+  mood: forest
+holiness:
+  label: "Holiness"
+  about: "Growth in grace and a holy life."
+  mood: forest
+love:
+  label: "Love"
+  about: "Love to God and one another."
+  mood: forest
+church:
+  label: "The Church & Fellowship"
+  about: "The people of God together."
+  mood: forest
+peace:
+  label: "Peace"
+  about: "Peace with God and peace with others."
+  mood: light
+patience:
+  label: "Patience"
+  about: "Waiting on God and bearing his hand."
+  mood: winter
+mercy:
+  label: "God's Mercy"
+  about: "The mercy and kindness of God to sinners."
+  mood: light
+conversion:
+  label: "Conversion & the Gospel"
+  about: "Coming to Christ; the call of the gospel."
+  mood: sky
+knowing-god:
+  label: "Knowing God"
+  about: "God's greatness and our knowledge of him."
+  mood: mountain
+hypocrisy:
+  label: "Hypocrisy"
+  about: "Empty religion and a false heart."
+  mood: ruins
+work:
+  label: "Work & Daily Life"
+  about: "Callings, business and the world's employments."
+  mood: road
+family:
+  label: "Family"
+  about: "Marriage, children and the home."
+  mood: forest

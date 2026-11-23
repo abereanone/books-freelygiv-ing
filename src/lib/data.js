@@ -442,3 +442,68 @@ export function bookSlugFromPath(path) {
 export function bookAuthorSlug(book) {
   return book.authors?.[0]?.slug ?? bookCredits(book, "preparer")[0]?.slug ?? "unknown";
 }
+
+// ── quote cards (/quotes/) ───────────────────────────────────────────────────
+// Each book may have data/src/books/<slug>/quotes.yaml (see docs/QUOTES-SPEC.md). Every quote
+// not marked `rejected` is public. Card images are rendered by scripts/quotes/render-cards.mjs:
+// public/static/quotes/ in dev, R2 (files.books.freelygiv.ing/quotes/) in production.
+
+const QUOTES_SRC = join(DATA_SRC, "quotes");
+
+export const QUOTE_ERAS = {
+  reformation: "Reformation",
+  puritan: "Puritan",
+  evangelical: "1700s–1800s",
+  modern: "Modern",
+};
+
+/** Topic slug -> { label, about, mood }, in the order of topics.yaml. */
+export function getQuoteTopics() {
+  const f = join(QUOTES_SRC, "topics.yaml");
+  return existsSync(f) ? YAML.parse(readFileSync(f, "utf8")) || {} : {};
+}
+
+function quoteEras() {
+  const f = join(QUOTES_SRC, "eras.yaml");
+  return existsSync(f) ? YAML.parse(readFileSync(f, "utf8")) || {} : {};
+}
+
+/**
+ * Every public quote, joined to its book and author: { id, text, words, topics, scripture,
+ * tone, featured, added, chapter, author, authorName, authorHref, book, bookTitle, bookHref,
+ * readUrl, era }. Quotes from hidden books are left out, like everything else about them.
+ */
+export function getQuotes() {
+  const books = Object.fromEntries(getBooks().map((b) => [bookSlugFromPath(b.path), b]));
+  const people = personBySlug(readPeople());
+  const eras = quoteEras();
+  const out = [];
+  for (const [slug, book] of Object.entries(books)) {
+    const f = join(BOOKS_SRC, slug, "quotes.yaml");
+    if (!existsSync(f)) continue;
+    const read = (book.mediaTypes || []).find((m) => m.type === "htmlBook")?.sources?.[0]?.url;
+    for (const q of YAML.parse(readFileSync(f, "utf8")) || []) {
+      if (q.status === "rejected") continue;
+      const person = people[q.author];
+      out.push({
+        ...q,
+        tone: q.tone === "light" ? "light" : "dark",
+        added: String(q.added ?? ""),
+        authorName: person ? personName(person) : q.author,
+        authorHref: person?.href ?? null,
+        bookTitle: book.title,
+        bookHref: `/books/${bookAuthorSlug(book)}/${slug}/`,
+        readUrl: read ? `${read}${q.anchor ? `#${q.anchor}` : ""}` : null,
+        era: eras[q.author] ?? null,
+      });
+    }
+  }
+  return out;
+}
+
+/** URL of a card image. size: "full" (1080 px) or "thumb" (480 px). Dev serves the local
+ *  render; the built site points at R2, so upload the cards before pushing. */
+export function quoteImage(id, tone = "dark", size = "full") {
+  const base = import.meta.env?.DEV ? "/static/quotes" : "https://files.books.freelygiv.ing/quotes";
+  return `${base}/${id}-${tone === "light" ? "light" : "dark"}${size === "thumb" ? "-480" : ""}.jpg`;
+}

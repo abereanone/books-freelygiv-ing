@@ -1,0 +1,6 @@
+# Era filter on /quotes/: person slug -> era. Every quoted author needs a line here.
+# Eras: reformation (1500s), puritan (1600s), evangelical (1700s-1800s), modern (1900s on).
+john-flavel: puritan
+thomas-brooks: puritan
+john-owen: puritan
+charles-spurgeon: evangelical

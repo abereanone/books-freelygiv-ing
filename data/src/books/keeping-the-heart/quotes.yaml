@@ -1,0 +1,550 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+# tone: the look shown first (light | dark); both are made. background: the painting for each.
+- id: flavel-if-you-be-dandled-upon
+  text: If you be dandled upon the knee of providence, some of your brethren are under its feet.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: Epistle Dedicatory
+  anchor: epistle-dedicatory
+  topics: [world, affliction, church]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-heart-work-weighty-difficult-work
+  text: Heart-work is weighty and difficult work; an error there may cost you your souls.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: Epistle Dedicatory
+  anchor: epistle-dedicatory
+  topics: [heart]
+  scripture: ['Proverbs 4:23']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: forest-05.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-greatest-difficulty-in-conversion-to
+  text: The greatest difficulty in conversion, is to win the heart to God; and the greatest difficulty after conversion, is to keep the heart with God.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: Introduction
+  anchor: introduction
+  topics: [heart, conversion]
+  scripture: ['Proverbs 4:23']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-01.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-heart-treasury-hand-tongue-but
+  text: The heart is the treasury, the hand and tongue but the shops; what is in these comes from thence; the hand and tongue always begin where the heart ends.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: Introduction
+  anchor: introduction
+  topics: [heart]
+  scripture: ['Luke 6:45']
+  words: 29
+  status: candidate
+  featured: false
+  background: {dark: forest-02.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-though-bankrupts-care-not-to
+  text: Though bankrupts care not to look into their books of accounts, yet upright hearts will know whether they go backward or forward.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: The Duty Explained
+  anchor: chapter-1
+  topics: [self-examination, heart]
+  scripture: ['Psalm 77:6']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: forest-06.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-quick-sighted-self-jealousy-excellent
+  text: Quick-sighted self-jealousy is an excellent preservative from sin.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: The Duty Explained
+  anchor: chapter-1
+  topics: [sin, self-examination]
+  scripture: []
+  words: 8
+  status: candidate
+  featured: false
+  background: {dark: storm-09.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-how-many-have-been-coached
+  text: O, how many have been coached to hell in the chariots of earthly pleasures, while others have been whipped to heaven by the rod of affliction!
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: I. Prosperity
+  anchor: chapter-3-s1
+  topics: [world, affliction]
+  scripture: ['Matthew 19:24']
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-god-values-no-man-by
+  text: 'God values no man by outward excellencies, but by inward graces: they are the internal ornaments of the spirit which are of great price in God’s eyes.'
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: I. Prosperity
+  anchor: chapter-3-s1
+  topics: [humility, world]
+  scripture: ['1 Samuel 16:7', '1 Peter 3:4']
+  words: 27
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-as-god-did-not-at
+  text: As God did not at first choose you because you were high, so he will not forsake you because you are low.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: II. Adversity
+  anchor: chapter-3-s2
+  topics: [assurance, affliction, contentment]
+  scripture: ['Deuteronomy 7:7']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: sky-01.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: flavel-though-your-condition-be-changed
+  text: Though your condition be changed, your Father’s love and respects are not changed.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: II. Adversity
+  anchor: chapter-3-s2
+  topics: [assurance, affliction]
+  scripture: ['Malachi 3:6']
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: sky-02.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: flavel-affliction-pill-which-being-wrapt
+  text: Affliction is a pill, which, being wrapt up in patience and quiet submission, may be easily swallowed; but discontent chews the pill, and so embitters the soul.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: II. Adversity
+  anchor: chapter-3-s2
+  topics: [affliction, patience, contentment]
+  scripture: []
+  words: 27
+  status: candidate
+  featured: false
+  background: {dark: storm-04.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-you-have-not-smiles-great
+  text: You have not the smiles of great men, but you have the favor of the great God.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Zion’s Troubles
+  anchor: chapter-3-s3
+  topics: [affliction, contentment]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: storm-07.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-remember-christians-true-riches-are
+  text: 'Remember, the Christian’s true riches are laid out of the reach of all his enemies: they may make you poor, but not miserable.'
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Zion’s Troubles
+  anchor: chapter-3-s3
+  topics: [contentment, affliction]
+  scripture: ['Matthew 6:20']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-wicked-men-are-sometimes-like
+  text: Wicked men are sometimes like mad horses; they would stamp the people of God under their feet, but that the bridle of Providence is in their lips.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: IV. Public Danger and Distraction
+  anchor: chapter-3-s4
+  topics: [providence, fear]
+  scripture: ['Psalm 76:10']
+  words: 27
+  status: candidate
+  featured: false
+  background: {dark: sky-03.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-fear-both-multiplying-tormenting-passion
+  text: Fear is both a multiplying and a tormenting passion; it represents troubles as much greater than they are, and so tortures and racks the soul much worse than when the suffering itself comes.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: IV. Public Danger and Distraction
+  anchor: chapter-3-s4
+  topics: [fear]
+  scripture: []
+  words: 33
+  status: candidate
+  featured: false
+  background: {dark: storm-01.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-guilty-conscience-more-terrified-by
+  text: A guilty conscience is more terrified by fancied dangers, than a pure conscience is with real ones.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: IV. Public Danger and Distraction
+  anchor: chapter-3-s4
+  topics: [conscience, fear]
+  scripture: ['Proverbs 28:1']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-guilt-to-danger-what-fire
+  text: 'Guilt is to danger, what fire is to gunpowder: a man need not fear to walk among many barrels of powder, if he have no fire about him.'
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: IV. Public Danger and Distraction
+  anchor: chapter-3-s4
+  topics: [conscience, fear]
+  scripture: ['Proverbs 28:1']
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-even-darkness-hell-itself-would
+  text: Even the darkness of hell itself would be comparatively no darkness at all, were there but a promise to enlighten it.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: V. Outward Straits and Wants
+  anchor: chapter-3-s5
+  topics: [faith, affliction]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: sky-04.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: flavel-your-poverty-not-your-sin
+  text: Your poverty is not your sin, but your affliction.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: V. Outward Straits and Wants
+  anchor: chapter-3-s5
+  topics: [contentment, affliction]
+  scripture: []
+  words: 9
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-you-cannot-come-reeking-hot
+  text: You cannot come reeking hot out of the world into God’s presence, but you will find a tang of it in your duties.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: VI. Religious Duties
+  anchor: chapter-3-s6
+  topics: [worship, prayer, world]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: forest-03.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-fervent-heart-cannot-be-vagrant
+  text: A fervent heart cannot be a vagrant heart.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: VI. Religious Duties
+  anchor: chapter-3-s6
+  topics: [prayer, heart]
+  scripture: []
+  words: 8
+  status: candidate
+  featured: false
+  background: {dark: forest-09.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-keep-down-thy-heart-by
+  text: Keep down thy heart by this consideration, that by revenge thou canst but satisfy a sinful passion, but by forgiveness thou shalt conquer it.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: VII. Injuries from Men
+  anchor: chapter-3-s7
+  topics: [forgiveness]
+  scripture: ['Romans 12:19', 'Romans 12:21']
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-methinks-mercy-god-to-us
+  text: Methinks the mercy of God to us should melt our hearts into mercy for others.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: VII. Injuries from Men
+  anchor: chapter-3-s7
+  topics: [forgiveness, mercy]
+  scripture: ['Ephesians 4:32']
+  words: 15
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-get-more-humility-that-will
+  text: O get more humility, and that will bring you more peace.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: VIII. Great Provocations
+  anchor: chapter-3-s8
+  topics: [humility, peace]
+  scripture: []
+  words: 11
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-quiet-conscience-never-produced-unquiet
+  text: A quiet conscience never produced an unquiet conversation.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: VIII. Great Provocations
+  anchor: chapter-3-s8
+  topics: [conscience, peace]
+  scripture: []
+  words: 8
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-many-saint-hath-charged-condemned
+  text: Many a saint hath charged and condemned himself, for that which God will never charge him with nor condemn him for.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: X. Spiritual Darkness
+  anchor: chapter-3-s10
+  topics: [assurance, conscience]
+  scripture: ['Romans 8:33', 'Romans 8:34']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: sky-05.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: flavel-every-breach-peace-with-god
+  text: Every breach of peace with God is not a fatal breach of covenant with God.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: X. Spiritual Darkness
+  anchor: chapter-3-s10
+  topics: [assurance, peace]
+  scripture: ['Psalm 89:30', 'Psalm 89:31', 'Psalm 89:32', 'Psalm 89:33', 'Psalm 89:34']
+  words: 15
+  status: candidate
+  featured: false
+  background: {dark: sky-06.jpg, light: light-02.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: flavel-whatever-our-sin-or-trouble
+  text: 'Whatever our sin or trouble be, it should rather drive us to God, than from God: “Pardon my sin, for it is great.”'
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: X. Spiritual Darkness
+  anchor: chapter-3-s10
+  topics: [sin, affliction, prayer]
+  scripture: ['Psalm 25:11']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: storm-02.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-when-once-thou-art-in
+  text: When once thou art in heaven, thou mayest say, Now, Satan, I am where thou canst not come.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: XII. Sickness and Death
+  anchor: chapter-3-s12
+  topics: [heaven, satan, death]
+  scripture: ['Revelation 21:27']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: sky-07.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: light
+- id: flavel-never-expect-better-hearts-till
+  text: Never expect better hearts till you take more pains with them; he that will not have the sweat, must not expect the sweet of religion.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: I. Warnings
+  anchor: chapter-4-s1
+  topics: [heart, holiness]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-07.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-honest-well-experienced-heart-singular
+  text: 'An honest, well-experienced heart, is a singular help to a weak head: such a heart will serve you instead of a commentary upon a great part of the Scriptures.'
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: II. Exhortations
+  anchor: chapter-4-s2
+  topics: [heart, scripture]
+  scripture: []
+  words: 29
+  status: candidate
+  featured: false
+  background: {dark: forest-04.jpg, light: light-10.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-i-cannot-expect-better-times
+  text: I cannot expect better times, till God gives better hearts.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: II. Exhortations
+  anchor: chapter-4-s2
+  topics: [heart, church]
+  scripture: []
+  words: 10
+  status: candidate
+  featured: false
+  background: {dark: forest-08.jpg, light: light-05.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-had-david-kept-his-heart
+  text: Had David kept his heart, he had not broken his bones.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: II. Exhortations
+  anchor: chapter-4-s2
+  topics: [heart, sin]
+  scripture: ['Psalm 51:8']
+  words: 11
+  status: candidate
+  featured: false
+  background: {dark: forest-04.jpg, light: light-06.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-we-never-lose-our-hearts
+  text: We never lose our hearts, till they have first lost the efficacious and powerful impressions of the word.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Directions
+  anchor: chapter-4-s3
+  topics: [heart, scripture]
+  scripture: ['Psalm 119:11']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: forest-01.jpg, light: light-08.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-take-heed-christian-lest-thy
+  text: Take heed, Christian, lest thy shop steal away thy heart from thy closet.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Directions
+  anchor: chapter-4-s3
+  topics: [work, prayer, world]
+  scripture: ['Matthew 6:6']
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-03.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-god-never-intended-earthly-employments
+  text: God never intended earthly employments for a hindrance, but rather for a help to heavenly ones.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Directions
+  anchor: chapter-4-s3
+  topics: [work]
+  scripture: []
+  words: 16
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-07.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-serpent-heart-apostasy-best-killed
+  text: The serpent of heart-apostasy is best killed in the egg of a small remissness.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Directions
+  anchor: chapter-4-s3
+  topics: [sin, heart]
+  scripture: []
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: storm-03.jpg, light: light-09.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-heart-hungry-restless-thing-it
+  text: The heart is a hungry and restless thing; it will have something to feed upon.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: III. Directions
+  anchor: chapter-4-s3
+  topics: [heart]
+  scripture: []
+  words: 15
+  status: candidate
+  featured: false
+  background: {dark: forest-03.jpg, light: light-01.jpg}
+  added: '2026-11-22'
+  tone: dark
+- id: flavel-many-one-now-in-hell
+  text: Many a one is now in hell that had a better head than thine, and many a one now in heaven that complained of as bad a heart as thine.
+  author: john-flavel
+  book: keeping-the-heart
+  chapter: IV. Consolations
+  anchor: chapter-4-s4
+  topics: [heart, assurance]
+  scripture: []
+  words: 30
+  status: candidate
+  featured: false
+  background: {dark: forest-02.jpg, light: light-04.jpg}
+  added: '2026-11-22'
+  tone: dark

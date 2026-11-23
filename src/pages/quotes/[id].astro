@@ -1,0 +1,201 @@
+---
+// One quote card: the image with a Dark/Light switch, download, share links, copy text,
+// and links to the book. ?bg=light|dark picks the look (shared links keep it).
+import Base from '../../layouts/Base.astro';
+import { getQuotes, getQuoteTopics, quoteImage } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  const all = getQuotes();
+  return all.map((q: any) => ({ params: { id: q.id }, props: { q, all } }));
+}
+
+const { q, all } = Astro.props as any;
+const topics = getQuoteTopics() as Record<string, { label: string }>;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const abs = (u: string) => (u.startsWith('http') ? u : `${siteUrl}${u}`);
+const img = { dark: quoteImage(q.id, 'dark'), light: quoteImage(q.id, 'light') };
+const pageUrl = `${siteUrl}/quotes/${q.id}/`;
+const shareText = `“${q.text}” — ${q.authorName}, ${q.bookTitle}`;
+const short = q.text.length > 90 ? q.text.slice(0, 88).replace(/\s+\S*$/, '') + '…' : q.text;
+
+// "More like this": same first topic, then same book; never this one, never twice.
+const pick = (fn: (x: any) => boolean, n: number, skip: Set<string>) => {
+  const out = all.filter((x: any) => !skip.has(x.id) && fn(x)).slice(0, n);
+  out.forEach((x: any) => skip.add(x.id));
+  return out;
+};
+const skip = new Set([q.id]);
+const firstTopic = q.topics[0];
+const moreTopic = pick((x) => x.topics.includes(firstTopic), 4, skip);
+const moreBook = pick((x) => x.book === q.book, 4, skip);
+---
+
+<Base
+  title={short}
+  ogTitle={`“${short}” — ${q.authorName}`}
+  ogDescription={`From ${q.bookTitle} by ${q.authorName}. Free to share; the book is free too.`}
+  ogImage={abs(img[q.tone as 'dark' | 'light'])}
+  ogImageAlt={`${q.text} (${q.authorName})`}
+>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb small">
+      <li class="breadcrumb-item"><a href="/quotes/">Quote Cards</a></li>
+      {firstTopic && topics[firstTopic] && <li class="breadcrumb-item"><a href={`/quotes/topics/${firstTopic}/`}>{topics[firstTopic].label}</a></li>}
+    </ol>
+  </nav>
+
+  <article class="qp" data-id={q.id} data-tone={q.tone} data-dark={img.dark} data-light={img.light} data-share-text={shareText} data-page={pageUrl}>
+    <div class="qp-image">
+      <img id="qpImg" src={img[q.tone as 'dark' | 'light']} alt={`${q.text} (${q.authorName})`} width="1080" height="1080" />
+      <div class="btn-group btn-group-sm qp-tone" role="group" aria-label="Background">
+        <button type="button" class="btn btn-outline-secondary" data-tone="dark">Dark background</button>
+        <button type="button" class="btn btn-outline-secondary" data-tone="light">Light background</button>
+      </div>
+    </div>
+
+    <div class="qp-body">
+      <blockquote class="qp-quote">
+        <p>{q.text}</p>
+        <footer class="text-body-secondary">
+          {q.authorHref ? <a href={q.authorHref}>{q.authorName}</a> : q.authorName},
+          <cite><a href={q.bookHref}>{q.bookTitle}</a></cite>
+          {q.chapter && <span class="d-block small mt-1">{q.chapter}</span>}
+        </footer>
+      </blockquote>
+
+      <div class="qp-actions">
+        <a class="btn btn-primary" id="qpDownload" href={img[q.tone as 'dark' | 'light']} download={`${q.id}.jpg`}>Download image</a>
+        <button type="button" class="btn btn-outline-primary" id="qpShare">Share…</button>
+        <button type="button" class="btn btn-outline-secondary" id="qpCopyText">Copy quote</button>
+      </div>
+
+      <p class="qp-share small" aria-label="Share on">
+        <span class="text-body-secondary me-1">Share on</span>
+        <a data-net="facebook" href="#" rel="noopener">Facebook</a>
+        <a data-net="x" href="#" rel="noopener">X</a>
+        <a data-net="whatsapp" href="#" rel="noopener">WhatsApp</a>
+        <a data-net="pinterest" href="#" rel="noopener">Pinterest</a>
+        <a data-net="email" href="#">Email</a>
+        <button type="button" class="btn btn-link btn-sm p-0 align-baseline" id="qpCopyLink">Copy link</button>
+      </p>
+      <p class="small text-body-secondary" id="qpNote" aria-live="polite"></p>
+
+      <div class="qp-book">
+        {q.readUrl && <a class="btn btn-success btn-sm" href={q.readUrl}>Read it in the book</a>}
+        <a class="btn btn-outline-secondary btn-sm" href={q.bookHref}>About the book (free)</a>
+      </div>
+
+      {q.scripture?.length > 0 && (
+        <p class="small mt-3 mb-1"><span class="text-body-secondary">Scripture:</span> {q.scripture.join('; ')}</p>
+      )}
+      <p class="qp-topics small">
+        {q.topics.filter((t: string) => topics[t]).map((t: string) => <a class="badge rounded-pill text-bg-secondary text-decoration-none" href={`/quotes/topics/${t}/`}>{topics[t].label}</a>)}
+      </p>
+    </div>
+  </article>
+
+  {moreTopic.length > 0 && topics[firstTopic] && (
+    <section class="mt-5">
+      <h2 class="h5">More on {topics[firstTopic].label.toLowerCase()}</h2>
+      <div class="qp-more">{moreTopic.map((x: any) => <a href={`/quotes/${x.id}/`}><img src={quoteImage(x.id, x.tone, 'thumb')} alt={`${x.text} (${x.authorName})`} width="480" height="480" loading="lazy" /></a>)}</div>
+    </section>
+  )}
+  {moreBook.length > 0 && (
+    <section class="mt-4">
+      <h2 class="h5">More from <i>{q.bookTitle}</i></h2>
+      <div class="qp-more">{moreBook.map((x: any) => <a href={`/quotes/${x.id}/`}><img src={quoteImage(x.id, x.tone, 'thumb')} alt={`${x.text} (${x.authorName})`} width="480" height="480" loading="lazy" /></a>)}</div>
+    </section>
+  )}
+  <p class="mt-4"><a href="/quotes/">All quote cards</a></p>
+</Base>
+
+<style>
+  .qp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+  @media (max-width: 767px) { .qp { grid-template-columns: 1fr; gap: 1.25rem; } }
+  .qp-image img { width: 100%; height: auto; display: block; border-radius: .5rem; }
+  .qp-tone { margin-top: .6rem; }
+  .qp-tone [aria-pressed="true"] { background: var(--bs-secondary); color: var(--bs-body-bg); }
+  .qp-quote p { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; line-height: 1.35; text-wrap: balance; }
+  .qp-actions, .qp-book { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .qp-share { display: flex; flex-wrap: wrap; gap: .25rem .9rem; align-items: baseline; margin: 1rem 0 .25rem; }
+  .qp-topics { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .9rem; }
+  .qp-more { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
+  @media (max-width: 575px) { .qp-more { grid-template-columns: 1fr 1fr; } }
+  .qp-more img { width: 100%; height: auto; display: block; border-radius: .35rem; }
+</style>
+
+<script>
+  const art = document.querySelector('.qp') as HTMLElement;
+  const img = document.getElementById('qpImg') as HTMLImageElement;
+  const dl = document.getElementById('qpDownload') as HTMLAnchorElement;
+  const note = document.getElementById('qpNote')!;
+  const toneBtns = [...document.querySelectorAll<HTMLButtonElement>('.qp-tone [data-tone]')];
+  const shareText = art.dataset.shareText!;
+  let tone = art.dataset.tone!;
+  const p = new URLSearchParams(location.search).get('bg');
+  if (p === 'dark' || p === 'light') tone = p;
+
+  // The link that gets shared keeps the chosen look (?bg=light), so the friend sees the same card.
+  const link = () => art.dataset.page + (tone !== art.dataset.tone ? `?bg=${tone}` : '');
+  const imageUrl = () => new URL(tone === 'light' ? art.dataset.light! : art.dataset.dark!, location.href).href;
+  const say = (msg: string) => { note.textContent = msg; setTimeout(() => { if (note.textContent === msg) note.textContent = ''; }, 2500); };
+
+  function setTone(t: string, push = true) {
+    tone = t;
+    img.src = t === 'light' ? art.dataset.light! : art.dataset.dark!;
+    dl.href = img.src;
+    toneBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tone === t)));
+    if (push) history.replaceState(null, '', location.pathname + (t !== art.dataset.tone ? `?bg=${t}` : ''));
+    updateNets();
+  }
+
+  function updateNets() {
+    const u = encodeURIComponent(link()), txt = encodeURIComponent(shareText);
+    const nets: Record<string, string> = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+      x: `https://x.com/intent/post?text=${txt}&url=${u}`,
+      whatsapp: `https://wa.me/?text=${txt}%20${u}`,
+      pinterest: `https://pinterest.com/pin/create/button/?url=${u}&media=${encodeURIComponent(imageUrl())}&description=${txt}`,
+      email: `mailto:?subject=${encodeURIComponent('A quote for you')}&body=${txt}%0A%0A${u}`,
+    };
+    document.querySelectorAll<HTMLAnchorElement>('[data-net]').forEach((a) => { a.href = nets[a.dataset.net!]; });
+  }
+
+  async function copy(text: string) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch { const f = document.createElement('textarea'); f.value = text; f.style.position = 'fixed'; f.style.opacity = '0';
+            document.body.append(f); f.select(); const ok = document.execCommand('copy'); f.remove(); return ok; }
+  }
+
+  // Share: on phones, send the image itself (straight into Messages, WhatsApp, Instagram…);
+  // where files can't be shared, share the link; failing that, copy the link.
+  document.getElementById('qpShare')!.addEventListener('click', async () => {
+    const data: ShareData = { title: 'Quote', text: shareText, url: link() };
+    try {
+      const blob = await (await fetch(imageUrl(), { mode: 'cors' })).blob();
+      const file = new File([blob], `${art.dataset.id}.jpg`, { type: 'image/jpeg' });
+      if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], text: `${shareText}\n${link()}` }); return; }
+    } catch (e) { if ((e as DOMException).name === 'AbortError') return; }
+    if (navigator.share) { try { await navigator.share(data); return; } catch (e) { if ((e as DOMException).name === 'AbortError') return; } }
+    say((await copy(link())) ? 'Link copied.' : 'Copy failed. Copy the address bar instead.');
+  });
+  document.getElementById('qpCopyText')!.addEventListener('click', async () =>
+    say((await copy(`${shareText}\n${link()}`)) ? 'Quote copied, with the link.' : 'Copy failed.'));
+  document.getElementById('qpCopyLink')!.addEventListener('click', async () =>
+    say((await copy(link())) ? 'Link copied.' : 'Copy failed.'));
+
+  // Cross-site images ignore the download attribute, so fetch and save the file directly.
+  dl.addEventListener('click', async (e) => {
+    try {
+      const blob = await (await fetch(imageUrl(), { mode: 'cors' })).blob();
+      e.preventDefault();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = `${art.dataset.id}-${tone}.jpg`;
+      document.body.append(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    } catch { /* falls through to opening the image */ }
+  });
+
+  toneBtns.forEach((b) => b.addEventListener('click', () => setTone(b.dataset.tone!)));
+  setTone(tone, false);
+</script>

@@ -1,0 +1,28 @@
+---
+// /quotes/topics/<topic>/: the gallery opened on one topic, with its own title and intro,
+// so a search for e.g. "Puritan quotes on affliction" lands on a real page.
+import Base from '../../../layouts/Base.astro';
+import QuoteGallery from '../../../components/QuoteGallery.astro';
+import { getQuotes, getQuoteTopics, quoteImage } from '../../../lib/data.js';
+
+export function getStaticPaths() {
+  const quotes = getQuotes();
+  const topics = getQuoteTopics() as Record<string, { label: string; about: string }>;
+  return Object.entries(topics)
+    .map(([topic, t]) => ({ topic, t, qs: quotes.filter((q: any) => q.topics.includes(topic)) }))
+    .filter(({ qs }) => qs.length)
+    .map(({ topic, t, qs }) => ({ params: { topic }, props: { t, first: qs[0], n: qs.length } }));
+}
+
+const { t, first, n } = Astro.props as any;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const og = quoteImage(first.id, first.tone);
+const title = `Quotes on ${t.label}`;
+---
+
+<Base title={title} ogTitle={title} ogDescription={`${t.about} ${n} free quote images from the books on Freely Given Books.`} ogImage={og.startsWith('http') ? og : `${siteUrl}${og}`}>
+  <nav aria-label="breadcrumb"><ol class="breadcrumb small"><li class="breadcrumb-item"><a href="/quotes/">Quote Cards</a></li></ol></nav>
+  <h1>{title}</h1>
+  <p class="lead">{t.about}</p>
+  <QuoteGallery topic={Astro.params.topic} />
+</Base>

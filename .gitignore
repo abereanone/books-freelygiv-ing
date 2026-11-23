@@ -24,3 +24,6 @@ public/static/avatars/
 public/static/thumbs/
 .claude/settings.local.json
 !scripts/cut-cover.py
+quote-art
+!scripts/quotes/*.py
+public/static/quotes/
