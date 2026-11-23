@@ -1,0 +1,224 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: spurgeon-absence-from-christ-hell-but
+  text: Absence from Christ is hell; but the presence of Jesus is heaven.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: January 4
+  anchor: d0104am
+  topics: [christ, heaven]
+  scripture: []
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-am-debtor-to-gods
+  text: I am a debtor to God’s grace and forgiving mercy; but I am no debtor to his justice, for he will never accuse me of a debt already paid.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: February 3
+  anchor: d0203am
+  topics: [cross, grace]
+  scripture: ['Colossians 2:14']
+  words: 29
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-god-had-one-son-without
+  text: God had one Son without sin; but he has no son without temptation.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: February 9
+  anchor: d0209pm
+  topics: [temptation]
+  scripture: ['Hebrews 4:15']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-if-we-had-blessings-without
+  text: If we had the blessings without asking for them, we should think them common things; but prayer makes our mercies more precious than diamonds.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: February 19
+  anchor: d0219am
+  topics: [prayer, mercy]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-wherein-i-sin-that-my
+  text: Wherein I sin, that is my own; but wherein I act rightly, that is of God, wholly and completely.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: February 26
+  anchor: d0226am
+  topics: [grace, humility]
+  scripture: ['Philippians 2:13']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-love-can-make-feet-move
+  text: Love can make the feet move more swiftly; but faith is the foot which carries the soul.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: March 7
+  anchor: d0307am
+  topics: [faith, love]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-if-you-remain-where-you
+  text: If you remain where you are you must perish; if you go to Jesus you can but die.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: March 13
+  anchor: d0313am
+  topics: [conversion]
+  scripture: ['2 Kings 7:4']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-holy-spirit-helps-our-infirmities
+  text: The Holy Spirit helps our infirmities, but he does not encourage our idleness; he loves active believers.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: March 15
+  anchor: d0315pm
+  topics: [holy-spirit, work]
+  scripture: ['Romans 8:26']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-you-can-trace-beginning-human
+  text: You can trace the beginning of human affection; you can easily find the beginning of your love to Christ, but his love to us is a stream whose source is hidden in eternity.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: March 18
+  anchor: d0318pm
+  topics: [love, christ]
+  scripture: ['Jeremiah 31:3']
+  words: 33
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-great-thoughts-your-sin-alone
+  text: Great thoughts of your sin alone will drive you to despair; but great thoughts of Christ will pilot you into the haven of peace.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: March 27
+  anchor: d0327pm
+  topics: [christ, sin, peace]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-let-us-fly-to-our
+  text: Let us fly to our God, he is a consuming fire; he will not consume our spirit, but our sins.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: July 17
+  anchor: d0717pm
+  topics: [mortification, holiness]
+  scripture: ['Hebrews 12:29']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-empty-boats-float-high-but
+  text: Empty boats float high, but heavily laden vessels are low in the water; mere professors can boast, but true children of God cry for mercy upon their unprofitableness.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: August 29
+  anchor: d0829am
+  topics: [humility, hypocrisy]
+  scripture: ['Luke 17:10']
+  words: 28
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-sickness-may-befall-but-lord
+  text: Sickness may befall, but the Lord will give grace; poverty may happen to us, but grace will surely be afforded; death must come but grace will light a candle at the darkest hour.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: October 1
+  anchor: d1001pm
+  topics: [affliction, grace]
+  scripture: ['2 Corinthians 12:9']
+  words: 33
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-earth-should-be-preparation-for
+  text: Earth should be a preparation for heaven; and heaven is the place where saints feast most and work most.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: October 5
+  anchor: d1005am
+  topics: [heaven, work]
+  scripture: []
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-if-we-may-use-figure
+  text: If we may use the figure, the Holy Spirit is the Physician, but Jesus is the medicine.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: October 12
+  anchor: d1012pm
+  topics: [holy-spirit, christ]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-when-jeshurun-waxed-fat-in
+  text: 'When Jeshurun waxed fat in the flesh, he kicked against God, but there is no fear of a man’s becoming too full of grace: a plethora of grace is impossible.'
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: December 13
+  anchor: d1213am
+  topics: [grace]
+  scripture: ['Deuteronomy 32:15']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-christ-great-peacemaker-but-before
+  text: Christ is the great Peacemaker; but before peace, he brings war.
+  author: charles-spurgeon
+  book: morning-and-evening
+  chapter: December 28
+  anchor: d1228pm
+  topics: [christ, peace]
+  scripture: ['Matthew 10:34']
+  words: 11
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

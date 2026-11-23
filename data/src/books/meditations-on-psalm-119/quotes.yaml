@@ -1,0 +1,146 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: coughlin-jesus-only-one-who-has
+  text: Jesus is the only one who has ever lived or will live who sought God with all His heart.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: What About Jesus?
+  anchor: ch1
+  topics: [christ]
+  scripture: ['Psalm 119:2']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-health-wealth-gospel-lieyet-god
+  text: The health and wealth gospel is a lie—yet God expects His people to “rejoice always” and exhibit the fruit of the Spirit, including joy!
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: Comfort
+  anchor: ch6
+  topics: [world, contentment]
+  scripture: ['1 Thessalonians 5:16']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-we-arent-saved-or-made
+  text: We aren’t saved or made righteous by God’s law, but the righteous desire to know God’s law because we already have a desire to obey God.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: The Law Is Useful When Used Properly
+  anchor: ch8
+  topics: [scripture, holiness]
+  scripture: ['Psalm 119:97']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-exposure-to-gods-law-has
+  text: 'Exposure to God’s law has the same effect on everyone: it opens their eyes to God’s holiness and their own unholiness.'
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: The Law Is Useful When Used Properly
+  anchor: ch8
+  topics: [scripture, holiness]
+  scripture: ['Romans 3:20']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-gods-law-not-random-array
+  text: God’s law is not a random array of arbitrary rules, but rather, God’s moral law is a manifestation (or exhibition) of His perfect character.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: Seek His Leading
+  anchor: ch9
+  topics: [scripture, knowing-god]
+  scripture: ['Psalm 19:7']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-sinner-arrogant-rebellious-saint-humble
+  text: The sinner is arrogant and rebellious; the saint is humble and submissive.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: Arrogant Derision
+  anchor: ch13
+  topics: [humility]
+  scripture: ['James 4:6']
+  words: 12
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-lest-we-forget-our-soteriology
+  text: Lest we forget our soteriology 101 basics, we do not keep God’s precepts in order to be justified, but we fear God and keep His precepts because we are justified.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: Friend
+  anchor: ch16
+  topics: [holiness, grace]
+  scripture: ['Ephesians 2:10']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-when-god-looks-on-one
+  text: When God looks on one of His children, He sees nothing but Christ’s righteousness.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: No Shame
+  anchor: ch20
+  topics: [assurance, christ]
+  scripture: ['2 Corinthians 5:21']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-gods-law-weak-to-save
+  text: God’s law is weak to save us, but it is a powerful salve for the ailments of the child of God.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: How to Endure
+  anchor: ch23
+  topics: [scripture]
+  scripture: ['Romans 8:3']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-gods-children-not-only-abandon
+  text: God’s children not only abandon big bad sins, but they want to be rid of even respectable sins.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: How’s Your Walk?
+  anchor: ch26
+  topics: [sin, holiness]
+  scripture: ['Psalm 119:104']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: coughlin-no-one-in-world-more
+  text: No one in the world is more privileged than those who have God’s Word.
+  author: michael-coughlin
+  book: meditations-on-psalm-119
+  chapter: We Are Spoiled!
+  anchor: ch41
+  topics: [scripture]
+  scripture: ['Romans 3:2']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

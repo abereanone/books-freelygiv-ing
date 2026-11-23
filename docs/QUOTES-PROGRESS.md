@@ -29,8 +29,8 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] domestical-duties-volume-4
 - [x] grace-abounding (Bunyan)
 - [x] indwelling-sin (Owen)
-- [ ] meditations-on-psalm-119 (Coughlin)
-- [ ] morning-and-evening (Spurgeon)
+- [x] meditations-on-psalm-119 (Coughlin)
+- [x] morning-and-evening (Spurgeon)
 - [ ] of-temptation (Owen)
 - [ ] on-the-election-of-infants (Coughlin)
 - [ ] our-sin-his-mercy (Conkle)
