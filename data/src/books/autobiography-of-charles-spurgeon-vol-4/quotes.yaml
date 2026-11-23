@@ -1,0 +1,107 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: spurgeon-as-hammer-comes-down-on
+  text: As the hammer comes down on the anvil ever with the same ring, so will we preach Christ, Christ, CHRIST, and nothing else but Christ.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: LETTERS TO PERSONAL FRIENDS.
+  anchor: chapter-90-s1
+  topics: [christ]
+  scripture: ['1 Corinthians 2:2']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-it-well-faith-knows-it
+  text: ‘It is well,’ and faith knows it is so; and worships the Lord from under the cloud.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: CONSOLATORY LETTERS.
+  anchor: chapter-91-s3
+  topics: [faith, affliction]
+  scripture: ['2 Kings 4:26']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-no-lingering-sickness-no-fierce
+  text: No lingering sickness, no fierce pain; but gentle dismission, and instant admission into the glory.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: CONSOLATORY LETTERS.
+  anchor: chapter-91-s3
+  topics: [death, heaven]
+  scripture: ['2 Corinthians 5:8']
+  words: 15
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-am-in-sorry-plight
+  text: I am in a sorry plight, so far as the poor frame is concerned; but blessed with much peace.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: Appreciative Correspondents, 1855–1890
+  anchor: chapter-93
+  topics: [affliction, peace]
+  scripture: []
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-controversy-never-very-happy-element
+  text: 'Controversy is never a very happy element for the child of God: he would far rather be in communion with his Lord than be engaged in defending the faith, or in attacking error.'
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: The “Down-Grade” Controversy, from Mr. Spurgeon’s Standpoint
+  anchor: chapter-99
+  topics: [church, scripture]
+  scripture: ['Jude 1:3']
+  words: 33
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-we-will-sit-down-in
+  text: We will sit down in sorrow, but not in despair; and watch until the stone is rolled away, and Christ in His truth shall live again, and be openly triumphant.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: The “Down-Grade” Controversy, from Mr. Spurgeon’s Standpoint
+  anchor: chapter-99
+  topics: [patience, church]
+  scripture: []
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-with-god-against-us-we
+  text: With God against us, we are in a state of war; but with God for us, we dwell in perfect peace.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: The Growth of the Institutions, 1878–1892
+  anchor: chapter-103
+  topics: [peace]
+  scripture: ['Romans 5:1']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-can-only-pray-but
+  text: I can only pray; but prayer moves the hand which moves winds and clouds.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-4
+  chapter: BY MRS. C. H. SPURGEON.
+  anchor: chapter-104-s1
+  topics: [prayer, providence]
+  scripture: ['James 5:16']
+  words: 14
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

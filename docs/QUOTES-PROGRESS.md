@@ -16,10 +16,10 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] a-divine-cordial (Watson)
 - [x] a-token-for-mourners (Flavel)
 - [x] all-of-grace (Spurgeon)
-- [ ] autobiography-of-charles-spurgeon (I)
-- [ ] autobiography-of-charles-spurgeon-vol-2
-- [ ] autobiography-of-charles-spurgeon-vol-3
-- [ ] autobiography-of-charles-spurgeon-vol-4
+- [x] autobiography-of-charles-spurgeon (I)
+- [x] autobiography-of-charles-spurgeon-vol-2
+- [x] autobiography-of-charles-spurgeon-vol-3
+- [x] autobiography-of-charles-spurgeon-vol-4
 - [ ] catechism-of-suffering (Statler)
 - [ ] christian-economy (Perkins)
 - [ ] doctrine-of-law-and-grace (Bunyan)

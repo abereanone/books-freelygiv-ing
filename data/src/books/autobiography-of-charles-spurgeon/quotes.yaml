@@ -1,0 +1,146 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: spurgeon-my-heart-was-fallow-covered
+  text: My heart was fallow, and covered with weeds; but, on a certain day, the great Husbandman came, and began to plough my soul.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: “Through Much Tribulation”
+  anchor: chapter-10
+  topics: [conversion, heart]
+  scripture: ['Hosea 10:12']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-light-was-there-but-i
+  text: 'The light was there, but I was blind: it was of necessity that the Lord Himself should make the matter plain to me.'
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: The Great Change.—Conversion
+  anchor: chapter-11
+  topics: [conversion, grace]
+  scripture: ['2 Corinthians 4:6']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-if-god-had-saved-me
+  text: If God had saved me, and not the world, I should have wondered indeed; but if He had saved all the world except me, that would have seemed to me to be but right.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: The Great Change.—Conversion
+  anchor: chapter-11
+  topics: [grace, humility]
+  scripture: []
+  words: 34
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-faith-precious-gift-god-love
+  text: Faith is the precious gift of God, and love is His gift; it is all of God from first to last.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: 1850. — A BLESSED YEAR OF JUBILEE.
+  anchor: chapter-13-s4
+  topics: [faith, grace]
+  scripture: ['Ephesians 2:8']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-have-seeds-all-evil
+  text: I have the seeds of all evil in my own heart; pride is yet my darling sin, I cannot shake it off.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: 1850. — A BLESSED YEAR OF JUBILEE.
+  anchor: chapter-13-s4
+  topics: [humility, sin]
+  scripture: []
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-when-lord-entered-into-covenant
+  text: When the Lord entered into covenant with me, I am sure that it was all of grace, nothing else but grace.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: A Defence of Calvinism
+  anchor: chapter-16
+  topics: [grace]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-faith-has-less-to-do
+  text: Faith has less to do with man, and more to do with God than any of the other graces; for faith is looking away from self, and trusting the Eternal.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: OUTLINE CXXXIII. — BY FAITH JERICHO FELL.
+  anchor: chapter-20-s4
+  topics: [faith]
+  scripture: ['Hebrews 12:2']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-christ-never-will-save-any
+  text: Christ never will save any of His people in their sins; He saves His people from their sins.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: Reminiscences as a Village Pastor
+  anchor: chapter-23
+  topics: [christ, sin]
+  scripture: ['Matthew 1:21']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-merely-to-say-that-christ
+  text: Merely to say that Christ is precious, is nothing; but to know that He is precious, to feel it in truth, is everything.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: OUTLINE CCCXI. — CHRIST IS PRECIOUS.
+  anchor: chapter-25-s2
+  topics: [christ]
+  scripture: ['1 Peter 2:7']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-love-doctrines-grace-as
+  text: I love the doctrines of grace as well as any mortal living does, but I love Jesus better; I love Christ’s people as much as anyone can, but I love Christ best.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: THE FAULTLESS ASSEMBLY.
+  anchor: chapter-29-s4
+  topics: [christ, love]
+  scripture: []
+  words: 32
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-though-thou-hast-stains-as
+  text: Though thou hast stains as black as hell upon thee, Christ’s blood can wash them out; that precious blood can take away all thy sins.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon
+  chapter: THE FAULTLESS ASSEMBLY.
+  anchor: chapter-29-s4
+  topics: [cross, mercy]
+  scripture: ['1 John 1:7']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

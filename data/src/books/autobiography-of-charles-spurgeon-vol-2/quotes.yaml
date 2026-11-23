@@ -1,0 +1,107 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: spurgeon-i-do-not-wonder-at
+  text: I do not wonder at His goodness, for it is just like Him; but I cannot but lift up the voice of joy at His manifold mercies.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: BY MRS. C. H. SPURGEON.
+  anchor: chapter-34-s1
+  topics: [mercy, worship]
+  scripture: []
+  words: 27
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-let-us-take-heed-putting
+  text: Let us take heed of putting ourselves too prominently in our own hearts, but let us commit our way unto the Lord.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: Love, Courtship, and Marriage (Continued)
+  anchor: chapter-35
+  topics: [humility, faith]
+  scripture: ['Psalm 37:5']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-sinner-deserves-hell-yea-hottest
+  text: A sinner deserves hell, yea, the hottest place in hell; and if he be saved, it must be entirely by unmerited mercy.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: A New School of the Prophets
+  anchor: chapter-46
+  topics: [mercy, grace]
+  scripture: ['Romans 6:23']
+  words: 22
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-our-desire-that-every-man
+  text: Our desire is, that every man may hold the truth, and be held by it; especially the truth of Christ crucified.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: A New School of the Prophets
+  anchor: chapter-46
+  topics: [scripture, cross]
+  scripture: ['1 Corinthians 2:2']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-you-are-sick-diseased-but
+  text: You are sick and diseased, but Jesus can heal you; and He will if you only trust Him.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: The Great Catastrophe at the Surrey Gardens Music Hall
+  anchor: chapter-50
+  topics: [christ, faith]
+  scripture: ['Mark 2:17']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-contention-for-faith-far-less
+  text: Contention for the faith is far less pleasant than communion with Christ; but the neglect of the precept may involve the withdrawal of the privilege.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: The “Down-Grade” Controversy Foreshadowed
+  anchor: chapter-53
+  topics: [church, scripture]
+  scripture: ['Jude 1:3']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-love-those-five-points
+  text: I love those five points as being the angles of the gospel, but then I love the centre between the angles better still.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: Building “Our Holy and Beautiful House”
+  anchor: chapter-57
+  topics: [christ, grace]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-if-you-cannot-travel-remember
+  text: If you cannot travel, remember that our Lord Jesus Christ is more glorious than all else that you could ever see.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-2
+  chapter: Meeting in the Unfinished Tabernacle
+  anchor: chapter-59
+  topics: [christ]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

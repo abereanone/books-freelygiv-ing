@@ -1,0 +1,107 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: spurgeon-no-truth-more-sure-than
+  text: No truth is more sure than this, that the path of duty is to be followed thoroughly if peace of mind is to be enjoyed.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: Memorable Services at the Tabernacle, 1861–1874
+  anchor: chapter-65
+  topics: [peace, holiness]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-no-rest-there-east-west
+  text: No rest is there, East, West, North, or South, for your soul’s foot, save in the ark of sovereign grace; but there is rest there.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: The Absent Pastor’s Care for his Flock
+  anchor: chapter-67
+  topics: [grace, conversion]
+  scripture: ['Genesis 8:9']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-discussions-upon-new-theories-day
+  text: Discussions upon the new theories of the day drive away the Spirit of God; the old wine is the best.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: The Absent Pastor’s Care for his Flock
+  anchor: chapter-67
+  topics: [scripture, holy-spirit]
+  scripture: ['Luke 5:39']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-to-love-god-when-all
+  text: To love God when all is smooth and sweet, is but the love of swine who know their feeder.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: EXTRACTS FROM MY HUSBAND’S LETTERS.
+  anchor: chapter-73-s2
+  topics: [love, affliction]
+  scripture: []
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-should-like-you-to
+  text: I should like you to preach; but it is best that you pray; many a preacher has proved a castaway; but never one who has truly learned to pray.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: BY PASTOR CHARLES SPURGEON.
+  anchor: chapter-77-s1
+  topics: [prayer]
+  scripture: []
+  words: 29
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-believe-you-love-lord
+  text: I believe you love the Lord, and that is the main thing; the next is, stick to it.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: BY PASTOR CHARLES SPURGEON.
+  anchor: chapter-77-s1
+  topics: [love, holiness]
+  scripture: []
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-i-am-exiled-prisoner-iron
+  text: I am an exiled prisoner, and the iron enters into my soul; but the Lord is good, and in His Name do I hope.
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: BY PASTOR CHARLES SPURGEON.
+  anchor: chapter-78-s1
+  topics: [affliction, faith]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: spurgeon-let-others-hold-up-jesus
+  text: Let others hold up Jesus simply as an Example, if they will; ‘but we preach Christ crucified.’
+  author: charles-spurgeon
+  book: autobiography-of-charles-spurgeon-vol-3
+  chapter: MINISTERIAL MIRTH.
+  anchor: chapter-81-s4
+  topics: [cross, christ]
+  scripture: ['1 Corinthians 1:23']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
