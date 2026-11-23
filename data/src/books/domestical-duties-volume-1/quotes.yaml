@@ -1,0 +1,120 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: gouge-service-which-in-fear-god
+  text: The service which in the fear of God we perform one to another, is an evident and real demonstration of the respect we bear unto God.
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 2. Of joining service to men with our praising of God.
+  anchor: vol-1-01-serving-each-other-in-the-fear-of-the-lord-h3
+  topics: [work, love]
+  scripture: ['Ephesians 5:21']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-i-dare-avouch-it-that
+  text: I dare avouch it, that such inferiors which are taught to fear God, will do better service to their superiors, than such as fear their superiors only as men, and fear not God.
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 5. Of the fear of God moving us to do service to men.
+  anchor: vol-1-01-serving-each-other-in-the-fear-of-the-lord-h6
+  topics: [work, fear]
+  scripture: ['Colossians 3:22']
+  words: 33
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-motive-it-to-love-christ
+  text: 'A motive it is to love Christ, because love deserveth love: especially such a love, of such a person as the love of Christ is.'
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 27. Of the example of Christ’s love.
+  anchor: vol-1-04-husbands-and-the-love-of-christ-h3
+  topics: [love, christ]
+  scripture: ['1 John 4:19']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-as-water-without-washing-maketh
+  text: 'As water without washing maketh nothing clean: so the blood of Christ, without a right application thereof, cleanseth no man’s soul.'
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 40. Of Sacramental washing of water.
+  anchor: vol-1-05-love-that-purifies-the-unclean-h8
+  topics: [cross, faith]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-sacrament-without-word-but-idle
+  text: 'A Sacrament without the word is but an idle ceremony: no more then a seal without a covenant: for it is the word that maketh known the covenant of God.'
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 47. Of joining the word with Baptism.
+  anchor: vol-1-05-love-that-purifies-the-unclean-h15
+  topics: [scripture, worship]
+  scripture: []
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-spirit-god-accounteth-such-things
+  text: The Spirit of God accounteth such things evidences of God’s love, which flesh judgeth to be tokens of hatred; namely, corrections.
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 68. Of Christ’s forbearing to hate the Church.
+  anchor: vol-1-08-christs-union-with-his-beloved-body-h2
+  topics: [affliction, love]
+  scripture: ['Hebrews 12:6']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-man-wife-are-one-flesh
+  text: 'Man and wife are one flesh: many of one are made two, but no two so nearly and truly made one as man and wife.'
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 84. Of the near conjunction of man and wife together.
+  anchor: vol-1-09-the-ancient-law-and-unique-bond-of-marriage-h7
+  topics: [family]
+  scripture: ['Genesis 2:24']
+  words: 25
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-love-glue-solder-which-maketh
+  text: 'Love is the glue and solder which maketh us one with Christ: for it is the property of love to unite those that love one another in one.'
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 87. Of the indissoluble union betwixt Christ and the Church.
+  anchor: vol-1-09-the-ancient-law-and-unique-bond-of-marriage-h10
+  topics: [love, christ]
+  scripture: ['Colossians 3:14']
+  words: 28
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-in-particular-it-better-for
+  text: 'In particular it is better for an husband to be a good husband, then to have a good wife: so for a wife.'
+  author: william-gouge
+  book: domestical-duties-volume-1
+  chapter: §. 95. Of every ones looking to his own duty especially.
+  anchor: vol-1-10-the-mystery-and-practice-of-marriage-h7
+  topics: [family]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

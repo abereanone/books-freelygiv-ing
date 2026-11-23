@@ -1,0 +1,133 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: gouge-happy-that-family-where-both
+  text: 'Happy is that family where both the governors thereof husband and wife are mutual members of Christ’s body: there will the house be made God’s Church, as the house of Aquila and Priscilla was.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 11. Of equality in piety and religion betwixt those that are to be married together.
+  anchor: vol-2-01-seeking-marriage-h12
+  topics: [family, church]
+  scripture: ['Romans 16:5']
+  words: 34
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-no-such-help-can-man
+  text: No such help can man have from any other creature as from a wife; or a woman as from an husband.
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 24. Of the Ends of Marriage.
+  anchor: vol-2-02-getting-married-h12
+  topics: [family]
+  scripture: ['Genesis 2:18']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-loving-mutual-affection-must-pass
+  text: 'A loving mutual affection must pass betwixt husband and wife, or else no duty will be well performed: this is the ground of all the rest.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 10. Of mutual love betwixt man and wife.
+  anchor: vol-2-04-living-together-in-love-h2
+  topics: [family, love]
+  scripture: ['Ephesians 5:33']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-when-offence-given-by-one
+  text: 'When an offence is given by the one party, it must not be taken by the other; but rather passed by: and then will not peace be broken.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 12. Of mutual peace betwixt Man and Wife.
+  anchor: vol-2-04-living-together-in-love-h4
+  topics: [family, peace, forgiveness]
+  scripture: ['Proverbs 19:11']
+  words: 28
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-wife-must-yield-no-other
+  text: The wife must yield no other subjection to her husband then what may stand with her subjection to Christ.
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 51. Of cases wherein a wife ought not to forbear what her husband forbiddeth.
+  anchor: vol-2-12-a-wifes-submission-to-christ-first-h2
+  topics: [family]
+  scripture: ['Acts 5:29']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-god-loveth-cheerful-giver-not
+  text: 'God loveth a cheerful giver: not only a cheerful giver of alms, but of all duty to God and man.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 59. Of wives cheerfulness in every duty.
+  anchor: vol-2-12-a-wifes-submission-to-christ-first-h10
+  topics: [worship, love]
+  scripture: ['2 Corinthians 9:7']
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-husbands-are-most-all-bound
+  text: 'Husbands are most of all bound to love: and bound to love their wives most of all.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 2. Of that love which husbands owe their wives.
+  anchor: vol-2-13-a-husbands-affectionate-authority-over-his-wife-h3
+  topics: [family, love]
+  scripture: ['Ephesians 5:25']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-husband-that-tenderly-respecteth-his
+  text: 'An husband that tenderly respecteth his wife, but providently careth not for her, showeth more affection then discretion: he may have a kind heart, but he wants a wise head.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 46. Of an husbands provident care for his wife.
+  anchor: vol-2-17-a-husbands-providing-for-his-wife-h2
+  topics: [family]
+  scripture: ['1 Timothy 5:8']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-gods-word-preached-spring-water
+  text: God’s word preached is a spring of water of life; the place where it is preached a pleasant, profitable pasture; all needful provision for the soul may there be had.
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 47. Of an husbands providing means of spiritual edification for his wife.
+  anchor: vol-2-17-a-husbands-providing-for-his-wife-h3
+  topics: [scripture, worship]
+  scripture: []
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-every-one-knoweth-how-he
+  text: 'Every one knoweth how he loveth his own body: but few or none know how Christ loveth his Church.'
+  author: william-gouge
+  book: domestical-duties-volume-2
+  chapter: §. 74. Of husbands loving their wives as themselves.
+  anchor: vol-2-18-a-husbands-sincere-and-steady-love-for-his-wife-h15
+  topics: [christ, church]
+  scripture: ['Ephesians 5:29']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

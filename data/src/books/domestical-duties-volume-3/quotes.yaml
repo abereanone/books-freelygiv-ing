@@ -1,0 +1,107 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: gouge-prayers-then-parents-are-great
+  text: The prayers then of parents are a great blessing to children, and children ought to seek this blessing of their parents.
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 9. Of children’s asking their parents blessing, whether it be lawful or no.
+  anchor: vol-3-01-children-showing-respect-for-parents-h10
+  topics: [family, prayer]
+  scripture: ['Genesis 27:4']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-much-joy-comfort-brought-to
+  text: 'Much joy and comfort is brought to parents by seeing their children observe their instruction: for a wise son maketh a glad father.'
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 30. Of children’s obedience to their parents instruction.
+  anchor: vol-3-03-children-obeying-parents-instruction-and-correction-h5
+  topics: [family]
+  scripture: ['Proverbs 10:1']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-no-duty-so-holy-necessary
+  text: No duty so holy and necessary, but may be perverted.
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 2. Of that Love which parents owe to their children.
+  anchor: vol-3-06-parents-loving-praying-and-providing-for-children-h3
+  topics: [holiness, hypocrisy]
+  scripture: []
+  words: 10
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-religion-grace-consisteth-not-in
+  text: 'Religion and grace consisteth not in good manners: many that have not a spark of God’s fear in their hearts, are able to carry themselves in their outward behaviour very orderly and mannerly.'
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 29. Of the objections against good manners.
+  anchor: vol-3-07-parents-nurturing-teaching-and-training-children-h5
+  topics: [grace, hypocrisy]
+  scripture: ['Matthew 23:27']
+  words: 33
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-children-have-need-daily-instruction
+  text: 'Children have need of daily instruction: the parents pains in this kind must be added to the Ministers: and both are little enough.'
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 34. Of parents teaching their children piety.
+  anchor: vol-3-07-parents-nurturing-teaching-and-training-children-h10
+  topics: [family, scripture]
+  scripture: ['Deuteronomy 6:7']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-children-are-most-properly-gods
+  text: 'Children are most properly God’s: born to God: he is the most proper parent of them: in comparison of God, fathers and mothers of the flesh are but nurses.'
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 34. Of parents teaching their children piety.
+  anchor: vol-3-07-parents-nurturing-teaching-and-training-children-h10
+  topics: [family]
+  scripture: ['Psalm 127:3']
+  words: 29
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-god-correcteth-his-children-in
+  text: 'God correcteth his children in love: so must parents.'
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 47. A direction to parents in correcting their children.
+  anchor: vol-3-08-parents-admonishing-and-correcting-children-h7
+  topics: [family, affliction]
+  scripture: ['Hebrews 12:6']
+  words: 9
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: gouge-parents-are-to-children-in
+  text: 'Parents are to children in God’s place: they must therefore take upon them this care of God.'
+  author: william-gouge
+  book: domestical-duties-volume-3
+  chapter: §. 53. Of parents care in providing fit marriages for their children.
+  anchor: vol-3-09-parents-directing-children-into-adulthood-h5
+  topics: [family]
+  scripture: ['Ephesians 6:4']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

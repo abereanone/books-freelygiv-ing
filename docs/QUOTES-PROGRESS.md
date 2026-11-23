@@ -23,10 +23,10 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 - [x] catechism-of-suffering (Statler)
 - [x] christian-economy (Perkins)
 - [x] doctrine-of-law-and-grace (Bunyan)
-- [ ] domestical-duties-volume-1 (Gouge)
-- [ ] domestical-duties-volume-2
-- [ ] domestical-duties-volume-3
-- [ ] domestical-duties-volume-4
+- [x] domestical-duties-volume-1 (Gouge)
+- [x] domestical-duties-volume-2
+- [x] domestical-duties-volume-3
+- [x] domestical-duties-volume-4
 - [ ] grace-abounding (Bunyan)
 - [ ] indwelling-sin (Owen)
 - [ ] meditations-on-psalm-119 (Coughlin)
