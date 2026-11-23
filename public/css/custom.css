@@ -276,3 +276,41 @@
     font-size: 1.1rem;
   }
 }
+
+/* Phones: keep the brand, count badge, theme button and menu button on one line (2026-11-23). */
+@media (max-width: 575.98px) {
+  .navbar > .container {
+    flex-wrap: nowrap;
+  }
+
+  .navbar-brand {
+    margin-right: 0.5rem;
+    min-width: 0;
+  }
+
+  .navbar-brand h2 {
+    font-size: clamp(1rem, 4.6vw, 1.5rem) !important;
+    white-space: nowrap;
+  }
+
+  .navbar-brand img {
+    width: 1.3em;
+    height: auto;
+    margin-right: 0.4em !important;
+  }
+
+  .navbar-brand .book-count-badge {
+    margin-left: 0.5em;
+  }
+
+  .navbar .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Open menu: the collapse still needs its own full-width line under the brand row. */
+@media (max-width: 575.98px) {
+  .navbar > .container:has(.navbar-collapse.show, .navbar-collapse.collapsing) {
+    flex-wrap: wrap;
+  }
+}
