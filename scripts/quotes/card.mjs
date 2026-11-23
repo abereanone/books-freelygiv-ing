@@ -19,8 +19,10 @@ export function cardCss(base) {
   @font-face{font-family:Ribeye;src:url('${base}medium-rare-ribeye.ttf')}
   .card{position:relative;width:1080px;height:1080px;overflow:hidden;background:#111;box-sizing:border-box}
   .card *{box-sizing:border-box;margin:0}
-  .card .bg{position:absolute;inset:-20px;background-size:cover;background-position:center;filter:brightness(.5) blur(4px) saturate(.8)}
-  .card .veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,.35),rgba(0,0,0,.55))}
+  /* Sharper paintings (2026-11-23): little blur, so the picture's details show; readability
+     comes from a soft dark patch right behind the text instead of darkening everything. */
+  .card .bg{position:absolute;inset:-20px;background-size:cover;background-position:center;filter:brightness(.68) blur(.6px) saturate(.95)}
+  .card .veil{position:absolute;inset:0;background:radial-gradient(ellipse 72% 52% at 50% 47%,rgba(0,0,0,.66) 0%,rgba(0,0,0,.42) 55%,rgba(0,0,0,.12) 100%)}
   .card .body{position:absolute;left:110px;right:110px;top:90px;bottom:170px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
   .card .q{font-family:Crimson;color:#fff;line-height:1.22;text-wrap:balance;hanging-punctuation:first last;text-shadow:0 2px 12px rgba(0,0,0,.5)}
   /* Author in the book-text face, bold, with an outline-like shadow: Medium Rare was hard to
@@ -29,10 +31,11 @@ export function cardCss(base) {
   .card .book{margin-top:6px;font-family:Crimson;font-style:italic;color:${CREAM};opacity:.85;font-size:36px;text-align:center;text-shadow:0 1px 6px rgba(0,0,0,.8)}
   .card .tag{position:absolute;left:64px;bottom:58px;font-family:Ribeye;color:${GOLD};font-size:30px;letter-spacing:.09em}
   /* Light cards: a bright sky painting washed pale, dark ink, deeper gold (light-NN paintings). */
-  .card.light .bg{filter:brightness(1.06) blur(3px) saturate(.85)}
-  .card.light .veil{background:radial-gradient(ellipse at 50% 45%,rgba(255,252,244,.66),rgba(255,252,244,.38))}
+  .card.light .bg{filter:brightness(1.03) blur(.6px) saturate(.95)}
+  .card.light .veil{background:radial-gradient(ellipse 72% 52% at 50% 47%,rgba(255,252,244,.84) 0%,rgba(255,252,244,.6) 55%,rgba(255,252,244,.12) 100%)}
+  .card:not(.framed) .tag{text-shadow:0 0 10px rgba(0,0,0,.95),0 0 3px rgba(0,0,0,.9)}
   .card.light .q{color:#1d2630;text-shadow:0 1px 14px rgba(255,255,255,.8)}
-  .card.light .tag{color:#7a5a12;text-shadow:0 1px 8px rgba(255,255,255,.7)}
+  .card.light .tag{color:#6b4e0e;text-shadow:0 0 10px rgba(255,255,255,1),0 0 4px rgba(255,255,255,1),0 0 2px rgba(255,255,255,1)}
   .card.light .who{color:#5e430a;text-shadow:0 0 12px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
   .card.light .book{color:#1d2630;opacity:.9;text-shadow:0 0 8px rgba(255,255,255,.9)}
   /* Solid cards: one colour with the double-line box and double L-brackets of the prepared-book

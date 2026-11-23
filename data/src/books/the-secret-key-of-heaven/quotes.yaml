@@ -12,8 +12,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-12.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: light
 - id: brooks-prayers-tears-are-not-only
   text: Prayers and tears are not only very pleasing to God, but also very prevalent with God.
   author: thomas-brooks
@@ -25,8 +26,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-09.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: brooks-tears-are-kind-silent-prayers
   text: Tears are a kind of silent prayers, which, though they say nothing, yet they obtain pardon; and though they plead not a man’s cause, yet they obtain mercy at the hands of God.
   author: thomas-brooks
@@ -38,8 +40,9 @@
   words: 33
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-11.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: brooks-sin-greatest-plague-in-world
   text: Sin is the greatest plague in the world, but never more dangerous than when it reaches the heart.
   author: thomas-brooks
@@ -51,8 +54,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-08.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: brooks-we-cannot-get-into-any
   text: We cannot get into any blind hole, dark corner, or secret place, but the Lord hath an eye there; the Lord will keep us company there.
   author: thomas-brooks
@@ -64,8 +68,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: forest-12.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: brooks-christian-must-not-only-pray
   text: A Christian must not only pray but hold on in prayer until he hath got the heavenly prize.
   author: thomas-brooks
@@ -77,8 +82,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-01.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: brooks-one-sigh-groan-from-broken
   text: One sigh and groan from a broken heart is better pleasing to God than all human eloquence.
   author: thomas-brooks
@@ -90,8 +96,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-07.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: brooks-prayer-nothing-but-breathing-that
   text: Prayer is nothing but the breathing that out before the Lord that was first breathed into us by the Spirit of the Lord.
   author: thomas-brooks
@@ -103,8 +110,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-02.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: brooks-most-christians-i-am-afraid
   text: Most Christians, I am afraid, do rather want a heart for private prayer than a convenient place for private prayer.
   author: thomas-brooks
@@ -116,8 +124,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-08.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: brooks-gods-hearing-our-prayers-doth
   text: God’s hearing of our prayers doth not depend upon sanctification, but upon Christ’s intercession; not upon what we are in ourselves, but upon what we are in the Lord Jesus.
   author: thomas-brooks
@@ -129,8 +138,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-03.jpg, light: light-01.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: brooks-open-profaneness-broad-dirty-way
   text: Open profaneness is the broad, dirty way that leads to hell, but closet duties rested in is a sure way, though a cleaner way, to hell.
   author: thomas-brooks
@@ -142,8 +152,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: ruins-02.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: brooks-cold-prayers-bespeak-denial-but
   text: Cold prayers bespeak a denial, but fervent prayers offer a sacred violence both to heaven and earth.
   author: thomas-brooks
@@ -155,8 +166,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-04.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: brooks-idleness-hour-temptation-idle-person
   text: Idleness is the hour of temptation; and an idle person is the devil’s tennis-ball, tossed by him at his pleasure.
   author: thomas-brooks
@@ -168,8 +180,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-02.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: brooks-certainly-such-as-had-rather
   text: Certainly, such as had rather go sleeping to hell than sweating to heaven will never care much for closet prayer.
   author: thomas-brooks
@@ -181,5 +194,6 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-05.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: solid

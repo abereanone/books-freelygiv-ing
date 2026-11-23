@@ -12,8 +12,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-04.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: light
 - id: coughlin-health-wealth-gospel-lieyet-god
   text: The health and wealth gospel is a lie—yet God expects His people to “rejoice always” and exhibit the fruit of the Spirit, including joy!
   author: michael-coughlin
@@ -25,8 +26,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: road-01.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: coughlin-we-arent-saved-or-made
   text: We aren’t saved or made righteous by God’s law, but the righteous desire to know God’s law because we already have a desire to obey God.
   author: michael-coughlin
@@ -38,8 +40,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-10.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: coughlin-exposure-to-gods-law-has
   text: 'Exposure to God’s law has the same effect on everyone: it opens their eyes to God’s holiness and their own unholiness.'
   author: michael-coughlin
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-05.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: coughlin-gods-law-not-random-array
   text: God’s law is not a random array of arbitrary rules, but rather, God’s moral law is a manifestation (or exhibition) of His perfect character.
   author: michael-coughlin
@@ -64,8 +68,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-07.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: coughlin-sinner-arrogant-rebellious-saint-humble
   text: The sinner is arrogant and rebellious; the saint is humble and submissive.
   author: michael-coughlin
@@ -77,8 +82,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: road-02.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: coughlin-lest-we-forget-our-soteriology
   text: Lest we forget our soteriology 101 basics, we do not keep God’s precepts in order to be justified, but we fear God and keep His precepts because we are justified.
   author: michael-coughlin
@@ -90,8 +96,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-02.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: coughlin-when-god-looks-on-one
   text: When God looks on one of His children, He sees nothing but Christ’s righteousness.
   author: michael-coughlin
@@ -103,8 +110,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-13.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: light
 - id: coughlin-gods-law-weak-to-save
   text: God’s law is weak to save us, but it is a powerful salve for the ailments of the child of God.
   author: michael-coughlin
@@ -116,8 +124,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-08.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: coughlin-gods-children-not-only-abandon
   text: God’s children not only abandon big bad sins, but they want to be rid of even respectable sins.
   author: michael-coughlin
@@ -129,8 +138,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-01.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: coughlin-no-one-in-world-more
   text: No one in the world is more privileged than those who have God’s Word.
   author: michael-coughlin
@@ -142,5 +152,6 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-09.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: solid

@@ -12,8 +12,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: storm-09.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: flavel-if-god-will-not-have
   text: If God will not have any part of your happiness to lie in children, then let it wholly lie in himself.
   author: john-flavel
@@ -25,8 +26,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: ruins-02.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: flavel-did-we-know-desert-our
   text: Did we know the desert of our sins, we should rather wonder to see one mercy left, than that twenty are cut off.
   author: john-flavel
@@ -38,8 +40,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-10.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: light
 - id: flavel-poor-creature-cease-to-weep
   text: Poor creature, cease to weep any longer for thy dead relation, and weep rather for thy dead heart.
   author: john-flavel
@@ -51,8 +54,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: ruins-01.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: flavel-your-relations-are-dear-but
   text: Your relations are dear, but Christ is dearer to you by far.
   author: john-flavel
@@ -64,8 +68,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-02.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: light
 - id: flavel-lords-time-was-come-your
   text: The Lord’s time was come, your relations lived with you every moment that God intended them for you before you had them.
   author: john-flavel
@@ -77,8 +82,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-09.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: flavel-do-what-thou-wilt-with
   text: Do what thou wilt with me; let me be friendless, let me be childless, let me be poor, let me be any thing rather than a Christless, graceless, hopeless soul.
   author: john-flavel
@@ -90,8 +96,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-07.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: light
 - id: flavel-be-quiet-hold-your-peace
   text: Be quiet, and hold your peace, you little know how many mercies lie in the womb of this affliction.
   author: john-flavel
@@ -103,8 +110,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-01.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: flavel-if-god-be-your-god
   text: If God be your God, you have really lost nothing by the removal of any creature-comfort.
   author: john-flavel
@@ -116,8 +124,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: ruins-01.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: flavel-if-stream-fail-repair-to
   text: If the stream fail, repair to the fountain, there is enough still; God is where he was, though the creature be not.
   author: john-flavel
@@ -129,8 +138,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: ruins-02.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: flavel-strong-affections-make-strong-afflictions
   text: Strong affections make strong afflictions; the higher the tide the lower the ebb.
   author: john-flavel
@@ -142,5 +152,6 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-04.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: solid

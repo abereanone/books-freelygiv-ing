@@ -12,8 +12,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: road-02.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-i-dare-avouch-it-that
   text: I dare avouch it, that such inferiors which are taught to fear God, will do better service to their superiors, than such as fear their superiors only as men, and fear not God.
   author: william-gouge
@@ -25,8 +26,9 @@
   words: 33
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-04.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-motive-it-to-love-christ
   text: 'A motive it is to love Christ, because love deserveth love: especially such a love, of such a person as the love of Christ is.'
   author: william-gouge
@@ -38,8 +40,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-02.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-as-water-without-washing-maketh
   text: 'As water without washing maketh nothing clean: so the blood of Christ, without a right application thereof, cleanseth no man’s soul.'
   author: william-gouge
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: mountain-08.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-sacrament-without-word-but-idle
   text: 'A Sacrament without the word is but an idle ceremony: no more then a seal without a covenant: for it is the word that maketh known the covenant of God.'
   author: william-gouge
@@ -64,8 +68,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-09.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-spirit-god-accounteth-such-things
   text: The Spirit of God accounteth such things evidences of God’s love, which flesh judgeth to be tokens of hatred; namely, corrections.
   author: william-gouge
@@ -77,8 +82,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-06.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-man-wife-are-one-flesh
   text: 'Man and wife are one flesh: many of one are made two, but no two so nearly and truly made one as man and wife.'
   author: william-gouge
@@ -90,8 +96,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: forest-07.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-love-glue-solder-which-maketh
   text: 'Love is the glue and solder which maketh us one with Christ: for it is the property of love to unite those that love one another in one.'
   author: william-gouge
@@ -103,8 +110,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-11.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-in-particular-it-better-for
   text: 'In particular it is better for an husband to be a good husband, then to have a good wife: so for a wife.'
   author: william-gouge
@@ -116,5 +124,6 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-01.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: dark

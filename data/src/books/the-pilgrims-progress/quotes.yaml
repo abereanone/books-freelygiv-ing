@@ -12,8 +12,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: ruins-01.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: bunyan-man-may-cry-out-against
   text: A man may cry out against sin, of policy; but he cannot abhor it but by virtue of a godly antipathy against it.
   author: john-bunyan
@@ -25,8 +26,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-01.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: bunyan-indeed-to-know-thing-that
   text: Indeed, to know is a thing that pleaseth talkers and boasters; but to do is that which pleaseth God.
   author: john-bunyan
@@ -38,8 +40,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-06.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: bunyan-i-have-known-many-laboring
   text: I have known many laboring men that have got good estates in this Valley of Humiliation; for God resisteth the proud, but giveth grace to the humble.
   author: john-bunyan
@@ -51,8 +54,9 @@
   words: 27
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: road-03.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: bunyan-it-my-duty-said-he
   text: It is my duty, said he, to mistrust my own ability, that I may have reliance on Him who is stronger than all.
   author: john-bunyan
@@ -64,5 +68,6 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-04.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: dark

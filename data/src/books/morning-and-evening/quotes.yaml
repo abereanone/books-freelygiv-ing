@@ -12,8 +12,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-01.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-i-am-debtor-to-gods
   text: I am a debtor to God’s grace and forgiving mercy; but I am no debtor to his justice, for he will never accuse me of a debt already paid.
   author: charles-spurgeon
@@ -25,8 +26,9 @@
   words: 29
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: mountain-01.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-god-had-one-son-without
   text: God had one Son without sin; but he has no son without temptation.
   author: charles-spurgeon
@@ -38,8 +40,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-02.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-if-we-had-blessings-without
   text: If we had the blessings without asking for them, we should think them common things; but prayer makes our mercies more precious than diamonds.
   author: charles-spurgeon
@@ -51,8 +54,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-06.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-wherein-i-sin-that-my
   text: Wherein I sin, that is my own; but wherein I act rightly, that is of God, wholly and completely.
   author: charles-spurgeon
@@ -64,8 +68,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-11.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-love-can-make-feet-move
   text: Love can make the feet move more swiftly; but faith is the foot which carries the soul.
   author: charles-spurgeon
@@ -77,8 +82,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-07.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-if-you-remain-where-you
   text: If you remain where you are you must perish; if you go to Jesus you can but die.
   author: charles-spurgeon
@@ -90,8 +96,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-08.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-holy-spirit-helps-our-infirmities
   text: The Holy Spirit helps our infirmities, but he does not encourage our idleness; he loves active believers.
   author: charles-spurgeon
@@ -103,8 +110,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-10.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-you-can-trace-beginning-human
   text: You can trace the beginning of human affection; you can easily find the beginning of your love to Christ, but his love to us is a stream whose source is hidden in eternity.
   author: charles-spurgeon
@@ -116,8 +124,9 @@
   words: 33
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-08.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-great-thoughts-your-sin-alone
   text: Great thoughts of your sin alone will drive you to despair; but great thoughts of Christ will pilot you into the haven of peace.
   author: charles-spurgeon
@@ -129,8 +138,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-05.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-let-us-fly-to-our
   text: Let us fly to our God, he is a consuming fire; he will not consume our spirit, but our sins.
   author: charles-spurgeon
@@ -142,8 +152,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-08.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-empty-boats-float-high-but
   text: Empty boats float high, but heavily laden vessels are low in the water; mere professors can boast, but true children of God cry for mercy upon their unprofitableness.
   author: charles-spurgeon
@@ -155,8 +166,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-03.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-sickness-may-befall-but-lord
   text: Sickness may befall, but the Lord will give grace; poverty may happen to us, but grace will surely be afforded; death must come but grace will light a candle at the darkest hour.
   author: charles-spurgeon
@@ -168,8 +180,9 @@
   words: 33
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-03.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-earth-should-be-preparation-for
   text: Earth should be a preparation for heaven; and heaven is the place where saints feast most and work most.
   author: charles-spurgeon
@@ -181,8 +194,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-12.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-if-we-may-use-figure
   text: If we may use the figure, the Holy Spirit is the Physician, but Jesus is the medicine.
   author: charles-spurgeon
@@ -194,8 +208,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-13.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-when-jeshurun-waxed-fat-in
   text: 'When Jeshurun waxed fat in the flesh, he kicked against God, but there is no fear of a man’s becoming too full of grace: a plethora of grace is impossible.'
   author: charles-spurgeon
@@ -207,8 +222,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-02.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-christ-great-peacemaker-but-before
   text: Christ is the great Peacemaker; but before peace, he brings war.
   author: charles-spurgeon
@@ -220,5 +236,6 @@
   words: 11
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-06.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: light

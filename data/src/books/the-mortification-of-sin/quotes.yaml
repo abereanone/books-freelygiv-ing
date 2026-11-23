@@ -13,7 +13,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-10.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: storm-09.jpg, light: light-14.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-mortification-from-self-strength-carried
@@ -27,7 +27,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-04.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-06.jpg, light: light-15.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-vigour-power-comfort-our-spiritual
@@ -41,7 +41,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-01.jpg, solid: navy}
+  background: {solid: navy, dark: storm-02.jpg, light: light-01.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-do-you-mortify-do-you
@@ -55,7 +55,7 @@
   words: 33
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-02.jpg, solid: violet}
+  background: {solid: violet, dark: storm-07.jpg, light: light-19.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-indwelling-sin-always-abides-whilst
@@ -69,7 +69,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-03.jpg, solid: teal}
+  background: {solid: teal, dark: storm-10.jpg, light: light-22.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-sin-aims-always-at-utmost
@@ -83,7 +83,7 @@
   words: 32
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-05.jpg, solid: rust}
+  background: {solid: rust, dark: storm-01.jpg, light: light-25.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-let-not-that-man-think
@@ -97,7 +97,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-08.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: storm-08.jpg, light: light-03.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-root-unmortified-course-digestion-sin
@@ -111,7 +111,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-04.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-04.jpg, light: light-04.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-duties-are-excellent-food-for
@@ -125,7 +125,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: forest-09.jpg, light: light-06.jpg, solid: navy}
+  background: {solid: navy, dark: forest-02.jpg, light: light-06.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-law-drives-them-on-sin
@@ -139,7 +139,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-09.jpg, solid: violet}
+  background: {solid: violet, dark: storm-09.jpg, light: light-21.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-unmortified-lust-will-drink-up
@@ -153,7 +153,7 @@
   words: 21
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-05.jpg, solid: teal}
+  background: {solid: teal, dark: storm-05.jpg, light: light-05.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-mortification-prunes-all-graces-god
@@ -167,7 +167,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-02.jpg, solid: rust}
+  background: {solid: rust, dark: storm-02.jpg, light: light-18.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-heart-like-sluggards-field-so
@@ -181,7 +181,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: forest-07.jpg, light: light-10.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: forest-10.jpg, light: light-22.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-to-be-able-always-to
@@ -195,7 +195,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-01.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-03.jpg, light: light-07.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-man-may-easier-see-without
@@ -209,7 +209,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-07.jpg, solid: navy}
+  background: {solid: navy, dark: storm-06.jpg, light: light-23.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-to-kill-sin-work-living
@@ -223,7 +223,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-03.jpg, solid: violet}
+  background: {solid: violet, dark: storm-07.jpg, light: light-08.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-poor-soul-it-not-thy
@@ -237,7 +237,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: sky-05.jpg, light: light-05.jpg, solid: teal}
+  background: {solid: teal, dark: sky-06.jpg, light: light-19.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-thou-settest-thyself-against-particular
@@ -251,7 +251,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: sky-01.jpg, light: light-06.jpg, solid: rust}
+  background: {solid: rust, dark: sky-11.jpg, light: light-24.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-let-not-any-man-think
@@ -265,7 +265,7 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: forest-01.jpg, light: light-09.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: forest-07.jpg, light: light-03.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-what-gospel-principles-do-not
@@ -279,7 +279,7 @@
   words: 9
   status: candidate
   featured: false
-  background: {dark: sky-02.jpg, light: light-08.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: sky-07.jpg, light: light-09.jpg}
   added: '2026-11-22'
   tone: light
 - id: owen-new-sin-may-be-permitted
@@ -293,7 +293,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-07.jpg, solid: navy}
+  background: {solid: navy, dark: storm-10.jpg, light: light-10.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-thou-that-wast-tender-didst
@@ -307,7 +307,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-03.jpg, solid: violet}
+  background: {solid: violet, dark: storm-03.jpg, light: light-25.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-suffer-not-thy-heart-one
@@ -321,7 +321,7 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: forest-02.jpg, light: light-10.jpg, solid: teal}
+  background: {solid: teal, dark: forest-03.jpg, light: light-11.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-longing-breathing-panting-after-deliverance
@@ -335,7 +335,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: forest-08.jpg, light: light-02.jpg, solid: rust}
+  background: {solid: rust, dark: forest-05.jpg, light: light-12.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-we-lisp-babble-say-we
@@ -349,7 +349,7 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: mountain-06.jpg, light: light-01.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: mountain-04.jpg, light: light-14.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-utmost-best-our-thoughts-being
@@ -363,7 +363,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: mountain-01.jpg, light: light-04.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: mountain-02.jpg, light: light-13.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-set-faith-at-work-on
@@ -377,7 +377,7 @@
   words: 12
   status: candidate
   featured: false
-  background: {dark: sky-08.jpg, light: light-08.jpg, solid: navy}
+  background: {solid: navy, dark: sky-03.jpg, light: light-16.jpg}
   added: '2026-11-22'
   tone: light
 - id: owen-when-heart-once-won-to
@@ -391,7 +391,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: sky-07.jpg, light: light-07.jpg, solid: violet}
+  background: {solid: violet, dark: sky-08.jpg, light: light-20.jpg}
   added: '2026-11-22'
   tone: light
 - id: owen-mortification-sin-peculiarly-from-death
@@ -405,7 +405,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-09.jpg, solid: teal}
+  background: {solid: teal, dark: storm-09.jpg, light: light-26.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-man-may-have-leanness-body
@@ -419,7 +419,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-05.jpg, solid: rust}
+  background: {solid: rust, dark: storm-05.jpg, light: light-01.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-know-that-he-that-dares
@@ -433,7 +433,7 @@
   words: 15
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-06.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: storm-06.jpg, light: light-15.jpg}
   added: '2026-11-22'
   tone: solid
 - id: owen-as-sin-gets-ground-in
@@ -447,7 +447,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-04.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-04.jpg, light: light-17.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-gods-peace-humbling-peace-melting
@@ -461,6 +461,6 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: sky-09.jpg, light: light-10.jpg, solid: navy}
+  background: {solid: navy, dark: sky-02.jpg, light: light-02.jpg}
   added: '2026-11-22'
   tone: light

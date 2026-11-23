@@ -12,8 +12,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-04.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: bunyan-i-cannot-now-express-what
   text: I cannot now express what then I saw and felt of the steadiness of Jesus Christ, the rock of man’s salvation; what was done could not be undone, added to, nor altered.
   author: john-bunyan
@@ -25,8 +26,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-06.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: light
 - id: bunyan-great-sins-do-draw-out
   text: Great sins do draw out great grace; and where guilt is most terrible and fierce there the mercy of God in Christ, when showed to the soul, appears most high and mighty.
   author: john-bunyan
@@ -38,8 +40,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-11.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: light
 - id: bunyan-god-himself-portion-saints
   text: God Himself is the portion of the saints.
   author: john-bunyan
@@ -51,8 +54,9 @@
   words: 8
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: road-03.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: bunyan-i-preached-what-i-felt
   text: I preached what I felt, what I smartingly did feel, even that under which my poor soul did groan and tremble to astonishment.
   author: john-bunyan
@@ -64,8 +68,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-02.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: bunyan-let-all-men-therefore-prize
   text: Let all men therefore prize a little with the fear of the Lord; gifts indeed are desirable, but yet great grace and small gifts are better than great gifts and no grace.
   author: john-bunyan
@@ -77,8 +82,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-07.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: light
 - id: bunyan-all-fears-they-are-best
   text: Of all fears, they are best that are made by the blood of Christ; and of all joy, that is the sweetest that is mixed with mourning over Christ.
   author: john-bunyan
@@ -90,5 +96,6 @@
   words: 29
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: mountain-08.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: solid

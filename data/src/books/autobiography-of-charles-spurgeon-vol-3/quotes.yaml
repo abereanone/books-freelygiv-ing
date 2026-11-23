@@ -12,8 +12,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-13.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-no-rest-there-east-west
   text: No rest is there, East, West, North, or South, for your soul’s foot, save in the ark of sovereign grace; but there is rest there.
   author: charles-spurgeon
@@ -25,8 +26,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-02.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-discussions-upon-new-theories-day
   text: Discussions upon the new theories of the day drive away the Spirit of God; the old wine is the best.
   author: charles-spurgeon
@@ -38,8 +40,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-03.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-to-love-god-when-all
   text: To love God when all is smooth and sweet, is but the love of swine who know their feeder.
   author: charles-spurgeon
@@ -51,8 +54,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-01.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-i-should-like-you-to
   text: I should like you to preach; but it is best that you pray; many a preacher has proved a castaway; but never one who has truly learned to pray.
   author: charles-spurgeon
@@ -64,8 +68,9 @@
   words: 29
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-04.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-i-believe-you-love-lord
   text: I believe you love the Lord, and that is the main thing; the next is, stick to it.
   author: charles-spurgeon
@@ -77,8 +82,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-08.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-i-am-exiled-prisoner-iron
   text: I am an exiled prisoner, and the iron enters into my soul; but the Lord is good, and in His Name do I hope.
   author: charles-spurgeon
@@ -90,8 +96,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-09.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-let-others-hold-up-jesus
   text: Let others hold up Jesus simply as an Example, if they will; ‘but we preach Christ crucified.’
   author: charles-spurgeon
@@ -103,5 +110,6 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: mountain-01.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: dark

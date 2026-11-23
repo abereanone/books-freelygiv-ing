@@ -13,7 +13,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: forest-06.jpg, light: light-02.jpg, solid: violet}
+  background: {solid: violet, dark: forest-09.jpg, light: light-09.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-satan-that-wily-merchant-that
@@ -27,7 +27,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-04.jpg, solid: teal}
+  background: {solid: teal, dark: storm-05.jpg, light: light-18.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-adversity-hath-slain-her-thousand
@@ -41,7 +41,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-02.jpg, solid: rust}
+  background: {solid: rust, dark: road-03.jpg, light: light-11.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-sin-that-in-one-mans
@@ -55,7 +55,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-05.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: storm-10.jpg, light: light-07.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-many-eat-that-on-earth
@@ -69,7 +69,7 @@
   words: 19
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-09.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-01.jpg, light: light-03.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-sin-will-surely-prove-evil
@@ -83,7 +83,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-02.jpg, light: light-03.jpg, solid: navy}
+  background: {solid: navy, dark: storm-02.jpg, light: light-13.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-debates-soul-are-quick-soon
@@ -97,7 +97,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: storm-03.jpg, light: light-06.jpg, solid: violet}
+  background: {solid: violet, dark: storm-03.jpg, light: light-24.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-one-little-miscarriage-doth-in
@@ -111,7 +111,7 @@
   words: 28
   status: candidate
   featured: false
-  background: {dark: forest-05.jpg, light: light-01.jpg, solid: teal}
+  background: {solid: teal, dark: forest-11.jpg, light: light-14.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-one-drop-evil-conscience-swallows
@@ -125,7 +125,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-07.jpg, solid: rust}
+  background: {solid: rust, dark: road-04.jpg, light: light-01.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-many-can-sin-with-david
@@ -139,7 +139,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: winter-01.jpg, light: light-10.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: winter-01.jpg, light: light-15.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-god-most-angry-when-he
@@ -153,7 +153,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-08.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-01.jpg, light: light-08.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-repentance-for-sin-nothing-worth
@@ -167,7 +167,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: winter-02.jpg, light: light-07.jpg, solid: navy}
+  background: {solid: navy, dark: winter-02.jpg, light: light-05.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-man-may-not-look-intently
@@ -181,7 +181,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-04.jpg, solid: violet}
+  background: {solid: violet, dark: storm-04.jpg, light: light-06.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-usually-worst-men-have-most
@@ -195,7 +195,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-03.jpg, solid: teal}
+  background: {solid: teal, dark: road-05.jpg, light: light-19.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-tis-better-to-have-sore
@@ -209,7 +209,7 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-10.jpg, solid: rust}
+  background: {solid: rust, dark: road-01.jpg, light: light-20.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-more-saints-be-beaten-with
@@ -223,7 +223,7 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-01.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: storm-02.jpg, light: light-16.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-gracious-soul-may-look-through
@@ -237,7 +237,7 @@
   words: 16
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-05.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: storm-05.jpg, light: light-17.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-snow-covers-many-dunghill-so
@@ -251,7 +251,7 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-08.jpg, solid: navy}
+  background: {solid: navy, dark: road-02.jpg, light: light-23.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-hard-weather-tries-what-health
@@ -265,7 +265,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-09.jpg, solid: violet}
+  background: {solid: violet, dark: storm-08.jpg, light: light-14.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-bees-are-killed-with-honey
@@ -279,7 +279,7 @@
   words: 24
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-06.jpg, solid: teal}
+  background: {solid: teal, dark: storm-03.jpg, light: light-15.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-when-gods-hand-on-thy
@@ -293,7 +293,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-02.jpg, solid: rust}
+  background: {solid: rust, dark: storm-06.jpg, light: light-08.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-god-had-one-son-without
@@ -307,7 +307,7 @@
   words: 10
   status: candidate
   featured: false
-  background: {dark: storm-06.jpg, light: light-03.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: storm-07.jpg, light: light-05.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-one-old-piece-gold-worth
@@ -321,7 +321,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: sky-08.jpg, light: light-01.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: sky-01.jpg, light: light-01.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-you-may-as-soon-fill
@@ -335,7 +335,7 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-02.jpg, solid: navy}
+  background: {solid: navy, dark: road-03.jpg, light: light-20.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-beauty-world-foils-christian-more
@@ -349,7 +349,7 @@
   words: 29
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-09.jpg, solid: violet}
+  background: {solid: violet, dark: road-04.jpg, light: light-07.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-childs-most-precious-things-are
@@ -363,7 +363,7 @@
   words: 26
   status: candidate
   featured: false
-  background: {dark: sky-09.jpg, light: light-04.jpg, solid: teal}
+  background: {solid: teal, dark: sky-11.jpg, light: light-24.jpg}
   added: '2026-11-22'
   tone: light
 - id: brooks-remember-this-that-god-will
@@ -377,7 +377,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: forest-07.jpg, light: light-10.jpg, solid: rust}
+  background: {solid: rust, dark: forest-12.jpg, light: light-21.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-sure-tis-better-to-go
@@ -391,7 +391,7 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-06.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: road-01.jpg, light: light-25.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-promises-god-are-precious-book
@@ -405,7 +405,7 @@
   words: 14
   status: candidate
   featured: false
-  background: {dark: sky-10.jpg, light: light-07.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: sky-12.jpg, light: light-26.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-god-can-look-sourly-chide
@@ -419,7 +419,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-07.jpg, light: light-05.jpg, solid: navy}
+  background: {solid: navy, dark: storm-09.jpg, light: light-12.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-god-brings-not-pair-scales
@@ -433,7 +433,7 @@
   words: 18
   status: candidate
   featured: false
-  background: {dark: sky-03.jpg, light: light-08.jpg, solid: violet}
+  background: {solid: violet, dark: sky-02.jpg, light: light-13.jpg}
   added: '2026-11-22'
   tone: light
 - id: brooks-mortification-continued-act-tis-daily
@@ -447,7 +447,7 @@
   words: 11
   status: candidate
   featured: false
-  background: {dark: storm-04.jpg, light: light-04.jpg, solid: teal}
+  background: {solid: teal, dark: storm-10.jpg, light: light-22.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-god-takes-away-little-comfort
@@ -461,7 +461,7 @@
   words: 20
   status: candidate
   featured: false
-  background: {dark: storm-05.jpg, light: light-02.jpg, solid: rust}
+  background: {solid: rust, dark: storm-02.jpg, light: light-16.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-god-will-graciously-pardon-those
@@ -475,7 +475,7 @@
   words: 21
   status: candidate
   featured: false
-  background: {dark: sky-04.jpg, light: light-03.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: sky-03.jpg, light: light-17.jpg}
   added: '2026-11-22'
   tone: light
 - id: brooks-humble-heart-habitation-for-god
@@ -489,7 +489,7 @@
   words: 25
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-09.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: road-05.jpg, light: light-03.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-humility-cannot-find-three-things
@@ -503,7 +503,7 @@
   words: 27
   status: candidate
   featured: false
-  background: {dark: road-01.jpg, light: light-05.jpg, solid: navy}
+  background: {solid: navy, dark: road-02.jpg, light: light-10.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-satan-can-never-undo-man
@@ -517,7 +517,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-08.jpg, light: light-10.jpg, solid: violet}
+  background: {solid: violet, dark: storm-09.jpg, light: light-18.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-satan-foiled-adversary-christ-hath
@@ -531,7 +531,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: storm-09.jpg, light: light-07.jpg, solid: teal}
+  background: {solid: teal, dark: storm-07.jpg, light: light-19.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-souls-security-satans-opportunity-to
@@ -545,7 +545,7 @@
   words: 23
   status: candidate
   featured: false
-  background: {dark: storm-01.jpg, light: light-08.jpg, solid: rust}
+  background: {solid: rust, dark: storm-08.jpg, light: light-02.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-communion-with-god-shield-upon
@@ -559,7 +559,7 @@
   words: 34
   status: candidate
   featured: false
-  background: {dark: forest-08.jpg, light: light-06.jpg, solid: evergreen}
+  background: {solid: evergreen, dark: forest-08.jpg, light: light-04.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-christs-heart-christs-arms-are
@@ -573,7 +573,7 @@
   words: 12
   status: candidate
   featured: false
-  background: {dark: sky-09.jpg, light: light-01.jpg, solid: burgundy}
+  background: {solid: burgundy, dark: sky-05.jpg, light: light-06.jpg}
   added: '2026-11-22'
   tone: light
 - id: brooks-sinners-there-no-way-to
@@ -587,7 +587,7 @@
   words: 18
   status: candidate
   featured: false
-  background: {dark: sky-10.jpg, light: light-09.jpg, solid: navy}
+  background: {solid: navy, dark: sky-04.jpg, light: light-09.jpg}
   added: '2026-11-22'
   tone: dark
 - id: brooks-sin-always-dies-most-where
@@ -601,7 +601,7 @@
   words: 17
   status: candidate
   featured: false
-  background: {dark: sky-06.jpg, light: light-06.jpg, solid: violet}
+  background: {solid: violet, dark: sky-06.jpg, light: light-11.jpg}
   added: '2026-11-22'
   tone: light
 - id: brooks-thrice-happy-are-those-souls
@@ -615,7 +615,7 @@
   words: 22
   status: candidate
   featured: false
-  background: {dark: sky-07.jpg, light: light-07.jpg, solid: teal}
+  background: {solid: teal, dark: sky-07.jpg, light: light-14.jpg}
   added: '2026-11-22'
   tone: solid
 - id: brooks-till-men-have-faith-in
@@ -629,6 +629,6 @@
   words: 13
   status: candidate
   featured: false
-  background: {dark: sky-08.jpg, light: light-08.jpg, solid: rust}
+  background: {solid: rust, dark: sky-08.jpg, light: light-15.jpg}
   added: '2026-11-22'
   tone: light

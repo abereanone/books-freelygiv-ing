@@ -12,8 +12,9 @@
   words: 27
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-09.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: light
 - id: conkle-sin-not-just-mistake-to
   text: Sin is not just a mistake to be brushed aside; it is a legal offense against the God of justice.
   author: joe-conkle
@@ -25,8 +26,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-07.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: conkle-love-god-for-his-people
   text: The love of God for His people is not measured by our devotion but by His steadfast mercy.
   author: joe-conkle
@@ -38,8 +40,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-06.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: conkle-our-sin-not-limited-to
   text: Our sin is not limited to what we have done; it is who we are apart from grace.
   author: joe-conkle
@@ -51,8 +54,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-08.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: conkle-in-him-sin-bitter-but
   text: In Him, sin is bitter, but grace is sweet; guilt is heavy, but forgiveness is full.
   author: joe-conkle
@@ -64,8 +68,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-13.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: light
 - id: conkle-let-us-confess-our-sins
   text: Let us confess our sins not to earn grace, but because grace has already been given.
   author: joe-conkle
@@ -77,8 +82,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: winter-01.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: conkle-when-we-forget-him-we
   text: When we forget Him, we fall into sin; when we remember Him, we grow in holiness.
   author: joe-conkle
@@ -90,8 +96,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-05.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: conkle-fear-man-spiritual-trap-it
   text: The fear of man is a spiritual trap, and it stands in direct contrast to the fear of the Lord, which is the beginning of wisdom.
   author: joe-conkle
@@ -103,8 +110,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-09.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: conkle-grace-god-does-not-free
   text: The grace of God does not free us to sin; it frees us from sin.
   author: joe-conkle
@@ -116,8 +124,9 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-10.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: light
 - id: conkle-greed-more-than-desire-for
   text: Greed is more than a desire for wealth; it is a posture of the heart that trusts in riches instead of in the living God.
   author: joe-conkle
@@ -129,8 +138,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: road-02.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: conkle-death-has-been-defeated-now
   text: Death has been defeated; now may we live and die as if death has been defeated.
   author: joe-conkle
@@ -142,5 +152,6 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: ruins-02.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark

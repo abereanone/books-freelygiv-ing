@@ -12,8 +12,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-05.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-doth-heart-promise-fair-rest
   text: Doth the heart promise fair, rest not on it, but say to the Lord Christ, Lord, do thou undertake for me.
   author: john-owen
@@ -25,8 +26,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-10.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-grace-changeth-nature-man-but
   text: Grace changeth the nature of man, but nothing can change the nature of sin.
   author: john-owen
@@ -38,8 +40,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-08.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: light
 - id: owen-sin-enmity-to-god-as
   text: Sin is enmity to God as God, and therefore to all of God.
   author: john-owen
@@ -51,8 +54,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-08.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-when-fire-doth-any-thing
   text: 'When fire doth any thing, it burns: And when the Law of Sin doth any thing, it lusts.'
   author: john-owen
@@ -64,8 +68,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-02.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-sin-gives-place-for-season
   text: Sin gives place for a season, but returns and presseth on the soul again.
   author: john-owen
@@ -77,8 +82,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-10.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-every-sin-forsaking-lord-our
   text: Every sin is a forsaking of the Lord our God.
   author: john-owen
@@ -90,8 +96,9 @@
   words: 10
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-03.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-god-in-christ-makes-proposition
   text: God in Christ makes the proposition, and Satan and Sin make the conclusion.
   author: john-owen
@@ -103,8 +110,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-12.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: light
 - id: owen-as-i-say-sense-gospel
   text: As, I say, is the sense of Gospel-pardon, so will be the life of Gospel-love.
   author: john-owen
@@ -116,5 +124,6 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-12.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: dark

@@ -12,8 +12,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: road-03.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-eye-faith-needful-to-behold
   text: The eye of faith is needful to behold God withal, for heaven is too high for any bodily eye to pierce into.
   author: william-gouge
@@ -25,8 +26,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-10.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: light
 - id: gouge-poorest-meanest-that-be-may
   text: 'The poorest and meanest that be may have as free access to God as the wealthiest and greatest: and their suit shall be as soon received.'
   author: william-gouge
@@ -38,8 +40,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-11.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-fear-both-as-fountain-from
   text: 'Fear is both as a fountain from whence all other duties flow: and also as a sauce to season them all.'
   author: william-gouge
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-08.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-mans-reward-maketh-poor-men
   text: 'Man’s reward maketh poor men glad of work, and cheerful in doing their work: it is as sugar to sharp wine.'
   author: william-gouge
@@ -64,8 +68,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-04.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-masters-sin-no-warrant-to
   text: A masters sin is no warrant to make servants answer sin with sin.
   author: william-gouge
@@ -77,8 +82,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-01.jpg, light: light-01.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-gods-will-very-ground-goodness
   text: 'God’s will is the very ground of goodness: things are therefore good because they are agreeable to God’s will: God’s will giveth the very being to goodness.'
   author: william-gouge
@@ -90,8 +96,9 @@
   words: 27
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: mountain-07.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-as-servants-are-lords-freemen
   text: As servants are the Lord’s freemen, so masters are the Lord’s servants.
   author: william-gouge
@@ -103,5 +110,6 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: road-01.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: solid

@@ -12,8 +12,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-04.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-when-we-give-vent-to
   text: When we give vent to the soul, to try what grace is there, corruption comes out; and when we search for corruption, grace appears.
   author: john-owen
@@ -25,8 +26,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-02.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-whilst-satan-continues-in-his
   text: Whilst Satan continues in his power and malice, whilst the world and lust are in being, we shall be tempted.
   author: john-owen
@@ -38,8 +40,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-04.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-men-sometimes-are-carried-into
   text: Men sometimes are carried into sin by love to it, and are continued in it by fear of what will ensue upon it.
   author: john-owen
@@ -51,8 +54,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-05.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-generally-mens-hearts-deceive-them
   text: Generally men’s hearts deceive them no oftener than they do trust in them, and then they never fail so to do.
   author: john-owen
@@ -64,8 +68,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-01.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-soul-may-cruciate-itself-for
   text: The soul may cruciate itself for a season with such a procedure; but it must come to this,—its lust must die, or the soul must die.
   author: john-owen
@@ -77,8 +82,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-07.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-let-no-man-then-pretend
   text: Let no man, then, pretend to fear sin that doth not fear temptation to it.
   author: john-owen
@@ -90,8 +96,9 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: storm-04.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-to-pray-that-we-enter
   text: To pray that we enter not into temptation is a means to preserve us from it.
   author: john-owen
@@ -103,8 +110,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-07.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-gospel-provisions-will-do-this
   text: Gospel provisions will do this work; that is, keep the heart full of a sense of the love of God in Christ.
   author: john-owen
@@ -116,8 +124,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-03.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-gospel-gives-free-large-noble
   text: The gospel gives a free, large, and noble spirit, in subjection to God, and none else.
   author: john-owen
@@ -129,5 +138,6 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-03.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: light

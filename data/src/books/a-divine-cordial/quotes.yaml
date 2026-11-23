@@ -12,8 +12,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-08.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: light
 - id: watson-mercies-god-make-sinner-proud
   text: The mercies of God make a sinner proud, but a Saint humble.
   author: thomas-watson
@@ -25,8 +26,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-12.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: light
 - id: watson-prayer-keeps-heart-open-to
   text: Prayer keeps the heart open to God, and shut to sin; it assuageth the intemperate heats and swellings of lust.
   author: thomas-watson
@@ -38,8 +40,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-10.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-sick-bed-often-teacheth-more
   text: A sick-bed often teacheth more than a Sermon; we can best see the ugly visage of sin in the glass of affliction.
   author: thomas-watson
@@ -51,8 +54,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-04.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-sin-mother-affliction-daughter-daughter
   text: Sin is the Mother, affliction is the Daughter; the Daughter helps to destroy the Mother.
   author: thomas-watson
@@ -64,8 +68,9 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-05.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-god-sweetens-outward-pain-with
   text: God sweetens outward pain, with inward peace.
   author: thomas-watson
@@ -77,8 +82,9 @@
   words: 7
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: storm-10.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-limner-lays-his-gold-upon
   text: 'The Limner lays his Gold upon dark colours: So God first lays the dark colours of affliction, and then he lays the golden colour of Glory.'
   author: thomas-watson
@@ -90,8 +96,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-06.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-better-that-temptation-which-humbles
   text: Better is that temptation which humbles me, than that duty which makes me proud.
   author: thomas-watson
@@ -103,8 +110,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-03.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-stone-in-pipe-hinders-current
   text: 'A stone in the pipe hinders the current of water: So sin lived in, hinders the sweet current of God’s love.'
   author: thomas-watson
@@ -116,8 +124,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-07.jpg, light: light-01.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-we-complain-such-sore-trials
   text: We complain such sore trials lie upon us; let us remember God is our Physician, therefore he labours rather to heal us, than humour us.
   author: thomas-watson
@@ -129,8 +138,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-08.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-affliction-high-way-to-heaven
   text: Affliction is the High-way to Heaven; though it be Flinty and Thorny, yet it is the nearest way.
   author: thomas-watson
@@ -142,8 +152,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-02.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-love-not-only-full-benevolence
   text: Love is not only full of Benevolence, but Beneficence; Love which enlargeth the heart, never straitens the hand.
   author: thomas-watson
@@ -155,8 +166,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-02.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-love-like-pulse-body-always
   text: Love is like the Pulse of the body, always beating; ‘tis not a Land-flood, but a Spring.
   author: thomas-watson
@@ -168,8 +180,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-11.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-man-cannot-love-health-love
   text: 'A man cannot love health, and love poison too: so, one cannot love God, and sin too.'
   author: thomas-watson
@@ -181,8 +194,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-03.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-tis-not-duty-but-love
   text: ‘Tis not duty, but love to duty, God looks at; ‘tis not how much we do, but how much we love.
   author: thomas-watson
@@ -194,8 +208,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-06.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-you-may-love-wine-too
   text: You may love Wine too much, Silver too much, but you cannot love God too much.
   author: thomas-watson
@@ -207,8 +222,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-09.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-flower-love-kills-weed-sin
   text: The Flower of love kills the Weed of sin; though sin doth not die perfectly, yet it dies daily.
   author: thomas-watson
@@ -220,5 +236,6 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: forest-12.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: solid

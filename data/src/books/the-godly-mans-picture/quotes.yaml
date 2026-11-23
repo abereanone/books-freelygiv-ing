@@ -12,8 +12,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: ruins-02.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-to-know-god-out-christ
   text: To know God out of Christ is to know him as an enemy—but to know him in Christ is sweet and delicious.
   author: thomas-watson
@@ -25,8 +26,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-13.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: light
 - id: watson-many-take-christ-as-jesusto
   text: Many take Christ as Jesus—to save them; but refuse him as Lord—to rule them.
   author: thomas-watson
@@ -38,8 +40,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-01.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: light
 - id: watson-god-s-power-makes-him
   text: God's power makes him mighty; his mercy makes him lovely; but his holiness makes him glorious.
   author: thomas-watson
@@ -51,8 +54,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: mountain-06.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-sin-tyrannizing-thing-sinner-slave
   text: Sin is a tyrannizing thing; a sinner is a slave when he sins with most freedom.
   author: thomas-watson
@@ -64,8 +68,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-03.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-christ-more-precious-than-soul
   text: Christ is more precious than the soul, than the angels, than heaven.
   author: thomas-watson
@@ -77,8 +82,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-06.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: light
 - id: watson-divine-tears-not-only-wetbut
   text: Divine tears not only wet—but wash; they purge out the love of sin!
   author: thomas-watson
@@ -90,8 +96,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: winter-01.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-word-jewel-heart-cabinet-where
   text: The Word is the jewel; the heart is the cabinet where it must be locked up.
   author: thomas-watson
@@ -103,8 +110,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-02.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-spirit-soul-word-without-which
   text: The Spirit is the soul of the Word, without which it is but a dead letter.
   author: thomas-watson
@@ -116,8 +124,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-05.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-angel-creature-great-abilities-but
   text: An angel is a creature of great abilities; but take away humility from an angel—and he is a devil!
   author: thomas-watson
@@ -129,8 +138,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: road-01.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-prayer-delights-god-s-ear
   text: Prayer delights God's ear; it melts his heart; it opens his hand.
   author: thomas-watson
@@ -142,8 +152,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-04.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-godly-man-spiritualizes-duty-he
   text: A godly man spiritualizes duty; he is not only for the doing of holy things--but for the holy doing of things.
   author: thomas-watson
@@ -155,8 +166,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-08.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-men-world-have-bounty-dropping
   text: The men of the world have bounty dropping from God's fingers—but the godly have love dropping from God's heart.
   author: thomas-watson
@@ -168,8 +180,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: forest-04.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: watson-sin-in-heart-like-gunpowder
   text: Sin in the heart is like gunpowder; it may make us fear lest a spark of temptation should fall on us and blow us up.
   author: thomas-watson
@@ -181,8 +194,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: storm-01.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: watson-god-will-sooner-extinguish-light
   text: God will sooner extinguish the light of the sun, than extinguish the dawning light of his Spirit in your heart.
   author: thomas-watson
@@ -194,5 +208,6 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-10.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: light

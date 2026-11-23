@@ -12,8 +12,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-05.jpg, light: light-01.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: edwards-you-have-reason-to-wonder
   text: You have reason to wonder that you are not already in hell.
   author: jonathan-edwards
@@ -25,5 +26,6 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-10.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: dark

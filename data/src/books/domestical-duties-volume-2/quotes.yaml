@@ -12,8 +12,9 @@
   words: 34
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-12.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-no-such-help-can-man
   text: No such help can man have from any other creature as from a wife; or a woman as from an husband.
   author: william-gouge
@@ -25,8 +26,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-02.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-loving-mutual-affection-must-pass
   text: 'A loving mutual affection must pass betwixt husband and wife, or else no duty will be well performed: this is the ground of all the rest.'
   author: william-gouge
@@ -38,8 +40,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-11.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-when-offence-given-by-one
   text: 'When an offence is given by the one party, it must not be taken by the other; but rather passed by: and then will not peace be broken.'
   author: william-gouge
@@ -51,8 +54,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: forest-05.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-wife-must-yield-no-other
   text: The wife must yield no other subjection to her husband then what may stand with her subjection to Christ.
   author: william-gouge
@@ -64,8 +68,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-03.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-god-loveth-cheerful-giver-not
   text: 'God loveth a cheerful giver: not only a cheerful giver of alms, but of all duty to God and man.'
   author: william-gouge
@@ -77,8 +82,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-07.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-husbands-are-most-all-bound
   text: 'Husbands are most of all bound to love: and bound to love their wives most of all.'
   author: william-gouge
@@ -90,8 +96,9 @@
   words: 17
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-04.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-husband-that-tenderly-respecteth-his
   text: 'An husband that tenderly respecteth his wife, but providently careth not for her, showeth more affection then discretion: he may have a kind heart, but he wants a wise head.'
   author: william-gouge
@@ -103,8 +110,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-06.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: gouge-gods-word-preached-spring-water
   text: God’s word preached is a spring of water of life; the place where it is preached a pleasant, profitable pasture; all needful provision for the soul may there be had.
   author: william-gouge
@@ -116,8 +124,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-02.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: gouge-every-one-knoweth-how-he
   text: 'Every one knoweth how he loveth his own body: but few or none know how Christ loveth his Church.'
   author: william-gouge
@@ -129,5 +138,6 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-05.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: light

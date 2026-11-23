@@ -12,8 +12,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-10.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: light
 - id: owen-god-was-more-pleased-with
   text: God was more pleased with the obedience, offering and sacrifice of his Son, than displeased with the sins and rebellions of all the elect.
   author: john-owen
@@ -25,8 +26,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: mountain-02.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-denying-satisfaction-christ-destroys-foundation
   text: Denying the satisfaction of Christ destroys the foundation of faith and comfort.
   author: john-owen
@@ -38,8 +40,9 @@
   words: 12
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: mountain-04.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: owen-to-die-for-others-does
   text: To die for others does at least denote to die for their good, and in the Scripture always to die in their stead.
   author: john-owen
@@ -51,8 +54,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: mountain-05.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: owen-surely-jesus-christ-gives-not
   text: Surely Jesus Christ gives not a dowry for any but his own spouse.
   author: john-owen
@@ -64,5 +68,6 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: mountain-03.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: dark

@@ -12,8 +12,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-01.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: boston-every-one-knows-what-most
   text: Every one knows what is most pleasing to him, but God alone knows what is the most profitable.
   author: thomas-boston
@@ -25,8 +26,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-09.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: boston-let-them-know-that-there
   text: 'Let them know, that there is no crook in their lot, but may be made straight: for God made it, surely then he can mend it.'
   author: thomas-boston
@@ -38,8 +40,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-03.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: boston-delays-are-not-denials-suits
   text: Delays are not denials of suits at the court of heaven, but trials of the faith and patience of the petitioners.
   author: thomas-boston
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-10.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: boston-men-are-bigger-in-their
   text: Men are bigger in their own conceit than they are indeed; therefore God, suiting things to what we are really, cannot please us.
   author: thomas-boston
@@ -64,8 +68,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: road-04.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: boston-our-will-corrupt-gods-will
   text: Our will is corrupt, God’s will is holy; they cannot agree in one.
   author: thomas-boston
@@ -77,8 +82,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-06.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: boston-afflicted-lot-painful-but-where
   text: An afflicted lot is painful, but, where it is well managed, it is very fruitful; it exercises the graces of the Spirit in a Christian, which otherwise would lie dormant.
   author: thomas-boston
@@ -90,8 +96,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: storm-03.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: boston-as-you-meet-with-crosses
   text: As you meet with crosses in your lot in the world, let your bent be rather to get your spirit humbled and brought down, than to get the cross removed.
   author: thomas-boston
@@ -103,8 +110,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-04.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: boston-humbling-spirit-will-have-mighty
   text: The humbling of the spirit will have a mighty good effect on a crossed lot, but the removal of the cross will have none on the unhumbled spirit.
   author: thomas-boston
@@ -116,8 +124,9 @@
   words: 28
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-04.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: boston-pride-all-glory-stained-it
   text: The pride of all glory is stained, and it is a shame to us not to be humbled under such wants as attend us; it is like a beggar strutting in his rags.
   author: thomas-boston
@@ -129,8 +138,9 @@
   words: 33
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-05.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: boston-prosperity-puffs-up-sinners-with
   text: Prosperity puffs up sinners with pride; and O but it is hard to keep a low spirit with a high and prosperous lot.
   author: thomas-boston
@@ -142,8 +152,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: road-03.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: boston-though-gods-humbled-children-may
   text: Though God’s humbled children may both breakfast and dine on bread of adversity and water of affliction, they will be sure to sup sweetly and plentifully.
   author: thomas-boston
@@ -155,5 +166,6 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-08.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: dark

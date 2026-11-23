@@ -12,8 +12,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-02.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-light-was-there-but-i
   text: 'The light was there, but I was blind: it was of necessity that the Lord Himself should make the matter plain to me.'
   author: charles-spurgeon
@@ -25,8 +26,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-10.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-if-god-had-saved-me
   text: If God had saved me, and not the world, I should have wondered indeed; but if He had saved all the world except me, that would have seemed to me to be but right.
   author: charles-spurgeon
@@ -38,8 +40,9 @@
   words: 34
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-03.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-faith-precious-gift-god-love
   text: Faith is the precious gift of God, and love is His gift; it is all of God from first to last.
   author: charles-spurgeon
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-08.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-i-have-seeds-all-evil
   text: I have the seeds of all evil in my own heart; pride is yet my darling sin, I cannot shake it off.
   author: charles-spurgeon
@@ -64,8 +68,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: road-05.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-when-lord-entered-into-covenant
   text: When the Lord entered into covenant with me, I am sure that it was all of grace, nothing else but grace.
   author: charles-spurgeon
@@ -77,8 +82,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-09.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-faith-has-less-to-do
   text: Faith has less to do with man, and more to do with God than any of the other graces; for faith is looking away from self, and trusting the Eternal.
   author: charles-spurgeon
@@ -90,8 +96,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-04.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-christ-never-will-save-any
   text: Christ never will save any of His people in their sins; He saves His people from their sins.
   author: charles-spurgeon
@@ -103,8 +110,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-11.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-merely-to-say-that-christ
   text: Merely to say that Christ is precious, is nothing; but to know that He is precious, to feel it in truth, is everything.
   author: charles-spurgeon
@@ -116,8 +124,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-01.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-i-love-doctrines-grace-as
   text: I love the doctrines of grace as well as any mortal living does, but I love Jesus better; I love Christ’s people as much as anyone can, but I love Christ best.
   author: charles-spurgeon
@@ -129,8 +138,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-05.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-though-thou-hast-stains-as
   text: Though thou hast stains as black as hell upon thee, Christ’s blood can wash them out; that precious blood can take away all thy sins.
   author: charles-spurgeon
@@ -142,5 +152,6 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: mountain-05.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: solid

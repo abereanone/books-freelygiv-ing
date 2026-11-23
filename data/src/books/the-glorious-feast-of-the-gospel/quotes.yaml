@@ -12,8 +12,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-11.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: light
 - id: sibbes-i-will-venture-upon-jesus
   text: I will venture upon Jesus Christ; he hath food that endures to eternal life, and if I perish there, I perish.
   author: richard-sibbes
@@ -25,8 +26,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-04.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: light
 - id: sibbes-seeds-joy-comfort-are-sown
   text: The seeds of joy and of comfort are sown in tears and grief in this world; but yet we know we shall reap in joy in the world to come.
   author: richard-sibbes
@@ -38,8 +40,9 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: storm-05.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: sibbes-think-all-thy-wants-all
   text: Think of all thy wants, and of all thy sins; let them be never so many, yet there is more to be had in Christ than there can be wanting in thee.
   author: richard-sibbes
@@ -51,8 +54,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-12.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: light
 - id: sibbes-we-are-to-deal-with
   text: We are to deal with death like the brazen serpent, that hath the shape of death, but no sting at all.
   author: richard-sibbes
@@ -64,8 +68,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: ruins-01.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: sibbes-truth-goeth-always-with-torn
   text: Truth goeth always with a torn and scratched face; it is a stranger in the world, and hath strange entertainment.
   author: richard-sibbes
@@ -77,8 +82,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-08.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: sibbes-god-taketh-long-day-for
   text: God taketh a long day for his promises; long to us, not to him, ‘for to him a thousand years are but as one day.’
   author: richard-sibbes
@@ -90,8 +96,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: winter-02.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: sibbes-if-time-were-shorter-than
   text: If the time were shorter than God hath appointed, then it were too short; if longer, too long.
   author: richard-sibbes
@@ -103,8 +110,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-07.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: sibbes-perhaps-christian-hath-no-wealth
   text: Perhaps a Christian hath no wealth, no great rents to glory in, aye, but he hath a God to glory in, let him glory in him.
   author: richard-sibbes
@@ -116,5 +124,6 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: road-01.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: dark

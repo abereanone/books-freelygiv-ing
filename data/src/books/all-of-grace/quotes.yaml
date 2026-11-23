@@ -12,8 +12,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: mountain-04.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-law-for-self-righteous-to
   text: 'The law is for the self-righteous, to humble their pride: the gospel is for the lost, to remove their despair.'
   author: charles-spurgeon
@@ -25,8 +26,9 @@
   words: 20
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-13.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-jesus-christ-came-into-world
   text: 'Jesus Christ came into the world to save sinners: forgiveness is for the guilty.'
   author: charles-spurgeon
@@ -38,8 +40,9 @@
   words: 14
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-03.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-only-god-can-justify-ungodly
   text: Only God can justify the ungodly; but he can do it to perfection.
   author: charles-spurgeon
@@ -51,8 +54,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-01.jpg, light: light-01.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-law-god-was-more-vindicated
   text: The law of God was more vindicated by the death of Christ than it would have been had all transgressors been sent to hell.
   author: charles-spurgeon
@@ -64,8 +68,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: mountain-02.jpg, light: light-15.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-remember-that-lord-jesus-came
   text: Remember that the Lord Jesus came to take away sin in three ways; he came to remove the penalty of sin, the power of sin, and, at last, the presence of sin.
   author: charles-spurgeon
@@ -77,8 +82,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-11.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-grace-fountain-stream-faith-aqueduct
   text: Grace is the fountain and the stream; faith is the aqueduct along which the flood of mercy flows down to refresh the thirsty sons of men.
   author: charles-spurgeon
@@ -90,8 +96,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-04.jpg, light: light-13.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-by-faith-all-things-become
   text: By faith all things become possible to us; yet the power is not in the faith, but in the God upon whom faith relies.
   author: charles-spurgeon
@@ -103,8 +110,9 @@
   words: 24
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-05.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-trust-life-blood-faith-there
   text: Trust is the life-blood of faith; there is no saving faith without it.
   author: charles-spurgeon
@@ -116,8 +124,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-06.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-jesus-did-not-die-for
   text: Jesus did not die for our righteousness, but he died for our sins.
   author: charles-spurgeon
@@ -129,8 +138,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: mountain-03.jpg, light: light-18.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-however-pure-our-tears-there
   text: 'However pure our tears, there will always be some dirt in them: there will be something to be repented of even in our best repentance.'
   author: charles-spurgeon
@@ -142,8 +152,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: winter-02.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-repentance-will-not-make-you
   text: Repentance will not make you see Christ; but to see Christ will give you repentance.
   author: charles-spurgeon
@@ -155,8 +166,9 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: winter-01.jpg, light: light-16.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-you-will-never-value-pardon
   text: You will never value pardon unless you feel repentance; and you will never taste the deepest draft of repentance until you know that you are pardoned.
   author: charles-spurgeon
@@ -168,8 +180,9 @@
   words: 26
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: winter-01.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-no-chain-stronger-than-its
   text: 'No chain is stronger than its weakest link: if Jesus be our hope for everything, except one thing, we shall utterly fail, because in that one point we shall come to nought.'
   author: charles-spurgeon
@@ -181,8 +194,9 @@
   words: 32
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: sky-07.jpg, light: light-20.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-life-your-soul-lies-in
   text: The life of your soul lies in faith; its health lies in love.
   author: charles-spurgeon
@@ -194,5 +208,6 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-13.jpg, light: light-17.jpg}
   added: '2026-11-23'
+  tone: light

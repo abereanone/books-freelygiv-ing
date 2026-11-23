@@ -12,8 +12,9 @@
   words: 27
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-12.jpg, light: light-08.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-let-us-take-heed-putting
   text: Let us take heed of putting ourselves too prominently in our own hearts, but let us commit our way unto the Lord.
   author: charles-spurgeon
@@ -25,8 +26,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: road-01.jpg, light: light-04.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-sinner-deserves-hell-yea-hottest
   text: A sinner deserves hell, yea, the hottest place in hell; and if he be saved, it must be entirely by unmerited mercy.
   author: charles-spurgeon
@@ -38,8 +40,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-06.jpg, light: light-12.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-our-desire-that-every-man
   text: Our desire is, that every man may hold the truth, and be held by it; especially the truth of Christ crucified.
   author: charles-spurgeon
@@ -51,8 +54,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-08.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: spurgeon-you-are-sick-diseased-but
   text: You are sick and diseased, but Jesus can heal you; and He will if you only trust Him.
   author: charles-spurgeon
@@ -64,8 +68,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: sky-01.jpg, light: light-01.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-contention-for-faith-far-less
   text: Contention for the faith is far less pleasant than communion with Christ; but the neglect of the precept may involve the withdrawal of the privilege.
   author: charles-spurgeon
@@ -77,8 +82,9 @@
   words: 25
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-07.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: spurgeon-i-love-those-five-points
   text: I love those five points as being the angles of the gospel, but then I love the centre between the angles better still.
   author: charles-spurgeon
@@ -90,8 +96,9 @@
   words: 23
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-12.jpg, light: light-14.jpg}
   added: '2026-11-23'
+  tone: light
 - id: spurgeon-if-you-cannot-travel-remember
   text: If you cannot travel, remember that our Lord Jesus Christ is more glorious than all else that you could ever see.
   author: charles-spurgeon
@@ -103,5 +110,6 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: sky-11.jpg, light: light-11.jpg}
   added: '2026-11-23'
+  tone: light

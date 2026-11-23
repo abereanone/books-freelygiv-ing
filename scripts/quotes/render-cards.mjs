@@ -13,7 +13,7 @@ import { createHash } from "crypto";
 import { createRequire } from "module";
 import YAML from "yaml";
 import sharp from "sharp";
-import { cardCss, cardHtml, FIT_JS, ART_DIR, FONT_DIR, SOLIDS } from "./card.mjs";
+import { cardCss, cardHtml, FIT_JS, ART_DIR, FONT_DIR, SOLIDS, paintings, chooseBackground } from "./card.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const BOOKS = join(ROOT, "data/src/books");
@@ -32,25 +32,50 @@ const templateSig = createHash("sha1").update(readFileSync(join(ROOT, "scripts/q
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
 const slugs = readdirSync(BOOKS).filter((s) => existsSync(join(BOOKS, s, "quotes.yaml")));
 
-// Give every quote without one a solid colour, spread evenly (least-used colour first), and
-// show half of the dark-painting quotes as solid by default, for variety in the gallery.
-// Written into quotes.yaml (background.solid, tone) so a quote keeps its colour for good.
+// Give every quote what it lacks, and write it into quotes.yaml so it never changes:
+//  - background.dark / background.light: the least-used painting of its first topic's mood
+//    (and of the bright "light" set), via chooseBackground in card.mjs;
+//  - background.solid: the least-used of the six colours;
+//  - tone (the look shown first): light for hopeful topics, otherwise every other quote solid,
+//    the rest dark, for variety in the gallery.
+const topics = readY(join(ROOT, "data/src/quotes/topics.yaml"));
+const { byMood } = paintings();
 const used = Object.fromEntries(Object.keys(SOLIDS).map((k) => [k, 0]));
+const paintUse = {};
 let darkSeen = 0;
-for (const slug of slugs) for (const q of readY(join(BOOKS, slug, "quotes.yaml")))
-  if (q.background?.solid && used[q.background.solid] !== undefined) used[q.background.solid]++;
+for (const slug of slugs) for (const q of readY(join(BOOKS, slug, "quotes.yaml"))) {
+  const b = q.background || {};
+  if (b.solid && used[b.solid] !== undefined) used[b.solid]++;
+  for (const f of [b.dark, b.light]) if (f) paintUse[f] = (paintUse[f] || 0) + 1;
+  if (q.tone === "dark" || q.tone === "solid") darkSeen++;
+}
 for (const slug of slugs) {
   const file = join(BOOKS, slug, "quotes.yaml");
   const doc = YAML.parseDocument(readFileSync(file, "utf8"));
   let changed = false;
   for (const node of doc.contents.items) {
-    const bg = node.get("background", true);
-    if (!YAML.isMap(bg) || bg.get("solid")) continue;
-    const pick = Object.keys(used).sort((a, b) => used[a] - used[b])[0];
-    used[pick]++;
-    bg.set("solid", pick);
-    if (node.get("tone") === "dark" && darkSeen++ % 2 === 1) node.set("tone", "solid");
-    changed = true;
+    if (node.get("status") === "rejected") continue;
+    const q = node.toJSON();
+    let bg = node.get("background", true);
+    if (!YAML.isMap(bg)) { bg = doc.createNode({}); bg.flow = true; node.set("background", bg); changed = true; }
+    for (const tone of ["dark", "light"]) {
+      if (bg.get(tone)) continue;
+      const f = chooseBackground(q, topics, byMood, paintUse, tone);
+      paintUse[f] = (paintUse[f] || 0) + 1;
+      bg.set(tone, f);
+      changed = true;
+    }
+    if (!bg.get("solid")) {
+      const pick = Object.keys(used).sort((a, b) => used[a] - used[b])[0];
+      used[pick]++;
+      bg.set("solid", pick);
+      changed = true;
+    }
+    if (!node.get("tone")) {
+      const light = topics[q.topics?.[0]]?.mood === "light";
+      node.set("tone", light ? "light" : darkSeen++ % 2 === 1 ? "solid" : "dark");
+      changed = true;
+    }
   }
   if (changed) writeFileSync(file, doc.toString({ lineWidth: 0, flowCollectionPadding: false }), "utf8");
 }

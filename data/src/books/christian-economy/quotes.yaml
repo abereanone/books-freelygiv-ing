@@ -12,8 +12,9 @@
   words: 13
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: forest-04.jpg, light: light-10.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: perkins-duty-unto-god-private-worship
   text: The duty unto God, is the private Worship and Service of God, which must be established and settled in every family.
   author: william-perkins
@@ -25,8 +26,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: forest-06.jpg, light: light-23.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: perkins-parents-provoke-not-your-children
   text: Parents provoke not your children to anger, that is, by too much austerity in government.
   author: william-perkins
@@ -38,8 +40,9 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: forest-08.jpg, light: light-26.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: perkins-in-choice-husband-or-wife
   text: In the choice of a husband or wife, the parents ought to have a greater respect unto piety and wisdom, then unto beauty and riches, or any other outward blessings.
   author: william-perkins
@@ -51,5 +54,6 @@
   words: 30
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: forest-09.jpg, light: light-07.jpg}
   added: '2026-11-23'
+  tone: solid

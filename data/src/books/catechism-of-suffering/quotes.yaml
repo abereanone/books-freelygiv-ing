@@ -12,8 +12,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: sky-07.jpg, light: light-02.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: statler-honest-lament-language-faith-bringing
   text: Honest lament is the language of faith, bringing grief before God in trust, not rebellion.
   author: matthew-statler
@@ -25,8 +26,9 @@
   words: 15
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: storm-07.jpg, light: light-21.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: statler-god-always-good-does-good
   text: God is always good and does good, even when His purposes are hidden from our sight.
   author: matthew-statler
@@ -38,8 +40,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: sky-09.jpg, light: light-19.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: statler-god-not-obligated-to-explain
   text: God is not obligated to explain His ways, but He invites us to trust His character when we cannot trace His hand.
   author: matthew-statler
@@ -51,8 +54,9 @@
   words: 22
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: sky-10.jpg, light: light-25.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: statler-god-does-not-delight-in
   text: God does not delight in the suffering itself but in the holy fruit it produces—trust, humility, endurance and hope.
   author: matthew-statler
@@ -64,8 +68,9 @@
   words: 19
   status: candidate
   featured: false
-  background: null
+  background: {solid: burgundy, dark: storm-01.jpg, light: light-05.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: statler-suffering-exposes-what-we-love
   text: Suffering exposes what we love, trust, and treasure, revealing the desires and conflicts within that show where our hope truly lies.
   author: matthew-statler
@@ -77,8 +82,9 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: navy, dark: storm-05.jpg, light: light-22.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: statler-in-weakness-we-discover-gods
   text: In weakness we discover God’s power, and in affliction we learn that His grace is sufficient.
   author: matthew-statler
@@ -90,8 +96,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: violet, dark: storm-03.jpg, light: light-06.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: statler-cross-proves-that-god-brings
   text: The cross proves that God brings life through death, victory through weakness, and glory through pain.
   author: matthew-statler
@@ -103,8 +110,9 @@
   words: 16
   status: candidate
   featured: false
-  background: null
+  background: {solid: teal, dark: mountain-06.jpg, light: light-24.jpg}
   added: '2026-11-23'
+  tone: solid
 - id: statler-prayer-draws-our-hearts-to
   text: Prayer draws our hearts to God, turns despair into dependence, and teaches us to rest in His will.
   author: matthew-statler
@@ -116,8 +124,9 @@
   words: 18
   status: candidate
   featured: false
-  background: null
+  background: {solid: rust, dark: forest-03.jpg, light: light-03.jpg}
   added: '2026-11-23'
+  tone: dark
 - id: statler-worship-lifts-our-eyes-from
   text: Worship lifts our eyes from pain to the beauty of God, teaching us to rejoice even in the midst of sorrow.
   author: matthew-statler
@@ -129,5 +138,6 @@
   words: 21
   status: candidate
   featured: false
-  background: null
+  background: {solid: evergreen, dark: forest-05.jpg, light: light-09.jpg}
   added: '2026-11-23'
+  tone: solid
