@@ -466,3 +466,131 @@
   added: 2026-11-23
   tone: light
   background: {dark: forest-05.jpg, light: light-12.jpg, solid: navy}
+- id: james-4-7
+  ref: James 4:7
+  text: "Submit yourselves, then, to God. Resist the devil, and he will flee from you."
+  topics: [satan, humility]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-04.jpg, light: light-13.jpg, solid: violet}
+  tone: solid
+- id: ephesians-6-11
+  ref: Ephesians 6:11
+  text: "Put on the full armor of God, so that you can make your stand against the devil’s schemes."
+  topics: [satan]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-05.jpg, light: light-05.jpg, solid: teal}
+  tone: dark
+- id: colossians-3-5
+  ref: Colossians 3:5
+  text: "Put to death, therefore, the components of your earthly nature: sexual immorality, impurity, lust, evil desires, and greed, which is idolatry."
+  topics: [mortification, sin]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-02.jpg, light: light-25.jpg, solid: rust}
+  tone: solid
+- id: galatians-5-22-23
+  ref: Galatians 5:22-23
+  text: "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. Against such things there is no law."
+  topics: [holy-spirit, holiness]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: sky-01.jpg, light: light-15.jpg, solid: evergreen}
+- id: romans-8-26
+  ref: Romans 8:26
+  text: "In the same way, the Spirit helps us in our weakness. For we do not know how we ought to pray, but the Spirit Himself intercedes for us with groans too deep for words."
+  topics: [holy-spirit, prayer]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: sky-08.jpg, light: light-21.jpg, solid: burgundy}
+- id: acts-24-16
+  ref: Acts 24:16
+  text: "In this hope, I strive always to maintain a clear conscience before God and man."
+  topics: [conscience]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: road-01.jpg, light: light-17.jpg, solid: navy}
+  tone: dark
+- id: 1-timothy-1-5
+  ref: 1 Timothy 1:5
+  text: "The goal of our instruction is the love that comes from a pure heart, a clear conscience, and a sincere faith."
+  topics: [conscience, love]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: road-05.jpg, light: light-07.jpg, solid: violet}
+  tone: solid
+- id: psalm-139-23-24
+  ref: Psalm 139:23-24
+  text: "Search me, O God, and know my heart; test me and know my concerns. See if there is any offensive way in me; lead me in the way everlasting."
+  topics: [self-examination, heart]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: forest-11.jpg, light: light-18.jpg, solid: teal}
+  tone: dark
+- id: hebrews-10-24-25
+  ref: Hebrews 10:24-25
+  text: "And let us consider how to spur one another on to love and good deeds. Let us not neglect meeting together, as some have made a habit, but let us encourage one another, and all the more as you see the Day approaching."
+  topics: [church, love]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: forest-06.jpg, light: light-02.jpg, solid: rust}
+- id: psalm-133-1
+  ref: Psalm 133:1
+  text: "Behold, how good and pleasant it is when brothers live together in harmony!"
+  topics: [church]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: forest-10.jpg, light: light-06.jpg, solid: evergreen}
+- id: matthew-15-8
+  ref: Matthew 15:8
+  text: "These people honor Me with their lips, but their hearts are far from Me."
+  topics: [hypocrisy, heart]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: ruins-02.jpg, light: light-19.jpg, solid: burgundy}
+  tone: solid
+- id: james-1-22
+  ref: James 1:22
+  text: "Be doers of the word, and not hearers only. Otherwise, you are deceiving yourselves."
+  topics: [hypocrisy, scripture]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: ruins-02.jpg, light: light-26.jpg, solid: navy}
+  tone: dark
+- id: colossians-3-23-24
+  ref: Colossians 3:23-24
+  text: "Whatever you do, work at it with your whole being, as for the Lord and not for men, because you know that you will receive an inheritance from the Lord as your reward. It is the Lord Christ you are serving."
+  topics: [work]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: road-01.jpg, light: light-11.jpg, solid: violet}
+  tone: solid
+- id: 1-corinthians-10-31
+  ref: 1 Corinthians 10:31
+  text: "So whether you eat or drink or whatever you do, do it all to the glory of God."
+  topics: [work, worship]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: road-02.jpg, light: light-20.jpg, solid: teal}
+- id: psalm-127-3
+  ref: Psalm 127:3
+  text: "Children are indeed a heritage from Yahweh, and the fruit of the womb is His reward."
+  topics: [family]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: forest-11.jpg, light: light-03.jpg, solid: rust}
+- id: joshua-24-15
+  ref: Joshua 24:15
+  text: "As for me and my house, we will serve Yahweh!"
+  topics: [family, worship]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: forest-01.jpg, light: light-16.jpg, solid: evergreen}
+  tone: dark

@@ -90,6 +90,11 @@ def main(slugs):
         t = q.get("topics") or []
         if not 1 <= len(t) <= 3 or any(x not in topics for x in t):
             err("needs 1-3 topics from topics.yaml")
+    # Every topic needs at least one Bible verse card (Michael, 2026-11-23).
+    with_verse = {x for q in load_yaml(QDATA / "scripture.yaml", []) if q.get("status") != "rejected" for x in q.get("topics") or []}
+    for k in topics:
+        if k not in with_verse:
+            errors.append(f"topic {k!r} has no Bible verse card (add one to scripture.yaml)")
     for e in errors:
         print("ERROR", e)
     print(f"{len(seen)} quotes in {len(slugs)} books: " + ", ".join(f"{v} {k}" for k, v in counts.items())
