@@ -22,7 +22,8 @@ const bookCounts   = count((q) => [q.book]);
 const eraCounts    = count((q) => (q.era ? [q.era] : []));
 
 const topicOpts  = Object.entries(topics).filter(([k]) => topicCounts.has(k)).map(([k, v]) => ({ k, label: v.label, n: topicCounts.get(k) }));
-const authorOpts = [...authorCounts].map(([k, n]) => ({ k, n, label: quotes.find((q: any) => q.authorKey === k).authorSort }))
+// Bible verse cards are found under Books ("Berean Standard Bible"), not Authors (2026-11-23).
+const authorOpts = [...authorCounts].filter(([k]) => k !== 'bible').map(([k, n]) => ({ k, n, label: quotes.find((q: any) => q.authorKey === k).authorSort }))
   .sort((a, b) => a.label.localeCompare(b.label));
 const bookOpts   = [...bookCounts].map(([k, n]) => { const q = quotes.find((x: any) => x.book === k); return { k, n, label: q.bookTitle, author: [...new Set(quotes.filter((x: any) => x.book === k).map((x: any) => x.authorKey))].join(' ') }; })
   .sort((a, b) => a.label.localeCompare(b.label));
