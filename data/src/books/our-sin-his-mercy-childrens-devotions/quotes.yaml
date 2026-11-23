@@ -1,0 +1,81 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: conkle-when-we-confess-our-sin
+  text: When we confess our sin and trust in Jesus, God gladly forgives us and helps us grow in love.
+  author: joe-conkle
+  book: our-sin-his-mercy-childrens-devotions
+  chapter: p. 10
+  anchor: ''
+  topics: [repentance, family]
+  scripture: ['1 John 1:9']
+  words: 19
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-god-tells-us-not-to
+  text: God tells us not to be afraid because He is always with us and cares for us.
+  author: joe-conkle
+  book: our-sin-his-mercy-childrens-devotions
+  chapter: p. 18
+  anchor: ''
+  topics: [fear, family]
+  scripture: ['Isaiah 41:10']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-even-small-lies-matter-to
+  text: Even small lies matter to God, because they come from a heart that is not trusting Him.
+  author: joe-conkle
+  book: our-sin-his-mercy-childrens-devotions
+  chapter: p. 36
+  anchor: ''
+  topics: [sin, heart]
+  scripture: ['Proverbs 12:22']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-god-calls-us-to-be
+  text: God calls us to be thankful and content with what He gives us.
+  author: joe-conkle
+  book: our-sin-his-mercy-childrens-devotions
+  chapter: p. 38
+  anchor: ''
+  topics: [contentment]
+  scripture: ['Hebrews 13:5']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-pride-means-thinking-we-are
+  text: Pride means thinking we are better than others or acting like we do not need help.
+  author: joe-conkle
+  book: our-sin-his-mercy-childrens-devotions
+  chapter: p. 42
+  anchor: ''
+  topics: [humility, family]
+  scripture: ['James 4:6']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: conkle-when-we-confess-our-sins
+  text: When we confess our sins, He forgives us, washes us clean, and welcomes us with love.
+  author: joe-conkle
+  book: our-sin-his-mercy-childrens-devotions
+  chapter: p. 46
+  anchor: ''
+  topics: [repentance, mercy]
+  scripture: ['1 John 1:9']
+  words: 16
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

@@ -48,10 +48,12 @@ Batch 1 done 2026-11-23 (383 quotes, 31 books); render, upload and push wait for
 ## Batch 2: EPUB / PDF only (extract.py reads EPUB and PDF since 2026-11-23; PDF quotes record the page)
 - [x] the-divine-name (Case, EPUB)
 - [x] expositions-on-the-psalms (Augustine, PDF)
-- [ ] institutes-of-the-christian-religion-part-1 / part-2 (Calvin, PDF)
+- [x] institutes-of-the-christian-religion-part-1 / part-2 (Calvin, PDF)
 - [x] owen-on-sin (Owen, PDF)
 - [x] these-five-anchors (Maragni, PDF)
-- [ ] our-sin-his-mercy-childrens-devotions (Conkle, PDF)
+- [x] our-sin-his-mercy-childrens-devotions (Conkle, PDF)
+
+Batch 2 done 2026-11-23 (49 quotes, 7 books; 432 in all); render, upload and push wait for Michael's OK.
 
 ## Batch 3: text only on other sites (no local file)
 abolish-the-jesus-trade, cristina-of-aspen-aisle, god-spoke, gods-word-is-not-bound,

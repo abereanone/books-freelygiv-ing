@@ -1,0 +1,120 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: calvin-duty-theologian-however-not-to
+  text: The duty of a Theologian, however, is not to tickle the ear, but confirm the conscience, by teaching what is true, certain, and useful.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 209
+  anchor: ''
+  topics: [scripture]
+  scripture: ['2 Timothy 4:3']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-conscience-which-distinguishing-between-good
+  text: Conscience, which, distinguishing, between good and evil, responds to the Judgment of God, is an undoubted sign of an immortal spirit.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 238
+  anchor: ''
+  topics: [conscience]
+  scripture: ['Romans 2:15']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-beginning-willing-doing-well-faith
+  text: The beginning of willing and doing well is of faith; faith again is the gift of God; and hence mere grace is the cause of our beginning to will well.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 387
+  anchor: ''
+  topics: [grace, faith]
+  scripture: ['Philippians 2:13']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-god-has-not-rendered-you
+  text: God has not rendered you due punishment, but bestows upon you unmerited grace.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 434
+  anchor: ''
+  topics: [grace, mercy]
+  scripture: ['Psalm 103:10']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-when-law-discloses-our-guilt
+  text: When the Law discloses our guilt, we should not despond, but flee to the mercy of God.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 479
+  anchor: ''
+  topics: [mercy, repentance]
+  scripture: ['Galatians 3:24']
+  words: 17
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-we-must-rest-entirely-in
+  text: We must rest entirely, in order that God may work in us; we must resign our own will, yield up our heart, and abandon all the lusts of the flesh.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 555
+  anchor: ''
+  topics: [holiness, worship]
+  scripture: ['Hebrews 4:10']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-when-temptation-suggested-that-god
+  text: When the temptation suggested is, that God is an enemy because he afflicts, faith replies, that while he afflicts he is merciful, his chastening proceeding more from love than anger.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 816
+  anchor: ''
+  topics: [affliction, faith]
+  scripture: ['Hebrews 12:6']
+  words: 30
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-faith-foundation-on-which-hope
+  text: Faith is the foundation on which hope rests; hope nourishes and sustains faith.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 848
+  anchor: ''
+  topics: [faith]
+  scripture: ['Hebrews 11:1']
+  words: 13
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: calvin-our-doctrine-was-that-soul
+  text: Our doctrine was, that the soul looked not to its own compunction or its own tears, but fixed both eyes on the mercy of God alone.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-part-1
+  chapter: p. 911
+  anchor: ''
+  topics: [repentance, mercy]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
