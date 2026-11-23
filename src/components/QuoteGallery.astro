@@ -17,19 +17,19 @@ const count = (key: (q: any) => string[]) => {
   return m;
 };
 const topicCounts  = count((q) => q.topics);
-const authorCounts = count((q) => [q.author]);
+const authorCounts = count((q) => [q.authorKey]);
 const bookCounts   = count((q) => [q.book]);
 const eraCounts    = count((q) => (q.era ? [q.era] : []));
 
 const topicOpts  = Object.entries(topics).filter(([k]) => topicCounts.has(k)).map(([k, v]) => ({ k, label: v.label, n: topicCounts.get(k) }));
-const authorOpts = [...authorCounts].map(([k, n]) => ({ k, n, label: quotes.find((q: any) => q.author === k).authorName }))
-  .sort((a, b) => b.n - a.n || a.label.localeCompare(b.label));
-const bookOpts   = [...bookCounts].map(([k, n]) => { const q = quotes.find((x: any) => x.book === k); return { k, n, label: q.bookTitle, author: q.author }; })
+const authorOpts = [...authorCounts].map(([k, n]) => ({ k, n, label: quotes.find((q: any) => q.authorKey === k).authorSort }))
+  .sort((a, b) => a.label.localeCompare(b.label));
+const bookOpts   = [...bookCounts].map(([k, n]) => { const q = quotes.find((x: any) => x.book === k); return { k, n, label: q.bookTitle, author: [...new Set(quotes.filter((x: any) => x.book === k).map((x: any) => x.authorKey))].join(' ') }; })
   .sort((a, b) => a.label.localeCompare(b.label));
 const eraOpts    = Object.entries(QUOTE_ERAS).filter(([k]) => eraCounts.has(k)).map(([k, label]) => ({ k, label, n: eraCounts.get(k) }));
 
 const data = quotes.map((q: any) => ({
-  id: q.id, text: q.text, a: q.author, an: q.authorName, b: q.book, bt: q.bookTitle,
+  id: q.id, text: q.text, a: q.authorKey, an: q.authorName, as: q.authorSort, b: q.book, bt: q.bookTitle,
   t: q.topics, e: q.era, w: q.words, tone: q.tone, f: !!q.featured, d: q.added,
   dark: quoteImage(q.id, 'dark', 'thumb'), light: quoteImage(q.id, 'light', 'thumb'), solid: quoteImage(q.id, 'solid', 'thumb'),
 }));
@@ -172,7 +172,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
 
   function apply(resetPage = true) {
     // Book list follows the chosen author.
-    for (const o of bookSel.options) if (o.value) o.hidden = !!authorSel.value && o.dataset.author !== authorSel.value;
+    for (const o of bookSel.options) if (o.value) o.hidden = !!authorSel.value && !o.dataset.author!.split(' ').includes(authorSel.value);
     if (bookSel.selectedOptions[0]?.hidden) bookSel.value = '';
 
     const words = norm(search.value).split(/\s+/).filter(Boolean);
@@ -184,7 +184,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
       (!shortChk.checked || q.w <= 20) &&
       (!words.length || words.every((w) => norm(`${q.text} ${q.an} ${q.bt} ${q.t.map((t) => topics[t]).join(' ')}`).includes(w))));
     if (sortSel.value === 'new') list.sort((x, y) => y.d.localeCompare(x.d) || rank(x.id) - rank(y.id));
-    else if (sortSel.value === 'author') list.sort((x, y) => x.an.localeCompare(y.an) || x.bt.localeCompare(y.bt));
+    else if (sortSel.value === 'author') list.sort((x, y) => x.as.localeCompare(y.as) || x.bt.localeCompare(y.bt));
     else list.sort((x, y) => rank(x.id) - rank(y.id));
 
     if (resetPage) shown = PAGE;

@@ -494,6 +494,12 @@ export function getQuotes() {
         // writers in Our Sin, His Mercy); they have no person page, so no link.
         authorName: q.writtenBy || (person ? personName(person) : q.author),
         authorHref: q.writtenBy ? null : person?.href ?? null,
+        // For the gallery's author filter: a guest writer is an author of their own there, and
+        // names are listed "Last, First" in surname order.
+        authorKey: q.writtenBy ? `by-${q.writtenBy.toLowerCase().replace(/[^a-z]+/g, "-")}` : q.author,
+        authorSort: q.writtenBy
+          ? q.writtenBy.replace(/^(.*) (\S+)$/, "$2, $1")
+          : person?.lastName ? `${person.lastName}, ${person.firstName}` : person ? personName(person) : q.author,
         bookTitle: book.title,
         bookHref: `/books/${bookAuthorSlug(book)}/${slug}/`,
         readUrl: read ? `${read}${q.anchor ? `#${q.anchor}` : ""}` : null,
