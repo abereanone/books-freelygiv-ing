@@ -65,6 +65,10 @@ ${cardHtml({ text: j.text, author: j.author, book: j.book, bgUrl: u(join(ART_DIR
   await browser.close();
   writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1));
 }
+// Version stamp for the image URLs (?v=…): changes whenever any card changes, so browsers and
+// the CDN fetch the new images instead of a cached copy. Committed; read by quoteImage().
+const version = createHash("sha1").update(JSON.stringify(Object.entries(manifest).sort())).digest("hex").slice(0, 8);
+writeFileSync(join(ROOT, "data/src/quotes/cards-version.txt"), version + "\n");
 const files = readdirSync(OUT).filter((f) => f.endsWith(".jpg"));
 const mb = files.reduce((s, f) => s + statSync(join(OUT, f)).size, 0) / 1e6;
 console.log(`${jobs.length} card(s) rendered; ${files.length} files, ${mb.toFixed(1)} MB in public/static/quotes/`);

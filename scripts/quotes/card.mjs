@@ -23,15 +23,18 @@ export function cardCss(base) {
   .card .veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,.35),rgba(0,0,0,.55))}
   .card .body{position:absolute;left:110px;right:110px;top:90px;bottom:170px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
   .card .q{font-family:Crimson;color:#fff;line-height:1.22;text-wrap:balance;hanging-punctuation:first last;text-shadow:0 2px 12px rgba(0,0,0,.5)}
-  .card .who{margin-top:44px;font-family:Ribeye;color:${GOLD};font-size:46px;letter-spacing:.04em;text-shadow:0 2px 10px rgba(0,0,0,.4)}
-  .card .book{margin-top:6px;font-family:Crimson;font-style:italic;color:${CREAM};opacity:.85;font-size:34px;text-align:center}
+  /* Author in the book-text face, bold, with an outline-like shadow: Medium Rare was hard to
+     read at this size on busy paintings (Michael chose option B, 2026-11-22). */
+  .card .who{margin-top:44px;font-family:Crimson;font-weight:600;color:${GOLD};font-size:62px;letter-spacing:.01em;text-shadow:0 0 14px rgba(0,0,0,.85),0 2px 4px rgba(0,0,0,.9)}
+  .card .book{margin-top:6px;font-family:Crimson;font-style:italic;color:${CREAM};opacity:.85;font-size:36px;text-align:center;text-shadow:0 1px 6px rgba(0,0,0,.8)}
   .card .tag{position:absolute;left:64px;bottom:58px;font-family:Ribeye;color:${GOLD};font-size:30px;letter-spacing:.09em}
   /* Light cards: a bright sky painting washed pale, dark ink, deeper gold (light-NN paintings). */
   .card.light .bg{filter:brightness(1.06) blur(3px) saturate(.85)}
   .card.light .veil{background:radial-gradient(ellipse at 50% 45%,rgba(255,252,244,.66),rgba(255,252,244,.38))}
   .card.light .q{color:#1d2630;text-shadow:0 1px 14px rgba(255,255,255,.8)}
-  .card.light .who,.card.light .tag{color:#7a5a12;text-shadow:0 1px 8px rgba(255,255,255,.7)}
-  .card.light .book{color:#2f2f2f;opacity:.9}`;
+  .card.light .tag{color:#7a5a12;text-shadow:0 1px 8px rgba(255,255,255,.7)}
+  .card.light .who{color:#5e430a;text-shadow:0 0 12px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
+  .card.light .book{color:#1d2630;opacity:.9;text-shadow:0 0 8px rgba(255,255,255,.9)}`;
 }
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

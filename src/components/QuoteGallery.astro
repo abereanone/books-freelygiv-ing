@@ -219,6 +219,11 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
   [topicSel, authorSel, bookSel, eraSel, shortChk, sortSel].forEach((el) => el?.addEventListener('change', () => apply()));
   bgBtns.forEach((b) => b.addEventListener('click', () => { bg = b.dataset.bg || ''; apply(false); }));
   more.addEventListener('click', () => { shown += PAGE; render(); });
+  // Remember this view's order, so swiping on a quote page walks through the same cards.
+  grid.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.qg-card')) return;
+    try { sessionStorage.setItem('qgList', JSON.stringify({ ids: list.map((q) => q.id), bg })); } catch {}
+  });
   clear.addEventListener('click', () => {
     search.value = ''; topicSel.value = root.dataset.topic || ''; authorSel.value = ''; bookSel.value = '';
     if (eraSel) eraSel.value = ''; shortChk.checked = false; sortSel.value = ''; bg = ''; apply();
