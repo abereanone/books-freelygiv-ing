@@ -1,0 +1,68 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: case-in-light-biblical-evidence-answer
+  text: 'In light of the biblical evidence, the answer to the question becomes clear: God intends for his name to be spoken and remembered.'
+  author: andrew-case
+  book: the-divine-name
+  chapter: ''
+  anchor: ''
+  topics: [knowing-god, worship]
+  scripture: ['Exodus 3:15']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: case-no-passage-in-scripture-forbids
+  text: No passage in Scripture forbids the use of God’s name, which is why it is used nearly 7,000 times by the biblical authors.
+  author: andrew-case
+  book: the-divine-name
+  chapter: ''
+  anchor: ''
+  topics: [knowing-god, scripture]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: case-way-we-address-god-must
+  text: The way we address God must conform to Scripture’s model representing God’s own explicit desires, not to man’s cultural propensities.
+  author: andrew-case
+  book: the-divine-name
+  chapter: ''
+  anchor: ''
+  topics: [worship, scripture]
+  scripture: []
+  words: 20
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: case-sanctity-divine-name-rooted-not
+  text: 'The sanctity of the divine name is rooted not merely in its form but in what it signifies: the self-revealed identity of God.'
+  author: andrew-case
+  book: the-divine-name
+  chapter: ''
+  anchor: ''
+  topics: [knowing-god]
+  scripture: ['Exodus 34:6']
+  words: 23
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: case-faithful-theology-must-hold-together
+  text: 'A faithful theology must hold together what Scripture holds together: the name of Jesus and the name of Yahweh in continuity.'
+  author: andrew-case
+  book: the-divine-name
+  chapter: ''
+  anchor: ''
+  topics: [christ, knowing-god]
+  scripture: ['Philippians 2:11']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

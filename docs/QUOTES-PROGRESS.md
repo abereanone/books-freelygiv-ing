@@ -45,11 +45,11 @@ Skipped: Spanish translations (same quotes as the English); confession (1689); h
 
 Batch 1 done 2026-11-23 (383 quotes, 31 books); render, upload and push wait for Michael's OK.
 
-## Batch 2: EPUB / PDF only (extract.py needs EPUB/PDF support first)
-- [ ] the-divine-name (Case, EPUB)
+## Batch 2: EPUB / PDF only (extract.py reads EPUB and PDF since 2026-11-23; PDF quotes record the page)
+- [x] the-divine-name (Case, EPUB)
 - [ ] expositions-on-the-psalms (Augustine, PDF)
 - [ ] institutes-of-the-christian-religion-part-1 / part-2 (Calvin, PDF)
-- [ ] owen-on-sin (Owen, PDF)
+- [x] owen-on-sin (Owen, PDF)
 - [ ] these-five-anchors (Maragni, PDF)
 - [ ] our-sin-his-mercy-childrens-devotions (Conkle, PDF)
 

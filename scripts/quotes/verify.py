@@ -24,7 +24,8 @@ def main(slugs):
         if not (WORK / slug / "paragraphs.jsonl").exists():
             subprocess.run([sys.executable, str(ROOT / "scripts/quotes/extract.py"), slug], check=True, capture_output=True)
         body = " \n ".join(norm(p["text"]) for p in paragraphs(slug))
-        html = (BOOKS / slug / "content" / f"{slug}.html").read_text(encoding="utf-8")
+        hf = BOOKS / slug / "content" / f"{slug}.html"
+        html = hf.read_text(encoding="utf-8") if hf.exists() else ""   # EPUB/PDF-only books have no anchors
         for q in load_yaml(BOOKS / slug / "quotes.yaml", []):
             where = f"{slug}/{q.get('id')}"
             err = lambda m: errors.append(f"{where}: {m}")
@@ -43,7 +44,7 @@ def main(slugs):
                 err(f"book should be {slug}")
             if q.get("author") not in eras:
                 err(f"author {q.get('author')!r} has no era in eras.yaml")
-            if q.get("anchor") and f'id="{q["anchor"]}"' not in html:
+            if q.get("anchor") and html and f'id="{q["anchor"]}"' not in html:
                 err(f"anchor #{q['anchor']} not in the Read Online HTML")
             t = q.get("topics") or []
             if not 1 <= len(t) <= 3:

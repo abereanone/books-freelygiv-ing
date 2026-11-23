@@ -1,0 +1,81 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: owen-wicked-man-may-in-outward
+  text: A wicked man may in outward things be of great use; but come to his heart, that is false and a thing of nought.
+  author: john-owen
+  book: owen-on-sin
+  chapter: p. 38
+  anchor: ''
+  topics: [hypocrisy, heart]
+  scripture: ['Jeremiah 17:9']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-when-prince-this-world-came
+  text: When the prince of this world came to Christ, he had “no part in him;” but when he comes to us, he hath so in us.
+  author: john-owen
+  book: owen-on-sin
+  chapter: p. 54
+  anchor: ''
+  topics: [satan, christ]
+  scripture: ['John 14:30']
+  words: 26
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-use-means-for-obtaining-peace
+  text: The use of means for the obtaining of peace is ours; the bestowing of it is God’s prerogative.
+  author: john-owen
+  book: owen-on-sin
+  chapter: p. 150
+  anchor: ''
+  topics: [peace]
+  scripture: ['Isaiah 57:19']
+  words: 18
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-to-have-peace-with-god
+  text: To have peace with God, to have strength to walk before God, is the sum of the great promises of the covenant of grace.
+  author: john-owen
+  book: owen-on-sin
+  chapter: p. 205
+  anchor: ''
+  topics: [peace, grace]
+  scripture: ['Romans 5:1']
+  words: 24
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-we-may-love-honour-believe
+  text: We may love, honour, believe, and obey our Father; and therewith he accepts our childish thoughts, for they are but childish.
+  author: john-owen
+  book: owen-on-sin
+  chapter: p. 227
+  anchor: ''
+  topics: [knowing-god, humility]
+  scripture: ['1 Corinthians 13:11']
+  words: 21
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'
+- id: owen-light-gospel-whereby-now-god
+  text: The light of the gospel whereby now God is revealed is glorious; not a star, but the sun in his beauty is risen upon us, and the vail is taken from our faces.
+  author: john-owen
+  book: owen-on-sin
+  chapter: p. 231
+  anchor: ''
+  topics: [scripture, christ]
+  scripture: ['2 Corinthians 3:18']
+  words: 33
+  status: candidate
+  featured: false
+  background: null
+  added: '2026-11-23'

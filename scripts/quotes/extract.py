@@ -1,4 +1,5 @@
-"""Pull plain text out of a book's Read Online HTML, for finding and checking quotes.
+"""Pull plain text out of a book (its Read Online HTML, else its EPUB, else its PDF), for
+finding and checking quotes.
 
     python scripts/quotes/extract.py <book-slug> [<book-slug> ...]
 
@@ -90,11 +91,71 @@ def sentences(text):
     return [p.strip() for p in parts if p.strip()]
 
 
+def from_html(path):
+    w = Walker()
+    w.feed(path.read_text(encoding="utf-8"))
+    return w.paras
+
+
+def from_epub(path):
+    """Every content document in spine order, through the same Walker. Anchors are left
+    empty: they belong to the EPUB, not to a Read Online page on the site."""
+    import zipfile, posixpath
+    z = zipfile.ZipFile(path)
+    container = z.read("META-INF/container.xml").decode("utf-8", "ignore")
+    opf = re.search(r'full-path="([^"]+)"', container).group(1)
+    o = z.read(opf).decode("utf-8", "ignore")
+    items = dict(re.findall(r'<item\s[^>]*?id="([^"]+)"[^>]*?href="([^"]+)"', o))
+    items.update({i: h for h, i in re.findall(r'<item\s[^>]*?href="([^"]+)"[^>]*?id="([^"]+)"', o)})
+    order = re.findall(r'<itemref\s[^>]*?idref="([^"]+)"', o)
+    w = Walker()
+    for idref in order:
+        href = items.get(idref)
+        if not href or not re.search(r"\.x?html?$", href):
+            continue
+        w.feed(z.read(posixpath.join(posixpath.dirname(opf), href)).decode("utf-8", "ignore"))
+    for p in w.paras:
+        p["anchor"] = ""
+    return w.paras
+
+
+def from_pdf(path):
+    """Text blocks page by page (PyMuPDF), joined into paragraphs; hyphens at line ends are
+    rejoined. `chapter` is the page ("p. 12"), anchor empty. Running heads and page numbers
+    are short and mostly fall out of the sentence filter."""
+    import fitz
+    paras = []
+    for n, page in enumerate(fitz.open(path), 1):
+        for b in page.get_text("blocks"):
+            t = b[4]
+            t = re.sub(r"(\w)-\n(\w)", r"\1\2", t)
+            t = clean(t.replace("\n", " "))
+            if len(t.split()) < 4:
+                continue
+            paras.append({"anchor": "", "chapter": f"p. {n}", "text": t,
+                          "refs": [m.group(0) for m in REF.finditer(t)]})
+    return paras
+
+
+def source(slug):
+    c = BOOKS / slug / "content"
+    html = c / f"{slug}.html"
+    if html.exists():
+        return "html", html
+    for kind in ("epub", "pdf"):
+        files = sorted(c.glob(f"*.{kind}"))
+        if files:
+            return kind, files[0]
+    raise SystemExit(f"{slug}: no HTML, EPUB or PDF in {c}")
+
+
 def main(slugs):
     for slug in slugs:
-        src = BOOKS / slug / "content" / f"{slug}.html"
-        w = Walker()
-        w.feed(src.read_text(encoding="utf-8"))
+        kind, src = source(slug)
+        paras = {"html": from_html, "epub": from_epub, "pdf": from_pdf}[kind](src)
+
+        class W: pass
+        w = W(); w.paras = paras
         out = ROOT / "tmp/quotes" / slug
         out.mkdir(parents=True, exist_ok=True)
         with open(out / "paragraphs.jsonl", "w", encoding="utf-8") as f:
@@ -108,7 +169,7 @@ def main(slugs):
                     if 8 <= words <= 45 and not START_BAD.match(s) and not REF.search(s[:12]):
                         f.write(f"{i}\t{p['anchor']}\t{words}\t{s}\t{'; '.join(p['refs'])}\n")
                         n += 1
-        print(f"{slug}: {len(w.paras)} paragraphs, {n} candidate sentences")
+        print(f"{slug} ({kind}): {len(w.paras)} paragraphs, {n} candidate sentences")
 
 
 if __name__ == "__main__":

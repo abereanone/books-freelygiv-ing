@@ -451,6 +451,7 @@ export function bookAuthorSlug(book) {
 const QUOTES_SRC = join(DATA_SRC, "quotes");
 
 export const QUOTE_ERAS = {
+  early: "Early Church",
   reformation: "Reformation",
   puritan: "Puritan",
   evangelical: "1700s–1800s",
