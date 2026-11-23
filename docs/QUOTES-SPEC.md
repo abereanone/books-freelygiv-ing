@@ -214,6 +214,11 @@ replace satori in section 4.
 - R2 CORS rule "quote-cards" (added 2026-11-22) lets books.freely.giving and the pages.dev host
   fetch the images, so Download saves the file and Share can send the picture itself.
 
+- **Three looks per quote** (2026-11-23): painting dark, painting light, and solid colour (framed
+  like the prepared-book covers; six colours in `SOLIDS`, scripts/quotes/card.mjs). Colour stored
+  as `background.solid`; `tone` (dark | light | solid) is the look shown first. Gallery switch:
+  Mixed / Dark / Light / Solid. Author line in Crimson Pro bold (2026-11-22). Quote pages swipe.
+
 ## 7. Decided (2026-11-22)
 
 - Tag: `BOOKS.FREELY.GIVING` in the back-cover Ribeye face, fixed lower left on every card.
