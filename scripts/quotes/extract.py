@@ -142,6 +142,9 @@ def source(slug):
     html = c / f"{slug}.html"
     if html.exists():
         return "html", html
+    alt = ROOT / "tmp/quotes" / slug / "source.html"  # e.g. HTML pulled out of a MOBI; never published
+    if alt.exists():
+        return "html", alt
     for kind in ("epub", "pdf"):
         files = sorted(c.glob(f"*.{kind}"))
         if files:
@@ -153,6 +156,9 @@ def main(slugs):
     for slug in slugs:
         kind, src = source(slug)
         paras = {"html": from_html, "epub": from_epub, "pdf": from_pdf}[kind](src)
+        for p in paras:  # soft hyphens and zero-width spaces would ride along onto the cards
+            p["text"] = p["text"].replace("­", "").replace("​", "")
+            p["chapter"] = p["chapter"].replace("­", "").replace("​", "")
 
         class W: pass
         w = W(); w.paras = paras

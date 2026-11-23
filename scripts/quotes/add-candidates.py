@@ -27,7 +27,9 @@ def main(slug):
     out_file = BOOKS / slug / "quotes.yaml"
     existing = {q["id"]: q for q in load_yaml(out_file, [])}
     added, problems = 0, []
-    for para, start, end, topics, scripture in picks:
+    for row in picks:  # optional 6th field: the person slug who wrote that part (multi-author books)
+        para, start, end, topics, scripture = row[:5]
+        who = row[5] if len(row) > 5 else author
         p = paras[para]
         t = p["text"]
         i = t.find(start)
@@ -36,13 +38,13 @@ def main(slug):
             problems.append(f"para {para}: could not find {start!r} ... {end!r}")
             continue
         text = t[i:j + len(end)]
-        qid = f"{last}-{slugify(text)}"
+        qid = f"{who.split('-')[-1]}-{slugify(text)}"
         if qid in existing:
             continue
         existing[qid] = {
             "id": qid,
             "text": text,
-            "author": author,
+            "author": who,
             "book": slug,
             "chapter": p["chapter"],
             "anchor": p["anchor"],

@@ -1,0 +1,87 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: pritchard-jesus-christ-didnt-come-in
+  text: Jesus Christ didn’t come in the power of Satan; he came to utterly defeat him and rescue those enslaved by Satan.
+  author: shelby-pritchard
+  book: the-mark-of-a-true-disciple
+  chapter: 22-30 The scribes challenge Jesus, denying the work of the Holy Spirit
+  anchor: ''
+  topics: [christ, satan]
+  scripture: ['Mark 3:27']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: sky-02.jpg, light: light-08.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: light
+- id: pritchard-jesus-gave-them-unlimited-authority
+  text: Jesus gave them unlimited authority over the evil spirits, but they still had to pray for their daily bread.
+  author: shelby-pritchard
+  book: the-mark-of-a-true-disciple
+  chapter: 6:7-13 Jesus Sending his Disciples on a Mission Trip
+  anchor: ''
+  topics: [prayer]
+  scripture: ['Mark 6:8']
+  words: 19
+  status: candidate
+  featured: false
+  background: {dark: forest-06.jpg, light: light-17.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: dark
+- id: pritchard-we-are-to-preach-gospel
+  text: We are to preach the gospel of forgiveness and healing; if we are hated for that, we are no different than our Master.
+  author: shelby-pritchard
+  book: the-mark-of-a-true-disciple
+  chapter: 6:21-29 John’s Rebuke Costing his Life
+  anchor: ''
+  topics: [affliction]
+  scripture: ['John 15:18']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: storm-10.jpg, light: light-18.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid
+- id: pritchard-with-power-prayer-we-can
+  text: With the power of prayer, we can overcome mountain sized obstacles; but we must forgive as we have been forgiven.
+  author: shelby-pritchard
+  book: the-mark-of-a-true-disciple
+  chapter: Mark 11:20-26 The Fig Tree’s Meaning Explained
+  anchor: ''
+  topics: [prayer, forgiveness]
+  scripture: ['Mark 11:25']
+  words: 20
+  status: candidate
+  featured: false
+  background: {dark: forest-07.jpg, light: light-09.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: dark
+- id: pritchard-god-seemed-silent-god-felt
+  text: God seemed silent, God felt far away, but God was working in it all and Jesus was verbalizing his trust in God’s plan.
+  author: shelby-pritchard
+  book: the-mark-of-a-true-disciple
+  chapter: 15:33-39 Final Moments
+  anchor: ''
+  topics: [providence, cross]
+  scripture: ['Mark 15:34']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: sky-11.jpg, light: light-10.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: solid
+- id: pritchard-jesus-supreme-storm-stopper-divine
+  text: Jesus is the supreme storm-stopper, the Divine demon-destroyer, and the Lord of Life and healer of hearts.
+  author: shelby-pritchard
+  book: the-mark-of-a-true-disciple
+  chapter: 5:35-43
+  anchor: ''
+  topics: [christ]
+  scripture: ['Mark 4:39']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: sky-07.jpg, light: light-11.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: light

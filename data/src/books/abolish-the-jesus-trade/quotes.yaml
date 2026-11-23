@@ -1,0 +1,73 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: case-scripture-makes-clear-that-work
+  text: Scripture makes clear that the work of ministry is meant to be freely given, supported by God’s people, but never sold.
+  author: andrew-case
+  book: abolish-the-jesus-trade
+  chapter: Giving out of Obligation to God, Not Man
+  anchor: ''
+  topics: [work, church]
+  scripture: ['Matthew 10:8']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: road-04.jpg, light: light-13.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid
+- id: owens-judass-sin-was-not-merely
+  text: Judas’s sin was not merely in valuing earthly riches, but in valuing them beyond heavenly riches, such that he was willing to exchange the former for the latter.
+  author: conley-owens
+  book: abolish-the-jesus-trade
+  chapter: A Disregard for Heavenly Gain
+  anchor: ''
+  topics: [world, heart]
+  scripture: ['Matthew 26:15']
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: road-03.jpg, light: light-22.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-judas-operated-in-shadows-but
+  text: Judas operated in the shadows, but peddlers of the word of God operate openly.
+  author: conley-owens
+  book: abolish-the-jesus-trade
+  chapter: An Injury to the Kingdom
+  anchor: ''
+  topics: [scripture, sin]
+  scripture: ['2 Corinthians 2:17']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: sky-13.jpg, light: light-24.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: solid
+- id: case-in-our-cultural-moment-we
+  text: 'In our cultural moment we have mostly accepted the peddling of God’s word as normal: priests teach for a price all around us.'
+  author: andrew-case
+  book: abolish-the-jesus-trade
+  chapter: Responding well
+  anchor: ''
+  topics: [church, scripture]
+  scripture: ['Micah 3:11']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: forest-11.jpg, light: light-17.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-any-minister-who-seeks-to
+  text: Any minister who seeks to instruct others about the things of God should not be seeking to impart human wisdom, but words taught by the Spirit.
+  author: conley-owens
+  book: abolish-the-jesus-trade
+  chapter: 'Objection 3: Simony Refers to Spiritual Things, not Teaching'
+  anchor: ''
+  topics: [holy-spirit, scripture]
+  scripture: ['1 Corinthians 2:13']
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: sky-01.jpg, light: light-25.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: solid

@@ -1,0 +1,59 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: feezell-hesed-father-who-runs-out
+  text: Hesed is the father who runs out the door to hug the long lost son returning home.
+  author: mark-feezell
+  book: surprised-by-hesed
+  chapter: Hesed love?
+  anchor: ''
+  topics: [love, mercy]
+  scripture: ['Luke 15:20']
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: forest-03.jpg, light: light-20.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: dark
+- id: feezell-hesed-never-wavers-it-never
+  text: Hesed never wavers, it never turns back, and it never hesitates.
+  author: mark-feezell
+  book: surprised-by-hesed
+  chapter: Hesed love?
+  anchor: ''
+  topics: [love, mercy]
+  scripture: ['Psalm 136:1']
+  words: 11
+  status: candidate
+  featured: false
+  background: {dark: forest-05.jpg, light: light-15.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: solid
+- id: feezell-jesus-embodied-hesed-when-he
+  text: Jesus embodied hesed when He took the beating and the crown of thorns.
+  author: mark-feezell
+  book: surprised-by-hesed
+  chapter: Hesed love?
+  anchor: ''
+  topics: [cross, love]
+  scripture: []
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: mountain-02.jpg, light: light-02.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: dark
+- id: feezell-in-these-psalms-gods-hesed
+  text: In these psalms, God’s hesed love will meet you in your pain with care and compassion, not judgment.
+  author: mark-feezell
+  book: surprised-by-hesed
+  chapter: Hesed love?
+  anchor: ''
+  topics: [affliction, love]
+  scripture: ['Psalm 34:18']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: storm-05.jpg, light: light-21.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: solid

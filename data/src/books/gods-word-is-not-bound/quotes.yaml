@@ -1,0 +1,115 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: case-yet-presence-godly-people-inside
+  text: Yet the presence of godly people inside an institution does not sanctify the institution and its methods.
+  author: andrew-case
+  book: gods-word-is-not-bound
+  chapter: Introduction
+  anchor: ''
+  topics: [church, hypocrisy]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: forest-11.jpg, light: light-19.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: solid
+- id: case-biblical-witness-unambiguous-gods-word
+  text: 'The biblical witness is unambiguous: God’s Word does not depend on human power structures for its preservation or efficacy.'
+  author: andrew-case
+  book: gods-word-is-not-bound
+  chapter: Introduction
+  anchor: ''
+  topics: [scripture, providence]
+  scripture: ['2 Timothy 2:9']
+  words: 19
+  status: candidate
+  featured: false
+  background: {dark: sky-09.jpg, light: light-21.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: dark
+- id: coughlin-because-jesus-word-because-jesus
+  text: Because Jesus is the Word, and because Jesus cannot be bought or sold, the Word that reveals Him cannot be bought or sold either.
+  author: michael-coughlin
+  book: gods-word-is-not-bound
+  chapter: Jesus Is the Word
+  anchor: ''
+  topics: [scripture, christ]
+  scripture: ['John 1:1']
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: sky-04.jpg, light: light-15.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid
+- id: coughlin-word-god-pricelessnot-because-it
+  text: The Word of God is priceless—not because it lacks value, but because nothing can be exchanged for it.
+  author: michael-coughlin
+  book: gods-word-is-not-bound
+  chapter: Conclusion
+  anchor: ''
+  topics: [scripture]
+  scripture: ['Psalm 19:10']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: sky-05.jpg, light: light-05.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-god-has-freely-given-us
+  text: God has freely given us his word, but not for us to do with it as we will.
+  author: conley-owens
+  book: gods-word-is-not-bound
+  chapter: An Argument from Contemporary Human Law
+  anchor: ''
+  topics: [scripture]
+  scripture: ['Matthew 10:8']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: sky-06.jpg, light: light-26.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: solid
+- id: case-empires-rise-fall-copyright-laws
+  text: Empires rise and fall, copyright laws come and go, printing technologies evolve, but God’s Word outlasts them all.
+  author: andrew-case
+  book: gods-word-is-not-bound
+  chapter: God’s Sovereignty and Our Responsibility
+  anchor: ''
+  topics: [scripture, providence]
+  scripture: ['Isaiah 40:8']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: sky-04.jpg, light: light-18.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: dark
+- id: here-they-call-it-gods-word
+  text: They call it “God’s Word” but really believe it belongs to them.
+  author: jon-here
+  book: gods-word-is-not-bound
+  chapter: Would God want his Word to be “stewarded” in this way?
+  anchor: ''
+  topics: [scripture, hypocrisy]
+  scripture: []
+  words: 12
+  status: candidate
+  featured: false
+  background: {dark: sky-09.jpg, light: light-01.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: solid
+- id: case-word-god-gift-entrusted-to
+  text: The Word of God is a gift entrusted to the Church to be proclaimed and shared; and no human authority may rightfully chain what God has given for the life of the world.
+  author: andrew-case
+  book: gods-word-is-not-bound
+  chapter: Conclusion
+  anchor: ''
+  topics: [scripture, church]
+  scripture: ['2 Timothy 2:9']
+  words: 33
+  status: candidate
+  featured: false
+  background: {dark: sky-03.jpg, light: light-04.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: dark

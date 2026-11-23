@@ -1,0 +1,31 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: case-if-we-will-be-saved
+  text: 'If we will be saved, You must do what is impossible with man: give us hearts that cherish You more than money, possessions, or comfort.'
+  author: andrew-case
+  book: praying-the-bible-together
+  chapter: p. 146
+  anchor: ''
+  topics: [prayer, world]
+  scripture: ['Matthew 19:26']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-09.jpg, light: light-23.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: dark
+- id: case-remind-us-that-once-we
+  text: Remind us that once we were orphans, but now we are Your children; once we had not received mercy, but now we have received mercy.
+  author: andrew-case
+  book: praying-the-bible-together
+  chapter: p. 102
+  anchor: ''
+  topics: [prayer, mercy]
+  scripture: ['1 Peter 2:10']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-12.jpg, light: light-25.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid

@@ -1,0 +1,59 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: pritchard-rather-than-love-for-our
+  text: Rather than a love for our lust, we must love our Lord! Rather than be fascinated with our feelings, we must be fascinated with our Father!
+  author: shelby-pritchard
+  book: jude-a-theological-commentary
+  chapter: ''
+  anchor: ''
+  topics: [love, heart]
+  scripture: ['Jude 1:21']
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: forest-01.jpg, light: light-06.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid
+- id: pritchard-god-will-not-forget-but
+  text: God will not forget, but will seek to bring you back through the painful discipline of his love.
+  author: shelby-pritchard
+  book: jude-a-theological-commentary
+  chapter: ''
+  anchor: ''
+  topics: [love, affliction]
+  scripture: ['Hebrews 12:6']
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: forest-04.jpg, light: light-14.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: dark
+- id: pritchard-our-motivation-not-to-delight
+  text: Our motivation is not to delight in seeing others face their punishments, but instead, we are driven by the mercy God showed us to echo that mercy onward to others.
+  author: shelby-pritchard
+  book: jude-a-theological-commentary
+  chapter: ''
+  anchor: ''
+  topics: [mercy]
+  scripture: ['Jude 1:22']
+  words: 30
+  status: candidate
+  featured: false
+  background: {dark: sky-12.jpg, light: light-12.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: light
+- id: pritchard-not-only-do-we-praise
+  text: Not only do we praise the things we love, but we also learn to love the things we praise.
+  author: shelby-pritchard
+  book: jude-a-theological-commentary
+  chapter: ''
+  anchor: ''
+  topics: [worship, love]
+  scripture: []
+  words: 19
+  status: candidate
+  featured: false
+  background: {dark: forest-02.jpg, light: light-02.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid

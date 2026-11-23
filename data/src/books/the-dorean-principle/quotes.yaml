@@ -1,0 +1,73 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: owens-in-context-gospel-proclamation-accepting
+  text: In the context of gospel proclamation, accepting support as anything other than an act of colabor compromises the sincerity of ministry.
+  author: conley-owens
+  book: the-dorean-principle
+  chapter: Reciprocity and Colabor
+  anchor: ''
+  topics: [work, church]
+  scripture: ['Matthew 10:8']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: road-04.jpg, light: light-22.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: solid
+- id: owens-if-labor-suffering-then-ministerial
+  text: If labor is suffering, then ministerial colabor is nothing more than shared suffering for the sake of the gospel.
+  author: conley-owens
+  book: the-dorean-principle
+  chapter: Colabor as Shared Suffering
+  anchor: ''
+  topics: [affliction, church]
+  scripture: ['Galatians 6:2']
+  words: 19
+  status: candidate
+  featured: false
+  background: {dark: storm-06.jpg, light: light-24.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-duty-to-god-must-triumph
+  text: Duty to God must triumph over a sensed debt to any minister since God mediates all obligation to his servants as ministers.
+  author: conley-owens
+  book: the-dorean-principle
+  chapter: Conclusion
+  anchor: ''
+  topics: [work]
+  scripture: ['1 Corinthians 9:18']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: road-05.jpg, light: light-19.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: solid
+- id: owens-if-jesus-demanded-gospel-be
+  text: If Jesus demanded the gospel be proclaimed freely, then the gospel as recorded by his apostles should be offered without cost.
+  author: conley-owens
+  book: the-dorean-principle
+  chapter: Bibles
+  anchor: ''
+  topics: [scripture]
+  scripture: ['Matthew 10:8']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: sky-10.jpg, light: light-06.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-as-we-consider-relationship-between
+  text: As we consider the relationship between money and ministry, there is nothing less at stake than the proper advancement of the gospel of Jesus Christ.
+  author: conley-owens
+  book: the-dorean-principle
+  chapter: A Final Word About the Gospel
+  anchor: ''
+  topics: [world, christ]
+  scripture: ['Isaiah 55:1']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-07.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid

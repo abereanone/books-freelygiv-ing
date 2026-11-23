@@ -55,8 +55,21 @@ Batch 1 done 2026-11-23 (383 quotes, 31 books); render, upload and push wait for
 
 Batch 2 done 2026-11-23 (49 quotes, 7 books; 432 in all); render, upload and push wait for Michael's OK.
 
-## Batch 3: text only on other sites (no local file)
-abolish-the-jesus-trade, cristina-of-aspen-aisle, god-spoke, gods-word-is-not-bound,
-jude-a-theological-commentary, luthers-works-...-1519-part-1, poured-forth,
-praying-the-bible-together, surprised-by-hesed, the-doctrine-of-simony, the-dorean-principle,
-the-mark-of-a-true-disciple. Ask Michael before fetching or downloading any of these.
+## Batch 3: text only on other sites (Michael's OK 2026-11-23)
+Files came from our R2 host, sellingjesus.org (God's Word Is Not Bound) and simony.info. Multi-author
+books credit each quote to the chapter's writer (6th field in picks.yaml): bylines in God's Word Is Not
+Bound; for Abolish the Jesus Trade, the author of the matching sellingjesus.org article.
+- [x] abolish-the-jesus-trade (Case, Owens): 5
+- [x] gods-word-is-not-bound (Case, Coughlin, Owens, Here): 8
+- [x] the-dorean-principle (Owens): 5
+- [x] the-doctrine-of-simony (Owens): 6
+- [x] god-spoke (Mangum): 4
+- [x] jude-a-theological-commentary (Pritchard): 4
+- [x] luthers-works-the-freely-given-edition-volume-1519-part-1 (Luther, PDF): 4
+- [x] praying-the-bible-together (Case, PDF; the EPUB has no text): 2, Case's own prayers only
+- [x] surprised-by-hesed (Feezell): 4
+- [x] the-mark-of-a-true-disciple (Pritchard): 6
+- [x] cristina-of-aspen-aisle (Case, MOBI turned to tmp/quotes/<slug>/source.html): 1
+- [ ] poured-forth (Feezell): skipped, Amazon only
+
+Batch 3 done 2026-11-23 (49 quotes, 11 books; 491 in 50 books).

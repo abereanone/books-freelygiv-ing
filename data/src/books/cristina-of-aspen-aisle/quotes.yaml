@@ -1,0 +1,17 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: case-up-until-that-point-id
+  text: Up until that point I’d never felt any use for prayer, but I set to prayin’ as if I’d been born for it.
+  author: andrew-case
+  book: cristina-of-aspen-aisle
+  chapter: ''
+  anchor: ''
+  topics: [prayer]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: forest-12.jpg, light: light-23.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: dark

@@ -1,0 +1,59 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: luther-cross-christ-distributed-through-whole
+  text: The cross of Christ is distributed through the whole world, and each receives his portion.
+  author: martin-luther
+  book: luthers-works-the-freely-given-edition-volume-1519-part-1
+  chapter: p. 45
+  anchor: ''
+  topics: [cross, affliction]
+  scripture: ['Matthew 16:24']
+  words: 15
+  status: candidate
+  featured: false
+  background: {dark: mountain-04.jpg, light: light-08.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: dark
+- id: luther-nay-it-mercy-not-to
+  text: Nay, it is a mercy not to be struck by all; it is a miracle to be struck by but a few.
+  author: martin-luther
+  book: luthers-works-the-freely-given-edition-volume-1519-part-1
+  chapter: p. 76
+  anchor: ''
+  topics: [affliction, mercy]
+  scripture: ['Lamentations 3:22']
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: storm-09.jpg, light: light-09.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: solid
+- id: luther-we-resemble-them-that-die
+  text: We resemble them that die, nor is the outward appearance of our dying unlike that of others; but the thing itself is different, because for us death is dead.
+  author: martin-luther
+  book: luthers-works-the-freely-given-edition-volume-1519-part-1
+  chapter: p. 92
+  anchor: ''
+  topics: [death]
+  scripture: ['1 Corinthians 15:55']
+  words: 29
+  status: candidate
+  featured: false
+  background: {dark: ruins-01.jpg, light: light-10.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: dark
+- id: luther-for-why-it-that-you
+  text: 'For why is it that you do not sink in despair, or grow impatient? Is it your strength? Nay: it is the communion of saints.'
+  author: martin-luther
+  book: luthers-works-the-freely-given-edition-volume-1519-part-1
+  chapter: p. 127
+  anchor: ''
+  topics: [church, affliction]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-10.jpg, light: light-16.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: solid

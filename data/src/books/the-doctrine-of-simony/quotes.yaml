@@ -1,0 +1,87 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: owens-faithful-theology-not-measured-by
+  text: Faithful theology is not measured by its reception; truth remains truth whether it is welcomed or resented.
+  author: conley-owens
+  book: the-doctrine-of-simony
+  chapter: Application for Today
+  anchor: ''
+  topics: [scripture]
+  scripture: []
+  words: 17
+  status: candidate
+  featured: false
+  background: {dark: sky-13.jpg, light: light-26.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-wherever-holy-spirit-works-or
+  text: Wherever the Holy Spirit works or his instruments of grace are administered, there stands a spiritual thing that cannot be exchanged for money.
+  author: conley-owens
+  book: the-doctrine-of-simony
+  chapter: Conclusion
+  anchor: ''
+  topics: [holy-spirit, grace]
+  scripture: ['Acts 8:20']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: sky-05.jpg, light: light-04.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid
+- id: owens-to-attach-price-to-grace
+  text: To attach a price to grace is not merely to misuse it but to nullify it, for a grace that is purchased ceases to be grace at all.
+  author: conley-owens
+  book: the-doctrine-of-simony
+  chapter: Romans 11:6—Graceless Grace
+  anchor: ''
+  topics: [grace]
+  scripture: ['Romans 11:6']
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: sky-06.jpg, light: light-16.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: light
+- id: owens-simony-sin-against-both-tables
+  text: Simony is a sin against both tables of the law, offending God by profaning what is holy and offending man by defrauding the faithful.
+  author: conley-owens
+  book: the-doctrine-of-simony
+  chapter: Conclusion
+  anchor: ''
+  topics: [sin]
+  scripture: ['Acts 8:20']
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: storm-08.jpg, light: light-01.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: dark
+- id: owens-it-not-sufficient-merely-to
+  text: It is not sufficient merely to abstain from the earnest desire to buy or sell spiritual things; one must actively hate simony.
+  author: conley-owens
+  book: the-doctrine-of-simony
+  chapter: Righteous Indignation
+  anchor: ''
+  topics: [sin, holiness]
+  scripture: []
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: storm-03.jpg, light: light-03.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid
+- id: owens-peter-denied-his-lord-out
+  text: Peter denied his Lord out of fear but was later restored; Judas delivered him up out of greed and perished.
+  author: conley-owens
+  book: the-doctrine-of-simony
+  chapter: Heresy
+  anchor: ''
+  topics: [repentance, world]
+  scripture: ['Matthew 26:75']
+  words: 20
+  status: candidate
+  featured: false
+  background: {dark: winter-01.jpg, light: light-05.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: dark

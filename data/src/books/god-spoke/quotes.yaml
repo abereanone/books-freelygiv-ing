@@ -1,0 +1,59 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: mangum-as-mere-created-beings-we
+  text: As mere created beings, we cannot initiate contact with God; it is the Creator who must reach out to us and show himself to us.
+  author: matthew-mangum
+  book: god-spoke
+  chapter: ''
+  anchor: ''
+  topics: [knowing-god, scripture]
+  scripture: ['Hebrews 1:1']
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: mountain-06.jpg, light: light-20.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid
+- id: mangum-knowledge-god-can-only-come
+  text: Knowledge of God can only come through God’s own self-disclosure; if supposed knowledge of God is based upon anything but the source, it is illegitimate and without any firm foundation.
+  author: matthew-mangum
+  book: god-spoke
+  chapter: ''
+  anchor: ''
+  topics: [knowing-god]
+  scripture: ['1 Corinthians 2:11']
+  words: 30
+  status: candidate
+  featured: false
+  background: {dark: mountain-01.jpg, light: light-07.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: dark
+- id: mangum-apostles-themselves-were-not-authoritative
+  text: The apostles themselves were not authoritative, but their Lord who commissioned them and the Spirit who guided them granted them authority.
+  author: matthew-mangum
+  book: god-spoke
+  chapter: ''
+  anchor: ''
+  topics: [scripture, holy-spirit]
+  scripture: ['John 14:26']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: sky-02.jpg, light: light-11.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: solid
+- id: mangum-process-was-not-always-smooth
+  text: The process was not always smooth, but the Lord used flawed men and flawed processes to bring the Bible into common usage in the English-speaking world.
+  author: matthew-mangum
+  book: god-spoke
+  chapter: ''
+  anchor: ''
+  topics: [providence, scripture]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: sky-03.jpg, light: light-03.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: dark
