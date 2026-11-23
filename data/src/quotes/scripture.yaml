@@ -346,3 +346,123 @@
   added: 2026-11-23
   tone: light
   background: {dark: sky-11.jpg, light: light-11.jpg, solid: rust}
+- id: psalm-30-5
+  ref: Psalm 30:5
+  text: "For His anger is fleeting, but His favor lasts a lifetime. Weeping may stay the night, but joy comes in the morning."
+  topics: [affliction, mercy]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: storm-01.jpg, light: light-02.jpg, solid: evergreen}
+- id: psalm-16-11
+  ref: Psalm 16:11
+  text: "You have made known to me the path of life; You will fill me with joy in Your presence, with eternal pleasures at Your right hand."
+  topics: [worship, heaven]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: forest-03.jpg, light: light-25.jpg, solid: burgundy}
+- id: psalm-126-5
+  ref: Psalm 126:5
+  text: "Those who sow in tears will reap with shouts of joy."
+  topics: [affliction, patience]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: storm-02.jpg, light: light-03.jpg, solid: navy}
+- id: psalm-119-71
+  ref: Psalm 119:71
+  text: "It was good for me to be afflicted, that I might learn Your statutes."
+  topics: [affliction, scripture]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-03.jpg, light: light-04.jpg, solid: violet}
+  tone: dark
+- id: psalm-119-50
+  ref: Psalm 119:50
+  text: "This is my comfort in affliction, that Your promise has given me life."
+  topics: [affliction, scripture]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: storm-05.jpg, light: light-06.jpg, solid: teal}
+- id: psalm-34-19
+  ref: Psalm 34:19
+  text: "Many are the afflictions of the righteous, but Yahweh delivers him from them all."
+  topics: [affliction, providence]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-06.jpg, light: light-05.jpg, solid: rust}
+  tone: solid
+- id: psalm-51-17
+  ref: Psalm 51:17
+  text: "The sacrifices of God are a broken spirit; a broken and a contrite heart, O God, You will not despise."
+  topics: [repentance, heart]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: winter-02.jpg, light: light-12.jpg, solid: evergreen}
+  tone: dark
+- id: psalm-42-11
+  ref: Psalm 42:11
+  text: "Why are you downcast, O my soul? Why the unease within me? Put your hope in God, for I will yet praise Him, my Savior and my God."
+  topics: [assurance, affliction]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: sky-12.jpg, light: light-09.jpg, solid: burgundy}
+  tone: light
+- id: psalm-56-8
+  ref: Psalm 56:8
+  text: "You have taken account of my wanderings. Put my tears in Your bottle—are they not in Your book?"
+  topics: [affliction, providence]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: storm-09.jpg, light: light-13.jpg, solid: navy}
+- id: psalm-30-11-12
+  ref: Psalm 30:11-12
+  text: "You turned my mourning into dancing; You peeled off my sackcloth and clothed me with joy, that my heart may sing Your praises and not be silent. O Yahweh my God, I will give thanks forever."
+  topics: [worship, affliction]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: forest-04.jpg, light: light-14.jpg, solid: violet}
+- id: psalm-94-19
+  ref: Psalm 94:19
+  text: "When anxiety overwhelms me, Your consolation delights my soul."
+  topics: [fear, peace]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: storm-10.jpg, light: light-16.jpg, solid: teal}
+- id: psalm-55-22
+  ref: Psalm 55:22
+  text: "Cast your burden upon Yahweh and He will sustain you; He will never let the righteous be shaken."
+  topics: [fear, providence]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: storm-08.jpg, light: light-17.jpg, solid: rust}
+- id: psalm-62-8
+  ref: Psalm 62:8
+  text: "Trust in Him at all times, O people; pour out your hearts before Him. God is our refuge."
+  topics: [prayer, faith]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: forest-09.jpg, light: light-14.jpg, solid: evergreen}
+  tone: solid
+- id: psalm-25-16
+  ref: Psalm 25:16
+  text: "Turn to me and be gracious, for I am lonely and afflicted."
+  topics: [affliction, prayer]
+  status: candidate
+  added: 2026-11-23
+  background: {dark: storm-01.jpg, light: light-10.jpg, solid: burgundy}
+  tone: dark
+- id: psalm-118-24
+  ref: Psalm 118:24
+  text: "This is the day that Yahweh has made; we will rejoice and be glad in it."
+  topics: [worship]
+  status: candidate
+  added: 2026-11-23
+  tone: light
+  background: {dark: forest-05.jpg, light: light-12.jpg, solid: navy}
