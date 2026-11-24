@@ -3,6 +3,7 @@
 // preparers) preselects a filter, and clicking a button keeps the URL in step so a
 // filtered view can be linked. The Authors menu item is just /people/?filter=authors.
 // Classic / Modern narrows any role to people credited on a book with that tag (?era=classic);
+// a Modernized book counts as Classic, since its author is a classic author;
 // someone credited on both kinds of book shows under both.
 import { ROLES, EVERYONE_DESCRIPTION, getBooks, getPeople, personName, personAvatar } from '../lib/data.js';
 
@@ -12,7 +13,8 @@ const ERAS = [
 ];
 const books = getBooks();
 const erasOf = (slug: string) => ERAS.map(era => era.key).filter(key =>
-  books.some((book: any) => book.tags?.includes(key) && (book.credits || []).some((credit: any) => credit.slug === slug)));
+  books.some((book: any) => (book.tags?.includes(key) || (key === 'classic' && book.tags?.includes('modernized')))
+    && (book.credits || []).some((credit: any) => credit.slug === slug)));
 
 const people = getPeople()
   .filter((person: any) => person.roles.length)

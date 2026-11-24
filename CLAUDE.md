@@ -248,7 +248,10 @@ modern/classic pairs (19, hidden until the owner releases them, 2026-11-24).
 Courtney's releases: `npm run sync:fgb` fills in `set`, `volume`/`volumeLabel` (from an edition's
 `volume`) and `version` (from a book's `"wording"` or `"edition"`: `"modern"|"classic"`, with the
 set from `"set"` or else the last part of its `"book"` key), only where book.yaml has none. A new
-wording of a book already on the site takes that book's year, description and tags. The "Volumes, and modern and classic wordings"
+wording of a book already on the site takes that book's year, description and tags.
+Tags (2026-11-24): `classic` (an old book in its own words), `modern` (a modern book),
+`modernized` (a classic in modern wording, `version: modern`; the sync sets it). On /people a
+`modernized` book counts as Classic, since its author is a classic author. The "Volumes, and modern and classic wordings"
 section of `public/CourtneyHicks.md` (`SETS_HELP` in the script) tells his tools how to mark them.
 
 External links open in a new tab site-wide: a click handler at the end of `Base.astro` adds

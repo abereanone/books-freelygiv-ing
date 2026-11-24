@@ -197,6 +197,12 @@
   color: #fff;
 }
 
+/* A classic in modernized wording (version: modern): an old author, new words. */
+.tag-modernized {
+  background-color: #1f6a86;
+  color: #fff;
+}
+
 /* Language badge on the cards of books not in English ("Español"), from `lang` in book.yaml. */
 .lang-badge {
   background-color: #8a2a3c;

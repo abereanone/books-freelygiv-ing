@@ -447,7 +447,9 @@ async function main() {
       b.set("year", Number.isInteger(book.year) ? book.year : null);
       b.set("addedDate", today);
       b.set("pages", ed.pages);
-      b.set("tags", doc.createNode(Array.isArray(book.tags) && book.tags.length ? book.tags : ["classic"]));
+      // a classic in modern wording is tagged "modernized" (owner, 2026-11-24)
+      b.set("tags", doc.createNode(Array.isArray(book.tags) && book.tags.length ? book.tags
+        : [(book.wording ?? book.edition) === "modern" ? "modernized" : "classic"]));
       b.set("description", book.description || book.summary);
       b.set("license", "CC0");
       b.set("path", `/static/books/${slug}`);
@@ -488,8 +490,9 @@ async function main() {
         if (!book.description && b.get("description") === (book.description || book.summary) && s.description)
           b.set("description", s.description);
         const yTags = b.get("tags")?.toJSON?.() ?? [];
-        if (!(Array.isArray(book.tags) && book.tags.length) && yTags.length === 1 && yTags[0] === "classic" && s.tags?.length)
-          b.set("tags", doc.createNode(s.tags));
+        const placeholder = yTags.length === 1 && ["classic", "modernized"].includes(yTags[0]);
+        if (!(Array.isArray(book.tags) && book.tags.length) && placeholder && s.tags?.length)
+          b.set("tags", doc.createNode(s.tags.map((x) => (wording === "modern" && x === "classic" ? "modernized" : x))));
       }
     }
 
@@ -501,7 +504,7 @@ async function main() {
       r.missingMeta = [
         !book.year && b.get("year") == null && "year",
         !book.description && b.get("description") === book.summary && "description",
-        !hasTags && yTags.length === 1 && yTags[0] === "classic" && "tags",
+        !hasTags && yTags.length === 1 && ["classic", "modernized"].includes(yTags[0]) && "tags",
       ].filter(Boolean);
       r.noLulu = !ed.lulu;
     }
