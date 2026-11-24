@@ -42,3 +42,5 @@
           url: https://files.books.freelygiv.ing/christian-economy/print-ready.zip
   backCover: back-cover.jpg
   spine: spine.jpg
+  set: christian-economy
+  version: classic

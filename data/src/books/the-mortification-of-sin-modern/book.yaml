@@ -1,0 +1,42 @@
+- title: The Mortification of Sin (Modern English)
+  sortTitle: Mortification of Sin (Modern English)
+  hidden: true
+  credits:
+    - person: john-owen
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1656
+  addedDate: 2026-11-24
+  pages: 136
+  tags:
+    - classic
+  description: 'Owen on Romans 8:13, "If ye through the Spirit do mortify the deeds of the body, ye shall live": how a believer is to fight the sin that remains in him, and by whose power.'
+  license: CC0
+  path: /static/books/the-mortification-of-sin-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-mortification-of-sin-modern/the-mortification-of-sin-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-mortification-of-sin-modern/the-mortification-of-sin-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-mortification-of-sin-modern/the-mortification-of-sin-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-mortification-of-sin-modern/print-ready.zip
+  set: the-mortification-of-sin
+  version: modern

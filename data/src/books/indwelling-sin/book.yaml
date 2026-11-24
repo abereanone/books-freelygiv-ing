@@ -42,3 +42,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/indwelling-sin/print-ready.zip
+  set: indwelling-sin
+  version: classic

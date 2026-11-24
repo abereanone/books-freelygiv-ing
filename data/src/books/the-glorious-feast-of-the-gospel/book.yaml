@@ -57,3 +57,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-glorious-feast-of-the-gospel/print-ready.zip
+  set: the-glorious-feast-of-the-gospel
+  version: classic

@@ -1,0 +1,42 @@
+- title: The Crook in the Lot (Modern English)
+  sortTitle: Crook in the Lot (Modern English)
+  hidden: true
+  credits:
+    - person: thomas-boston
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1737
+  addedDate: 2026-11-24
+  pages: 134
+  tags:
+    - classic
+  description: 'Boston on Ecclesiastes 7:13, "Consider the work of God: for who can make that straight, which he hath made crooked?": the sovereignty and wisdom of God in the afflictions of men, and how to bear them.'
+  license: CC0
+  path: /static/books/the-crook-in-the-lot-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-crook-in-the-lot-modern/the-crook-in-the-lot-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-crook-in-the-lot-modern/the-crook-in-the-lot-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-crook-in-the-lot-modern/the-crook-in-the-lot-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-crook-in-the-lot-modern/print-ready.zip
+  set: the-crook-in-the-lot
+  version: modern

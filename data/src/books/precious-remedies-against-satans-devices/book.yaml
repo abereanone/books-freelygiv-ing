@@ -7,7 +7,7 @@
       prepared: true
   year: 1652
   addedDate: 2026-10-19
-  pages: 354
+  pages: 348
   tags:
     - classic
   description: |
@@ -52,3 +52,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/precious-remedies-against-satans-devices/print-ready.zip
+  set: precious-remedies-against-satans-devices
+  version: classic

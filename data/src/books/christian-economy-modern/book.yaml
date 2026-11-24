@@ -1,0 +1,42 @@
+- title: Christian Economy (Modern English)
+  sortTitle: Christian Economy (Modern English)
+  hidden: true
+  credits:
+    - person: william-perkins
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1609
+  addedDate: 2026-11-24
+  pages: 124
+  tags:
+    - classic
+  description: "Perkins's short survey of the right manner of ordering a family according to the Scriptures: the duties of husband and wife, parents and children, masters and servants."
+  license: CC0
+  path: /static/books/christian-economy-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/christian-economy-modern/christian-economy-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/christian-economy-modern/christian-economy-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/christian-economy-modern/christian-economy-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/christian-economy-modern/print-ready.zip
+  set: christian-economy
+  version: modern

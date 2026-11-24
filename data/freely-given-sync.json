@@ -2,30 +2,30 @@
   "editions": {
     "the-1689-baptist-confession-of-faith": {
       "book": "1689-baptist-confession/1689-baptist-confession",
-      "version": "v1",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-1689-baptist-confession-of-faith.pdf": "787f096f80321baaf07d26d85e6405f92a3968c8ecf97f4f6b67a378451bff69",
-        "the-1689-baptist-confession-of-faith.epub": "7738afd325651961ab2ee2277768d90f36029084a1befd7bc5869609436b609e",
-        "print-ready.zip": "8ef5ab932331d638bdaf4d82c4df0e9d87c56cadd71feabd8bc84475bddebafc",
-        "the-1689-baptist-confession-of-faith.html": "e0281f2b7fca8c71d377d30dd325d0f3ac304638de7f65d103bb415e3c147da8",
-        "the-1689-baptist-confession-of-faith-whats-new.html": "ce1fcffbec8f2f2f0b1d6d1cb988116cab18c192e4a52263edd495dd1939cbd2",
-        "cover.jpg": "a770e096014364e6413d20b17229c0fd96bc6f4ba77fb31c6b037efbae38c644",
-        "back-cover.jpg": "6c276c2752bfc640ad32fadbfe6ed9ad26174c2d05da4e6808464028c38fd352",
-        "spine.jpg": "d6a18b0ba4290c5ec9052cb85a9353cae81739e2fe3281289ed482bbfbc6cb35"
+        "the-1689-baptist-confession-of-faith.pdf": "dfb42d37a71544f84b84ce2a3cf3d8223b6e087a67f2e57a017ede91cb4f1204",
+        "the-1689-baptist-confession-of-faith.epub": "a458bdb40d030adbb6d70010128191eb8aa56f1df5d69cce97ad457f6ad77386",
+        "print-ready.zip": "72602b77e0d58eaf749ab247684e8367cd5f7eb8f34959cfc5a6fbb54b27aa8c",
+        "the-1689-baptist-confession-of-faith.html": "95dedc388a2e7801e2337ebafbd0361b2613821d15978a521e1d7c4724a2d388",
+        "the-1689-baptist-confession-of-faith-whats-new.html": "710e947e4f4df976b0ee4161b72629e2e2dd0a6e5e29f9b63359e072622a9aeb",
+        "cover.jpg": "9459aa48eb79d5eeab2ba7066bbd10bf05ccf4420b4196d3ca1098c4f346ca5e",
+        "back-cover.jpg": "82ef66cf152a86c53bd4907e44d21fa78900604f49f55482734326d7e7dd7f20",
+        "spine.jpg": "f4b23099bcb44225bb333a9d0c6105310bd982263c0c8896ab0b4a42a98b56d7"
       }
     },
     "the-anatomy-of-simon-magus": {
       "book": "anonymous/the-anatomy-of-simon-magus",
       "version": "v7",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-anatomy-of-simon-magus.pdf": "bd728b9f1099d89bb2e99d3534fc62f23a7a0879b208230b7258be17c20b994d",
-        "the-anatomy-of-simon-magus.epub": "b1ba9e65403de9cfaf21835c67a2b388f4674cd6026e9f1ade86dd72f52e2686",
-        "print-ready.zip": "8bafd2af2100eb691437a006be7ae363de1303abdfcc69544c8b8f5b5d080b74",
-        "the-anatomy-of-simon-magus.html": "d4711bd3b696333fa61c8e676d063d7b57bafc273ec479b80c9b63eea8349dc8",
+        "the-anatomy-of-simon-magus.pdf": "7cfc2a1ab5c058df3648ae0c60857c37db93953193ec6d6022f472823e48ff2b",
+        "the-anatomy-of-simon-magus.epub": "e6b768806ab21f2dad6d0ffdd3a3818bfada33c018f03eaaee59375102541c0b",
+        "print-ready.zip": "218ee22619a3aee5736c826074941dbb660393bfe39ede4033983eea2a616955",
+        "the-anatomy-of-simon-magus.html": "1301f5d4e6df70d5b25bc97091b123d2031f7e03520762d962864e01472b78c2",
         "the-anatomy-of-simon-magus-whats-new.html": "d628695443dd23492aa45b7e70909db04c61acb38e2373c8e4612be2acfcec30",
         "cover.jpg": "44e32dcfa01101066bb24bdf0b16acf4fa65a9e2f1979574b00f4d281f0a36e5",
         "back-cover.jpg": "e6924037f38f9ff9fbffd8b9d489077f7fedd5659c86bad0f2b030ff55a396e4",
@@ -34,288 +34,288 @@
     },
     "all-of-grace": {
       "book": "charles-spurgeon/all-of-grace",
-      "version": "v16",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v17",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "all-of-grace.pdf": "fea0d4b0a9486a3cbb1b078925708fa084781bca6d3e21ca34a8835b9e2a81b2",
-        "all-of-grace.epub": "b6f3087b450c47ca1739761c0fdf31ca55a32517800384ab04a0ca8aa3c55261",
-        "print-ready.zip": "a58b594fed51c329786048c86554c785fb881de17b29fb4f5139137defadc1fa",
-        "all-of-grace.html": "7ed34e72ecb386b29ffc1b84a38503f09e4d467aa772cac908c3cd3a7973b60e",
-        "all-of-grace-whats-new.html": "ba269efe3603cd807894ee658f09e10435b78a9901c73bda8cee3f8853fe3771",
-        "cover.jpg": "dd3eb9da57d643e4372708fee122ed2f660373a5d09887516d28f305712ba291",
-        "back-cover.jpg": "9fac5f672576903c21cdf99145a23c8620670ff6a9bed5954f609d19fa58d1fd",
-        "spine.jpg": "efa5d71027ed3b94699783b672f1ba83034a8205ba90a3de80d324698ee96517"
+        "all-of-grace.pdf": "ef855e111b3483b202daf2c8ca5c2b050271de45f9d08de3d14d1736e598df51",
+        "all-of-grace.epub": "fa2f2e2c2ccc53220bc75ed0c231efa243cab0e311ff2f46d137104ba4612d94",
+        "print-ready.zip": "79fbb11c7dc2c8e73c40b8105a5a8828e6af6879692d7d1a9bece335d38c0cb5",
+        "all-of-grace.html": "a12646fefdea3657763ee33ca66fe0b8770533518af958a06cdc4b3f123f4764",
+        "all-of-grace-whats-new.html": "c51ad0af09ade31549653ae1f0cd6fcb29c896ba1aa319d4ab8a9ec048ab3a83",
+        "cover.jpg": "fadc50da03b4889a49534619c78f984853a59be0248f7305e9a627e17c5c5814",
+        "back-cover.jpg": "6a83b153dd7824c8e20f3e9504c8fe0831e8f4a59af087dae689f9907ddc4896",
+        "spine.jpg": "f1806aeaaf2687c6d3f1f98c34ff9df78893a0163d146da824b9f0de2b8452f7"
       }
     },
     "grace-abounding": {
       "book": "john-bunyan/grace-abounding",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v3",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "grace-abounding.pdf": "4811977caa7bb42d75a6eb5d81ad4590c8967ad9a5ef3d332ff7c892e66543c3",
-        "grace-abounding.epub": "1ae16ed1b033fb70c356ae4cd63751979556ba011993457efb8df01947ffcb18",
-        "print-ready.zip": "1455d0f6324e782371d246cdf89a1fa77fbc913bf8812333458196e0568ecf8e",
-        "grace-abounding.html": "6954786099d88724799be2d0977415730c6b0bff2802f8788eba37e5ddbe05bb",
-        "grace-abounding-whats-new.html": "2d38db8075a385b7e1b397c603b7d2c3627d734a5e0f5ce6f9f21beec717a0af",
-        "cover.jpg": "36991f7c298d276f511399a5b460224e5365b38b89b1f59510504934aad8c336",
-        "back-cover.jpg": "cddee8368a6f8ba0d1af3ec725a7a2785d7a15743cead9667cc862b6df64b256",
-        "spine.jpg": "ee3b7cd793638fc9cbf010ec5010d7843805ef0d1a31a755dc3aec91d420dc02"
+        "grace-abounding.pdf": "e98763692365a0abfa309506aefe4a97a8d13628d19ba103fae699a919ba6d25",
+        "grace-abounding.epub": "b2749ce8bfd36189973f5a8d076fcd265d5896232422748a599aaa3e3fd20187",
+        "print-ready.zip": "7d9d159bd51aaad4e988af1b44cba9c2209e1fa78bf0096049e716f9f7a7c70f",
+        "grace-abounding.html": "ad330a37675b2dc1fe6be498ea3877ffdb27b08f316d5974e3c90d796da362d1",
+        "grace-abounding-whats-new.html": "8c29d646ff487619986c2588b70deee13baab2ee92805fd2b40c2dea5e3a0974",
+        "cover.jpg": "7bb312400205b7f7a50425d6ffeb061620bb250bc0bb6234aa1950b0a3a69c6c",
+        "back-cover.jpg": "37703fb197c969cd3dd4e185c8cd8465b42d39c76dadb15d41c3a52622dd5777",
+        "spine.jpg": "6b2b18cc949d77ef974713cf1608ff91feccc15459dc7227db2c2586ef9f82db"
       }
     },
     "the-pilgrims-progress": {
       "book": "john-bunyan/the-pilgrims-progress",
-      "version": "v14",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v16",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-pilgrims-progress.pdf": "bc29d40664a4c75ba730d7d666335a7c0babbaa66a9ec225503583321af2fb37",
-        "the-pilgrims-progress.epub": "e7d1fbec462eee23c9452949a18b4aebf3baedaef9998b2afac3b1cbcc35afe6",
-        "print-ready.zip": "45df42f69283ef8c4a9392b7f1238c5e10bc742de02393c6e48a256cd2655f6a",
-        "the-pilgrims-progress.html": "65e4c0c301d9c2e7ecad533ec957ef27f1476e62516df3a18ac19c2e32bf46ec",
-        "the-pilgrims-progress-whats-new.html": "24edf2c53b80b6b2d0f8838413bd684e8b0da2f4c1ef5e520930b88853340aef",
-        "cover.jpg": "0ac5fec88cf6a15097b5cb4ae4fa350a809df37b0db218337e75a5030be41b6a",
-        "back-cover.jpg": "ed54c2e2ba7df78d8084f6bb05062ad50ada0178e6fe7aef7a744a659dc17d59",
-        "spine.jpg": "f33bfed6fba3b9668c837fc884395668718b1a9485f68bad52cf66790a0ba8e4"
+        "the-pilgrims-progress.pdf": "dbf364c4b6a4166b40561326c44b1b1338f5afb83bad804b49a8c55befa7b51a",
+        "the-pilgrims-progress.epub": "a1b3731135ce43ff982e8bd77dba4161a4e5d98405f83ae16f0be4d5372a73fe",
+        "print-ready.zip": "b402ffaa759a34b15654bde4f77e23814f6d742a2c80759a9721133a57af0e9f",
+        "the-pilgrims-progress.html": "a59042a354976417e3d7479f2994e1a8bd4876988a5951b5af63ca4d5ea1ae08",
+        "the-pilgrims-progress-whats-new.html": "94fa857ccc340434ec046f5e09c577651b887516707c976814452701733edbc2",
+        "cover.jpg": "b449a5ca8f93b320f808aa81eb049638efbf6455ff5312027d96d033471e45af",
+        "back-cover.jpg": "16aa48ee72eacf918ea5d8853dad3e0e08fbb3e580899209a76e822c4381268e",
+        "spine.jpg": "95dbb48147b7eeca06498623e7c71f750f2702c2a4e0e4cce0bb4c8c006682e7"
       }
     },
     "of-temptation": {
       "book": "john-owen/of-temptation",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v3",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "of-temptation.pdf": "f2468e575a32579ea9cfd4c6e8a216e350745dce08e39df498a0ee6d09754114",
-        "of-temptation.epub": "f6d6c5b6f910c859cb28580a3aa33b7806f38ac627b64252e2b378a0581844c7",
-        "print-ready.zip": "0271efe84852118dc146791c843df02c077a7950ee3be21c2247da9ef228eb11",
-        "of-temptation.html": "bbac54dcc5a8e9eb8873e30aeedf273c4deaa096b3e60deded23a3418f46512a",
+        "of-temptation.pdf": "2a3a56c0338d896473cbc155392652f7670ee9cb54e5404b5103404bd475fccf",
+        "of-temptation.epub": "ab42f3951096bb5cb1ad74d8ea57a5ae8ecd88cb7ed40f931b19959fefc14167",
+        "print-ready.zip": "009189e151bb0c205aefd8de5a8520f957ab73715c7d554f3b369cfe92a6a8e8",
+        "of-temptation.html": "836954ffbce28a26ccade6a137ce4267ea74a1d96a03da5c68c8265e5408eebc",
         "of-temptation-whats-new.html": "62897732bf6290c40e7bfbb22898376c886125d3a5bb8ecd9e88f0d2619141e4",
-        "cover.jpg": "4a7a640e85ede9e86807cae0a6ab08cad09192a7a32047bf8c137286b3abab54",
+        "cover.jpg": "78ff23618fad4ec3ae63c494a11348650c18f182090291b01288407ccfa6b18b",
         "back-cover.jpg": "dc5effa8e8ec019413b18cf436b28920890e1191cb5d4274928c880cea0f1b90",
-        "spine.jpg": "803be54d19c99535a73a07d224767eeb858f9e14f0c528e8b1677e24b38bf60c"
+        "spine.jpg": "3d99a117d2d6dfa5be19628a463f9687a652c40832a3490b71ddd7148d3454ba"
       }
     },
     "the-death-of-death": {
       "book": "john-owen/the-death-of-death",
-      "version": "v1",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-death-of-death.pdf": "b0f3f60801669a8681d882f1ed2c77ce79ed1fb13b79d7c35277a86f870b6681",
-        "the-death-of-death.epub": "363997d99e2943992a6971d0da44e7d2a6df4a2df4d75cff3407840c8564ae8f",
-        "print-ready.zip": "1da0fe7087c1e52e4c6e89a536e1daa735d44d3c3a459ed52f8af13b4248b0cc",
-        "the-death-of-death.html": "5fcd04ebd640701f67463fe2faaf9506ab164c4d6fd372c9d025b3e8a023826e",
+        "the-death-of-death.pdf": "06c268d99e77b942c2364b563ad43c147940afcf94f68dfadfafc364139788a3",
+        "the-death-of-death.epub": "3e7d9ea0e9e46c9675de09863a91c3e303b461326f050f34775e7aa16ceeedf8",
+        "print-ready.zip": "8bbd4805494360d106ff666cdbfd2115a5218d31e93167f56b4ab30d1ebaa11f",
+        "the-death-of-death.html": "3437b9dd54beda62a34744191f515cbecb9562f2063bad3b82ef58bddc6473f2",
         "the-death-of-death-whats-new.html": "237729ba56e53d05a06b3aa5eb46b81673c20551d2f2b9e9195189b2280fc551",
-        "cover.jpg": "9db6889de7ed1ab60b9f9b33a40b92cc0308467ff71fe1ddb0f4381586786f3d",
+        "cover.jpg": "4688ab205877695c296d76b0f1d778e4d05780601030c2f7ef76e89b128f59ec",
         "back-cover.jpg": "6c17ca1bae5bb155acf90060a99d6f57361043f044b711088ed0bc32af2a1345",
         "spine.jpg": "a0edcbac5cbfc47cbd404296fec47b158eea79069d947e03f8665d1248cd9607"
       }
     },
     "the-mortification-of-sin": {
       "book": "john-owen/the-mortification-of-sin",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v4",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-mortification-of-sin.pdf": "663640a651ad514b28eb008b8848de136230f46770f5a7d1440bee3604bc5266",
-        "the-mortification-of-sin.epub": "3cb9a45c21601712e9e36e1ccb528c0e64067b1e565c7b9f2818de75ab2bb4dd",
-        "print-ready.zip": "3d39bc3c777c12217c49471b7af4dea97a14eb997ae32f1f3302cc3d28f20837",
-        "the-mortification-of-sin.html": "e4233f14053491c6d1cf69f5d780fccde1b5cca8bcae3f713b4ce592a5e19a38",
-        "the-mortification-of-sin-whats-new.html": "ea11e320e5a4334d4ea6727d11dcb19fdb6e90c52d422d6fff28a6360c2a19ae",
-        "cover.jpg": "f045ea13a0b15d75c731a46f2b54a077335fb79c348e2b8a449ff647bccf0a43",
+        "the-mortification-of-sin.pdf": "9037aaa19bb69d6d9f7ce02be8717473ddbf4b69801be99f8dc20d87ef9ca766",
+        "the-mortification-of-sin.epub": "52f7b4c99bcd2e55764a94de3887af9b6e325be412ef24c20fddd4682beaf86f",
+        "print-ready.zip": "e83e0958fec7b5754175219553430b375fc79b315fe53be3178c999435d899b8",
+        "the-mortification-of-sin.html": "bdf7576b32d550db6b5f1222c1223f44233c82d5bcb0470205dadd9a2adcd24f",
+        "the-mortification-of-sin-whats-new.html": "fc901d44001f7179b26ef5340e1f23e18929a3eb031c6bfa6e8a63f4bbc48a52",
+        "cover.jpg": "eb41188e1c65400ba0dc17e7d5d947c3fa90f1042d072b3d879bad254605db41",
         "back-cover.jpg": "08b2d60a05b648af00ba0f6d24fe32e075b875a77f9f8c9a9bc724bc86213164",
-        "spine.jpg": "4f37b4ca71c5bd8a82d47e62b487f9aa2cf62f428635f6587423079f1383c0df"
+        "spine.jpg": "025c44eda39de57d42da90a50b86854822957ce9121928ffc3139cf7a75cde31"
       }
     },
     "sinners-in-the-hands-of-an-angry-god": {
       "book": "jonathan-edwards/sinners-in-the-hands-of-an-angry-god",
-      "version": "v9",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v10",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "sinners-in-the-hands-of-an-angry-god.pdf": "db47986df591e6bcd915e3d2e26e356b0b832ba8070daa4e735b295b61d52f7e",
-        "sinners-in-the-hands-of-an-angry-god.epub": "176b6a1d73917806ae030240507b0cc761fb01149b5b87f8d81d6c9ce2a260b8",
-        "print-ready.zip": "7f95dce21fb54fc04859a7e90887e8a9c226572657aa623bd1496aee25a5c132",
-        "sinners-in-the-hands-of-an-angry-god.html": "47f0d102c843e387ac563dfd5e3faf9b005e193aaec08bc74d31d64b37a376a0",
-        "sinners-in-the-hands-of-an-angry-god-whats-new.html": "2d42fb3447cf0090c383b32be1a02f94e68d158878e47f73231656b267711f15",
-        "cover.jpg": "6149a313a90abd3992ec3b2d3b0f6be474ae1952d9dc9ddbd821c062307db53c",
-        "back-cover.jpg": "820dffb979fb3edeccf44490793425e31875cddd9d23510f61f0f27c60ca743b",
+        "sinners-in-the-hands-of-an-angry-god.pdf": "3465e08c126f3cfa4ce9bc1206f72b91cee1b7c26d7581e8f473b7dda1cc200b",
+        "sinners-in-the-hands-of-an-angry-god.epub": "7ae18be8c6f1549058bf9f3de2da9348f1bab8c4b8f9b62b9133fc12d330c146",
+        "print-ready.zip": "861ee6e87d790d250491c51177a54e357b2da0a5fb3c0543120800c368526b11",
+        "sinners-in-the-hands-of-an-angry-god.html": "1a69a8200fd1ef1f8d6b5b243fccaaac23a03df6f14e1b548550af0c3951ecee",
+        "sinners-in-the-hands-of-an-angry-god-whats-new.html": "173aadcc5b8046365d0ad2173a2cd8e9e5ec13f76c952bd309f89e14b9053b87",
+        "cover.jpg": "d3042dea3e16a22aafc9fca68fc4be09fa8dffa2b90b6470db1f1d77482695bc",
+        "back-cover.jpg": "6e1f0ef7e9d7b64bd3d08a3164e24ff4033db13f8109420f1908dc10545a25ee",
         "spine.jpg": "b9cbbd6b99a92ef3b43b230bad2566f78bb2c7d9a8ecb3bdcf6edd6076ec79be"
       }
     },
     "the-glorious-feast-of-the-gospel": {
       "book": "richard-sibbes/the-glorious-feast-of-the-gospel",
-      "version": "v14",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v16",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-glorious-feast-of-the-gospel.pdf": "a48bef6b67596dffc2d7340eb2c662c134cfa6ea4031a06a02d9b593ac77f37f",
-        "the-glorious-feast-of-the-gospel.epub": "9d263073f076e6555623028a6200e2735e6a7a7dc76ad42182cc013753024f3b",
-        "print-ready.zip": "fb0acc158aa1ffb57e3ed5bb1b22a14029344f8721e7abed2b89a1a8c37a1c06",
-        "the-glorious-feast-of-the-gospel.html": "db5db6fcda89aff2c71aa064bbc7bfc11181cdcb7dffe4eb8eff41df59bbe4b7",
-        "the-glorious-feast-of-the-gospel-whats-new.html": "78bb6dd0250b1825e3ef4c4ae893d3576614e788d754264356f93dfa50dc60a5",
-        "cover.jpg": "a57fe8eff2d0dd0641e5d6f5e5910c6087349a089e277b242d98142d108fae71",
+        "the-glorious-feast-of-the-gospel.pdf": "f5299131f65ba608fd58c42e352095e0f96ea98fb4be69162339e461cf9b5c01",
+        "the-glorious-feast-of-the-gospel.epub": "77fcf28018ef3e3dad2ed4afef9cdc4652f9f1381961ee4dc581e0ec635145f1",
+        "print-ready.zip": "1c533c5aad809d0a3248aced8abc2aeeba0f743b4c1915eeff2b76eef812f6f2",
+        "the-glorious-feast-of-the-gospel.html": "753de17f671c0736d957d12c4718caf14282e7dcbf03be8c10e682622d9dd07b",
+        "the-glorious-feast-of-the-gospel-whats-new.html": "2cc24de19a2f65f05b8b02c6d1bb462b097575a9320824ac2f0a428e7c99daec",
+        "cover.jpg": "5efc2519ee6fc24b6811cd59fe50dc83ce33cdd117b5e8152898882e5ea985bb",
         "back-cover.jpg": "96b996994b70807a265e695c8550aed26a0a0389146ee74f81b53f17f72ba468",
-        "spine.jpg": "8bac7cb62d639288715c15774958b31fff69fa4446c607e9fca790476e180788"
+        "spine.jpg": "2f0c4a654fab0510fe2767e590c2c1fd45ebe0510efbe7048a0fd2cbe96a6b76"
       }
     },
     "the-crook-in-the-lot": {
       "book": "thomas-boston/the-crook-in-the-lot",
-      "version": "v1",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-crook-in-the-lot.pdf": "e7bc3d0a34b4d2883d2f9eee71fd40d1e717eadc90fa8df38788be4531f5ff3d",
-        "the-crook-in-the-lot.epub": "cf9cc820d1679fdd3725d25bac8d9dcfcb290c2a58e21a3c2b633dd1b7c1ad5d",
-        "print-ready.zip": "7c69609f757eb6c69c007405b112fb236165547184b238f38263529d3b1fff4f",
-        "the-crook-in-the-lot.html": "c66faeef1a0aa4ded955a8bb6c9ad447dc3847108fdd1548bfd8dd1e7afda7d1",
-        "the-crook-in-the-lot-whats-new.html": "b72788379faf41750a9ccbd2e8e6c0c14693343521a644c04d2d5f7155391362",
-        "cover.jpg": "290161124ddabb9bc946d3b5085477fb84fb5e73a734264e48badc8cf17d9784",
-        "back-cover.jpg": "c1e07193d36e5df9ea4d376f2d9dd0a3da7fcfcef9588e239b7ece84e909d863",
-        "spine.jpg": "7740d71db3d7f60c0b1a1f0c4a4eac515336c53bce653680ebb8cb198d3ffde7"
+        "the-crook-in-the-lot.pdf": "b4b9bf08413bd5d51d5c767a2b32ef03933c45ba9ff53442c36f099a4246125c",
+        "the-crook-in-the-lot.epub": "56b4c902200d149be79787ba1390de06b2b1c41049119c9d31fde11c8712b096",
+        "print-ready.zip": "25a093f84d7f66278405fb2312d5bba52c5ebd64c8341549d8e8bcbf436e0120",
+        "the-crook-in-the-lot.html": "2571815cdddb186725b5bdcfad2bc4bdcff469a65e0b7a508ab65e0c646bfdf5",
+        "the-crook-in-the-lot-whats-new.html": "828027d14ea055efe6833ca764e1c07e7b06f85246ae83cb0e1bc797963d168b",
+        "cover.jpg": "3a7a64145b975ee819ef3c4377449c3dfdb59eee422b4440e381ac5165702f7b",
+        "back-cover.jpg": "04b45a2577c18b75b89d4b392bf83c6f83a31b20ed85af213f9b9a789c5680d2",
+        "spine.jpg": "b751b16f7e3eb473e24d061bcbba05bde4159651b20cf7e5164a6b8c8093919d"
       }
     },
     "precious-remedies-against-satans-devices": {
       "book": "thomas-brooks/precious-remedies-against-satans-devices",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v3",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "precious-remedies-against-satans-devices.pdf": "c375661ed1b95a30f0859823b2086a287dbaa6068993f879cf6ee7cfb67fd786",
-        "precious-remedies-against-satans-devices.epub": "ac4bcf197f42a4a3a34d3524264f105a3eedd0ddc827355195d14c5a48dc8f24",
-        "print-ready.zip": "58c5f608d5ca39bfe3cb84314fd2d245058688134c2dd9f5efb7598b1fa320a2",
-        "precious-remedies-against-satans-devices.html": "e00b215a3f83765aacec5b6320d9a1b44807a9d6c023bf0a2e19bd54e83147a6",
-        "precious-remedies-against-satans-devices-whats-new.html": "ed51e62a289d4eac3183a3ff48e04fd41ab1df4b4d760013e5a5471e2bd7b36e",
-        "cover.jpg": "d49168cb6b509d7c2c25aea38121bbae285d9046679681bd2e6314d148780158",
-        "back-cover.jpg": "529df0c647c3e9424bb7ac0c6e12275c637825bbd65d4d64acfed62eb5c57d11",
-        "spine.jpg": "6749f7cacb23598862ef89e07d5d3d4e33030991b0d901aad24f88f0fe688b86"
+        "precious-remedies-against-satans-devices.pdf": "fd2dbccc156d1ce79070f15a781833c1bc31c9af7755e515e13aacad0802982c",
+        "precious-remedies-against-satans-devices.epub": "45d776cb91bb493dfb6888757c9dfa11017274adf039ce053099bb421575c8d9",
+        "print-ready.zip": "b42111c193d2c1fe2fc8cfb45c4739d61b0657a79eddd5643a9f24fac0ad831c",
+        "precious-remedies-against-satans-devices.html": "752e93c7b9df26795064750ff598b7a5426f19cac8c41b1113bd8ba819e5a58d",
+        "precious-remedies-against-satans-devices-whats-new.html": "7ff25e43f6053c1a8a7e2c0abda19f92f25103f97a661c111179441ec192b1a3",
+        "cover.jpg": "19701d6eb27e189a27eb2bb025896ffc898f981870151cd727f15ac88d8f2886",
+        "back-cover.jpg": "790ece0e02b552ff3937d75c0f61e8e3a471dc259ce919836d26a8546892ade2",
+        "spine.jpg": "200738110449be20ce458c9372bfdf12db42feb648287f0b787e04203b4e5bf3"
       }
     },
     "the-secret-key-of-heaven": {
       "book": "thomas-brooks/the-secret-key-of-heaven",
-      "version": "v7.1",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v9",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "the-secret-key-of-heaven.pdf": "83fb25b02fc067f30f1417e4c517d377491819cf597a91e84529bc406ccb15ea",
-        "the-secret-key-of-heaven.epub": "f3a95fdaf978e7c50971aa4636f64005d56684f23763621360c7b4edcc613e05",
-        "print-ready.zip": "9ab3d23b35cb252ef9a343dd6a39835fc6464e76730557ec868861ef63b4e667",
-        "the-secret-key-of-heaven.html": "dc40328a6d8e40ceffd19ccd0e98ebffcc292192979d4dbf7f113bf7c41c7c30",
-        "the-secret-key-of-heaven-whats-new.html": "d38a9f1cf9d2631e0e99082f77086e22d1d7f6b8ad0ebb2e69bde77dd4a51f2e",
-        "cover.jpg": "962c563355db03ae109b7e8dd9b57ba63e8241b7d2b7ae53b6dfae4b299f9394",
+        "the-secret-key-of-heaven.pdf": "cc9474c5fe892a23b267c5d1a9608ad32f4a328681a115f9184bb180ac78ecc0",
+        "the-secret-key-of-heaven.epub": "ed078448d2a7cfb862dda88f5f8cc78ad71e7ef730645346405e62ee7e0e5be3",
+        "print-ready.zip": "f1805a908ea74c316c925eb0b4042cc1bc2023ec4713ca2b735c07d0c6679116",
+        "the-secret-key-of-heaven.html": "b6d9122495b47b4c57e391f0b91cc71c9b8d8ada0177d851e42774610846211f",
+        "the-secret-key-of-heaven-whats-new.html": "b0d545842745d0fcce1c79470dd396ff009305ecf20c078ee98db662f5ee7f76",
+        "cover.jpg": "b0e6cba4a3d02f4e698a3ac4bec1e24a0ac2ef953e7ee92921b26a1b94e2f49c",
         "back-cover.jpg": "1713c788b839c23f8696b8a1ba1836fcee5d2d282b651aaa758629107f06eab9",
-        "spine.jpg": "2e924b939683873de3a1c7265ad80d89dcfa11a8d5f88d73723dca99d8bc661e"
+        "spine.jpg": "8006f526e60cc3f0731c52340d251856fbc9213808f282870a0c7baa0ae165f7"
       }
     },
     "a-divine-cordial": {
       "book": "thomas-watson/a-divine-cordial",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v3",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "a-divine-cordial.pdf": "704c658e1cb88750e3999937e8116ce398a73db83ea0951a387d1f86d6deb341",
-        "a-divine-cordial.epub": "c95c18daa8819213b1ee704998dd792c596f636296f79ba7ac36b8d9ca154e0d",
-        "print-ready.zip": "9ce3bb0996f75e4fb70b9731e426689c2ba979e585234cf5d6730cd1ac469ed9",
-        "a-divine-cordial.html": "3ba8822ad5876ef3654f1f534f5959a108d28c6e92207000b548dade80f006f0",
-        "a-divine-cordial-whats-new.html": "d356c508fd8f29c5be557d9b88fa1823827f8e0f1d27f7a5f746e197ebe51141",
-        "cover.jpg": "6f49ead96c500f53365201c9f8998ea8956d25a15c33f26d3e451558e70da462",
-        "back-cover.jpg": "4b9f8e1c86cc36c73985a923d407e139a88b3f565aef93959a7f9cc52df6f3de",
-        "spine.jpg": "5d0223539cca5acde561eec14db3f28d5a911d2ecb39569c6e11a895ab89e5a8"
+        "a-divine-cordial.pdf": "398bab299b42f83e5a567eec07d72ba9e5434dbb2ee4a501957b5b5d19ca9696",
+        "a-divine-cordial.epub": "13fea76f2b8e0983f6c07ac02b501d2ab5d88c8f39b14f7773ec975b5b576bd5",
+        "print-ready.zip": "a415f8d632cd6a5024520cb7593e263da681f6738fdde9a99b33bdf68c026d02",
+        "a-divine-cordial.html": "895fed2db8266ef69fe3b7518a3ef797cc9e37eead7fc8d8d1f5689b3e2f5c71",
+        "a-divine-cordial-whats-new.html": "08e1641fea294c0b5d66effa537e5378d1d444d05cd6b74ee99adc254a1f92bf",
+        "cover.jpg": "9bea2c763cb78c920dcbf86ec5a9ca3e049e7593260f79bb6ec4f2475912fc7a",
+        "back-cover.jpg": "1b3668ea46211779d3d4cce954074fabfd553f031c15a37b7086798090d091f3",
+        "spine.jpg": "6f2dcc214251dd40f7bbf6135f09cae96f620751b11a2fefe5f8964f3d1defd6"
       }
     },
     "domestical-duties-volume-1": {
       "book": "william-gouge/domestical-duties",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v4",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "domestical-duties-volume-1.pdf": "fce43391a051e585a1ceeb9f98a0235945439d0f7b35aec195c4d1bd5f98d0f3",
-        "domestical-duties-volume-1.epub": "36c78480741b6969f40f32635abf9030d6df61c40d7c6e9ba34d604e551dea30",
-        "print-ready.zip": "ab0e59bb4bd8ebd227e71781d3366ee5ab108943ca990528ee39f98a8a0f3330",
-        "domestical-duties-volume-1.html": "ff86918242ad257dde48e4b8e86b0b2085011ca83279851ecc6d89c28b580b93",
-        "domestical-duties-volume-1-whats-new.html": "a3a7d77f8a4102bd4a0c61e1399599675c5144a3d061838437cb8aa858e5c840",
-        "cover.jpg": "83f9a6a96f5911d3c0170d9de57bc5b68c810c8a15514d8a0f06ebb6a4450aa4",
-        "back-cover.jpg": "672b0e9ec1f77ab40c8c779c6a3095602982b9790b8cf90aad86bbff44a01d59",
-        "spine.jpg": "1836320cad27f60006f73aa2eb2f1dcbb7809e8e507e354f0d951b67c0c8f8d2"
+        "domestical-duties-volume-1.pdf": "c8d2e65a6fbc21593b9749d938893f59e7fa0a5329b72748fff24a307fa18c3f",
+        "domestical-duties-volume-1.epub": "8487cde8e8da3583b0dcc35520c91ee16166271a6f51df12636a6c77f9687b6e",
+        "print-ready.zip": "261e2601dd5553259dcb6aacce0eac3750fd07fc138386f4d3b3f555bb1e7758",
+        "domestical-duties-volume-1.html": "c229d393ff924efe216bc63c83296e7122110db3dd1facbfe13d26f76122f8e4",
+        "domestical-duties-volume-1-whats-new.html": "8af5866f359b28c818d91b24f61a413c8920d05bf6122246f5a8c0224b0ab3b5",
+        "cover.jpg": "572b7aad31d04db358217c9c2aff99d30015680edf6456a8708ce377f00025f4",
+        "back-cover.jpg": "c576eb4d89acd2aa5b4a28afedfe06dc1bf8cb8a461fd48ddf2cadeeb46fed8e",
+        "spine.jpg": "83d130b4e827a6ec4bcd08291fcf8df17f248d6d9dccf663ec87c149e9fb0945"
       }
     },
     "domestical-duties-volume-2": {
       "book": "william-gouge/domestical-duties",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v4",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "domestical-duties-volume-2.pdf": "42d5662558e780844b1a05f35ab2f2f0c69bb4761b9ad62c0c8d7b77b0c266d0",
-        "domestical-duties-volume-2.epub": "d1670093f79a970645a697961d34068f96155ca3e7088b33fb3d9ff474dca93e",
-        "print-ready.zip": "41e0eb23b2671d8ef3bc6e42f90944d7e4ab47f9d5899b78fd2d6380cd1b85e4",
-        "domestical-duties-volume-2.html": "e17bc619805ee1d26f31d98c6e3b0b857c0610efb76476b9fd4a9d55ba86cedf",
-        "domestical-duties-volume-2-whats-new.html": "dcf8b7afd5c42744711b5dcb0d412f2ae78de5daafc059c7c5aff1ad82190e49",
-        "cover.jpg": "4ea0becddd057bd335039fdb26292196a8d87c582311f90d522d545f390b8b46",
-        "back-cover.jpg": "83ef826f2c7d88c81e7aefef12456dc061014260bd79c537b38df1146717efd4",
-        "spine.jpg": "471d9282c3c78c483df3586ac76a91493e215eec6fff2fcce98bff1786ecf063"
+        "domestical-duties-volume-2.pdf": "3de8d28d0d30f64efc10c1f553b3a8639e9622a160c6d74922fdc3cd0fe375f8",
+        "domestical-duties-volume-2.epub": "6e0a0ed8884af46da3cb5f260d55bdc8bdd18e6c329821f4871bd1c950c3286c",
+        "print-ready.zip": "60f4f7f693422c2dc49be77db66288d605c688221b1162950feda06487145c5e",
+        "domestical-duties-volume-2.html": "9e0e4b7252f95135c6baa756234720843e12d610c5af07d926ec76f8b43e05f7",
+        "domestical-duties-volume-2-whats-new.html": "bf8bd2b08711b228a5efb4e243c7e3c076124d282ce2300139c2551627d4fca6",
+        "cover.jpg": "9876a3d875c03b360a1ac2d37b8cef66b12da3d09abc13566230228d36bc8c38",
+        "back-cover.jpg": "c26dbd646269eca3005712c0f242f0b7e5fa6a3793510c6481cf66fb1a6d1571",
+        "spine.jpg": "011c2613031f180dbffae6ef5d1c74ab3b9a5014713f030f6eb13c84c7ddcf05"
       }
     },
     "domestical-duties-volume-3": {
       "book": "william-gouge/domestical-duties",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v4",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "domestical-duties-volume-3.pdf": "9c05f2903e7953cc18b662b2d610e05f8af4c666bb9e8a9fb10a090626d6d67f",
-        "domestical-duties-volume-3.epub": "c86231f14a34562d6d819bc8b3f994d862d97b2a5c0425082765c23a5f838827",
-        "print-ready.zip": "07547fe3e6e8964d3d034899b7d5a7954800e512822f0994e2e284d15366793d",
-        "domestical-duties-volume-3.html": "187455f4243a95101e9806bd322382caf85f864507eee7342fe47dcecc55b181",
-        "domestical-duties-volume-3-whats-new.html": "e7715c8798ac76a4b09780fcf982b6bb506b780a2a79cef9ca59d0a40b372110",
-        "cover.jpg": "bb9cc260794fd1465eb6cd3b8550e776c1751dfed1560c494ac1111abc4e7368",
-        "back-cover.jpg": "5d68112e868ff807df3603364f5a8175aac4da7577ae8ff6aae6d90582d2a2fb",
-        "spine.jpg": "9d2ce8d631278737d111c4dcb716e540edd1fcc797b3260b62ed6ca51da16653"
+        "domestical-duties-volume-3.pdf": "430d842f1041d9f8923a9b611c046c4826650524b57ba7504ae5a24d65042a25",
+        "domestical-duties-volume-3.epub": "6013899a8902f7ab4957f9bfbc5dc36baff4d15b32bffc3424890d92685ef7ca",
+        "print-ready.zip": "68125daca14592fcadbcadf71aecbf11662ac34bfdfa9cd2a0b0122fda08fa12",
+        "domestical-duties-volume-3.html": "c3f05ce968ad291db9bf2e71bd92d30a29c55bf62f78142e18c281416c0f1f3d",
+        "domestical-duties-volume-3-whats-new.html": "6cb0912caba3fc5a332f40fcbf3836e6f3ca5df3ad919e09519e87b6d0310fd0",
+        "cover.jpg": "8965f16a555bbb402f60c9e59f8e17eee57d7391dffe858b7ab17841a8e4f09a",
+        "back-cover.jpg": "ec65620e61087fd0460a42816309e6ceede9731472c086c066da48da5669d96b",
+        "spine.jpg": "237a5d5d82d502df583c442725a267693247ddf139931e93b6030760b79d3108"
       }
     },
     "domestical-duties-volume-4": {
       "book": "william-gouge/domestical-duties",
-      "version": "v2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v4",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "domestical-duties-volume-4.pdf": "9e0948647cee009c94dec6c899b69737f8d9de9ec7a38c867d4f9ba01d711a56",
-        "domestical-duties-volume-4.epub": "3f064c172722ed4df9864adb3387e2db29534e1db0acc84c97b927549fdfcee8",
-        "print-ready.zip": "3bd9b66cba5786e8cb4d7041869e005102a33b940206a7f0996368ae3270789c",
-        "domestical-duties-volume-4.html": "99b8396c8554a6df09703ff05826e5a8dea45063d833b7b6dc22aebd08875173",
-        "domestical-duties-volume-4-whats-new.html": "5f6cbda2440b0f7863bb95b4705bc09f5813417d1be91092b72f1182993f072e",
-        "cover.jpg": "7a649ab222063f29dfa2990843b61bd64b1d9e572c7f8a4bb46d25df632969d0",
-        "back-cover.jpg": "9f81b31c8325057ce303df22066583574daf12252ba6c610e2f6ecfbe542a872",
-        "spine.jpg": "90e45c555af7f41ed448085c4b20daedcac09194c043748c868b0a8713a71fa2"
+        "domestical-duties-volume-4.pdf": "3aa704706d0f1ac8cd00c738bb663913cedc97740e808eb3f487f0559b00a193",
+        "domestical-duties-volume-4.epub": "d13d8d23ba0982865f7b51a5fff3e3dae664df54712a7c53bbf3e020166869ab",
+        "print-ready.zip": "0313401e5925fa0e9e08a48e238b4a592777e9ee995873c5fdce280d28e43d2e",
+        "domestical-duties-volume-4.html": "cb9ed2fa85d138be717e68f08d15c8a991a4bfaac2c29646e9bc0523c031fb4a",
+        "domestical-duties-volume-4-whats-new.html": "570b34d674768d5bb22c9280a1e2e6fa0516258661c89f3a4469a1117caa85b5",
+        "cover.jpg": "8945748145be9b3657b2aefaab0a4e860e8aa1a7ea34d601804fb8f1c4b29d17",
+        "back-cover.jpg": "36331a8107caa33234be9a6e15c4bd6df931711e854696bb8b77455e912bbc21",
+        "spine.jpg": "4279477d378a2ef338a33430f6b96a4ed367e59c9efa7e6541e20ce626e20262"
       }
     },
     "christian-economy": {
       "book": "william-perkins/christian-economy",
-      "version": "v3.2",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v5",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "christian-economy.pdf": "aeba39d4365e62dcc05e91b9071bbff82d4e40d0aba389cd84d757cd193ff960",
-        "christian-economy.epub": "74b42aa177fcd9a32a33408ba514d319a1428bd6a9fe19fb854230ae0144f5bf",
-        "print-ready.zip": "0271b85c17a38ac365a989fb6708cc27f6175a0abed257eeb0f00a12c853f1cf",
-        "christian-economy.html": "647de8a18cc3e17b9fea6db1ccecdac99c0a86ee2da3cc3082b33a07a45d355f",
-        "christian-economy-whats-new.html": "6f6ef669e6ded8db069ab90cbee84c904366534dfcbc2a9d3805ffc9921f3d9b",
-        "cover.jpg": "640bbe5b6ade05f81fad38e615696303a4c79eb42253c99fd688539205e81697",
-        "back-cover.jpg": "94acf6d30e085fb0f83ac9cbf10de4d33e30965b5753a763327983a7fe831906",
-        "spine.jpg": "b3289011ff45cb35aa2ffad2c3662d0532e93e3bb4b5723e2fcad85e9de989d0"
+        "christian-economy.pdf": "6e08cbeef4c936985188bc6440a71c80e377f65771ec8d05ada3bd1436e9910b",
+        "christian-economy.epub": "467722638654a5e3dde937d4c2f43b27a57a36084b3108d8d2d4e3cffcbdca3a",
+        "print-ready.zip": "8f55ceb79a5828e1402fcde33b9b0b6bcc4ccab92178ca3475c0a5281db934c7",
+        "christian-economy.html": "d809fd1149bca7747867da95404a3f272b7ad66c3ff2723db4c8450e89137cf2",
+        "christian-economy-whats-new.html": "4633cd90a9094acd6c777de53d2dcdd1fb98ca9b74a822dc3f548be6140126b3",
+        "cover.jpg": "d0ad1560dce88f7f9c22f3e967db9fc9cd1d945a9b34f986ea13d9bfab7250c8",
+        "back-cover.jpg": "2a6c8ce8b0fc5fd5518a9720f752a3e12eec852eab8ad27173f8c8eadcbb7f4d",
+        "spine.jpg": "b7a7134c40f6350c76b0fae6acf079646ca5248730b8e2722c1da71f4711b4ee"
       }
     },
     "indwelling-sin": {
       "book": "john-owen/indwelling-sin",
-      "version": "v1",
-      "release": "2026.11.10",
-      "synced": "2026-11-18",
+      "version": "v3",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
       "files": {
-        "indwelling-sin.pdf": "dc5fe317150ddc58015fff3065627dc000828d5f32400db27bd74b28cdb7063b",
-        "indwelling-sin.epub": "07588e7d588a63baae44e2640f554a8ca2c2f6df193f63ba8dff051d923da938",
-        "print-ready.zip": "0a312e1710b2e9cd2d82ba29acf777352fcdf72b0097b63e708f5ee864c21eb1",
-        "indwelling-sin.html": "d70d8b4dc9fe437d11ab918649a17db16f50e51cdb8e7680b7e3c8a37d0bdacb",
-        "indwelling-sin-whats-new.html": "c58ec3e2a78d255a9e8b369bc5a57117f493e96d1655067b21eec4b25f902ab8",
-        "cover.jpg": "69651f6a24e0f2d5f2028cb2767598e1abf3fe062b1468eea6be2e353177e302",
+        "indwelling-sin.pdf": "63bd64f550a727a7b9d2ec6014e554546cba0ef75047db4f79a5f42dd85d9a8d",
+        "indwelling-sin.epub": "1f447c8fb30d0e923e507bfd41200fc25ae3b8af7e786b3064afb46b811eb637",
+        "print-ready.zip": "ef3a41bda6c5b2dad238b3fe8f3eba60f49fafaa45af4b5d0829d2b6919091a1",
+        "indwelling-sin.html": "3fb642078dbd2d81e76e5514a91a789637d8902910d84cc80e420c03eeaa2412",
+        "indwelling-sin-whats-new.html": "dcebfb30ef35794cba629563705afefdbb09765c8368f84be20252e77614f2f0",
+        "cover.jpg": "7ec23a498b4bb1d83cfa8536ba6a14b12e435f4f09ff6c506f4b910224d077a3",
         "back-cover.jpg": "148e53dbf5d339efda788eeafec1755d3b8e52720ad1dee991cf366c5a07d9e2",
         "spine.jpg": "eceabf6b43a4bceff6c6f8bbe5401fb04618b432738196fa859897bde9243e65"
       }
@@ -332,7 +332,324 @@
         "back-cover.jpg": "acbd52777816853952e00b3785207feb754d88de02a0c75534515165a9fe75f4",
         "spine.jpg": "f40aec9c131a6727b66dcca0344dfc248087dd0fe4a084f1032feb2b7fe155f2"
       }
+    },
+    "all-of-grace-modern": {
+      "book": "charles-spurgeon/all-of-grace",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "all-of-grace-modern.pdf": "7086840ed9f82aa0382d1f6c97482305c5caca69e159f6698f604e5633727e7f",
+        "all-of-grace-modern.epub": "d64e443d62e4bc435ec8fb03137af69f18bb285359561af86dad1d3d8398ec82",
+        "print-ready.zip": "90a745c53161e02b49911a7ba590bc29b05591fa4caa82912c20bbe320480c2a",
+        "all-of-grace-modern.html": "9ed796ad3b1e34c37f2911c7bce1dc82a23d99dd52119d1a020af24578185b93",
+        "cover.jpg": "b2863e9a0063a0a9ad8460052d8448e5b4697619989d2d3495d4eb07d8956dd9",
+        "back-cover.jpg": "9fac5f672576903c21cdf99145a23c8620670ff6a9bed5954f609d19fa58d1fd",
+        "spine.jpg": "36c2be29edbfd526477d385ed45dfbe12a71ee9a9ee768fbe9a199199f7e42b8"
+      }
+    },
+    "grace-abounding-modern": {
+      "book": "john-bunyan/grace-abounding",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "grace-abounding-modern.pdf": "1e0ee8a1b5c70df4d9d20b5691f94e8fced161d0796afc5d2e0593b95f1f8629",
+        "grace-abounding-modern.epub": "f3d3736482bb648c6ff7b24ad936311b74f0954aab14a6c0eccdf3c91176ee12",
+        "print-ready.zip": "1f3dc8e917b5fc97bb30ab355e566268b2a52e82de24c320a776dee2c4090c6c",
+        "grace-abounding-modern.html": "321a76f4ed8efe755d9e8cbb2ab3b19c409e511822d4ef0dc24bbde0f2868d16",
+        "cover.jpg": "b7eb8ffb7f640134ec524a1f1f48c301beed2858d17fd147ccb3193a226cc3a0",
+        "back-cover.jpg": "cddee8368a6f8ba0d1af3ec725a7a2785d7a15743cead9667cc862b6df64b256",
+        "spine.jpg": "769068918454ba62f13062f818eed65762e7bf8a2c892a02461b2b98b0a97502"
+      }
+    },
+    "the-pilgrims-progress-modern": {
+      "book": "john-bunyan/the-pilgrims-progress",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-pilgrims-progress-modern.pdf": "112a2327e189b6fb1f5fcb9f2b77f6ea58e139a2f1d4199438dea562ee939578",
+        "the-pilgrims-progress-modern.epub": "b32ee99c3ad92b2595bac4247927d411194a21c87115acaf03f1260c363068c6",
+        "print-ready.zip": "36ef21b2f149a458cad6788946e79ee2c3ce345fe50b357cce21287dc3262449",
+        "the-pilgrims-progress-modern.html": "9946687f0def5476829dbc7aed09f1da712a39023d57cd27a95c09b14f1e77fd",
+        "cover.jpg": "50960c5680f2ccc7a196d4f87fd530f511732a99f99aed9ae17d43c984ad2f62",
+        "back-cover.jpg": "ed54c2e2ba7df78d8084f6bb05062ad50ada0178e6fe7aef7a744a659dc17d59",
+        "spine.jpg": "8495b67298d57446ef08bc66a0f47ea3ab46b6ad0fa0523d8ad28326699b0cdd"
+      }
+    },
+    "indwelling-sin-modern": {
+      "book": "john-owen/indwelling-sin",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "indwelling-sin-modern.pdf": "dfa6280d1a97c8c68116fc44620694e6844367c4f708dd46fec964bb2a26fcfe",
+        "indwelling-sin-modern.epub": "918befa475e7003970983187ce8ff79fe3cbb1766a366b7ef99c561d6e5fed98",
+        "print-ready.zip": "7a377316fd52fa311b9b11669dc50ee56cbf42c09fc1c308464fa5809f0fccd3",
+        "indwelling-sin-modern.html": "e152c7632435b2bbe5ef0cb21288927da30ff8cef3f34894a7becaa28ddf1fc8",
+        "cover.jpg": "de6e3b68b9d216dd60a05d4aed33590f88c9983c4dfc387b64c71895efce051c",
+        "back-cover.jpg": "148e53dbf5d339efda788eeafec1755d3b8e52720ad1dee991cf366c5a07d9e2",
+        "spine.jpg": "9e2025063863301af08b4ae8cfff6b7a05c9e3e7349331d976948cb49cddd2e5"
+      }
+    },
+    "of-temptation-modern": {
+      "book": "john-owen/of-temptation",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "of-temptation-modern.pdf": "6c0093d3e42db9c0d696140ab67cd6b2574094cee3146fc31a2a2cbbe8cffaad",
+        "of-temptation-modern.epub": "5d15662f3cb591a0f1a81626f65e59d32d609069ca0885b10aaef6063c36b11b",
+        "print-ready.zip": "3812ba6400a01b646fbd5c32ef90f2b2226a2d4589d5030c72b55d3f08ddb66a",
+        "of-temptation-modern.html": "8e975a4863da32bb4c4ca7a7e13732677c31c6404703b03115f34475d6e6e238",
+        "cover.jpg": "df21a4d9be27d817e7b7e0f84b89210ee1997af69021ad3f300ac130deb4c607",
+        "back-cover.jpg": "dc5effa8e8ec019413b18cf436b28920890e1191cb5d4274928c880cea0f1b90",
+        "spine.jpg": "6212aa040f4e62efa65c391111b5f5166001ddf254de248a80cae0da4d5b53c4"
+      }
+    },
+    "the-mortification-of-sin-modern": {
+      "book": "john-owen/the-mortification-of-sin",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-mortification-of-sin-modern.pdf": "a10df1595bd66e5bb5eecf908ea0b8859528631799b833b7790804a6e640b1d4",
+        "the-mortification-of-sin-modern.epub": "917482e4b698a9a91c4a60c694d447b422d2f6831d5b8afb8c8f848d285399d2",
+        "print-ready.zip": "54e606c7f6831b6bf55b19d486b60af1b077f3d29a4bd42ec7f098853c8b51f1",
+        "the-mortification-of-sin-modern.html": "22048d14c5ee2d83c65c34ece8316d42384c977d83b366f641e5a581a56d00fe",
+        "cover.jpg": "936581b0a261a47514d4046694f44188f6d3446c8de806fe45d19a23c662a17d",
+        "back-cover.jpg": "08b2d60a05b648af00ba0f6d24fe32e075b875a77f9f8c9a9bc724bc86213164",
+        "spine.jpg": "beafed77e7be8cb823a4e58f0fef0d64e15780e9ffe0670c75292f590a864159"
+      }
+    },
+    "religious-affections": {
+      "book": "jonathan-edwards/religious-affections",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "religious-affections.pdf": "517f3332b92b2023d51ffda950b0f5b10003161383299abe6b62f6fca0b5cbe9",
+        "religious-affections.epub": "e6fac51d4d8f59b17feca0b503fa3e6a783fe429f6b459b15f6f9c4b23716b78",
+        "print-ready.zip": "bc546f52e0cbc20daa695f7b9b30f629ffb908cb1dc5a4ee08fc2568a70c4805",
+        "religious-affections.html": "5576781fa113dd8d75452e31deea8d38ef3911bb0d2a082b0cca3ed90e139906",
+        "religious-affections-whats-new.html": "76c23dd6cee02982dee37fcb13f5e1efb54c2ce0eb7fb3745c455106ff1ff084",
+        "cover.jpg": "9796a61e4843b341f1d6c80a5607d8d91ec5c2be43353bee3a4f6ae6b8309554",
+        "back-cover.jpg": "8578b97768244f2938f152c28156f5e47fb445b236b741f17b0ac7dcb20f3c7d",
+        "spine.jpg": "830e2a0db1154fd1c98836675bfbd3798a68a2af52a4df6f5f114823daebea7b"
+      }
+    },
+    "religious-affections-modern": {
+      "book": "jonathan-edwards/religious-affections",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "religious-affections-modern.pdf": "9fb0c63777a75372a44b456f6d7658cd64c71dc91e722ab71cc51b58af374413",
+        "religious-affections-modern.epub": "1afaa4abe44e8d5186d02e6d03a221f84cccb3dc49247615f9150a4f2fd3ad7e",
+        "print-ready.zip": "85b995272d342901673eba8da852230e7d3453e0cedcfb5f750106f8ecc86227",
+        "religious-affections-modern.html": "911ad7c8425d0add7049b667e7d769c4aa19bce2724c49f561885259fec0a789",
+        "cover.jpg": "455916158ea28b97f3b3d2736ab999a827a7233bfbc8202f9ed26de235c7127a",
+        "back-cover.jpg": "f562454962d6ed2ceb7762e73413548e0f59e8357753ead4474cde6f216dca7b",
+        "spine.jpg": "20d2e05ce99e4fdbaf97d527d67b6044c7b8b3292184b2c99c72c5df05741599"
+      }
+    },
+    "sinners-in-the-hands-of-an-angry-god-modern": {
+      "book": "jonathan-edwards/sinners-in-the-hands-of-an-angry-god",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "sinners-in-the-hands-of-an-angry-god-modern.pdf": "ddbe6cb0d84b8ce4804e364e94d2eb19d986afdca0bd3986d784006cc6beae7d",
+        "sinners-in-the-hands-of-an-angry-god-modern.epub": "a0b8c5cd7bb2b04acf3f7bb3119d24a098196febd896ca92ef58f04b9a2ae0b4",
+        "print-ready.zip": "a12bd82c8352e07b97dba12b221a59b78180fb942c1c8d727291151632d8a0fc",
+        "sinners-in-the-hands-of-an-angry-god-modern.html": "4f9157f7b23608d4f675ae85fa4b4421e6c09f8080706510439a8e3570aa2f70",
+        "cover.jpg": "8fe4ce609b88e2472ca0896e3a762047e4710afb6376156609f3df2bcf6ddf45",
+        "back-cover.jpg": "6e1f0ef7e9d7b64bd3d08a3164e24ff4033db13f8109420f1908dc10545a25ee",
+        "spine.jpg": "b9cbbd6b99a92ef3b43b230bad2566f78bb2c7d9a8ecb3bdcf6edd6076ec79be"
+      }
+    },
+    "the-glorious-feast-of-the-gospel-modern": {
+      "book": "richard-sibbes/the-glorious-feast-of-the-gospel",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-glorious-feast-of-the-gospel-modern.pdf": "2028381d8cf20b22e63937a89426cd406bd8ffc7a53289a9a059a84cd74d963e",
+        "the-glorious-feast-of-the-gospel-modern.epub": "09c9702c16f765bd18bd44d1019da5680d6d216b443e08189cde2a9c967337c8",
+        "print-ready.zip": "a2dce2047e61ea86a16c7a39ce321319879369bc3535cfdcbae0fa9d45c78559",
+        "the-glorious-feast-of-the-gospel-modern.html": "50e351169eebfaa6327516890f59487d4b3c8817f58b91565ec57bcf4c375190",
+        "cover.jpg": "3cb14859d00a8175ce41a47636269a5d5dfe007f0dd8416656f509e6720ad44e",
+        "back-cover.jpg": "96b996994b70807a265e695c8550aed26a0a0389146ee74f81b53f17f72ba468",
+        "spine.jpg": "3ed26662513ea3f5d9439059dda08c39ee88cbb4ae08fe1ac0096e6e2c0bb05d"
+      }
+    },
+    "the-crook-in-the-lot-modern": {
+      "book": "thomas-boston/the-crook-in-the-lot",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-crook-in-the-lot-modern.pdf": "bdfc2e0f8c0d2736b7c6955c5148336dd58311bed706a8d78e8871b6e4afb86c",
+        "the-crook-in-the-lot-modern.epub": "43199c78b66d8bc19458a810cc60acc8c6079a086557bb41e4693e4cb7507ff6",
+        "print-ready.zip": "6743881c087381e82f4fa88efe1c29d6661f0d97e508033c43460e7c8f7ebc0b",
+        "the-crook-in-the-lot-modern.html": "86188fd8c263d76565bc18e06e6f6d6094dad2e1fda1ab803cd62283f308633f",
+        "cover.jpg": "12148f348e3716f7b9cb88ffebf66d263a6cdf68ded85f67eef23f2d85b3949e",
+        "back-cover.jpg": "c1e07193d36e5df9ea4d376f2d9dd0a3da7fcfcef9588e239b7ece84e909d863",
+        "spine.jpg": "e6dd6e6dbfaa2fe496670257c65db91dd438fc5520dd95e3b501f7f75c341486"
+      }
+    },
+    "precious-remedies-against-satans-devices-modern": {
+      "book": "thomas-brooks/precious-remedies-against-satans-devices",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "precious-remedies-against-satans-devices-modern.pdf": "6272ca5d133ff6db27bce8ab2d675d5d69fb302862150df7a1fea99a61edcc7f",
+        "precious-remedies-against-satans-devices-modern.epub": "c14b794b82ea053ab4828694c70a6afb8f50175c9f3c7f4d839130c7fc130384",
+        "print-ready.zip": "4fef1c15fdd1bd9b18b5f200da41e2aa07de442945c00c7b6a99c57b9752d221",
+        "precious-remedies-against-satans-devices-modern.html": "9a03e8a81b3baf9cb209b5f9eadad7d48d2bf72eb0c6f4e2b35130deb39d69d8",
+        "cover.jpg": "cb46e293d04094568cc074db7840331ee0a39867fe3d7fd1ee3e425b754e81bb",
+        "back-cover.jpg": "48a3cf5acb47b8615c2df80b80c1a61abf41a87fdf476e7b044b263411702604",
+        "spine.jpg": "199d7b5ca7a5a57676e00b6ab25834e897d003fd6a57e69ce58fc659430c38b2"
+      }
+    },
+    "the-secret-key-of-heaven-modern": {
+      "book": "thomas-brooks/the-secret-key-of-heaven",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-secret-key-of-heaven-modern.pdf": "fcdcd985195ffa7e291bea28b093380c7714f50b3e64d86ced3f91a0a93e7a43",
+        "the-secret-key-of-heaven-modern.epub": "5dbb3e3251e212bbf38dcf8825f3922127dc0b2e3757eecab861c2ae7f82574e",
+        "print-ready.zip": "7625f2b383423202477990e5d6586e4a4cf9b2783784b9bde65a334928f60a19",
+        "the-secret-key-of-heaven-modern.html": "48cd845ba477a29f42d945bb132ff8f0ac3625b3f004f7b738f67931b78de358",
+        "cover.jpg": "29ca131a84c300b3bda4a9d5c1c1a0f15a23a4bb3ff0bf1804cacd1a3c0dab74",
+        "back-cover.jpg": "0bc95ed75b2b6d0c053f9f2b910319ace2ac8120cfd60ff665358fe617650486",
+        "spine.jpg": "ccc0e8a3c548055d5c694afdab3a618b8de022d12d82ffdbb0660948f0884a3b"
+      }
+    },
+    "the-surest-way-of-thriving": {
+      "book": "thomas-gouge/the-surest-way-of-thriving",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-surest-way-of-thriving.pdf": "5d70b3cbc84dd006c565c2c7d81c5f1ccd2ec7fa429a8ff310c0b0c9ce48d4c8",
+        "the-surest-way-of-thriving.epub": "af5857f57a8fa64ffa31a912f62d49e01609538c27963112c1b09fea036f0dc5",
+        "print-ready.zip": "100a186c1a3bb2b79c097819a8cbbbe65b33b60757b6607518abaab8d349897e",
+        "the-surest-way-of-thriving.html": "91e3c6950c744407a30910c75ca3448ebf97a625eab7fbd0b3ae7c53da1ebe37",
+        "the-surest-way-of-thriving-whats-new.html": "4fa8587d4e7a5669df371576ee0027cafeec9a246b76e6f013c28dc0f031e2a6",
+        "cover.jpg": "5c6cdf1e3cb1dad5f13560c5f2ec2dbace803163f093bb5f9e76884eeb29a6e6",
+        "back-cover.jpg": "1666c0d3e0da37cd7dd3973f9071fe71b81f309f60a2415b7284bffb2848aacd",
+        "spine.jpg": "79b174d62f592fa102b972900ca1a03356a13a67f14d7c1b5d1a91e53a8f29d2"
+      }
+    },
+    "the-surest-way-of-thriving-modern": {
+      "book": "thomas-gouge/the-surest-way-of-thriving",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "the-surest-way-of-thriving-modern.pdf": "31f8c651db2cfac7bf9a04f711379dac2f2834eda235c8e978f7da18b26c2e03",
+        "the-surest-way-of-thriving-modern.epub": "4d987c6560f3065a0ce2d6bd0631663c191fe5f82e6d3c5c89e5643f49aba589",
+        "print-ready.zip": "9ee6aaf3433082e832baa4e0bf587a77fc30b505cf0f990114577aca8c8e0823",
+        "the-surest-way-of-thriving-modern.html": "a2786182f0d66fa966c993404d567c054c8b97c6c81af4fde90b6c8168df9fd1",
+        "cover.jpg": "85103dba51e3037ccdaf014ab44b24724e0dcdf3a03b1dadbaf4f3d14f5c7ed5",
+        "back-cover.jpg": "1666c0d3e0da37cd7dd3973f9071fe71b81f309f60a2415b7284bffb2848aacd",
+        "spine.jpg": "eb479e5b7bb4de5d7a61ea07b6d650525bb31ed79842ba4f345b03a3daffb2fb"
+      }
+    },
+    "a-divine-cordial-modern": {
+      "book": "thomas-watson/a-divine-cordial",
+      "version": "v2",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "a-divine-cordial-modern.pdf": "9e50caac0ddba1bec3d389489f477cfbfa97d8fb83b07572c0e4efdac625f949",
+        "a-divine-cordial-modern.epub": "7978b84d6b4e11b9a715b4991d661ed468eb9fffc2b6b7347c9f7146246b623b",
+        "print-ready.zip": "0407988a4ecc3b755a0e256015757df14bb66d07b393aea5c5112465d245c6dd",
+        "a-divine-cordial-modern.html": "c9a6ffac0672289cd304ba4d27754012ce49fa082f5f2a4c714180efa0e52d27",
+        "cover.jpg": "75305119f1772c695f86d889598a03680cb6ca8d629af506c179c5e4c43306db",
+        "back-cover.jpg": "4b9f8e1c86cc36c73985a923d407e139a88b3f565aef93959a7f9cc52df6f3de",
+        "spine.jpg": "8738157745758b5d3595d4b9be6a1ee2ceb58039ba716aa01546b31790c088a2"
+      }
+    },
+    "domestical-duties-modern-volume-1": {
+      "book": "william-gouge/domestical-duties",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "domestical-duties-modern-volume-1.pdf": "88e9b453e4022c232533754ab3fb00797f52f1106f5e21d8c4e9a0ad9c3f8728",
+        "domestical-duties-modern-volume-1.epub": "f4957c97bd6e7827162b351d6044287519ef7c9c2ea0ebd9f42bf2a0e27e175f",
+        "print-ready.zip": "faa6597fb9a172715e857af44f55ffd85ed6d4fd93a743759da62de206c3aee5",
+        "domestical-duties-modern-volume-1.html": "ca257f485ab5331277d0f18ae5e516cfc498bf59bef2453664bd74ac89ded3bd",
+        "cover.jpg": "9c0caadb7b75dedc9fd4c234906d3d710ceb2f93ff47c391cc1bf578563e72a4",
+        "back-cover.jpg": "f83740ccbb5afc9d276b2bff3326fdf348eb22d1bdb598c078d3a71f8fc9d494",
+        "spine.jpg": "c148c8f2921b20848dc862acc667772e7a790bca5d8660d80c91a8a97be293fb"
+      }
+    },
+    "domestical-duties-modern-volume-2": {
+      "book": "william-gouge/domestical-duties",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "domestical-duties-modern-volume-2.pdf": "5f85ab2e090525020e30f62f8ef726bd186558625786809ff6765f8ee4f7e012",
+        "domestical-duties-modern-volume-2.epub": "40c6b3ee4076101722d173aacaa5e04a02c1b61c6bc5f7862673754a399594ba",
+        "print-ready.zip": "d66c5821265997fcec33103e869aea16e5e9da6aabd5d92cd3ed374dfeec6964",
+        "domestical-duties-modern-volume-2.html": "3023ad4ba7f27baf3de9b7507c6f0eb5e8fad1f7303b53409a42b5be39469a0b",
+        "cover.jpg": "c8525ca56838f105174a45f16fc4df082491f17bae2e09f736ba670cbc88ecbb",
+        "back-cover.jpg": "4ea767a5643a4bd4893ec59d503d530dd1b4020cb61598171c16bf4d09a364e7",
+        "spine.jpg": "9d0304c7cc448b7f9e13c94a8b883a43b0c91984bdb3e674ed44da232a68ba41"
+      }
+    },
+    "domestical-duties-modern-volume-3": {
+      "book": "william-gouge/domestical-duties",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "domestical-duties-modern-volume-3.pdf": "c3fee83ac82e404108a2416c1a1aa3ca190d3d4016f0a0846efa89a058bf399e",
+        "domestical-duties-modern-volume-3.epub": "379d362036f570ce01a32c12800addac05d639826fc198c51e2d45f2c4a0823e",
+        "print-ready.zip": "f56d59baa527427901a269eeaacf3ea3f50965c17e35ee369dce61d86f3886b4",
+        "domestical-duties-modern-volume-3.html": "01678704ca85383d9e0bc444f65b4995e43055c45c899f2c56b459041ffd383c",
+        "cover.jpg": "d5e4d26113c55a48e9bca0ffee202b59d422932c4d5c81d254ededea9d2f3328",
+        "back-cover.jpg": "324df0f191c3477d4291f63eb92a50b8befeb01793ca6414f25eceb37c2d61a3",
+        "spine.jpg": "6595c6846b0481c192a2b8127675674cfaf4d338e725e6c210d2bed6880393c9"
+      }
+    },
+    "domestical-duties-modern-volume-4": {
+      "book": "william-gouge/domestical-duties",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "domestical-duties-modern-volume-4.pdf": "3d09efada49499118baab35ac6fc325845e2bdeddb558cc4812e110a152e0bbe",
+        "domestical-duties-modern-volume-4.epub": "c5c5d291ef883e0f33f4e59a015cb4a816d76aa6395530c56abe24831e6f0cfd",
+        "print-ready.zip": "9186aba59a79a1c39c46697ccc57d7a8ffbbb2440f0b5d60c2eef7eae3833f36",
+        "domestical-duties-modern-volume-4.html": "1a54e2edaff0bf1228bc78849e681d6fe26911e70ebb3d97595ef6fa70dbd5cf",
+        "cover.jpg": "6e25a1b40c65d7452ee837dacbb816a5169933bf0d2db8e3e2624941d056d4a2",
+        "back-cover.jpg": "b98ae2f744b47c35d8fd6b1cf50b116de888ec90433da3cfa1d3a0842743187e",
+        "spine.jpg": "09c6a0767a31b98eb91ce93b319094c5710a20618c306c76722cd46a7ee45b1d"
+      }
+    },
+    "christian-economy-modern": {
+      "book": "william-perkins/christian-economy",
+      "version": "v1",
+      "release": "2026.11.22.2",
+      "synced": "2026-11-24",
+      "files": {
+        "christian-economy-modern.pdf": "7f17023988d8eefa7e5e431f8e9efc1e7aaf8899501bd1a644909389328c44f3",
+        "christian-economy-modern.epub": "afa7e2e8030a5cb410b283de81cb7147319b1bed4f5090cf9c87054dda39459e",
+        "print-ready.zip": "8d42127e90b5709c9ed37952fd97c72f9e4f7666d5983108ccd828977b9dde38",
+        "christian-economy-modern.html": "d81a9849314610eb06d07bf2acf6f732f6c820a7175604e84d6b71385ac68830",
+        "cover.jpg": "dee94c58c099803fe135483874741f40eceb8bd6941d0ec01622c4135e3d753f",
+        "back-cover.jpg": "94acf6d30e085fb0f83ac9cbf10de4d33e30965b5753a763327983a7fe831906",
+        "spine.jpg": "15ce773fe5afdee56d874c45bb5800a6738d9a999cb5318591942647795a1148"
+      }
     }
   },
-  "release": "2026.11.10"
+  "release": "2026.11.22.2"
 }

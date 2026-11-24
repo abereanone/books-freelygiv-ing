@@ -242,11 +242,13 @@ opposite one. A button goes to the book with that value that keeps the most of t
 book's other axes, so Vol. III's Version button stays on Vol. III. The logic is `withSets()` in
 `src/lib/data.js`; the switcher is `.book-set` on the book page. Sets now: `domestical-duties`
 (Gouge, 4 volumes), `institutes` (Calvin, Parts 1–2), plus every `translationOf` pair. Every
-volume still has its own card on /library. No modern/classic pair exists yet (2026-11-18).
+volume still has its own card on /library. Courtney's 2026.11.22.2 release brought the first
+modern/classic pairs (19, hidden until the owner releases them, 2026-11-24).
 
 Courtney's releases: `npm run sync:fgb` fills in `set`, `volume`/`volumeLabel` (from an edition's
-`volume`) and `version` (from a book's `"wording": "modern"|"classic"` plus a shared `"set"` in
-`site.json`), only where book.yaml has none. The "Volumes, and modern and classic wordings"
+`volume`) and `version` (from a book's `"wording"` or `"edition"`: `"modern"|"classic"`, with the
+set from `"set"` or else the last part of its `"book"` key), only where book.yaml has none. A new
+wording of a book already on the site takes that book's year, description and tags. The "Volumes, and modern and classic wordings"
 section of `public/CourtneyHicks.md` (`SETS_HELP` in the script) tells his tools how to mark them.
 
 External links open in a new tab site-wide: a click handler at the end of `Base.astro` adds

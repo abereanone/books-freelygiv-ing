@@ -1,0 +1,42 @@
+- title: Of Temptation (Modern English)
+  sortTitle: Of Temptation (Modern English)
+  hidden: true
+  credits:
+    - person: john-owen
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1658
+  addedDate: 2026-11-24
+  pages: 104
+  tags:
+    - classic
+  description: 'Owen on Matthew 26:41, "Watch and pray, that ye enter not into temptation": the nature and power of temptation, the danger of entering into it, and the means of preventing that danger.'
+  license: CC0
+  path: /static/books/of-temptation-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/of-temptation-modern/of-temptation-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/of-temptation-modern/of-temptation-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/of-temptation-modern/of-temptation-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/of-temptation-modern/print-ready.zip
+  set: of-temptation
+  version: modern

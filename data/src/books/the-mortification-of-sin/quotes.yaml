@@ -3,7 +3,7 @@
 # text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
 # tone: the look shown first (light | dark); both are made. background: the painting for each.
 - id: owen-all-other-ways-mortification-are
-  text: All other ways of mortification are vain, all helps leave us helpless; it must be done by the Spirit.
+  text: All other ways of Mortification are vain, all helps leave us helpless, it must be done by the Spirit.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter I
@@ -17,7 +17,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-mortification-from-self-strength-carried
-  text: Mortification from a self-strength, carried on by ways of self-invention, unto the end of a self-righteousness, is the soul and substance of all false religion in the world.
+  text: Mortification from a self-strength, carried on by ways of self-invention, unto the End of a self-Righteousness, is the Soul and substance of all false Religion in the world
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter I
@@ -31,7 +31,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-vigour-power-comfort-our-spiritual
-  text: The vigour, and power, and comfort of our spiritual life depends on the mortification of the deeds of the flesh.
+  text: The vigor and power and comfort of our spiritual Life, depends on the Mortification of the deeds of the flesh.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter I
@@ -45,7 +45,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-do-you-mortify-do-you
-  text: Do you mortify; do you make it your daily work; be always at it whilst you live; cease not a day from this work; be killing sin or it will be killing you.
+  text: Do you mortify; do you make it your daily work, be always at it whilst you live, cease not a day from this work; be killing Sin, or it will be killing you
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter II
@@ -59,7 +59,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-indwelling-sin-always-abides-whilst
-  text: Indwelling sin always abides whilst we are in this world; therefore it is always to be mortified.
+  text: Indwelling sin always abides, whilst we are in this world, therefore it is always to be mortified.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter II
@@ -73,7 +73,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-sin-aims-always-at-utmost
-  text: Sin aims always at the utmost; every time it rises up to tempt or entice, might it have its own course, it would go out to the utmost sin in that kind.
+  text: 'Sin aims always at the utmost: every time it rises up to tempt or entice, might it have its own course, it would go out to the utmost sin in that kind.'
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter II
@@ -87,7 +87,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-let-not-that-man-think
-  text: Let not that man think he makes any progress in holiness who walks not over the bellies of his lusts.
+  text: Let not that man think he makes any Progress in Holiness, who walks not over the bellies of his Lusts
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter II
@@ -101,7 +101,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-root-unmortified-course-digestion-sin
-  text: The root of an unmortified course is the digestion of sin without bitterness in the heart.
+  text: The Root of an unmortified Course, is the digestion of Sin, without bitterness in the heart
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter II
@@ -115,7 +115,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-duties-are-excellent-food-for
-  text: Duties are excellent food for a healthy soul; they are no physic for a sick soul.
+  text: Duties are excellent food for an healthy Soul; they are no physic for a sick Soul.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter III
@@ -129,7 +129,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-law-drives-them-on-sin
-  text: The law drives them on, and sin beats them back.
+  text: The Law drives them on, and Sin beats them back.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter III
@@ -143,7 +143,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-unmortified-lust-will-drink-up
-  text: An unmortified lust will drink up the spirit, and all the vigour of the soul, and weaken it for all duties.
+  text: An unmortified Lust will drink up the Spirit, and all the vigor of the Soul, and weaken it for all Duties.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter IV
@@ -157,7 +157,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-mortification-prunes-all-graces-god
-  text: Mortification prunes all the graces of God, and makes room for them in our hearts to grow.
+  text: Mortification prunes all the Graces of God, and makes room for them in our hearts, to grow.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter IV
@@ -171,21 +171,21 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-heart-like-sluggards-field-so
-  text: The heart is like the sluggard’s field, — so overgrown with weeds that you can scarce see the good corn.
+  text: The heart is like the Sluggards Field, so over-grown with weeds, that you can scarce see the good Corn.
   author: john-owen
   book: the-mortification-of-sin
   chapter: Chapter IV
   anchor: chapter-04-h1
   topics: [heart, sin]
   scripture: ['Proverbs 24:30', 'Proverbs 24:31']
-  words: 20
+  words: 19
   status: candidate
   featured: false
   background: {solid: evergreen, dark: forest-10.jpg, light: light-22.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-to-be-able-always-to
-  text: To be able always to be laying load on sin is no small degree of mortification.
+  text: To be able always to be laying load on Sin, is no small degree of Mortification.
   author: john-owen
   book: the-mortification-of-sin
   chapter: '2. Positively: What It Is'
@@ -199,7 +199,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-man-may-easier-see-without
-  text: A man may easier see without eyes, speak without a tongue, than truly mortify one sin without the Spirit.
+  text: A man may easier see without Eyes, speak without a Tongue, than truly Mortify one Sin without the Spirit.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'First Rule: Only a Believer Can Mortify Sin'
@@ -213,7 +213,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-to-kill-sin-work-living
-  text: To kill sin is the work of living men; where men are dead (as all unbelievers, the best of them, are dead), sin is alive, and will live.
+  text: To kill sin is the work of living men; where men are dead, (as all Unbelievers, the best of them are dead,) sin is alive, and will live.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'First Rule: Only a Believer Can Mortify Sin'
@@ -227,21 +227,21 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-poor-soul-it-not-thy
-  text: Poor soul! it is not thy sore finger but thy hectic fever that thou art to apply thyself to the consideration of.
+  text: Poor Soul! It is not thy Sore-finger but thy Hectic-Fever that thou art to apply thyself to the Consideration of.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'First Rule: Only a Believer Can Mortify Sin'
   anchor: chapter-07-h2
   topics: [conversion, sin]
   scripture: []
-  words: 22
+  words: 20
   status: candidate
   featured: false
   background: {solid: teal, dark: sky-06.jpg, light: light-19.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-thou-settest-thyself-against-particular
-  text: Thou settest thyself against a particular sin, and dost not consider that thou art nothing but sin.
+  text: Thou settest thyself against a particular Sin, and doest not consider that thou art nothing but Sin.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'First Rule: Only a Believer Can Mortify Sin'
@@ -255,7 +255,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-let-not-any-man-think
-  text: Let not any man think to do his own work that will not do God’s.
+  text: Let not any man think to do his own work, that will not do God’s.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Second Rule: Sincerity in a Universal Obedience'
@@ -269,7 +269,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-what-gospel-principles-do-not
-  text: What gospel principles do not, legal motives cannot do.
+  text: what Gospel Principles do not, legal Motives cannot do.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'First Direction: Consider the Dangerous Symptoms of the Lust'
@@ -283,7 +283,7 @@
   added: '2026-11-22'
   tone: light
 - id: owen-new-sin-may-be-permitted
-  text: A new sin may be permitted, as well as a new affliction sent, to bring an old sin to remembrance.
+  text: A new Sin may be permitted, as well as a new Affliction sent to bring an Old sin to remembrance?
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'First Direction: Consider the Dangerous Symptoms of the Lust'
@@ -297,7 +297,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-thou-that-wast-tender-didst
-  text: Thou that wast tender, and didst use to melt under the word, under afflictions, wilt grow as some have profanely spoken, “sermon-proof and sickness-proof.”
+  text: Thou that wast tender, and did’st use to melt under the Word, under Afflictions, wilt grow (as some have profanely spoken,) Sermon-proof, and Sickness-proof
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Second Direction: A Clear Sense of the Guilt, Danger, and Evil of the Sin'
@@ -311,7 +311,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-suffer-not-thy-heart-one
-  text: Suffer not thy heart one moment to be contented with thy present frame and condition.
+  text: Suffer not thy Heart one moment to be contented with thy present Frame and Condition.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Fourth Direction: A Constant Longing for Deliverance'
@@ -325,7 +325,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-longing-breathing-panting-after-deliverance
-  text: Longing, breathing, and panting after deliverance is a grace in itself, that hath a mighty power to conform the soul into the likeness of the thing longed after.
+  text: Longing, breathing and panting after Deliverance, is a Grace in itself, that hath a mighty power to conform the Soul into the likeness of the thing longed after.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Fourth Direction: A Constant Longing for Deliverance'
@@ -339,7 +339,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-we-lisp-babble-say-we
-  text: We lisp and babble, and say we know not what, for the most part, in our most accurate, as we think, conceptions and notions of God.
+  text: We lisp and babble, and say we know not what, for the most part; in our most accurate (as we think) Conceptions and Notions of God.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Eighth Direction: Meditations That Fill the Soul with Self-Abasement'
@@ -367,7 +367,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-set-faith-at-work-on
-  text: Set faith at work on Christ for the killing of thy sin.
+  text: Set Faith at work on Christ for the killing of thy sin.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'The Work Itself: Act Faith on Christ'
@@ -381,7 +381,7 @@
   added: '2026-11-22'
   tone: light
 - id: owen-when-heart-once-won-to
-  text: When the heart is once won to rest in God, to repose himself on him, he will assuredly satisfy it.
+  text: When the Heart is once won to rest in God, to repose himself on him, He will assuredly satisfy it.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'The Work Itself: Act Faith on Christ'
@@ -395,7 +395,7 @@
   added: '2026-11-22'
   tone: light
 - id: owen-mortification-sin-peculiarly-from-death
-  text: Mortification of sin is peculiarly from the death of Christ.
+  text: Mortification of Sin is peculiarly from the Death of Christ.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'The Work Itself: Act Faith on Christ'
@@ -409,7 +409,7 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-man-may-have-leanness-body
-  text: A man may have leanness of body and soul together.
+  text: A man may have leanness of Body and Soul together.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Fifth Direction: Consider Whether It Is Rooted in the Nature'
@@ -423,7 +423,7 @@
   added: '2026-11-22'
   tone: dark
 - id: owen-know-that-he-that-dares
-  text: Know that he that dares to dally with occasions of sin will dare to sin.
+  text: Know that he that dares to dally with Occasions of Sin, will dare to Sin.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Sixth Direction: Watch Against Its Occasions and Advantages'
@@ -437,28 +437,28 @@
   added: '2026-11-22'
   tone: solid
 - id: owen-as-sin-gets-ground-in
-  text: As sin gets ground in the affections to delight in, it gets also upon the understanding to slight it.
+  text: As Sin gets ground in the Affections to delight in it, it gets also upon the Understanding to slight it.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Seventh Direction: Rise Mightily Against Its First Actings'
   anchor: chapter-11-h1
   topics: [sin, temptation]
   scripture: []
-  words: 19
+  words: 20
   status: candidate
   featured: false
   background: {solid: burgundy, dark: storm-04.jpg, light: light-17.jpg}
   added: '2026-11-22'
   tone: dark
 - id: owen-gods-peace-humbling-peace-melting
-  text: God’s peace is humbling peace, melting peace, as it was in the case of David; never such deep humiliation as when Nathan brought him the tidings of his pardon.
+  text: Gods Peace is humbling Peace, melting Peace, as it was in the case of David; Ps 51:1. Never such deep humiliation as when Nathan brought him the tidings of his Pardon.
   author: john-owen
   book: the-mortification-of-sin
   chapter: 'Ninth Direction: Speak No Peace Until God Speaks It'
   anchor: chapter-13-h1
   topics: [peace, repentance, mercy]
   scripture: ['2 Samuel 12:13']
-  words: 29
+  words: 31
   status: candidate
   featured: false
   background: {solid: navy, dark: sky-02.jpg, light: light-02.jpg}

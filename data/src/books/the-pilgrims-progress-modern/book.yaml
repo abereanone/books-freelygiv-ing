@@ -1,0 +1,42 @@
+- title: The Pilgrim's Progress (Modern English)
+  sortTitle: Pilgrim's Progress (Modern English)
+  hidden: true
+  credits:
+    - person: john-bunyan
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1678
+  addedDate: 2026-11-24
+  pages: 352
+  tags:
+    - classic
+  description: From this world to that which is to come; delivered under the similitude of a dream.
+  license: CC0
+  path: /static/books/the-pilgrims-progress-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-pilgrims-progress-modern/the-pilgrims-progress-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-pilgrims-progress-modern/the-pilgrims-progress-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-pilgrims-progress-modern/the-pilgrims-progress-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-pilgrims-progress-modern/print-ready.zip
+  set: the-pilgrims-progress
+  version: modern

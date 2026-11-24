@@ -1,0 +1,45 @@
+- title: Grace Abounding to the Chief of Sinners (Modern English)
+  sortTitle: Grace Abounding to the Chief of Sinners (Modern English)
+  hidden: true
+  credits:
+    - person: john-bunyan
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1666
+  addedDate: 2026-11-24
+  pages: 122
+  tags:
+    - classic
+  description: |
+    One of the most searching and honest spiritual autobiographies in the English language. John Bunyan recounts with piercing candor the story of his conversion — his years of wild youth, his years of agonizing doubt and temptation, and the slow, painful breaking of his soul by the grace of God. Written in Bedford jail, this book is not a polished memoir but a raw, numbered account of God's pursuit of a sinner. Bunyan's struggle with assurance, his terrors of conscience, his flashes of gospel comfort, and his final rest in Christ have brought strength to countless readers who have walked the same dark road.
+
+    Bunyan's enlarged text as CCEL gives it, with CCEL's slips and lost words corrected against the 1666 first edition and George Offor's 1855 edition.
+  license: CC0
+  path: /static/books/grace-abounding-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/grace-abounding-modern/grace-abounding-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/grace-abounding-modern/grace-abounding-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/grace-abounding-modern/grace-abounding-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/grace-abounding-modern/print-ready.zip
+  set: grace-abounding
+  version: modern

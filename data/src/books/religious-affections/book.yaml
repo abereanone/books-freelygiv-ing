@@ -1,0 +1,47 @@
+- title: Religious Affections
+  sortTitle: Religious Affections
+  hidden: true
+  credits:
+    - person: jonathan-edwards
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1746
+  addedDate: 2026-11-24
+  pages: 426
+  tags:
+    - classic
+  description: "How to tell true religion from its counterfeits: true religion lies much in holy affections, but strong feelings prove nothing by themselves. Twelve signs that are no signs, and twelve that mark grace truly, the chief of them Christian practice."
+  license: CC0
+  path: /static/books/religious-affections
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/religious-affections/religious-affections.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/religious-affections/religious-affections-whats-new.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/religious-affections/religious-affections.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/religious-affections/religious-affections.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/religious-affections/print-ready.zip
+  set: religious-affections
+  version: classic

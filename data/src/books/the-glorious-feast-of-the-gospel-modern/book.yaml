@@ -1,0 +1,52 @@
+- title: The Glorious Feast of the Gospel (Modern English)
+  sortTitle: Glorious Feast of the Gospel (Modern English)
+  hidden: true
+  credits:
+    - person: richard-sibbes
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1650
+  addedDate: 2026-11-24
+  pages: 162
+  tags:
+    - classic
+  description: |
+    Christ's gracious invitation and royal entertainment of believers. Wherein amongst other things these comfortable doctrines are handles:
+
+    1. The marriage feast between Christ and the Church.
+    2. The vaile of Ignorance and Unbelief removed.
+    3. Christ's conquest over death.
+    4. The wiping away of tears from the faces of God's people.
+    5. The taking away of their reproaches.
+    6. The precious promises of God, and their certain performance.
+    7. The Divine Authority of the Holy Scriptures.
+    8. The duty and comfort of waiting upon God.
+  license: CC0
+  path: /static/books/the-glorious-feast-of-the-gospel-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-glorious-feast-of-the-gospel-modern/the-glorious-feast-of-the-gospel-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-glorious-feast-of-the-gospel-modern/the-glorious-feast-of-the-gospel-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-glorious-feast-of-the-gospel-modern/the-glorious-feast-of-the-gospel-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-glorious-feast-of-the-gospel-modern/print-ready.zip
+  set: the-glorious-feast-of-the-gospel
+  version: modern

@@ -7,7 +7,7 @@
       prepared: true
   year: 1886
   addedDate: 2026-05-28
-  pages: 121
+  pages: 119
   tags:
     - classic
   description: |
@@ -48,3 +48,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/all-of-grace/print-ready.zip
+  set: all-of-grace
+  version: classic

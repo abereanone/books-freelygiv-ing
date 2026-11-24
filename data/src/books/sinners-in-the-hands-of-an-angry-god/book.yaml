@@ -49,3 +49,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/sinners-in-the-hands-of-an-angry-god/print-ready.zip
+  set: sinners-in-the-hands-of-an-angry-god
+  version: classic

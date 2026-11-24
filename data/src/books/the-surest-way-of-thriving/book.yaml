@@ -1,0 +1,47 @@
+- title: The Surest and Safest Way of Thriving
+  sortTitle: Surest and Safest Way of Thriving
+  hidden: true
+  credits:
+    - name: Thomas Gouge
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1673
+  addedDate: 2026-11-24
+  pages: 101
+  tags:
+    - classic
+  description: "Thomas Gouge on Christ's promise that a cup of cold water given in his name shall not lose its reward (Matthew 10:41–42): giving to the poor is no loss, but the surest way of thriving."
+  license: CC0
+  path: /static/books/the-surest-way-of-thriving
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/the-surest-way-of-thriving/the-surest-way-of-thriving.html
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/the-surest-way-of-thriving/the-surest-way-of-thriving-whats-new.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-surest-way-of-thriving/the-surest-way-of-thriving.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-surest-way-of-thriving/the-surest-way-of-thriving.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/the-surest-way-of-thriving/print-ready.zip
+  set: the-surest-way-of-thriving
+  version: classic

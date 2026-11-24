@@ -50,3 +50,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/grace-abounding/print-ready.zip
+  set: grace-abounding
+  version: classic

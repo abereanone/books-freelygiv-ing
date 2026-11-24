@@ -1,0 +1,47 @@
+- title: Precious Remedies Against Satan’s Devices (Modern English)
+  sortTitle: Precious Remedies Against Satan’s Devices (Modern English)
+  hidden: true
+  credits:
+    - person: thomas-brooks
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1652
+  addedDate: 2026-11-24
+  pages: 348
+  tags:
+    - classic
+  description: |
+    "Lest Satan should get an advantage of us: for we are not ignorant of his devices." Brooks takes Paul's words for his text and then does the work: he names the devices one by one and sets a remedy against each. Twelve devices to draw the soul into sin, eight to keep souls from holy duties, eight to keep souls doubting, five to destroy all ranks of men, and five more in the appendix to keep souls from Christ altogether — followed by ten helps against all of them together.
+
+    It is the most practical of the Puritan books on temptation, and the most quoted: "Christ is the greatest good, the choicest good, the chiefest good, the most suitable good, the most necessary good; he is a pure good, a real good, a total good, an eternal good, and a soul-satisfying good."
+
+    From the second edition of 1653, corrected and enlarged, lightly modernized. The Greek and Hebrew lost from the transcription have been restored from the 1652 and 1658 printings, and the text proofread twice against Grosart's edition of 1866.
+  license: CC0
+  path: /static/books/precious-remedies-against-satans-devices-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/precious-remedies-against-satans-devices-modern/precious-remedies-against-satans-devices-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/precious-remedies-against-satans-devices-modern/precious-remedies-against-satans-devices-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/precious-remedies-against-satans-devices-modern/precious-remedies-against-satans-devices-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/precious-remedies-against-satans-devices-modern/print-ready.zip
+  set: precious-remedies-against-satans-devices
+  version: modern

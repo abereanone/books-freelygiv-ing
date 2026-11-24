@@ -1,0 +1,49 @@
+- title: Of Domestical Duties (Modern English), Volume I
+  sortTitle: Of Domestical Duties (Modern English), Volume I
+  hidden: true
+  credits:
+    - person: william-gouge
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1622
+  addedDate: 2026-11-24
+  pages: 235
+  tags:
+    - classic
+  description: |
+    The first of four volumes of Gouge's Of Domesticall Duties (1622), the most used English book on family life for a century after it appeared.
+
+    This volume holds the Epistle Dedicatory and the first treatise: Gouge's exposition of Ephesians 5:21–6:4, the text the whole work is built on. He takes it clause by clause — mutual submission in the fear of God, the wife's place and the husband's, the headship of Christ over the church as the pattern for marriage, the love that purifies, the ancient law of one flesh, and then the duties children owe parents and parents owe children. The seven treatises that follow in Volumes II to IV are the application of this one.
+
+    Set from the 1622 first edition in modern spelling, with Gouge's own wording kept.
+  license: CC0
+  path: /static/books/domestical-duties-modern-volume-1
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  set: domestical-duties
+  volume: 1
+  volumeLabel: Vol. I
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/domestical-duties-modern-volume-1/domestical-duties-modern-volume-1.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-modern-volume-1/domestical-duties-modern-volume-1.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-modern-volume-1/domestical-duties-modern-volume-1.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/domestical-duties-modern-volume-1/print-ready.zip
+  version: modern

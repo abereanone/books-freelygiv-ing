@@ -1,0 +1,44 @@
+- title: Sinners in the Hands of an Angry God (Modern English)
+  sortTitle: Sinners in the Hands of an Angry God (Modern English)
+  hidden: true
+  credits:
+    - person: jonathan-edwards
+      role: author
+    - person: courtney-hicks
+      prepared: true
+  year: 1741
+  addedDate: 2026-11-24
+  pages: 38
+  tags:
+    - classic
+  description: |
+    "Their foot shall slide in due time." - Deuteronomy 32:35.
+    The sword of divine justice is every moment brandished over their heads, and it is nothing but the hand of arbitrary mercy, and God's mere will, that holds it back.
+  license: CC0
+  path: /static/books/sinners-in-the-hands-of-an-angry-god-modern
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/sinners-in-the-hands-of-an-angry-god-modern/sinners-in-the-hands-of-an-angry-god-modern.html
+    - type: eBook
+      label: eBook
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/sinners-in-the-hands-of-an-angry-god-modern/sinners-in-the-hands-of-an-angry-god-modern.epub
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/sinners-in-the-hands-of-an-angry-god-modern/sinners-in-the-hands-of-an-angry-god-modern.pdf
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/sinners-in-the-hands-of-an-angry-god-modern/print-ready.zip
+  set: sinners-in-the-hands-of-an-angry-god
+  version: modern

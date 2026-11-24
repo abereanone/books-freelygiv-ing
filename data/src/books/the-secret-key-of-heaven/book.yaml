@@ -7,7 +7,7 @@
       prepared: true
   year: 1665
   addedDate: 2026-08-31
-  pages: 301
+  pages: 293
   tags:
     - classic
   description: |
@@ -54,3 +54,5 @@
       sources:
         - name: Download
           url: https://files.books.freelygiv.ing/the-secret-key-of-heaven/print-ready.zip
+  set: the-secret-key-of-heaven
+  version: classic

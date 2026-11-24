@@ -463,14 +463,34 @@ async function main() {
     // Book sets (CLAUDE.md "Book sets"): the volumes of a work, and its modern and classic
     // wordings, which are separate books in site.json sharing a "set". Filled in only
     // where book.yaml has none, so the owner's values win.
-    const wording = book.wording;
+    // "edition" (with the shared "book" key) is how site.json marks wordings since 2026.11.22
+    const wording = book.wording ?? book.edition;
     if (wording && !["modern", "classic"].includes(wording))
       r.warnings.push(`"wording" is "${wording}"; use "modern" or "classic"`);
-    const setKey = book.set ?? (ed.volume ? String(book.book ?? "").split("/").pop() : null);
-    if (wording && !book.set) r.warnings.push('"wording" is given but no "set": give both wordings the same "set" so the site links them');
+    const bookKey = String(book.book ?? "").split("/").pop() || null;
+    const setKey = book.set ?? (ed.volume || wording ? bookKey : null);
+    if (wording && !setKey) r.warnings.push('"wording" is given but no "set": give both wordings the same "set" so the site links them');
     if (setKey && !b.has("set")) b.set("set", setKey);
     if (ed.volume && !b.has("volume")) { b.set("volume", ed.volume); b.set("volumeLabel", `Vol. ${roman(ed.volume)}`); }
     if (["modern", "classic"].includes(wording) && !b.has("version")) b.set("version", wording);
+
+    // A new wording of a book already on the site takes the year, description and tags
+    // the owner gave the other wording, where site.json has none and book.yaml still
+    // holds the placeholder. Same work, same blurb.
+    if (wording && book.book && (isNew || b.get("hidden") === true)) {
+      const sib = site.books.filter((o) => o.book === book.book && o !== book)
+        .flatMap((o) => o.editions ?? []).filter((e) => (e.volume ?? null) === (ed.volume ?? null))
+        .map((e) => join(BOOKS, e.slug, "book.yaml")).find((p) => existsSync(p));
+      const s = sib && YAML.parse(readFileSync(sib, "utf8"))?.[0];
+      if (s && !s.hidden) {
+        if (!book.year && b.get("year") == null && Number.isInteger(s.year)) b.set("year", s.year);
+        if (!book.description && b.get("description") === (book.description || book.summary) && s.description)
+          b.set("description", s.description);
+        const yTags = b.get("tags")?.toJSON?.() ?? [];
+        if (!(Array.isArray(book.tags) && book.tags.length) && yTags.length === 1 && yTags[0] === "classic" && s.tags?.length)
+          b.set("tags", doc.createNode(s.tags));
+      }
+    }
 
     // a book still hidden with a placeholder year/description/tags: Courtney
     // can supply them in site.json, so the report keeps asking until it's live
@@ -478,9 +498,9 @@ async function main() {
       const hasTags = Array.isArray(book.tags) && book.tags.length;
       const yTags = b.get("tags")?.toJSON?.() ?? [];
       r.missingMeta = [
-        !book.year && (isNew || b.get("year") == null) && "year",
-        !book.description && (isNew || b.get("description") === book.summary) && "description",
-        !hasTags && (isNew || (yTags.length === 1 && yTags[0] === "classic")) && "tags",
+        !book.year && b.get("year") == null && "year",
+        !book.description && b.get("description") === book.summary && "description",
+        !hasTags && yTags.length === 1 && yTags[0] === "classic" && "tags",
       ].filter(Boolean);
       r.noLulu = !ed.lulu;
     }
