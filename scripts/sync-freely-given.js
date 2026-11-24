@@ -25,8 +25,9 @@
  *     and Print Ready buttons, and a Book (Lulu) button where there is none
  *     (an existing one is the owner's and stays); the Courtney Hicks "prepared" credit.
  *     Title, description, tags, year, dates and any other buttons are left
- *     alone. A book new to the site gets a book.yaml with `hidden: true`, to
- *     fill in (year, description, author) before it goes live.
+ *     alone. A book new to the site goes live at once, unless it lacks a year or
+ *     description or has a CHECK warning: then its book.yaml gets `hidden: true`
+ *     until the owner fills it in (owner's decision 2026-11-24).
  *   - records what it synced in data/freely-given-sync.json
  *
  * Each edition is checked first (files present, valid, in SHA256SUMS; title and
@@ -269,7 +270,7 @@ function editorReport(tag, report, general = [], { publish = false } = {}) {
   else L.push("None.");
   if (meta.length) {
     L.push("", "## Optional: details that save the site owner work", "",
-      "New books arrive hidden until the site owner fills in a year, description and tags by hand.",
+      "A new book without a year or description arrives hidden until the site owner fills them in by hand.",
       "If `site.json` carries them on each book (`\"year\": 1658`, a reader-facing `\"description\"`",
       "of a sentence or two, not the edition summary, and `\"tags\": [\"puritan\"]`) the sync uses",
       "them and nobody has to do it. Missing for:", "",
@@ -504,6 +505,8 @@ async function main() {
       ].filter(Boolean);
       r.noLulu = !ed.lulu;
     }
+    // a clean new book goes live; one with gaps or warnings waits, hidden
+    if (isNew && !r.missingMeta.some((m) => m !== "tags") && !r.warnings.length) b.delete("hidden");
 
     const want = {
       htmlBook: reader && button("htmlBook", "Read Online", "Read", page(`${slug}.html`)),
@@ -550,7 +553,9 @@ async function main() {
       page: urlPerson ? `${SITE_URL}/books/${urlPerson}/${slug}/` : "",
       files: changedForReal, yamlChanged, others: others.map((m) => m.type), kept,
       line: isNew
-        ? `NEW (hidden${r.missingMeta.length ? `; still needs ${r.missingMeta.join(", ")}` : ""}; check the author page, then remove hidden)`
+        ? b.get("hidden") === true
+          ? `NEW (hidden${r.missingMeta.length ? `; still needs ${r.missingMeta.join(", ")}` : ""}; check the author page, then remove hidden)`
+          : "NEW (live)"
         : changedForReal.length || yamlChanged ? "updated" : "unchanged",
     });
   }

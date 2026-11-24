@@ -1,0 +1,115 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: edwards-true-religion-in-great-part
+  text: True religion, in great Part, consists in holy affections.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: The Text and the Doctrine
+  anchor: part-1-01-the-text-h1
+  topics: [holiness, heart]
+  scripture: []
+  words: 9
+  status: candidate
+  featured: false
+  background: {dark: forest-04.jpg, light: light-18.jpg, solid: burgundy}
+  added: '2026-11-24'
+  tone: solid
+- id: edwards-he-that-has-doctrinal-knowledge
+  text: he that has doctrinal knowledge and speculation only, without affection, never is engaged in the business of religion.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: True Religion Lies Much in the Affections
+  anchor: part-1-03-religion-in-the-affections-h1
+  topics: [heart, knowing-god]
+  scripture: []
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: forest-03.jpg, light: light-20.jpg, solid: navy}
+  added: '2026-11-24'
+  tone: dark
+- id: edwards-as-there-no-true-religion
+  text: As there is no true religion, where there is nothing else but affection; so there is no true religion where there is no religious affection.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: Inferences
+  anchor: part-1-04-inferences-h1
+  topics: [heart, wisdom]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-06.jpg, light: light-21.jpg, solid: violet}
+  added: '2026-11-24'
+  tone: solid
+- id: edwards-holy-affections-are-not-heat
+  text: Holy affections are not heat without light; but evermore arise from some information of the understanding, some spiritual instruction that the mind receives, some light or actual knowledge.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: The Mind Enlightened
+  anchor: part-3-sign-04-h1
+  topics: [heart, knowing-god]
+  scripture: []
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: forest-05.jpg, light: light-17.jpg, solid: teal}
+  added: '2026-11-24'
+  tone: dark
+- id: edwards-false-affections-if-they-are
+  text: False affections, if they are equally strong, are much more forward to declare themselves, than true. Because ‘tis the nature of false religion, to affect show and observation; as it was with the Pharisees.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: Fluent Talk of Religion
+  anchor: part-2-sign-03-h1
+  topics: [hypocrisy]
+  scripture: []
+  words: 34
+  status: candidate
+  featured: false
+  background: {dark: ruins-01.jpg, light: light-10.jpg, solid: rust}
+  added: '2026-11-24'
+  tone: solid
+- id: edwards-deceitfulness-heart-man-appears-in
+  text: The deceitfulness of the heart of man appears in no one thing so much, as this of spiritual pride and self-righteousness.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: Evangelical Humiliation
+  anchor: part-3-sign-06-h1
+  topics: [humility, heart]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: road-02.jpg, light: light-26.jpg, solid: evergreen}
+  added: '2026-11-24'
+  tone: dark
+- id: edwards-christian-practice-sign-signs-in
+  text: Christian practice is the sign of signs, in this sense that it is the great evidence, which confirms and crowns all other signs of godliness.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: Christian Practice
+  anchor: part-3-sign-12-h1
+  topics: [holiness, self-examination]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-07.jpg, light: light-08.jpg, solid: burgundy}
+  added: '2026-11-24'
+  tone: solid
+- id: edwards-there-holy-breathing-panting-after
+  text: There is a holy breathing and panting after the Spirit of God, to increase holiness, as natural to a holy nature, as breathing is to a living body.
+  author: jonathan-edwards
+  book: religious-affections
+  chapter: Longing After Spiritual Attainments
+  anchor: part-3-sign-11-h1
+  topics: [holiness, holy-spirit]
+  scripture: []
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: forest-08.jpg, light: light-01.jpg, solid: navy}
+  added: '2026-11-24'
+  tone: dark

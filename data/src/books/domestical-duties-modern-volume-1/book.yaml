@@ -1,6 +1,5 @@
 - title: Of Domestical Duties (Modern English), Volume I
   sortTitle: Of Domestical Duties (Modern English), Volume I
-  hidden: true
   credits:
     - person: william-gouge
       role: author
@@ -31,6 +30,11 @@
       sources:
         - name: Read
           url: /static/books/domestical-duties-modern-volume-1/domestical-duties-modern-volume-1.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/william-gouge/domestical-duties-volume-1-modernized/paperback/product-p68m2v8.html
     - type: eBook
       label: eBook
       sources:

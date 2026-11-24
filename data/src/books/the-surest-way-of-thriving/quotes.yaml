@@ -1,0 +1,101 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: tgouge-compassionate-heart-helping-hand-will
+  text: A compassionate heart, and an helping hand will gather by expending; such giving is getting, such bounty is the most compendious way to plenty.
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: Proofs from Scripture
+  anchor: ch04-proofs-from-scripture-h1
+  topics: [mercy, providence]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: sky-03.jpg, light: light-03.jpg, solid: violet}
+  added: '2026-11-24'
+  tone: light
+- id: tgouge-not-he-that-possesseth-wealth
+  text: 'Not he that possesseth wealth, and keeps it by him, but he that distributeth it, is rich: neither is it the having, but the laying out of riches, that makes men rich.'
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: The Testimonies of Divines
+  anchor: ch05-testimonies-h1
+  topics: [world, mercy]
+  scripture: []
+  words: 32
+  status: candidate
+  featured: false
+  background: {dark: road-03.jpg, light: light-22.jpg, solid: teal}
+  added: '2026-11-24'
+  tone: solid
+- id: tgouge-husbandman-waiteth-for-his-harvest
+  text: The husbandman waiteth for his harvest; wait thou on the Lord, and doubt not but an harvest will come, that will pay thee both for thy sowing, and thy waiting.
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: The Reasons
+  anchor: ch08-the-reasons-h1
+  topics: [patience, hope]
+  scripture: []
+  words: 30
+  status: candidate
+  featured: false
+  background: {dark: winter-01.jpg, light: light-04.jpg, solid: rust}
+  added: '2026-11-24'
+  tone: dark
+- id: tgouge-beware-cry-poor-against-you
+  text: 'Beware of the cry of the poor against you: if thou wilt not hear their cries unto thee, God will hear their cries against thee.'
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: A Use of Reproof
+  anchor: ch09-reproof-h1
+  topics: [mercy, prayer]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: sky-10.jpg, light: light-11.jpg, solid: evergreen}
+  added: '2026-11-24'
+  tone: light
+- id: tgouge-right-spring-mercy-to-our
+  text: The right spring of mercy to our neighbor, is the sense of God’s mercy towards us.
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: Directions for Giving
+  anchor: ch11-directions-h1
+  topics: [mercy, love]
+  scripture: []
+  words: 16
+  status: candidate
+  featured: false
+  background: {dark: sky-07.jpg, light: light-23.jpg, solid: burgundy}
+  added: '2026-11-24'
+  tone: light
+- id: tgouge-as-worms-breed-in-fairest
+  text: As worms breed in the fairest fruit; so pride, and vain-glory are apt to creep-up out of the best duties.
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: Directions for Giving
+  anchor: ch11-directions-h1
+  topics: [humility]
+  scripture: []
+  words: 20
+  status: candidate
+  featured: false
+  background: {dark: road-05.jpg, light: light-24.jpg, solid: navy}
+  added: '2026-11-24'
+  tone: solid
+- id: tgouge-god-merciful-god-his-mercy
+  text: God is a merciful God, and his mercy is his glory; and this glory of God shineth forth in his merciful servants.
+  author: Thomas Gouge
+  book: the-surest-way-of-thriving
+  chapter: The Application
+  anchor: ch14-application-h1
+  topics: [mercy]
+  scripture: []
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: sky-13.jpg, light: light-13.jpg, solid: violet}
+  added: '2026-11-24'
+  tone: light

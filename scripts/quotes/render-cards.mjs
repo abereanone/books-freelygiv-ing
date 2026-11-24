@@ -26,7 +26,8 @@ const require = createRequire(import.meta.url);
 const puppeteer = require("C:/code/keeping-the-heart/node_modules/puppeteer-core");
 const u = (p) => pathToFileURL(p).href;
 const readY = (f) => YAML.parse(readFileSync(f, "utf8"));
-const person = (slug) => { const p = readY(join(ROOT, "data/src", slug, "person.yaml"))[0]; return `${p.firstName} ${p.lastName}`.trim(); };
+// a name-only author (no person page, e.g. "Thomas Gouge") is its own name
+const person = (slug) => { const f = join(ROOT, "data/src", slug, "person.yaml"); if (!existsSync(f)) return slug; const p = readY(f)[0]; return `${p.firstName} ${p.lastName}`.trim(); };
 const templateSig = createHash("sha1").update(readFileSync(join(ROOT, "scripts/quotes/card.mjs"))).digest("hex").slice(0, 8);
 
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};

@@ -1,6 +1,5 @@
 - title: Of Domestical Duties (Modern English), Volume IV
   sortTitle: Of Domestical Duties (Modern English), Volume IV
-  hidden: true
   credits:
     - person: william-gouge
       role: author
@@ -33,6 +32,11 @@
       sources:
         - name: Read
           url: /static/books/domestical-duties-modern-volume-4/domestical-duties-modern-volume-4.html
+    - type: printBook
+      label: Book
+      sources:
+        - name: Lulu
+          url: https://www.lulu.com/shop/william-gouge/domestical-duties-volume-4-modernized/paperback/product-yv6qmm9.html
     - type: eBook
       label: eBook
       sources:

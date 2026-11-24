@@ -8,6 +8,7 @@ cut from the paragraph between those two fragments, so it is always word-for-wor
 Quotes already in quotes.yaml (same id) keep their status and any edits; new ones are added
 as `candidate`. Rejected quotes stay in the file so they are never proposed again.
 """
+import re
 import sys
 from datetime import date
 from common import BOOKS, WORK, load_yaml, dump_yaml, book, first_author, paragraphs, slugify
@@ -21,7 +22,7 @@ HEADER = """# Quotes from this book, for quote cards and /quotes/. See docs/QUOT
 def main(slug):
     b = book(slug)
     author = first_author(b)
-    last = author.split("-")[-1]
+    last = re.sub(r"[^a-z]+", "-", author.lower()).strip("-").split("-")[-1]  # "Thomas Gouge" (name-only) -> gouge
     paras = paragraphs(slug)
     picks = load_yaml(WORK / slug / "picks.yaml", [])
     out_file = BOOKS / slug / "quotes.yaml"
