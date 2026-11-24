@@ -194,10 +194,14 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
 
   // The card's picture, fetched once per look. Fetching ahead matters: phones only open the
   // share menu straight from a tap, and a slow download in between can cost that permission.
+  // `ready` holds the finished ones: sharing must start without awaiting anything, or Android
+  // drops the tap and the menu needs a second tap (2026-11-24).
   const blobs: Record<string, Promise<Blob>> = {};
+  const ready: Record<string, Blob> = {};
   function blobFor(t: string) {
     return (blobs[t] ||= fetch(new URL(srcFor(t), location.href).href, { mode: 'cors' })
       .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.blob(); })
+      .then((b) => (ready[t] = b))
       .catch((e) => { delete blobs[t]; throw e; }));
   }
   const isPhone = matchMedia('(pointer: coarse)').matches;
@@ -210,8 +214,14 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
     const t = tone;
     try {
       if (isPhone && navigator.canShare) {
-        const blob = await blobFor(t);
-        const file = new File([blob], `${art.dataset.id}-${t}.jpg`, { type: 'image/jpeg' });
+        if (!ready[t]) {
+          // Still downloading: waiting used up this tap, so ask for one more once it's here.
+          say('Getting the picture…');
+          await blobFor(t);
+          say('Ready. Tap Share image again.');
+          return;
+        }
+        const file = new File([ready[t]], `${art.dataset.id}-${t}.jpg`, { type: 'image/jpeg' });
         const withLink = { files: [file], text: `${art.dataset.caption} ${link()}` };
         if (navigator.canShare(withLink)) { await navigator.share(withLink); return; }
         if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file] }); return; }
