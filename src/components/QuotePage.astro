@@ -205,6 +205,12 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
       .catch((e) => { delete blobs[t]; throw e; }));
   }
   const isPhone = matchMedia('(pointer: coarse)').matches;
+  // Can this browser share a picture file at all? DuckDuckGo on Android has no canShare and its
+  // share() takes links only (files fail with "Invalid share data"; tested 2026-11-24).
+  const canSharePictures = (() => {
+    try { return !!navigator.canShare?.({ files: [new File(['x'], 'x.jpg', { type: 'image/jpeg' })] }); }
+    catch { return false; }
+  })();
 
   // Share image. Phones: the share menu, with the picture plus one line linking to the free
   // book (Signal, Messages, WhatsApp keep both; an app that takes only pictures drops the line).
@@ -213,7 +219,7 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
   document.getElementById('qpShare')!.addEventListener('click', async () => {
     const t = tone;
     try {
-      if (isPhone && navigator.canShare) {
+      if (isPhone && canSharePictures) {
         if (!ready[t]) {
           // Still downloading: waiting used up this tap, so ask for one more once it's here.
           say('Getting the picture…');
@@ -224,7 +230,20 @@ const moreBook = pick((x) => x.book === q.book, 4, skip);
         const file = new File([ready[t]], `${art.dataset.id}-${t}.jpg`, { type: 'image/jpeg' });
         const withLink = { files: [file], text: `${art.dataset.caption} ${link()}` };
         if (navigator.canShare(withLink)) { await navigator.share(withLink); return; }
-        if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file] }); return; }
+        await navigator.share({ files: [file] }); return;
+      }
+      if (isPhone) {
+        // No picture sharing in this browser: share the link (it previews as this card), checked at
+        // tap time because DuckDuckGo adds share() after the page loads; a clipboard copy is no use
+        // on a phone. With no share menu at all, save the picture.
+        if (navigator.share) {
+          await navigator.share({ title: art.dataset.caption, url: link() });
+          say('This browser can’t share pictures, so it shared the link, which shows this card.');
+          return;
+        }
+        saveBlob(await blobFor(t));
+        say('This browser can’t share pictures, so the picture is saved to your downloads.');
+        return;
       }
       if (navigator.clipboard?.write && typeof ClipboardItem !== 'undefined') {
         // Clipboards take PNG, not JPEG; the promise keeps the copy tied to this tap.
