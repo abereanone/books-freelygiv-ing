@@ -39,7 +39,7 @@ def main(slug):
             problems.append(f"para {para}: could not find {start!r} ... {end!r}")
             continue
         text = t[i:j + len(end)]
-        qid = f"{who.split('-')[-1]}-{slugify(text)}"
+        qid = f"{re.sub(r'[^a-z]+', '-', who.lower()).strip('-').split('-')[-1]}-{slugify(text)}"
         if qid in existing:
             continue
         existing[qid] = {

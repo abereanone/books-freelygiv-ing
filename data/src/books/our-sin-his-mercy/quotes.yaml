@@ -308,3 +308,17 @@
   background: {dark: storm-03.jpg, light: light-04.jpg, solid: burgundy}
   added: '2026-11-23'
   tone: solid
+- id: conkle-true-gratitude-begins-not-in
+  text: True gratitude begins not in abundance, but in awe; not in what fills our tables, but in who sits upon the throne.
+  author: joe-conkle
+  book: our-sin-his-mercy
+  chapter: Confession of Sin
+  anchor: _confession_of_sin_53
+  topics: [thankfulness, worship]
+  scripture: []
+  words: 22
+  status: candidate
+  featured: false
+  background: {dark: sky-04.jpg, light: light-02.jpg, solid: teal}
+  added: '2026-11-24'
+  tone: light
