@@ -357,10 +357,22 @@ export function personName(person) {
 
 export function linkify(text) {
   if (!text) return text;
+  // [name](/people/slug/) links a phrase (a site path stays in the tab); a bare URL links itself.
+  // A full stop or comma after a bare URL stays outside the link.
   return text.replace(
-    /(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g, // a full stop or comma after a URL stays outside the link
-    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>',
+    /\[([^\]]+)\]\((\/[^\s)]*|https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g,
+    (m, label, href, url) =>
+      url
+        ? `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`
+        : href.startsWith("/")
+          ? `<a href="${href}">${label}</a>`
+          : `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`,
   );
+}
+
+/** A description as plain text, [name](link) reduced to the name (meta tags). */
+export function plainText(text) {
+  return text ? text.replace(/\[([^\]]+)\]\([^)\s]*\)/g, "$1") : text;
 }
 
 export function newlineToBr(text) {

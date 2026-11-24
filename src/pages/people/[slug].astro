@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import BookItem from '../../components/BookItem.astro';
 import ShareButton from '../../components/ShareButton.astro';
-import { ROLES, getPeople, getBooks, bookCredits, linkify, newlineToBr, personName, personPhotos, personAvatar, personRoleLabel } from '../../lib/data.js';
+import { ROLES, getPeople, getBooks, bookCredits, linkify, newlineToBr, plainText, personName, personPhotos, personAvatar, personRoleLabel } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return getPeople().map(person => ({ params: { slug: person.slug }, props: { person } }));
@@ -50,7 +50,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const ogImage = `${siteUrl}/static/og/person-${person.slug}.jpg`;
 ---
 
-<Base title={fullName} ogTitle={fullName} ogDescription={person.description} ogImage={ogImage} ogImageAlt={fullName} ogType="profile">
+<Base title={fullName} ogTitle={fullName} ogDescription={plainText(person.description)} ogImage={ogImage} ogImageAlt={fullName} ogType="profile">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>

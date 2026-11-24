@@ -1,0 +1,21 @@
+- firstName: Thomas
+  lastName: Gouge
+  slug: thomas-gouge
+  photo: "thomas-gouge.jpg"  # F. H. van Hove engraving, 1681 (National Portrait Gallery, via Wikimedia Commons, public domain)
+  photoCrop: "46% 34% 70%"  # head centred, framed like his father's
+  description: >
+    Thomas Gouge (1605–1681) was an English Puritan minister, the eldest son of [William Gouge](/people/william-gouge/)
+    of Blackfriars. Born at Bow in Middlesex, he was schooled at Eton and went up to King's
+    College, Cambridge, where he became a fellow.
+
+    In 1638 he became vicar of St Sepulchre's in London and served there for twenty-four
+    years, until the Act of Uniformity put him out in 1662. He was known for his charity: in
+    London he set the poor of his parish to work spinning flax and hemp, paying them and
+    selling what they made, and in his old age he travelled through Wales year after year,
+    setting up schools and having the Bible and good books printed in Welsh and given away.
+
+    The Surest and Safest Way of Thriving (1673) is his case for that kind of giving. He also
+    wrote The Young Man's Guide and Christian Directions, and saw his father's commentary on
+    Hebrews through the press. He died in London in 1681, and John Tillotson preached his
+    funeral sermon.
+  donateUrl: ""
