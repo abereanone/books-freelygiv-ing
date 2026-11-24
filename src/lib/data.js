@@ -252,7 +252,7 @@ export const LANGUAGES = {
  */
 export const VERSIONS = {
   classic: { name: "Classic" },
-  modern: { name: "Modern" },
+  modern: { name: "Modernized" },
 };
 
 const SET_AXES = [
