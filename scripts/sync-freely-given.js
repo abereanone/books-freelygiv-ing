@@ -282,15 +282,8 @@ function editorReport(tag, report, general = [], { publish = false } = {}) {
     "and `-part-2`, now retired and redirected) and made them visible on 2026-11-26. Still open:", "",
     "1. What did you change from the CCEL text, beyond restoring it to the 1845 printing? A short list",
     "   (kinds of change, roughly how many) is enough.",
-    "2. Your note says \"Calvin's Latin (1559) and French (1560) come as parallel pages beside the",
-    "   English (Latin & French link)\". No Latin or French pages or links are in this release. Were",
-    "   they left out on purpose? The site carries English only (see below), so please keep them out.",
-    "3. What changed between v1 and v1.1?",
-    "4. Please add `year` and a reader-facing `description` for the set in `site.json`.");
-  L.push("", "## English only (site owner, 2026-11-26)", "",
-    "This site carries English editions only. Please leave Latin, French and other-language texts,",
-    "parallel pages and links out of what you release for it; ask the site owner first about any",
-    "edition in another language.");
+    "2. What changed between v1 and v1.1?",
+    "3. Please add `year` and a reader-facing `description` for the set in `site.json`.");
   L.push("", "## What the sync needs, per edition", "",
     "`slug`, `pages`, and `files` with `pdf`, `cover` (the Lulu cover PDF) and `front` (the front cover",
     "PNG). `epub` and `reader` (Read Online) are optional: an edition without them (a combined paperback,",
