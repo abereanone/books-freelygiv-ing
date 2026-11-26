@@ -70,6 +70,11 @@ None.
 
 None.
 
+## Request from the site owner: Calvin's Institutes (2026-11-26)
+
+Please add `year` and a reader-facing `description` for the Institutes volumes in `site.json`,
+as for the other books, so future new books arrive with them.
+
 ## What the sync needs, per edition
 
 `slug`, `pages`, and `files` with `pdf`, `cover` (the Lulu cover PDF) and `front` (the front cover

@@ -276,6 +276,9 @@ function editorReport(tag, report, general = [], { publish = false } = {}) {
       "them and nobody has to do it. Missing for:", "",
       ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}${r.noLulu ? "; lulu (only if a print edition exists)" : ""}`));
   }
+  L.push("", "## Request from the site owner: Calvin's Institutes (2026-11-26)", "",
+    "Please add `year` and a reader-facing `description` for the Institutes volumes in `site.json`,",
+    "as for the other books, so future new books arrive with them.");
   L.push("", "## What the sync needs, per edition", "",
     "`slug`, `pages`, and `files` with `pdf`, `cover` (the Lulu cover PDF) and `front` (the front cover",
     "PNG). `epub` and `reader` (Read Online) are optional: an edition without them (a combined paperback,",
