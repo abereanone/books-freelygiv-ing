@@ -1,0 +1,31 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: calvin-duty-theologian-however-not-to
+  text: The duty of a Theologian, however, is not to tickle the ear, but confirm the conscience, by teaching what is true, certain, and useful.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-1
+  chapter: ''
+  anchor: ''
+  topics: [scripture]
+  scripture: ['2 Timothy 4:3']
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: sky-01.jpg, light: light-01.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: dark
+- id: calvin-conscience-which-distinguishing-between-good
+  text: Conscience, which, distinguishing, between good and evil, responds to the judgment of God, is an undoubted sign of an immortal spirit.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-1
+  chapter: ''
+  anchor: ''
+  topics: [conscience]
+  scripture: ['Romans 2:15']
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: road-02.jpg, light: light-10.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: solid

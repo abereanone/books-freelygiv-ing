@@ -1,0 +1,73 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: calvin-when-temptation-suggested-that-god
+  text: When the temptation suggested is, that God is an enemy because he afflicts, faith replies, that while he afflicts he is merciful, his chastening proceeding more from love than anger.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-3
+  chapter: ''
+  anchor: ''
+  topics: [affliction, faith]
+  scripture: ['Hebrews 12:6']
+  words: 30
+  status: candidate
+  featured: false
+  background: {dark: storm-07.jpg, light: light-24.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: solid
+- id: calvin-faith-foundation-on-which-hope
+  text: Faith is the foundation on which hope rests; hope nourishes and sustains faith.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-3
+  chapter: ''
+  anchor: ''
+  topics: [faith, hope]
+  scripture: ['Hebrews 11:1']
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: sky-11.jpg, light: light-25.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: light
+- id: calvin-our-doctrine-was-that-soul
+  text: Our doctrine was, that the soul looked not to its own compunction or its own tears, but fixed both eyes on the mercy of God alone.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-3
+  chapter: ''
+  anchor: ''
+  topics: [repentance, mercy]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: winter-02.jpg, light: light-18.jpg, solid: evergreen}
+  added: '2026-11-23'
+  tone: dark
+- id: calvin-god-having-promised-that-he
+  text: God having promised that he will be with believers in tribulation, they feel the truth of the promise; while supported by his hand, they endure patiently.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-3
+  chapter: ''
+  anchor: ''
+  topics: [affliction, patience]
+  scripture: ['Isaiah 43:2']
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: storm-09.jpg, light: light-11.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid
+- id: calvin-god-by-creating-so-many
+  text: God, by creating so many mercies, consulted not only for our necessities, but also for our comfort and delight.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-3
+  chapter: ''
+  anchor: ''
+  topics: [mercy, contentment, thankfulness]
+  scripture: ['1 Timothy 6:17']
+  words: 19
+  status: candidate
+  featured: false
+  background: {dark: sky-04.jpg, light: light-04.jpg, solid: navy}
+  added: '2026-11-23'
+  tone: light

@@ -1,0 +1,17 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: calvin-assuredly-holy-spirit-still-present
+  text: Assuredly the Holy Spirit is still present with the people of God; without his guidance and direction the Church of God cannot subsist.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-6
+  chapter: ''
+  anchor: ''
+  topics: [holy-spirit, church]
+  scripture: ['John 14:16']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: sky-07.jpg, light: light-16.jpg, solid: burgundy}
+  added: '2026-11-23'
+  tone: solid

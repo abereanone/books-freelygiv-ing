@@ -10,3 +10,8 @@
 /authors/:slug        /people/:slug/  301
 /contributors/:slug/  /people/:slug/  301
 /contributors/:slug   /people/:slug/  301
+# Calvin's Institutes: the two-part Beveridge PDFs were replaced by Courtney's six volumes (2026-11-26).
+/books/john-calvin/institutes-of-the-christian-religion-part-1/  /books/john-calvin/institutes-of-the-christian-religion-volume-1/  301
+/books/john-calvin/institutes-of-the-christian-religion-part-1   /books/john-calvin/institutes-of-the-christian-religion-volume-1/  301
+/books/john-calvin/institutes-of-the-christian-religion-part-2/  /books/john-calvin/institutes-of-the-christian-religion-volume-3/  301
+/books/john-calvin/institutes-of-the-christian-religion-part-2   /books/john-calvin/institutes-of-the-christian-religion-volume-3/  301

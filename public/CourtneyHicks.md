@@ -8,7 +8,7 @@ one, and the next sync picks it up.
 
 - Last sync: 2026-11-26
 - Release: 2026.11.24.3
-- Editions in the release: 47; on the site: 41; hidden: 6; not imported or not updated: 0
+- Editions in the release: 47; on the site: 47; hidden: 0; not imported or not updated: 0
 
 ## Editions
 
@@ -22,12 +22,12 @@ one, and the next sync picks it up.
 | grace-abounding-modern | v2 | on the site | https://books.freely.giving/books/john-bunyan/grace-abounding-modern/ |
 | the-pilgrims-progress | v16 | on the site | https://books.freely.giving/books/john-bunyan/the-pilgrims-progress/ |
 | the-pilgrims-progress-modern | v1 | on the site | https://books.freely.giving/books/john-bunyan/the-pilgrims-progress-modern/ |
-| institutes-of-the-christian-religion-volume-1 | v1.1 | imported, hidden until the site owner finishes it |  |
-| institutes-of-the-christian-religion-volume-2 | v1.1 | imported, hidden until the site owner finishes it |  |
-| institutes-of-the-christian-religion-volume-3 | v1.1 | imported, hidden until the site owner finishes it |  |
-| institutes-of-the-christian-religion-volume-4 | v1.1 | imported, hidden until the site owner finishes it |  |
-| institutes-of-the-christian-religion-volume-5 | v1.1 | imported, hidden until the site owner finishes it |  |
-| institutes-of-the-christian-religion-volume-6 | v1.1 | imported, hidden until the site owner finishes it |  |
+| institutes-of-the-christian-religion-volume-1 | v1.1 | on the site | https://books.freely.giving/books/john-calvin/institutes-of-the-christian-religion-volume-1/ |
+| institutes-of-the-christian-religion-volume-2 | v1.1 | on the site | https://books.freely.giving/books/john-calvin/institutes-of-the-christian-religion-volume-2/ |
+| institutes-of-the-christian-religion-volume-3 | v1.1 | on the site | https://books.freely.giving/books/john-calvin/institutes-of-the-christian-religion-volume-3/ |
+| institutes-of-the-christian-religion-volume-4 | v1.1 | on the site | https://books.freely.giving/books/john-calvin/institutes-of-the-christian-religion-volume-4/ |
+| institutes-of-the-christian-religion-volume-5 | v1.1 | on the site | https://books.freely.giving/books/john-calvin/institutes-of-the-christian-religion-volume-5/ |
+| institutes-of-the-christian-religion-volume-6 | v1.1 | on the site | https://books.freely.giving/books/john-calvin/institutes-of-the-christian-religion-volume-6/ |
 | indwelling-sin | v3 | on the site | https://books.freely.giving/books/john-owen/indwelling-sin/ |
 | indwelling-sin-modern | v1 | on the site | https://books.freely.giving/books/john-owen/indwelling-sin-modern/ |
 | of-temptation | v3 | on the site | https://books.freely.giving/books/john-owen/of-temptation/ |
@@ -70,35 +70,19 @@ None.
 
 None.
 
-## Optional: details that save the site owner work
-
-Every new book arrives hidden until the site owner approves it; one without a year or description also waits for them to be filled in by hand.
-If `site.json` carries them on each book (`"year": 1658`, a reader-facing `"description"`
-of a sentence or two, not the edition summary, and `"tags": ["puritan"]`) the sync uses
-them and nobody has to do it. Missing for:
-
-- institutes-of-the-christian-religion-volume-1: year, description; lulu (only if a print edition exists)
-- institutes-of-the-christian-religion-volume-2: year, description; lulu (only if a print edition exists)
-- institutes-of-the-christian-religion-volume-3: year, description; lulu (only if a print edition exists)
-- institutes-of-the-christian-religion-volume-4: year, description; lulu (only if a print edition exists)
-- institutes-of-the-christian-religion-volume-5: year, description; lulu (only if a print edition exists)
-- institutes-of-the-christian-religion-volume-6: year, description; lulu (only if a print edition exists)
-
 ## Question from the site owner: Calvin's Institutes (2026-11-26)
 
 Release 2026.11.24.3 brought `institutes-of-the-christian-religion-volume-1` to `-volume-6` (v1.1).
-They are on the site but hidden until these are answered:
+The site owner chose them to replace the old two-part edition (`institutes-of-the-christian-religion-part-1`
+and `-part-2`, now retired and redirected) and made them visible on 2026-11-26. Still open:
 
-1. The site already has the Institutes as two books, `institutes-of-the-christian-religion-part-1`
-   and `-part-2` (Beveridge translation). Is your six-volume edition meant to replace those, or to
-   sit beside them? If it replaces them, say so in the editor's note and the site will retire them.
-2. What did you change from the CCEL text, beyond restoring it to the 1845 printing? A short list
+1. What did you change from the CCEL text, beyond restoring it to the 1845 printing? A short list
    (kinds of change, roughly how many) is enough.
-3. Your note says "Calvin's Latin (1559) and French (1560) come as parallel pages beside the
+2. Your note says "Calvin's Latin (1559) and French (1560) come as parallel pages beside the
    English (Latin & French link)". No Latin or French pages or links are in this release. Were
    they left out on purpose? The site carries English only (see below), so please keep them out.
-4. What changed between v1 and v1.1?
-5. Please add `year` and a reader-facing `description` for the set in `site.json`.
+3. What changed between v1 and v1.1?
+4. Please add `year` and a reader-facing `description` for the set in `site.json`.
 
 ## English only (site owner, 2026-11-26)
 

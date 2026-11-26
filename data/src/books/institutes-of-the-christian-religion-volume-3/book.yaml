@@ -1,17 +1,16 @@
 - title: Institutes of the Christian Religion, Volume III
   sortTitle: Institutes of the Christian Religion, Volume III
-  hidden: true
   credits:
     - person: john-calvin
       role: author
     - person: courtney-hicks
       prepared: true
-  year: null
+  year: 1559
   addedDate: 2026-11-26
   pages: 212
   tags:
     - classic
-  description: "Calvin's Institutes of the Christian Religion in Henry Beveridge's translation (Calvin Translation Society, Edinburgh, 1845), in six volumes: the CCEL text checked word for word against the 1845 printing and restored to it where CCEL departs."
+  description: "Volume III of John Calvin's Institutes of the Christian Religion in Henry Beveridge's 1845 translation. Book Third: The Mode of Obtaining the Grace of Christ, the benefits it confers, and the effects resulting from it."
   license: CC0
   path: /static/books/institutes-of-the-christian-religion-volume-3
   cover: cover.jpg

@@ -1,0 +1,45 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: calvin-peace-conscience-cannot-be-obtained
+  text: Peace of conscience cannot be obtained in any other way than by gratuitous justification.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-4
+  chapter: ''
+  anchor: ''
+  topics: [peace, conscience]
+  scripture: ['Romans 5:1']
+  words: 14
+  status: candidate
+  featured: false
+  background: {dark: sky-09.jpg, light: light-12.jpg, solid: violet}
+  added: '2026-11-23'
+  tone: light
+- id: calvin-in-short-peace-must-be
+  text: In short, peace must be sought nowhere but in the agonies of Christ our Redeemer.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-4
+  chapter: ''
+  anchor: ''
+  topics: [peace, cross]
+  scripture: ['Isaiah 53:5']
+  words: 15
+  status: candidate
+  featured: false
+  background: {dark: sky-01.jpg, light: light-14.jpg, solid: teal}
+  added: '2026-11-23'
+  tone: light
+- id: calvin-our-justification-depends-entirely-on
+  text: 'Our justification depends entirely on the mercy of God and the merits of Christ: when faith apprehends these, it is said to justify.'
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-4
+  chapter: ''
+  anchor: ''
+  topics: [faith, grace]
+  scripture: ['Romans 3:24']
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: sky-08.jpg, light: light-21.jpg, solid: rust}
+  added: '2026-11-23'
+  tone: light
