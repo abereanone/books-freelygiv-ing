@@ -84,6 +84,22 @@ them and nobody has to do it. Missing for:
 - institutes-of-the-christian-religion-volume-5: year, description; lulu (only if a print edition exists)
 - institutes-of-the-christian-religion-volume-6: year, description; lulu (only if a print edition exists)
 
+## Question from the site owner: Calvin's Institutes (2026-11-26)
+
+Release 2026.11.24.3 brought `institutes-of-the-christian-religion-volume-1` to `-volume-6` (v1.1).
+They are on the site but hidden until these are answered:
+
+1. The site already has the Institutes as two books, `institutes-of-the-christian-religion-part-1`
+   and `-part-2` (Beveridge translation). Is your six-volume edition meant to replace those, or to
+   sit beside them? If it replaces them, say so in the editor's note and the site will retire them.
+2. What did you change from the CCEL text, beyond restoring it to the 1845 printing? A short list
+   (kinds of change, roughly how many) is enough.
+3. Your note says "Calvin's Latin (1559) and French (1560) come as parallel pages beside the
+   English (Latin & French link)". No Latin or French pages or links are in this release. Were
+   they left out on purpose? The site carries English only (see below), so please keep them out.
+4. What changed between v1 and v1.1?
+5. Please add `year` and a reader-facing `description` for the set in `site.json`.
+
 ## English only (site owner, 2026-11-26)
 
 This site carries English editions only. Please leave Latin, French and other-language texts,
