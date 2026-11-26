@@ -6,9 +6,9 @@ publishing a release to see what the site took, and anything to fix in the next 
 Nothing in it needs a change on the site's side: fix things in the release and publish a new
 one, and the next sync picks it up.
 
-- Last sync: 2026-11-24
-- Release: 2026.11.22.2
-- Editions in the release: 41; on the site: 20; hidden: 21; not imported or not updated: 0
+- Last sync: 2026-11-26
+- Release: 2026.11.24.3
+- Editions in the release: 47; on the site: 41; hidden: 6; not imported or not updated: 0
 
 ## Editions
 
@@ -17,44 +17,50 @@ one, and the next sync picks it up.
 | the-1689-baptist-confession-of-faith | v2 | on the site | https://books.freely.giving/books/courtney-hicks/the-1689-baptist-confession-of-faith/ |
 | the-anatomy-of-simon-magus | v7 | on the site | https://books.freely.giving/books/anonymous/the-anatomy-of-simon-magus/ |
 | all-of-grace | v17 | on the site | https://books.freely.giving/books/charles-spurgeon/all-of-grace/ |
-| all-of-grace-modern | v2 | imported, hidden until the site owner finishes it |  |
+| all-of-grace-modern | v2 | on the site | https://books.freely.giving/books/charles-spurgeon/all-of-grace-modern/ |
 | grace-abounding | v3 | on the site | https://books.freely.giving/books/john-bunyan/grace-abounding/ |
-| grace-abounding-modern | v2 | imported, hidden until the site owner finishes it |  |
+| grace-abounding-modern | v2 | on the site | https://books.freely.giving/books/john-bunyan/grace-abounding-modern/ |
 | the-pilgrims-progress | v16 | on the site | https://books.freely.giving/books/john-bunyan/the-pilgrims-progress/ |
-| the-pilgrims-progress-modern | v1 | imported, hidden until the site owner finishes it |  |
+| the-pilgrims-progress-modern | v1 | on the site | https://books.freely.giving/books/john-bunyan/the-pilgrims-progress-modern/ |
+| institutes-of-the-christian-religion-volume-1 | v1.1 | imported, hidden until the site owner finishes it |  |
+| institutes-of-the-christian-religion-volume-2 | v1.1 | imported, hidden until the site owner finishes it |  |
+| institutes-of-the-christian-religion-volume-3 | v1.1 | imported, hidden until the site owner finishes it |  |
+| institutes-of-the-christian-religion-volume-4 | v1.1 | imported, hidden until the site owner finishes it |  |
+| institutes-of-the-christian-religion-volume-5 | v1.1 | imported, hidden until the site owner finishes it |  |
+| institutes-of-the-christian-religion-volume-6 | v1.1 | imported, hidden until the site owner finishes it |  |
 | indwelling-sin | v3 | on the site | https://books.freely.giving/books/john-owen/indwelling-sin/ |
-| indwelling-sin-modern | v1 | imported, hidden until the site owner finishes it |  |
+| indwelling-sin-modern | v1 | on the site | https://books.freely.giving/books/john-owen/indwelling-sin-modern/ |
 | of-temptation | v3 | on the site | https://books.freely.giving/books/john-owen/of-temptation/ |
-| of-temptation-modern | v1 | imported, hidden until the site owner finishes it |  |
+| of-temptation-modern | v1 | on the site | https://books.freely.giving/books/john-owen/of-temptation-modern/ |
 | the-death-of-death | v2 | on the site | https://books.freely.giving/books/john-owen/the-death-of-death/ |
 | the-mortification-of-sin | v4 | on the site | https://books.freely.giving/books/john-owen/the-mortification-of-sin/ |
-| the-mortification-of-sin-modern | v1 | imported, hidden until the site owner finishes it |  |
-| religious-affections | v1 | imported, hidden until the site owner finishes it |  |
-| religious-affections-modern | v1 | imported, hidden until the site owner finishes it |  |
+| the-mortification-of-sin-modern | v1 | on the site | https://books.freely.giving/books/john-owen/the-mortification-of-sin-modern/ |
+| religious-affections | v1 | on the site | https://books.freely.giving/books/jonathan-edwards/religious-affections/ |
+| religious-affections-modern | v1 | on the site | https://books.freely.giving/books/jonathan-edwards/religious-affections-modern/ |
 | sinners-in-the-hands-of-an-angry-god | v10 | on the site | https://books.freely.giving/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god/ |
-| sinners-in-the-hands-of-an-angry-god-modern | v2 | imported, hidden until the site owner finishes it |  |
+| sinners-in-the-hands-of-an-angry-god-modern | v2 | on the site | https://books.freely.giving/books/jonathan-edwards/sinners-in-the-hands-of-an-angry-god-modern/ |
 | the-glorious-feast-of-the-gospel | v16 | on the site | https://books.freely.giving/books/richard-sibbes/the-glorious-feast-of-the-gospel/ |
-| the-glorious-feast-of-the-gospel-modern | v1 | imported, hidden until the site owner finishes it |  |
+| the-glorious-feast-of-the-gospel-modern | v1 | on the site | https://books.freely.giving/books/richard-sibbes/the-glorious-feast-of-the-gospel-modern/ |
 | the-crook-in-the-lot | v2 | on the site | https://books.freely.giving/books/thomas-boston/the-crook-in-the-lot/ |
-| the-crook-in-the-lot-modern | v1 | imported, hidden until the site owner finishes it |  |
+| the-crook-in-the-lot-modern | v1 | on the site | https://books.freely.giving/books/thomas-boston/the-crook-in-the-lot-modern/ |
 | precious-remedies-against-satans-devices | v3 | on the site | https://books.freely.giving/books/thomas-brooks/precious-remedies-against-satans-devices/ |
-| precious-remedies-against-satans-devices-modern | v1 | imported, hidden until the site owner finishes it |  |
+| precious-remedies-against-satans-devices-modern | v1 | on the site | https://books.freely.giving/books/thomas-brooks/precious-remedies-against-satans-devices-modern/ |
 | the-secret-key-of-heaven | v9 | on the site | https://books.freely.giving/books/thomas-brooks/the-secret-key-of-heaven/ |
-| the-secret-key-of-heaven-modern | v1 | imported, hidden until the site owner finishes it |  |
-| the-surest-way-of-thriving | v2 | imported, hidden until the site owner finishes it |  |
-| the-surest-way-of-thriving-modern | v2 | imported, hidden until the site owner finishes it |  |
+| the-secret-key-of-heaven-modern | v1 | on the site | https://books.freely.giving/books/thomas-brooks/the-secret-key-of-heaven-modern/ |
+| the-surest-way-of-thriving | v2 | on the site | https://books.freely.giving/books/thomas-gouge/the-surest-way-of-thriving/ |
+| the-surest-way-of-thriving-modern | v2 | on the site | https://books.freely.giving/books/thomas-gouge/the-surest-way-of-thriving-modern/ |
 | a-divine-cordial | v3 | on the site | https://books.freely.giving/books/thomas-watson/a-divine-cordial/ |
-| a-divine-cordial-modern | v2 | imported, hidden until the site owner finishes it |  |
+| a-divine-cordial-modern | v2 | on the site | https://books.freely.giving/books/thomas-watson/a-divine-cordial-modern/ |
 | domestical-duties-volume-1 | v4 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-volume-1/ |
 | domestical-duties-volume-2 | v4 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-volume-2/ |
 | domestical-duties-volume-3 | v4 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-volume-3/ |
 | domestical-duties-volume-4 | v4 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-volume-4/ |
-| domestical-duties-modern-volume-1 | v1 | imported, hidden until the site owner finishes it |  |
-| domestical-duties-modern-volume-2 | v1 | imported, hidden until the site owner finishes it |  |
-| domestical-duties-modern-volume-3 | v1 | imported, hidden until the site owner finishes it |  |
-| domestical-duties-modern-volume-4 | v1 | imported, hidden until the site owner finishes it |  |
+| domestical-duties-modern-volume-1 | v1 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-modern-volume-1/ |
+| domestical-duties-modern-volume-2 | v1 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-modern-volume-2/ |
+| domestical-duties-modern-volume-3 | v1 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-modern-volume-3/ |
+| domestical-duties-modern-volume-4 | v1 | on the site | https://books.freely.giving/books/william-gouge/domestical-duties-modern-volume-4/ |
 | christian-economy | v5 | on the site | https://books.freely.giving/books/william-perkins/christian-economy/ |
-| christian-economy-modern | v1 | imported, hidden until the site owner finishes it |  |
+| christian-economy-modern | v1 | on the site | https://books.freely.giving/books/william-perkins/christian-economy-modern/ |
 
 ## Not imported (fix and re-release)
 
@@ -63,6 +69,26 @@ None.
 ## Imported, but please check
 
 None.
+
+## Optional: details that save the site owner work
+
+Every new book arrives hidden until the site owner approves it; one without a year or description also waits for them to be filled in by hand.
+If `site.json` carries them on each book (`"year": 1658`, a reader-facing `"description"`
+of a sentence or two, not the edition summary, and `"tags": ["puritan"]`) the sync uses
+them and nobody has to do it. Missing for:
+
+- institutes-of-the-christian-religion-volume-1: year, description; lulu (only if a print edition exists)
+- institutes-of-the-christian-religion-volume-2: year, description; lulu (only if a print edition exists)
+- institutes-of-the-christian-religion-volume-3: year, description; lulu (only if a print edition exists)
+- institutes-of-the-christian-religion-volume-4: year, description; lulu (only if a print edition exists)
+- institutes-of-the-christian-religion-volume-5: year, description; lulu (only if a print edition exists)
+- institutes-of-the-christian-religion-volume-6: year, description; lulu (only if a print edition exists)
+
+## English only (site owner, 2026-11-26)
+
+This site carries English editions only. Please leave Latin, French and other-language texts,
+parallel pages and links out of what you release for it; ask the site owner first about any
+edition in another language.
 
 ## What the sync needs, per edition
 

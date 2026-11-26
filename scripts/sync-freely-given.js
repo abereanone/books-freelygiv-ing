@@ -25,9 +25,9 @@
  *     and Print Ready buttons, and a Book (Lulu) button where there is none
  *     (an existing one is the owner's and stays); the Courtney Hicks "prepared" credit.
  *     Title, description, tags, year, dates and any other buttons are left
- *     alone. A book new to the site goes live at once, unless it lacks a year or
- *     description or has a CHECK warning: then its book.yaml gets `hidden: true`
- *     until the owner fills it in (owner's decision 2026-11-24).
+ *     alone. A book new to the site always gets `hidden: true` until the owner
+ *     approves it (owner's decision 2026-11-26); updates to books already on
+ *     the site go straight through.
  *   - records what it synced in data/freely-given-sync.json
  *
  * Each edition is checked first (files present, valid, in SHA256SUMS; title and
@@ -270,12 +270,16 @@ function editorReport(tag, report, general = [], { publish = false } = {}) {
   else L.push("None.");
   if (meta.length) {
     L.push("", "## Optional: details that save the site owner work", "",
-      "A new book without a year or description arrives hidden until the site owner fills them in by hand.",
+      "Every new book arrives hidden until the site owner approves it; one without a year or description also waits for them to be filled in by hand.",
       "If `site.json` carries them on each book (`\"year\": 1658`, a reader-facing `\"description\"`",
       "of a sentence or two, not the edition summary, and `\"tags\": [\"puritan\"]`) the sync uses",
       "them and nobody has to do it. Missing for:", "",
       ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}${r.noLulu ? "; lulu (only if a print edition exists)" : ""}`));
   }
+  L.push("", "## English only (site owner, 2026-11-26)", "",
+    "This site carries English editions only. Please leave Latin, French and other-language texts,",
+    "parallel pages and links out of what you release for it; ask the site owner first about any",
+    "edition in another language.");
   L.push("", "## What the sync needs, per edition", "",
     "`slug`, `pages`, and `files` with `pdf`, `cover` (the Lulu cover PDF) and `front` (the front cover",
     "PNG). `epub` and `reader` (Read Online) are optional: an edition without them (a combined paperback,",
@@ -508,8 +512,7 @@ async function main() {
       ].filter(Boolean);
       r.noLulu = !ed.lulu;
     }
-    // a clean new book goes live; one with gaps or warnings waits, hidden
-    if (isNew && !r.missingMeta.some((m) => m !== "tags") && !r.warnings.length) b.delete("hidden");
+    // every new book stays hidden until the owner approves it (owner, 2026-11-26)
 
     const want = {
       htmlBook: reader && button("htmlBook", "Read Online", "Read", page(`${slug}.html`)),
@@ -557,7 +560,7 @@ async function main() {
       files: changedForReal, yamlChanged, others: others.map((m) => m.type), kept,
       line: isNew
         ? b.get("hidden") === true
-          ? `NEW (hidden${r.missingMeta.length ? `; still needs ${r.missingMeta.join(", ")}` : ""}; check the author page, then remove hidden)`
+          ? `NEW (hidden${r.missingMeta.length ? `; still needs ${r.missingMeta.join(", ")}` : ""}; waits for the owner's approval)`
           : "NEW (live)"
         : changedForReal.length || yamlChanged ? "updated" : "unchanged",
     });
