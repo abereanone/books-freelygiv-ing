@@ -1,0 +1,42 @@
+- title: A Treatise on the Preparation and Delivery of Sermons
+  sortTitle: Treatise on the Preparation and Delivery of Sermons
+  credits:
+    - person: john-broadus
+      role: author
+    - person: michael-coughlin
+      prepared: true
+  year: 1870
+  addedDate: 2026-11-25
+  pages: 419
+  tags:
+    - classic
+  description: |
+    "Preaching is characteristic of Christianity." Broadus wrote this book in 1870, after ten years of teaching preachers at the Southern Baptist Theological Seminary, to join sound principles with plain practical rules. It takes the preacher through the whole work: choosing and interpreting a text, the materials of a sermon (explanation, argument, illustration and application), arrangement and the kinds of sermons, a clear, forceful and fitting style, the methods of delivery, voice and gesture, and the conduct of public worship.
+
+    This edition follows the original of 1870, not the revision of 1898, checked page by page against the printed book. It keeps Broadus's own footnotes and the Index, with its page numbers set to this edition.
+  license: CC0
+  path: /static/books/a-treatise-on-the-preparation-and-delivery-of-sermons
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: htmlBook
+      label: Read Online
+      sources:
+        - name: Read
+          url: /static/books/a-treatise-on-the-preparation-and-delivery-of-sermons/a-treatise-on-the-preparation-and-delivery-of-sermons.html
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-treatise-on-the-preparation-and-delivery-of-sermons/PreparationAndDeliveryOfSermons.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-treatise-on-the-preparation-and-delivery-of-sermons/PreparationAndDeliveryOfSermons.epub
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/a-treatise-on-the-preparation-and-delivery-of-sermons/print-ready.zip

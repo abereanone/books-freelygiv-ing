@@ -1,0 +1,115 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: broadus-preaching-characteristic-christianity-no-false
+  text: Preaching is characteristic of Christianity. No false religion has ever provided for the regular and frequent assembling of the masses of men, to hear religious instruction and exhortation.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: Introduction
+  anchor: introduction
+  topics: [church, worship, evangelism]
+  scripture: []
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: forest-09.jpg, light: light-05.jpg, solid: rust}
+  added: '2026-11-25'
+  tone: dark
+- id: broadus-printing-has-become-mighty-agency
+  text: Printing has become a mighty agency for good and for evil; and Christians should employ it, with the utmost diligence and in every possible way, for the spread of truth. But printing can never take the place of the living word.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: Introduction
+  anchor: introduction
+  topics: [evangelism, scripture]
+  scripture: []
+  words: 41
+  status: candidate
+  featured: false
+  background: {dark: road-05.jpg, light: light-06.jpg, solid: evergreen}
+  added: '2026-11-25'
+  tone: solid
+- id: broadus-it-solemn-thing-to-preach
+  text: It is a solemn thing to preach the gospel, and therefore a very solemn thing to attempt instruction or even suggestion as to the means of preaching well.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: Preface
+  anchor: preface
+  topics: [work, church]
+  scripture: []
+  words: 28
+  status: candidate
+  featured: false
+  background: {dark: road-04.jpg, light: light-07.jpg, solid: burgundy}
+  added: '2026-11-25'
+  tone: dark
+- id: broadus-doctrine-i-e-teaching-preachers
+  text: Doctrine, i. e. teaching, is the preacher’s chief business. Truth is the life-blood of piety, without which we cannot maintain its vitality or support its activity.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: § 1. Doctrinal Subjects
+  anchor: part1-ch3-s1
+  topics: [scripture, holiness]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: sky-05.jpg, light: light-14.jpg, solid: navy}
+  added: '2026-11-25'
+  tone: solid
+- id: broadus-application-in-sermon-not-merely
+  text: The application in a sermon is not merely an appendage to the discussion, or a subordinate part of it, but is the main thing to be done.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: Application
+  anchor: part1-ch8
+  topics: [church, work]
+  scripture: []
+  words: 27
+  status: candidate
+  featured: false
+  background: {dark: forest-08.jpg, light: light-16.jpg, solid: violet}
+  added: '2026-11-25'
+  tone: dark
+- id: broadus-alas-it-often-our-chief
+  text: Alas! it is often our chief difficulty in preaching to feel ourselves as we ought to feel. And a genuine fervor cannot be produced to order by an effort of will.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: Application
+  anchor: part1-ch8
+  topics: [heart, prayer]
+  scripture: []
+  words: 31
+  status: candidate
+  featured: false
+  background: {dark: forest-11.jpg, light: light-15.jpg, solid: teal}
+  added: '2026-11-25'
+  tone: solid
+- id: broadus-in-all-speaking-especially-in
+  text: In all speaking, especially in preaching, naturalness, genuineness, even though awkward, is really more effective for all the highest ends, than the most elegant artificiality.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: § 5. Dangers of Rhetorical Studies
+  anchor: introduction-s4
+  topics: [truthfulness, humility]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-10.jpg, light: light-12.jpg, solid: rust}
+  added: '2026-11-25'
+  tone: dark
+- id: broadus-many-truths-religion-are-eminently
+  text: Many truths of religion are eminently adapted to stir the feelings, and to speak of such truths without feeling and awakening emotion, is unnatural and wrong.
+  author: john-broadus
+  book: a-treatise-on-the-preparation-and-delivery-of-sermons
+  chapter: Application
+  anchor: part1-ch8
+  topics: [heart, worship]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: forest-03.jpg, light: light-17.jpg, solid: evergreen}
+  added: '2026-11-25'
+  tone: solid

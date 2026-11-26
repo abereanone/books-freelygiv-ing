@@ -1,0 +1,20 @@
+- firstName: John
+  lastName: Broadus
+  slug: john-broadus
+  photo: "john-broadus.jpg"
+  description: >
+    John Albert Broadus (1827–1895) was an American Baptist preacher and teacher of preachers,
+    born in Culpeper County, Virginia. He graduated from the University of Virginia in 1850 and
+    was pastor of the Baptist church at Charlottesville through the 1850s, serving two years
+    also as chaplain to the university.
+
+    In 1859 he became one of the four founding professors of the Southern Baptist Theological
+    Seminary at Greenville, South Carolina, where he taught New Testament and preaching. During
+    the war, with the seminary closed, he preached as a chaplain in Lee's army. Out of ten years
+    of teaching homiletics came A Treatise on the Preparation and Delivery of Sermons (1870),
+    for generations the standard American textbook on preaching. He moved with the seminary to
+    Louisville in 1877 and was its president from 1889 until his death on 16 March 1895.
+
+    Among his other works are a Commentary on the Gospel of Matthew (1886), Jesus of Nazareth
+    (1890) and A Harmony of the Gospels (1893).
+  donateUrl: ""
