@@ -1,0 +1,42 @@
+- title: Berean Standard Bible
+  sortTitle: Berean Standard Bible
+  credits:
+    - name: Berean Bible Translation Committee
+      role: translator
+    - person: michael-coughlin
+      prepared: true
+  year: 2026
+  addedDate: 2026-11-25
+  pages: 782
+  tags:
+    - modern
+  description: |
+    The whole Bible, Genesis to Revelation, in the Berean Standard Bible (BSB): a modern English translation from the Hebrew and Greek, which its translators dedicated to the public domain.
+
+    This edition sets the text in two columns, with the BSB's paragraphs and poetry lines, the psalm titles set apart, and the first and last verse of each page at its head. The divine name is printed Yahweh, and where "you" or "your" is plural it is marked "you+" or "your+." The few verses that differ from the BSB in any other way are marked in the text and listed at the back; What's New? shows each one beside the BSB.
+  license: CC0
+  path: /static/books/berean-standard-bible
+  cover: cover.jpg
+  backCover: back-cover.jpg
+  spine: spine.jpg
+  mediaTypes:
+    - type: pdfBook
+      label: PDF
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/berean-standard-bible/BereanStandardBible.pdf
+    - type: eBook
+      label: EPUB
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/berean-standard-bible/BereanStandardBible.epub
+    - type: whatsNew
+      label: What's New?
+      sources:
+        - name: Compare
+          url: /static/books/berean-standard-bible/berean-standard-bible-whats-new.html
+    - type: printReady
+      label: Print Ready
+      sources:
+        - name: Download
+          url: https://files.books.freelygiv.ing/berean-standard-bible/print-ready.zip
