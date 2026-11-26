@@ -276,14 +276,6 @@ function editorReport(tag, report, general = [], { publish = false } = {}) {
       "them and nobody has to do it. Missing for:", "",
       ...meta.map((r) => `- ${r.slug}: ${r.missingMeta.join(", ")}${r.noLulu ? "; lulu (only if a print edition exists)" : ""}`));
   }
-  L.push("", "## Question from the site owner: Calvin's Institutes (2026-11-26)", "",
-    "Release 2026.11.24.3 brought `institutes-of-the-christian-religion-volume-1` to `-volume-6` (v1.1).",
-    "The site owner chose them to replace the old two-part edition (`institutes-of-the-christian-religion-part-1`",
-    "and `-part-2`, now retired and redirected) and made them visible on 2026-11-26. Still open:", "",
-    "1. What did you change from the CCEL text, beyond restoring it to the 1845 printing? A short list",
-    "   (kinds of change, roughly how many) is enough.",
-    "2. What changed between v1 and v1.1?",
-    "3. Please add `year` and a reader-facing `description` for the set in `site.json`.");
   L.push("", "## What the sync needs, per edition", "",
     "`slug`, `pages`, and `files` with `pdf`, `cover` (the Lulu cover PDF) and `front` (the front cover",
     "PNG). `epub` and `reader` (Read Online) are optional: an edition without them (a combined paperback,",
