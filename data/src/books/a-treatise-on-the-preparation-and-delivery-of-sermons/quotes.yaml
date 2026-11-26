@@ -7,7 +7,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: Introduction
   anchor: introduction
-  topics: [church, worship, evangelism]
+  topics: [preaching, church, worship]
   scripture: []
   words: 28
   status: candidate
@@ -21,7 +21,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: Introduction
   anchor: introduction
-  topics: [evangelism, scripture]
+  topics: [preaching, evangelism, scripture]
   scripture: []
   words: 41
   status: candidate
@@ -35,7 +35,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: Preface
   anchor: preface
-  topics: [work, church]
+  topics: [preaching, work, church]
   scripture: []
   words: 28
   status: candidate
@@ -49,7 +49,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: § 1. Doctrinal Subjects
   anchor: part1-ch3-s1
-  topics: [scripture, holiness]
+  topics: [preaching, scripture, holiness]
   scripture: []
   words: 26
   status: candidate
@@ -63,7 +63,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: Application
   anchor: part1-ch8
-  topics: [church, work]
+  topics: [preaching, church, work]
   scripture: []
   words: 27
   status: candidate
@@ -77,7 +77,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: Application
   anchor: part1-ch8
-  topics: [heart, prayer]
+  topics: [preaching, heart, prayer]
   scripture: []
   words: 31
   status: candidate
@@ -91,7 +91,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: § 5. Dangers of Rhetorical Studies
   anchor: introduction-s4
-  topics: [truthfulness, humility]
+  topics: [preaching, truthfulness, humility]
   scripture: []
   words: 25
   status: candidate
@@ -105,7 +105,7 @@
   book: a-treatise-on-the-preparation-and-delivery-of-sermons
   chapter: Application
   anchor: part1-ch8
-  topics: [heart, worship]
+  topics: [preaching, heart, worship]
   scripture: []
   words: 26
   status: candidate

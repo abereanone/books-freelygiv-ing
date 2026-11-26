@@ -682,3 +682,11 @@
   added: 2026-11-23
   tone: light
   background: {dark: sky-09.jpg, light: light-09.jpg, solid: evergreen}
+- id: 2-timothy-4-2
+  ref: 2 Timothy 4:2
+  text: "Preach the word; be prepared in season and out of season; reprove, rebuke, and encourage with every form of patient instruction."
+  topics: [preaching]
+  status: candidate
+  added: 2026-11-25
+  background: {dark: road-02.jpg, light: light-14.jpg, solid: burgundy}
+  tone: dark

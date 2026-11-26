@@ -173,6 +173,10 @@ evangelism:
   label: "Evangelism & Witness"
   about: "Speaking the gospel to others, and the sin of keeping silent."
   mood: road
+preaching:
+  label: "Preaching"
+  about: "Preaching the word: its place in the church, its preparation, and the preacher's heart."
+  mood: road
 wisdom:
   label: "Wisdom"
   about: "The fear of God, the beginning of wisdom, against the wisdom of the world."
