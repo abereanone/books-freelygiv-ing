@@ -3,19 +3,22 @@ import Base from '../../../layouts/Base.astro';
 import FormatIcon from '../../../components/FormatIcon.astro';
 import ShareButton from '../../../components/ShareButton.astro';
 import CreditNames from '../../../components/CreditNames.astro';
-import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits } from '../../../lib/data.js';
+import { ROLES, getBooks, authorNames, linkify, newlineToBr, bookAuthorSlug, bookSlugFromPath, bookCredits, getQuotes } from '../../../lib/data.js';
 
 export function getStaticPaths() {
+  // Quotes counted once for the whole build, not once per page.
+  const quoteCount = new Map<string, number>();
+  for (const q of getQuotes()) quoteCount.set(q.book, (quoteCount.get(q.book) ?? 0) + 1);
   return getBooks().map((book: any) => ({
     params: {
       authorSlug: bookAuthorSlug(book),
       bookSlug:   bookSlugFromPath(book.path),
     },
-    props: { book },
+    props: { book, quotes: quoteCount.get(bookSlugFromPath(book.path)) ?? 0 },
   }));
 }
 
-const { book } = Astro.props;
+const { book, quotes } = Astro.props;
 const authorCredits   = bookCredits(book, 'author');
 const preparers       = bookCredits(book, 'preparer');
 // Book credits below the byline: "with contributions by …", "foreword by …", "translated by …".
@@ -171,6 +174,12 @@ const views = [
       <div class="book-edition mt-4">
         <h3>About this edition</h3>
         <p class="mb-0">Prepared by <CreditNames credits={preparers} />.</p>
+      </div>
+    )}
+
+    {quotes > 0 && (
+      <div class="mt-4">
+        <a href={`/quotes/?book=${ogSlug}`} class="btn btn-outline-primary">Key quotes from this {book.volume ? 'volume' : 'book'}</a>
       </div>
     )}
 
