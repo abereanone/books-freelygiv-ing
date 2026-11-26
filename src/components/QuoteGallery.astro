@@ -25,12 +25,12 @@ const topicOpts  = Object.entries(topics).filter(([k]) => topicCounts.has(k)).ma
 // Bible verse cards are found under Books ("Berean Standard Bible"), not Authors (2026-11-23).
 const authorOpts = [...authorCounts].filter(([k]) => k !== 'bible').map(([k, n]) => ({ k, n, label: quotes.find((q: any) => q.authorKey === k).authorSort }))
   .sort((a, b) => a.label.localeCompare(b.label));
-const bookOpts   = [...bookCounts].map(([k, n]) => { const q = quotes.find((x: any) => x.book === k); return { k, n, label: q.bookTitle, author: [...new Set(quotes.filter((x: any) => x.book === k).map((x: any) => x.authorKey))].join(' ') }; })
-  .sort((a, b) => a.label.localeCompare(b.label));
+const bookOpts   = [...bookCounts].map(([k, n]) => { const q = quotes.find((x: any) => x.book === k); return { k, n, label: q.bookTitle, sort: q.bookSort, author: [...new Set(quotes.filter((x: any) => x.book === k).map((x: any) => x.authorKey))].join(' ') }; })
+  .sort((a, b) => a.sort.localeCompare(b.sort));   // sortTitle, as /library: "The Crook in the Lot" under C
 const eraOpts    = Object.entries(QUOTE_ERAS).filter(([k]) => eraCounts.has(k)).map(([k, label]) => ({ k, label, n: eraCounts.get(k) }));
 
 const data = quotes.map((q: any) => ({
-  id: q.id, text: q.text, a: q.authorKey, an: q.authorName, as: q.authorSort, b: q.book, bt: q.bookTitle,
+  id: q.id, text: q.text, a: q.authorKey, an: q.authorName, as: q.authorSort, b: q.book, bt: q.bookTitle, bs: q.bookSort,
   t: q.topics, e: q.era, w: q.words, tone: q.tone, f: !!q.featured, d: q.added,
   dark: quoteImage(q.id, 'dark', 'thumb'), light: quoteImage(q.id, 'light', 'thumb'), solid: quoteImage(q.id, 'solid', 'thumb'),
 }));
@@ -185,7 +185,7 @@ const topicLabels = Object.fromEntries(Object.entries(topics).map(([k, v]) => [k
       (!shortChk.checked || q.w <= 20) &&
       (!words.length || words.every((w) => norm(`${q.text} ${q.an} ${q.bt} ${q.t.map((t) => topics[t]).join(' ')}`).includes(w))));
     if (sortSel.value === 'new') list.sort((x, y) => y.d.localeCompare(x.d) || rank(x.id) - rank(y.id));
-    else if (sortSel.value === 'author') list.sort((x, y) => x.as.localeCompare(y.as) || x.bt.localeCompare(y.bt));
+    else if (sortSel.value === 'author') list.sort((x, y) => x.as.localeCompare(y.as) || x.bs.localeCompare(y.bs));
     else list.sort((x, y) => rank(x.id) - rank(y.id));
 
     if (resetPage) shown = PAGE;

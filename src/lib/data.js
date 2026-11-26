@@ -517,6 +517,7 @@ export function getQuotes() {
           ? q.writtenBy.replace(/^(.*) (\S+)$/, "$2, $1")
           : person?.lastName ? `${person.lastName}, ${person.firstName}` : person ? personName(person) : q.author,
         bookTitle: book.title,
+        bookSort: book.sortTitle || book.title,
         bookHref: `/books/${bookAuthorSlug(book)}/${slug}/`,
         readUrl: read ? `${read}${q.anchor ? `#${q.anchor}` : ""}` : null,
         era: eras[q.author] ?? null,
@@ -539,6 +540,7 @@ export function getQuotes() {
       authorHref: null,
       book: "bsb",
       bookTitle: "Berean Standard Bible",
+      bookSort: "Berean Standard Bible",
       bookHref: null,
       readUrl: null,
       scripture: [],
