@@ -5,8 +5,8 @@
   text: The duty of a Theologian, however, is not to tickle the ear, but confirm the conscience, by teaching what is true, certain, and useful.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-1
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 14"
+  anchor: "vol-1-book-1-chapter-14-h1"
   topics: [scripture]
   scripture: ['2 Timothy 4:3']
   words: 24
@@ -19,8 +19,8 @@
   text: Conscience, which, distinguishing, between good and evil, responds to the judgment of God, is an undoubted sign of an immortal spirit.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-1
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 15"
+  anchor: "vol-1-book-1-chapter-15-h1"
   topics: [conscience]
   scripture: ['Romans 2:15']
   words: 21
@@ -29,3 +29,59 @@
   background: {dark: road-02.jpg, light: light-10.jpg, solid: rust}
   added: '2026-11-23'
   tone: solid
+- id: calvin-our-god-not-author-division
+  text: Our God is not the author of division, but of peace; and the Son of God, who came to destroy the works of the devil, is not the minister of sin.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-1
+  chapter: Prefatory Address to King Francis
+  anchor: vol-1-01-prefatory-address-h1
+  topics: [peace, christ]
+  scripture: ['1 Corinthians 14:33', '1 John 3:8']
+  words: 31
+  status: candidate
+  featured: false
+  background: {dark: sky-06.jpg, light: light-08.jpg, solid: evergreen}
+  added: '2026-11-26'
+  tone: light
+- id: calvin-god-therefore-does-not-allow
+  text: God, therefore, does not allow Satan to have dominion over the souls of believers, but only gives over to his sway the impious and unbelieving, whom he deigns not to number among his flock.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-1
+  chapter: Chapter 14
+  anchor: vol-1-book-1-chapter-14-h1
+  topics: [satan, providence]
+  scripture: []
+  words: 34
+  status: candidate
+  featured: false
+  background: {dark: storm-04.jpg, light: light-06.jpg, solid: navy}
+  added: '2026-11-26'
+  tone: dark
+- id: calvin-god-requires-us-nothing-but
+  text: God requires of us nothing but what he enjoins.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-1
+  chapter: Chapter 17
+  anchor: vol-1-book-1-chapter-17-h1
+  topics: [scripture]
+  scripture: []
+  words: 9
+  status: candidate
+  featured: false
+  background: {dark: sky-12.jpg, light: light-25.jpg, solid: violet}
+  added: '2026-11-26'
+  tone: solid
+- id: calvin-as-to-repentance-we-must
+  text: As to repentance, we must hold that it can no more exist in God than ignorance, or error, or impotence.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-1
+  chapter: Chapter 17
+  anchor: vol-1-book-1-chapter-17-h1
+  topics: [knowing-god]
+  scripture: ['Numbers 23:19']
+  words: 20
+  status: candidate
+  featured: false
+  background: {dark: mountain-03.jpg, light: light-10.jpg, solid: teal}
+  added: '2026-11-26'
+  tone: dark

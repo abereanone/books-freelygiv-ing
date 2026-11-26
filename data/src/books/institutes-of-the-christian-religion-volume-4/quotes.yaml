@@ -5,8 +5,8 @@
   text: Peace of conscience cannot be obtained in any other way than by gratuitous justification.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-4
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 13"
+  anchor: "vol-4-book-3-chapter-13-h1"
   topics: [peace, conscience]
   scripture: ['Romans 5:1']
   words: 14
@@ -19,8 +19,8 @@
   text: In short, peace must be sought nowhere but in the agonies of Christ our Redeemer.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-4
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 13"
+  anchor: "vol-4-book-3-chapter-13-h1"
   topics: [peace, cross]
   scripture: ['Isaiah 53:5']
   words: 15
@@ -33,8 +33,8 @@
   text: 'Our justification depends entirely on the mercy of God and the merits of Christ: when faith apprehends these, it is said to justify.'
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-4
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 18"
+  anchor: "vol-4-book-3-chapter-18-h1"
   topics: [faith, grace]
   scripture: ['Romans 3:24']
   words: 23
@@ -42,4 +42,32 @@
   featured: false
   background: {dark: sky-08.jpg, light: light-21.jpg, solid: rust}
   added: '2026-11-23'
+  tone: light
+- id: calvin-in-james-faith-said-not
+  text: In James the faith said not to justify is a mere empty opinion; in Paul it is the instrument by which we apprehend Christ our righteousness.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-4
+  chapter: Chapter 17
+  anchor: vol-4-book-3-chapter-17-h1
+  topics: [faith, christ]
+  scripture: []
+  words: 26
+  status: candidate
+  featured: false
+  background: {dark: sky-09.jpg, light: light-22.jpg, solid: burgundy}
+  added: '2026-11-26'
+  tone: light
+- id: calvin-if-sprinkling-blood-christ-by
+  text: If the sprinkling of the blood of Christ by the Spirit gives us purification, let us not think that, previous to this sprinkling, we are anything but sinners without Christ.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-4
+  chapter: Chapter 14
+  anchor: vol-4-book-3-chapter-14-h1
+  topics: [christ, sin]
+  scripture: []
+  words: 30
+  status: candidate
+  featured: false
+  background: {dark: sky-02.jpg, light: light-18.jpg, solid: navy}
+  added: '2026-11-26'
   tone: light

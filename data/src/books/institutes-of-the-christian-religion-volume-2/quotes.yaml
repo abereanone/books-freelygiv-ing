@@ -5,8 +5,8 @@
   text: The beginning of willing and doing well is of faith; faith again is the gift of God; and hence mere grace is the cause of our beginning to will well.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-2
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 3"
+  anchor: "vol-2-book-2-chapter-03-h1"
   topics: [grace, faith]
   scripture: ['Philippians 2:13']
   words: 30
@@ -19,8 +19,8 @@
   text: God has not rendered you due punishment, but bestows upon you unmerited grace.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-2
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 5"
+  anchor: "vol-2-book-2-chapter-05-h1"
   topics: [grace, mercy]
   scripture: ['Psalm 103:10']
   words: 13
@@ -33,8 +33,8 @@
   text: When the Law discloses our guilt, we should not despond, but flee to the mercy of God.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-2
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 7"
+  anchor: "vol-2-book-2-chapter-07-h1"
   topics: [mercy, repentance]
   scripture: ['Galatians 3:24']
   words: 17
@@ -47,8 +47,8 @@
   text: We must rest entirely, in order that God may work in us; we must resign our own will, yield up our heart, and abandon all the lusts of the flesh.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-2
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 8"
+  anchor: "vol-2-book-2-chapter-08-h1"
   topics: [holiness, worship]
   scripture: ['Hebrews 4:10']
   words: 30
@@ -56,4 +56,32 @@
   featured: false
   background: {dark: forest-06.jpg, light: light-09.jpg, solid: violet}
   added: '2026-11-23'
+  tone: dark
+- id: calvin-faults-saints-are-indeed-venial
+  text: The faults of the saints are indeed venial, not, however, in their own nature, but because, through the mercy of God, they obtain pardon.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-2
+  chapter: Chapter 8
+  anchor: vol-2-book-2-chapter-08-h1
+  topics: [sin, mercy, forgiveness]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: storm-08.jpg, light: light-16.jpg, solid: rust}
+  added: '2026-11-26'
+  tone: solid
+- id: calvin-to-those-who-think-only
+  text: To those who think only of the present life, death is the extremity of despair; but it could not destroy the hope of Job.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-2
+  chapter: Chapter 10
+  anchor: vol-2-book-2-chapter-10-h1
+  topics: [death, hope]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: ruins-01.jpg, light: light-11.jpg, solid: evergreen}
+  added: '2026-11-26'
   tone: dark

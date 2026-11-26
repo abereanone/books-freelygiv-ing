@@ -5,8 +5,8 @@
   text: Assuredly the Holy Spirit is still present with the people of God; without his guidance and direction the Church of God cannot subsist.
   author: john-calvin
   book: institutes-of-the-christian-religion-volume-6
-  chapter: ''
-  anchor: ''
+  chapter: "Chapter 19"
+  anchor: "vol-6-book-4-chapter-19-h1"
   topics: [holy-spirit, church]
   scripture: ['John 14:16']
   words: 23
@@ -15,3 +15,59 @@
   background: {dark: sky-07.jpg, light: light-16.jpg, solid: burgundy}
   added: '2026-11-23'
   tone: solid
+- id: calvin-in-baptism-lord-promises-forgiveness
+  text: 'In baptism, the Lord promises forgiveness of sins: receive it, and be secure.'
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-6
+  chapter: Chapter 15
+  anchor: vol-6-book-4-chapter-15-h1
+  topics: [forgiveness, assurance]
+  scripture: []
+  words: 13
+  status: candidate
+  featured: false
+  background: {dark: road-03.jpg, light: light-02.jpg, solid: navy}
+  added: '2026-11-26'
+  tone: dark
+- id: calvin-baptism-indeed-tells-us-that
+  text: Baptism, indeed, tells us that our Pharaoh is drowned and sin mortified; not so, however, as no longer to exist, or give no trouble, but only so as not to have dominion.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-6
+  chapter: Chapter 15
+  anchor: vol-6-book-4-chapter-15-h1
+  topics: [sin, mortification]
+  scripture: ['Romans 6:14']
+  words: 32
+  status: candidate
+  featured: false
+  background: {dark: storm-01.jpg, light: light-21.jpg, solid: violet}
+  added: '2026-11-26'
+  tone: solid
+- id: calvin-we-may-add-that-it
+  text: We may add, that it is no more possible to receive Christ without faith, than it is for seed to germinate in the fire.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-6
+  chapter: Chapter 17
+  anchor: vol-6-book-4-chapter-17-h1
+  topics: [faith, christ]
+  scripture: []
+  words: 24
+  status: candidate
+  featured: false
+  background: {dark: sky-05.jpg, light: light-05.jpg, solid: teal}
+  added: '2026-11-26'
+  tone: light
+- id: calvin-in-supper-father-offers-christ
+  text: In the Supper the Father offers Christ to us; in the Mass, priestlings offer Christ to the Father.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-6
+  chapter: Chapter 18
+  anchor: vol-6-book-4-chapter-18-h1
+  topics: [worship, christ]
+  scripture: []
+  words: 18
+  status: candidate
+  featured: false
+  background: {dark: forest-12.jpg, light: light-13.jpg, solid: rust}
+  added: '2026-11-26'
+  tone: dark

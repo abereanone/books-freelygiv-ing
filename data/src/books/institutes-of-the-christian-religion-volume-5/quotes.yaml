@@ -1,0 +1,73 @@
+# Quotes from this book, for quote cards and /quotes/. See docs/QUOTES-SPEC.md.
+# status: candidate (not yet reviewed) | approved (on the site) | rejected (never shown, never re-proposed)
+# text is verbatim from our edition; scripts/quotes/verify.py checks it against the Read Online HTML.
+- id: calvin-in-very-term-communion-there
+  text: In the very term communion there is great consolation; because, while we are assured that everything which God bestows on his members belongs to us, all the blessings conferred upon them confirm our hope.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-5
+  chapter: Chapter 1
+  anchor: vol-5-book-4-chapter-01-h1
+  topics: [church, hope]
+  scripture: []
+  words: 34
+  status: candidate
+  featured: false
+  background: {dark: forest-05.jpg, light: light-03.jpg, solid: violet}
+  added: '2026-11-26'
+  tone: solid
+- id: calvin-i-say-not-that-wherever
+  text: I say not that wherever the word is preached fruit immediately appears; but that in every place where it is received, and has a fixed abode, it uniformly displays its efficacy.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-5
+  chapter: Chapter 1
+  anchor: vol-5-book-4-chapter-01-h1
+  topics: [preaching, scripture]
+  scripture: []
+  words: 31
+  status: candidate
+  featured: false
+  background: {dark: road-01.jpg, light: light-19.jpg, solid: teal}
+  added: '2026-11-26'
+  tone: dark
+- id: calvin-accordingly-let-each-us-consider
+  text: Accordingly, let each of us consider it to be his duty to seek forgiveness of sins only where the Lord has placed it.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-5
+  chapter: Chapter 1
+  anchor: vol-5-book-4-chapter-01-h1
+  topics: [forgiveness, church]
+  scripture: []
+  words: 23
+  status: candidate
+  featured: false
+  background: {dark: road-03.jpg, light: light-20.jpg, solid: rust}
+  added: '2026-11-26'
+  tone: solid
+- id: calvin-power-church-therefore-not-infinite
+  text: The power of the Church, therefore, is not infinite, but is subject to the word of the Lord, and, as it were, included in it.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-5
+  chapter: Chapter 8
+  anchor: vol-5-book-4-chapter-08-h1
+  topics: [church, scripture]
+  scripture: []
+  words: 25
+  status: candidate
+  featured: false
+  background: {dark: forest-09.jpg, light: light-07.jpg, solid: evergreen}
+  added: '2026-11-26'
+  tone: dark
+- id: calvin-in-short-every-adventitious-invention
+  text: In short, every adventitious invention, by which men desire to worship God, is nothing else than a pollution of true holiness.
+  author: john-calvin
+  book: institutes-of-the-christian-religion-volume-5
+  chapter: Chapter 10
+  anchor: vol-5-book-4-chapter-10-h1
+  topics: [worship]
+  scripture: []
+  words: 21
+  status: candidate
+  featured: false
+  background: {dark: forest-06.jpg, light: light-04.jpg, solid: burgundy}
+  added: '2026-11-26'
+  tone: solid
