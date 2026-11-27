@@ -27,3 +27,4 @@ public/static/thumbs/
 quote-art
 !scripts/quotes/*.py
 public/static/quotes/
+!book-tools/**/*.py
