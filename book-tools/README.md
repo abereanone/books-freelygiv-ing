@@ -14,6 +14,27 @@ delete its `node_modules` and archive it to Proton Drive (`My files/Books`).
 | `scanned-book/` | Reprinting an old book from a scan: OCR text, fixes, spelling decisions, page-by-page scan check, BSB verse notes | *Keeping the Heart* (2026-11-18); also used for Token for Mourners, Spurgeon, Broadus |
 | `author/` | Back-cover circles: Michael (`author-circle.jpg`, made from `author-gray.jpg` by `make-author-circle.py`), Spurgeon (the bearded one from Morning and Evening), Flavel, Broadus | |
 
+**`EDITION-RULES.md`** holds the standing decisions for every book (what still goes to Michael, spelling
+defaults, typesetting, covers, publishing). Follow it without asking; add each new answer to it.
+
+## shared/ (adopted from Courtney Hicks's colophon, 2026-11-27)
+
+Used by both kits; need Python, and Poppler for the PDF check (`winget install oschwartz10612.Poppler`;
+Git's own `pdftotext` is a different program and fails).
+
+- `print-check.py BOOK.pdf [--no-footnotes]`: Lulu's rules measured on the finished PDF (nothing within
+  0.5 in of the trim, the inside margin for the page count), plus `~` warnings for a heading at a page's
+  foot and a chapter ending on 1-4 lines. Every kit's `build.mjs --pdf` runs it, and sets the inside
+  margin from the page count itself. `--no-footnotes`: the kits number notes per chapter and check them
+  in the browser layout instead.
+- `compare-page.py SOURCE EDITION... -o dist/compare.html`: every change from the scan's text to the
+  edition on one page (Changes / Edition / Source). Scanned books: `npm run compare`.
+- `proof-sample.py "text/*.md" -o check/read.md`: the proofreading sheet: sentences flagged for OCR
+  slips (he/be, rn/m, doubled words, unpaired quotes...) plus a random 5% of the rest, with its seed.
+  Scanned books: `npm run proof`.
+- Covers read the page count for the spine from `dist/print-facts.json`, which `build.mjs --pdf`
+  writes (`cover/interior-pages.cjs`); `--pages=N` still overrides it.
+
 Shared inputs that stay put: the BSB is `C:/code/confession/shared/data/bsb.json` (and `bsb.txt`);
 other languages' Bibles and book-name packs are in `C:/code/book-translate`.
 

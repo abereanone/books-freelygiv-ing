@@ -2,12 +2,13 @@
 // English:  node cover/make-drafts.mjs burgundy               then  node cover/export-pdf.mjs
 // Spanish:  node cover/make-drafts.mjs burgundy --lang=es --pages=280
 //           then  node cover/export-pdf.mjs cover-es-burgundy --pages=280      (-> cover-es-burgundy-lulu.pdf)
-// --pages must match the interior PDF; the spine is PAGES / 444 + 0.06 in, the same formula make-drafts.mjs uses.
+// The page count comes from dist/print-facts.json (the interior built last; --pdf=NAME, or --pages=N to override); the spine is PAGES / 444 + 0.06 in, the same formula make-drafts.mjs uses.
 import path from 'node:path'; import { fileURLToPath, pathToFileURL } from 'node:url'; import { execFileSync } from 'node:child_process';
 import puppeteer from 'puppeteer-core';
+import interiorPages from './interior-pages.cjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const name = process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : 'cover-burgundy';
-const PAGES = +(process.argv.find(a => a.startsWith('--pages='))?.slice(8) || 272);
+const PAGES = interiorPages();
 const W_IN = Math.round((12.25 + PAGES / 444 + 0.06) * 1000) / 1000;   // 272 pages -> 12.923
 const out = name === 'cover-burgundy' ? 'cover-lulu.pdf' : `${name}-lulu.pdf`;
 const fwd = (f) => path.join(HERE, f).split(path.sep).join('/');

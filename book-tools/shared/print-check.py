@@ -1,0 +1,343 @@
+#!/usr/bin/env python3
+# Adopted 2026-11-27 from Courtney Hicks's colophon (github.com/freely-given-books/colophon,
+# print_check.py, CC0), with a Windows lookup for Poppler (Git's own pdftotext is Xpdf and
+# lacks -bbox-layout). Usage: python -I print-check.py BOOK.pdf [...]
+"""
+print_check.py: a print PDF against Lulu's interior rules.
+
+  python3 print_check.py BOOK.pdf [...]
+
+Lulu (help.lulu.com, "Interior Formatting: The Basics"): text, page numbers
+and running heads at least 0.5in from the trimmed edge; the inside (binding)
+margin by page count:
+
+  under 60 pages 0.5in, 61-150 0.625in, 151-400 1in, 401-600 1.125in,
+  over 600 1.25in
+
+Both are measured on the rendered pages (pdftotext -bbox-layout), not read
+from the Typst source, so they hold whatever the template or the book set.
+The inside margin is the median, over the pages, of each page's text edge
+nearest the spine (rectos: page 1, 3, ...; the left edge), which a line of
+hanging punctuation does not move. It also warns when a footnote's text is
+set on another page than its marker (Typst's widow control can carry the
+marker's line over after the note is placed). Exit code 1 when a rule is
+broken. Page-fit faults (a heading left at a page's foot, a chapter ending on one
+to four lines) are listed as warnings ("~"), outside the release gate for now.
+"""
+
+import re
+import statistics
+import subprocess
+import sys
+import glob
+import os
+import shutil
+
+# Poppler (winget install oschwartz10612.Poppler) ahead of Git's Xpdf pdftotext
+for _bin in glob.glob(os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\WinGet\Packages\oschwartz10612.Poppler*\poppler-*\Library\bin")):
+    os.environ["PATH"] = _bin + os.pathsep + os.environ["PATH"]
+if not shutil.which("pdftohtml"):
+    sys.exit("print-check: needs Poppler (winget install oschwartz10612.Poppler)")
+
+SAFETY = 0.5
+TOLERANCE = 0.02                 # inches: rounding of glyph boxes
+GUTTER = [(60, 0.5), (150, 0.625), (400, 1.0), (600, 1.125), (10 ** 9, 1.25)]
+
+
+def lulu_inside(pages):
+    return next(m for limit, m in GUTTER if pages <= limit)
+
+
+def pages_of(pdf):
+    """[(width, height, [(x0, y0, x1, y1)...])] in inches, one per page."""
+    xml = subprocess.run(["pdftotext", "-bbox-layout", str(pdf), "-"],
+                         capture_output=True, text=True, encoding="utf-8", check=True).stdout
+    out = []
+    for m in re.finditer(r'<page width="([\d.]+)" height="([\d.]+)">(.*?)</page>', xml, re.S):
+        w, h = float(m.group(1)) / 72, float(m.group(2)) / 72
+        lines = [tuple(float(v) / 72 for v in g) for g in re.findall(
+            r'<line xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" yMax="([\d.]+)"',
+            m.group(3))]
+        out.append((w, h, lines))
+    return out
+
+
+def words_of(pdf):
+    """[[[(text, x0, y0, x1, y1), ...] per line] per page], in points."""
+    xml = subprocess.run(["pdftotext", "-bbox-layout", str(pdf), "-"],
+                         capture_output=True, text=True, encoding="utf-8", check=True).stdout
+    out = []
+    for m in re.finditer(r"<page [^>]*>(.*?)</page>", xml, re.S):
+        page = []
+        for ln in re.findall(r"<line [^>]*>(.*?)</line>", m.group(1), re.S):
+            page.append([(t, float(a), float(b), float(c), float(d)) for a, b, c, d, t in
+                         re.findall(r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
+                                    r'yMax="([\d.]+)">([^<]*)</word>', ln)])
+        out.append(page)
+    return out
+
+
+def stray_footnotes(pdf):
+    """Footnotes whose text is set on another page than their marker: [(n,
+    note page, marker page)]. A note is a line at the foot of the page that
+    opens with its number; its marker, the same number after a word on its
+    line. In a font without superscript figures (Liberation) the numbers are
+    set small, as words of their own ("Suffield ¹"); in one with them
+    (Libertinus) they are full-height digits joined to the word ("that40",
+    "40Phil."), told apart by the notes' running order (one numbering
+    through the book, as the template sets it)."""
+    pages = words_of(pdf)
+    heights = [w[4] - w[2] for pg in pages for ln in pg for w in ln if w[0].isalpha()]
+    if not heights:
+        return []
+    body = statistics.median(heights)
+    small = lambda w: w[4] - w[2] <= 0.8 * body
+    out, expect = [], 1
+    for i, pg in enumerate(pages):
+        if not pg:
+            continue
+        foot = 0.6 * max(w[4] for l in pg for w in l)
+        for ln in pg:
+            first = ln[0] if ln else None
+            if not first or first[2] < foot:
+                continue                        # not at the foot of the page
+            m = re.match(r"\d+", first[0])
+            if not m or first[4] - first[2] >= 0.95 * body:
+                continue                        # a note is set smaller than the text
+            # the note expected next, or one of the few after it if a note
+            # went unread (numbered paragraphs at the foot are not notes)
+            n = next((str(k) for k in range(expect, expect + 4)
+                      if (small(first) and first[0] == str(k)) or
+                      (not small(first) and first[0].startswith(str(k)))), None)
+            if n is None:
+                continue
+            expect = int(n) + 1
+            glued = re.compile(r"[^\d\s]" + n + r"[,.;:)\]’”]*$")
+
+            def has_marker(k):
+                if not (0 <= k < len(pages)) or not pages[k]:
+                    return False
+                fk = 0.6 * max(w[4] for l in pages[k] for w in l)
+                # the second of two touching markers ("wrath:236,237"): a word
+                # of its own after the comma between them
+                return any((w[0] == n and j > 0 and small(w)) or
+                           (glued.search(w[0]) and (w[2] < fk or j > 0)) or
+                           (w[0] == n and j > 0 and l[j - 1][0] in (",", "\u00b7"))
+                           for l in pages[k] for j, w in enumerate(l))
+            if has_marker(i):
+                continue
+            for k in (i + 1, i - 1):
+                if has_marker(k):
+                    out.append((n, i + 1, k + 1))
+                    break
+    # notes set with a printed mark (note[@rend="mark"], "*"): as many marks
+    # after a word as notes at the foot, page by page
+    def stars(k):
+        pg = pages[k]
+        foot = 0.6 * max(w[4] for l in pg for w in l)
+        notes = sum(1 for ln in pg if ln and ln[0][2] >= foot and ln[0][0].startswith("*")
+                    and ln[0][4] - ln[0][2] < 0.95 * body)
+        marks = sum(1 for ln in pg for j, w in enumerate(ln)
+                    if (j > 0 and w[0] == "*") or re.search(r"[^\s*]\*", w[0]))
+        return notes, marks
+    for i, pg in enumerate(pages):
+        if not pg:
+            continue
+        notes, marks = stars(i)
+        if notes > marks:
+            k = next((k for k in (i + 1, i - 1) if 0 <= k < len(pages) and pages[k]
+                      and stars(k)[1] > stars(k)[0]), i)
+            out.append(("*", i + 1, k + 1))
+    return out
+
+
+def split_footnotes(pdf):
+    """Footnotes Typst breaks across pages: [(page, words)] for each page whose
+    notes open with the end of a note from the page before (lines at the foot
+    of the page, set small, above its first numbered note), as "in age." at the
+    top of Gouge's vol 2 p. 20."""
+    pages = words_of(pdf)
+    heights = [w[4] - w[2] for pg in pages for ln in pg for w in ln if w[0].isalpha()]
+    if not heights:
+        return []
+    body = statistics.median(heights)
+    out = []
+    for i, pg in enumerate(pages):
+        lines = [ln for ln in pg if ln]
+        if not lines:
+            continue
+        foot = 0.6 * max(w[4] for l in lines for w in l)
+        notes = [ln for ln in lines if ln[0][2] >= foot and
+                 max(w[4] - w[2] for w in ln) < 0.95 * body]
+        if not notes:
+            continue
+        # a note opens with its number, or its printed mark (note[@rend="mark"]),
+        # which is read as a line of its own beside the note's first words
+        stars = [ln[0] for ln in notes if [w[0] for w in ln] == ["*"]]
+        notes = sorted((ln for ln in notes if [w[0] for w in ln] != ["*"]), key=lambda ln: ln[0][2])
+        starred = {id(ln) for ln in notes
+                   if any(abs(st[2] - ln[0][2]) < 3 and st[1] < ln[0][1] for st in stars)}
+        first_num = next((k for k, ln in enumerate(notes) if id(ln) in starred or
+                          re.match(r"(\d+|\*)\D", ln[0][0] + " ")
+                          and not re.fullmatch(r"\d+", " ".join(w[0] for w in ln))), None)
+        before = notes[:first_num] if first_num is not None else []
+        # the page number alone is not a note; the lines must sit just above the
+        # first note (no body text between)
+        before = [ln for ln in before if not re.fullmatch(r"\d+", " ".join(w[0] for w in ln))]
+        if before and first_num is not None:
+            gap = notes[first_num][0][2] - before[-1][0][4]
+            if gap < body:
+                out.append((i + 1, " ".join(w[0] for ln in before for w in ln)))
+    return out
+
+
+def styled_lines(pdf):
+    """[[{top, left, right, size, bold, text}, ...] per page]: the rendered lines with their
+    type size and weight (pdftohtml -xml), in reading order, in points."""
+    xml = subprocess.run(["pdftohtml", "-xml", "-i", "-stdout", "-q", str(pdf)],
+                         capture_output=True, text=True, encoding="utf-8", check=True).stdout
+    fonts = {m.group(1): (float(m.group(2)), bool(re.search(r"Bold|Semibold", m.group(3))))
+             for m in re.finditer(r'<fontspec id="(\d+)" size="([\d.]+)" family="([^"]*)"', xml)}
+    pages = []
+    for m in re.finditer(r"<page [^>]*>(.*?)</page>", xml, re.S):
+        spans = []
+        for t in re.finditer(r'<text top="(\d+)" left="(\d+)" width="(\d+)" height="(\d+)" '
+                             r'font="(\d+)">(.*?)</text>', m.group(1), re.S):
+            text = re.sub(r"<[^>]+>", "", t.group(6)).strip()
+            if text:
+                size, bold = fonts.get(t.group(5), (0, False))
+                spans.append((int(t.group(1)), int(t.group(2)), int(t.group(2)) + int(t.group(3)),
+                              size, bold, text))
+        lines = []
+        for sp in sorted(spans):
+            if lines and abs(lines[-1]["top"] - sp[0]) <= 3:
+                ln = lines[-1]
+                ln["left"], ln["right"] = min(ln["left"], sp[1]), max(ln["right"], sp[2])
+                ln["size"] = max(ln["size"], sp[3])
+                ln["bold"] = ln["bold"] and (sp[4] or not re.search(r"\w", sp[5]))
+                ln["text"] += " " + sp[5]
+            else:
+                lines.append({"top": sp[0], "left": sp[1], "right": sp[2], "size": sp[3],
+                              "bold": sp[4], "text": sp[5]})
+        pages.append(sorted(lines, key=lambda l: (l["top"], l["left"])))
+    return pages
+
+
+def page_layout_faults(pdf):
+    """Page-fit faults a reader notices, which the template's rules do not always prevent:
+    a heading left at the foot of a page (alone, or with one line of its text under it), and
+    a chapter whose last page holds only one to four lines. [message, ...]."""
+    pages = styled_lines(pdf)
+    sizes = {}
+    for pg in pages:
+        for ln in pg:
+            sizes[ln["size"]] = sizes.get(ln["size"], 0) + len(ln["text"])
+    if not sizes:
+        return []
+    body = max(sizes, key=sizes.get)
+    widths = sorted(ln["right"] - ln["left"] for pg in pages for ln in pg if abs(ln["size"] - body) < 0.5)
+    measure = widths[int(len(widths) * 0.9)] if widths else 0     # a full line
+
+    def kind(ln, pg):
+        if ln is pg[0] and ln["size"] < body - 0.5 or re.fullmatch(r"\d+|[ivxlc]+", ln["text"]):
+            return "furniture"                  # running head, page number
+        if ln["size"] < body - 0.5:
+            return "note"
+        if ln["size"] > body + 1 or ln["bold"] and ln["right"] - ln["left"] < 0.8 * measure:
+            return "heading"                    # (a full line in bold is text set bold)
+        return "text"
+
+    marked = [[(kind(ln, pg), ln) for ln in pg] for pg in pages]
+    # a chapter opens with a heading at the top of its page, in the size that most often
+    # opens a page (the title page's larger type is only once)
+    tops = {}
+    for pg in marked:
+        for k, ln in pg[:3]:
+            if k == "heading" and ln["size"] > body + 1:
+                tops[ln["size"]] = tops.get(ln["size"], 0) + 1
+    if not tops:
+        return []
+    chapter = max(tops, key=lambda z: (tops[z], z))
+    starts = [i for i, pg in enumerate(marked)
+              if any(k == "heading" and abs(ln["size"] - chapter) < 0.5 for k, ln in pg[:3])]
+    out = []
+    for i, pg in enumerate(marked):
+        if not starts or i < starts[0]:
+            continue                            # the front matter: title page, contents
+        content = [(k, ln) for k, ln in pg if k in ("text", "heading")]
+        if not content or all(k == "heading" for k, _ in content) or                 sum(1 for k, _ in content if k == "text") < 5:
+            continue                            # a part page, a title page (BFG kits: "Part 2 / Beth")
+        tail = [k for k, _ in content[-2:]]
+        if tail[-1] == "heading" or tail == ["heading", "text"] and len(content) > 2:
+            head = next(ln for k, ln in reversed(content) if k == "heading")
+            out.append(f"a heading is left at the foot of page {i + 1}: “{head['text'][:50]}”")
+    for s in starts:
+        p = s - 1
+        while p >= 0 and not any(k == "text" for k, _ in marked[p]):
+            p -= 1
+        if p < 0 or p in starts or p < starts[0]:
+            continue
+        n = sum(1 for k, _ in marked[p] if k == "text")
+        if any(k == "heading" and ln["size"] > body + 1 for k, ln in marked[p]):
+            continue                            # a part page before the chapter, not its end
+        if 1 <= n <= 4:
+            out.append(f"a chapter ends on page {p + 1} with {n} line(s)")
+    return out
+
+
+def check(pdf, footnotes=True):
+    """(problems, summary) for one PDF. footnotes=False: the BFG kits number notes per chapter and
+    check them in the browser layout instead (build.mjs), so the PDF guesses are left out."""
+    pages = pages_of(pdf)
+    n = len(pages)
+    problems, edges = [], {"top": [], "bottom": [], "outside": []}
+    inside = []
+    for i, (w, h, lines) in enumerate(pages, start=1):
+        if not lines:
+            continue
+        x0 = min(l[0] for l in lines)
+        x1 = max(l[2] for l in lines)
+        y0 = min(l[1] for l in lines)
+        y1 = max(l[3] for l in lines)
+        recto = i % 2 == 1
+        inside.append(x0 if recto else w - x1)
+        near = {"top": y0, "bottom": h - y1, "outside": (w - x1) if recto else x0}
+        for k, v in near.items():
+            edges[k].append((v, i))
+    for k, vals in edges.items():
+        bad = [(v, i) for v, i in vals if v < SAFETY - TOLERANCE]
+        if bad:
+            v, i = min(bad)
+            problems.append(f"{len(bad)} page(s) print within {SAFETY}in of the {k} "
+                            f"edge (closest {v:.2f}in, page {i})")
+    got = statistics.median(inside) if inside else 0
+    want = lulu_inside(n)
+    if abs(got - want) > TOLERANCE:
+        problems.append(f"inside margin {got:.3f}in; Lulu's for {n} pages is {want}in")
+    for num, at, mark in stray_footnotes(pdf) if footnotes else ():
+        problems.append(f"footnote {num} is set on page {at}, its marker on page {mark}")
+    for at, words in split_footnotes(pdf) if footnotes else ():
+        problems.append(f"a footnote is broken over to page {at}: “{words[:50]}”")
+    closest = {k: min(v for v, _ in vals) for k, vals in edges.items() if vals}
+    summary = (f"{n} pages, inside {got:.3f}in (Lulu {want}in); closest to the trim: " +
+               ", ".join(f"{k} {v:.2f}in" for k, v in closest.items()))
+    return problems, summary
+
+
+def main():
+    bad = False
+    sys.stdout.reconfigure(encoding="utf-8")
+    footnotes = "--no-footnotes" not in sys.argv
+    for pdf in [a for a in sys.argv[1:] if not a.startswith("--")]:
+        problems, summary = check(pdf, footnotes)
+        print(f"{pdf}: {summary}")
+        for p in problems:
+            print(f"  ! {p}")
+        for p in page_layout_faults(pdf):
+            print(f"  ~ {p}")
+        bad |= bool(problems)
+    sys.exit(1 if bad else 0)
+
+
+if __name__ == "__main__":
+    main()

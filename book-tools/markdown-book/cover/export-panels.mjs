@@ -1,7 +1,8 @@
 // Crop front, back and spine (trimmed, no bleed) from a draft SVG: node cover/export-panels.mjs cover-burgundy
 import path from 'node:path'; import { fileURLToPath, pathToFileURL } from 'node:url'; import puppeteer from 'puppeteer-core';
+import interiorPages from './interior-pages.cjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url)), name = process.argv[2] || 'cover-burgundy';
-const PAGES = +(process.argv.find((a) => a.startsWith('--pages='))?.slice(8) || 272); // spine from page count
+const PAGES = interiorPages(); // spine from the interior's page count
 const S = (PAGES / 444 + 0.06) * 100, B = 12.5, W = 1200 + S + 2 * B, H = 925, k = 0.96; // units -> CSS px
 const sx = B + 600, fx = sx + S;
 const br = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', args: ['--allow-file-access-from-files'] });

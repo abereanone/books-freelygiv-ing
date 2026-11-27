@@ -18,7 +18,7 @@ Prepared by Michael A. Coughlin for books.freely.giving. Text: American Tract So
 
 1. `npm run text` (tools/fix.py then tools/split.py: OCR fixes, Michael's spelling decisions, scan-check fixes, footnotes, glossary)
 2. `npm run pdf` (dist/Keeping-the-Heart-5x8.pdf and dist/book.html), then `python -I tools/make-epub.py`
-3. Cover: `node cover/make-cover.cjs --trim=5x8 --pages=N` then `python -I tools/fix-cover-size.py cover/cover-lulu.pdf N 5x8`;
+3. Cover: `node cover/make-cover.cjs --trim=5x8` then `python -I tools/fix-cover-size.py cover/cover-lulu.pdf` (page count from dist/print-facts.json);
    print-ready parts are in dist/zip5/
 4. Copy into C:/code/books-freelygiv-ing/data/src/books/keeping-the-heart/content/ (inline-html.py for the HTML),
    `npm run upload -- keeping-the-heart --force` in the BFG repo.

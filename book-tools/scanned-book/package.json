@@ -6,7 +6,9 @@
   "scripts": {
     "text": "python -I tools/fix.py && python -I tools/split.py",
     "build": "node tools/build.mjs",
-    "pdf": "node tools/build.mjs --pdf"
+    "pdf": "node tools/build.mjs --pdf",
+    "compare": "python -I C:/code/books-freelygiv-ing/book-tools/shared/compare-page.py source/raw.md \"text/*.md\" -o dist/compare.html",
+    "proof": "python -I C:/code/books-freelygiv-ing/book-tools/shared/proof-sample.py \"text/*.md\" -o check/read.md"
   },
   "devDependencies": {
     "@fontsource/crimson-pro": "^5.3.0",

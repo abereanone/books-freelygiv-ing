@@ -1,11 +1,11 @@
 // Lulu wrap cover for Keeping the Heart (design D + Michael's CROSSWORDS strip), 6 x 9 paperback.
 // Writes cover/cover-wrap.html, cover-lulu.pdf (exact Lulu size), cover-wrap.png (preview),
 // cover-front.jpg / cover-back.jpg / cover-spine.jpg (panels for the site).
-// Usage, from the project root: node cover/make-cover.cjs --pages=128
+// Usage, from the project root, after node tools/build.mjs --pdf: node cover/make-cover.cjs (--pages=N overrides)
 const fs = require('fs'), path = require('path');
 const puppeteer = require('puppeteer-core');
 const HERE = __dirname;
-const PAGES = +(process.argv.find((a) => a.startsWith('--pages='))?.slice(8) || 128);
+const PAGES = require('./interior-pages.cjs')();
 const [TRIM_W, TRIM_H] = (process.argv.find((a) => a.startsWith('--trim='))?.slice(7) || '6x9').split('x').map(Number), BLEED = 0.125;
 const K = TRIM_W / 6, FK = 1 - (1 - TRIM_W / 6) * 0.3;   // type shrinks far less than the layout (readability)   // the design was drawn for 6 x 9; smaller trims scale its type and insets by K
 const SPINE = PAGES / 444 + 0.06;                     // Lulu's formula

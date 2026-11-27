@@ -153,11 +153,20 @@ if (wantPdf) {
   const page = await browser.newPage();
   page.on('console', (m) => { if (m.type() === 'error') console.error('[page]', m.text()); });
   await page.evaluateOnNewDocument(() => { window.PagedConfig = { auto: true, after: () => { window.__pagedDone = true; } }; });
+  // Lulu's inside margin by page count (adopted from Courtney's colophon, 2026-11-27): the first pass
+  // counts the pages, later passes set the gutter for that count.
+  const GUTTER = [[60, 0.5], [150, 0.625], [400, 1.0], [600, 1.125], [Infinity, 1.25]];
+  const gutterFor = (n) => GUTTER.find(([max]) => n <= max)[1];
+  let gutter = null;
+  const countPages = () => page.evaluate(() => document.querySelectorAll('.pagedjs_page').length);
   const layout = async (html) => {
+    if (gutter != null) html = html.replace('</head>', `<style>@page :left { margin-right: ${gutter}in; } @page :right { margin-left: ${gutter}in; }</style>\n</head>`);
     fs.writeFileSync(path.join(DIST, 'print.html'), html, 'utf8');
     await page.goto('file:///' + path.join(DIST, 'print.html').replace(/\\/g, '/'), { waitUntil: 'load', timeout: 0 });
     await page.waitForFunction(() => window.__pagedDone === true, { timeout: 0, polling: 500 });
   };
+  await layout(assemble('print'));
+  gutter = gutterFor(await countPages());
   await layout(assemble('print'));
   const pages = await page.evaluate(() => {
     const o = {};
@@ -168,6 +177,7 @@ if (wantPdf) {
     return o;
   });
   await layout(assemble('print', pages));
+  if (gutterFor(await countPages()) !== gutter) { gutter = gutterFor(await countPages()); await layout(assemble('print', pages)); }
   const fnProblems = await page.evaluate(() => {
     const out = [];
     document.querySelectorAll('.pagedjs_page').forEach((pg) => {
@@ -193,5 +203,15 @@ if (wantPdf) {
   const pdfPath = path.join(DIST, 'Keeping-the-Heart-5x8.pdf');
   await page.pdf({ path: pdfPath, preferCSSPageSize: true, printBackground: true, timeout: 0 });
   await browser.close();
-  console.log(`${path.relative(ROOT, pdfPath)}  (${total} pages)`);
+  console.log(`${path.relative(ROOT, pdfPath)}  (${total} pages, inside margin ${gutter} in)`);
+  // the page count the covers read for their spine (cover/interior-pages.cjs)
+  const factsPath = path.join(DIST, 'print-facts.json');
+  const facts = fs.existsSync(factsPath) ? JSON.parse(fs.readFileSync(factsPath, 'utf8')) : { pdfs: {} };
+  facts.pdfs[path.basename(pdfPath)] = { pages: total, trim: '5x8', built: new Date().toISOString() };
+  facts.latest = path.basename(pdfPath);
+  fs.writeFileSync(factsPath, JSON.stringify(facts, null, 1));
+  // Lulu's margins, footnotes on their markers' pages, headings at a page's foot, short chapter endings
+  // (Courtney's print_check.py, adopted 2026-11-27; needs Poppler: winget install oschwartz10612.Poppler)
+  const { spawnSync } = await import('node:child_process');
+  spawnSync('python', ['-I', 'C:/code/books-freelygiv-ing/book-tools/shared/print-check.py', pdfPath, '--no-footnotes'], { stdio: 'inherit' });
 }

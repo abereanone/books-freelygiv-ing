@@ -2,10 +2,11 @@
 import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath, pathToFileURL } from 'node:url';
 import puppeteer from 'puppeteer-core';
 import { verse } from '../tools/bible.mjs';
+import interiorPages from './interior-pages.cjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const LANG = process.argv.find(a => a.startsWith('--lang='))?.slice(7);
-const T = { title1: 'MEDITATIONS ON', title1Scale: 1, title2: 'PSALM', title3: '119', tagline: 'Forty-four weekly meditations', author: 'MICHAEL A. COUGHLIN', spine: 'Meditations on Psalm 119', invite: 'You are invited to memorize the Psalm.', backP1: 'Psalm 119 is 176 verses in 22 octets. Four verses a week: the whole psalm in a year, and a meditation on each set.', backP2: 'Read it, memorize it, and let it work on your heart.', bio: '<b>Michael A. Coughlin</b> is a particular Baptist preacher who has served Christ’s Church as pastor, evangelist, teacher, writer, and application developer. He lives in Ohio with his wife, Erin, and their two youngest boys.', url: 'BOOKS.FREELY.GIVING', pages: 272, ...(LANG ? JSON.parse(fs.readFileSync(path.join(HERE, `cover.${LANG}.json`), 'utf8')) : {}) };
-const PAGES = +(process.argv.find(a => a.startsWith('--pages='))?.slice(8) || T.pages), TRIM_W = 6, TRIM_H = 9, BLEED = 0.125;
+const T = { title1: 'MEDITATIONS ON', title1Scale: 1, title2: 'PSALM', title3: '119', tagline: 'Forty-four weekly meditations', author: 'MICHAEL A. COUGHLIN', spine: 'Meditations on Psalm 119', invite: 'You are invited to memorize the Psalm.', backP1: 'Psalm 119 is 176 verses in 22 octets. Four verses a week: the whole psalm in a year, and a meditation on each set.', backP2: 'Read it, memorize it, and let it work on your heart.', bio: '<b>Michael A. Coughlin</b> is a particular Baptist preacher who has served Christ’s Church as pastor, evangelist, teacher, writer, and application developer. He lives in Ohio with his wife, Erin, and their two youngest boys.', url: 'BOOKS.FREELY.GIVING', ...(LANG ? JSON.parse(fs.readFileSync(path.join(HERE, `cover.${LANG}.json`), 'utf8')) : {}) };
+const PAGES = interiorPages(), TRIM_W = 6, TRIM_H = 9, BLEED = 0.125;
 const spine = PAGES / 444 + 0.06;                       // Lulu formula (verify against Lulu's template)
 const W = (2 * TRIM_W + spine + 2 * BLEED) * 100, H = (TRIM_H + 2 * BLEED) * 100;
 const B = BLEED * 100, S = spine * 100;

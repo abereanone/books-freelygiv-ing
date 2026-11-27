@@ -331,7 +331,14 @@ if (wantPdf) {
   const browser = await puppeteer.launch({ executablePath: config.browser, headless: true, args: ['--allow-file-access-from-files'] });
   const page = await browser.newPage();
   page.on('console', (m) => { if (m.type() === 'error') console.error('[page]', m.text()); });
+  // Lulu's inside margin by page count (adopted from Courtney's colophon, 2026-11-27): the first pass
+  // counts the pages, later passes set the gutter for that count.
+  const GUTTER = [[60, 0.5], [150, 0.625], [400, 1.0], [600, 1.125], [Infinity, 1.25]];
+  const gutterFor = (n) => GUTTER.find(([max]) => n <= max)[1];
+  let gutter = null;
+  const countPages = () => page.evaluate(() => document.querySelectorAll('.pagedjs_page').length);
   const render = async (html) => {
+    if (gutter != null) html = html.replace('</head>', `<style>@page :left { margin-right: ${gutter}in; } @page :right { margin-left: ${gutter}in; }</style>\n</head>`);
     fs.writeFileSync(path.join(DIST, 'print.html'), html, 'utf8');
     await page.goto('file:///' + path.join(DIST, 'print.html').replace(/\\/g, '/'), { waitUntil: 'load', timeout: 0 });
     await page.waitForFunction(() => window.__pagedDone === true, { timeout: 0, polling: 500 });
@@ -341,6 +348,8 @@ if (wantPdf) {
     window.PagedConfig = { auto: true, after: () => { window.__pagedDone = true; } };
   });
   // pass 1: layout, read page numbers of every citation
+  await render(assemble('print'));
+  gutter = gutterFor(await countPages());
   await render(assemble('print'));
   const pages = await page.evaluate(() => {
     const o = {};
@@ -352,6 +361,7 @@ if (wantPdf) {
   });
   // pass 2: same layout with the index filled in
   await render(assemble('print', pages));
+  if (gutterFor(await countPages()) !== gutter) { gutter = gutterFor(await countPages()); await render(assemble('print', pages)); }
   // label index columns that continue a book from the previous column: "Psalms (cont.)".
   // Each index page reserves an empty line above its columns (print.css), so the labels don't move any text.
   await page.evaluate((CONT) => {
@@ -409,5 +419,15 @@ if (wantPdf) {
   const pdfPath = path.join(DIST, `${config.title.replace(/\s+/g, '-')}${trimArg ? '-' + trimArg : ''}${refsOnly ? '-refs' : ''}.pdf`);
   await page.pdf({ path: pdfPath, preferCSSPageSize: true, printBackground: true, timeout: 0 });
   await browser.close();
-  console.log(`${path.relative(ROOT, pdfPath)}  (${total} pages)`);
+  console.log(`${path.relative(ROOT, pdfPath)}  (${total} pages, inside margin ${gutter} in)`);
+  // the page count the covers read for their spine (cover/interior-pages.cjs)
+  const factsPath = path.join(DIST, 'print-facts.json');
+  const facts = fs.existsSync(factsPath) ? JSON.parse(fs.readFileSync(factsPath, 'utf8')) : { pdfs: {} };
+  facts.pdfs[path.basename(pdfPath)] = { pages: total, trim: trimArg || '5.5x8.5', built: new Date().toISOString() };
+  facts.latest = path.basename(pdfPath);
+  fs.writeFileSync(factsPath, JSON.stringify(facts, null, 1));
+  // Lulu's margins, footnotes on their markers' pages, headings at a page's foot, short chapter endings
+  // (Courtney's print_check.py, adopted 2026-11-27; needs Poppler: winget install oschwartz10612.Poppler)
+  const { spawnSync } = await import('node:child_process');
+  spawnSync('python', ['-I', 'C:/code/books-freelygiv-ing/book-tools/shared/print-check.py', pdfPath, '--no-footnotes'], { stdio: 'inherit' });
 }

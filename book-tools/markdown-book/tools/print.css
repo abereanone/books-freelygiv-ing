@@ -1,7 +1,13 @@
 /* Print edition: 5.5 x 8.5 in, laid out by Paged.js. */
 @page {
   size: 5.5in 8.5in;
-  margin: 0.7in 0.6in 0.75in 0.6in;
+  /* Lulu: nothing within 0.5 in of the trim, running heads and page numbers included (2026-11-27);
+     the inside margin is set by build.mjs from the page count */
+  margin: 0.95in 0.6in 0.85in 0.6in;
+  @top-left { vertical-align: bottom; padding-bottom: 0.2in; }
+  @top-center { vertical-align: bottom; padding-bottom: 0.2in; }
+  @top-right { vertical-align: bottom; padding-bottom: 0.2in; }
+  @bottom-center { vertical-align: top; padding-top: 0.15in; }
   @footnote { border-top: 0.5pt solid #cfc7ba; padding-top: 4pt; margin-top: 8pt; }
 }
 @page :left {
