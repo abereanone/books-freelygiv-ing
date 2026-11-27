@@ -12,7 +12,7 @@ delete its `node_modules` and archive it to Proton Drive (`My files/Books`).
 | booklet (in the `make-booklet` skill, `~/.claude/skills/make-booklet/template`) | Blog posts to a 4-48 page saddle-stitch booklet | *On the Election of Infants* (2026-11-13) |
 | `markdown-book/` | A book written in Markdown (chapters/, front/, back/): Michael's books, modern authors | *Meditations on Psalm 119* (2026-10/11) |
 | `scanned-book/` | Reprinting an old book from a scan: OCR text, fixes, spelling decisions, page-by-page scan check, BSB verse notes | *Keeping the Heart* (2026-11-18); also used for Token for Mourners, Spurgeon, Broadus |
-| `author/` | Back-cover circles: Michael (`author-circle.jpg`, made from `author-gray.jpg` by `make-author-circle.py`), Spurgeon (the bearded one from Morning and Evening), Flavel, Broadus | |
+| `author/` | Back-cover circles: Michael (`author-circle.jpg`, made from `author-gray.jpg` by `make-author-circle.py`), Spurgeon (the bearded one from Morning and Evening), Flavel, Broadus, Joe Conkle with his wife (`conkle-circle.jpg`; `conkle-circle-ring.png` has the light ring for dark covers) | |
 
 **`EDITION-RULES.md`** holds the standing decisions for every book (what still goes to Michael, spelling
 defaults, typesetting, covers, publishing). Follow it without asking; add each new answer to it.
