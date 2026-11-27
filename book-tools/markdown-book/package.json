@@ -1,0 +1,24 @@
+{
+  "name": "psalm119-devotional",
+  "private": true,
+  "type": "module",
+  "description": "Meditations on Psalm 119 by Michael A. Coughlin — book build (HTML + PDF)",
+  "scripts": {
+    "extract": "node tools/extract.mjs",
+    "convert": "node tools/convert.mjs",
+    "build": "node tools/build.mjs",
+    "pdf": "node tools/build.mjs --pdf",
+    "pdf:6x9": "node tools/build.mjs --pdf --trim 6x9",
+    "pdf:all": "node tools/build.mjs --pdf && node tools/build.mjs --pdf --trim 6x9"
+  },
+  "devDependencies": {
+    "@fontsource/crimson-pro": "^5.3.0",
+    "@fontsource/noto-serif-hebrew": "^5.3.0",
+    "cheerio": "^1.0.0",
+    "markdown-it": "^14.3.3",
+    "markdown-it-footnote": "^4.0.0",
+    "pagedjs": "^0.4.3",
+    "puppeteer-core": "^23.11.1",
+    "turndown": "^7.2.4"
+  }
+}

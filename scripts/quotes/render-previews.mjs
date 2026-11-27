@@ -13,7 +13,7 @@ const BOOKS = join(ROOT, "data/src/books");
 const OUT = join(ROOT, "tmp/quotes/phone-review");
 mkdirSync(join(OUT, "cards"), { recursive: true });
 const require = createRequire(import.meta.url);
-const puppeteer = require("C:/code/keeping-the-heart/node_modules/puppeteer-core");
+const puppeteer = require("puppeteer-core");
 const u = (p) => pathToFileURL(p).href;
 const readY = (f) => YAML.parse(readFileSync(f, "utf8"));
 const topics = readY(join(ROOT, "data/src/quotes/topics.yaml"));

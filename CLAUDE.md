@@ -241,7 +241,7 @@ the original needs no edit; with `versionOf`, an original with no `version` is t
 opposite one. A button goes to the book with that value that keeps the most of the current
 book's other axes, so Vol. III's Version button stays on Vol. III. The logic is `withSets()` in
 `src/lib/data.js`; the switcher is `.book-set` on the book page. Sets now: `domestical-duties`
-(Gouge, 4 volumes), `institutes` (Calvin, Parts 1–2), plus every `translationOf` pair. Every
+(Gouge, 4 volumes), `institutes-of-the-christian-religion` (Calvin, 6 volumes; the old Parts 1–2 were retired 2026-11-26), plus every `translationOf` pair. Every
 volume still has its own card on /library. Courtney's 2026.11.22.2 release brought the first
 modern/classic pairs (19, hidden until the owner releases them, 2026-11-24).
 
@@ -310,3 +310,7 @@ work.
 - Tell the user when a change requires restarting the Astro dev server — new covers and
   photos only appear after `sync-assets` reruns, which happens at dev/build startup.
 - `_downloads/` is an intentionally untracked working folder; don't let `git add -A` sweep it in.
+- `book-tools/` holds the kits for making new books (markdown-book, scanned-book, author photos; see
+  its README). Book projects themselves live in their own folders under `C:\code` while being made and
+  are archived to Proton Drive (`My files/Books`) when done, without `node_modules`. puppeteer-core is a
+  devDependency here so the quote-card scripts and other repos' card tools have one stable copy.

@@ -23,7 +23,7 @@ const FORCE = process.argv.includes("--force");
 mkdirSync(OUT, { recursive: true });
 
 const require = createRequire(import.meta.url);
-const puppeteer = require("C:/code/keeping-the-heart/node_modules/puppeteer-core");
+const puppeteer = require("puppeteer-core");
 const u = (p) => pathToFileURL(p).href;
 const readY = (f) => YAML.parse(readFileSync(f, "utf8"));
 // a name-only author (no person page, e.g. "Thomas Gouge") is its own name

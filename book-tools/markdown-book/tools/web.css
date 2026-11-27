@@ -1,0 +1,26 @@
+/* Web edition. */
+:root { color-scheme: light dark; --paper: #fbf8f2; --fn-bg: #f1ebe0; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1b1916; --ink: #e8e2d6; --muted: #a59c8e; --rule: #3d3832; --accent: #d98b6f; --fn-bg: #27231f; }
+}
+html { background: var(--paper); }
+body { background: var(--paper); font-size: 24px; line-height: 1.55; max-width: 34em; margin: 0 auto; padding: 1.5em 16px 4em; }
+p { margin: 0 0 0.8em; }
+a { color: var(--accent); }
+.front > section, .front > nav, .part, .chapter, .back > section { padding: 2.5em 0 1em; border-top: 1px solid var(--rule); }
+.front > section:first-child { border-top: 0; }
+.half-title { display: none; }
+.title-page { padding: 3em 0 !important; }
+.part { padding: 3.5em 0 2.5em; }
+.toc-vv { margin-left: 0.3em; }
+blockquote { padding-left: 0.9em; border-left: 2px solid var(--rule); margin: 1em 0; }
+.scripture-index .ix-cols { columns: 2 16em; column-gap: 2em; font-size: 0.85em; }
+
+/* footnotes: tap the number to open the note in place */
+.fn-call { font-size: 0.62em; vertical-align: 0.6em; line-height: 0; color: var(--accent); cursor: pointer; padding: 0 0.15em; font-variant-numeric: lining-nums; }
+.fn-call::before { content: "["; } .fn-call::after { content: "]"; }
+.fn-toggle { display: none; }
+.fn-body { display: none; }
+.fn-toggle:checked + .fn-body { display: block; margin: 0.4em 0 0.6em; padding: 0.5em 0.8em; background: var(--fn-bg); border-radius: 4px; font-size: 0.82em; line-height: 1.4; font-style: normal; }
+.fn-num { color: var(--accent); font-weight: 600; margin-right: 0.3em; }
+@media (max-width: 480px) { body { font-size: 21px; } }

@@ -1,0 +1,19 @@
+{
+  "name": "keeping-the-heart",
+  "private": true,
+  "type": "module",
+  "description": "Keeping the Heart by John Flavel (American Tract Society text) — book build for books.freely.giving",
+  "scripts": {
+    "text": "python -I tools/fix.py && python -I tools/split.py",
+    "build": "node tools/build.mjs",
+    "pdf": "node tools/build.mjs --pdf"
+  },
+  "devDependencies": {
+    "@fontsource/crimson-pro": "^5.3.0",
+    "cheerio": "^1.0.0",
+    "markdown-it": "^14.3.3",
+    "markdown-it-footnote": "^4.0.0",
+    "pagedjs": "^0.4.3",
+    "puppeteer-core": "^23.11.1"
+  }
+}

@@ -1,0 +1,24 @@
+/* Web (Read Online) edition. */
+:root { color-scheme: light dark; --paper: #fbf8f2; --fn-bg: #ece6da; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1b1916; --ink: #e8e2d6; --muted: #a59c8e; --rule: #3d3832; --accent: #9cc4b5; --fn-bg: #27231f; }
+}
+html { background: var(--paper); }
+body { background: var(--paper); font-size: 22px; line-height: 1.55; max-width: 34em; margin: 0 auto; padding: 1.5em 16px 4em; }
+p { margin: 0 0 0.8em; }
+a { color: var(--accent); }
+.front > section, .front > nav, .body-matter > section { padding: 2.5em 0 1em; border-top: 1px solid var(--rule); }
+.front > section:first-child { border-top: 0; }
+.half-title { display: none; }
+.title-page { padding: 3em 0 !important; border-top: 0 !important; }
+.toc-pg { display: none; }
+blockquote { padding-left: 0.9em; border-left: 2px solid var(--rule); margin: 1em 0; }
+
+/* footnotes: tap the number to open the note in place */
+.fn-call { font-size: 0.62em; vertical-align: 0.6em; line-height: 0; color: var(--accent); cursor: pointer; padding: 0 0.15em; font-variant-numeric: lining-nums; }
+.fn-call::before { content: "["; } .fn-call::after { content: "]"; }
+.fn-toggle { display: none; }
+.fn-body { display: none; }
+.fn-toggle:checked + .fn-body { display: block; margin: 0.4em 0 0.6em; padding: 0.5em 0.8em; background: var(--fn-bg); border-radius: 4px; font-size: 0.82em; line-height: 1.4; font-style: normal; }
+.fn-num { color: var(--accent); font-weight: 600; margin-right: 0.3em; }
+@media (max-width: 480px) { body { font-size: 19px; } }

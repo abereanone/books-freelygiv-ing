@@ -127,7 +127,7 @@ First batch, 2026-11-22: 117 candidates from *Keeping the Heart* (39), *Precious
 **Look:** dark, softened public-domain painting behind; quote in white Crimson Pro, centred;
 author's name in gold below it. The `BOOKS.FREELY.GIVING` tag sits in the **same fixed spot
 on every card, lower left**, in the back-cover face (Medium Rare Ribeye,
-`C:/code/Psalm119Devotional/cover/assets/medium-rare-ribeye.ttf`), gold, spaced caps as on
+`scripts/quotes/fonts/medium-rare-ribeye.ttf`), gold, spaced caps as on
 the book backs. Nothing above the quote. Our own label and type, not a copy of the
 "Puritan Gold" account's.
 

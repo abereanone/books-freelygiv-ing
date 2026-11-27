@@ -1,0 +1,61 @@
+/* Print edition: 5 x 8 in, laid out by Paged.js (6 x 9 until 2026-11-19). */
+@page {
+  size: 5in 8in;
+  margin: 0.62in 0.55in 0.7in 0.55in;
+  @footnote { border-top: 0.5pt solid #cfc7ba; padding-top: 4pt; margin-top: 8pt; }
+}
+@page :left {
+  margin-left: 0.5in; margin-right: 0.72in;
+  @top-left { content: counter(page); font: 9.5pt "Crimson Pro", serif; }
+  @top-center { content: "Keeping the Heart"; font: italic 9.5pt "Crimson Pro", serif; color: #6b645a; }
+}
+@page :right {
+  margin-left: 0.72in; margin-right: 0.5in;
+  @top-right { content: counter(page); font: 9.5pt "Crimson Pro", serif; }
+  @top-center { content: string(sectitle); font: italic 9.5pt "Crimson Pro", serif; color: #6b645a; }
+}
+@page :blank { @top-left { content: none; } @top-right { content: none; } @top-center { content: none; } @bottom-center { content: none; } }
+@page front { @top-left { content: none; } @top-right { content: none; } @top-center { content: none; } }
+@page opener:first {
+  @top-left { content: none; } @top-right { content: none; } @top-center { content: none; }
+  @bottom-center { content: counter(page); font: 9.5pt "Crimson Pro", serif; }
+}
+
+html { font-size: 10.5pt; }
+body { line-height: 1.4; orphans: 2; widows: 2; }
+p { margin: 0; text-indent: 1.2em; text-align: justify; text-align-last: left; hyphens: auto; -webkit-hyphens: auto; }
+h2 + p, h3 + p, header + .chapter-body > p:first-child, blockquote + p, .matter-title + p { text-indent: 0; }
+.chapter-body h3 { break-after: avoid; }
+.pagedjs_margin-top-center > .pagedjs_margin-content { white-space: nowrap; }
+
+.front { page: front; }
+.front > section, .front > nav { break-before: page; }
+.half-title { padding-top: 1.7in; font-size: 1.3em; font-style: italic; }
+.title-page { padding-top: 1.3in; }
+.copyright { padding-top: 0.2in; }
+.toc { font-size: 0.95em; line-height: 1.3; }
+.toc-pg { float: right; color: #6b645a; }
+.toc-item { break-inside: avoid; }
+
+.body-matter > section { page: opener; break-before: right; }
+.body-matter > .glossary { break-before: page; }
+.chapter, .matter { padding-top: 0.45in; }
+.body-matter .chapter-title, .body-matter .matter-title { string-set: sectitle content(text); }
+.epistle .salutation { text-align-last: center; hyphens: manual; }
+
+/* footnotes */
+.footnote { float: footnote; font-size: 8.5pt; line-height: 1.25; text-indent: 0; text-align: left; hyphens: manual; font-style: normal; }
+.footnote::footnote-marker { content: none; }
+.footnote::footnote-call { content: none; }
+.fn-ref { font-size: 0.65em; vertical-align: 0.55em; line-height: 0; font-variant-numeric: lining-nums; }
+.fn-mark { font-variant-numeric: lining-nums; margin-right: 0.25em; }
+
+.glossary { font-size: 0.95em; }
+a { color: inherit; text-decoration: none; }
+.chapter-head p, .title-page p, .half-title p { text-align: center; text-align-last: center; }
+.copyright p { text-align: left; }
+.copyright .fg-badge { text-align: center; }
+/* the main-text wrapper starts on the right; its first section must not break again (that left an empty numbered page) */
+.body-matter { break-before: right; }
+.body-matter > .epistle { break-before: avoid; }
+.copyright p.fg-badge { text-align: center; text-align-last: center; }
