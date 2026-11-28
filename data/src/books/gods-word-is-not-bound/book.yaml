@@ -55,6 +55,11 @@
           url: https://www.kobo.com/us/en/ebook/god-s-word-is-not-bound-copyright-the-stewardship-of-scripture
         - name: Barnes & Noble
           url: https://www.barnesandnoble.com/w/gods-word-is-not-bound-andrew-case/1151180627
+    - type: audiobook
+      label: Audiobook
+      sources:
+        - name: Selling Jesus
+          url: https://sellingjesus.org/word-not-bound
     - type: printBook
       label: Book
       sources:
